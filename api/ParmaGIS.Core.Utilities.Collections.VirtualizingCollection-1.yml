@@ -1,0 +1,4209 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  id: VirtualizingCollection`1
+  parent: ParmaGIS.Core.Utilities.Collections
+  children:
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0},System.Int32,System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CleanUpPages
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionChanged
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage(System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item(System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ItemsProvider
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadCount
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage(System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged(System.String)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageSize
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage(System.Int32,System.Collections.Generic.IList{`0})
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PropertyChanged
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Refresh
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage(System.Int32)
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
+  langs:
+  - csharp
+  - vb
+  name: VirtualizingCollection<T>
+  nameWithType: VirtualizingCollection<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>
+  type: Class
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: VirtualizingCollection
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 24
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: >-
+    Specialized list implementation that provides data virtualization. The collection is divided up into pages,
+
+    and pages are dynamically fetched from the IItemsProvider when required. Stale pages are removed after a
+
+    configurable period of time.
+
+    Intended for use with large collections on a network or disk resource that cannot be instantiated locally
+
+    due to memory consumption or fetch latency.
+  remarks: >-
+    The IList implmentation is not fully complete, but should be sufficient for use as read only collection 
+
+    data bound to a suitable ItemsControl.
+  example: []
+  syntax:
+    content: 'public class VirtualizingCollection<T> : IList<T>, ICollection<T>, IEnumerable<T>, IList, ICollection, IEnumerable, INotifyPropertyChanged, INotifyCollectionChanged'
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Class VirtualizingCollection(Of T) Implements IList(Of T), ICollection(Of T), IEnumerable(Of T), IList, ICollection, IEnumerable, INotifyPropertyChanged, INotifyCollectionChanged
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - ParmaGIS.Core.Utilities.Threading.Collections.AsyncVirtualizingCollection`1
+  implements:
+  - System.Collections.Generic.IList{{T}}
+  - System.Collections.Generic.ICollection{{T}}
+  - System.Collections.Generic.IEnumerable{{T}}
+  - System.Collections.IList
+  - System.Collections.ICollection
+  - System.Collections.IEnumerable
+  - System.ComponentModel.INotifyPropertyChanged
+  - System.Collections.Specialized.INotifyCollectionChanged
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{{T}},{TProperty}}},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{{T}},{TProperty}}},System.Func{{TProperty},System.Collections.IEnumerable},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  nameWithType.vb: VirtualizingCollection(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T)
+  name.vb: VirtualizingCollection(Of T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PropertyChanged
+  commentId: E:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PropertyChanged
+  id: PropertyChanged
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: PropertyChanged
+  nameWithType: VirtualizingCollection<T>.PropertyChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PropertyChanged
+  type: Event
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: PropertyChanged
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 33
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Occurs when a property value changes.
+  example: []
+  syntax:
+    content: public event PropertyChangedEventHandler? PropertyChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  nameWithType.vb: VirtualizingCollection(Of T).PropertyChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PropertyChanged
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionChanged
+  commentId: E:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionChanged
+  id: CollectionChanged
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: CollectionChanged
+  nameWithType: VirtualizingCollection<T>.CollectionChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CollectionChanged
+  type: Event
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CollectionChanged
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 34
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Occurs when the collection changes.
+  example: []
+  syntax:
+    content: public event NotifyCollectionChangedEventHandler? CollectionChanged
+    return:
+      type: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+    content.vb: Public Event CollectionChanged As NotifyCollectionChangedEventHandler
+  implements:
+  - System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  nameWithType.vb: VirtualizingCollection(Of T).CollectionChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CollectionChanged
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0},System.Int32,System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0},System.Int32,System.Int32)
+  id: '#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0},System.Int32,System.Int32)'
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: VirtualizingCollection(IItemsProvider<T>, int, int)
+  nameWithType: VirtualizingCollection<T>.VirtualizingCollection(IItemsProvider<T>, int, int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.VirtualizingCollection(ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: .ctor
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 43
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Initializes a new instance of the <xref href="ParmaGIS.Core.Utilities.Collections.VirtualizingCollection%601" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public VirtualizingCollection(IItemsProvider<T> itemsProvider, int pageSize = 100, int pageTimeout = 10000)
+    parameters:
+    - id: itemsProvider
+      type: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}
+      description: The items provider.
+    - id: pageSize
+      type: System.Int32
+      description: Size of the page.
+    - id: pageTimeout
+      type: System.Int32
+      description: The page timeout.
+    content.vb: Public Sub New(itemsProvider As IItemsProvider(Of T), pageSize As Integer = 100, pageTimeout As Integer = 10000)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor*
+  nameWithType.vb: VirtualizingCollection(Of T).New(IItemsProvider(Of T), Integer, Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).New(ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T), Integer, Integer)
+  name.vb: New(IItemsProvider(Of T), Integer, Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ItemsProvider
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ItemsProvider
+  id: ItemsProvider
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: ItemsProvider
+  nameWithType: VirtualizingCollection<T>.ItemsProvider
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.ItemsProvider
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ItemsProvider
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 90
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает провайдер элементов.
+  example: []
+  syntax:
+    content: protected IItemsProvider<T> ItemsProvider { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}
+    content.vb: Protected ReadOnly Property ItemsProvider As IItemsProvider(Of T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ItemsProvider*
+  nameWithType.vb: VirtualizingCollection(Of T).ItemsProvider
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).ItemsProvider
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageSize
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageSize
+  id: PageSize
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: PageSize
+  nameWithType: VirtualizingCollection<T>.PageSize
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PageSize
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: PageSize
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 93
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает или задает колчитво элементов на странице.
+  example: []
+  syntax:
+    content: public int PageSize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property PageSize As Integer
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageSize*
+  nameWithType.vb: VirtualizingCollection(Of T).PageSize
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PageSize
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout
+  id: PageTimeout
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: PageTimeout
+  nameWithType: VirtualizingCollection<T>.PageTimeout
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PageTimeout
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: PageTimeout
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 99
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Gets the page timeout.
+  example: []
+  syntax:
+    content: public long PageTimeout { get; }
+    parameters: []
+    return:
+      type: System.Int64
+      description: The page timeout.
+    content.vb: Public ReadOnly Property PageTimeout As Long
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout*
+  nameWithType.vb: VirtualizingCollection(Of T).PageTimeout
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PageTimeout
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged(System.String)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged(System.String)
+  id: OnPropertyChanged(System.String)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: OnPropertyChanged(string?)
+  nameWithType: VirtualizingCollection<T>.OnPropertyChanged(string?)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnPropertyChanged(string?)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OnPropertyChanged
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 101
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  syntax:
+    content: protected void OnPropertyChanged(string? propertyName = null)
+    parameters:
+    - id: propertyName
+      type: System.String
+    content.vb: Protected Sub OnPropertyChanged(propertyName As String = Nothing)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged*
+  nameWithType.vb: VirtualizingCollection(Of T).OnPropertyChanged(String)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  id: OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: OnCollectionChanged(NotifyCollectionChangedEventArgs)
+  nameWithType: VirtualizingCollection<T>.OnCollectionChanged(NotifyCollectionChangedEventArgs)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OnCollectionChanged
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 110
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Raises the <xref href="CollectionChanged" data-throw-if-not-resolved="false"></xref> event.
+  example: []
+  syntax:
+    content: protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+    parameters:
+    - id: e
+      type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+      description: The <xref href="System.Collections.Specialized.NotifyCollectionChangedEventArgs" data-throw-if-not-resolved="false"></xref> instance containing the event data.
+    content.vb: Protected Overridable Sub OnCollectionChanged(e As NotifyCollectionChangedEventArgs)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged*
+  nameWithType.vb: VirtualizingCollection(Of T).OnCollectionChanged(NotifyCollectionChangedEventArgs)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset
+  id: OnCollectionReset
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: OnCollectionReset()
+  nameWithType: VirtualizingCollection<T>.OnCollectionReset()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnCollectionReset()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OnCollectionReset
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 117
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Fires the collection reset event.
+  example: []
+  syntax:
+    content: protected void OnCollectionReset()
+    content.vb: Protected Sub OnCollectionReset()
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset*
+  nameWithType.vb: VirtualizingCollection(Of T).OnCollectionReset()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnCollectionReset()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count
+  id: Count
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: VirtualizingCollection<T>.Count
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Count
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Count
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 140
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: >-
+    Gets the number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
+
+    The first time this property is accessed, it will fetch the count from the IItemsProvider.
+  example: []
+  syntax:
+    content: public virtual int Count { get; protected set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Overridable Property Count As Integer
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Count
+  - System.Collections.ICollection.Count
+  nameWithType.vb: VirtualizingCollection(Of T).Count
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Count
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item(System.Int32)
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: VirtualizingCollection<T>.this[int]
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.this[int]
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: this[]
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 166
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: >-
+    Gets the item at the specified index. This property will fetch
+
+    the corresponding page from the IItemsProvider if required.
+  example: []
+  syntax:
+    content: public T this[int index] { get; set; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: Public Default Property this[](index As Integer) As T
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item*
+  implements:
+  - System.Collections.Generic.IList{{T}}.Item(System.Int32)
+  nameWithType.vb: VirtualizingCollection(Of T).this[](Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).this[](Integer)
+  name.vb: this[](Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
+  id: GetEnumerator
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: VirtualizingCollection<T>.GetEnumerator()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetEnumerator
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 217
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Returns an enumerator that iterates through the collection.
+  remarks: This method should be avoided on large collections due to poor performance.
+  example: []
+  syntax:
+    content: public IEnumerator<T> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{T}}
+      description: A <xref href="System.Collections.Generic.IEnumerator%601" data-throw-if-not-resolved="false"></xref> that can be used to iterate through the collection.
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
+  nameWithType.vb: VirtualizingCollection(Of T).GetEnumerator()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).GetEnumerator()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
+  id: Add(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: VirtualizingCollection<T>.Add(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Add
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 247
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public void Add(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+      description: The object to add to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub Add(item As T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Add({T})
+  nameWithType.vb: VirtualizingCollection(Of T).Add(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Add(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
+  id: Contains(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Contains(T)
+  nameWithType: VirtualizingCollection<T>.Contains(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Contains(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Contains
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 273
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public bool Contains(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: Always false.
+    content.vb: Public Function Contains(item As T) As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Contains({T})
+  nameWithType.vb: VirtualizingCollection(Of T).Contains(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Contains(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
+  id: Clear
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: VirtualizingCollection<T>.Clear()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Clear()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Clear
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 288
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Clear
+  - System.Collections.IList.Clear
+  nameWithType.vb: VirtualizingCollection(Of T).Clear()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Clear()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
+  id: IndexOf(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: IndexOf(T)
+  nameWithType: VirtualizingCollection<T>.IndexOf(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IndexOf(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IndexOf
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 309
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported
+  example: []
+  syntax:
+    content: public int IndexOf(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Int32
+      description: Always -1.
+    content.vb: Public Function IndexOf(item As T) As Integer
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf*
+  implements:
+  - System.Collections.Generic.IList{{T}}.IndexOf({T})
+  nameWithType.vb: VirtualizingCollection(Of T).IndexOf(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IndexOf(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
+  id: Insert(System.Int32,`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Insert(int, T)
+  nameWithType: VirtualizingCollection<T>.Insert(int, T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Insert(int, T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Insert
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 329
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public void Insert(int index, T item)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
+    - id: item
+      type: '{T}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub Insert(index As Integer, item As T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  implements:
+  - System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
+  nameWithType.vb: VirtualizingCollection(Of T).Insert(Integer, T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
+  id: RemoveAt(System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAt(int)
+  nameWithType: VirtualizingCollection<T>.RemoveAt(int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveAt
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 353
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public void RemoveAt(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The zero-based index of the item to remove.
+    content.vb: Public Sub RemoveAt(index As Integer)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  implements:
+  - System.Collections.Generic.IList{{T}}.RemoveAt(System.Int32)
+  - System.Collections.IList.RemoveAt(System.Int32)
+  nameWithType.vb: VirtualizingCollection(Of T).RemoveAt(Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
+  id: Remove(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: VirtualizingCollection<T>.Remove(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Remove
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 373
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public bool Remove(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: true if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, false. This method also returns false if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function Remove(item As T) As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Remove({T})
+  nameWithType.vb: VirtualizingCollection(Of T).Remove(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Remove(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
+  id: CopyTo(`0[],System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(T[], int)
+  nameWithType: VirtualizingCollection<T>.CopyTo(T[], int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CopyTo(T[], int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CopyTo
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 402
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public void CopyTo(T[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: '{T}[]'
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
+    - id: arrayIndex
+      type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
+    content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is null.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">arrayIndex</code> is less than 0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "	<code class=\"paramref\">array</code> is multidimensional.\r\n-or-\r\n<code class=\"paramref\">arrayIndex</code> is equal to or greater than the length of <code class=\"paramref\">array</code>.\r\n-or-\r\nThe number of elements in the source <xref href=\"System.Collections.Generic.ICollection%601\" data-throw-if-not-resolved=\"false\"></xref> is greater than the available space from <code class=\"paramref\">arrayIndex</code> to the end of the destination <code class=\"paramref\">array</code>.\r\n-or-\r\nType <code class=\"paramref\">T</code> cannot be cast automatically to the type of the destination <code class=\"paramref\">array</code>."
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
+  nameWithType.vb: VirtualizingCollection(Of T).CopyTo(T(), Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
+  id: SyncRoot
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: SyncRoot
+  nameWithType: VirtualizingCollection<T>.SyncRoot
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.SyncRoot
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SyncRoot
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 423
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Gets an object that can be used to synchronize access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public object SyncRoot { get; }
+    parameters: []
+    return:
+      type: System.Object
+      description: ''
+    content.vb: Public ReadOnly Property SyncRoot As Object
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot*
+  implements:
+  - System.Collections.ICollection.SyncRoot
+  nameWithType.vb: VirtualizingCollection(Of T).SyncRoot
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).SyncRoot
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized
+  id: IsSynchronized
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: IsSynchronized
+  nameWithType: VirtualizingCollection<T>.IsSynchronized
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsSynchronized
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IsSynchronized
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 434
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Gets a value indicating whether access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref> is synchronized (thread safe).
+  example: []
+  syntax:
+    content: public bool IsSynchronized { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property IsSynchronized As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized*
+  implements:
+  - System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: VirtualizingCollection(Of T).IsSynchronized
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsSynchronized
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly
+  id: IsReadOnly
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: VirtualizingCollection<T>.IsReadOnly
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IsReadOnly
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 445
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Gets a value indicating whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  example: []
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.IsReadOnly
+  - System.Collections.IList.IsReadOnly
+  nameWithType.vb: VirtualizingCollection(Of T).IsReadOnly
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsReadOnly
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize
+  commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize
+  id: IsFixedSize
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: IsFixedSize
+  nameWithType: VirtualizingCollection<T>.IsFixedSize
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsFixedSize
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IsFixedSize
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 456
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Gets a value indicating whether the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
+  example: []
+  syntax:
+    content: public bool IsFixedSize { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property IsFixedSize As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize*
+  implements:
+  - System.Collections.IList.IsFixedSize
+  nameWithType.vb: VirtualizingCollection(Of T).IsFixedSize
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsFixedSize
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Refresh
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Refresh
+  id: Refresh
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Refresh()
+  nameWithType: VirtualizingCollection<T>.Refresh()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Refresh()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Refresh
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 465
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  syntax:
+    content: public void Refresh()
+    content.vb: Public Sub Refresh()
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Refresh*
+  nameWithType.vb: VirtualizingCollection(Of T).Refresh()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Refresh()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CleanUpPages
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CleanUpPages
+  id: CleanUpPages
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: CleanUpPages()
+  nameWithType: VirtualizingCollection<T>.CleanUpPages()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CleanUpPages()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CleanUpPages
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 481
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Cleans up any stale pages that have not been accessed in the period dictated by PageTimeout.
+  example: []
+  syntax:
+    content: public void CleanUpPages()
+    content.vb: Public Sub CleanUpPages()
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CleanUpPages*
+  nameWithType.vb: VirtualizingCollection(Of T).CleanUpPages()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CleanUpPages()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage(System.Int32,System.Collections.Generic.IList{`0})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage(System.Int32,System.Collections.Generic.IList{`0})
+  id: PopulatePage(System.Int32,System.Collections.Generic.IList{`0})
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: PopulatePage(int, IList<T>)
+  nameWithType: VirtualizingCollection<T>.PopulatePage(int, IList<T>)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PopulatePage(int, System.Collections.Generic.IList<T>)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: PopulatePage
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 501
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Populates the page within the dictionary.
+  example: []
+  syntax:
+    content: protected virtual void PopulatePage(int pageIndex, IList<T> page)
+    parameters:
+    - id: pageIndex
+      type: System.Int32
+      description: Index of the page.
+    - id: page
+      type: System.Collections.Generic.IList{{T}}
+      description: The page.
+    content.vb: Protected Overridable Sub PopulatePage(pageIndex As Integer, page As IList(Of T))
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage*
+  nameWithType.vb: VirtualizingCollection(Of T).PopulatePage(Integer, IList(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PopulatePage(Integer, System.Collections.Generic.IList(Of T))
+  name.vb: PopulatePage(Integer, IList(Of T))
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage(System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage(System.Int32)
+  id: RequestPage(System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: RequestPage(int)
+  nameWithType: VirtualizingCollection<T>.RequestPage(int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.RequestPage(int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RequestPage
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 513
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: >-
+    Makes a request for the specified page, creating the necessary slots in the dictionary,
+
+    and updating the page touch time.
+  example: []
+  syntax:
+    content: protected virtual void RequestPage(int pageIndex)
+    parameters:
+    - id: pageIndex
+      type: System.Int32
+      description: Index of the page.
+    content.vb: Protected Overridable Sub RequestPage(pageIndex As Integer)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage*
+  nameWithType.vb: VirtualizingCollection(Of T).RequestPage(Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).RequestPage(Integer)
+  name.vb: RequestPage(Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadCount
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadCount
+  id: LoadCount
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: LoadCount()
+  nameWithType: VirtualizingCollection<T>.LoadCount()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.LoadCount()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: LoadCount
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 536
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Loads the count of items.
+  example: []
+  syntax:
+    content: protected virtual void LoadCount()
+    content.vb: Protected Overridable Sub LoadCount()
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadCount*
+  nameWithType.vb: VirtualizingCollection(Of T).LoadCount()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).LoadCount()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage(System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage(System.Int32)
+  id: LoadPage(System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: LoadPage(int)
+  nameWithType: VirtualizingCollection<T>.LoadPage(int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.LoadPage(int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: LoadPage
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 545
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Loads the page of items.
+  example: []
+  syntax:
+    content: protected virtual void LoadPage(int pageIndex)
+    parameters:
+    - id: pageIndex
+      type: System.Int32
+      description: Index of the page.
+    content.vb: Protected Overridable Sub LoadPage(pageIndex As Integer)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage*
+  nameWithType.vb: VirtualizingCollection(Of T).LoadPage(Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).LoadPage(Integer)
+  name.vb: LoadPage(Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage(System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage(System.Int32)
+  id: FetchPage(System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: FetchPage(int)
+  nameWithType: VirtualizingCollection<T>.FetchPage(int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.FetchPage(int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: FetchPage
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 559
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Fetches the requested page from the IItemsProvider.
+  example: []
+  syntax:
+    content: protected IList<T> FetchPage(int pageIndex)
+    parameters:
+    - id: pageIndex
+      type: System.Int32
+      description: Index of the page.
+    return:
+      type: System.Collections.Generic.IList{{T}}
+      description: ''
+    content.vb: Protected Function FetchPage(pageIndex As Integer) As IList(Of T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage*
+  nameWithType.vb: VirtualizingCollection(Of T).FetchPage(Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).FetchPage(Integer)
+  name.vb: FetchPage(Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount
+  id: FetchCount
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: FetchCount()
+  nameWithType: VirtualizingCollection<T>.FetchCount()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.FetchCount()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: FetchCount
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 568
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Fetches the count of itmes from the IItemsProvider.
+  example: []
+  syntax:
+    content: protected int FetchCount()
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Protected Function FetchCount() As Integer
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount*
+  nameWithType.vb: VirtualizingCollection(Of T).FetchCount()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).FetchCount()
+references:
+- uid: ParmaGIS.Core.Utilities.Collections
+  commentId: N:ParmaGIS.Core.Utilities.Collections
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Utilities.Collections
+  nameWithType: ParmaGIS.Core.Utilities.Collections
+  fullName: ParmaGIS.Core.Utilities.Collections
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Collections
+    name: Collections
+    href: ParmaGIS.Core.Utilities.Collections.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Collections
+    name: Collections
+    href: ParmaGIS.Core.Utilities.Collections.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Generic.IList{{T}}
+  commentId: T:System.Collections.Generic.IList{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.ICollection{{T}}
+  commentId: T:System.Collections.Generic.ICollection{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.Collections.Specialized.INotifyCollectionChanged
+  commentId: T:System.Collections.Specialized.INotifyCollectionChanged
+  parent: System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged
+  name: INotifyCollectionChanged
+  nameWithType: INotifyCollectionChanged
+  fullName: System.Collections.Specialized.INotifyCollectionChanged
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{{T}},{TProperty}}},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  commentId: M:ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  parent: ParmaGIS.Core.UI.Reactive.URExtensions
+  definition: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  name: ToURPropertyWithHistory2<VirtualizingCollection<T>, TProperty>(VirtualizingCollection<T>, Expression<Func<VirtualizingCollection<T>, TProperty>>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  nameWithType: URExtensions.ToURPropertyWithHistory2<VirtualizingCollection<T>, TProperty>(VirtualizingCollection<T>, Expression<Func<VirtualizingCollection<T>, TProperty>>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  fullName: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2<ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>, TProperty>(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>, System.Linq.Expressions.Expression<System.Func<ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>, TProperty>>, System.Action<TProperty>, TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection<System.IDisposable>)
+  nameWithType.vb: URExtensions.ToURPropertyWithHistory2(Of VirtualizingCollection(Of T), TProperty)(VirtualizingCollection(Of T), Expression(Of Func(Of VirtualizingCollection(Of T), TProperty)), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  fullName.vb: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2(Of ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T), TProperty)(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T), System.Linq.Expressions.Expression(Of System.Func(Of ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T), TProperty)), System.Action(Of TProperty), TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection(Of System.IDisposable))
+  name.vb: ToURPropertyWithHistory2(Of VirtualizingCollection(Of T), TProperty)(VirtualizingCollection(Of T), Expression(Of Func(Of VirtualizingCollection(Of T), TProperty)), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory2
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: <
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory2
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{{T}},{TProperty}}},System.Func{{TProperty},System.Collections.IEnumerable},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  commentId: M:ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  parent: ParmaGIS.Core.UI.Reactive.URExtensions
+  definition: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  name: ToURPropertyWithHistory<VirtualizingCollection<T>, TProperty>(VirtualizingCollection<T>, Expression<Func<VirtualizingCollection<T>, TProperty>>, Func<TProperty, IEnumerable>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  nameWithType: URExtensions.ToURPropertyWithHistory<VirtualizingCollection<T>, TProperty>(VirtualizingCollection<T>, Expression<Func<VirtualizingCollection<T>, TProperty>>, Func<TProperty, IEnumerable>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  fullName: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory<ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>, TProperty>(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>, System.Linq.Expressions.Expression<System.Func<ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>, TProperty>>, System.Func<TProperty, System.Collections.IEnumerable>, System.Action<TProperty>, TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection<System.IDisposable>)
+  nameWithType.vb: URExtensions.ToURPropertyWithHistory(Of VirtualizingCollection(Of T), TProperty)(VirtualizingCollection(Of T), Expression(Of Func(Of VirtualizingCollection(Of T), TProperty)), Func(Of TProperty, IEnumerable), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  fullName.vb: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory(Of ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T), TProperty)(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T), System.Linq.Expressions.Expression(Of System.Func(Of ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T), TProperty)), System.Func(Of TProperty, System.Collections.IEnumerable), System.Action(Of TProperty), TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection(Of System.IDisposable))
+  name.vb: ToURPropertyWithHistory(Of VirtualizingCollection(Of T), TProperty)(VirtualizingCollection(Of T), Expression(Of Func(Of VirtualizingCollection(Of T), TProperty)), Func(Of TProperty, IEnumerable), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: <
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{`0},``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  parent: ParmaGIS.Core.Utilities.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  name: ForEach<T>(IEnumerable<T>, Action<T, int>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  parent: ParmaGIS.Core.Utilities.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  name: ForEach<T>(IEnumerable<T>, Action<T>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
+  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: System.Collections.Specialized
+  commentId: N:System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Specialized
+  nameWithType: System.Collections.Specialized
+  fullName: System.Collections.Specialized
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Specialized
+    name: Specialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Specialized
+    name: Specialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+- uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  commentId: M:ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  isExternal: true
+  href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  name: ToURPropertyWithHistory2<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  nameWithType: URExtensions.ToURPropertyWithHistory2<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  fullName: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2<TSubject, TProperty>(TSubject, System.Linq.Expressions.Expression<System.Func<TSubject, TProperty>>, System.Action<TProperty>, TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection<System.IDisposable>)
+  nameWithType.vb: URExtensions.ToURPropertyWithHistory2(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  fullName.vb: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2(Of TSubject, TProperty)(TSubject, System.Linq.Expressions.Expression(Of System.Func(Of TSubject, TProperty)), System.Action(Of TProperty), TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection(Of System.IDisposable))
+  name.vb: ToURPropertyWithHistory2(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory2
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory2
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.UI.Reactive.URExtensions
+  commentId: T:ParmaGIS.Core.UI.Reactive.URExtensions
+  parent: ParmaGIS.Core.UI.Reactive
+  href: ParmaGIS.Core.UI.Reactive.URExtensions.html
+  name: URExtensions
+  nameWithType: URExtensions
+  fullName: ParmaGIS.Core.UI.Reactive.URExtensions
+- uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  commentId: M:ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+  isExternal: true
+  href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  name: ToURPropertyWithHistory<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, Func<TProperty, IEnumerable>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  nameWithType: URExtensions.ToURPropertyWithHistory<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, Func<TProperty, IEnumerable>, Action<TProperty>, TProperty, URHistory, ICollection<IDisposable>)
+  fullName: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory<TSubject, TProperty>(TSubject, System.Linq.Expressions.Expression<System.Func<TSubject, TProperty>>, System.Func<TProperty, System.Collections.IEnumerable>, System.Action<TProperty>, TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection<System.IDisposable>)
+  nameWithType.vb: URExtensions.ToURPropertyWithHistory(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), Func(Of TProperty, IEnumerable), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  fullName.vb: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory(Of TSubject, TProperty)(TSubject, System.Linq.Expressions.Expression(Of System.Func(Of TSubject, TProperty)), System.Func(Of TProperty, System.Collections.IEnumerable), System.Action(Of TProperty), TProperty, ParmaGIS.Core.UI.Reactive.URHistory, System.Collections.Generic.ICollection(Of System.IDisposable))
+  name.vb: ToURPropertyWithHistory(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), Func(Of TProperty, IEnumerable), Action(Of TProperty), TProperty, URHistory, ICollection(Of IDisposable))
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.Collections.IEnumerable},System.Action{``1},``1,ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+    name: ToURPropertyWithHistory
+    href: ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Core.UI.Reactive.URHistory
+    name: URHistory
+    href: ParmaGIS.Core.UI.Reactive.URHistory.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IDisposable
+    name: IDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  name: ForEach<T>(IEnumerable<T>, Action<T, int>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.Utilities.EnumarableExtensions
+  commentId: T:ParmaGIS.Core.Utilities.EnumarableExtensions
+  parent: ParmaGIS.Core.Utilities
+  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html
+  name: EnumarableExtensions
+  nameWithType: EnumarableExtensions
+  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions
+- uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  name: ForEach<T>(IEnumerable<T>, Action<T>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
+  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.UI.Reactive
+  commentId: N:ParmaGIS.Core.UI.Reactive
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.UI.Reactive
+  nameWithType: ParmaGIS.Core.UI.Reactive
+  fullName: ParmaGIS.Core.UI.Reactive
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Reactive
+    name: Reactive
+    href: ParmaGIS.Core.UI.Reactive.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Reactive
+    name: Reactive
+    href: ParmaGIS.Core.UI.Reactive.html
+- uid: ParmaGIS.Core.Utilities
+  commentId: N:ParmaGIS.Core.Utilities
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Utilities
+  nameWithType: ParmaGIS.Core.Utilities
+  fullName: ParmaGIS.Core.Utilities
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+- uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  parent: System.ComponentModel.INotifyPropertyChanged
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged.propertychanged
+  name: PropertyChanged
+  nameWithType: INotifyPropertyChanged.PropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventhandler
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  commentId: E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  parent: System.Collections.Specialized.INotifyCollectionChanged
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged.collectionchanged
+  name: CollectionChanged
+  nameWithType: INotifyCollectionChanged.CollectionChanged
+  fullName: System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+  commentId: T:System.Collections.Specialized.NotifyCollectionChangedEventHandler
+  parent: System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventhandler
+  name: NotifyCollectionChangedEventHandler
+  nameWithType: NotifyCollectionChangedEventHandler
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  name: VirtualizingCollection<T>
+  nameWithType: VirtualizingCollection<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>
+  nameWithType.vb: VirtualizingCollection(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T)
+  name.vb: VirtualizingCollection(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+    name: VirtualizingCollection
+    href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1__ctor_ParmaGIS_Core_Utilities_Collections_IItemsProvider__0__System_Int32_System_Int32_
+  name: VirtualizingCollection
+  nameWithType: VirtualizingCollection<T>.VirtualizingCollection
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.VirtualizingCollection
+  nameWithType.vb: VirtualizingCollection(Of T).New
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).New
+  name.vb: New
+- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}
+  commentId: T:ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0}
+  parent: ParmaGIS.Core.Utilities.Collections
+  definition: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
+  name: IItemsProvider<T>
+  nameWithType: IItemsProvider<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>
+  nameWithType.vb: IItemsProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T)
+  name.vb: IItemsProvider(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+    name: IItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+    name: IItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
+  name: IItemsProvider<T>
+  nameWithType: IItemsProvider<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>
+  nameWithType.vb: IItemsProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T)
+  name.vb: IItemsProvider(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+    name: IItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+    name: IItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ItemsProvider*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ItemsProvider
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_ItemsProvider
+  name: ItemsProvider
+  nameWithType: VirtualizingCollection<T>.ItemsProvider
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.ItemsProvider
+  nameWithType.vb: VirtualizingCollection(Of T).ItemsProvider
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).ItemsProvider
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageSize*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageSize
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_PageSize
+  name: PageSize
+  nameWithType: VirtualizingCollection<T>.PageSize
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PageSize
+  nameWithType.vb: VirtualizingCollection(Of T).PageSize
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PageSize
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_PageTimeout
+  name: PageTimeout
+  nameWithType: VirtualizingCollection<T>.PageTimeout
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PageTimeout
+  nameWithType.vb: VirtualizingCollection(Of T).PageTimeout
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PageTimeout
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_OnPropertyChanged_System_String_
+  name: OnPropertyChanged
+  nameWithType: VirtualizingCollection<T>.OnPropertyChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnPropertyChanged
+  nameWithType.vb: VirtualizingCollection(Of T).OnPropertyChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnPropertyChanged
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CollectionChanged
+  commentId: E:CollectionChanged
+  isExternal: true
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+  commentId: T:System.Collections.Specialized.NotifyCollectionChangedEventArgs
+  parent: System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  name: NotifyCollectionChangedEventArgs
+  nameWithType: NotifyCollectionChangedEventArgs
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_OnCollectionChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_
+  name: OnCollectionChanged
+  nameWithType: VirtualizingCollection<T>.OnCollectionChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnCollectionChanged
+  nameWithType.vb: VirtualizingCollection(Of T).OnCollectionChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnCollectionChanged
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_OnCollectionReset
+  name: OnCollectionReset
+  nameWithType: VirtualizingCollection<T>.OnCollectionReset
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnCollectionReset
+  nameWithType.vb: VirtualizingCollection(Of T).OnCollectionReset
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnCollectionReset
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Count
+  name: Count
+  nameWithType: VirtualizingCollection<T>.Count
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Count
+  nameWithType.vb: VirtualizingCollection(Of T).Count
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Count
+- uid: System.Collections.Generic.ICollection{{T}}.Count
+  commentId: P:System.Collections.Generic.ICollection{`0}.Count
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.Count
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.count
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: System.Collections.ICollection.Count
+  commentId: P:System.Collections.ICollection.Count
+  parent: System.Collections.ICollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.count
+  name: Count
+  nameWithType: ICollection.Count
+  fullName: System.Collections.ICollection.Count
+- uid: System.Collections.Generic.ICollection`1.Count
+  commentId: P:System.Collections.Generic.ICollection`1.Count
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.count
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Item_System_Int32_
+  name: this
+  nameWithType: VirtualizingCollection<T>.this
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.this
+  nameWithType.vb: VirtualizingCollection(Of T).this[]
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).this[]
+  name.vb: this[]
+- uid: System.Collections.Generic.IList{{T}}.Item(System.Int32)
+  commentId: P:System.Collections.Generic.IList{`0}.Item(System.Int32)
+  parent: System.Collections.Generic.IList{{T}}
+  definition: System.Collections.Generic.IList`1.Item(System.Int32)
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: this[int]
+  nameWithType: IList<T>.this[int]
+  fullName: System.Collections.Generic.IList<T>.this[int]
+  nameWithType.vb: IList(Of T).this[](Integer)
+  fullName.vb: System.Collections.Generic.IList(Of T).this[](Integer)
+  name.vb: this[](Integer)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IList{`0}.Item(System.Int32)
+    name: this[]
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.item
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.IList`1.Item(System.Int32)
+  commentId: P:System.Collections.Generic.IList`1.Item(System.Int32)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: this[int]
+  nameWithType: IList<T>.this[int]
+  fullName: System.Collections.Generic.IList<T>.this[int]
+  nameWithType.vb: IList(Of T).this[](Integer)
+  fullName.vb: System.Collections.Generic.IList(Of T).this[](Integer)
+  name.vb: this[](Integer)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.Item(System.Int32)
+    name: this[]
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.item
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_GetEnumerator
+  name: GetEnumerator
+  nameWithType: VirtualizingCollection<T>.GetEnumerator
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.GetEnumerator
+  nameWithType.vb: VirtualizingCollection(Of T).GetEnumerator
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{{T}}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerator{{T}}
+  commentId: T:System.Collections.Generic.IEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Add__0_
+  name: Add
+  nameWithType: VirtualizingCollection<T>.Add
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Add
+  nameWithType.vb: VirtualizingCollection(Of T).Add
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Add
+- uid: System.Collections.Generic.ICollection{{T}}.Add({T})
+  commentId: M:System.Collections.Generic.ICollection{`0}.Add(`0)
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.Add(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add
+  name: Add(T)
+  nameWithType: ICollection<T>.Add(T)
+  fullName: System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType.vb: ICollection(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{`0}.Add(`0)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{`0}.Add(`0)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.Add(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Add(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add
+  name: Add(T)
+  nameWithType: ICollection<T>.Add(T)
+  fullName: System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType.vb: ICollection(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Contains__0_
+  name: Contains
+  nameWithType: VirtualizingCollection<T>.Contains
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Contains
+  nameWithType.vb: VirtualizingCollection(Of T).Contains
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Contains
+- uid: System.Collections.Generic.ICollection{{T}}.Contains({T})
+  commentId: M:System.Collections.Generic.ICollection{`0}.Contains(`0)
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.Contains(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{`0}.Contains(`0)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{`0}.Contains(`0)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections.Generic.ICollection`1.Contains(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Clear
+  name: Clear
+  nameWithType: VirtualizingCollection<T>.Clear
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Clear
+  nameWithType.vb: VirtualizingCollection(Of T).Clear
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Clear
+- uid: System.Collections.Generic.ICollection{{T}}.Clear
+  commentId: M:System.Collections.Generic.ICollection{`0}.Clear
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.Clear
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{`0}.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{`0}.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  - name: (
+  - name: )
+- uid: System.Collections.IList.Clear
+  commentId: M:System.Collections.IList.Clear
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.clear
+  name: Clear()
+  nameWithType: IList.Clear()
+  fullName: System.Collections.IList.Clear()
+  spec.csharp:
+  - uid: System.Collections.IList.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.IList.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.clear
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.Clear
+  commentId: M:System.Collections.Generic.ICollection`1.Clear
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  - name: (
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IndexOf__0_
+  name: IndexOf
+  nameWithType: VirtualizingCollection<T>.IndexOf
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IndexOf
+  nameWithType.vb: VirtualizingCollection(Of T).IndexOf
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IndexOf
+- uid: System.Collections.Generic.IList{{T}}.IndexOf({T})
+  commentId: M:System.Collections.Generic.IList{`0}.IndexOf(`0)
+  parent: System.Collections.Generic.IList{{T}}
+  definition: System.Collections.Generic.IList`1.IndexOf(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof
+  name: IndexOf(T)
+  nameWithType: IList<T>.IndexOf(T)
+  fullName: System.Collections.Generic.IList<T>.IndexOf(T)
+  nameWithType.vb: IList(Of T).IndexOf(T)
+  fullName.vb: System.Collections.Generic.IList(Of T).IndexOf(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList{`0}.IndexOf(`0)
+    name: IndexOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList{`0}.IndexOf(`0)
+    name: IndexOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IList`1.IndexOf(`0)
+  commentId: M:System.Collections.Generic.IList`1.IndexOf(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof
+  name: IndexOf(T)
+  nameWithType: IList<T>.IndexOf(T)
+  fullName: System.Collections.Generic.IList<T>.IndexOf(T)
+  nameWithType.vb: IList(Of T).IndexOf(T)
+  fullName.vb: System.Collections.Generic.IList(Of T).IndexOf(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.IndexOf(`0)
+    name: IndexOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.IndexOf(`0)
+    name: IndexOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Insert_System_Int32__0_
+  name: Insert
+  nameWithType: VirtualizingCollection<T>.Insert
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Insert
+  nameWithType.vb: VirtualizingCollection(Of T).Insert
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Insert
+- uid: System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
+  commentId: M:System.Collections.Generic.IList{`0}.Insert(System.Int32,`0)
+  parent: System.Collections.Generic.IList{{T}}
+  definition: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert
+  name: Insert(int, T)
+  nameWithType: IList<T>.Insert(int, T)
+  fullName: System.Collections.Generic.IList<T>.Insert(int, T)
+  nameWithType.vb: IList(Of T).Insert(Integer, T)
+  fullName.vb: System.Collections.Generic.IList(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList{`0}.Insert(System.Int32,`0)
+    name: Insert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList{`0}.Insert(System.Int32,`0)
+    name: Insert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+  commentId: M:System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert
+  name: Insert(int, T)
+  nameWithType: IList<T>.Insert(int, T)
+  fullName: System.Collections.Generic.IList<T>.Insert(int, T)
+  nameWithType.vb: IList(Of T).Insert(Integer, T)
+  fullName.vb: System.Collections.Generic.IList(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+    name: Insert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+    name: Insert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_RemoveAt_System_Int32_
+  name: RemoveAt
+  nameWithType: VirtualizingCollection<T>.RemoveAt
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.RemoveAt
+  nameWithType.vb: VirtualizingCollection(Of T).RemoveAt
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).RemoveAt
+- uid: System.Collections.Generic.IList{{T}}.RemoveAt(System.Int32)
+  commentId: M:System.Collections.Generic.IList{`0}.RemoveAt(System.Int32)
+  parent: System.Collections.Generic.IList{{T}}
+  definition: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat
+  name: RemoveAt(int)
+  nameWithType: IList<T>.RemoveAt(int)
+  fullName: System.Collections.Generic.IList<T>.RemoveAt(int)
+  nameWithType.vb: IList(Of T).RemoveAt(Integer)
+  fullName.vb: System.Collections.Generic.IList(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList{`0}.RemoveAt(System.Int32)
+    name: RemoveAt
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList{`0}.RemoveAt(System.Int32)
+    name: RemoveAt
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.IList.RemoveAt(System.Int32)
+  commentId: M:System.Collections.IList.RemoveAt(System.Int32)
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.removeat
+  name: RemoveAt(int)
+  nameWithType: IList.RemoveAt(int)
+  fullName: System.Collections.IList.RemoveAt(int)
+  nameWithType.vb: IList.RemoveAt(Integer)
+  fullName.vb: System.Collections.IList.RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+  spec.csharp:
+  - uid: System.Collections.IList.RemoveAt(System.Int32)
+    name: RemoveAt
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.removeat
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.IList.RemoveAt(System.Int32)
+    name: RemoveAt
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.removeat
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+  commentId: M:System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat
+  name: RemoveAt(int)
+  nameWithType: IList<T>.RemoveAt(int)
+  fullName: System.Collections.Generic.IList<T>.RemoveAt(int)
+  nameWithType.vb: IList(Of T).RemoveAt(Integer)
+  fullName.vb: System.Collections.Generic.IList(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Remove__0_
+  name: Remove
+  nameWithType: VirtualizingCollection<T>.Remove
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Remove
+  nameWithType.vb: VirtualizingCollection(Of T).Remove
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Remove
+- uid: System.Collections.Generic.ICollection{{T}}.Remove({T})
+  commentId: M:System.Collections.Generic.ICollection{`0}.Remove(`0)
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.Remove(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{`0}.Remove(`0)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{`0}.Remove(`0)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.Remove(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Remove(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Array
+  commentId: T:System.Array
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_CopyTo__0___System_Int32_
+  name: CopyTo
+  nameWithType: VirtualizingCollection<T>.CopyTo
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CopyTo
+  nameWithType.vb: VirtualizingCollection(Of T).CopyTo
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CopyTo
+- uid: System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection{`0}.CopyTo(`0[],System.Int32)
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  name: CopyTo(T[], int)
+  nameWithType: ICollection<T>.CopyTo(T[], int)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], int)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Integer)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{`0}.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  - name: (
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{`0}.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  - name: (
+  - name: T
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: T
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  name: CopyTo(T[], int)
+  nameWithType: ICollection<T>.CopyTo(T[], int)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], int)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Integer)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  - name: (
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  - name: (
+  - name: T
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_SyncRoot
+  name: SyncRoot
+  nameWithType: VirtualizingCollection<T>.SyncRoot
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.SyncRoot
+  nameWithType.vb: VirtualizingCollection(Of T).SyncRoot
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).SyncRoot
+- uid: System.Collections.ICollection.SyncRoot
+  commentId: P:System.Collections.ICollection.SyncRoot
+  parent: System.Collections.ICollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.syncroot
+  name: SyncRoot
+  nameWithType: ICollection.SyncRoot
+  fullName: System.Collections.ICollection.SyncRoot
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsSynchronized
+  name: IsSynchronized
+  nameWithType: VirtualizingCollection<T>.IsSynchronized
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsSynchronized
+  nameWithType.vb: VirtualizingCollection(Of T).IsSynchronized
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsSynchronized
+- uid: System.Collections.ICollection.IsSynchronized
+  commentId: P:System.Collections.ICollection.IsSynchronized
+  parent: System.Collections.ICollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.issynchronized
+  name: IsSynchronized
+  nameWithType: ICollection.IsSynchronized
+  fullName: System.Collections.ICollection.IsSynchronized
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsReadOnly
+  name: IsReadOnly
+  nameWithType: VirtualizingCollection<T>.IsReadOnly
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsReadOnly
+  nameWithType.vb: VirtualizingCollection(Of T).IsReadOnly
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsReadOnly
+- uid: System.Collections.Generic.ICollection{{T}}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{`0}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: System.Collections.IList.IsReadOnly
+  commentId: P:System.Collections.IList.IsReadOnly
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isreadonly
+  name: IsReadOnly
+  nameWithType: IList.IsReadOnly
+  fullName: System.Collections.IList.IsReadOnly
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsFixedSize
+  name: IsFixedSize
+  nameWithType: VirtualizingCollection<T>.IsFixedSize
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsFixedSize
+  nameWithType.vb: VirtualizingCollection(Of T).IsFixedSize
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsFixedSize
+- uid: System.Collections.IList.IsFixedSize
+  commentId: P:System.Collections.IList.IsFixedSize
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isfixedsize
+  name: IsFixedSize
+  nameWithType: IList.IsFixedSize
+  fullName: System.Collections.IList.IsFixedSize
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Refresh*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Refresh
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Refresh
+  name: Refresh
+  nameWithType: VirtualizingCollection<T>.Refresh
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Refresh
+  nameWithType.vb: VirtualizingCollection(Of T).Refresh
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Refresh
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CleanUpPages*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CleanUpPages
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_CleanUpPages
+  name: CleanUpPages
+  nameWithType: VirtualizingCollection<T>.CleanUpPages
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CleanUpPages
+  nameWithType.vb: VirtualizingCollection(Of T).CleanUpPages
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CleanUpPages
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_PopulatePage_System_Int32_System_Collections_Generic_IList__0__
+  name: PopulatePage
+  nameWithType: VirtualizingCollection<T>.PopulatePage
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PopulatePage
+  nameWithType.vb: VirtualizingCollection(Of T).PopulatePage
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PopulatePage
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_RequestPage_System_Int32_
+  name: RequestPage
+  nameWithType: VirtualizingCollection<T>.RequestPage
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.RequestPage
+  nameWithType.vb: VirtualizingCollection(Of T).RequestPage
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).RequestPage
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadCount*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadCount
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_LoadCount
+  name: LoadCount
+  nameWithType: VirtualizingCollection<T>.LoadCount
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.LoadCount
+  nameWithType.vb: VirtualizingCollection(Of T).LoadCount
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).LoadCount
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_LoadPage_System_Int32_
+  name: LoadPage
+  nameWithType: VirtualizingCollection<T>.LoadPage
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.LoadPage
+  nameWithType.vb: VirtualizingCollection(Of T).LoadPage
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).LoadPage
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_FetchPage_System_Int32_
+  name: FetchPage
+  nameWithType: VirtualizingCollection<T>.FetchPage
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.FetchPage
+  nameWithType.vb: VirtualizingCollection(Of T).FetchPage
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).FetchPage
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_FetchCount
+  name: FetchCount
+  nameWithType: VirtualizingCollection<T>.FetchCount
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.FetchCount
+  nameWithType.vb: VirtualizingCollection(Of T).FetchCount
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).FetchCount

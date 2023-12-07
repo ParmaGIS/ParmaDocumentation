@@ -1,0 +1,630 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Core.Storage.IItemProxy`2
+  commentId: T:ParmaGIS.Core.Storage.IItemProxy`2
+  id: IItemProxy`2
+  parent: ParmaGIS.Core.Storage
+  children:
+  - ParmaGIS.Core.Storage.IItemProxy`2.Read(ParmaGIS.Core.Storage.ISourceReader,System.String)
+  - ParmaGIS.Core.Storage.IItemProxy`2.Remove(ParmaGIS.Core.Storage.IStorage,`0)
+  - ParmaGIS.Core.Storage.IItemProxy`2.Restore(ParmaGIS.Core.Storage.IStorage)
+  - ParmaGIS.Core.Storage.IItemProxy`2.Restore(ParmaGIS.Core.Storage.IStorage,System.Guid)
+  - ParmaGIS.Core.Storage.IItemProxy`2.Save(ParmaGIS.Core.Storage.IStorage,`0)
+  - ParmaGIS.Core.Storage.IItemProxy`2.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,`0)
+  langs:
+  - csharp
+  - vb
+  name: IItemProxy<TItem, TStorable>
+  nameWithType: IItemProxy<TItem, TStorable>
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>
+  type: Interface
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IItemProxy
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 165
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: 'public interface IItemProxy<TItem, TStorable> : IItemProxy where TStorable : IStorable'
+    typeParameters:
+    - id: TItem
+    - id: TStorable
+    content.vb: Public Interface IItemProxy(Of TItem, TStorable As IStorable) Inherits IItemProxy
+  inheritedMembers:
+  - ParmaGIS.Core.Storage.IItemProxy.ItemType
+  - ParmaGIS.Core.Storage.IItemProxy.StorableType
+  - ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage,System.Object)
+  - ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage,System.Object)
+  - ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,System.Object)
+  nameWithType.vb: IItemProxy(Of TItem, TStorable)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable)
+  name.vb: IItemProxy(Of TItem, TStorable)
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Restore(ParmaGIS.Core.Storage.IStorage,System.Guid)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy`2.Restore(ParmaGIS.Core.Storage.IStorage,System.Guid)
+  id: Restore(ParmaGIS.Core.Storage.IStorage,System.Guid)
+  parent: ParmaGIS.Core.Storage.IItemProxy`2
+  langs:
+  - csharp
+  - vb
+  name: Restore(IStorage, Guid)
+  nameWithType: IItemProxy<TItem, TStorable>.Restore(IStorage, Guid)
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Restore(ParmaGIS.Core.Storage.IStorage, System.Guid)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Restore
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 168
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: TItem Restore(IStorage storage, Guid key)
+    parameters:
+    - id: storage
+      type: ParmaGIS.Core.Storage.IStorage
+    - id: key
+      type: System.Guid
+    return:
+      type: '{TItem}'
+    content.vb: Function Restore(storage As IStorage, key As Guid) As TItem
+  overload: ParmaGIS.Core.Storage.IItemProxy`2.Restore*
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Restore(IStorage, Guid)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Restore(ParmaGIS.Core.Storage.IStorage, System.Guid)
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Restore(ParmaGIS.Core.Storage.IStorage)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy`2.Restore(ParmaGIS.Core.Storage.IStorage)
+  id: Restore(ParmaGIS.Core.Storage.IStorage)
+  parent: ParmaGIS.Core.Storage.IItemProxy`2
+  langs:
+  - csharp
+  - vb
+  name: Restore(IStorage)
+  nameWithType: IItemProxy<TItem, TStorable>.Restore(IStorage)
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Restore(ParmaGIS.Core.Storage.IStorage)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Restore
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 169
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: IEnumerable<TItem> Restore(IStorage storage)
+    parameters:
+    - id: storage
+      type: ParmaGIS.Core.Storage.IStorage
+    return:
+      type: System.Collections.Generic.IEnumerable{{TItem}}
+    content.vb: Function Restore(storage As IStorage) As IEnumerable(Of TItem)
+  overload: ParmaGIS.Core.Storage.IItemProxy`2.Restore*
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Restore(IStorage)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Restore(ParmaGIS.Core.Storage.IStorage)
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Save(ParmaGIS.Core.Storage.IStorage,`0)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy`2.Save(ParmaGIS.Core.Storage.IStorage,`0)
+  id: Save(ParmaGIS.Core.Storage.IStorage,`0)
+  parent: ParmaGIS.Core.Storage.IItemProxy`2
+  langs:
+  - csharp
+  - vb
+  name: Save(IStorage, TItem)
+  nameWithType: IItemProxy<TItem, TStorable>.Save(IStorage, TItem)
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Save(ParmaGIS.Core.Storage.IStorage, TItem)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Save
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 170
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: void Save(IStorage storage, TItem item)
+    parameters:
+    - id: storage
+      type: ParmaGIS.Core.Storage.IStorage
+    - id: item
+      type: '{TItem}'
+    content.vb: Sub Save(storage As IStorage, item As TItem)
+  overload: ParmaGIS.Core.Storage.IItemProxy`2.Save*
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Save(IStorage, TItem)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Save(ParmaGIS.Core.Storage.IStorage, TItem)
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Remove(ParmaGIS.Core.Storage.IStorage,`0)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy`2.Remove(ParmaGIS.Core.Storage.IStorage,`0)
+  id: Remove(ParmaGIS.Core.Storage.IStorage,`0)
+  parent: ParmaGIS.Core.Storage.IItemProxy`2
+  langs:
+  - csharp
+  - vb
+  name: Remove(IStorage, TItem)
+  nameWithType: IItemProxy<TItem, TStorable>.Remove(IStorage, TItem)
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Remove(ParmaGIS.Core.Storage.IStorage, TItem)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Remove
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 171
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: void Remove(IStorage storage, TItem item)
+    parameters:
+    - id: storage
+      type: ParmaGIS.Core.Storage.IStorage
+    - id: item
+      type: '{TItem}'
+    content.vb: Sub Remove(storage As IStorage, item As TItem)
+  overload: ParmaGIS.Core.Storage.IItemProxy`2.Remove*
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Remove(IStorage, TItem)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Remove(ParmaGIS.Core.Storage.IStorage, TItem)
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Read(ParmaGIS.Core.Storage.ISourceReader,System.String)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy`2.Read(ParmaGIS.Core.Storage.ISourceReader,System.String)
+  id: Read(ParmaGIS.Core.Storage.ISourceReader,System.String)
+  parent: ParmaGIS.Core.Storage.IItemProxy`2
+  langs:
+  - csharp
+  - vb
+  name: Read(ISourceReader, string)
+  nameWithType: IItemProxy<TItem, TStorable>.Read(ISourceReader, string)
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Read(ParmaGIS.Core.Storage.ISourceReader, string)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Read
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 173
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: TItem Read(ISourceReader reader, string propertyName)
+    parameters:
+    - id: reader
+      type: ParmaGIS.Core.Storage.ISourceReader
+    - id: propertyName
+      type: System.String
+    return:
+      type: '{TItem}'
+    content.vb: Function Read(reader As ISourceReader, propertyName As String) As TItem
+  overload: ParmaGIS.Core.Storage.IItemProxy`2.Read*
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Read(ISourceReader, String)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Read(ParmaGIS.Core.Storage.ISourceReader, String)
+  name.vb: Read(ISourceReader, String)
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,`0)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy`2.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,`0)
+  id: Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,`0)
+  parent: ParmaGIS.Core.Storage.IItemProxy`2
+  langs:
+  - csharp
+  - vb
+  name: Write(ISourceWriter, string, TItem)
+  nameWithType: IItemProxy<TItem, TStorable>.Write(ISourceWriter, string, TItem)
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Write(ParmaGIS.Core.Storage.ISourceWriter, string, TItem)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Write
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/ItemExtractor.cs
+    startLine: 174
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: void Write(ISourceWriter writer, string propertyName, TItem item)
+    parameters:
+    - id: writer
+      type: ParmaGIS.Core.Storage.ISourceWriter
+    - id: propertyName
+      type: System.String
+    - id: item
+      type: '{TItem}'
+    content.vb: Sub Write(writer As ISourceWriter, propertyName As String, item As TItem)
+  overload: ParmaGIS.Core.Storage.IItemProxy`2.Write*
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Write(ISourceWriter, String, TItem)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Write(ParmaGIS.Core.Storage.ISourceWriter, String, TItem)
+  name.vb: Write(ISourceWriter, String, TItem)
+references:
+- uid: ParmaGIS.Core.Storage
+  commentId: N:ParmaGIS.Core.Storage
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Storage
+  nameWithType: ParmaGIS.Core.Storage
+  fullName: ParmaGIS.Core.Storage
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Storage
+    name: Storage
+    href: ParmaGIS.Core.Storage.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Storage
+    name: Storage
+    href: ParmaGIS.Core.Storage.html
+- uid: ParmaGIS.Core.Storage.IItemProxy.ItemType
+  commentId: P:ParmaGIS.Core.Storage.IItemProxy.ItemType
+  parent: ParmaGIS.Core.Storage.IItemProxy
+  href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_ItemType
+  name: ItemType
+  nameWithType: IItemProxy.ItemType
+  fullName: ParmaGIS.Core.Storage.IItemProxy.ItemType
+- uid: ParmaGIS.Core.Storage.IItemProxy.StorableType
+  commentId: P:ParmaGIS.Core.Storage.IItemProxy.StorableType
+  parent: ParmaGIS.Core.Storage.IItemProxy
+  href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_StorableType
+  name: StorableType
+  nameWithType: IItemProxy.StorableType
+  fullName: ParmaGIS.Core.Storage.IItemProxy.StorableType
+- uid: ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage,System.Object)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage,System.Object)
+  parent: ParmaGIS.Core.Storage.IItemProxy
+  isExternal: true
+  href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Save_ParmaGIS_Core_Storage_IStorage_System_Object_
+  name: Save(IStorage, object)
+  nameWithType: IItemProxy.Save(IStorage, object)
+  fullName: ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage, object)
+  nameWithType.vb: IItemProxy.Save(IStorage, Object)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage, Object)
+  name.vb: Save(IStorage, Object)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage,System.Object)
+    name: Save
+    href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Save_ParmaGIS_Core_Storage_IStorage_System_Object_
+  - name: (
+  - uid: ParmaGIS.Core.Storage.IStorage
+    name: IStorage
+    href: ParmaGIS.Core.Storage.IStorage.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Storage.IItemProxy.Save(ParmaGIS.Core.Storage.IStorage,System.Object)
+    name: Save
+    href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Save_ParmaGIS_Core_Storage_IStorage_System_Object_
+  - name: (
+  - uid: ParmaGIS.Core.Storage.IStorage
+    name: IStorage
+    href: ParmaGIS.Core.Storage.IStorage.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage,System.Object)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage,System.Object)
+  parent: ParmaGIS.Core.Storage.IItemProxy
+  isExternal: true
+  href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Remove_ParmaGIS_Core_Storage_IStorage_System_Object_
+  name: Remove(IStorage, object)
+  nameWithType: IItemProxy.Remove(IStorage, object)
+  fullName: ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage, object)
+  nameWithType.vb: IItemProxy.Remove(IStorage, Object)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage, Object)
+  name.vb: Remove(IStorage, Object)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage,System.Object)
+    name: Remove
+    href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Remove_ParmaGIS_Core_Storage_IStorage_System_Object_
+  - name: (
+  - uid: ParmaGIS.Core.Storage.IStorage
+    name: IStorage
+    href: ParmaGIS.Core.Storage.IStorage.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Storage.IItemProxy.Remove(ParmaGIS.Core.Storage.IStorage,System.Object)
+    name: Remove
+    href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Remove_ParmaGIS_Core_Storage_IStorage_System_Object_
+  - name: (
+  - uid: ParmaGIS.Core.Storage.IStorage
+    name: IStorage
+    href: ParmaGIS.Core.Storage.IStorage.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,System.Object)
+  commentId: M:ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,System.Object)
+  parent: ParmaGIS.Core.Storage.IItemProxy
+  isExternal: true
+  href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Write_ParmaGIS_Core_Storage_ISourceWriter_System_String_System_Object_
+  name: Write(ISourceWriter, string, object)
+  nameWithType: IItemProxy.Write(ISourceWriter, string, object)
+  fullName: ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter, string, object)
+  nameWithType.vb: IItemProxy.Write(ISourceWriter, String, Object)
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter, String, Object)
+  name.vb: Write(ISourceWriter, String, Object)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,System.Object)
+    name: Write
+    href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Write_ParmaGIS_Core_Storage_ISourceWriter_System_String_System_Object_
+  - name: (
+  - uid: ParmaGIS.Core.Storage.ISourceWriter
+    name: ISourceWriter
+    href: ParmaGIS.Core.Storage.ISourceWriter.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Storage.IItemProxy.Write(ParmaGIS.Core.Storage.ISourceWriter,System.String,System.Object)
+    name: Write
+    href: ParmaGIS.Core.Storage.IItemProxy.html#ParmaGIS_Core_Storage_IItemProxy_Write_ParmaGIS_Core_Storage_ISourceWriter_System_String_System_Object_
+  - name: (
+  - uid: ParmaGIS.Core.Storage.ISourceWriter
+    name: ISourceWriter
+    href: ParmaGIS.Core.Storage.ISourceWriter.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.Core.Storage.IItemProxy
+  commentId: T:ParmaGIS.Core.Storage.IItemProxy
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IItemProxy.html
+  name: IItemProxy
+  nameWithType: IItemProxy
+  fullName: ParmaGIS.Core.Storage.IItemProxy
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Restore*
+  commentId: Overload:ParmaGIS.Core.Storage.IItemProxy`2.Restore
+  href: ParmaGIS.Core.Storage.IItemProxy-2.html#ParmaGIS_Core_Storage_IItemProxy_2_Restore_ParmaGIS_Core_Storage_IStorage_System_Guid_
+  name: Restore
+  nameWithType: IItemProxy<TItem, TStorable>.Restore
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Restore
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Restore
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Restore
+- uid: ParmaGIS.Core.Storage.IStorage
+  commentId: T:ParmaGIS.Core.Storage.IStorage
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IStorage.html
+  name: IStorage
+  nameWithType: IStorage
+  fullName: ParmaGIS.Core.Storage.IStorage
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: '{TItem}'
+  commentId: '!:TItem'
+  definition: TItem
+  name: TItem
+  nameWithType: TItem
+  fullName: TItem
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TItem
+  name: TItem
+  nameWithType: TItem
+  fullName: TItem
+- uid: System.Collections.Generic.IEnumerable{{TItem}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<TItem>
+  nameWithType: IEnumerable<TItem>
+  fullName: System.Collections.Generic.IEnumerable<TItem>
+  nameWithType.vb: IEnumerable(Of TItem)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TItem)
+  name.vb: IEnumerable(Of TItem)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TItem
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Save*
+  commentId: Overload:ParmaGIS.Core.Storage.IItemProxy`2.Save
+  href: ParmaGIS.Core.Storage.IItemProxy-2.html#ParmaGIS_Core_Storage_IItemProxy_2_Save_ParmaGIS_Core_Storage_IStorage__0_
+  name: Save
+  nameWithType: IItemProxy<TItem, TStorable>.Save
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Save
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Save
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Save
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Remove*
+  commentId: Overload:ParmaGIS.Core.Storage.IItemProxy`2.Remove
+  href: ParmaGIS.Core.Storage.IItemProxy-2.html#ParmaGIS_Core_Storage_IItemProxy_2_Remove_ParmaGIS_Core_Storage_IStorage__0_
+  name: Remove
+  nameWithType: IItemProxy<TItem, TStorable>.Remove
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Remove
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Remove
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Remove
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Read*
+  commentId: Overload:ParmaGIS.Core.Storage.IItemProxy`2.Read
+  href: ParmaGIS.Core.Storage.IItemProxy-2.html#ParmaGIS_Core_Storage_IItemProxy_2_Read_ParmaGIS_Core_Storage_ISourceReader_System_String_
+  name: Read
+  nameWithType: IItemProxy<TItem, TStorable>.Read
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Read
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Read
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Read
+- uid: ParmaGIS.Core.Storage.ISourceReader
+  commentId: T:ParmaGIS.Core.Storage.ISourceReader
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.ISourceReader.html
+  name: ISourceReader
+  nameWithType: ISourceReader
+  fullName: ParmaGIS.Core.Storage.ISourceReader
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ParmaGIS.Core.Storage.IItemProxy`2.Write*
+  commentId: Overload:ParmaGIS.Core.Storage.IItemProxy`2.Write
+  href: ParmaGIS.Core.Storage.IItemProxy-2.html#ParmaGIS_Core_Storage_IItemProxy_2_Write_ParmaGIS_Core_Storage_ISourceWriter_System_String__0_
+  name: Write
+  nameWithType: IItemProxy<TItem, TStorable>.Write
+  fullName: ParmaGIS.Core.Storage.IItemProxy<TItem, TStorable>.Write
+  nameWithType.vb: IItemProxy(Of TItem, TStorable).Write
+  fullName.vb: ParmaGIS.Core.Storage.IItemProxy(Of TItem, TStorable).Write
+- uid: ParmaGIS.Core.Storage.ISourceWriter
+  commentId: T:ParmaGIS.Core.Storage.ISourceWriter
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.ISourceWriter.html
+  name: ISourceWriter
+  nameWithType: ISourceWriter
+  fullName: ParmaGIS.Core.Storage.ISourceWriter

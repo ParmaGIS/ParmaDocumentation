@@ -1,0 +1,711 @@
+### YamlMime:ManagedReference
+items:
+- uid: Common.Subject.Types.BusinessmanType
+  commentId: T:Common.Subject.Types.BusinessmanType
+  id: BusinessmanType
+  parent: Common.Subject.Types
+  children:
+  - Common.Subject.Types.BusinessmanType.Attorney
+  - Common.Subject.Types.BusinessmanType.Email
+  - Common.Subject.Types.BusinessmanType.Inn
+  - Common.Subject.Types.BusinessmanType.Name
+  - Common.Subject.Types.BusinessmanType.Ogrnip
+  langs:
+  - csharp
+  - vb
+  name: BusinessmanType
+  nameWithType: BusinessmanType
+  fullName: Common.Subject.Types.BusinessmanType
+  type: Class
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: BusinessmanType
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 374
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: <p>Сведения об индивидуальном предпринимателе</p>
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class BusinessmanType
+    content.vb: >-
+      <Serializable>
+
+      Public Class BusinessmanType
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.BusinessmanType.Name
+  commentId: P:Common.Subject.Types.BusinessmanType.Name
+  id: Name
+  parent: Common.Subject.Types.BusinessmanType
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: BusinessmanType.Name
+  fullName: Common.Subject.Types.BusinessmanType.Name
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Name
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 386
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: <p>Фамилия, имя, отчество (при наличии)</p>
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public PersonNameType Name { get; set; }
+    parameters: []
+    return:
+      type: Common.Complex.Types.PersonNameType
+    content.vb: >-
+      <Required>
+
+      Public Property Name As PersonNameType
+  overload: Common.Subject.Types.BusinessmanType.Name*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.BusinessmanType.Inn
+  commentId: P:Common.Subject.Types.BusinessmanType.Inn
+  id: Inn
+  parent: Common.Subject.Types.BusinessmanType
+  langs:
+  - csharp
+  - vb
+  name: Inn
+  nameWithType: BusinessmanType.Inn
+  fullName: Common.Subject.Types.BusinessmanType.Inn
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Inn
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 398
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>ИНН</p>
+
+    <p>Тип ИНН физического лица</p>
+
+    <p>Minimum length: 12.</p>
+
+    <p>Maximum length: 12.</p>
+
+    <p>Pattern: ([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}.</p>
+  example: []
+  syntax:
+    content: >-
+      [MinLength(12)]
+
+      [MaxLength(12)]
+
+      [RegularExpression("([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}")]
+
+      [Required]
+
+      public string Inn { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(12)>
+
+      <MaxLength(12)>
+
+      <RegularExpression("([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}")>
+
+      <Required>
+
+      Public Property Inn As String
+  overload: Common.Subject.Types.BusinessmanType.Inn*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 12
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 12
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.BusinessmanType.Ogrnip
+  commentId: P:Common.Subject.Types.BusinessmanType.Ogrnip
+  id: Ogrnip
+  parent: Common.Subject.Types.BusinessmanType
+  langs:
+  - csharp
+  - vb
+  name: Ogrnip
+  nameWithType: BusinessmanType.Ogrnip
+  fullName: Common.Subject.Types.BusinessmanType.Ogrnip
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Ogrnip
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 413
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>ОГРНИП</p>
+
+    <p>Тип ОГРН индивидуального предпринимателя</p>
+
+    <p>Minimum length: 15.</p>
+
+    <p>Maximum length: 15.</p>
+
+    <p>Pattern: [0-9]{15}.</p>
+  example: []
+  syntax:
+    content: >-
+      [MinLength(15)]
+
+      [MaxLength(15)]
+
+      [RegularExpression("[0-9]{15}")]
+
+      [Required]
+
+      public string Ogrnip { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(15)>
+
+      <MaxLength(15)>
+
+      <RegularExpression("[0-9]{15}")>
+
+      <Required>
+
+      Public Property Ogrnip As String
+  overload: Common.Subject.Types.BusinessmanType.Ogrnip*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 15
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 15
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '[0-9]{15}'
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.BusinessmanType.Email
+  commentId: P:Common.Subject.Types.BusinessmanType.Email
+  id: Email
+  parent: Common.Subject.Types.BusinessmanType
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: BusinessmanType.Email
+  fullName: Common.Subject.Types.BusinessmanType.Email
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Email
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 428
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>Адрес электронной почты</p>
+
+    <p>Тип Адрес электронной почты</p>
+
+    <p>Minimum length: 1.</p>
+
+    <p>Maximum length: 60.</p>
+
+    <p>Pattern: \c+@\c+\.\c+.</p>
+  example: []
+  syntax:
+    content: >-
+      [MinLength(1)]
+
+      [MaxLength(60)]
+
+      [RegularExpression("\\c+@\\c+\\.\\c+")]
+
+      [Required]
+
+      public string Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(1)>
+
+      <MaxLength(60)>
+
+      <RegularExpression("\c+@\c+\.\c+")>
+
+      <Required>
+
+      Public Property Email As String
+  overload: Common.Subject.Types.BusinessmanType.Email*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 60
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '\c+@\c+\.\c+'
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.BusinessmanType.Attorney
+  commentId: P:Common.Subject.Types.BusinessmanType.Attorney
+  id: Attorney
+  parent: Common.Subject.Types.BusinessmanType
+  langs:
+  - csharp
+  - vb
+  name: Attorney
+  nameWithType: BusinessmanType.Attorney
+  fullName: Common.Subject.Types.BusinessmanType.Attorney
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Attorney
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 439
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: <p>Сведения о представителе индивидуального предпринимателя</p>
+  example: []
+  syntax:
+    content: public AttorneyType Attorney { get; set; }
+    parameters: []
+    return:
+      type: Common.Subject.Types.AttorneyType
+    content.vb: Public Property Attorney As AttorneyType
+  overload: Common.Subject.Types.BusinessmanType.Attorney*
+references:
+- uid: Common.Subject.Types
+  commentId: N:Common.Subject.Types
+  href: Common.html
+  name: Common.Subject.Types
+  nameWithType: Common.Subject.Types
+  fullName: Common.Subject.Types
+  spec.csharp:
+  - uid: Common
+    name: Common
+    href: Common.html
+  - name: .
+  - uid: Common.Subject
+    name: Subject
+    href: Common.Subject.html
+  - name: .
+  - uid: Common.Subject.Types
+    name: Types
+    href: Common.Subject.Types.html
+  spec.vb:
+  - uid: Common
+    name: Common
+    href: Common.html
+  - name: .
+  - uid: Common.Subject
+    name: Subject
+    href: Common.Subject.html
+  - name: .
+  - uid: Common.Subject.Types
+    name: Types
+    href: Common.Subject.Types.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Common.Subject.Types.BusinessmanType.Name*
+  commentId: Overload:Common.Subject.Types.BusinessmanType.Name
+  href: Common.Subject.Types.BusinessmanType.html#Common_Subject_Types_BusinessmanType_Name
+  name: Name
+  nameWithType: BusinessmanType.Name
+  fullName: Common.Subject.Types.BusinessmanType.Name
+- uid: Common.Complex.Types.PersonNameType
+  commentId: T:Common.Complex.Types.PersonNameType
+  parent: Common.Complex.Types
+  href: Common.Complex.Types.PersonNameType.html
+  name: PersonNameType
+  nameWithType: PersonNameType
+  fullName: Common.Complex.Types.PersonNameType
+- uid: Common.Complex.Types
+  commentId: N:Common.Complex.Types
+  href: Common.html
+  name: Common.Complex.Types
+  nameWithType: Common.Complex.Types
+  fullName: Common.Complex.Types
+  spec.csharp:
+  - uid: Common
+    name: Common
+    href: Common.html
+  - name: .
+  - uid: Common.Complex
+    name: Complex
+    href: Common.Complex.html
+  - name: .
+  - uid: Common.Complex.Types
+    name: Types
+    href: Common.Complex.Types.html
+  spec.vb:
+  - uid: Common
+    name: Common
+    href: Common.html
+  - name: .
+  - uid: Common.Complex
+    name: Complex
+    href: Common.Complex.html
+  - name: .
+  - uid: Common.Complex.Types
+    name: Types
+    href: Common.Complex.Types.html
+- uid: Common.Subject.Types.BusinessmanType.Inn*
+  commentId: Overload:Common.Subject.Types.BusinessmanType.Inn
+  href: Common.Subject.Types.BusinessmanType.html#Common_Subject_Types_BusinessmanType_Inn
+  name: Inn
+  nameWithType: BusinessmanType.Inn
+  fullName: Common.Subject.Types.BusinessmanType.Inn
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Common.Subject.Types.BusinessmanType.Ogrnip*
+  commentId: Overload:Common.Subject.Types.BusinessmanType.Ogrnip
+  href: Common.Subject.Types.BusinessmanType.html#Common_Subject_Types_BusinessmanType_Ogrnip
+  name: Ogrnip
+  nameWithType: BusinessmanType.Ogrnip
+  fullName: Common.Subject.Types.BusinessmanType.Ogrnip
+- uid: Common.Subject.Types.BusinessmanType.Email*
+  commentId: Overload:Common.Subject.Types.BusinessmanType.Email
+  href: Common.Subject.Types.BusinessmanType.html#Common_Subject_Types_BusinessmanType_Email
+  name: Email
+  nameWithType: BusinessmanType.Email
+  fullName: Common.Subject.Types.BusinessmanType.Email
+- uid: Common.Subject.Types.BusinessmanType.Attorney*
+  commentId: Overload:Common.Subject.Types.BusinessmanType.Attorney
+  href: Common.Subject.Types.BusinessmanType.html#Common_Subject_Types_BusinessmanType_Attorney
+  name: Attorney
+  nameWithType: BusinessmanType.Attorney
+  fullName: Common.Subject.Types.BusinessmanType.Attorney
+- uid: Common.Subject.Types.AttorneyType
+  commentId: T:Common.Subject.Types.AttorneyType
+  parent: Common.Subject.Types
+  href: Common.Subject.Types.AttorneyType.html
+  name: AttorneyType
+  nameWithType: AttorneyType
+  fullName: Common.Subject.Types.AttorneyType

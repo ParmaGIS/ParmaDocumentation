@@ -1,0 +1,439 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Core.Storage.IStorage
+  commentId: T:ParmaGIS.Core.Storage.IStorage
+  id: IStorage
+  parent: ParmaGIS.Core.Storage
+  children:
+  - ParmaGIS.Core.Storage.IStorage.GetItem``1(System.Guid)
+  - ParmaGIS.Core.Storage.IStorage.GetItems``1
+  - ParmaGIS.Core.Storage.IStorage.RemoveItem(ParmaGIS.Core.Storage.IStorable)
+  - ParmaGIS.Core.Storage.IStorage.SetItem(ParmaGIS.Core.Storage.IStorable)
+  - ParmaGIS.Core.Storage.IStorage.StorageChanged
+  langs:
+  - csharp
+  - vb
+  name: IStorage
+  nameWithType: IStorage
+  fullName: ParmaGIS.Core.Storage.IStorage
+  type: Interface
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/IStorage.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IStorage
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/IStorage.cs
+    startLine: 6
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  summary: Хранит и предоставляет доступ к <xref href="ParmaGIS.Core.Storage.IStorable" data-throw-if-not-resolved="false"></xref> объектам.
+  example: []
+  syntax:
+    content: public interface IStorage
+    content.vb: Public Interface IStorage
+- uid: ParmaGIS.Core.Storage.IStorage.GetItem``1(System.Guid)
+  commentId: M:ParmaGIS.Core.Storage.IStorage.GetItem``1(System.Guid)
+  id: GetItem``1(System.Guid)
+  parent: ParmaGIS.Core.Storage.IStorage
+  langs:
+  - csharp
+  - vb
+  name: GetItem<T>(Guid)
+  nameWithType: IStorage.GetItem<T>(Guid)
+  fullName: ParmaGIS.Core.Storage.IStorage.GetItem<T>(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/IStorage.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetItem
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/IStorage.cs
+    startLine: 12
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  summary: Возвращает <xref href="ParmaGIS.Core.Storage.IStorable" data-throw-if-not-resolved="false"></xref> объект по заданному типу и ключу.
+  example: []
+  syntax:
+    content: 'T GetItem<T>(Guid key) where T : IStorable'
+    parameters:
+    - id: key
+      type: System.Guid
+      description: Ключ объекта.
+    typeParameters:
+    - id: T
+      description: Тип объекта.
+    return:
+      type: '{T}'
+      description: Объект указанного типа.
+    content.vb: Function GetItem(Of T As IStorable)(key As Guid) As T
+  overload: ParmaGIS.Core.Storage.IStorage.GetItem*
+  nameWithType.vb: IStorage.GetItem(Of T)(Guid)
+  fullName.vb: ParmaGIS.Core.Storage.IStorage.GetItem(Of T)(System.Guid)
+  name.vb: GetItem(Of T)(Guid)
+- uid: ParmaGIS.Core.Storage.IStorage.SetItem(ParmaGIS.Core.Storage.IStorable)
+  commentId: M:ParmaGIS.Core.Storage.IStorage.SetItem(ParmaGIS.Core.Storage.IStorable)
+  id: SetItem(ParmaGIS.Core.Storage.IStorable)
+  parent: ParmaGIS.Core.Storage.IStorage
+  langs:
+  - csharp
+  - vb
+  name: SetItem(IStorable)
+  nameWithType: IStorage.SetItem(IStorable)
+  fullName: ParmaGIS.Core.Storage.IStorage.SetItem(ParmaGIS.Core.Storage.IStorable)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/IStorage.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SetItem
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/IStorage.cs
+    startLine: 19
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  summary: Задает <xref href="ParmaGIS.Core.Storage.IStorable" data-throw-if-not-resolved="false"></xref> обект. Если объект с таким ключом уже существует, то он будет подменен.
+  example: []
+  syntax:
+    content: void SetItem(IStorable item)
+    parameters:
+    - id: item
+      type: ParmaGIS.Core.Storage.IStorable
+      description: ''
+    content.vb: Sub SetItem(item As IStorable)
+  overload: ParmaGIS.Core.Storage.IStorage.SetItem*
+- uid: ParmaGIS.Core.Storage.IStorage.GetItems``1
+  commentId: M:ParmaGIS.Core.Storage.IStorage.GetItems``1
+  id: GetItems``1
+  parent: ParmaGIS.Core.Storage.IStorage
+  langs:
+  - csharp
+  - vb
+  name: GetItems<T>()
+  nameWithType: IStorage.GetItems<T>()
+  fullName: ParmaGIS.Core.Storage.IStorage.GetItems<T>()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/IStorage.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetItems
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/IStorage.cs
+    startLine: 21
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: 'IEnumerable<T> GetItems<T>() where T : IStorable'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.IEnumerable{{T}}
+    content.vb: Function GetItems(Of T As IStorable)() As IEnumerable(Of T)
+  overload: ParmaGIS.Core.Storage.IStorage.GetItems*
+  nameWithType.vb: IStorage.GetItems(Of T)()
+  fullName.vb: ParmaGIS.Core.Storage.IStorage.GetItems(Of T)()
+  name.vb: GetItems(Of T)()
+- uid: ParmaGIS.Core.Storage.IStorage.RemoveItem(ParmaGIS.Core.Storage.IStorable)
+  commentId: M:ParmaGIS.Core.Storage.IStorage.RemoveItem(ParmaGIS.Core.Storage.IStorable)
+  id: RemoveItem(ParmaGIS.Core.Storage.IStorable)
+  parent: ParmaGIS.Core.Storage.IStorage
+  langs:
+  - csharp
+  - vb
+  name: RemoveItem(IStorable)
+  nameWithType: IStorage.RemoveItem(IStorable)
+  fullName: ParmaGIS.Core.Storage.IStorage.RemoveItem(ParmaGIS.Core.Storage.IStorable)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/IStorage.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveItem
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/IStorage.cs
+    startLine: 24
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: void RemoveItem(IStorable item)
+    parameters:
+    - id: item
+      type: ParmaGIS.Core.Storage.IStorable
+    content.vb: Sub RemoveItem(item As IStorable)
+  overload: ParmaGIS.Core.Storage.IStorage.RemoveItem*
+- uid: ParmaGIS.Core.Storage.IStorage.StorageChanged
+  commentId: E:ParmaGIS.Core.Storage.IStorage.StorageChanged
+  id: StorageChanged
+  parent: ParmaGIS.Core.Storage.IStorage
+  langs:
+  - csharp
+  - vb
+  name: StorageChanged
+  nameWithType: IStorage.StorageChanged
+  fullName: ParmaGIS.Core.Storage.IStorage.StorageChanged
+  type: Event
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/IStorage.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: StorageChanged
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/IStorage.cs
+    startLine: 26
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: event EventHandler<StorageChangedEventArgs> StorageChanged
+    return:
+      type: System.EventHandler{ParmaGIS.Core.Storage.StorageChangedEventArgs}
+    content.vb: Event StorageChanged As EventHandler(Of StorageChangedEventArgs)
+references:
+- uid: ParmaGIS.Core.Storage.IStorable
+  commentId: T:ParmaGIS.Core.Storage.IStorable
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IStorable.html
+  name: IStorable
+  nameWithType: IStorable
+  fullName: ParmaGIS.Core.Storage.IStorable
+- uid: ParmaGIS.Core.Storage
+  commentId: N:ParmaGIS.Core.Storage
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Storage
+  nameWithType: ParmaGIS.Core.Storage
+  fullName: ParmaGIS.Core.Storage
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Storage
+    name: Storage
+    href: ParmaGIS.Core.Storage.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Storage
+    name: Storage
+    href: ParmaGIS.Core.Storage.html
+- uid: ParmaGIS.Core.Storage.IStorage.GetItem*
+  commentId: Overload:ParmaGIS.Core.Storage.IStorage.GetItem
+  href: ParmaGIS.Core.Storage.IStorage.html#ParmaGIS_Core_Storage_IStorage_GetItem__1_System_Guid_
+  name: GetItem
+  nameWithType: IStorage.GetItem
+  fullName: ParmaGIS.Core.Storage.IStorage.GetItem
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: ParmaGIS.Core.Storage.IStorage.SetItem*
+  commentId: Overload:ParmaGIS.Core.Storage.IStorage.SetItem
+  href: ParmaGIS.Core.Storage.IStorage.html#ParmaGIS_Core_Storage_IStorage_SetItem_ParmaGIS_Core_Storage_IStorable_
+  name: SetItem
+  nameWithType: IStorage.SetItem
+  fullName: ParmaGIS.Core.Storage.IStorage.SetItem
+- uid: ParmaGIS.Core.Storage.IStorage.GetItems*
+  commentId: Overload:ParmaGIS.Core.Storage.IStorage.GetItems
+  href: ParmaGIS.Core.Storage.IStorage.html#ParmaGIS_Core_Storage_IStorage_GetItems__1
+  name: GetItems
+  nameWithType: IStorage.GetItems
+  fullName: ParmaGIS.Core.Storage.IStorage.GetItems
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Core.Storage.IStorage.RemoveItem*
+  commentId: Overload:ParmaGIS.Core.Storage.IStorage.RemoveItem
+  href: ParmaGIS.Core.Storage.IStorage.html#ParmaGIS_Core_Storage_IStorage_RemoveItem_ParmaGIS_Core_Storage_IStorable_
+  name: RemoveItem
+  nameWithType: IStorage.RemoveItem
+  fullName: ParmaGIS.Core.Storage.IStorage.RemoveItem
+- uid: System.EventHandler{ParmaGIS.Core.Storage.StorageChangedEventArgs}
+  commentId: T:System.EventHandler{ParmaGIS.Core.Storage.StorageChangedEventArgs}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<StorageChangedEventArgs>
+  nameWithType: EventHandler<StorageChangedEventArgs>
+  fullName: System.EventHandler<ParmaGIS.Core.Storage.StorageChangedEventArgs>
+  nameWithType.vb: EventHandler(Of StorageChangedEventArgs)
+  fullName.vb: System.EventHandler(Of ParmaGIS.Core.Storage.StorageChangedEventArgs)
+  name.vb: EventHandler(Of StorageChangedEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs
+    name: StorageChangedEventArgs
+    href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs
+    name: StorageChangedEventArgs
+    href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )

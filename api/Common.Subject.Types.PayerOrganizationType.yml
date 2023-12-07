@@ -1,0 +1,625 @@
+### YamlMime:ManagedReference
+items:
+- uid: Common.Subject.Types.PayerOrganizationType
+  commentId: T:Common.Subject.Types.PayerOrganizationType
+  id: PayerOrganizationType
+  parent: Common.Subject.Types
+  children:
+  - Common.Subject.Types.PayerOrganizationType.Inn
+  - Common.Subject.Types.PayerOrganizationType.Kpp
+  - Common.Subject.Types.PayerOrganizationType.NameFull
+  - Common.Subject.Types.PayerOrganizationType.Ogrn
+  langs:
+  - csharp
+  - vb
+  name: PayerOrganizationType
+  nameWithType: PayerOrganizationType
+  fullName: Common.Subject.Types.PayerOrganizationType
+  type: Class
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: PayerOrganizationType
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 1246
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: <p>Юридическое лицо</p>
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class PayerOrganizationType
+    content.vb: >-
+      <Serializable>
+
+      Public Class PayerOrganizationType
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.PayerOrganizationType.NameFull
+  commentId: P:Common.Subject.Types.PayerOrganizationType.NameFull
+  id: NameFull
+  parent: Common.Subject.Types.PayerOrganizationType
+  langs:
+  - csharp
+  - vb
+  name: NameFull
+  nameWithType: PayerOrganizationType.NameFull
+  fullName: Common.Subject.Types.PayerOrganizationType.NameFull
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: NameFull
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 1259
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>Наименование, указанное в ЕГРЮЛ</p>
+
+    <p>Тип Полное наименование юридического лица</p>
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public string NameFull { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property NameFull As String
+  overload: Common.Subject.Types.PayerOrganizationType.NameFull*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.PayerOrganizationType.Ogrn
+  commentId: P:Common.Subject.Types.PayerOrganizationType.Ogrn
+  id: Ogrn
+  parent: Common.Subject.Types.PayerOrganizationType
+  langs:
+  - csharp
+  - vb
+  name: Ogrn
+  nameWithType: PayerOrganizationType.Ogrn
+  fullName: Common.Subject.Types.PayerOrganizationType.Ogrn
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Ogrn
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 1271
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>ОГРН - для российского юридического лица</p>
+
+    <p>Тип ОГРН российской организации</p>
+
+    <p>Minimum length: 13.</p>
+
+    <p>Maximum length: 13.</p>
+
+    <p>Pattern: [0-9]{13}.</p>
+  example: []
+  syntax:
+    content: >-
+      [MinLength(13)]
+
+      [MaxLength(13)]
+
+      [RegularExpression("[0-9]{13}")]
+
+      [Required]
+
+      public string Ogrn { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(13)>
+
+      <MaxLength(13)>
+
+      <RegularExpression("[0-9]{13}")>
+
+      <Required>
+
+      Public Property Ogrn As String
+  overload: Common.Subject.Types.PayerOrganizationType.Ogrn*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 13
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 13
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '[0-9]{13}'
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.PayerOrganizationType.Inn
+  commentId: P:Common.Subject.Types.PayerOrganizationType.Inn
+  id: Inn
+  parent: Common.Subject.Types.PayerOrganizationType
+  langs:
+  - csharp
+  - vb
+  name: Inn
+  nameWithType: PayerOrganizationType.Inn
+  fullName: Common.Subject.Types.PayerOrganizationType.Inn
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Inn
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 1286
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>ИНН - для российского юридического лица</p>
+
+    <p>Тип ИНН российского юридического лица</p>
+
+    <p>Minimum length: 10.</p>
+
+    <p>Maximum length: 10.</p>
+
+    <p>Pattern: ([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}.</p>
+  example: []
+  syntax:
+    content: >-
+      [MinLength(10)]
+
+      [MaxLength(10)]
+
+      [RegularExpression("([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}")]
+
+      [Required]
+
+      public string Inn { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(10)>
+
+      <MaxLength(10)>
+
+      <RegularExpression("([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}")>
+
+      <Required>
+
+      Public Property Inn As String
+  overload: Common.Subject.Types.PayerOrganizationType.Inn*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 10
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 10
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: Common.Subject.Types.PayerOrganizationType.Kpp
+  commentId: P:Common.Subject.Types.PayerOrganizationType.Kpp
+  id: Kpp
+  parent: Common.Subject.Types.PayerOrganizationType
+  langs:
+  - csharp
+  - vb
+  name: Kpp
+  nameWithType: PayerOrganizationType.Kpp
+  fullName: Common.Subject.Types.PayerOrganizationType.Kpp
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Kpp
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Test2/Common.Subject.Types.cs
+    startLine: 1301
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: Common.Subject.Types
+  summary: >-
+    <p>КПП</p>
+
+    <p>Код причины постановки на учет (КПП) - 5 и 6 знаки от 0-9 и A-Z</p>
+
+    <p>Minimum length: 9.</p>
+
+    <p>Maximum length: 9.</p>
+
+    <p>Pattern: (([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-F]{2})([0-9]{3})|0).</p>
+  example: []
+  syntax:
+    content: >-
+      [MinLength(9)]
+
+      [MaxLength(9)]
+
+      [RegularExpression("(([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-F]{2})([0-9]{3})|0)")]
+
+      public string Kpp { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(9)>
+
+      <MaxLength(9)>
+
+      <RegularExpression("(([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-F]{2})([0-9]{3})|0)")>
+
+      Public Property Kpp As String
+  overload: Common.Subject.Types.PayerOrganizationType.Kpp*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 9
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 9
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: (([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-F]{2})([0-9]{3})|0)
+references:
+- uid: Common.Subject.Types
+  commentId: N:Common.Subject.Types
+  href: Common.html
+  name: Common.Subject.Types
+  nameWithType: Common.Subject.Types
+  fullName: Common.Subject.Types
+  spec.csharp:
+  - uid: Common
+    name: Common
+    href: Common.html
+  - name: .
+  - uid: Common.Subject
+    name: Subject
+    href: Common.Subject.html
+  - name: .
+  - uid: Common.Subject.Types
+    name: Types
+    href: Common.Subject.Types.html
+  spec.vb:
+  - uid: Common
+    name: Common
+    href: Common.html
+  - name: .
+  - uid: Common.Subject
+    name: Subject
+    href: Common.Subject.html
+  - name: .
+  - uid: Common.Subject.Types
+    name: Types
+    href: Common.Subject.Types.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Common.Subject.Types.PayerOrganizationType.NameFull*
+  commentId: Overload:Common.Subject.Types.PayerOrganizationType.NameFull
+  href: Common.Subject.Types.PayerOrganizationType.html#Common_Subject_Types_PayerOrganizationType_NameFull
+  name: NameFull
+  nameWithType: PayerOrganizationType.NameFull
+  fullName: Common.Subject.Types.PayerOrganizationType.NameFull
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Common.Subject.Types.PayerOrganizationType.Ogrn*
+  commentId: Overload:Common.Subject.Types.PayerOrganizationType.Ogrn
+  href: Common.Subject.Types.PayerOrganizationType.html#Common_Subject_Types_PayerOrganizationType_Ogrn
+  name: Ogrn
+  nameWithType: PayerOrganizationType.Ogrn
+  fullName: Common.Subject.Types.PayerOrganizationType.Ogrn
+- uid: Common.Subject.Types.PayerOrganizationType.Inn*
+  commentId: Overload:Common.Subject.Types.PayerOrganizationType.Inn
+  href: Common.Subject.Types.PayerOrganizationType.html#Common_Subject_Types_PayerOrganizationType_Inn
+  name: Inn
+  nameWithType: PayerOrganizationType.Inn
+  fullName: Common.Subject.Types.PayerOrganizationType.Inn
+- uid: Common.Subject.Types.PayerOrganizationType.Kpp*
+  commentId: Overload:Common.Subject.Types.PayerOrganizationType.Kpp
+  href: Common.Subject.Types.PayerOrganizationType.html#Common_Subject_Types_PayerOrganizationType_Kpp
+  name: Kpp
+  nameWithType: PayerOrganizationType.Kpp
+  fullName: Common.Subject.Types.PayerOrganizationType.Kpp
