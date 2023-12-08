@@ -1,13 +1,12 @@
 # Установка DocFX
 
-## Установите DocFX с помощью NuGet
+## Установите DocFX с помощью NuGetблабла
 
 Убедитесь, что вы установили инструмент генерации документации DocFX с помощью NuGet. В командной строке выполните:
 
 ```bash
 dotnet tool install -g docfx.console
 ```
-
 
 ### Инициализация проекта с помощью DocFX
 
@@ -41,7 +40,6 @@ npm install js-yaml
 https://github.com/deriglazoff/documentation/tree/main/templates/toc
 ```
 
-
 ### Сборка DocFX
 
 Выполните следующие команды для сборки документации:
@@ -50,7 +48,7 @@ https://github.com/deriglazoff/documentation/tree/main/templates/toc
 docfx metadata
 node toc.extension.js './api/toc.yml'
 docfx build
-``` 
+```
 
 ### Открытие сгенерированной документации
 
