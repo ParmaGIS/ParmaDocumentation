@@ -6,11 +6,27 @@ items:
   parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels
   children:
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.#ctor
-  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute(System.Reflection.PropertyInfo)
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport(System.Type)
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Properties
-  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate(System.IO.Stream)
   langs:
   - csharp
   - vb
@@ -21,23 +37,29 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ReportToolViewModel
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 57
+    startLine: 29
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
   syntax:
-    content: 'public class ReportToolViewModel : BindableBase, INotifyPropertyChanged'
-    content.vb: Public Class ReportToolViewModel Inherits BindableBase Implements INotifyPropertyChanged
+    content: 'public class ReportToolViewModel : ToolAwareBase, IToolAware, INotifyPropertyChanged'
+    content.vb: Public Class ReportToolViewModel Inherits ToolAwareBase Implements IToolAware, INotifyPropertyChanged
   inheritance:
   - System.Object
   - ParmaGIS.Core.Utilities.BindableBase
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase
   implements:
+  - ParmaGIS.Core.UI.Toolability.IToolAware
   - System.ComponentModel.INotifyPropertyChanged
   inheritedMembers:
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
   - ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
@@ -51,6 +73,64 @@ items:
   extensionMethods:
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel,{TProperty}}},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel,{TProperty}}},System.Func{{TProperty},System.Collections.IEnumerable},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo
+  id: ProjectInfo
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: ProjectInfo
+  nameWithType: ReportToolViewModel.ProjectInfo
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ProjectInfo
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 38
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public static Dictionary<string, string> ProjectInfo { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+    content.vb: Public Shared Property ProjectInfo As Dictionary(Of String, String)
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity
+  id: Entity
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: Entity
+  nameWithType: ReportToolViewModel.Entity
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Entity
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 56
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public EntityViewModel Entity { get; set; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.Modules.ReportTool.ViewModels.EntityViewModel
+    content.vb: Public Property Entity As EntityViewModel
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity*
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.#ctor
   commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.#ctor
   id: '#ctor'
@@ -65,11 +145,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 65
+    startLine: 58
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -80,66 +160,93 @@ items:
   nameWithType.vb: ReportToolViewModel.New()
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.New()
   name.vb: New()
-- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute(System.Reflection.PropertyInfo)
-  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute(System.Reflection.PropertyInfo)
-  id: GetDescriptionFromAttribute(System.Reflection.PropertyInfo)
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle
+  id: ProjectTitle
   parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
   langs:
   - csharp
   - vb
-  name: GetDescriptionFromAttribute(PropertyInfo)
-  nameWithType: ReportToolViewModel.GetDescriptionFromAttribute(PropertyInfo)
-  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute(System.Reflection.PropertyInfo)
-  type: Method
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetDescriptionFromAttribute
-    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 172
-  assemblies:
-  - ParmaGIS.WPF.Modules.ReportTool
-  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
-  syntax:
-    content: public string GetDescriptionFromAttribute(PropertyInfo property)
-    parameters:
-    - id: property
-      type: System.Reflection.PropertyInfo
-    return:
-      type: System.String
-    content.vb: Public Function GetDescriptionFromAttribute([property] As PropertyInfo) As String
-  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute*
-- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep
-  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep
-  id: Rep
-  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
-  langs:
-  - csharp
-  - vb
-  name: Rep
-  nameWithType: ReportToolViewModel.Rep
-  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep
+  name: ProjectTitle
+  nameWithType: ReportToolViewModel.ProjectTitle
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle
   type: Property
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Rep
+    id: ProjectTitle
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 188
+    startLine: 67
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
   syntax:
-    content: public ForestDeclaration Rep { get; set; }
+    content: public string ProjectTitle { get; set; }
     parameters: []
     return:
-      type: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.ForestDeclaration
-    content.vb: Public Property Rep As ForestDeclaration
-  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep*
+      type: System.String
+    content.vb: Public Property ProjectTitle As String
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses
+  id: GeneratedReportClasses
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: GeneratedReportClasses
+  nameWithType: ReportToolViewModel.GeneratedReportClasses
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GeneratedReportClasses
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 72
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public List<Type> GeneratedReportClasses { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Type}
+    content.vb: Public Property GeneratedReportClasses As List(Of Type)
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass
+  id: SelectedReportClass
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectedReportClass
+  nameWithType: ReportToolViewModel.SelectedReportClass
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SelectedReportClass
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 77
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public Type SelectedReportClass { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property SelectedReportClass As Type
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass*
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Properties
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Properties
   id: Properties
@@ -154,11 +261,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Properties
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 194
+    startLine: 86
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -169,6 +276,139 @@ items:
       type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.ViewModels.PropertyViewModel}
     content.vb: Public Property Properties As ObservableCollection(Of PropertyViewModel)
   overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Properties*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded
+  id: ReportLoaded
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: ReportLoaded
+  nameWithType: ReportToolViewModel.ReportLoaded
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ReportLoaded
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 92
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public bool ReportLoaded { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ReportLoaded As Boolean
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject
+  id: CreateProject
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: CreateProject()
+  nameWithType: ReportToolViewModel.CreateProject()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CreateProject
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 98
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void CreateProject()
+    content.vb: Public Sub CreateProject()
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog
+  id: OpenProjectDialog
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: OpenProjectDialog()
+  nameWithType: ReportToolViewModel.OpenProjectDialog()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OpenProjectDialog
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 113
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void OpenProjectDialog()
+    content.vb: Public Sub OpenProjectDialog()
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject
+  id: OpenProject
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: OpenProject()
+  nameWithType: ReportToolViewModel.OpenProject()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OpenProject
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 125
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void OpenProject()
+    content.vb: Public Sub OpenProject()
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport
+  id: OpenReport
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: OpenReport()
+  nameWithType: ReportToolViewModel.OpenReport()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OpenReport
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 131
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void OpenReport()
+    content.vb: Public Sub OpenReport()
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport*
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save
   commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save
   id: Save
@@ -183,11 +423,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Save
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 205
+    startLine: 168
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -195,6 +435,174 @@ items:
     content: public void Save()
     content.vb: Public Sub Save()
   overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load
+  id: Load
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: Load()
+  nameWithType: ReportToolViewModel.Load()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Load
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 224
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void Load()
+    content.vb: Public Sub Load()
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog
+  id: OpenReportXmlDialog
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: OpenReportXmlDialog()
+  nameWithType: ReportToolViewModel.OpenReportXmlDialog()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OpenReportXmlDialog
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 231
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void OpenReportXmlDialog()
+    content.vb: Public Sub OpenReportXmlDialog()
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate(System.IO.Stream)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate(System.IO.Stream)
+  id: Validate(System.IO.Stream)
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: Validate(Stream)
+  nameWithType: ReportToolViewModel.Validate(Stream)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Validate
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 252
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void Validate(Stream xmlStream)
+    parameters:
+    - id: xmlStream
+      type: System.IO.Stream
+    content.vb: Public Sub Validate(xmlStream As Stream)
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport(System.Type)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport(System.Type)
+  id: DrawReport(System.Type)
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: DrawReport(Type)
+  nameWithType: ReportToolViewModel.DrawReport(Type)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport(System.Type)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: DrawReport
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 321
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public void DrawReport(Type classType)
+    parameters:
+    - id: classType
+      type: System.Type
+    content.vb: Public Sub DrawReport(classType As Type)
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand
+  id: CreateProjectCommand
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: CreateProjectCommand
+  nameWithType: ReportToolViewModel.CreateProjectCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CreateProjectCommand
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 339
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public RelayCommand CreateProjectCommand { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.UI.Utilities.RelayCommand
+    content.vb: Public ReadOnly Property CreateProjectCommand As RelayCommand
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand
+  id: OpenProjectCommand
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: OpenProjectCommand
+  nameWithType: ReportToolViewModel.OpenProjectCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OpenProjectCommand
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 340
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public RelayCommand OpenProjectCommand { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.UI.Utilities.RelayCommand
+    content.vb: Public ReadOnly Property OpenProjectCommand As RelayCommand
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand*
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
   id: SaveCommand
@@ -209,11 +617,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveCommand
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 577
+    startLine: 341
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -224,6 +632,64 @@ items:
       type: ParmaGIS.WPF.UI.Utilities.RelayCommand
     content.vb: Public ReadOnly Property SaveCommand As RelayCommand
   overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand
+  id: LoadCommand
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadCommand
+  nameWithType: ReportToolViewModel.LoadCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: LoadCommand
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 342
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public RelayCommand LoadCommand { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.UI.Utilities.RelayCommand
+    content.vb: Public ReadOnly Property LoadCommand As RelayCommand
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand*
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand
+  id: SelectClassCommand
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectClassCommand
+  nameWithType: ReportToolViewModel.SelectClassCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SelectClassCommand
+    path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
+    startLine: 344
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  syntax:
+    content: public RelayCommand SelectClassCommand { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.UI.Utilities.RelayCommand
+    content.vb: Public ReadOnly Property SelectClassCommand As RelayCommand
+  overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand*
 references:
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels
   commentId: N:ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -289,6 +755,20 @@ references:
   name: BindableBase
   nameWithType: BindableBase
   fullName: ParmaGIS.Core.Utilities.BindableBase
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  commentId: T:ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  parent: ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.Core.UI.Toolability.ToolAwareBase.html
+  name: ToolAwareBase
+  nameWithType: ToolAwareBase
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+- uid: ParmaGIS.Core.UI.Toolability.IToolAware
+  commentId: T:ParmaGIS.Core.UI.Toolability.IToolAware
+  parent: ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.Core.UI.Toolability.IToolAware.html
+  name: IToolAware
+  nameWithType: IToolAware
+  fullName: ParmaGIS.Core.UI.Toolability.IToolAware
 - uid: System.ComponentModel.INotifyPropertyChanged
   commentId: T:System.ComponentModel.INotifyPropertyChanged
   parent: System.ComponentModel
@@ -297,6 +777,64 @@ references:
   name: INotifyPropertyChanged
   nameWithType: INotifyPropertyChanged
   fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+  commentId: P:ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: Title
+  nameWithType: ToolAwareBase.Title
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+  commentId: M:ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: CanClose()
+  nameWithType: ToolAwareBase.CanClose()
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose()
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+    name: CanClose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+    name: CanClose
+  - name: (
+  - name: )
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+  commentId: M:ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: OnClose()
+  nameWithType: ToolAwareBase.OnClose()
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose()
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+    name: OnClose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+    name: OnClose
+  - name: (
+  - name: )
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+  commentId: M:ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: OnShow(IToolParameters)
+  nameWithType: ToolAwareBase.OnShow(IToolParameters)
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+    name: OnShow
+  - name: (
+  - uid: ParmaGIS.Core.UI.Toolability.IToolParameters
+    name: IToolParameters
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+    name: OnShow
+  - name: (
+  - uid: ParmaGIS.Core.UI.Toolability.IToolParameters
+    name: IToolParameters
+  - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   commentId: E:ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   parent: ParmaGIS.Core.Utilities.BindableBase
@@ -994,6 +1532,44 @@ references:
   - uid: ParmaGIS.Core.Utilities
     name: Utilities
     href: ParmaGIS.Core.Utilities.html
+- uid: ParmaGIS.Core.UI.Toolability
+  commentId: N:ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.UI.Toolability
+  nameWithType: ParmaGIS.Core.UI.Toolability
+  fullName: ParmaGIS.Core.UI.Toolability
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Toolability
+    name: Toolability
+    href: ParmaGIS.Core.UI.Toolability.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Toolability
+    name: Toolability
+    href: ParmaGIS.Core.UI.Toolability.html
 - uid: System.ComponentModel
   commentId: N:System.ComponentModel
   isExternal: true
@@ -1442,6 +2018,143 @@ references:
   - uid: ParmaGIS.Core.UI.Reactive
     name: Reactive
     href: ParmaGIS.Core.UI.Reactive.html
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_ProjectInfo
+  name: ProjectInfo
+  nameWithType: ReportToolViewModel.ProjectInfo
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectInfo
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_Entity
+  name: Entity
+  nameWithType: ReportToolViewModel.Entity
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Entity
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.EntityViewModel
+  commentId: T:ParmaGIS.WPF.Modules.ReportTool.ViewModels.EntityViewModel
+  parent: ParmaGIS.WPF.Modules.ReportTool.ViewModels
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.EntityViewModel.html
+  name: EntityViewModel
+  nameWithType: EntityViewModel
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.EntityViewModel
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.#ctor*
   commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.#ctor
   href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel__ctor
@@ -1451,20 +2164,12 @@ references:
   nameWithType.vb: ReportToolViewModel.New
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.New
   name.vb: New
-- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute*
-  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute
-  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_GetDescriptionFromAttribute_System_Reflection_PropertyInfo_
-  name: GetDescriptionFromAttribute
-  nameWithType: ReportToolViewModel.GetDescriptionFromAttribute
-  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GetDescriptionFromAttribute
-- uid: System.Reflection.PropertyInfo
-  commentId: T:System.Reflection.PropertyInfo
-  parent: System.Reflection
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
-  name: PropertyInfo
-  nameWithType: PropertyInfo
-  fullName: System.Reflection.PropertyInfo
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_ProjectTitle
+  name: ProjectTitle
+  nameWithType: ReportToolViewModel.ProjectTitle
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ProjectTitle
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1476,108 +2181,89 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Reflection
-  commentId: N:System.Reflection
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_GeneratedReportClasses
+  name: GeneratedReportClasses
+  nameWithType: ReportToolViewModel.GeneratedReportClasses
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.GeneratedReportClasses
+- uid: System.Collections.Generic.List{System.Type}
+  commentId: T:System.Collections.Generic.List{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Type>
+  nameWithType: List<Type>
+  fullName: System.Collections.Generic.List<System.Type>
+  nameWithType.vb: List(Of Type)
+  fullName.vb: System.Collections.Generic.List(Of System.Type)
+  name.vb: List(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Reflection
-  nameWithType: System.Reflection
-  fullName: System.Reflection
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: System
-    name: System
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Reflection
-    name: Reflection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.reflection
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
   spec.vb:
-  - uid: System
-    name: System
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Reflection
-    name: Reflection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.reflection
-- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep*
-  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep
-  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_Rep
-  name: Rep
-  nameWithType: ReportToolViewModel.Rep
-  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Rep
-- uid: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.ForestDeclaration
-  commentId: T:ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.ForestDeclaration
-  parent: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-  href: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.ForestDeclaration.html
-  name: ForestDeclaration
-  nameWithType: ForestDeclaration
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.ForestDeclaration
-- uid: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-  commentId: N:ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-  href: ParmaGIS.html
-  name: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-  nameWithType: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.WPF
-    name: WPF
-    href: ParmaGIS.WPF.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules
-    name: Modules
-    href: ParmaGIS.WPF.Modules.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool
-    name: ReportTool
-    href: ParmaGIS.WPF.Modules.ReportTool.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Test
-    name: Test
-    href: ParmaGIS.WPF.Modules.ReportTool.Test.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns
-    name: Xmlns
-    href: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-    name: ForestDeclaration
-    href: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.WPF
-    name: WPF
-    href: ParmaGIS.WPF.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules
-    name: Modules
-    href: ParmaGIS.WPF.Modules.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool
-    name: ReportTool
-    href: ParmaGIS.WPF.Modules.ReportTool.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Test
-    name: Test
-    href: ParmaGIS.WPF.Modules.ReportTool.Test.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns
-    name: Xmlns
-    href: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration
-    name: ForestDeclaration
-    href: ParmaGIS.WPF.Modules.ReportTool.Test.Xmlns.ForestDeclaration.html
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_SelectedReportClass
+  name: SelectedReportClass
+  nameWithType: ReportToolViewModel.SelectedReportClass
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectedReportClass
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Properties*
   commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Properties
   href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_Properties
@@ -1682,18 +2368,118 @@ references:
     name: ObjectModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_ReportLoaded
+  name: ReportLoaded
+  nameWithType: ReportToolViewModel.ReportLoaded
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ReportLoaded
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_CreateProject
+  name: CreateProject
+  nameWithType: ReportToolViewModel.CreateProject
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProject
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_OpenProjectDialog
+  name: OpenProjectDialog
+  nameWithType: ReportToolViewModel.OpenProjectDialog
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectDialog
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_OpenProject
+  name: OpenProject
+  nameWithType: ReportToolViewModel.OpenProject
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProject
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_OpenReport
+  name: OpenReport
+  nameWithType: ReportToolViewModel.OpenReport
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReport
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save*
   commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save
   href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_Save
   name: Save
   nameWithType: ReportToolViewModel.Save
   fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Save
-- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand*
-  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
-  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_SaveCommand
-  name: SaveCommand
-  nameWithType: ReportToolViewModel.SaveCommand
-  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_Load
+  name: Load
+  nameWithType: ReportToolViewModel.Load
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Load
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_OpenReportXmlDialog
+  name: OpenReportXmlDialog
+  nameWithType: ReportToolViewModel.OpenReportXmlDialog
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenReportXmlDialog
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_Validate_System_IO_Stream_
+  name: Validate
+  nameWithType: ReportToolViewModel.Validate
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.Validate
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_DrawReport_System_Type_
+  name: DrawReport
+  nameWithType: ReportToolViewModel.DrawReport
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.DrawReport
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_CreateProjectCommand
+  name: CreateProjectCommand
+  nameWithType: ReportToolViewModel.CreateProjectCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.CreateProjectCommand
 - uid: ParmaGIS.WPF.UI.Utilities.RelayCommand
   commentId: T:ParmaGIS.WPF.UI.Utilities.RelayCommand
   parent: ParmaGIS.WPF.UI.Utilities
@@ -1739,3 +2525,27 @@ references:
   - uid: ParmaGIS.WPF.UI.Utilities
     name: Utilities
     href: ParmaGIS.WPF.UI.Utilities.html
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_OpenProjectCommand
+  name: OpenProjectCommand
+  nameWithType: ReportToolViewModel.OpenProjectCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.OpenProjectCommand
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_SaveCommand
+  name: SaveCommand
+  nameWithType: ReportToolViewModel.SaveCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveCommand
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_LoadCommand
+  name: LoadCommand
+  nameWithType: ReportToolViewModel.LoadCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.LoadCommand
+- uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand
+  href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_SelectClassCommand
+  name: SelectClassCommand
+  nameWithType: ReportToolViewModel.SelectClassCommand
+  fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SelectClassCommand

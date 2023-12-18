@@ -16,6 +16,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.AverageStumpDiameter
   - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.BonitetClass
   - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.CommodityClutterStock
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment
   - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.CompartmentId
   - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Composition
   - ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.CutType
@@ -80,11 +81,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StandData
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 232
+    startLine: 17
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -103,6 +104,7 @@ items:
   inheritedMembers:
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.PropertyChanged
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1({T}@,System.Nullable{System.Guid}@,{T},System.String)
+  - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1({T}@,System.Guid@,{T},System.String)
   - ParmaGIS.Modules.Parma.Space.ParmaDALObject.Id
   - ParmaGIS.Modules.Parma.Space.ParmaDALObject.LazyLoader
   - ParmaGIS.Modules.Parma.Space.ParmaDALObject.Load``1({T}@,System.String)
@@ -132,11 +134,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 308
+    startLine: 96
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -166,21 +168,33 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CompartmentId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 319
+    startLine: 107
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
   syntax:
-    content: public Guid CompartmentId { get; set; }
+    content: >-
+      [HasField("_compartmentId")]
+
+      public Guid CompartmentId { get; set; }
     parameters: []
     return:
       type: System.Guid
-    content.vb: Public Property CompartmentId As Guid
+    content.vb: >-
+      <HasField("_compartmentId")>
+
+      Public Property CompartmentId As Guid
   overload: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.CompartmentId*
+  attributes:
+  - type: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute
+    ctor: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: _compartmentId
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Area
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Area
   id: Area
@@ -195,11 +209,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Area
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 322
+    startLine: 111
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -236,11 +250,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AreaFixed
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 325
+    startLine: 114
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -277,11 +291,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DeadWoodStock
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 328
+    startLine: 117
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -318,11 +332,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeClass
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 331
+    startLine: 120
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -359,11 +373,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ActualizationYear
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 334
+    startLine: 123
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -400,11 +414,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeAngle
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 337
+    startLine: 126
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -441,11 +455,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: BonitetClass
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 340
+    startLine: 129
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -482,11 +496,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Composition
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 343
+    startLine: 132
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -523,11 +537,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Number
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 346
+    startLine: 135
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -564,11 +578,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GrowingStock
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 349
+    startLine: 138
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -605,11 +619,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Stock
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 352
+    startLine: 141
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -646,11 +660,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CommodityClutterStock
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 355
+    startLine: 144
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -687,11 +701,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TimberVpha
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 358
+    startLine: 147
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -728,11 +742,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Note
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 361
+    startLine: 150
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -769,11 +783,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RelativeDensity
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 364
+    startLine: 153
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -810,11 +824,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HarvestCuttingYears
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 367
+    startLine: 156
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -851,11 +865,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TotalStumpsNumber
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 370
+    startLine: 159
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -892,11 +906,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TotalStumpsPineNumber
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 373
+    startLine: 162
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -933,11 +947,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AverageStumpDiameter
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 376
+    startLine: 165
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -974,11 +988,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FeelingAge
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 379
+    startLine: 168
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1015,11 +1029,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DeadfallenWood
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 382
+    startLine: 171
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1056,11 +1070,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Act
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 385
+    startLine: 174
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1097,11 +1111,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HeightAboveSeaLevel
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 388
+    startLine: 177
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1138,11 +1152,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ProtectionCategoryId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 392
+    startLine: 181
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1179,11 +1193,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LandCategoryId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 395
+    startLine: 184
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1220,11 +1234,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FunctionalZoneId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 398
+    startLine: 187
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1261,11 +1275,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EconomicCategoryId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 401
+    startLine: 190
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1302,11 +1316,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HighlyProtectedForestAreaId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 404
+    startLine: 193
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1343,11 +1357,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EconomicSectionId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 407
+    startLine: 196
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1384,11 +1398,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DominantSpeciesId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 410
+    startLine: 199
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1425,11 +1439,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestGrowthConditionsTypeId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 413
+    startLine: 202
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1466,11 +1480,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestTypeId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 416
+    startLine: 205
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1507,11 +1521,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TargetSpeciesId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 419
+    startLine: 208
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1548,11 +1562,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeGroupId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 422
+    startLine: 211
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1589,11 +1603,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FireHazardClassId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 425
+    startLine: 214
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1630,11 +1644,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MunicipalAreaId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 428
+    startLine: 217
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1671,11 +1685,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeExposureId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 431
+    startLine: 220
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1712,11 +1726,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeErosionTypeId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 434
+    startLine: 223
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1753,11 +1767,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeErosionDegreeId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 437
+    startLine: 226
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1794,11 +1808,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestGroupId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 440
+    startLine: 229
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1835,11 +1849,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CutTypeId
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 443
+    startLine: 232
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1862,6 +1876,65 @@ items:
     arguments:
     - type: System.String
       value: _cutTypeId
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment
+  id: Compartment
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
+  langs:
+  - csharp
+  - vb
+  name: Compartment
+  nameWithType: StandData.Compartment
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Compartment
+    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
+    startLine: 239
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
+  syntax:
+    content: >-
+      [Relative("Id")]
+
+      [ForeignKey("CompartmentId")]
+
+      [HasField("_compartment")]
+
+      public CompartmentData? Compartment { get; set; }
+    parameters: []
+    return:
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData
+    content.vb: >-
+      <Relative("Id")>
+
+      <ForeignKey("CompartmentId")>
+
+      <HasField("_compartment")>
+
+      Public Property Compartment As CompartmentData
+  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment*
+  attributes:
+  - type: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
+    ctor: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Id
+  - type: ParmaGIS.Modules.Data.Schema.Helpers.ForeignKeyAttribute
+    ctor: ParmaGIS.Modules.Data.Schema.Helpers.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: CompartmentId
+  - type: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute
+    ctor: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: _compartment
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.ProtectionCategory
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.ProtectionCategory
   id: ProtectionCategory
@@ -1876,11 +1949,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ProtectionCategory
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 450
+    startLine: 248
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1935,11 +2008,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LandCategory
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 459
+    startLine: 257
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1994,11 +2067,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FunctionalZone
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 468
+    startLine: 266
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2053,11 +2126,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EconomicCategory
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 477
+    startLine: 275
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2112,11 +2185,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HighlyProtectedForestArea
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 486
+    startLine: 284
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2171,11 +2244,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EconomicSection
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 495
+    startLine: 293
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2230,11 +2303,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DominantSpecies
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 504
+    startLine: 302
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2289,11 +2362,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TargetSpecies
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 513
+    startLine: 311
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2348,11 +2421,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestType
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 522
+    startLine: 320
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2407,11 +2480,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestGrowthConditionsType
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 531
+    startLine: 329
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2466,11 +2539,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeGroup
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 540
+    startLine: 338
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2525,11 +2598,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FireHazardClass
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 549
+    startLine: 347
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2584,11 +2657,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MunicipalArea
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 558
+    startLine: 356
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2643,11 +2716,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeExposure
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 567
+    startLine: 365
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2702,11 +2775,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeErosionType
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 576
+    startLine: 374
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2761,11 +2834,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SlopeErosionDegree
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 585
+    startLine: 383
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2820,11 +2893,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestGroup
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 594
+    startLine: 392
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2879,11 +2952,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CutType
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 603
+    startLine: 401
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2938,11 +3011,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Undergrowth
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 615
+    startLine: 413
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -2988,11 +3061,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SecondGrowth
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 619
+    startLine: 417
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -3038,11 +3111,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: WoodLayers
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 623
+    startLine: 421
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -3088,11 +3161,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StandMeasures
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/StandData.cs
-    startLine: 627
+    startLine: 425
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -3299,6 +3372,73 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: '?'
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1({T}@,System.Guid@,{T},System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  parent: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject
+  definition: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  name: SetProperty<T>(ref T, ref Guid, T, string)
+  nameWithType: ParmaDataObject.SetProperty<T>(ref T, ref Guid, T, string)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty<T>(ref T, ref System.Guid, T, string)
+  nameWithType.vb: ParmaDataObject.SetProperty(Of T)(T, Guid, T, String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty(Of T)(T, System.Guid, T, String)
+  name.vb: SetProperty(Of T)(T, Guid, T, String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: ','
   - name: " "
   - name: T
@@ -4285,6 +4425,72 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  isExternal: true
+  href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  name: SetProperty<T>(ref T, ref Guid, T, string)
+  nameWithType: ParmaDataObject.SetProperty<T>(ref T, ref Guid, T, string)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty<T>(ref T, ref System.Guid, T, string)
+  nameWithType.vb: ParmaDataObject.SetProperty(Of T)(T, Guid, T, String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty(Of T)(T, System.Guid, T, String)
+  name.vb: SetProperty(Of T)(T, Guid, T, String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.ParmaDALObject.Load``1(``0@,System.String)
   commentId: M:ParmaGIS.Modules.Parma.Space.ParmaDALObject.Load``1(``0@,System.String)
   isExternal: true
@@ -5183,6 +5389,19 @@ references:
   name: CutTypeId
   nameWithType: StandData.CutTypeId
   fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.CutTypeId
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_StandData_Compartment
+  name: Compartment
+  nameWithType: StandData.Compartment
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.Compartment
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData
+  commentId: T:ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.html
+  name: CompartmentData
+  nameWithType: CompartmentData
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.ProtectionCategory*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.ProtectionCategory
   href: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_StandData_ProtectionCategory

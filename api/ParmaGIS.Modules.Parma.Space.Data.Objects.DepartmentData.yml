@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Data.Objects
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.#ctor
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts
   - ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Name
   langs:
   - csharp
@@ -17,7 +18,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DepartmentData
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
@@ -40,6 +41,7 @@ items:
   inheritedMembers:
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.PropertyChanged
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1({T}@,System.Nullable{System.Guid}@,{T},System.String)
+  - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1({T}@,System.Guid@,{T},System.String)
   - ParmaGIS.Modules.Parma.Space.ParmaDALObject.Id
   - ParmaGIS.Modules.Parma.Space.ParmaDALObject.LazyLoader
   - ParmaGIS.Modules.Parma.Space.ParmaDALObject.Load``1({T}@,System.String)
@@ -69,11 +71,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -98,11 +100,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
-    startLine: 16
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -113,6 +115,56 @@ items:
       type: System.String
     content.vb: Public Property Name As String
   overload: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Name*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts
+  id: Districts
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData
+  langs:
+  - csharp
+  - vb
+  name: Districts
+  nameWithType: DepartmentData.Districts
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Districts
+    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/DepartmentData.cs
+    startLine: 28
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
+  syntax:
+    content: >-
+      [ForeignKey("DepartmentId")]
+
+      [HasField("_districts")]
+
+      public ObservableCollection<DistrictData> Districts { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData}
+    content.vb: >-
+      <ForeignKey("DepartmentId")>
+
+      <HasField("_districts")>
+
+      Public ReadOnly Property Districts As ObservableCollection(Of DistrictData)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts*
+  attributes:
+  - type: ParmaGIS.Modules.Data.Schema.Helpers.ForeignKeyAttribute
+    ctor: ParmaGIS.Modules.Data.Schema.Helpers.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: DepartmentId
+  - type: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute
+    ctor: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: _districts
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -288,6 +340,73 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: '?'
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1({T}@,System.Guid@,{T},System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  parent: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject
+  definition: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  name: SetProperty<T>(ref T, ref Guid, T, string)
+  nameWithType: ParmaDataObject.SetProperty<T>(ref T, ref Guid, T, string)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty<T>(ref T, ref System.Guid, T, string)
+  nameWithType.vb: ParmaDataObject.SetProperty(Of T)(T, Guid, T, String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty(Of T)(T, System.Guid, T, String)
+  name.vb: SetProperty(Of T)(T, Guid, T, String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: ','
   - name: " "
   - name: T
@@ -1274,6 +1393,72 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  isExternal: true
+  href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  name: SetProperty<T>(ref T, ref Guid, T, string)
+  nameWithType: ParmaDataObject.SetProperty<T>(ref T, ref Guid, T, string)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty<T>(ref T, ref System.Guid, T, string)
+  nameWithType.vb: ParmaDataObject.SetProperty(Of T)(T, Guid, T, String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty(Of T)(T, System.Guid, T, String)
+  name.vb: SetProperty(Of T)(T, Guid, T, String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+    name: SetProperty
+    href: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_ParmaDataObject_SetProperty__1___0__System_Guid____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.ParmaDALObject.Load``1(``0@,System.String)
   commentId: M:ParmaGIS.Modules.Parma.Space.ParmaDALObject.Load``1(``0@,System.String)
   isExternal: true
@@ -1767,3 +1952,107 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_DepartmentData_Districts
+  name: Districts
+  nameWithType: DepartmentData.Districts
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.DepartmentData.Districts
+- uid: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<DistrictData>
+  nameWithType: ObservableCollection<DistrictData>
+  fullName: System.Collections.ObjectModel.ObservableCollection<ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData>
+  nameWithType.vb: ObservableCollection(Of DistrictData)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData)
+  name.vb: ObservableCollection(Of DistrictData)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData
+    name: DistrictData
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData
+    name: DistrictData
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.DistrictData.html
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel

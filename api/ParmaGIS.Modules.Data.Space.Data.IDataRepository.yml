@@ -7,6 +7,7 @@ items:
   children:
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.DeleteDataAsync``1(``0)
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas``1
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
   langs:
@@ -19,17 +20,53 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataRepository
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 4
+    startLine: 37
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
   syntax:
-    content: public interface IDataRepository
-    content.vb: Public Interface IDataRepository
+    content: 'public interface IDataRepository : IThreadsVulnerable'
+    content.vb: Public Interface IDataRepository Inherits IThreadsVulnerable
+  inheritedMembers:
+  - ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.ThreadSafety
+  - ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.TaskScheduler
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas``1
+  id: GetDatas``1
+  parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  langs:
+  - csharp
+  - vb
+  name: GetDatas<T>()
+  nameWithType: IDataRepository.GetDatas<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetDatas
+    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
+    startLine: 39
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Data
+  syntax:
+    content: 'IQueryable<T> GetDatas<T>() where T : class, IDataObject'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Linq.IQueryable{{T}}
+    content.vb: Function GetDatas(Of T As {Class, IDataObject})() As IQueryable(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas*
+  nameWithType.vb: IDataRepository.GetDatas(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas(Of T)()
+  name.vb: GetDatas(Of T)()
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
   commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
   id: GetDataAsync``1(System.Object)
@@ -44,11 +81,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 6
+    startLine: 41
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -80,11 +117,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertDataAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 7
+    startLine: 42
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -116,11 +153,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DeleteDataAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 9
+    startLine: 44
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -152,11 +189,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 10
+    startLine: 45
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -213,6 +250,117 @@ references:
   - uid: ParmaGIS.Modules.Data.Space.Data
     name: Data
     href: ParmaGIS.Modules.Data.Space.Data.html
+- uid: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.ThreadSafety
+  commentId: P:ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.ThreadSafety
+  parent: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  href: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.html#ParmaGIS_Modules_Data_Space_Data_IThreadsVulnerable_ThreadSafety
+  name: ThreadSafety
+  nameWithType: IThreadsVulnerable.ThreadSafety
+  fullName: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.ThreadSafety
+- uid: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.TaskScheduler
+  commentId: P:ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.TaskScheduler
+  parent: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  href: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.html#ParmaGIS_Modules_Data_Space_Data_IThreadsVulnerable_TaskScheduler
+  name: TaskScheduler
+  nameWithType: IThreadsVulnerable.TaskScheduler
+  fullName: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.TaskScheduler
+- uid: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.html
+  name: IThreadsVulnerable
+  nameWithType: IThreadsVulnerable
+  fullName: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDatas__1
+  name: GetDatas
+  nameWithType: IDataRepository.GetDatas
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDatas
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{`0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync
   href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1_System_Object_

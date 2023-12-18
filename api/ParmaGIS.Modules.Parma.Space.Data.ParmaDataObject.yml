@@ -8,6 +8,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.#ctor
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.#ctor(System.Action{System.Object,System.String})
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.PropertyChanged
+  - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
   - ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Nullable{System.Guid}@,``0,System.String)
   langs:
   - csharp
@@ -19,7 +20,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaDataObject
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
@@ -80,7 +81,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
@@ -109,7 +110,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
@@ -141,7 +142,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
@@ -168,7 +169,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetProperty
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
@@ -194,6 +195,46 @@ items:
   nameWithType.vb: ParmaDataObject.SetProperty(Of T)(T, Guid?, T, String)
   fullName.vb: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty(Of T)(T, System.Guid?, T, String)
   name.vb: SetProperty(Of T)(T, Guid?, T, String)
+- uid: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty``1(``0@,System.Guid@,``0,System.String)
+  id: SetProperty``1(``0@,System.Guid@,``0,System.String)
+  parent: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject
+  langs:
+  - csharp
+  - vb
+  name: SetProperty<T>(ref T?, ref Guid, T?, string?)
+  nameWithType: ParmaDataObject.SetProperty<T>(ref T?, ref Guid, T?, string?)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty<T>(ref T?, ref System.Guid, T?, string?)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SetProperty
+    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Data/ParmaDataObject.cs
+    startLine: 34
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data
+  syntax:
+    content: protected void SetProperty<T>(ref T? source, ref Guid idsource, T? value, string? propertyName = null)
+    parameters:
+    - id: source
+      type: '{T}'
+    - id: idsource
+      type: System.Guid
+    - id: value
+      type: '{T}'
+    - id: propertyName
+      type: System.String
+    typeParameters:
+    - id: T
+    content.vb: Protected Sub SetProperty(Of T)(source As T, idsource As Guid, value As T, propertyName As String = Nothing)
+  overload: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty*
+  nameWithType.vb: ParmaDataObject.SetProperty(Of T)(T, Guid, T, String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.ParmaDataObject.SetProperty(Of T)(T, System.Guid, T, String)
+  name.vb: SetProperty(Of T)(T, Guid, T, String)
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data
   commentId: N:ParmaGIS.Modules.Parma.Space.Data
@@ -1790,3 +1831,11 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid

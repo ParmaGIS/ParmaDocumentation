@@ -5,8 +5,8 @@ items:
   id: IContextMenuManager
   parent: ParmaGIS.Core.UI.Context
   children:
-  - ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems
-  - ParmaGIS.Core.UI.Context.IContextMenuManager.Register(System.Type,System.String,System.String,System.Action{System.Object})
+  - ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions(System.Object)
+  - ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction``2
   langs:
   - csharp
   - vb
@@ -17,88 +17,83 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IContextMenuManager
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-    startLine: 16
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Context
   syntax:
     content: public interface IContextMenuManager
     content.vb: Public Interface IContextMenuManager
-  extensionMethods:
-  - ParmaGIS.Core.UI.Context.IContextMenuManager.ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(System.Type)
-  - ParmaGIS.Core.UI.Context.IContextMenuManager.ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1
-  - ParmaGIS.Core.UI.Context.IContextMenuManager.ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(System.String,System.String,System.Action{{T}})
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems
-  commentId: P:ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems
-  id: ContextMenuItems
+- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction``2
+  commentId: M:ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction``2
+  id: RegisterAction``2
   parent: ParmaGIS.Core.UI.Context.IContextMenuManager
   langs:
   - csharp
   - vb
-  name: ContextMenuItems
-  nameWithType: IContextMenuManager.ContextMenuItems
-  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems
-  type: Property
+  name: RegisterAction<TAction, TItem>()
+  nameWithType: IContextMenuManager.RegisterAction<TAction, TItem>()
+  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction<TAction, TItem>()
+  type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ContextMenuItems
+    id: RegisterAction
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
+    startLine: 17
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Context
+  syntax:
+    content: 'void RegisterAction<TAction, TItem>() where TAction : class, IContextMenuAction'
+    typeParameters:
+    - id: TAction
+    - id: TItem
+    content.vb: Sub RegisterAction(Of TAction As {Class, IContextMenuAction}, TItem)()
+  overload: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction*
+  nameWithType.vb: IContextMenuManager.RegisterAction(Of TAction, TItem)()
+  fullName.vb: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction(Of TAction, TItem)()
+  name.vb: RegisterAction(Of TAction, TItem)()
+- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions(System.Object)
+  commentId: M:ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions(System.Object)
+  id: GetActions(System.Object)
+  parent: ParmaGIS.Core.UI.Context.IContextMenuManager
+  langs:
+  - csharp
+  - vb
+  name: GetActions(object)
+  nameWithType: IContextMenuManager.GetActions(object)
+  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions(object)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
+      branch: origin/dev
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetActions
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
     startLine: 18
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Context
   syntax:
-    content: IEnumerable<IContextMenuItem> ContextMenuItems { get; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuItem}
-    content.vb: ReadOnly Property ContextMenuItems As IEnumerable(Of IContextMenuItem)
-  overload: ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems*
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.Register(System.Type,System.String,System.String,System.Action{System.Object})
-  commentId: M:ParmaGIS.Core.UI.Context.IContextMenuManager.Register(System.Type,System.String,System.String,System.Action{System.Object})
-  id: Register(System.Type,System.String,System.String,System.Action{System.Object})
-  parent: ParmaGIS.Core.UI.Context.IContextMenuManager
-  langs:
-  - csharp
-  - vb
-  name: Register(Type, string, string, Action<object>)
-  nameWithType: IContextMenuManager.Register(Type, string, string, Action<object>)
-  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.Register(System.Type, string, string, System.Action<object>)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Register
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-    startLine: 20
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Context
-  syntax:
-    content: void Register(Type objectType, string title, string description, Action<object> action)
+    content: IEnumerable<IContextMenuAction> GetActions(object item)
     parameters:
-    - id: objectType
-      type: System.Type
-    - id: title
-      type: System.String
-    - id: description
-      type: System.String
-    - id: action
-      type: System.Action{System.Object}
-    content.vb: Sub Register(objectType As Type, title As String, description As String, action As Action(Of Object))
-  overload: ParmaGIS.Core.UI.Context.IContextMenuManager.Register*
-  nameWithType.vb: IContextMenuManager.Register(Type, String, String, Action(Of Object))
-  fullName.vb: ParmaGIS.Core.UI.Context.IContextMenuManager.Register(System.Type, String, String, System.Action(Of Object))
-  name.vb: Register(Type, String, String, Action(Of Object))
+    - id: item
+      type: System.Object
+    return:
+      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuAction}
+    content.vb: Function GetActions(item As Object) As IEnumerable(Of IContextMenuAction)
+  overload: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions*
+  nameWithType.vb: IContextMenuManager.GetActions(Object)
+  fullName.vb: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions(Object)
+  name.vb: GetActions(Object)
 references:
 - uid: ParmaGIS.Core.UI.Context
   commentId: N:ParmaGIS.Core.UI.Context
@@ -138,347 +133,49 @@ references:
   - uid: ParmaGIS.Core.UI.Context
     name: Context
     href: ParmaGIS.Core.UI.Context.html
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(System.Type)
-  commentId: M:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-  parent: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions
-  definition: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor_ParmaGIS_Core_UI_Context_IContextMenuManager_System_Type_
-  name: GetFor(IContextMenuManager, Type)
-  nameWithType: ContextMenuManagerExtensions.GetFor(IContextMenuManager, Type)
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager, System.Type)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor_ParmaGIS_Core_UI_Context_IContextMenuManager_System_Type_
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor_ParmaGIS_Core_UI_Context_IContextMenuManager_System_Type_
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1
-  commentId: M:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  parent: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions
-  definition: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor__1_ParmaGIS_Core_UI_Context_IContextMenuManager_
-  name: GetFor<T>(IContextMenuManager)
-  nameWithType: ContextMenuManagerExtensions.GetFor<T>(IContextMenuManager)
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor<T>(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  nameWithType.vb: ContextMenuManagerExtensions.GetFor(Of T)(IContextMenuManager)
-  fullName.vb: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(Of T)(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  name.vb: GetFor(Of T)(IContextMenuManager)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor__1_ParmaGIS_Core_UI_Context_IContextMenuManager_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor__1_ParmaGIS_Core_UI_Context_IContextMenuManager_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: )
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(System.String,System.String,System.Action{{T}})
-  commentId: M:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-  parent: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions
-  definition: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_Register__1_ParmaGIS_Core_UI_Context_IContextMenuManager_System_String_System_String_System_Action___0__
-  name: Register<T>(IContextMenuManager, string, string, Action<T>)
-  nameWithType: ContextMenuManagerExtensions.Register<T>(IContextMenuManager, string, string, Action<T>)
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register<T>(ParmaGIS.Core.UI.Context.IContextMenuManager, string, string, System.Action<T>)
-  nameWithType.vb: ContextMenuManagerExtensions.Register(Of T)(IContextMenuManager, String, String, Action(Of T))
-  fullName.vb: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register(Of T)(ParmaGIS.Core.UI.Context.IContextMenuManager, String, String, System.Action(Of T))
-  name.vb: Register(Of T)(IContextMenuManager, String, String, Action(Of T))
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-    name: Register
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_Register__1_ParmaGIS_Core_UI_Context_IContextMenuManager_System_String_System_String_System_Action___0__
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-    name: Register
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_Register__1_ParmaGIS_Core_UI_Context_IContextMenuManager_System_String_System_String_System_Action___0__
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
-- uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-  commentId: M:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
+- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction*
+  commentId: Overload:ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction
+  href: ParmaGIS.Core.UI.Context.IContextMenuManager.html#ParmaGIS_Core_UI_Context_IContextMenuManager_RegisterAction__2
+  name: RegisterAction
+  nameWithType: IContextMenuManager.RegisterAction
+  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction
+- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions*
+  commentId: Overload:ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions
+  href: ParmaGIS.Core.UI.Context.IContextMenuManager.html#ParmaGIS_Core_UI_Context_IContextMenuManager_GetActions_System_Object_
+  name: GetActions
+  nameWithType: IContextMenuManager.GetActions
+  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor_ParmaGIS_Core_UI_Context_IContextMenuManager_System_Type_
-  name: GetFor(IContextMenuManager, Type)
-  nameWithType: ContextMenuManagerExtensions.GetFor(IContextMenuManager, Type)
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager, System.Type)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor_ParmaGIS_Core_UI_Context_IContextMenuManager_System_Type_
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(ParmaGIS.Core.UI.Context.IContextMenuManager,System.Type)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor_ParmaGIS_Core_UI_Context_IContextMenuManager_System_Type_
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions
-  commentId: T:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions
-  parent: ParmaGIS.Core.UI.Context
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html
-  name: ContextMenuManagerExtensions
-  nameWithType: ContextMenuManagerExtensions
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions
-- uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  commentId: M:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor__1_ParmaGIS_Core_UI_Context_IContextMenuManager_
-  name: GetFor<T>(IContextMenuManager)
-  nameWithType: ContextMenuManagerExtensions.GetFor<T>(IContextMenuManager)
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor<T>(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  nameWithType.vb: ContextMenuManagerExtensions.GetFor(Of T)(IContextMenuManager)
-  fullName.vb: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor(Of T)(ParmaGIS.Core.UI.Context.IContextMenuManager)
-  name.vb: GetFor(Of T)(IContextMenuManager)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor__1_ParmaGIS_Core_UI_Context_IContextMenuManager_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.GetFor``1(ParmaGIS.Core.UI.Context.IContextMenuManager)
-    name: GetFor
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_GetFor__1_ParmaGIS_Core_UI_Context_IContextMenuManager_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: )
-- uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-  commentId: M:ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-  isExternal: true
-  href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_Register__1_ParmaGIS_Core_UI_Context_IContextMenuManager_System_String_System_String_System_Action___0__
-  name: Register<T>(IContextMenuManager, string, string, Action<T>)
-  nameWithType: ContextMenuManagerExtensions.Register<T>(IContextMenuManager, string, string, Action<T>)
-  fullName: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register<T>(ParmaGIS.Core.UI.Context.IContextMenuManager, string, string, System.Action<T>)
-  nameWithType.vb: ContextMenuManagerExtensions.Register(Of T)(IContextMenuManager, String, String, Action(Of T))
-  fullName.vb: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register(Of T)(ParmaGIS.Core.UI.Context.IContextMenuManager, String, String, System.Action(Of T))
-  name.vb: Register(Of T)(IContextMenuManager, String, String, Action(Of T))
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-    name: Register
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_Register__1_ParmaGIS_Core_UI_Context_IContextMenuManager_System_String_System_String_System_Action___0__
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.Register``1(ParmaGIS.Core.UI.Context.IContextMenuManager,System.String,System.String,System.Action{``0})
-    name: Register
-    href: ParmaGIS.Core.UI.Context.ContextMenuManagerExtensions.html#ParmaGIS_Core_UI_Context_ContextMenuManagerExtensions_Register__1_ParmaGIS_Core_UI_Context_IContextMenuManager_System_String_System_String_System_Action___0__
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuManager
-    name: IContextMenuManager
-    href: ParmaGIS.Core.UI.Context.IContextMenuManager.html
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems*
-  commentId: Overload:ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems
-  href: ParmaGIS.Core.UI.Context.IContextMenuManager.html#ParmaGIS_Core_UI_Context_IContextMenuManager_ContextMenuItems
-  name: ContextMenuItems
-  nameWithType: IContextMenuManager.ContextMenuItems
-  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.ContextMenuItems
-- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuItem}
-  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuItem}
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuAction}
+  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuAction}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<IContextMenuItem>
-  nameWithType: IEnumerable<IContextMenuItem>
-  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Core.UI.Context.IContextMenuItem>
-  nameWithType.vb: IEnumerable(Of IContextMenuItem)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.UI.Context.IContextMenuItem)
-  name.vb: IEnumerable(Of IContextMenuItem)
+  name: IEnumerable<IContextMenuAction>
+  nameWithType: IEnumerable<IContextMenuAction>
+  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Core.UI.Context.IContextMenuAction>
+  nameWithType.vb: IEnumerable(Of IContextMenuAction)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.UI.Context.IContextMenuAction)
+  name.vb: IEnumerable(Of IContextMenuAction)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuItem
-    name: IContextMenuItem
-    href: ParmaGIS.Core.UI.Context.IContextMenuItem.html
+  - uid: ParmaGIS.Core.UI.Context.IContextMenuAction
+    name: IContextMenuAction
+    href: ParmaGIS.Core.UI.Context.IContextMenuAction.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -488,10 +185,17 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.Core.UI.Context.IContextMenuItem
-    name: IContextMenuItem
-    href: ParmaGIS.Core.UI.Context.IContextMenuItem.html
+  - uid: ParmaGIS.Core.UI.Context.IContextMenuAction
+    name: IContextMenuAction
+    href: ParmaGIS.Core.UI.Context.IContextMenuAction.html
   - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -557,98 +261,3 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ParmaGIS.Core.UI.Context.IContextMenuManager.Register*
-  commentId: Overload:ParmaGIS.Core.UI.Context.IContextMenuManager.Register
-  href: ParmaGIS.Core.UI.Context.IContextMenuManager.html#ParmaGIS_Core_UI_Context_IContextMenuManager_Register_System_Type_System_String_System_String_System_Action_System_Object__
-  name: Register
-  nameWithType: IContextMenuManager.Register
-  fullName: ParmaGIS.Core.UI.Context.IContextMenuManager.Register
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: System.Action{System.Object}
-  commentId: T:System.Action{System.Object}
-  parent: System
-  definition: System.Action`1
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<object>
-  nameWithType: Action<object>
-  fullName: System.Action<object>
-  nameWithType.vb: Action(Of Object)
-  fullName.vb: System.Action(Of Object)
-  name.vb: Action(Of Object)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: System.Action`1
-  commentId: T:System.Action`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<T>
-  nameWithType: Action<T>
-  fullName: System.Action<T>
-  nameWithType.vb: Action(Of T)
-  fullName.vb: System.Action(Of T)
-  name.vb: Action(Of T)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )

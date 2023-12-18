@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/337a82da41b4970cdcc7638dddfb6599823eb029/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/dev/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +91,7 @@
 
   <h1 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository" class="text-break">
     Class ParmaDALDataRepository
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +103,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ParmaDALDataRepository : IDataInfoRepository, IDALDataRepository, IDataRepository</code></pre>
+    <pre><code class="lang-csharp hljs">public class ParmaDALDataRepository : IDataTreeRepository, IDataRepository, IThreadsVulnerable</code></pre>
   </div>
 
 
@@ -120,9 +120,9 @@
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfoRepository.html">IDataInfoRepository</a></div>
-      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.html">IDALDataRepository</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.html">IDataTreeRepository</a></div>
       <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataRepository.html">IDataRepository</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.html">IThreadsVulnerable</a></div>
     </dd>
   </dl>
 
@@ -166,7 +166,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository__ctor_ParmaGIS_Modules_Parma_Space_ParmaSpace_ParmaGIS_Modules_Parma_Space_ParmaDAL_ParmaGIS_Core_Utilities_Threading_TaskShedullers_QueuedPrioritizableTaskScheduler_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.#ctor(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Parma.Space.ParmaDAL,ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler)">
   ParmaDALDataRepository(ParmaSpace, ParmaDAL, QueuedPrioritizableTaskScheduler)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -197,35 +197,34 @@
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_CreateChildAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.CreateChildAsync*"></a>
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_TaskScheduler_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.TaskScheduler*"></a>
 
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_CreateChildAsync_ParmaGIS_Modules_Data_Space_Data_IDataInfo_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.CreateChildAsync(ParmaGIS.Modules.Data.Space.Data.IDataInfo)">
-  CreateChildAsync(IDataInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_TaskScheduler" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.TaskScheduler">
+  TaskScheduler
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IDataInfo&gt; CreateChildAsync(IDataInfo parent)</code></pre>
+    <pre><code class="lang-csharp hljs">public TaskScheduler TaskScheduler { get; }</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><code>parent</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskscheduler">TaskScheduler</a></dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a>&gt;</dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -233,28 +232,27 @@
 
 
 
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_ThreadSafety_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.ThreadSafety*"></a>
 
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_CreateRootObjectAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.CreateRootObjectAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_CreateRootObjectAsync" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.CreateRootObjectAsync">
-  CreateRootObjectAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_ThreadSafety" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.ThreadSafety">
+  ThreadSafety
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IDataInfo&gt; CreateRootObjectAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool ThreadSafety { get; }</code></pre>
   </div>
 
 
-  <h4 class="section">Returns</h4>
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -265,34 +263,30 @@
 
 
 
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_TreeProvider_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.TreeProvider*"></a>
 
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_DeleteDataAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.DeleteDataAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_DeleteDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataInfo_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.DeleteDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataInfo)">
-  DeleteDataAsync(IDataInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_TreeProvider" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.TreeProvider">
+  TreeProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task DeleteDataAsync(IDataInfo info)</code></pre>
+    <pre><code class="lang-csharp hljs">public ITreeProvider TreeProvider { get; }</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><code>info</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a></dt>
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.html">ITreeProvider</a></dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -300,15 +294,15 @@
 
 
 
-
-
+  <h2 class="section" id="methods">Methods
+</h2>
 
 
   <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_DeleteDataAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.DeleteDataAsync*"></a>
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_DeleteDataAsync__1___0_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.DeleteDataAsync``1(``0)">
   DeleteDataAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -345,124 +339,11 @@
 
 
 
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_DeleteInfoAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.DeleteInfoAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_DeleteInfoAsync__1___0_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.DeleteInfoAsync``1(``0)">
-  DeleteInfoAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L135"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task DeleteInfoAsync&lt;T&gt;(T info) where T : class, IDataInfo</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>info</code> <span class="xref">T</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetChildrenAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetChildrenAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetChildrenAsync_ParmaGIS_Modules_Data_Space_Data_IDataInfo_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetChildrenAsync(ParmaGIS.Modules.Data.Space.Data.IDataInfo)">
-  GetChildrenAsync(IDataInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L160"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;IDataInfo&gt;&gt; GetChildrenAsync(IDataInfo parent)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>parent</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a>&gt;&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDataAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDataAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataInfo_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataInfo)">
-  GetDataAsync(IDataInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L204"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IDataObject&gt; GetDataAsync(IDataInfo info)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>info</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataObject.html">IDataObject</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDataAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDataAsync*"></a>
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDataAsync__1_System_Object_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDataAsync``1(System.Object)">
   GetDataAsync&lt;T&gt;(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -499,24 +380,24 @@
 
 
 
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDataEntityCollection_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDataEntityCollection*"></a>
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDatas_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDatas*"></a>
 
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDataEntityCollection__1" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDataEntityCollection``1">
-  GetDataEntityCollection&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetDatas__1" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetDatas``1">
+  GetDatas&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEntityCollection&lt;T&gt; GetDataEntityCollection&lt;T&gt;() where T : class, IDataObject</code></pre>
+    <pre><code class="lang-csharp hljs">public IQueryable&lt;T&gt; GetDatas&lt;T&gt;() where T : class, IDataObject</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.IEntityCollection-1.html">IEntityCollection</a>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -525,186 +406,6 @@
     <dt><code>T</code></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetInfoAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetInfoAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetInfoAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetInfoAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)">
-  GetInfoAsync(IDataObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L173"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IDataInfo&gt; GetInfoAsync(IDataObject data)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>data</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataObject.html">IDataObject</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetInfoAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetInfoAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetInfoAsync__1_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetInfoAsync``1(System.Guid)">
-  GetInfoAsync&lt;T&gt;(Guid)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L219"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;T?&gt; GetInfoAsync&lt;T&gt;(Guid id) where T : class, IDataInfo</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetInfoEntityCollection_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetInfoEntityCollection*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetInfoEntityCollection__1" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetInfoEntityCollection``1">
-  GetInfoEntityCollection&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L57"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEntityCollection&lt;T&gt; GetInfoEntityCollection&lt;T&gt;() where T : class, IDataInfo</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.IEntityCollection-1.html">IEntityCollection</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetParentAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetParentAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetParentAsync_ParmaGIS_Modules_Data_Space_Data_IDataInfo_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetParentAsync(ParmaGIS.Modules.Data.Space.Data.IDataInfo)">
-  GetParentAsync(IDataInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L143"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IDataInfo?&gt; GetParentAsync(IDataInfo child)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>child</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetRootObjectsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetRootObjectsAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_GetRootObjectsAsync" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetRootObjectsAsync">
-  GetRootObjectsAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L101"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;IDataInfo&gt;&gt; GetRootObjectsAsync()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a>&gt;&gt;</dt>
-    <dd></dd>
-  </dl>
-
 
 
 
@@ -719,7 +420,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_InsertDataAsync__1___0_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.InsertDataAsync``1(``0)">
   InsertDataAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -760,7 +461,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_SaveChangesAsync" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.SaveChangesAsync">
   SaveChangesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -787,47 +488,11 @@
 
 
 
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_UpdateDataAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.UpdateDataAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_UpdateDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataInfo_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.UpdateDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataInfo)">
-  UpdateDataAsync(IDataInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L247"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task UpdateDataAsync(IDataInfo info)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>info</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataInfo.html">IDataInfo</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/Data/Repositories/ParmaDALDataRepository.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

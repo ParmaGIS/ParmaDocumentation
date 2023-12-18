@@ -7,13 +7,12 @@ items:
   children:
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.#ctor(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Parma.Space.ParmaDAL,ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.AddCatalogItemAsync``1(``0)
-  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync``1
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.DeleteCatalogItemAsync``1(``0)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetAllCatalogsAsync
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync``1
-  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync``1(System.Object)
-  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(System.Type)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync``1
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync
@@ -27,11 +26,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaCatalogRepository
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -64,7 +63,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
@@ -86,39 +85,6 @@ items:
   nameWithType.vb: ParmaCatalogRepository.New(ParmaSpace, ParmaDAL, QueuedPrioritizableTaskScheduler)
   fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.New(ParmaGIS.Modules.Parma.Space.ParmaSpace, ParmaGIS.Modules.Parma.Space.ParmaDAL, ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler)
   name.vb: New(ParmaSpace, ParmaDAL, QueuedPrioritizableTaskScheduler)
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync``1
-  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync``1
-  id: CreateCatalogAsync``1
-  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository
-  langs:
-  - csharp
-  - vb
-  name: CreateCatalogAsync<T>()
-  nameWithType: ParmaCatalogRepository.CreateCatalogAsync<T>()
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync<T>()
-  type: Method
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CreateCatalogAsync
-    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 71
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Catalog
-  syntax:
-    content: 'public Task<T> CreateCatalogAsync<T>() where T : class, ICatalogItem'
-    typeParameters:
-    - id: T
-    return:
-      type: System.Threading.Tasks.Task{{T}}
-    content.vb: Public Function CreateCatalogAsync(Of T As {Class, ICatalogItem})() As Task(Of T)
-  overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync*
-  nameWithType.vb: ParmaCatalogRepository.CreateCatalogAsync(Of T)()
-  fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync(Of T)()
-  name.vb: CreateCatalogAsync(Of T)()
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.AddCatalogItemAsync``1(``0)
   commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.AddCatalogItemAsync``1(``0)
   id: AddCatalogItemAsync``1(``0)
@@ -133,11 +99,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddCatalogItemAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 83
+    startLine: 54
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -172,11 +138,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DeleteCatalogItemAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 104
+    startLine: 62
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -211,20 +177,20 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetAllCatalogsAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 112
+    startLine: 70
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   example: []
   syntax:
-    content: public Task<IEnumerable<ICatalogInfo>> GetAllCatalogsAsync()
+    content: public Task<IEnumerable<ICatalog>> GetAllCatalogsAsync()
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}}
-    content.vb: Public Function GetAllCatalogsAsync() As Task(Of IEnumerable(Of ICatalogInfo))
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}}
+    content.vb: Public Function GetAllCatalogsAsync() As Task(Of IEnumerable(Of ICatalog))
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetAllCatalogsAsync*
   implements:
   - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetAllCatalogsAsync
@@ -242,22 +208,22 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 117
+    startLine: 75
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   example: []
   syntax:
-    content: 'public Task<ICatalogInfo?> GetCatalogAsync<T>() where T : class, ICatalogItem'
+    content: 'public Task<ICatalog?> GetCatalogAsync<T>() where T : class, ICatalogItem'
     typeParameters:
     - id: T
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}
-    content.vb: Public Function GetCatalogAsync(Of T As {Class, ICatalogItem})() As Task(Of ICatalogInfo)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}
+    content.vb: Public Function GetCatalogAsync(Of T As {Class, ICatalogItem})() As Task(Of ICatalog)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
   implements:
   - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync``1
@@ -278,11 +244,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 122
+    startLine: 80
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -314,11 +280,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 128
+    startLine: 86
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -348,11 +314,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 137
+    startLine: 94
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -387,11 +353,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 146
+    startLine: 103
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -404,74 +370,74 @@ items:
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync*
   implements:
   - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.SaveChangesAsync
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
-  id: GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
+  id: GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository
   langs:
   - csharp
   - vb
-  name: GetCatalogItemsAsync(ICatalogInfo)
-  nameWithType: ParmaCatalogRepository.GetCatalogItemsAsync(ICatalogInfo)
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+  name: GetCatalogItemsAsync(ICatalog)
+  nameWithType: ParmaCatalogRepository.GetCatalogItemsAsync(ICatalog)
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
   type: Method
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 154
+    startLine: 111
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   example: []
   syntax:
-    content: public Task<IEnumerable<ICatalogItem>> GetCatalogItemsAsync(ICatalogInfo catalogInfo)
+    content: public Task<IEnumerable<ICatalogItem>> GetCatalogItemsAsync(ICatalog catalogInfo)
     parameters:
     - id: catalogInfo
-      type: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
+      type: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem}}
-    content.vb: Public Function GetCatalogItemsAsync(catalogInfo As ICatalogInfo) As Task(Of IEnumerable(Of ICatalogItem))
+    content.vb: Public Function GetCatalogItemsAsync(catalogInfo As ICatalog) As Task(Of IEnumerable(Of ICatalogItem))
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync*
   implements:
-  - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
-  id: GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  id: GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository
   langs:
   - csharp
   - vb
-  name: GetCatalogInfoAsync(ICatalogItem)
-  nameWithType: ParmaCatalogRepository.GetCatalogInfoAsync(ICatalogItem)
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  name: GetCatalogAsync(ICatalogItem)
+  nameWithType: ParmaCatalogRepository.GetCatalogAsync(ICatalogItem)
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
   type: Method
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetCatalogInfoAsync
+    id: GetCatalogAsync
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 163
+    startLine: 120
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   example: []
   syntax:
-    content: public Task<ICatalogInfo?> GetCatalogInfoAsync(ICatalogItem catalogItem)
+    content: public Task<ICatalog?> GetCatalogAsync(ICatalogItem catalogItem)
     parameters:
     - id: catalogItem
       type: ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}
-    content.vb: Public Function GetCatalogInfoAsync(catalogItem As ICatalogItem) As Task(Of ICatalogInfo)
-  overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync*
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}
+    content.vb: Public Function GetCatalogAsync(catalogItem As ICatalogItem) As Task(Of ICatalog)
+  overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
   implements:
-  - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  - ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Catalog
   commentId: N:ParmaGIS.Modules.Parma.Space.Catalog
@@ -923,106 +889,6 @@ references:
   - uid: ParmaGIS.Core.Utilities.Threading.TaskShedullers
     name: TaskShedullers
     href: ParmaGIS.Core.Utilities.Threading.TaskShedullers.html
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync
-  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_CreateCatalogAsync__1
-  name: CreateCatalogAsync
-  nameWithType: ParmaCatalogRepository.CreateCatalogAsync
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync
-- uid: System.Threading.Tasks.Task{{T}}
-  commentId: T:System.Threading.Tasks.Task{``0}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T>
-  nameWithType: Task<T>
-  fullName: System.Threading.Tasks.Task<T>
-  nameWithType.vb: Task(Of T)
-  fullName.vb: System.Threading.Tasks.Task(Of T)
-  name.vb: Task(Of T)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.AddCatalogItemAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.AddCatalogItemAsync
   href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_AddCatalogItemAsync__1___0_
@@ -1111,6 +977,43 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.DeleteCatalogItemAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.DeleteCatalogItemAsync
   href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_DeleteCatalogItemAsync__1___0_
@@ -1206,17 +1109,17 @@ references:
     href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetAllCatalogsAsync
   - name: (
   - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}}
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IEnumerable<ICatalogInfo>>
-  nameWithType: Task<IEnumerable<ICatalogInfo>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo>>
-  nameWithType.vb: Task(Of IEnumerable(Of ICatalogInfo))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo))
-  name.vb: Task(Of IEnumerable(Of ICatalogInfo))
+  name: Task<IEnumerable<ICatalog>>
+  nameWithType: Task<IEnumerable<ICatalog>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<ParmaGIS.Modules.Data.Space.Catalog.ICatalog>>
+  nameWithType.vb: Task(Of IEnumerable(Of ICatalog))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of ParmaGIS.Modules.Data.Space.Catalog.ICatalog))
+  name.vb: Task(Of IEnumerable(Of ICatalog))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
@@ -1228,9 +1131,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-    name: ICatalogInfo
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+    name: ICatalog
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
   - name: '>'
   - name: '>'
   spec.vb:
@@ -1248,10 +1151,38 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-    name: ICatalogInfo
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+    name: ICatalog
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
   - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync
@@ -1289,26 +1220,26 @@ references:
   - name: )
   - name: (
   - name: )
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Catalog.ICatalog}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ICatalogInfo>
-  nameWithType: Task<ICatalogInfo>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo>
-  nameWithType.vb: Task(Of ICatalogInfo)
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
-  name.vb: Task(Of ICatalogInfo)
+  name: Task<ICatalog>
+  nameWithType: Task<ICatalog>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.Catalog.ICatalog>
+  nameWithType.vb: Task(Of ICatalog)
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
+  name.vb: Task(Of ICatalog)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-    name: ICatalogInfo
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+    name: ICatalog
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1318,9 +1249,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-    name: ICatalogInfo
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+    name: ICatalog
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync
@@ -1529,6 +1460,35 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync
   href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_SaveChangesAsync
@@ -1554,64 +1514,58 @@ references:
     href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_SaveChangesAsync
   - name: (
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
   parent: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository
-  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogInfo_
-  name: GetCatalogItemsAsync(ICatalogInfo)
-  nameWithType: ICatalogRepository.GetCatalogItemsAsync(ICatalogInfo)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_
+  name: GetCatalogItemsAsync(ICatalog)
+  nameWithType: ICatalogRepository.GetCatalogItemsAsync(ICatalog)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
     name: GetCatalogItemsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogInfo_
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_
   - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-    name: ICatalogInfo
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+    name: ICatalog
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo)
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)
     name: GetCatalogItemsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogInfo_
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_
   - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-    name: ICatalogInfo
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+    name: ICatalog
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-  commentId: T:ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
+- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+  commentId: T:ParmaGIS.Modules.Data.Space.Catalog.ICatalog
   parent: ParmaGIS.Modules.Data.Space.Catalog
-  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo.html
-  name: ICatalogInfo
-  nameWithType: ICatalogInfo
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalogInfo
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync
-  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_GetCatalogInfoAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
-  name: GetCatalogInfoAsync
-  nameWithType: ParmaCatalogRepository.GetCatalogInfoAsync
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogInfoAsync
-- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html
+  name: ICatalog
+  nameWithType: ICatalog
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalog
+- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
   parent: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository
-  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogInfoAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
-  name: GetCatalogInfoAsync(ICatalogItem)
-  nameWithType: ICatalogRepository.GetCatalogInfoAsync(ICatalogItem)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
+  name: GetCatalogAsync(ICatalogItem)
+  nameWithType: ICatalogRepository.GetCatalogAsync(ICatalogItem)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
-    name: GetCatalogInfoAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogInfoAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+    name: GetCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
   - name: (
   - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem
     name: ICatalogItem
     href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogInfoAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
-    name: GetCatalogInfoAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogInfoAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)
+    name: GetCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_
   - name: (
   - uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem
     name: ICatalogItem

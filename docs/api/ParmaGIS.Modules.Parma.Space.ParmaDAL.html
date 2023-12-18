@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/337a82da41b4970cdcc7638dddfb6599823eb029/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_ParmaDAL.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.ParmaDAL%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/dev/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_ParmaDAL.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.ParmaDAL%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +91,7 @@
 
   <h1 id="ParmaGIS_Modules_Parma_Space_ParmaDAL" data-uid="ParmaGIS.Modules.Parma.Space.ParmaDAL" class="text-break">
     Class ParmaDAL
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/ParmaDAL.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/ParmaDAL.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -141,9 +141,6 @@
     </div>
     <div>
       <a class="xref" href="ParmaGIS.Core.DAL.DataAccessLayer.html#ParmaGIS_Core_DAL_DataAccessLayer_SourceLayerConfigurator">DataAccessLayer.SourceLayerConfigurator</a>
-    </div>
-    <div>
-      <a class="xref" href="ParmaGIS.Core.DAL.DataAccessLayer.html#ParmaGIS_Core_DAL_DataAccessLayer_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_">DataAccessLayer.OnModelCreating(ModelBuilder)</a>
     </div>
     <div>
       <a class="xref" href="ParmaGIS.Core.DAL.DataAccessLayer.html#ParmaGIS_Core_DAL_DataAccessLayer_OnConfiguring_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder_">DataAccessLayer.OnConfiguring(DbContextOptionsBuilder)</a>
@@ -311,11 +308,62 @@
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_ParmaDAL_OnModelCreating_" data-uid="ParmaGIS.Modules.Parma.Space.ParmaDAL.OnModelCreating*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_ParmaDAL_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_" data-uid="ParmaGIS.Modules.Parma.Space.ParmaDAL.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+  OnModelCreating(ModelBuilder)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/ParmaDAL.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Override this method to further configure the model that was discovered by convention from the entity types
+exposed in <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet&lt;TEntity&gt;</a> properties on your derived context. The resulting model may be cached
+and re-used for subsequent instances of your derived context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnModelCreating(ModelBuilder modelBuilder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelBuilder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.modelbuilder">ModelBuilder</a></dt>
+    <dd><p>The builder being used to construct the model for this context. Databases (and other extensions) typically
+define extension methods on this object that allow you to configure aspects of the model that are specific
+to a given database.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="ParmaGIS_Modules_Parma_Space_ParmaDAL_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+                    If a model is explicitly set on the options for this context (via <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder.usemodel">UseModel(IModel)</a>)
+                    then this method will not be run. However, it will still run when creating a compiled model.
+                </p>
+<p>
+                    See <a href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</a> for more information and
+                    examples.
+                </p>
+</div>
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/337a82da41b4970cdcc7638dddfb6599823eb029/common/modules/ParmaGIS.Modules.Parma.Space/ParmaDAL.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Parma.Space/ParmaDAL.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

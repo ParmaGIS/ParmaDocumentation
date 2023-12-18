@@ -6,7 +6,6 @@ items:
   parent: ParmaGIS.Core.UI.Shell
   children:
   - ParmaGIS.Core.UI.Shell.IShell.AppSettingsProvider
-  - ParmaGIS.Core.UI.Shell.IShell.EntityManager
   - ParmaGIS.Core.UI.Shell.IShell.Logger
   - ParmaGIS.Core.UI.Shell.IShell.ModuleManager
   - ParmaGIS.Core.UI.Shell.IShell.ServiceManager
@@ -21,7 +20,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IShell
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
@@ -46,7 +45,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Logger
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
@@ -75,7 +74,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceManager
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
@@ -104,7 +103,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleManager
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
@@ -119,35 +118,6 @@ items:
       type: ParmaGIS.Core.Modularity.IModuleManager
     content.vb: ReadOnly Property ModuleManager As IModuleManager
   overload: ParmaGIS.Core.UI.Shell.IShell.ModuleManager*
-- uid: ParmaGIS.Core.UI.Shell.IShell.EntityManager
-  commentId: P:ParmaGIS.Core.UI.Shell.IShell.EntityManager
-  id: EntityManager
-  parent: ParmaGIS.Core.UI.Shell.IShell
-  langs:
-  - csharp
-  - vb
-  name: EntityManager
-  nameWithType: IShell.EntityManager
-  fullName: ParmaGIS.Core.UI.Shell.IShell.EntityManager
-  type: Property
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: EntityManager
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-    startLine: 13
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Shell
-  syntax:
-    content: IEntityManager EntityManager { get; }
-    parameters: []
-    return:
-      type: ParmaGIS.Core.Entity.IEntityManager
-    content.vb: ReadOnly Property EntityManager As IEntityManager
-  overload: ParmaGIS.Core.UI.Shell.IShell.EntityManager*
 - uid: ParmaGIS.Core.UI.Shell.IShell.SettingsManager
   commentId: P:ParmaGIS.Core.UI.Shell.IShell.SettingsManager
   id: SettingsManager
@@ -162,11 +132,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SettingsManager
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Shell
@@ -191,11 +161,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AppSettingsProvider
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Shell/IShell.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Shell
@@ -374,49 +344,6 @@ references:
   - uid: ParmaGIS.Core.Modularity
     name: Modularity
     href: ParmaGIS.Core.Modularity.html
-- uid: ParmaGIS.Core.UI.Shell.IShell.EntityManager*
-  commentId: Overload:ParmaGIS.Core.UI.Shell.IShell.EntityManager
-  href: ParmaGIS.Core.UI.Shell.IShell.html#ParmaGIS_Core_UI_Shell_IShell_EntityManager
-  name: EntityManager
-  nameWithType: IShell.EntityManager
-  fullName: ParmaGIS.Core.UI.Shell.IShell.EntityManager
-- uid: ParmaGIS.Core.Entity.IEntityManager
-  commentId: T:ParmaGIS.Core.Entity.IEntityManager
-  parent: ParmaGIS.Core.Entity
-  href: ParmaGIS.Core.Entity.IEntityManager.html
-  name: IEntityManager
-  nameWithType: IEntityManager
-  fullName: ParmaGIS.Core.Entity.IEntityManager
-- uid: ParmaGIS.Core.Entity
-  commentId: N:ParmaGIS.Core.Entity
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Entity
-  nameWithType: ParmaGIS.Core.Entity
-  fullName: ParmaGIS.Core.Entity
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Entity
-    name: Entity
-    href: ParmaGIS.Core.Entity.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Entity
-    name: Entity
-    href: ParmaGIS.Core.Entity.html
 - uid: ParmaGIS.Core.UI.Shell.IShell.SettingsManager*
   commentId: Overload:ParmaGIS.Core.UI.Shell.IShell.SettingsManager
   href: ParmaGIS.Core.UI.Shell.IShell.html#ParmaGIS_Core_UI_Shell_IShell_SettingsManager

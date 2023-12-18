@@ -5,7 +5,7 @@ items:
   id: SettingsManager
   parent: ParmaGIS.Shell.Services.SettingsManagement
   children:
-  - ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.EntityManagement.EntityManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
+  - ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
   - ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.GetParameter(System.Type,System.Type)
   - ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.GetProvider``1
   - ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.ParameterType
@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SettingsManager
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
@@ -45,42 +45,40 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.EntityManagement.EntityManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
-  commentId: M:ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.EntityManagement.EntityManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
-  id: '#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.EntityManagement.EntityManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)'
+- uid: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
+  commentId: M:ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
+  id: '#ctor(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager,ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)'
   parent: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager
   langs:
   - csharp
   - vb
-  name: SettingsManager(ServiceManager, EntityManager, ISettingsSource)
-  nameWithType: SettingsManager.SettingsManager(ServiceManager, EntityManager, ISettingsSource)
-  fullName: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.SettingsManager(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager, ParmaGIS.Shell.Services.EntityManagement.EntityManager, ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
+  name: SettingsManager(ServiceManager, ISettingsSource)
+  nameWithType: SettingsManager.SettingsManager(ServiceManager, ISettingsSource)
+  fullName: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.SettingsManager(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager, ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
   type: Constructor
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-    startLine: 20
+    startLine: 19
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Services.SettingsManagement
   syntax:
-    content: public SettingsManager(ServiceManager serviceManager, EntityManager entityManager, ISettingsSource settingsSource)
+    content: public SettingsManager(ServiceManager serviceManager, ISettingsSource settingsSource)
     parameters:
     - id: serviceManager
       type: ParmaGIS.Shell.Service.ServiceManagement.ServiceManager
-    - id: entityManager
-      type: ParmaGIS.Shell.Services.EntityManagement.EntityManager
     - id: settingsSource
       type: ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource
-    content.vb: Public Sub New(serviceManager As ServiceManager, entityManager As EntityManager, settingsSource As ISettingsSource)
+    content.vb: Public Sub New(serviceManager As ServiceManager, settingsSource As ISettingsSource)
   overload: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor*
-  nameWithType.vb: SettingsManager.New(ServiceManager, EntityManager, ISettingsSource)
-  fullName.vb: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.New(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager, ParmaGIS.Shell.Services.EntityManagement.EntityManager, ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
-  name.vb: New(ServiceManager, EntityManager, ISettingsSource)
+  nameWithType.vb: SettingsManager.New(ServiceManager, ISettingsSource)
+  fullName.vb: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.New(ParmaGIS.Shell.Service.ServiceManagement.ServiceManager, ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource)
+  name.vb: New(ServiceManager, ISettingsSource)
 - uid: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.ParameterType
   commentId: P:ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.ParameterType
   id: ParameterType
@@ -95,11 +93,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterType
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-    startLine: 34
+    startLine: 32
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Services.SettingsManagement
@@ -127,11 +125,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SettingsPageProviders
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-    startLine: 35
+    startLine: 33
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Services.SettingsManagement
@@ -156,11 +154,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetParameter
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-    startLine: 92
+    startLine: 90
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Services.SettingsManagement
@@ -192,11 +190,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetProvider
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-    startLine: 117
+    startLine: 115
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Services.SettingsManagement
@@ -228,11 +226,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Run
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/SettingsManagement/SettingsManager.cs
-    startLine: 122
+    startLine: 120
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Services.SettingsManagement
@@ -600,7 +598,7 @@ references:
     href: ParmaGIS.Core.Serviceability.html
 - uid: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor*
   commentId: Overload:ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.#ctor
-  href: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.html#ParmaGIS_Shell_Services_SettingsManagement_SettingsManager__ctor_ParmaGIS_Shell_Service_ServiceManagement_ServiceManager_ParmaGIS_Shell_Services_EntityManagement_EntityManager_ParmaGIS_Shell_Services_SettingsManagement_ISettingsSource_
+  href: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.html#ParmaGIS_Shell_Services_SettingsManagement_SettingsManager__ctor_ParmaGIS_Shell_Service_ServiceManagement_ServiceManager_ParmaGIS_Shell_Services_SettingsManagement_ISettingsSource_
   name: SettingsManager
   nameWithType: SettingsManager.SettingsManager
   fullName: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.SettingsManager
@@ -614,13 +612,6 @@ references:
   name: ServiceManager
   nameWithType: ServiceManager
   fullName: ParmaGIS.Shell.Service.ServiceManagement.ServiceManager
-- uid: ParmaGIS.Shell.Services.EntityManagement.EntityManager
-  commentId: T:ParmaGIS.Shell.Services.EntityManagement.EntityManager
-  parent: ParmaGIS.Shell.Services.EntityManagement
-  href: ParmaGIS.Shell.Services.EntityManagement.EntityManager.html
-  name: EntityManager
-  nameWithType: EntityManager
-  fullName: ParmaGIS.Shell.Services.EntityManagement.EntityManager
 - uid: ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource
   commentId: T:ParmaGIS.Shell.Services.SettingsManagement.ISettingsSource
   parent: ParmaGIS.Shell.Services.SettingsManagement
@@ -666,44 +657,6 @@ references:
   - uid: ParmaGIS.Shell.Service.ServiceManagement
     name: ServiceManagement
     href: ParmaGIS.Shell.Service.ServiceManagement.html
-- uid: ParmaGIS.Shell.Services.EntityManagement
-  commentId: N:ParmaGIS.Shell.Services.EntityManagement
-  href: ParmaGIS.html
-  name: ParmaGIS.Shell.Services.EntityManagement
-  nameWithType: ParmaGIS.Shell.Services.EntityManagement
-  fullName: ParmaGIS.Shell.Services.EntityManagement
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Shell
-    name: Shell
-    href: ParmaGIS.Shell.html
-  - name: .
-  - uid: ParmaGIS.Shell.Services
-    name: Services
-    href: ParmaGIS.Shell.Services.html
-  - name: .
-  - uid: ParmaGIS.Shell.Services.EntityManagement
-    name: EntityManagement
-    href: ParmaGIS.Shell.Services.EntityManagement.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Shell
-    name: Shell
-    href: ParmaGIS.Shell.html
-  - name: .
-  - uid: ParmaGIS.Shell.Services
-    name: Services
-    href: ParmaGIS.Shell.Services.html
-  - name: .
-  - uid: ParmaGIS.Shell.Services.EntityManagement
-    name: EntityManagement
-    href: ParmaGIS.Shell.Services.EntityManagement.html
 - uid: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.ParameterType*
   commentId: Overload:ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.ParameterType
   href: ParmaGIS.Shell.Services.SettingsManagement.SettingsManager.html#ParmaGIS_Shell_Services_SettingsManagement_SettingsManager_ParameterType

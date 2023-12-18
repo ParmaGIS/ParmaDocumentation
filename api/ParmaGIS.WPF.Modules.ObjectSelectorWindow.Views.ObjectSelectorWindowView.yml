@@ -16,19 +16,19 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/Views/ObjectSelectorWindowView.xaml.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObjectSelectorWindowView
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/Views/ObjectSelectorWindowView.xaml.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectSelectorWindow
   namespace: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
   summary: Логика взаимодействия для ObjectSelectorWindowView.xaml
   example: []
   syntax:
-    content: 'public class ObjectSelectorWindowView : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class ObjectSelectorWindowView Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class ObjectSelectorWindowView : DialogWindow, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
+    content.vb: Public Class ObjectSelectorWindowView Inherits DialogWindow Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -39,6 +39,7 @@ items:
   - System.Windows.Controls.Control
   - System.Windows.Controls.ContentControl
   - System.Windows.Window
+  - ParmaGIS.WPF.UI.Dialog.DialogWindow
   implements:
   - System.Windows.Media.Animation.IAnimatable
   - System.ComponentModel.ISupportInitialize
@@ -738,11 +739,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/Views/ObjectSelectorWindowView.xaml.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnClosing
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/Views/ObjectSelectorWindowView.xaml.cs
-    startLine: 69
+    startLine: 74
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectSelectorWindow
   namespace: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
@@ -879,6 +880,13 @@ references:
   name: Window
   nameWithType: Window
   fullName: System.Windows.Window
+- uid: ParmaGIS.WPF.UI.Dialog.DialogWindow
+  commentId: T:ParmaGIS.WPF.UI.Dialog.DialogWindow
+  parent: ParmaGIS.WPF.UI.Dialog
+  href: ParmaGIS.WPF.UI.Dialog.DialogWindow.html
+  name: DialogWindow
+  nameWithType: DialogWindow
+  fullName: ParmaGIS.WPF.UI.Dialog.DialogWindow
 - uid: System.Windows.Media.Animation.IAnimatable
   commentId: T:System.Windows.Media.Animation.IAnimatable
   parent: System.Windows.Media.Animation
@@ -11565,6 +11573,44 @@ references:
     name: Controls
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.windows.controls
+- uid: ParmaGIS.WPF.UI.Dialog
+  commentId: N:ParmaGIS.WPF.UI.Dialog
+  href: ParmaGIS.html
+  name: ParmaGIS.WPF.UI.Dialog
+  nameWithType: ParmaGIS.WPF.UI.Dialog
+  fullName: ParmaGIS.WPF.UI.Dialog
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI
+    name: UI
+    href: ParmaGIS.WPF.UI.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI.Dialog
+    name: Dialog
+    href: ParmaGIS.WPF.UI.Dialog.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI
+    name: UI
+    href: ParmaGIS.WPF.UI.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI.Dialog
+    name: Dialog
+    href: ParmaGIS.WPF.UI.Dialog.html
 - uid: System.Windows.Media.Animation
   commentId: N:System.Windows.Media.Animation
   isExternal: true

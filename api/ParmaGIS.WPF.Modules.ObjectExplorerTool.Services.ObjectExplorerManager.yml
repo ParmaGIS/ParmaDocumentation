@@ -5,7 +5,7 @@ items:
   id: ObjectExplorerManager
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services
   children:
-  - ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor(ParmaGIS.Core.UI.Toolability.IToolManager,ParmaGIS.Core.Serviceability.IServiceManager)
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor(ParmaGIS.Core.UI.Toolability.IToolsService,ParmaGIS.Core.Serviceability.IServiceManager)
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.CurrentDispatcher
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.OpenObjectExplorer(System.Collections.IEnumerable,System.Object)
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.OpenObjectExplorer(System.Object,System.Object)
@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObjectExplorerManager
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-    startLine: 176
+    startLine: 184
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CurrentDispatcher
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-    startLine: 181
+    startLine: 189
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services
@@ -69,40 +69,40 @@ items:
       type: System.Windows.Threading.Dispatcher
     content.vb: Public ReadOnly Property CurrentDispatcher As Dispatcher
   overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.CurrentDispatcher*
-- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor(ParmaGIS.Core.UI.Toolability.IToolManager,ParmaGIS.Core.Serviceability.IServiceManager)
-  commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor(ParmaGIS.Core.UI.Toolability.IToolManager,ParmaGIS.Core.Serviceability.IServiceManager)
-  id: '#ctor(ParmaGIS.Core.UI.Toolability.IToolManager,ParmaGIS.Core.Serviceability.IServiceManager)'
+- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor(ParmaGIS.Core.UI.Toolability.IToolsService,ParmaGIS.Core.Serviceability.IServiceManager)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor(ParmaGIS.Core.UI.Toolability.IToolsService,ParmaGIS.Core.Serviceability.IServiceManager)
+  id: '#ctor(ParmaGIS.Core.UI.Toolability.IToolsService,ParmaGIS.Core.Serviceability.IServiceManager)'
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager
   langs:
   - csharp
   - vb
-  name: ObjectExplorerManager(IToolManager, IServiceManager)
-  nameWithType: ObjectExplorerManager.ObjectExplorerManager(IToolManager, IServiceManager)
-  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.ObjectExplorerManager(ParmaGIS.Core.UI.Toolability.IToolManager, ParmaGIS.Core.Serviceability.IServiceManager)
+  name: ObjectExplorerManager(IToolsService, IServiceManager)
+  nameWithType: ObjectExplorerManager.ObjectExplorerManager(IToolsService, IServiceManager)
+  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.ObjectExplorerManager(ParmaGIS.Core.UI.Toolability.IToolsService, ParmaGIS.Core.Serviceability.IServiceManager)
   type: Constructor
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-    startLine: 183
+    startLine: 191
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services
   syntax:
-    content: public ObjectExplorerManager(IToolManager toolManager, IServiceManager serviceManager)
+    content: public ObjectExplorerManager(IToolsService toolManager, IServiceManager serviceManager)
     parameters:
     - id: toolManager
-      type: ParmaGIS.Core.UI.Toolability.IToolManager
+      type: ParmaGIS.Core.UI.Toolability.IToolsService
     - id: serviceManager
       type: ParmaGIS.Core.Serviceability.IServiceManager
-    content.vb: Public Sub New(toolManager As IToolManager, serviceManager As IServiceManager)
+    content.vb: Public Sub New(toolManager As IToolsService, serviceManager As IServiceManager)
   overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor*
-  nameWithType.vb: ObjectExplorerManager.New(IToolManager, IServiceManager)
-  fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.New(ParmaGIS.Core.UI.Toolability.IToolManager, ParmaGIS.Core.Serviceability.IServiceManager)
-  name.vb: New(IToolManager, IServiceManager)
+  nameWithType.vb: ObjectExplorerManager.New(IToolsService, IServiceManager)
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.New(ParmaGIS.Core.UI.Toolability.IToolsService, ParmaGIS.Core.Serviceability.IServiceManager)
+  name.vb: New(IToolsService, IServiceManager)
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.OpenObjectExplorer(System.Object,System.Object)
   commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.OpenObjectExplorer(System.Object,System.Object)
   id: OpenObjectExplorer(System.Object,System.Object)
@@ -117,11 +117,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OpenObjectExplorer
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-    startLine: 199
+    startLine: 207
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services
@@ -151,11 +151,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OpenObjectExplorer
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Services/ObjectExplorer.cs
-    startLine: 218
+    startLine: 229
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services
@@ -508,20 +508,20 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.windows.threading
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor*
   commentId: Overload:ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.#ctor
-  href: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.html#ParmaGIS_WPF_Modules_ObjectExplorerTool_Services_ObjectExplorerManager__ctor_ParmaGIS_Core_UI_Toolability_IToolManager_ParmaGIS_Core_Serviceability_IServiceManager_
+  href: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.html#ParmaGIS_WPF_Modules_ObjectExplorerTool_Services_ObjectExplorerManager__ctor_ParmaGIS_Core_UI_Toolability_IToolsService_ParmaGIS_Core_Serviceability_IServiceManager_
   name: ObjectExplorerManager
   nameWithType: ObjectExplorerManager.ObjectExplorerManager
   fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.ObjectExplorerManager
   nameWithType.vb: ObjectExplorerManager.New
   fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorerManager.New
   name.vb: New
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager
-  commentId: T:ParmaGIS.Core.UI.Toolability.IToolManager
+- uid: ParmaGIS.Core.UI.Toolability.IToolsService
+  commentId: T:ParmaGIS.Core.UI.Toolability.IToolsService
   parent: ParmaGIS.Core.UI.Toolability
-  href: ParmaGIS.Core.UI.Toolability.IToolManager.html
-  name: IToolManager
-  nameWithType: IToolManager
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager
+  href: ParmaGIS.Core.UI.Toolability.IToolsService.html
+  name: IToolsService
+  nameWithType: IToolsService
+  fullName: ParmaGIS.Core.UI.Toolability.IToolsService
 - uid: ParmaGIS.Core.Serviceability.IServiceManager
   commentId: T:ParmaGIS.Core.Serviceability.IServiceManager
   parent: ParmaGIS.Core.Serviceability

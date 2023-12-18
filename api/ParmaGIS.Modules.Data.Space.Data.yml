@@ -5,13 +5,14 @@ items:
   id: Data
   parent: ParmaGIS.Modules.Data.Space
   children:
-  - ParmaGIS.Modules.Data.Space.Data.DataInfoExtensions
-  - ParmaGIS.Modules.Data.Space.Data.IDataInfo
-  - ParmaGIS.Modules.Data.Space.Data.IDataInfoRepository
   - ParmaGIS.Modules.Data.Space.Data.IDataObject
-  - ParmaGIS.Modules.Data.Space.Data.IDataObjectSaveble
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository
   - ParmaGIS.Modules.Data.Space.Data.IDataSpace
+  - ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
+  - ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  - ParmaGIS.Modules.Data.Space.Data.ITreeNode
+  - ParmaGIS.Modules.Data.Space.Data.ITreeProvider
+  - ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader`1
   langs:
   - csharp
   - vb
@@ -22,27 +23,6 @@ items:
   assemblies:
   - ParmaGIS.Modules.Data
 references:
-- uid: ParmaGIS.Modules.Data.Space.Data.DataInfoExtensions
-  commentId: T:ParmaGIS.Modules.Data.Space.Data.DataInfoExtensions
-  parent: ParmaGIS.Modules.Data.Space.Data
-  href: ParmaGIS.Modules.Data.Space.Data.DataInfoExtensions.html
-  name: DataInfoExtensions
-  nameWithType: DataInfoExtensions
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataInfoExtensions
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataInfo
-  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataInfo
-  parent: ParmaGIS.Modules.Data.Space.Data
-  href: ParmaGIS.Modules.Data.Space.Data.IDataInfo.html
-  name: IDataInfo
-  nameWithType: IDataInfo
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataInfo
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataInfoRepository
-  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataInfoRepository
-  parent: ParmaGIS.Modules.Data.Space.Data
-  href: ParmaGIS.Modules.Data.Space.Data.IDataInfoRepository.html
-  name: IDataInfoRepository
-  nameWithType: IDataInfoRepository
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataInfoRepository
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
   commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataObject
   parent: ParmaGIS.Modules.Data.Space.Data
@@ -50,12 +30,6 @@ references:
   name: IDataObject
   nameWithType: IDataObject
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataObject
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataObjectSaveble
-  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataObjectSaveble
-  href: ParmaGIS.Modules.Data.Space.Data.IDataObjectSaveble.html
-  name: IDataObjectSaveble
-  nameWithType: IDataObjectSaveble
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataObjectSaveble
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository
   commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataRepository
   parent: ParmaGIS.Modules.Data.Space.Data
@@ -70,6 +44,60 @@ references:
   name: IDataSpace
   nameWithType: IDataSpace
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataSpace
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.html
+  name: IDataTreeRepository
+  nameWithType: IDataTreeRepository
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
+- uid: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable.html
+  name: IThreadsVulnerable
+  nameWithType: IThreadsVulnerable
+  fullName: ParmaGIS.Modules.Data.Space.Data.IThreadsVulnerable
+- uid: ParmaGIS.Modules.Data.Space.Data.ITreeNode
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.ITreeNode
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.ITreeNode.html
+  name: ITreeNode
+  nameWithType: ITreeNode
+  fullName: ParmaGIS.Modules.Data.Space.Data.ITreeNode
+- uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.ITreeProvider
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.html
+  name: ITreeProvider
+  nameWithType: ITreeProvider
+  fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider
+- uid: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader`1
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader`1
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader-1.html
+  name: ThreadSafeQueryLoader<T>
+  nameWithType: ThreadSafeQueryLoader<T>
+  fullName: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader<T>
+  nameWithType.vb: ThreadSafeQueryLoader(Of T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader(Of T)
+  name.vb: ThreadSafeQueryLoader(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader`1
+    name: ThreadSafeQueryLoader
+    href: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader`1
+    name: ThreadSafeQueryLoader
+    href: ParmaGIS.Modules.Data.Space.Data.ThreadSafeQueryLoader-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data
   commentId: N:ParmaGIS.Modules.Data.Space.Data
   href: ParmaGIS.html

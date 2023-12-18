@@ -25,23 +25,29 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalculationToolViewModel
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
   syntax:
-    content: 'public class CalculationToolViewModel : BindableBase, INotifyPropertyChanged'
-    content.vb: Public Class CalculationToolViewModel Inherits BindableBase Implements INotifyPropertyChanged
+    content: 'public class CalculationToolViewModel : ToolAwareBase, IToolAware, INotifyPropertyChanged'
+    content.vb: Public Class CalculationToolViewModel Inherits ToolAwareBase Implements IToolAware, INotifyPropertyChanged
   inheritance:
   - System.Object
   - ParmaGIS.Core.Utilities.BindableBase
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase
   implements:
+  - ParmaGIS.Core.UI.Toolability.IToolAware
   - System.ComponentModel.INotifyPropertyChanged
   inheritedMembers:
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+  - ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
   - ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
@@ -69,11 +75,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -101,11 +107,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SelectedSpace
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 91
+    startLine: 93
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -130,11 +136,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Spaces
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 92
+    startLine: 94
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -159,11 +165,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalcPropertyTemplates
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 93
+    startLine: 95
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -188,11 +194,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Selection
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 94
+    startLine: 96
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -217,11 +223,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyFilters
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 95
+    startLine: 97
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -246,11 +252,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalculationResult
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 96
+    startLine: 98
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -275,11 +281,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ChangeSelectionCommand
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 106
+    startLine: 108
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -304,11 +310,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalculateCommand
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 117
+    startLine: 119
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -333,11 +339,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/dev
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveCommand
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/CalculationTool/ViewModels/CalculationToolViewModel.cs
-    startLine: 123
+    startLine: 125
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.CalculationTool.ViewModels
@@ -429,6 +435,20 @@ references:
   name: BindableBase
   nameWithType: BindableBase
   fullName: ParmaGIS.Core.Utilities.BindableBase
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  commentId: T:ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  parent: ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.Core.UI.Toolability.ToolAwareBase.html
+  name: ToolAwareBase
+  nameWithType: ToolAwareBase
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+- uid: ParmaGIS.Core.UI.Toolability.IToolAware
+  commentId: T:ParmaGIS.Core.UI.Toolability.IToolAware
+  parent: ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.Core.UI.Toolability.IToolAware.html
+  name: IToolAware
+  nameWithType: IToolAware
+  fullName: ParmaGIS.Core.UI.Toolability.IToolAware
 - uid: System.ComponentModel.INotifyPropertyChanged
   commentId: T:System.ComponentModel.INotifyPropertyChanged
   parent: System.ComponentModel
@@ -437,6 +457,64 @@ references:
   name: INotifyPropertyChanged
   nameWithType: INotifyPropertyChanged
   fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+  commentId: P:ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: Title
+  nameWithType: ToolAwareBase.Title
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.Title
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+  commentId: M:ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: CanClose()
+  nameWithType: ToolAwareBase.CanClose()
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose()
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+    name: CanClose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.CanClose
+    name: CanClose
+  - name: (
+  - name: )
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+  commentId: M:ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: OnClose()
+  nameWithType: ToolAwareBase.OnClose()
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose()
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+    name: OnClose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnClose
+    name: OnClose
+  - name: (
+  - name: )
+- uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+  commentId: M:ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+  parent: ParmaGIS.Core.UI.Toolability.ToolAwareBase
+  name: OnShow(IToolParameters)
+  nameWithType: ToolAwareBase.OnShow(IToolParameters)
+  fullName: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+    name: OnShow
+  - name: (
+  - uid: ParmaGIS.Core.UI.Toolability.IToolParameters
+    name: IToolParameters
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Toolability.ToolAwareBase.OnShow(ParmaGIS.Core.UI.Toolability.IToolParameters)
+    name: OnShow
+  - name: (
+  - uid: ParmaGIS.Core.UI.Toolability.IToolParameters
+    name: IToolParameters
+  - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   commentId: E:ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   parent: ParmaGIS.Core.Utilities.BindableBase
@@ -1134,6 +1212,44 @@ references:
   - uid: ParmaGIS.Core.Utilities
     name: Utilities
     href: ParmaGIS.Core.Utilities.html
+- uid: ParmaGIS.Core.UI.Toolability
+  commentId: N:ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.UI.Toolability
+  nameWithType: ParmaGIS.Core.UI.Toolability
+  fullName: ParmaGIS.Core.UI.Toolability
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Toolability
+    name: Toolability
+    href: ParmaGIS.Core.UI.Toolability.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Toolability
+    name: Toolability
+    href: ParmaGIS.Core.UI.Toolability.html
 - uid: System.ComponentModel
   commentId: N:System.ComponentModel
   isExternal: true
