@@ -25,7 +25,7 @@ python main.py --help
   | SourceSchema | SourceTable | SourceSelect | SourceColumns | TargetSchema | TargetTable | TargetColumns |
   | - | - | - | - | - | - | - |
   
-  - **SourceSelect** может содержать запрос к связанным таблицам для заполнения таблицы в конечной БД прим.:
+  - **SourceSelect** может содержать запрос к связанным таблицам для заполнения таблицы в конечной таблице новой БД прим.:
   
   ```SQL
   select t_wood_floor.primarykey, t_wood_floor.trunk_count, t_wood_floor.age, t_wood_floor.hight, t_wood_floor.evaluation, t_wood_floor.stand from public.t_wood_floor
@@ -37,7 +37,7 @@ python main.py --help
 
 ```postgresql://<Логин>:<Пароль>@<Хост>:<Порт>/<Название БД>```
 
-- dst - (destionation) адрес конечной базы данных (куда переносим) в формате:
+- dst - (destination) адрес конечной базы данных (куда переносим) в формате:
 
 ```postgresql://<Логин>:<Пароль>@<Хост>:<Порт>/<Название БД>```
 
