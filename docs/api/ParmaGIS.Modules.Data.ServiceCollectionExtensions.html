@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/dev/apiSpec/new?filename=ParmaGIS_Modules_Data_ServiceCollectionExtensions.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.ServiceCollectionExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Modules_Data_ServiceCollectionExtensions.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.ServiceCollectionExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +91,7 @@
 
   <h1 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions" class="text-break">
     Class ServiceCollectionExtensions
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -154,70 +154,34 @@
 </h2>
 
 
-  <a id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBProvider_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBProvider*"></a>
+  <a id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBServer_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBServer*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBProvider__1_ParmaGIS_Core_Serviceability_IServiceCollection_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBProvider``1(ParmaGIS.Core.Serviceability.IServiceCollection)">
-  RegisterDBProvider&lt;TDBProvider&gt;(IServiceCollection)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBServer__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_Func_ParmaGIS_Core_Storage_IContainer_ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection__System_Action_ParmaGIS_Core_Storage_IContainer_ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection__" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBServer``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})">
+  RegisterDBServer&lt;TDBServer&gt;(IServiceCollection, Func&lt;IContainer, IDataBaseServerConnection&gt;, Action&lt;IContainer, IDataBaseServerConnection&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RegisterDBProvider&lt;TDBProvider&gt;(this IServiceCollection collection) where TDBProvider : IDataBaseProvider, IStorable</code></pre>
+    <pre><code class="lang-csharp hljs">public static void RegisterDBServer&lt;TDBServer&gt;(this IServiceCollection collection, Func&lt;IContainer, IDataBaseServerConnection&gt; deserializer, Action&lt;IContainer, IDataBaseServerConnection&gt; serializer) where TDBServer : class, IDataBaseServerConnection</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>collection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
     <dd></dd>
-  </dl>
-
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>TDBProvider</code></dt>
+    <dt><code>deserializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.IContainer.html">IContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</dt>
     <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBProvider_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBProvider*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBProvider__2_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Storage_IItemProxy___0___1__" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBProvider``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Storage.IItemProxy{``0,``1})">
-  RegisterDBProvider&lt;TDBProvider, TStorable&gt;(IServiceCollection, IItemProxy&lt;TDBProvider, TStorable&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L23"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RegisterDBProvider&lt;TDBProvider, TStorable&gt;(this IServiceCollection collection, IItemProxy&lt;TDBProvider, TStorable&gt; proxy) where TDBProvider : IDataBaseProvider where TStorable : IStorable</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>collection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
-    <dd></dd>
-    <dt><code>proxy</code> <a class="xref" href="ParmaGIS.Core.Storage.IItemProxy-2.html">IItemProxy</a>&lt;TDBProvider, TStorable&gt;</dt>
+    <dt><code>serializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.IContainer.html">IContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</dt>
     <dd></dd>
   </dl>
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
-    <dt><code>TDBProvider</code></dt>
-    <dd></dd>
-    <dt><code>TStorable</code></dt>
+    <dt><code>TDBServer</code></dt>
     <dd></dd>
   </dl>
 
@@ -232,21 +196,25 @@
 
   <a id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterSpace_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterSpace__1_ParmaGIS_Core_Serviceability_IServiceCollection_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace``1(ParmaGIS.Core.Serviceability.IServiceCollection)">
-  RegisterSpace&lt;TSpace&gt;(IServiceCollection)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterSpace__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_Func_ParmaGIS_Modules_Data_Storages_SpaceContainer_ParmaGIS_Modules_Data_Space_ISpace__System_Action_ParmaGIS_Modules_Data_Storages_SpaceContainer_ParmaGIS_Modules_Data_Space_ISpace__" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.Func{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace},System.Action{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace})">
+  RegisterSpace&lt;TSpace&gt;(IServiceCollection, Func&lt;SpaceContainer, ISpace&gt;, Action&lt;SpaceContainer, ISpace&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RegisterSpace&lt;TSpace&gt;(this IServiceCollection collection) where TSpace : ISpace, IStorable</code></pre>
+    <pre><code class="lang-csharp hljs">public static void RegisterSpace&lt;TSpace&gt;(this IServiceCollection collection, Func&lt;SpaceContainer, ISpace&gt; deserializer, Action&lt;SpaceContainer, ISpace&gt; serializer) where TSpace : class, ISpace</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>collection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
+    <dd></dd>
+    <dt><code>deserializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Storages.SpaceContainer.html">SpaceContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Space.ISpace.html">ISpace</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>serializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Storages.SpaceContainer.html">SpaceContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Space.ISpace.html">ISpace</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -254,46 +222,6 @@
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TSpace</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterSpace_" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterSpace__2_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Storage_IItemProxy___0___1__" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Storage.IItemProxy{``0,``1})">
-  RegisterSpace&lt;TSpace, TStorable&gt;(IServiceCollection, IItemProxy&lt;TSpace, TStorable&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L16"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RegisterSpace&lt;TSpace, TStorable&gt;(this IServiceCollection collection, IItemProxy&lt;TSpace, TStorable&gt; proxy) where TSpace : ISpace where TStorable : IStorable</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>collection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
-    <dd></dd>
-    <dt><code>proxy</code> <a class="xref" href="ParmaGIS.Core.Storage.IItemProxy-2.html">IItemProxy</a>&lt;TSpace, TStorable&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>TSpace</code></dt>
-    <dd></dd>
-    <dt><code>TStorable</code></dt>
     <dd></dd>
   </dl>
 
@@ -310,7 +238,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

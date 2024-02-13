@@ -5,9 +5,12 @@ items:
   id: IServiceProvider
   parent: ParmaGIS.Core.Serviceability
   children:
+  - ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.String)
+  - ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.Type)
+  - ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.String)
   - ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)
-  - ParmaGIS.Core.Serviceability.IServiceProvider.GetServices(System.Type)
   - ParmaGIS.Core.Serviceability.IServiceProvider.ServiceCatalog
+  - ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.String,System.Object@)
   - ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type,System.Object@)
   langs:
   - csharp
@@ -19,7 +22,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IServiceProvider
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
@@ -33,8 +36,8 @@ items:
     content: public interface IServiceProvider
     content.vb: Public Interface IServiceProvider
   extensionMethods:
+  - ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1
   - ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1
-  - ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1
   - ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService``1({T}@)
 - uid: ParmaGIS.Core.Serviceability.IServiceProvider.ServiceCatalog
   commentId: P:ParmaGIS.Core.Serviceability.IServiceProvider.ServiceCatalog
@@ -50,7 +53,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceCatalog
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
@@ -79,7 +82,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
@@ -87,46 +90,50 @@ items:
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает экземпляр реализации сервиса.
+  example: []
   syntax:
     content: object? GetService(Type serviceType)
     parameters:
     - id: serviceType
       type: System.Type
+      description: Тип сервиса. Если на один тип сервиса было добавлено несколько реаллизаций, будет возвращена первая попавшаяся.
     return:
       type: System.Object
+      description: Экземпляр реализации сервиса.
     content.vb: Function GetService(serviceType As Type) As Object
   overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetService*
-- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetServices(System.Type)
-  commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.GetServices(System.Type)
-  id: GetServices(System.Type)
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.Type)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.Type)
+  id: GetImplementations(System.Type)
   parent: ParmaGIS.Core.Serviceability.IServiceProvider
   langs:
   - csharp
   - vb
-  name: GetServices(Type)
-  nameWithType: IServiceProvider.GetServices(Type)
-  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetServices(System.Type)
+  name: GetImplementations(Type)
+  nameWithType: IServiceProvider.GetImplementations(Type)
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.Type)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetServices
+    id: GetImplementations
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
     startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: IEnumerable<object> GetServices(Type serviceType)
+    content: IEnumerable<object> GetImplementations(Type serviceType)
     parameters:
     - id: serviceType
       type: System.Type
     return:
       type: System.Collections.Generic.IEnumerable{System.Object}
-    content.vb: Function GetServices(serviceType As Type) As IEnumerable(Of Object)
-  overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetServices*
+    content.vb: Function GetImplementations(serviceType As Type) As IEnumerable(Of Object)
+  overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*
 - uid: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type,System.Object@)
   commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type,System.Object@)
   id: TryGetService(System.Type,System.Object@)
@@ -134,14 +141,14 @@ items:
   langs:
   - csharp
   - vb
-  name: TryGetService(Type, out object)
-  nameWithType: IServiceProvider.TryGetService(Type, out object)
-  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type, out object)
+  name: TryGetService(Type, out object?)
+  nameWithType: IServiceProvider.TryGetService(Type, out object?)
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type, out object?)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryGetService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
@@ -150,7 +157,7 @@ items:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: bool TryGetService(Type serviceType, out object service)
+    content: bool TryGetService(Type serviceType, out object? service)
     parameters:
     - id: serviceType
       type: System.Type
@@ -163,6 +170,110 @@ items:
   nameWithType.vb: IServiceProvider.TryGetService(Type, Object)
   fullName.vb: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type, Object)
   name.vb: TryGetService(Type, Object)
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.String)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.String)
+  id: GetService(System.String)
+  parent: ParmaGIS.Core.Serviceability.IServiceProvider
+  langs:
+  - csharp
+  - vb
+  name: GetService(string)
+  nameWithType: IServiceProvider.GetService(string)
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(string)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetService
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
+    startLine: 19
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: object? GetService(string serviceName)
+    parameters:
+    - id: serviceName
+      type: System.String
+    return:
+      type: System.Object
+    content.vb: Function GetService(serviceName As String) As Object
+  overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetService*
+  nameWithType.vb: IServiceProvider.GetService(String)
+  fullName.vb: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(String)
+  name.vb: GetService(String)
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.String)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.String)
+  id: GetImplementations(System.String)
+  parent: ParmaGIS.Core.Serviceability.IServiceProvider
+  langs:
+  - csharp
+  - vb
+  name: GetImplementations(string)
+  nameWithType: IServiceProvider.GetImplementations(string)
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(string)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetImplementations
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
+    startLine: 21
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: IEnumerable<object> GetImplementations(string serviceName)
+    parameters:
+    - id: serviceName
+      type: System.String
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Object}
+    content.vb: Function GetImplementations(serviceName As String) As IEnumerable(Of Object)
+  overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*
+  nameWithType.vb: IServiceProvider.GetImplementations(String)
+  fullName.vb: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(String)
+  name.vb: GetImplementations(String)
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.String,System.Object@)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.String,System.Object@)
+  id: TryGetService(System.String,System.Object@)
+  parent: ParmaGIS.Core.Serviceability.IServiceProvider
+  langs:
+  - csharp
+  - vb
+  name: TryGetService(string, out object?)
+  nameWithType: IServiceProvider.TryGetService(string, out object?)
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(string, out object?)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: TryGetService
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
+    startLine: 23
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: bool TryGetService(string serviceName, out object? service)
+    parameters:
+    - id: serviceName
+      type: System.String
+    - id: service
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Function TryGetService(serviceName As String, service As Object) As Boolean
+  overload: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService*
+  nameWithType.vb: IServiceProvider.TryGetService(String, Object)
+  fullName.vb: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(String, Object)
+  name.vb: TryGetService(String, Object)
 references:
 - uid: ParmaGIS.Core.Serviceability
   commentId: N:ParmaGIS.Core.Serviceability
@@ -194,6 +305,43 @@ references:
   - uid: ParmaGIS.Core.Serviceability
     name: Serviceability
     href: ParmaGIS.Core.Serviceability.html
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+  parent: ParmaGIS.Core.Serviceability.ServiceExtensions
+  definition: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  name: GetImplementations<T>(IServiceProvider)
+  nameWithType: ServiceExtensions.GetImplementations<T>(IServiceProvider)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations<T>(ParmaGIS.Core.Serviceability.IServiceProvider)
+  nameWithType.vb: ServiceExtensions.GetImplementations(Of T)(IServiceProvider)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
+  name.vb: GetImplementations(Of T)(IServiceProvider)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+    name: GetImplementations
+    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
+    name: IServiceProvider
+    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+    name: GetImplementations
+    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
+    name: IServiceProvider
+    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
+  - name: )
 - uid: ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1
   commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   parent: ParmaGIS.Core.Serviceability.ServiceExtensions
@@ -221,43 +369,6 @@ references:
   - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
     name: GetService
     href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetService__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
-    name: IServiceProvider
-    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
-  - name: )
-- uid: ParmaGIS.Core.Serviceability.IServiceProvider.ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  parent: ParmaGIS.Core.Serviceability.ServiceExtensions
-  definition: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  name: GetServices<T>(IServiceProvider)
-  nameWithType: ServiceExtensions.GetServices<T>(IServiceProvider)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices<T>(ParmaGIS.Core.Serviceability.IServiceProvider)
-  nameWithType.vb: ServiceExtensions.GetServices(Of T)(IServiceProvider)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
-  name.vb: GetServices(Of T)(IServiceProvider)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-    name: GetServices
-    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
-    name: IServiceProvider
-    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-    name: GetServices
-    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
   - name: (
   - name: Of
   - name: " "
@@ -313,6 +424,48 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  name: GetImplementations<T>(IServiceProvider)
+  nameWithType: ServiceExtensions.GetImplementations<T>(IServiceProvider)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations<T>(ParmaGIS.Core.Serviceability.IServiceProvider)
+  nameWithType.vb: ServiceExtensions.GetImplementations(Of T)(IServiceProvider)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
+  name.vb: GetImplementations(Of T)(IServiceProvider)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+    name: GetImplementations
+    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
+    name: IServiceProvider
+    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+    name: GetImplementations
+    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
+    name: IServiceProvider
+    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
+  - name: )
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions
+  commentId: T:ParmaGIS.Core.Serviceability.ServiceExtensions
+  parent: ParmaGIS.Core.Serviceability
+  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html
+  name: ServiceExtensions
+  nameWithType: ServiceExtensions
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions
 - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetService__1_ParmaGIS_Core_Serviceability_IServiceProvider_
@@ -338,48 +491,6 @@ references:
   - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
     name: GetService
     href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetService__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
-    name: IServiceProvider
-    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
-  - name: )
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions
-  commentId: T:ParmaGIS.Core.Serviceability.ServiceExtensions
-  parent: ParmaGIS.Core.Serviceability
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html
-  name: ServiceExtensions
-  nameWithType: ServiceExtensions
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  name: GetServices<T>(IServiceProvider)
-  nameWithType: ServiceExtensions.GetServices<T>(IServiceProvider)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices<T>(ParmaGIS.Core.Serviceability.IServiceProvider)
-  nameWithType.vb: ServiceExtensions.GetServices(Of T)(IServiceProvider)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
-  name.vb: GetServices(Of T)(IServiceProvider)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-    name: GetServices
-    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Core.Serviceability.IServiceProvider
-    name: IServiceProvider
-    href: ParmaGIS.Core.Serviceability.IServiceProvider.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-    name: GetServices
-    href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
   - name: (
   - name: Of
   - name: " "
@@ -478,12 +589,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetServices*
-  commentId: Overload:ParmaGIS.Core.Serviceability.IServiceProvider.GetServices
-  href: ParmaGIS.Core.Serviceability.IServiceProvider.html#ParmaGIS_Core_Serviceability_IServiceProvider_GetServices_System_Type_
-  name: GetServices
-  nameWithType: IServiceProvider.GetServices
-  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetServices
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*
+  commentId: Overload:ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations
+  href: ParmaGIS.Core.Serviceability.IServiceProvider.html#ParmaGIS_Core_Serviceability_IServiceProvider_GetImplementations_System_Type_
+  name: GetImplementations
+  nameWithType: IServiceProvider.GetImplementations
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations
 - uid: System.Collections.Generic.IEnumerable{System.Object}
   commentId: T:System.Collections.Generic.IEnumerable{System.Object}
   parent: System.Collections.Generic
@@ -601,3 +712,14 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

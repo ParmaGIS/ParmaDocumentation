@@ -7,7 +7,7 @@ items:
   children:
   - ParmaGIS.Shell.Service.ToolManagement.ToolInfo.#ctor(System.String,System.Type,System.Boolean)
   - ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Name
-  - ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle
+  - ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single
   - ParmaGIS.Shell.Service.ToolManagement.ToolInfo.State
   - ParmaGIS.Shell.Service.ToolManagement.ToolInfo.ToolType
   langs:
@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToolInfo
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-    startLine: 10
+    startLine: 7
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Service.ToolManagement
@@ -66,24 +66,24 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-    startLine: 14
+    startLine: 11
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Service.ToolManagement
   syntax:
-    content: public ToolInfo(string name, Type toolType, bool onSingle)
+    content: public ToolInfo(string name, Type toolType, bool single)
     parameters:
     - id: name
       type: System.String
     - id: toolType
       type: System.Type
-    - id: onSingle
+    - id: single
       type: System.Boolean
-    content.vb: Public Sub New(name As String, toolType As Type, onSingle As Boolean)
+    content.vb: Public Sub New(name As String, toolType As Type, [single] As Boolean)
   overload: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.#ctor*
   nameWithType.vb: ToolInfo.New(String, Type, Boolean)
   fullName.vb: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.New(String, System.Type, Boolean)
@@ -102,11 +102,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-    startLine: 24
+    startLine: 21
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Service.ToolManagement
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: State
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-    startLine: 26
+    startLine: 23
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Service.ToolManagement
@@ -152,38 +152,38 @@ items:
   overload: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.State*
   implements:
   - ParmaGIS.Core.UI.Toolability.IToolInfo.State
-- uid: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle
-  commentId: P:ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle
-  id: OnSingle
+- uid: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single
+  commentId: P:ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single
+  id: Single
   parent: ParmaGIS.Shell.Service.ToolManagement.ToolInfo
   langs:
   - csharp
   - vb
-  name: OnSingle
-  nameWithType: ToolInfo.OnSingle
-  fullName: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle
+  name: Single
+  nameWithType: ToolInfo.Single
+  fullName: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single
   type: Property
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: OnSingle
+    id: Single
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-    startLine: 32
+    startLine: 29
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Service.ToolManagement
   example: []
   syntax:
-    content: public bool OnSingle { get; }
+    content: public bool Single { get; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly Property OnSingle As Boolean
-  overload: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle*
+    content.vb: Public ReadOnly Property [Single] As Boolean
+  overload: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single*
   implements:
-  - ParmaGIS.Core.UI.Toolability.IToolInfo.OnSingle
+  - ParmaGIS.Core.UI.Toolability.IToolInfo.Single
 - uid: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.ToolType
   commentId: P:ParmaGIS.Shell.Service.ToolManagement.ToolInfo.ToolType
   id: ToolType
@@ -198,11 +198,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToolType
     path: ../../ParmaTest/common/src/ParmaGIS.Shell/Services/ToolManagement/ToolInfo.cs
-    startLine: 34
+    startLine: 31
   assemblies:
   - ParmaGIS.Shell
   namespace: ParmaGIS.Shell.Service.ToolManagement
@@ -1580,19 +1580,19 @@ references:
   name: ToolState
   nameWithType: ToolState
   fullName: ParmaGIS.Core.UI.Toolability.ToolState
-- uid: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle*
-  commentId: Overload:ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle
-  href: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.html#ParmaGIS_Shell_Service_ToolManagement_ToolInfo_OnSingle
-  name: OnSingle
-  nameWithType: ToolInfo.OnSingle
-  fullName: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.OnSingle
-- uid: ParmaGIS.Core.UI.Toolability.IToolInfo.OnSingle
-  commentId: P:ParmaGIS.Core.UI.Toolability.IToolInfo.OnSingle
+- uid: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single*
+  commentId: Overload:ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single
+  href: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.html#ParmaGIS_Shell_Service_ToolManagement_ToolInfo_Single
+  name: Single
+  nameWithType: ToolInfo.Single
+  fullName: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.Single
+- uid: ParmaGIS.Core.UI.Toolability.IToolInfo.Single
+  commentId: P:ParmaGIS.Core.UI.Toolability.IToolInfo.Single
   parent: ParmaGIS.Core.UI.Toolability.IToolInfo
-  href: ParmaGIS.Core.UI.Toolability.IToolInfo.html#ParmaGIS_Core_UI_Toolability_IToolInfo_OnSingle
-  name: OnSingle
-  nameWithType: IToolInfo.OnSingle
-  fullName: ParmaGIS.Core.UI.Toolability.IToolInfo.OnSingle
+  href: ParmaGIS.Core.UI.Toolability.IToolInfo.html#ParmaGIS_Core_UI_Toolability_IToolInfo_Single
+  name: Single
+  nameWithType: IToolInfo.Single
+  fullName: ParmaGIS.Core.UI.Toolability.IToolInfo.Single
 - uid: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.ToolType*
   commentId: Overload:ParmaGIS.Shell.Service.ToolManagement.ToolInfo.ToolType
   href: ParmaGIS.Shell.Service.ToolManagement.ToolInfo.html#ParmaGIS_Shell_Service_ToolManagement_ToolInfo_ToolType

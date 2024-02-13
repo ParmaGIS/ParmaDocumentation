@@ -6,7 +6,9 @@ items:
   parent: ParmaGIS.Core.Log
   children:
   - ParmaGIS.Core.Log.ILogger.History
+  - ParmaGIS.Core.Log.ILogger.Log(System.DateTime,System.String,System.String,System.String)
   - ParmaGIS.Core.Log.ILogger.Log(System.String)
+  - ParmaGIS.Core.Log.ILogger.Log(System.String,System.String)
   - ParmaGIS.Core.Log.ILogger.LogEvent
   langs:
   - csharp
@@ -18,11 +20,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/ILogger.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ILogger
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 25
+    startLine: 5
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -43,11 +45,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/ILogger.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LogEvent
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 27
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -70,11 +72,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/ILogger.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: History
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 28
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -99,11 +101,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/ILogger.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Log
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 29
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -117,6 +119,78 @@ items:
   nameWithType.vb: ILogger.Log(String)
   fullName.vb: ParmaGIS.Core.Log.ILogger.Log(String)
   name.vb: Log(String)
+- uid: ParmaGIS.Core.Log.ILogger.Log(System.DateTime,System.String,System.String,System.String)
+  commentId: M:ParmaGIS.Core.Log.ILogger.Log(System.DateTime,System.String,System.String,System.String)
+  id: Log(System.DateTime,System.String,System.String,System.String)
+  parent: ParmaGIS.Core.Log.ILogger
+  langs:
+  - csharp
+  - vb
+  name: Log(DateTime, string, string, string)
+  nameWithType: ILogger.Log(DateTime, string, string, string)
+  fullName: ParmaGIS.Core.Log.ILogger.Log(System.DateTime, string, string, string)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Log/ILogger.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Log
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/ILogger.cs
+    startLine: 10
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Log
+  syntax:
+    content: void Log(DateTime dateTime, string owner, string message, string bodyFormat)
+    parameters:
+    - id: dateTime
+      type: System.DateTime
+    - id: owner
+      type: System.String
+    - id: message
+      type: System.String
+    - id: bodyFormat
+      type: System.String
+    content.vb: Sub Log(dateTime As Date, owner As String, message As String, bodyFormat As String)
+  overload: ParmaGIS.Core.Log.ILogger.Log*
+  nameWithType.vb: ILogger.Log(Date, String, String, String)
+  fullName.vb: ParmaGIS.Core.Log.ILogger.Log(Date, String, String, String)
+  name.vb: Log(Date, String, String, String)
+- uid: ParmaGIS.Core.Log.ILogger.Log(System.String,System.String)
+  commentId: M:ParmaGIS.Core.Log.ILogger.Log(System.String,System.String)
+  id: Log(System.String,System.String)
+  parent: ParmaGIS.Core.Log.ILogger
+  langs:
+  - csharp
+  - vb
+  name: Log(string, string)
+  nameWithType: ILogger.Log(string, string)
+  fullName: ParmaGIS.Core.Log.ILogger.Log(string, string)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Log/ILogger.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Log
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/ILogger.cs
+    startLine: 11
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Log
+  syntax:
+    content: void Log(string owner, string message)
+    parameters:
+    - id: owner
+      type: System.String
+    - id: message
+      type: System.String
+    content.vb: Sub Log(owner As String, message As String)
+  overload: ParmaGIS.Core.Log.ILogger.Log*
+  nameWithType.vb: ILogger.Log(String, String)
+  fullName.vb: ParmaGIS.Core.Log.ILogger.Log(String, String)
+  name.vb: Log(String, String)
 references:
 - uid: ParmaGIS.Core.Log
   commentId: N:ParmaGIS.Core.Log
@@ -337,3 +411,14 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date

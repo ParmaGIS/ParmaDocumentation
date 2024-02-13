@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/dev/apiSpec/new?filename=ParmaGIS_Core_Serviceability_IServiceProvider.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Serviceability.IServiceProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Core_Serviceability_IServiceProvider.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Serviceability.IServiceProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +91,7 @@
 
   <h1 id="ParmaGIS_Core_Serviceability_IServiceProvider" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider" class="text-break">
     Interface IServiceProvider
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -118,10 +118,10 @@
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetService__1_ParmaGIS_Core_Serviceability_IServiceProvider_">ServiceExtensions.GetService&lt;T&gt;(IServiceProvider)</a>
+      <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_">ServiceExtensions.GetImplementations&lt;T&gt;(IServiceProvider)</a>
   </div>
   <div>
-      <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_">ServiceExtensions.GetServices&lt;T&gt;(IServiceProvider)</a>
+      <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetService__1_ParmaGIS_Core_Serviceability_IServiceProvider_">ServiceExtensions.GetService&lt;T&gt;(IServiceProvider)</a>
   </div>
   <div>
       <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_TryGetService__1_ParmaGIS_Core_Serviceability_IServiceProvider___0__">ServiceExtensions.TryGetService&lt;T&gt;(IServiceProvider, out T)</a>
@@ -140,7 +140,7 @@
 
   <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_ServiceCatalog" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.ServiceCatalog">
   ServiceCatalog
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -171,29 +171,29 @@
 </h2>
 
 
-  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_GetService_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetService*"></a>
+  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_GetImplementations_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_GetService_System_Type_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)">
-  GetService(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_GetImplementations_System_String_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.String)">
+  GetImplementations(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object? GetService(Type serviceType)</code></pre>
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;object&gt; GetImplementations(string serviceName)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>serviceType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -207,18 +207,18 @@
 
 
 
-  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_GetServices_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetServices*"></a>
+  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_GetImplementations_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_GetServices_System_Type_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetServices(System.Type)">
-  GetServices(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_GetImplementations_System_Type_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations(System.Type)">
+  GetImplementations(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IEnumerable&lt;object&gt; GetServices(Type serviceType)</code></pre>
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;object&gt; GetImplementations(Type serviceType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -243,18 +243,131 @@
 
 
 
-  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_TryGetService_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService*"></a>
+  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_GetService_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetService*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_TryGetService_System_Type_System_Object__" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type,System.Object@)">
-  TryGetService(Type, out object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_GetService_System_String_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.String)">
+  GetService(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool TryGetService(Type serviceType, out object service)</code></pre>
+    <pre><code class="lang-csharp hljs">object? GetService(string serviceName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_GetService_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetService*"></a>
+
+  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_GetService_System_Type_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)">
+  GetService(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Возвращает экземпляр реализации сервиса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object? GetService(Type serviceType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Тип сервиса. Если на один тип сервиса было добавлено несколько реаллизаций, будет возвращена первая попавшаяся.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Экземпляр реализации сервиса.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_TryGetService_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService*"></a>
+
+  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_TryGetService_System_String_System_Object__" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.String,System.Object@)">
+  TryGetService(string, out object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryGetService(string serviceName, out object? service)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>service</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Serviceability_IServiceProvider_TryGetService_" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService*"></a>
+
+  <h3 id="ParmaGIS_Core_Serviceability_IServiceProvider_TryGetService_System_Type_System_Object__" data-uid="ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type,System.Object@)">
+  TryGetService(Type, out object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryGetService(Type serviceType, out object? service)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -285,7 +398,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

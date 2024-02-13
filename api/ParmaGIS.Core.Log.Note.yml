@@ -5,13 +5,11 @@ items:
   id: Note
   parent: ParmaGIS.Core.Log
   children:
-  - ParmaGIS.Core.Log.Note.#ctor(System.String,System.DateTime)
-  - ParmaGIS.Core.Log.Note.#ctor(System.String,System.DateTime,System.String)
+  - ParmaGIS.Core.Log.Note.#ctor(System.DateTime,System.String,System.String,System.String)
   - ParmaGIS.Core.Log.Note.Body
-  - ParmaGIS.Core.Log.Note.DATETIME_PLACE
   - ParmaGIS.Core.Log.Note.DateTime
-  - ParmaGIS.Core.Log.Note.MESSAGE_PLACE
   - ParmaGIS.Core.Log.Note.Message
+  - ParmaGIS.Core.Log.Note.Owner
   langs:
   - csharp
   - vb
@@ -22,7 +20,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Note
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
@@ -43,130 +41,44 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Core.Log.Note.MESSAGE_PLACE
-  commentId: F:ParmaGIS.Core.Log.Note.MESSAGE_PLACE
-  id: MESSAGE_PLACE
+- uid: ParmaGIS.Core.Log.Note.#ctor(System.DateTime,System.String,System.String,System.String)
+  commentId: M:ParmaGIS.Core.Log.Note.#ctor(System.DateTime,System.String,System.String,System.String)
+  id: '#ctor(System.DateTime,System.String,System.String,System.String)'
   parent: ParmaGIS.Core.Log.Note
   langs:
   - csharp
   - vb
-  name: MESSAGE_PLACE
-  nameWithType: Note.MESSAGE_PLACE
-  fullName: ParmaGIS.Core.Log.Note.MESSAGE_PLACE
-  type: Field
+  name: Note(DateTime, string, string, string)
+  nameWithType: Note.Note(DateTime, string, string, string)
+  fullName: ParmaGIS.Core.Log.Note.Note(System.DateTime, string, string, string)
+  type: Constructor
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: MESSAGE_PLACE
+    id: .ctor
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
     startLine: 6
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
   syntax:
-    content: public const string MESSAGE_PLACE = "$message"
-    return:
-      type: System.String
-    content.vb: Public Const MESSAGE_PLACE As String = "$message"
-- uid: ParmaGIS.Core.Log.Note.DATETIME_PLACE
-  commentId: F:ParmaGIS.Core.Log.Note.DATETIME_PLACE
-  id: DATETIME_PLACE
-  parent: ParmaGIS.Core.Log.Note
-  langs:
-  - csharp
-  - vb
-  name: DATETIME_PLACE
-  nameWithType: Note.DATETIME_PLACE
-  fullName: ParmaGIS.Core.Log.Note.DATETIME_PLACE
-  type: Field
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: DATETIME_PLACE
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 7
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Log
-  syntax:
-    content: public const string DATETIME_PLACE = "$date"
-    return:
-      type: System.String
-    content.vb: Public Const DATETIME_PLACE As String = "$date"
-- uid: ParmaGIS.Core.Log.Note.#ctor(System.String,System.DateTime,System.String)
-  commentId: M:ParmaGIS.Core.Log.Note.#ctor(System.String,System.DateTime,System.String)
-  id: '#ctor(System.String,System.DateTime,System.String)'
-  parent: ParmaGIS.Core.Log.Note
-  langs:
-  - csharp
-  - vb
-  name: Note(string, DateTime, string)
-  nameWithType: Note.Note(string, DateTime, string)
-  fullName: ParmaGIS.Core.Log.Note.Note(string, System.DateTime, string)
-  type: Constructor
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: .ctor
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 10
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Log
-  syntax:
-    content: public Note(string message, DateTime dateTime, string bodyFormat)
+    content: public Note(DateTime dateTime, string owner, string message, string bodyFormat)
     parameters:
+    - id: dateTime
+      type: System.DateTime
+    - id: owner
+      type: System.String
     - id: message
       type: System.String
-    - id: dateTime
-      type: System.DateTime
     - id: bodyFormat
       type: System.String
-    content.vb: Public Sub New(message As String, dateTime As Date, bodyFormat As String)
+    content.vb: Public Sub New(dateTime As Date, owner As String, message As String, bodyFormat As String)
   overload: ParmaGIS.Core.Log.Note.#ctor*
-  nameWithType.vb: Note.New(String, Date, String)
-  fullName.vb: ParmaGIS.Core.Log.Note.New(String, Date, String)
-  name.vb: New(String, Date, String)
-- uid: ParmaGIS.Core.Log.Note.#ctor(System.String,System.DateTime)
-  commentId: M:ParmaGIS.Core.Log.Note.#ctor(System.String,System.DateTime)
-  id: '#ctor(System.String,System.DateTime)'
-  parent: ParmaGIS.Core.Log.Note
-  langs:
-  - csharp
-  - vb
-  name: Note(string, DateTime)
-  nameWithType: Note.Note(string, DateTime)
-  fullName: ParmaGIS.Core.Log.Note.Note(string, System.DateTime)
-  type: Constructor
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: .ctor
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 19
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Log
-  syntax:
-    content: public Note(string body, DateTime dateTime)
-    parameters:
-    - id: body
-      type: System.String
-    - id: dateTime
-      type: System.DateTime
-    content.vb: Public Sub New(body As String, dateTime As Date)
-  overload: ParmaGIS.Core.Log.Note.#ctor*
-  nameWithType.vb: Note.New(String, Date)
-  fullName.vb: ParmaGIS.Core.Log.Note.New(String, Date)
-  name.vb: New(String, Date)
+  nameWithType.vb: Note.New(Date, String, String, String)
+  fullName.vb: ParmaGIS.Core.Log.Note.New(Date, String, String, String)
+  name.vb: New(Date, String, String, String)
 - uid: ParmaGIS.Core.Log.Note.Message
   commentId: P:ParmaGIS.Core.Log.Note.Message
   id: Message
@@ -181,11 +93,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Message
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 23
+    startLine: 14
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -210,11 +122,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DateTime
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 24
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -225,6 +137,35 @@ items:
       type: System.DateTime
     content.vb: Public ReadOnly Property DateTime As Date
   overload: ParmaGIS.Core.Log.Note.DateTime*
+- uid: ParmaGIS.Core.Log.Note.Owner
+  commentId: P:ParmaGIS.Core.Log.Note.Owner
+  id: Owner
+  parent: ParmaGIS.Core.Log.Note
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Note.Owner
+  fullName: ParmaGIS.Core.Log.Note.Owner
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Log/Note.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Owner
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
+    startLine: 16
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Log
+  syntax:
+    content: public string Owner { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Owner As String
+  overload: ParmaGIS.Core.Log.Note.Owner*
 - uid: ParmaGIS.Core.Log.Note.Body
   commentId: P:ParmaGIS.Core.Log.Note.Body
   id: Body
@@ -239,11 +180,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Log/Note.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Body
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 25
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
@@ -522,20 +463,9 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: ParmaGIS.Core.Log.Note.#ctor*
   commentId: Overload:ParmaGIS.Core.Log.Note.#ctor
-  href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note__ctor_System_String_System_DateTime_System_String_
+  href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note__ctor_System_DateTime_System_String_System_String_System_String_
   name: Note
   nameWithType: Note.Note
   fullName: ParmaGIS.Core.Log.Note.Note
@@ -553,6 +483,17 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: ParmaGIS.Core.Log.Note.Message*
   commentId: Overload:ParmaGIS.Core.Log.Note.Message
   href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note_Message
@@ -565,6 +506,12 @@ references:
   name: DateTime
   nameWithType: Note.DateTime
   fullName: ParmaGIS.Core.Log.Note.DateTime
+- uid: ParmaGIS.Core.Log.Note.Owner*
+  commentId: Overload:ParmaGIS.Core.Log.Note.Owner
+  href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note_Owner
+  name: Owner
+  nameWithType: Note.Owner
+  fullName: ParmaGIS.Core.Log.Note.Owner
 - uid: ParmaGIS.Core.Log.Note.Body*
   commentId: Overload:ParmaGIS.Core.Log.Note.Body
   href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note_Body

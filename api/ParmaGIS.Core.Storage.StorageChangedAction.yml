@@ -5,11 +5,9 @@ items:
   id: StorageChangedAction
   parent: ParmaGIS.Core.Storage
   children:
-  - ParmaGIS.Core.Storage.StorageChangedAction.Add
-  - ParmaGIS.Core.Storage.StorageChangedAction.EditItem
-  - ParmaGIS.Core.Storage.StorageChangedAction.Load
-  - ParmaGIS.Core.Storage.StorageChangedAction.Remove
-  - ParmaGIS.Core.Storage.StorageChangedAction.Replace
+  - ParmaGIS.Core.Storage.StorageChangedAction.ContainerAdd
+  - ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
+  - ParmaGIS.Core.Storage.StorageChangedAction.ContainerRemove
   langs:
   - csharp
   - vb
@@ -20,7 +18,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StorageChangedAction
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
@@ -31,134 +29,82 @@ items:
   syntax:
     content: public enum StorageChangedAction
     content.vb: Public Enum StorageChangedAction
-- uid: ParmaGIS.Core.Storage.StorageChangedAction.Add
-  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.Add
-  id: Add
+- uid: ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
+  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
+  id: ContainerChanged
   parent: ParmaGIS.Core.Storage.StorageChangedAction
   langs:
   - csharp
   - vb
-  name: Add
-  nameWithType: StorageChangedAction.Add
-  fullName: ParmaGIS.Core.Storage.StorageChangedAction.Add
+  name: ContainerChanged
+  nameWithType: StorageChangedAction.ContainerChanged
+  fullName: ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
   type: Field
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Add
+    id: ContainerChanged
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
     startLine: 4
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
   syntax:
-    content: Add = 0
+    content: ContainerChanged = 0
     return:
       type: ParmaGIS.Core.Storage.StorageChangedAction
-- uid: ParmaGIS.Core.Storage.StorageChangedAction.Remove
-  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.Remove
-  id: Remove
+- uid: ParmaGIS.Core.Storage.StorageChangedAction.ContainerRemove
+  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.ContainerRemove
+  id: ContainerRemove
   parent: ParmaGIS.Core.Storage.StorageChangedAction
   langs:
   - csharp
   - vb
-  name: Remove
-  nameWithType: StorageChangedAction.Remove
-  fullName: ParmaGIS.Core.Storage.StorageChangedAction.Remove
+  name: ContainerRemove
+  nameWithType: StorageChangedAction.ContainerRemove
+  fullName: ParmaGIS.Core.Storage.StorageChangedAction.ContainerRemove
   type: Field
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Remove
+    id: ContainerRemove
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
     startLine: 5
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
   syntax:
-    content: Remove = 1
+    content: ContainerRemove = 1
     return:
       type: ParmaGIS.Core.Storage.StorageChangedAction
-- uid: ParmaGIS.Core.Storage.StorageChangedAction.EditItem
-  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.EditItem
-  id: EditItem
+- uid: ParmaGIS.Core.Storage.StorageChangedAction.ContainerAdd
+  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.ContainerAdd
+  id: ContainerAdd
   parent: ParmaGIS.Core.Storage.StorageChangedAction
   langs:
   - csharp
   - vb
-  name: EditItem
-  nameWithType: StorageChangedAction.EditItem
-  fullName: ParmaGIS.Core.Storage.StorageChangedAction.EditItem
+  name: ContainerAdd
+  nameWithType: StorageChangedAction.ContainerAdd
+  fullName: ParmaGIS.Core.Storage.StorageChangedAction.ContainerAdd
   type: Field
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: EditItem
+    id: ContainerAdd
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
     startLine: 6
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
   syntax:
-    content: EditItem = 2
-    return:
-      type: ParmaGIS.Core.Storage.StorageChangedAction
-- uid: ParmaGIS.Core.Storage.StorageChangedAction.Replace
-  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.Replace
-  id: Replace
-  parent: ParmaGIS.Core.Storage.StorageChangedAction
-  langs:
-  - csharp
-  - vb
-  name: Replace
-  nameWithType: StorageChangedAction.Replace
-  fullName: ParmaGIS.Core.Storage.StorageChangedAction.Replace
-  type: Field
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Replace
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-    startLine: 7
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Storage
-  syntax:
-    content: Replace = 3
-    return:
-      type: ParmaGIS.Core.Storage.StorageChangedAction
-- uid: ParmaGIS.Core.Storage.StorageChangedAction.Load
-  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.Load
-  id: Load
-  parent: ParmaGIS.Core.Storage.StorageChangedAction
-  langs:
-  - csharp
-  - vb
-  name: Load
-  nameWithType: StorageChangedAction.Load
-  fullName: ParmaGIS.Core.Storage.StorageChangedAction.Load
-  type: Field
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Load
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedAction.cs
-    startLine: 8
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Storage
-  syntax:
-    content: Load = 4
+    content: ContainerAdd = 2
     return:
       type: ParmaGIS.Core.Storage.StorageChangedAction
 references:

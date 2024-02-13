@@ -5,14 +5,13 @@ items:
   id: IToolManager
   parent: ParmaGIS.Core.UI.Toolability
   children:
-  - ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.ITool)
+  - ParmaGIS.Core.UI.Toolability.IToolManager.Catalog
+  - ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.IToolAware)
   - ParmaGIS.Core.UI.Toolability.IToolManager.Close(System.Type)
-  - ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.ITool)
-  - ParmaGIS.Core.UI.Toolability.IToolManager.Show(ParmaGIS.Core.UI.Toolability.ITool)
-  - ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type)
+  - ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.IToolAware)
+  - ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type,ParmaGIS.Core.UI.Toolability.IToolParameters)
   - ParmaGIS.Core.UI.Toolability.IToolManager.ShowedToolChanged
   - ParmaGIS.Core.UI.Toolability.IToolManager.ShowedTools
-  - ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog
   langs:
   - csharp
   - vb
@@ -23,7 +22,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IToolManager
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
@@ -48,7 +47,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ShowedTools
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
@@ -57,11 +56,11 @@ items:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: IEnumerable<ITool> ShowedTools { get; }
+    content: IEnumerable<IToolAware> ShowedTools { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Toolability.ITool}
-    content.vb: ReadOnly Property ShowedTools As IEnumerable(Of ITool)
+      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Toolability.IToolAware}
+    content.vb: ReadOnly Property ShowedTools As IEnumerable(Of IToolAware)
   overload: ParmaGIS.Core.UI.Toolability.IToolManager.ShowedTools*
 - uid: ParmaGIS.Core.UI.Toolability.IToolManager.ShowedToolChanged
   commentId: E:ParmaGIS.Core.UI.Toolability.IToolManager.ShowedToolChanged
@@ -77,7 +76,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ShowedToolChanged
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
@@ -86,54 +85,54 @@ items:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: event EventHandler<ShowedToolChangedArgs> ShowedToolChanged
+    content: event EventHandler<ShowedToolChangedArgs>? ShowedToolChanged
     return:
       type: System.EventHandler{ParmaGIS.Core.UI.Toolability.ShowedToolChangedArgs}
     content.vb: Event ShowedToolChanged As EventHandler(Of ShowedToolChangedArgs)
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog
-  commentId: P:ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog
-  id: ToolCatalog
+- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Catalog
+  commentId: P:ParmaGIS.Core.UI.Toolability.IToolManager.Catalog
+  id: Catalog
   parent: ParmaGIS.Core.UI.Toolability.IToolManager
   langs:
   - csharp
   - vb
-  name: ToolCatalog
-  nameWithType: IToolManager.ToolCatalog
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog
+  name: Catalog
+  nameWithType: IToolManager.Catalog
+  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Catalog
   type: Property
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ToolCatalog
+    id: Catalog
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
     startLine: 10
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: IToolCatalog ToolCatalog { get; }
+    content: IToolCatalog Catalog { get; }
     parameters: []
     return:
       type: ParmaGIS.Core.UI.Toolability.IToolCatalog
-    content.vb: ReadOnly Property ToolCatalog As IToolCatalog
-  overload: ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog*
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Show(ParmaGIS.Core.UI.Toolability.ITool)
-  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.Show(ParmaGIS.Core.UI.Toolability.ITool)
-  id: Show(ParmaGIS.Core.UI.Toolability.ITool)
+    content.vb: ReadOnly Property Catalog As IToolCatalog
+  overload: ParmaGIS.Core.UI.Toolability.IToolManager.Catalog*
+- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type,ParmaGIS.Core.UI.Toolability.IToolParameters)
+  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type,ParmaGIS.Core.UI.Toolability.IToolParameters)
+  id: Show(System.Type,ParmaGIS.Core.UI.Toolability.IToolParameters)
   parent: ParmaGIS.Core.UI.Toolability.IToolManager
   langs:
   - csharp
   - vb
-  name: Show(ITool)
-  nameWithType: IToolManager.Show(ITool)
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Show(ParmaGIS.Core.UI.Toolability.ITool)
+  name: Show(Type, IToolParameters?)
+  nameWithType: IToolManager.Show(Type, IToolParameters?)
+  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type, ParmaGIS.Core.UI.Toolability.IToolParameters?)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Show
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
@@ -142,73 +141,49 @@ items:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: void Show(ITool tool)
+    content: IToolAware Show(Type toolAwareType, IToolParameters? parameters)
     parameters:
-    - id: tool
-      type: ParmaGIS.Core.UI.Toolability.ITool
-    content.vb: Sub Show(tool As ITool)
-  overload: ParmaGIS.Core.UI.Toolability.IToolManager.Show*
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type)
-  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type)
-  id: Show(System.Type)
-  parent: ParmaGIS.Core.UI.Toolability.IToolManager
-  langs:
-  - csharp
-  - vb
-  name: Show(Type)
-  nameWithType: IToolManager.Show(Type)
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Show
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-    startLine: 12
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Toolability
-  syntax:
-    content: ITool Show(Type toolType)
-    parameters:
-    - id: toolType
+    - id: toolAwareType
       type: System.Type
+    - id: parameters
+      type: ParmaGIS.Core.UI.Toolability.IToolParameters
     return:
-      type: ParmaGIS.Core.UI.Toolability.ITool
-    content.vb: Function Show(toolType As Type) As ITool
+      type: ParmaGIS.Core.UI.Toolability.IToolAware
+    content.vb: Function Show(toolAwareType As Type, parameters As IToolParameters) As IToolAware
   overload: ParmaGIS.Core.UI.Toolability.IToolManager.Show*
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.ITool)
-  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.ITool)
-  id: Close(ParmaGIS.Core.UI.Toolability.ITool)
+  nameWithType.vb: IToolManager.Show(Type, IToolParameters)
+  fullName.vb: ParmaGIS.Core.UI.Toolability.IToolManager.Show(System.Type, ParmaGIS.Core.UI.Toolability.IToolParameters)
+  name.vb: Show(Type, IToolParameters)
+- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.IToolAware)
+  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.IToolAware)
+  id: Close(ParmaGIS.Core.UI.Toolability.IToolAware)
   parent: ParmaGIS.Core.UI.Toolability.IToolManager
   langs:
   - csharp
   - vb
-  name: Close(ITool)
-  nameWithType: IToolManager.Close(ITool)
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.ITool)
+  name: Close(IToolAware)
+  nameWithType: IToolManager.Close(IToolAware)
+  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Close(ParmaGIS.Core.UI.Toolability.IToolAware)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Close
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: bool Close(ITool tool)
+    content: bool Close(IToolAware tool)
     parameters:
     - id: tool
-      type: ParmaGIS.Core.UI.Toolability.ITool
+      type: ParmaGIS.Core.UI.Toolability.IToolAware
     return:
       type: System.Boolean
-    content.vb: Function Close(tool As ITool) As Boolean
+    content.vb: Function Close(tool As IToolAware) As Boolean
   overload: ParmaGIS.Core.UI.Toolability.IToolManager.Close*
 - uid: ParmaGIS.Core.UI.Toolability.IToolManager.Close(System.Type)
   commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.Close(System.Type)
@@ -224,53 +199,53 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Close
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: bool Close(Type toolType)
+    content: bool Close(Type toolAwareType)
     parameters:
-    - id: toolType
+    - id: toolAwareType
       type: System.Type
     return:
       type: System.Boolean
-    content.vb: Function Close(toolType As Type) As Boolean
+    content.vb: Function Close(toolAwareType As Type) As Boolean
   overload: ParmaGIS.Core.UI.Toolability.IToolManager.Close*
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.ITool)
-  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.ITool)
-  id: IsShowed(ParmaGIS.Core.UI.Toolability.ITool)
+- uid: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.IToolAware)
+  commentId: M:ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.IToolAware)
+  id: IsShowed(ParmaGIS.Core.UI.Toolability.IToolAware)
   parent: ParmaGIS.Core.UI.Toolability.IToolManager
   langs:
   - csharp
   - vb
-  name: IsShowed(ITool)
-  nameWithType: IToolManager.IsShowed(ITool)
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.ITool)
+  name: IsShowed(IToolAware)
+  nameWithType: IToolManager.IsShowed(IToolAware)
+  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed(ParmaGIS.Core.UI.Toolability.IToolAware)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-      branch: 337a82da41b4970cdcc7638dddfb6599823eb029
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsShowed
     path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Toolability/IToolManager.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Toolability
   syntax:
-    content: bool IsShowed(ITool tool)
+    content: bool IsShowed(IToolAware tool)
     parameters:
     - id: tool
-      type: ParmaGIS.Core.UI.Toolability.ITool
+      type: ParmaGIS.Core.UI.Toolability.IToolAware
     return:
       type: System.Boolean
-    content.vb: Function IsShowed(tool As ITool) As Boolean
+    content.vb: Function IsShowed(tool As IToolAware) As Boolean
   overload: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed*
 references:
 - uid: ParmaGIS.Core.UI.Toolability
@@ -317,26 +292,26 @@ references:
   name: ShowedTools
   nameWithType: IToolManager.ShowedTools
   fullName: ParmaGIS.Core.UI.Toolability.IToolManager.ShowedTools
-- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Toolability.ITool}
-  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Toolability.ITool}
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Toolability.IToolAware}
+  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Toolability.IToolAware}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<ITool>
-  nameWithType: IEnumerable<ITool>
-  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Core.UI.Toolability.ITool>
-  nameWithType.vb: IEnumerable(Of ITool)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.UI.Toolability.ITool)
-  name.vb: IEnumerable(Of ITool)
+  name: IEnumerable<IToolAware>
+  nameWithType: IEnumerable<IToolAware>
+  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Core.UI.Toolability.IToolAware>
+  nameWithType.vb: IEnumerable(Of IToolAware)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.UI.Toolability.IToolAware)
+  name.vb: IEnumerable(Of IToolAware)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: ParmaGIS.Core.UI.Toolability.ITool
-    name: ITool
-    href: ParmaGIS.Core.UI.Toolability.ITool.html
+  - uid: ParmaGIS.Core.UI.Toolability.IToolAware
+    name: IToolAware
+    href: ParmaGIS.Core.UI.Toolability.IToolAware.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -346,9 +321,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.Core.UI.Toolability.ITool
-    name: ITool
-    href: ParmaGIS.Core.UI.Toolability.ITool.html
+  - uid: ParmaGIS.Core.UI.Toolability.IToolAware
+    name: IToolAware
+    href: ParmaGIS.Core.UI.Toolability.IToolAware.html
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
@@ -483,12 +458,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog*
-  commentId: Overload:ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog
-  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_ToolCatalog
-  name: ToolCatalog
-  nameWithType: IToolManager.ToolCatalog
-  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.ToolCatalog
+- uid: ParmaGIS.Core.UI.Toolability.IToolManager.Catalog*
+  commentId: Overload:ParmaGIS.Core.UI.Toolability.IToolManager.Catalog
+  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_Catalog
+  name: Catalog
+  nameWithType: IToolManager.Catalog
+  fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Catalog
 - uid: ParmaGIS.Core.UI.Toolability.IToolCatalog
   commentId: T:ParmaGIS.Core.UI.Toolability.IToolCatalog
   parent: ParmaGIS.Core.UI.Toolability
@@ -498,17 +473,10 @@ references:
   fullName: ParmaGIS.Core.UI.Toolability.IToolCatalog
 - uid: ParmaGIS.Core.UI.Toolability.IToolManager.Show*
   commentId: Overload:ParmaGIS.Core.UI.Toolability.IToolManager.Show
-  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_Show_ParmaGIS_Core_UI_Toolability_ITool_
+  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_Show_System_Type_ParmaGIS_Core_UI_Toolability_IToolParameters_
   name: Show
   nameWithType: IToolManager.Show
   fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Show
-- uid: ParmaGIS.Core.UI.Toolability.ITool
-  commentId: T:ParmaGIS.Core.UI.Toolability.ITool
-  parent: ParmaGIS.Core.UI.Toolability
-  href: ParmaGIS.Core.UI.Toolability.ITool.html
-  name: ITool
-  nameWithType: ITool
-  fullName: ParmaGIS.Core.UI.Toolability.ITool
 - uid: System.Type
   commentId: T:System.Type
   parent: System
@@ -517,9 +485,23 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
+- uid: ParmaGIS.Core.UI.Toolability.IToolParameters
+  commentId: T:ParmaGIS.Core.UI.Toolability.IToolParameters
+  parent: ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.Core.UI.Toolability.IToolParameters.html
+  name: IToolParameters
+  nameWithType: IToolParameters
+  fullName: ParmaGIS.Core.UI.Toolability.IToolParameters
+- uid: ParmaGIS.Core.UI.Toolability.IToolAware
+  commentId: T:ParmaGIS.Core.UI.Toolability.IToolAware
+  parent: ParmaGIS.Core.UI.Toolability
+  href: ParmaGIS.Core.UI.Toolability.IToolAware.html
+  name: IToolAware
+  nameWithType: IToolAware
+  fullName: ParmaGIS.Core.UI.Toolability.IToolAware
 - uid: ParmaGIS.Core.UI.Toolability.IToolManager.Close*
   commentId: Overload:ParmaGIS.Core.UI.Toolability.IToolManager.Close
-  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_Close_ParmaGIS_Core_UI_Toolability_ITool_
+  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_Close_ParmaGIS_Core_UI_Toolability_IToolAware_
   name: Close
   nameWithType: IToolManager.Close
   fullName: ParmaGIS.Core.UI.Toolability.IToolManager.Close
@@ -536,7 +518,7 @@ references:
   name.vb: Boolean
 - uid: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed*
   commentId: Overload:ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed
-  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_IsShowed_ParmaGIS_Core_UI_Toolability_ITool_
+  href: ParmaGIS.Core.UI.Toolability.IToolManager.html#ParmaGIS_Core_UI_Toolability_IToolManager_IsShowed_ParmaGIS_Core_UI_Toolability_IToolAware_
   name: IsShowed
   nameWithType: IToolManager.IsShowed
   fullName: ParmaGIS.Core.UI.Toolability.IToolManager.IsShowed

@@ -5,7 +5,7 @@ items:
   id: App
   parent: ParmaGIS.WPF.App
   children:
-  - ParmaGIS.WPF.App.App.#ctor(ParmaGIS.Shell.ShellSample)
+  - ParmaGIS.WPF.App.App.#ctor(ParmaGIS.Core.UI.Shell.IShellCoreUI)
   - ParmaGIS.WPF.App.App.OnStartup(System.Windows.StartupEventArgs)
   langs:
   - csharp
@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: platforms/wpf/src/ParmaGIS.WPF.App/App.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: App
     path: ../../ParmaTest/platforms/wpf/src/ParmaGIS.WPF.App/App.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - ParmaGIS.WPF.App
   namespace: ParmaGIS.WPF.App
@@ -88,38 +88,38 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.WPF.App.App.#ctor(ParmaGIS.Shell.ShellSample)
-  commentId: M:ParmaGIS.WPF.App.App.#ctor(ParmaGIS.Shell.ShellSample)
-  id: '#ctor(ParmaGIS.Shell.ShellSample)'
+- uid: ParmaGIS.WPF.App.App.#ctor(ParmaGIS.Core.UI.Shell.IShellCoreUI)
+  commentId: M:ParmaGIS.WPF.App.App.#ctor(ParmaGIS.Core.UI.Shell.IShellCoreUI)
+  id: '#ctor(ParmaGIS.Core.UI.Shell.IShellCoreUI)'
   parent: ParmaGIS.WPF.App.App
   langs:
   - csharp
   - vb
-  name: App(ShellSample)
-  nameWithType: App.App(ShellSample)
-  fullName: ParmaGIS.WPF.App.App.App(ParmaGIS.Shell.ShellSample)
+  name: App(IShellCoreUI)
+  nameWithType: App.App(IShellCoreUI)
+  fullName: ParmaGIS.WPF.App.App.App(ParmaGIS.Core.UI.Shell.IShellCoreUI)
   type: Constructor
   source:
     remote:
       path: platforms/wpf/src/ParmaGIS.WPF.App/App.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/platforms/wpf/src/ParmaGIS.WPF.App/App.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - ParmaGIS.WPF.App
   namespace: ParmaGIS.WPF.App
   syntax:
-    content: public App(ShellSample shellSample)
+    content: public App(IShellCoreUI sell)
     parameters:
-    - id: shellSample
-      type: ParmaGIS.Shell.ShellSample
-    content.vb: Public Sub New(shellSample As ShellSample)
+    - id: sell
+      type: ParmaGIS.Core.UI.Shell.IShellCoreUI
+    content.vb: Public Sub New(sell As IShellCoreUI)
   overload: ParmaGIS.WPF.App.App.#ctor*
-  nameWithType.vb: App.New(ShellSample)
-  fullName.vb: ParmaGIS.WPF.App.App.New(ParmaGIS.Shell.ShellSample)
-  name.vb: New(ShellSample)
+  nameWithType.vb: App.New(IShellCoreUI)
+  fullName.vb: ParmaGIS.WPF.App.App.New(ParmaGIS.Core.UI.Shell.IShellCoreUI)
+  name.vb: New(IShellCoreUI)
 - uid: ParmaGIS.WPF.App.App.OnStartup(System.Windows.StartupEventArgs)
   commentId: M:ParmaGIS.WPF.App.App.OnStartup(System.Windows.StartupEventArgs)
   id: OnStartup(System.Windows.StartupEventArgs)
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: platforms/wpf/src/ParmaGIS.WPF.App/App.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnStartup
     path: ../../ParmaTest/platforms/wpf/src/ParmaGIS.WPF.App/App.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - ParmaGIS.WPF.App
   namespace: ParmaGIS.WPF.App
@@ -1467,42 +1467,58 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.windows.markup
 - uid: ParmaGIS.WPF.App.App.#ctor*
   commentId: Overload:ParmaGIS.WPF.App.App.#ctor
-  href: ParmaGIS.WPF.App.App.html#ParmaGIS_WPF_App_App__ctor_ParmaGIS_Shell_ShellSample_
+  href: ParmaGIS.WPF.App.App.html#ParmaGIS_WPF_App_App__ctor_ParmaGIS_Core_UI_Shell_IShellCoreUI_
   name: App
   nameWithType: App.App
   fullName: ParmaGIS.WPF.App.App.App
   nameWithType.vb: App.New
   fullName.vb: ParmaGIS.WPF.App.App.New
   name.vb: New
-- uid: ParmaGIS.Shell.ShellSample
-  commentId: T:ParmaGIS.Shell.ShellSample
-  parent: ParmaGIS.Shell
-  href: ParmaGIS.Shell.ShellSample.html
-  name: ShellSample
-  nameWithType: ShellSample
-  fullName: ParmaGIS.Shell.ShellSample
-- uid: ParmaGIS.Shell
-  commentId: N:ParmaGIS.Shell
+- uid: ParmaGIS.Core.UI.Shell.IShellCoreUI
+  commentId: T:ParmaGIS.Core.UI.Shell.IShellCoreUI
+  parent: ParmaGIS.Core.UI.Shell
+  href: ParmaGIS.Core.UI.Shell.IShellCoreUI.html
+  name: IShellCoreUI
+  nameWithType: IShellCoreUI
+  fullName: ParmaGIS.Core.UI.Shell.IShellCoreUI
+- uid: ParmaGIS.Core.UI.Shell
+  commentId: N:ParmaGIS.Core.UI.Shell
   href: ParmaGIS.html
-  name: ParmaGIS.Shell
-  nameWithType: ParmaGIS.Shell
-  fullName: ParmaGIS.Shell
+  name: ParmaGIS.Core.UI.Shell
+  nameWithType: ParmaGIS.Core.UI.Shell
+  fullName: ParmaGIS.Core.UI.Shell
   spec.csharp:
   - uid: ParmaGIS
     name: ParmaGIS
     href: ParmaGIS.html
   - name: .
-  - uid: ParmaGIS.Shell
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Shell
     name: Shell
-    href: ParmaGIS.Shell.html
+    href: ParmaGIS.Core.UI.Shell.html
   spec.vb:
   - uid: ParmaGIS
     name: ParmaGIS
     href: ParmaGIS.html
   - name: .
-  - uid: ParmaGIS.Shell
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Shell
     name: Shell
-    href: ParmaGIS.Shell.html
+    href: ParmaGIS.Core.UI.Shell.html
 - uid: System.Windows.StartupEventArgs
   commentId: T:System.Windows.StartupEventArgs
   parent: System.Windows

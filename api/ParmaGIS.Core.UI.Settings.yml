@@ -5,21 +5,15 @@ items:
   id: Settings
   parent: ParmaGIS.Core.UI
   children:
-  - ParmaGIS.Core.UI.Settings.AppSettingsPage
-  - ParmaGIS.Core.UI.Settings.DefaultAttribute
-  - ParmaGIS.Core.UI.Settings.DescriptionAttribute
-  - ParmaGIS.Core.UI.Settings.EnumDescriptionsAttribute
-  - ParmaGIS.Core.UI.Settings.EnumTitlesAttribute
+  - ParmaGIS.Core.UI.Settings.Default
   - ParmaGIS.Core.UI.Settings.ISettingsManager
-  - ParmaGIS.Core.UI.Settings.SettingErrorEventArgs
-  - ParmaGIS.Core.UI.Settings.SettingInfo
-  - ParmaGIS.Core.UI.Settings.SettingsAttribute
-  - ParmaGIS.Core.UI.Settings.SettingsExtensions
-  - ParmaGIS.Core.UI.Settings.SettingsPage
-  - ParmaGIS.Core.UI.Settings.SettingsPageInfo
-  - ParmaGIS.Core.UI.Settings.SettingsProvider`1
-  - ParmaGIS.Core.UI.Settings.SettingsValidationAttribute
-  - ParmaGIS.Core.UI.Settings.TitleAttribute
+  - ParmaGIS.Core.UI.Settings.ISettingsParameter
+  - ParmaGIS.Core.UI.Settings.ISettingsParameterGroup
+  - ParmaGIS.Core.UI.Settings.ISettingsProvider
+  - ParmaGIS.Core.UI.Settings.ISettingsScope
+  - ParmaGIS.Core.UI.Settings.ISettingsScopeCatalog
+  - ParmaGIS.Core.UI.Settings.ServiceCollectionExtension
+  - ParmaGIS.Core.UI.Settings.SettingsScopeLocator
   langs:
   - csharp
   - vb
@@ -30,36 +24,52 @@ items:
   assemblies:
   - ParmaGIS.Core.UI
 references:
-- uid: ParmaGIS.Core.UI.Settings.AppSettingsPage
-  commentId: T:ParmaGIS.Core.UI.Settings.AppSettingsPage
-  href: ParmaGIS.Core.UI.Settings.AppSettingsPage.html
-  name: AppSettingsPage
-  nameWithType: AppSettingsPage
-  fullName: ParmaGIS.Core.UI.Settings.AppSettingsPage
-- uid: ParmaGIS.Core.UI.Settings.DefaultAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.DefaultAttribute
-  href: ParmaGIS.Core.UI.Settings.DefaultAttribute.html
-  name: DefaultAttribute
-  nameWithType: DefaultAttribute
-  fullName: ParmaGIS.Core.UI.Settings.DefaultAttribute
-- uid: ParmaGIS.Core.UI.Settings.DescriptionAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.DescriptionAttribute
-  href: ParmaGIS.Core.UI.Settings.DescriptionAttribute.html
-  name: DescriptionAttribute
-  nameWithType: DescriptionAttribute
-  fullName: ParmaGIS.Core.UI.Settings.DescriptionAttribute
-- uid: ParmaGIS.Core.UI.Settings.EnumDescriptionsAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.EnumDescriptionsAttribute
-  href: ParmaGIS.Core.UI.Settings.EnumDescriptionsAttribute.html
-  name: EnumDescriptionsAttribute
-  nameWithType: EnumDescriptionsAttribute
-  fullName: ParmaGIS.Core.UI.Settings.EnumDescriptionsAttribute
-- uid: ParmaGIS.Core.UI.Settings.EnumTitlesAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.EnumTitlesAttribute
-  href: ParmaGIS.Core.UI.Settings.EnumTitlesAttribute.html
-  name: EnumTitlesAttribute
-  nameWithType: EnumTitlesAttribute
-  fullName: ParmaGIS.Core.UI.Settings.EnumTitlesAttribute
+- uid: ParmaGIS.Core.UI.Settings.Default
+  commentId: N:ParmaGIS.Core.UI.Settings.Default
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.UI.Settings.Default
+  nameWithType: ParmaGIS.Core.UI.Settings.Default
+  fullName: ParmaGIS.Core.UI.Settings.Default
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Settings
+    name: Settings
+    href: ParmaGIS.Core.UI.Settings.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Settings.Default
+    name: Default
+    href: ParmaGIS.Core.UI.Settings.Default.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Settings
+    name: Settings
+    href: ParmaGIS.Core.UI.Settings.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Settings.Default
+    name: Default
+    href: ParmaGIS.Core.UI.Settings.Default.html
 - uid: ParmaGIS.Core.UI.Settings.ISettingsManager
   commentId: T:ParmaGIS.Core.UI.Settings.ISettingsManager
   parent: ParmaGIS.Core.UI.Settings
@@ -67,83 +77,54 @@ references:
   name: ISettingsManager
   nameWithType: ISettingsManager
   fullName: ParmaGIS.Core.UI.Settings.ISettingsManager
-- uid: ParmaGIS.Core.UI.Settings.SettingErrorEventArgs
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingErrorEventArgs
-  href: ParmaGIS.Core.UI.Settings.SettingErrorEventArgs.html
-  name: SettingErrorEventArgs
-  nameWithType: SettingErrorEventArgs
-  fullName: ParmaGIS.Core.UI.Settings.SettingErrorEventArgs
-- uid: ParmaGIS.Core.UI.Settings.SettingInfo
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingInfo
-  href: ParmaGIS.Core.UI.Settings.SettingInfo.html
-  name: SettingInfo
-  nameWithType: SettingInfo
-  fullName: ParmaGIS.Core.UI.Settings.SettingInfo
-- uid: ParmaGIS.Core.UI.Settings.SettingsAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsAttribute
+- uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsParameter
   parent: ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.Core.UI.Settings.SettingsAttribute.html
-  name: SettingsAttribute
-  nameWithType: SettingsAttribute
-  fullName: ParmaGIS.Core.UI.Settings.SettingsAttribute
-- uid: ParmaGIS.Core.UI.Settings.SettingsExtensions
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsExtensions
+  href: ParmaGIS.Core.UI.Settings.ISettingsParameter.html
+  name: ISettingsParameter
+  nameWithType: ISettingsParameter
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsParameter
+- uid: ParmaGIS.Core.UI.Settings.ISettingsParameterGroup
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsParameterGroup
   parent: ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html
-  name: SettingsExtensions
-  nameWithType: SettingsExtensions
-  fullName: ParmaGIS.Core.UI.Settings.SettingsExtensions
-- uid: ParmaGIS.Core.UI.Settings.SettingsPage
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsPage
+  href: ParmaGIS.Core.UI.Settings.ISettingsParameterGroup.html
+  name: ISettingsParameterGroup
+  nameWithType: ISettingsParameterGroup
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsParameterGroup
+- uid: ParmaGIS.Core.UI.Settings.ISettingsProvider
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsProvider
   parent: ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.Core.UI.Settings.SettingsPage.html
-  name: SettingsPage
-  nameWithType: SettingsPage
-  fullName: ParmaGIS.Core.UI.Settings.SettingsPage
-- uid: ParmaGIS.Core.UI.Settings.SettingsPageInfo
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsPageInfo
+  href: ParmaGIS.Core.UI.Settings.ISettingsProvider.html
+  name: ISettingsProvider
+  nameWithType: ISettingsProvider
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsProvider
+- uid: ParmaGIS.Core.UI.Settings.ISettingsScope
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsScope
   parent: ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.Core.UI.Settings.SettingsPageInfo.html
-  name: SettingsPageInfo
-  nameWithType: SettingsPageInfo
-  fullName: ParmaGIS.Core.UI.Settings.SettingsPageInfo
-- uid: ParmaGIS.Core.UI.Settings.SettingsProvider`1
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsProvider`1
-  href: ParmaGIS.Core.UI.Settings.SettingsProvider-1.html
-  name: SettingsProvider<T>
-  nameWithType: SettingsProvider<T>
-  fullName: ParmaGIS.Core.UI.Settings.SettingsProvider<T>
-  nameWithType.vb: SettingsProvider(Of T)
-  fullName.vb: ParmaGIS.Core.UI.Settings.SettingsProvider(Of T)
-  name.vb: SettingsProvider(Of T)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsProvider`1
-    name: SettingsProvider
-    href: ParmaGIS.Core.UI.Settings.SettingsProvider-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsProvider`1
-    name: SettingsProvider
-    href: ParmaGIS.Core.UI.Settings.SettingsProvider-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: ParmaGIS.Core.UI.Settings.SettingsValidationAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsValidationAttribute
-  href: ParmaGIS.Core.UI.Settings.SettingsValidationAttribute.html
-  name: SettingsValidationAttribute
-  nameWithType: SettingsValidationAttribute
-  fullName: ParmaGIS.Core.UI.Settings.SettingsValidationAttribute
-- uid: ParmaGIS.Core.UI.Settings.TitleAttribute
-  commentId: T:ParmaGIS.Core.UI.Settings.TitleAttribute
-  href: ParmaGIS.Core.UI.Settings.TitleAttribute.html
-  name: TitleAttribute
-  nameWithType: TitleAttribute
-  fullName: ParmaGIS.Core.UI.Settings.TitleAttribute
+  href: ParmaGIS.Core.UI.Settings.ISettingsScope.html
+  name: ISettingsScope
+  nameWithType: ISettingsScope
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsScope
+- uid: ParmaGIS.Core.UI.Settings.ISettingsScopeCatalog
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsScopeCatalog
+  parent: ParmaGIS.Core.UI.Settings
+  href: ParmaGIS.Core.UI.Settings.ISettingsScopeCatalog.html
+  name: ISettingsScopeCatalog
+  nameWithType: ISettingsScopeCatalog
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsScopeCatalog
+- uid: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension
+  commentId: T:ParmaGIS.Core.UI.Settings.ServiceCollectionExtension
+  parent: ParmaGIS.Core.UI.Settings
+  href: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.html
+  name: ServiceCollectionExtension
+  nameWithType: ServiceCollectionExtension
+  fullName: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension
+- uid: ParmaGIS.Core.UI.Settings.SettingsScopeLocator
+  commentId: T:ParmaGIS.Core.UI.Settings.SettingsScopeLocator
+  href: ParmaGIS.Core.UI.Settings.SettingsScopeLocator.html
+  name: SettingsScopeLocator
+  nameWithType: SettingsScopeLocator
+  fullName: ParmaGIS.Core.UI.Settings.SettingsScopeLocator
 - uid: ParmaGIS.Core.UI.Settings
   commentId: N:ParmaGIS.Core.UI.Settings
   href: ParmaGIS.html

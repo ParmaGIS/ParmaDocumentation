@@ -8,6 +8,7 @@ items:
   - ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
   - ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
   - ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
+  - ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
   langs:
   - csharp
   - vb
@@ -18,7 +19,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IModuleManager
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
@@ -31,8 +32,6 @@ items:
     content.vb: Public Interface IModuleManager
   extensionMethods:
   - ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1
-  - ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes
-  - ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes
 - uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
   commentId: M:ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
   id: GetModule(System.Type)
@@ -47,7 +46,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetModule
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
@@ -56,13 +55,13 @@ items:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
   syntax:
-    content: IModule? GetModule(Type type)
+    content: IModule? GetModule(Type providedType)
     parameters:
-    - id: type
+    - id: providedType
       type: System.Type
     return:
       type: ParmaGIS.Core.Modularity.IModule
-    content.vb: Function GetModule(type As Type) As IModule
+    content.vb: Function GetModule(providedType As Type) As IModule
   overload: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
 - uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
   commentId: M:ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
@@ -78,7 +77,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetModule
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
@@ -87,13 +86,13 @@ items:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
   syntax:
-    content: IModule? GetModule(string name)
+    content: IModule? GetModule(string moduleName)
     parameters:
-    - id: name
+    - id: moduleName
       type: System.String
     return:
       type: ParmaGIS.Core.Modularity.IModule
-    content.vb: Function GetModule(name As String) As IModule
+    content.vb: Function GetModule(moduleName As String) As IModule
   overload: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
   nameWithType.vb: IModuleManager.GetModule(String)
   fullName.vb: ParmaGIS.Core.Modularity.IModuleManager.GetModule(String)
@@ -112,7 +111,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleCatalog
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
@@ -127,6 +126,35 @@ items:
       type: ParmaGIS.Core.Modularity.IModuleCatalog
     content.vb: ReadOnly Property ModuleCatalog As IModuleCatalog
   overload: ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog*
+- uid: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
+  commentId: P:ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
+  id: ModulesDirectory
+  parent: ParmaGIS.Core.Modularity.IModuleManager
+  langs:
+  - csharp
+  - vb
+  name: ModulesDirectory
+  nameWithType: IModuleManager.ModulesDirectory
+  fullName: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ModulesDirectory
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
+    startLine: 9
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Modularity
+  syntax:
+    content: string ModulesDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ModulesDirectory As String
+  overload: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory*
 references:
 - uid: ParmaGIS.Core.Modularity
   commentId: N:ParmaGIS.Core.Modularity
@@ -195,58 +223,6 @@ references:
     name: IModuleManager
     href: ParmaGIS.Core.Modularity.IModuleManager.html
   - name: )
-- uid: ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes
-  commentId: M:ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  parent: ParmaGIS.Core.UI.Settings.SettingsExtensions
-  definition: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetAllSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  name: GetAllSettingsPageTypes(IModuleManager)
-  nameWithType: SettingsExtensions.GetAllSettingsPageTypes(IModuleManager)
-  fullName: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetAllSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetAllSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetAllSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetAllSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-- uid: ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes
-  commentId: M:ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  parent: ParmaGIS.Core.UI.Settings.SettingsExtensions
-  definition: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetRegisteredSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  name: GetRegisteredSettingsPageTypes(IModuleManager)
-  nameWithType: SettingsExtensions.GetRegisteredSettingsPageTypes(IModuleManager)
-  fullName: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetRegisteredSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetRegisteredSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetRegisteredSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetRegisteredSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
 - uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
   commentId: M:ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
   href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
@@ -289,99 +265,6 @@ references:
   name: ModuleExtensions
   nameWithType: ModuleExtensions
   fullName: ParmaGIS.Core.Modularity.ModuleExtensions
-- uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  commentId: M:ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetAllSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  name: GetAllSettingsPageTypes(IModuleManager)
-  nameWithType: SettingsExtensions.GetAllSettingsPageTypes(IModuleManager)
-  fullName: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetAllSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetAllSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetAllSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetAllSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetAllSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-- uid: ParmaGIS.Core.UI.Settings.SettingsExtensions
-  commentId: T:ParmaGIS.Core.UI.Settings.SettingsExtensions
-  parent: ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html
-  name: SettingsExtensions
-  nameWithType: SettingsExtensions
-  fullName: ParmaGIS.Core.UI.Settings.SettingsExtensions
-- uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  commentId: M:ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetRegisteredSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  name: GetRegisteredSettingsPageTypes(IModuleManager)
-  nameWithType: SettingsExtensions.GetRegisteredSettingsPageTypes(IModuleManager)
-  fullName: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetRegisteredSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetRegisteredSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Settings.SettingsExtensions.GetRegisteredSettingsPageTypes(ParmaGIS.Core.Modularity.IModuleManager)
-    name: GetRegisteredSettingsPageTypes
-    href: ParmaGIS.Core.UI.Settings.SettingsExtensions.html#ParmaGIS_Core_UI_Settings_SettingsExtensions_GetRegisteredSettingsPageTypes_ParmaGIS_Core_Modularity_IModuleManager_
-  - name: (
-  - uid: ParmaGIS.Core.Modularity.IModuleManager
-    name: IModuleManager
-    href: ParmaGIS.Core.Modularity.IModuleManager.html
-  - name: )
-- uid: ParmaGIS.Core.UI.Settings
-  commentId: N:ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.UI.Settings
-  nameWithType: ParmaGIS.Core.UI.Settings
-  fullName: ParmaGIS.Core.UI.Settings
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.UI
-    name: UI
-    href: ParmaGIS.Core.UI.html
-  - name: .
-  - uid: ParmaGIS.Core.UI.Settings
-    name: Settings
-    href: ParmaGIS.Core.UI.Settings.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.UI
-    name: UI
-    href: ParmaGIS.Core.UI.html
-  - name: .
-  - uid: ParmaGIS.Core.UI.Settings
-    name: Settings
-    href: ParmaGIS.Core.UI.Settings.html
 - uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
   commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.GetModule
   href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_GetModule_System_Type_
@@ -434,3 +317,9 @@ references:
   name: IModuleCatalog
   nameWithType: IModuleCatalog
   fullName: ParmaGIS.Core.Modularity.IModuleCatalog
+- uid: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory*
+  commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
+  href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_ModulesDirectory
+  name: ModulesDirectory
+  nameWithType: IModuleManager.ModulesDirectory
+  fullName: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory

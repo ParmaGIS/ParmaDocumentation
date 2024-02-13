@@ -5,7 +5,9 @@ items:
   id: ServiceState
   parent: ParmaGIS.Core.Serviceability
   children:
-  - ParmaGIS.Core.Serviceability.ServiceState.Initialized
+  - ParmaGIS.Core.Serviceability.ServiceState.Created
+  - ParmaGIS.Core.Serviceability.ServiceState.Creating
+  - ParmaGIS.Core.Serviceability.ServiceState.Error
   - ParmaGIS.Core.Serviceability.ServiceState.Initializing
   - ParmaGIS.Core.Serviceability.ServiceState.NotReady
   - ParmaGIS.Core.Serviceability.ServiceState.ReadeForInitialize
@@ -19,7 +21,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceState
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
@@ -44,7 +46,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NotReady
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
@@ -70,7 +72,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ReadeForInitialize
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
@@ -96,7 +98,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Initializing
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
@@ -108,30 +110,82 @@ items:
     content: Initializing = 2
     return:
       type: ParmaGIS.Core.Serviceability.ServiceState
-- uid: ParmaGIS.Core.Serviceability.ServiceState.Initialized
-  commentId: F:ParmaGIS.Core.Serviceability.ServiceState.Initialized
-  id: Initialized
+- uid: ParmaGIS.Core.Serviceability.ServiceState.Creating
+  commentId: F:ParmaGIS.Core.Serviceability.ServiceState.Creating
+  id: Creating
   parent: ParmaGIS.Core.Serviceability.ServiceState
   langs:
   - csharp
   - vb
-  name: Initialized
-  nameWithType: ServiceState.Initialized
-  fullName: ParmaGIS.Core.Serviceability.ServiceState.Initialized
+  name: Creating
+  nameWithType: ServiceState.Creating
+  fullName: ParmaGIS.Core.Serviceability.ServiceState.Creating
   type: Field
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Initialized
+    id: Creating
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
     startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: Initialized = 3
+    content: Creating = 3
+    return:
+      type: ParmaGIS.Core.Serviceability.ServiceState
+- uid: ParmaGIS.Core.Serviceability.ServiceState.Created
+  commentId: F:ParmaGIS.Core.Serviceability.ServiceState.Created
+  id: Created
+  parent: ParmaGIS.Core.Serviceability.ServiceState
+  langs:
+  - csharp
+  - vb
+  name: Created
+  nameWithType: ServiceState.Created
+  fullName: ParmaGIS.Core.Serviceability.ServiceState.Created
+  type: Field
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Created
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
+    startLine: 8
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: Created = 4
+    return:
+      type: ParmaGIS.Core.Serviceability.ServiceState
+- uid: ParmaGIS.Core.Serviceability.ServiceState.Error
+  commentId: F:ParmaGIS.Core.Serviceability.ServiceState.Error
+  id: Error
+  parent: ParmaGIS.Core.Serviceability.ServiceState
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: ServiceState.Error
+  fullName: ParmaGIS.Core.Serviceability.ServiceState.Error
+  type: Field
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Error
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceState.cs
+    startLine: 9
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: Error = 5
     return:
       type: ParmaGIS.Core.Serviceability.ServiceState
 references:

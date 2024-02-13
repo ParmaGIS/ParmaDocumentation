@@ -5,15 +5,15 @@ items:
   id: ServiceExtensions
   parent: ParmaGIS.Core.Serviceability
   children:
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``3(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.Type)
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0)
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object,System.Boolean)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
+  - ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   - ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll``1(ParmaGIS.Core.Serviceability.IServiceManager)
   - ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager)
-  - ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager,System.String)
   - ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService``1(ParmaGIS.Core.Serviceability.IServiceProvider,``0@)
   langs:
   - csharp
@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceExtensions
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
@@ -46,22 +46,22 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0)
-  id: AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object,System.Boolean)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object,System.Boolean)
+  id: AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object,System.Boolean)
   isExtensionMethod: true
   parent: ParmaGIS.Core.Serviceability.ServiceExtensions
   langs:
   - csharp
   - vb
-  name: AddService<TService>(IServiceCollection, ServiceLifetime, TService?)
-  nameWithType: ServiceExtensions.AddService<TService>(IServiceCollection, ServiceLifetime, TService?)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService<TService>(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TService?)
+  name: AddService(IServiceCollection, string, Type, ServiceLifetime, object?, bool)
+  nameWithType: ServiceExtensions.AddService(IServiceCollection, string, Type, ServiceLifetime, object?, bool)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection, string, System.Type, ParmaGIS.Core.Serviceability.ServiceLifetime, object?, bool)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
@@ -70,7 +70,93 @@ items:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: public static void AddService<TService>(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, TService? instance = default)
+    content: public static void AddService(this IServiceCollection serviceCollection, string serviceName, Type serviceType, ServiceLifetime lifetime = ServiceLifetime.Transient, object? instance = null, bool manyImplementation = false)
+    parameters:
+    - id: serviceCollection
+      type: ParmaGIS.Core.Serviceability.IServiceCollection
+    - id: serviceName
+      type: System.String
+    - id: serviceType
+      type: System.Type
+    - id: lifetime
+      type: ParmaGIS.Core.Serviceability.ServiceLifetime
+    - id: instance
+      type: System.Object
+    - id: manyImplementation
+      type: System.Boolean
+    content.vb: Public Shared Sub AddService(serviceCollection As IServiceCollection, serviceName As String, serviceType As Type, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As Object = Nothing, manyImplementation As Boolean = False)
+  overload: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*
+  nameWithType.vb: ServiceExtensions.AddService(IServiceCollection, String, Type, ServiceLifetime, Object, Boolean)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection, String, System.Type, ParmaGIS.Core.Serviceability.ServiceLifetime, Object, Boolean)
+  name.vb: AddService(IServiceCollection, String, Type, ServiceLifetime, Object, Boolean)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  id: AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  isExtensionMethod: true
+  parent: ParmaGIS.Core.Serviceability.ServiceExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddService<TService>(IServiceCollection, string, ServiceLifetime, TService?, bool)
+  nameWithType: ServiceExtensions.AddService<TService>(IServiceCollection, string, ServiceLifetime, TService?, bool)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService<TService>(ParmaGIS.Core.Serviceability.IServiceCollection, string, ParmaGIS.Core.Serviceability.ServiceLifetime, TService?, bool)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AddService
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
+    startLine: 18
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: public static void AddService<TService>(this IServiceCollection serviceCollection, string serviceName = null, ServiceLifetime lifetime = ServiceLifetime.Transient, TService? instance = default, bool manyImplementation = false)
+    parameters:
+    - id: serviceCollection
+      type: ParmaGIS.Core.Serviceability.IServiceCollection
+    - id: serviceName
+      type: System.String
+    - id: lifetime
+      type: ParmaGIS.Core.Serviceability.ServiceLifetime
+    - id: instance
+      type: '{TService}'
+    - id: manyImplementation
+      type: System.Boolean
+    typeParameters:
+    - id: TService
+    content.vb: Public Shared Sub AddService(Of TService)(serviceCollection As IServiceCollection, serviceName As String = Nothing, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As TService = Nothing, manyImplementation As Boolean = False)
+  overload: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*
+  nameWithType.vb: ServiceExtensions.AddService(Of TService)(IServiceCollection, String, ServiceLifetime, TService, Boolean)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(Of TService)(ParmaGIS.Core.Serviceability.IServiceCollection, String, ParmaGIS.Core.Serviceability.ServiceLifetime, TService, Boolean)
+  name.vb: AddService(Of TService)(IServiceCollection, String, ServiceLifetime, TService, Boolean)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  id: AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)
+  isExtensionMethod: true
+  parent: ParmaGIS.Core.Serviceability.ServiceExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddService<TService>(IServiceCollection, ServiceLifetime, TService?, bool)
+  nameWithType: ServiceExtensions.AddService<TService>(IServiceCollection, ServiceLifetime, TService?, bool)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService<TService>(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TService?, bool)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AddService
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
+    startLine: 28
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: public static void AddService<TService>(this IServiceCollection serviceCollection, ServiceLifetime lifetime, TService? instance = default, bool manyImplementation = false)
     parameters:
     - id: serviceCollection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
@@ -78,70 +164,84 @@ items:
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
     - id: instance
       type: '{TService}'
+    - id: manyImplementation
+      type: System.Boolean
     typeParameters:
     - id: TService
-    content.vb: Public Shared Sub AddService(Of TService)(serviceCollection As IServiceCollection, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As TService = Nothing)
+    content.vb: Public Shared Sub AddService(Of TService)(serviceCollection As IServiceCollection, lifetime As ServiceLifetime, instance As TService = Nothing, manyImplementation As Boolean = False)
   overload: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*
-  nameWithType.vb: ServiceExtensions.AddService(Of TService)(IServiceCollection, ServiceLifetime, TService)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(Of TService)(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TService)
-  name.vb: AddService(Of TService)(IServiceCollection, ServiceLifetime, TService)
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.Type)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.Type)
-  id: AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.Type)
+  nameWithType.vb: ServiceExtensions.AddService(Of TService)(IServiceCollection, ServiceLifetime, TService, Boolean)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(Of TService)(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TService, Boolean)
+  name.vb: AddService(Of TService)(IServiceCollection, ServiceLifetime, TService, Boolean)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
+  id: AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
   isExtensionMethod: true
   parent: ParmaGIS.Core.Serviceability.ServiceExtensions
   langs:
   - csharp
   - vb
-  name: AddService(IServiceCollection, Type)
-  nameWithType: ServiceExtensions.AddService(IServiceCollection, Type)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection, System.Type)
+  name: AddService<TService, TImplementation>(IServiceCollection, string, ServiceLifetime, TImplementation?, bool)
+  nameWithType: ServiceExtensions.AddService<TService, TImplementation>(IServiceCollection, string, ServiceLifetime, TImplementation?, bool)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService<TService, TImplementation>(ParmaGIS.Core.Serviceability.IServiceCollection, string, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation?, bool)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 14
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: public static void AddService(this IServiceCollection serviceCollection, Type serviceType)
+    content: 'public static void AddService<TService, TImplementation>(this IServiceCollection serviceCollection, string serviceName = null, ServiceLifetime lifetime = ServiceLifetime.Transient, TImplementation? instance = null, bool manyImplementation = false) where TImplementation : class, TService'
     parameters:
     - id: serviceCollection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
-    - id: serviceType
-      type: System.Type
-    content.vb: Public Shared Sub AddService(serviceCollection As IServiceCollection, serviceType As Type)
+    - id: serviceName
+      type: System.String
+    - id: lifetime
+      type: ParmaGIS.Core.Serviceability.ServiceLifetime
+    - id: instance
+      type: '{TImplementation}'
+    - id: manyImplementation
+      type: System.Boolean
+    typeParameters:
+    - id: TService
+    - id: TImplementation
+    content.vb: Public Shared Sub AddService(Of TService, TImplementation As {Class, TService})(serviceCollection As IServiceCollection, serviceName As String = Nothing, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As TImplementation = Nothing, manyImplementation As Boolean = False)
   overload: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
-  id: AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
+  nameWithType.vb: ServiceExtensions.AddService(Of TService, TImplementation)(IServiceCollection, String, ServiceLifetime, TImplementation, Boolean)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(Of TService, TImplementation)(ParmaGIS.Core.Serviceability.IServiceCollection, String, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation, Boolean)
+  name.vb: AddService(Of TService, TImplementation)(IServiceCollection, String, ServiceLifetime, TImplementation, Boolean)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
+  id: AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)
   isExtensionMethod: true
   parent: ParmaGIS.Core.Serviceability.ServiceExtensions
   langs:
   - csharp
   - vb
-  name: AddService<TService, TImplementation>(IServiceCollection, ServiceLifetime, TImplementation?)
-  nameWithType: ServiceExtensions.AddService<TService, TImplementation>(IServiceCollection, ServiceLifetime, TImplementation?)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService<TService, TImplementation>(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation?)
+  name: AddService<TService, TImplementation>(IServiceCollection, ServiceLifetime, TImplementation?, bool)
+  nameWithType: ServiceExtensions.AddService<TService, TImplementation>(IServiceCollection, ServiceLifetime, TImplementation?, bool)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService<TService, TImplementation>(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation?, bool)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 19
+    startLine: 47
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: public static void AddService<TService, TImplementation>(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, TImplementation? instance = default)
+    content: 'public static void AddService<TService, TImplementation>(this IServiceCollection serviceCollection, ServiceLifetime lifetime, TImplementation? instance = null, bool manyImplementation = false) where TImplementation : class, TService'
     parameters:
     - id: serviceCollection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
@@ -149,55 +249,56 @@ items:
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
     - id: instance
       type: '{TImplementation}'
+    - id: manyImplementation
+      type: System.Boolean
     typeParameters:
     - id: TService
     - id: TImplementation
-    content.vb: Public Shared Sub AddService(Of TService, TImplementation)(serviceCollection As IServiceCollection, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As TImplementation = Nothing)
+    content.vb: Public Shared Sub AddService(Of TService, TImplementation As {Class, TService})(serviceCollection As IServiceCollection, lifetime As ServiceLifetime, instance As TImplementation = Nothing, manyImplementation As Boolean = False)
   overload: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*
-  nameWithType.vb: ServiceExtensions.AddService(Of TService, TImplementation)(IServiceCollection, ServiceLifetime, TImplementation)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(Of TService, TImplementation)(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation)
-  name.vb: AddService(Of TService, TImplementation)(IServiceCollection, ServiceLifetime, TImplementation)
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``3(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``3(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
-  id: AddParameterGiver``3(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)
+  nameWithType.vb: ServiceExtensions.AddService(Of TService, TImplementation)(IServiceCollection, ServiceLifetime, TImplementation, Boolean)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(Of TService, TImplementation)(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation, Boolean)
+  name.vb: AddService(Of TService, TImplementation)(IServiceCollection, ServiceLifetime, TImplementation, Boolean)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object)
+  id: AddParameterGiver``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object)
   isExtensionMethod: true
   parent: ParmaGIS.Core.Serviceability.ServiceExtensions
   langs:
   - csharp
   - vb
-  name: AddParameterGiver<TService, TImplementation, TParameter>(IServiceCollection, ServiceLifetime, TImplementation?)
-  nameWithType: ServiceExtensions.AddParameterGiver<TService, TImplementation, TParameter>(IServiceCollection, ServiceLifetime, TImplementation?)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver<TService, TImplementation, TParameter>(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation?)
+  name: AddParameterGiver<TParameterGiver, TParameter>(IServiceCollection, ServiceLifetime, object?)
+  nameWithType: ServiceExtensions.AddParameterGiver<TParameterGiver, TParameter>(IServiceCollection, ServiceLifetime, object?)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver<TParameterGiver, TParameter>(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, object?)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddParameterGiver
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 24
+    startLine: 56
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: public static void AddParameterGiver<TService, TImplementation, TParameter>(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, TImplementation? instance = default)
+    content: 'public static void AddParameterGiver<TParameterGiver, TParameter>(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, object? instance = null) where TParameterGiver : IParameterGiver'
     parameters:
     - id: serviceCollection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
     - id: lifetime
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
     - id: instance
-      type: '{TImplementation}'
+      type: System.Object
     typeParameters:
-    - id: TService
-    - id: TImplementation
+    - id: TParameterGiver
     - id: TParameter
-    content.vb: Public Shared Sub AddParameterGiver(Of TService, TImplementation, TParameter)(serviceCollection As IServiceCollection, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As TImplementation = Nothing)
+    content.vb: Public Shared Sub AddParameterGiver(Of TParameterGiver As IParameterGiver, TParameter)(serviceCollection As IServiceCollection, lifetime As ServiceLifetime = ServiceLifetime.Transient, instance As Object = Nothing)
   overload: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver*
-  nameWithType.vb: ServiceExtensions.AddParameterGiver(Of TService, TImplementation, TParameter)(IServiceCollection, ServiceLifetime, TImplementation)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver(Of TService, TImplementation, TParameter)(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, TImplementation)
-  name.vb: AddParameterGiver(Of TService, TImplementation, TParameter)(IServiceCollection, ServiceLifetime, TImplementation)
+  nameWithType.vb: ServiceExtensions.AddParameterGiver(Of TParameterGiver, TParameter)(IServiceCollection, ServiceLifetime, Object)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver(Of TParameterGiver, TParameter)(ParmaGIS.Core.Serviceability.IServiceCollection, ParmaGIS.Core.Serviceability.ServiceLifetime, Object)
+  name.vb: AddParameterGiver(Of TParameterGiver, TParameter)(IServiceCollection, ServiceLifetime, Object)
 - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   id: GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)
@@ -213,11 +314,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 29
+    startLine: 62
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -235,31 +336,31 @@ items:
   nameWithType.vb: ServiceExtensions.GetService(Of T)(IServiceProvider)
   fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetService(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
   name.vb: GetService(Of T)(IServiceProvider)
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  id: GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
+  id: GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)
   isExtensionMethod: true
   parent: ParmaGIS.Core.Serviceability.ServiceExtensions
   langs:
   - csharp
   - vb
-  name: GetServices<T>(IServiceProvider)
-  nameWithType: ServiceExtensions.GetServices<T>(IServiceProvider)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices<T>(ParmaGIS.Core.Serviceability.IServiceProvider)
+  name: GetImplementations<T>(IServiceProvider)
+  nameWithType: ServiceExtensions.GetImplementations<T>(IServiceProvider)
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations<T>(ParmaGIS.Core.Serviceability.IServiceProvider)
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetServices
+    id: GetImplementations
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 34
+    startLine: 67
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
   syntax:
-    content: public static IEnumerable<T> GetServices<T>(this IServiceProvider serviceProvider)
+    content: public static IEnumerable<T> GetImplementations<T>(this IServiceProvider serviceProvider)
     parameters:
     - id: serviceProvider
       type: ParmaGIS.Core.Serviceability.IServiceProvider
@@ -267,11 +368,11 @@ items:
     - id: T
     return:
       type: System.Collections.Generic.IEnumerable{{T}}
-    content.vb: Public Shared Function GetServices(Of T)(serviceProvider As IServiceProvider) As IEnumerable(Of T)
-  overload: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices*
-  nameWithType.vb: ServiceExtensions.GetServices(Of T)(IServiceProvider)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
-  name.vb: GetServices(Of T)(IServiceProvider)
+    content.vb: Public Shared Function GetImplementations(Of T)(serviceProvider As IServiceProvider) As IEnumerable(Of T)
+  overload: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations*
+  nameWithType.vb: ServiceExtensions.GetImplementations(Of T)(IServiceProvider)
+  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
+  name.vb: GetImplementations(Of T)(IServiceProvider)
 - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService``1(ParmaGIS.Core.Serviceability.IServiceProvider,``0@)
   commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService``1(ParmaGIS.Core.Serviceability.IServiceProvider,``0@)
   id: TryGetService``1(ParmaGIS.Core.Serviceability.IServiceProvider,``0@)
@@ -287,11 +388,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryGetService
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 39
+    startLine: 72
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -326,11 +427,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Resolve
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 46
+    startLine: 79
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -348,82 +449,6 @@ items:
   nameWithType.vb: ServiceExtensions.Resolve(Of T)(IServiceManager)
   fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve(Of T)(ParmaGIS.Core.Serviceability.IServiceManager)
   name.vb: Resolve(Of T)(IServiceManager)
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager,System.String)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager,System.String)
-  id: Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager,System.String)
-  isExtensionMethod: true
-  parent: ParmaGIS.Core.Serviceability.ServiceExtensions
-  langs:
-  - csharp
-  - vb
-  name: Resolve<T>(IServiceManager, string)
-  nameWithType: ServiceExtensions.Resolve<T>(IServiceManager, string)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve<T>(ParmaGIS.Core.Serviceability.IServiceManager, string)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Resolve
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 50
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Serviceability
-  syntax:
-    content: public static T Resolve<T>(this IServiceManager serviceManager, string name)
-    parameters:
-    - id: serviceManager
-      type: ParmaGIS.Core.Serviceability.IServiceManager
-    - id: name
-      type: System.String
-    typeParameters:
-    - id: T
-    return:
-      type: '{T}'
-    content.vb: Public Shared Function Resolve(Of T)(serviceManager As IServiceManager, name As String) As T
-  overload: ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve*
-  nameWithType.vb: ServiceExtensions.Resolve(Of T)(IServiceManager, String)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve(Of T)(ParmaGIS.Core.Serviceability.IServiceManager, String)
-  name.vb: Resolve(Of T)(IServiceManager, String)
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll``1(ParmaGIS.Core.Serviceability.IServiceManager)
-  commentId: M:ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll``1(ParmaGIS.Core.Serviceability.IServiceManager)
-  id: ResolveAll``1(ParmaGIS.Core.Serviceability.IServiceManager)
-  isExtensionMethod: true
-  parent: ParmaGIS.Core.Serviceability.ServiceExtensions
-  langs:
-  - csharp
-  - vb
-  name: ResolveAll<T>(IServiceManager)
-  nameWithType: ServiceExtensions.ResolveAll<T>(IServiceManager)
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll<T>(ParmaGIS.Core.Serviceability.IServiceManager)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ResolveAll
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs
-    startLine: 54
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Serviceability
-  syntax:
-    content: public static IEnumerable<T> ResolveAll<T>(this IServiceManager serviceManager)
-    parameters:
-    - id: serviceManager
-      type: ParmaGIS.Core.Serviceability.IServiceManager
-    typeParameters:
-    - id: T
-    return:
-      type: System.Collections.Generic.IEnumerable{{T}}
-    content.vb: Public Shared Function ResolveAll(Of T)(serviceManager As IServiceManager) As IEnumerable(Of T)
-  overload: ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll*
-  nameWithType.vb: ServiceExtensions.ResolveAll(Of T)(IServiceManager)
-  fullName.vb: ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll(Of T)(ParmaGIS.Core.Serviceability.IServiceManager)
-  name.vb: ResolveAll(Of T)(IServiceManager)
 references:
 - uid: ParmaGIS.Core.Serviceability
   commentId: N:ParmaGIS.Core.Serviceability
@@ -694,7 +719,7 @@ references:
   fullName: System
 - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*
   commentId: Overload:ParmaGIS.Core.Serviceability.ServiceExtensions.AddService
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___0_
+  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_ParmaGIS_Core_Serviceability_IServiceCollection_System_String_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_System_Boolean_
   name: AddService
   nameWithType: ServiceExtensions.AddService
   fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddService
@@ -705,24 +730,17 @@ references:
   name: IServiceCollection
   nameWithType: IServiceCollection
   fullName: ParmaGIS.Core.Serviceability.IServiceCollection
-- uid: ParmaGIS.Core.Serviceability.ServiceLifetime
-  commentId: T:ParmaGIS.Core.Serviceability.ServiceLifetime
-  parent: ParmaGIS.Core.Serviceability
-  href: ParmaGIS.Core.Serviceability.ServiceLifetime.html
-  name: ServiceLifetime
-  nameWithType: ServiceLifetime
-  fullName: ParmaGIS.Core.Serviceability.ServiceLifetime
-- uid: '{TService}'
-  commentId: '!:TService'
-  definition: TService
-  name: TService
-  nameWithType: TService
-  fullName: TService
-- uid: TService
-  commentId: '!:TService'
-  name: TService
-  nameWithType: TService
-  fullName: TService
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Type
   commentId: T:System.Type
   parent: System
@@ -731,6 +749,34 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
+- uid: ParmaGIS.Core.Serviceability.ServiceLifetime
+  commentId: T:ParmaGIS.Core.Serviceability.ServiceLifetime
+  parent: ParmaGIS.Core.Serviceability
+  href: ParmaGIS.Core.Serviceability.ServiceLifetime.html
+  name: ServiceLifetime
+  nameWithType: ServiceLifetime
+  fullName: ParmaGIS.Core.Serviceability.ServiceLifetime
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: '{TService}'
+  commentId: '!:TService'
+  definition: TService
+  name: TService
+  nameWithType: TService
+  fullName: TService
+- uid: TService
+  name: TService
+  nameWithType: TService
+  fullName: TService
 - uid: '{TImplementation}'
   commentId: '!:TImplementation'
   definition: TImplementation
@@ -743,7 +789,7 @@ references:
   fullName: TImplementation
 - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver*
   commentId: Overload:ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddParameterGiver__3_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___1_
+  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddParameterGiver__2_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_
   name: AddParameterGiver
   nameWithType: ServiceExtensions.AddParameterGiver
   fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver
@@ -770,12 +816,12 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices*
-  commentId: Overload:ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_
-  name: GetServices
-  nameWithType: ServiceExtensions.GetServices
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices
+- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations*
+  commentId: Overload:ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations
+  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_
+  name: GetImplementations
+  nameWithType: ServiceExtensions.GetImplementations
+  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations
 - uid: System.Collections.Generic.IEnumerable{{T}}
   commentId: T:System.Collections.Generic.IEnumerable{`0}
   parent: System.Collections.Generic
@@ -876,17 +922,6 @@ references:
   name: TryGetService
   nameWithType: ServiceExtensions.TryGetService
   fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve*
   commentId: Overload:ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve
   href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_Resolve__1_ParmaGIS_Core_Serviceability_IServiceManager_
@@ -900,20 +935,3 @@ references:
   name: IServiceManager
   nameWithType: IServiceManager
   fullName: ParmaGIS.Core.Serviceability.IServiceManager
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll*
-  commentId: Overload:ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll
-  href: ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_ResolveAll__1_ParmaGIS_Core_Serviceability_IServiceManager_
-  name: ResolveAll
-  nameWithType: ServiceExtensions.ResolveAll
-  fullName: ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll

@@ -5,17 +5,17 @@ items:
   id: IDataBaseProvider
   parent: ParmaGIS.Modules.Data.Connection
   children:
+  - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder(System.Data.Common.DbDataAdapter)
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter
-  - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ExecuteRequest(System.String,System.Data.DataTable)
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.GetSchema
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.LoadTable(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})
-  - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name
+  - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
   - ParmaGIS.Modules.Data.Connection.IDataBaseProvider.UpdateTable(System.Data.DataTable)
   langs:
   - csharp
@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataBaseProvider
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
@@ -38,64 +38,35 @@ items:
   syntax:
     content: public interface IDataBaseProvider
     content.vb: Public Interface IDataBaseProvider
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name
-  commentId: P:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name
-  id: Name
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
+  commentId: P:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
+  id: Server
   parent: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
   langs:
   - csharp
   - vb
-  name: Name
-  nameWithType: IDataBaseProvider.Name
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name
+  name: Server
+  nameWithType: IDataBaseProvider.Server
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
   type: Property
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Name
+    id: Server
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
     startLine: 16
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
   syntax:
-    content: string Name { get; }
+    content: IDataBaseServerConnection Server { get; }
     parameters: []
     return:
-      type: System.String
-    content.vb: ReadOnly Property Name As String
-  overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name*
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description
-  commentId: P:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description
-  id: Description
-  parent: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
-  langs:
-  - csharp
-  - vb
-  name: Description
-  nameWithType: IDataBaseProvider.Description
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Description
-    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 17
-  assemblies:
-  - ParmaGIS.Modules.Data
-  namespace: ParmaGIS.Modules.Data.Connection
-  syntax:
-    content: string Description { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: ReadOnly Property Description As String
-  overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description*
+      type: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
+    content.vb: ReadOnly Property Server As IDataBaseServerConnection
+  overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
   commentId: P:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
   id: ConnectionString
@@ -110,11 +81,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionString
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -139,11 +110,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetSchema
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -167,11 +138,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadTable
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -205,11 +176,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ExecuteRequest
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -241,11 +212,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateDataAdapter
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -269,11 +240,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCommand
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -297,11 +268,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCommandBuilder
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 26
+    startLine: 25
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -328,11 +299,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateConnection
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 27
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -356,11 +327,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateConfigurator
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -384,11 +355,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: UpdateTable
     path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 29
+    startLine: 28
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
@@ -399,6 +370,33 @@ items:
       type: System.Data.DataTable
     content.vb: Sub UpdateTable(table As DataTable)
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.UpdateTable*
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
+  commentId: E:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
+  id: ConnectionChanged
+  parent: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+  langs:
+  - csharp
+  - vb
+  name: ConnectionChanged
+  nameWithType: IDataBaseProvider.ConnectionChanged
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
+  type: Event
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ConnectionChanged
+    path: ../../ParmaTest/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
+    startLine: 30
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Connection
+  syntax:
+    content: event EventHandler ConnectionChanged
+    return:
+      type: System.EventHandler
+    content.vb: Event ConnectionChanged As EventHandler
 references:
 - uid: ParmaGIS.Modules.Data.Connection
   commentId: N:ParmaGIS.Modules.Data.Connection
@@ -438,12 +436,25 @@ references:
   - uid: ParmaGIS.Modules.Data.Connection
     name: Connection
     href: ParmaGIS.Modules.Data.Connection.html
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_Name
-  name: Name
-  nameWithType: IDataBaseProvider.Name
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Name
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_Server
+  name: Server
+  nameWithType: IDataBaseProvider.Server
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
+  commentId: T:ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
+  parent: ParmaGIS.Modules.Data.Connection
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
+  name: IDataBaseServerConnection
+  nameWithType: IDataBaseServerConnection
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_ConnectionString
+  name: ConnectionString
+  nameWithType: IDataBaseProvider.ConnectionString
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -462,18 +473,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_Description
-  name: Description
-  nameWithType: IDataBaseProvider.Description
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Description
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_ConnectionString
-  name: ConnectionString
-  nameWithType: IDataBaseProvider.ConnectionString
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.GetSchema*
   commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.GetSchema
   href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_GetSchema
@@ -776,3 +775,11 @@ references:
   name: UpdateTable
   nameWithType: IDataBaseProvider.UpdateTable
   fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.UpdateTable
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler

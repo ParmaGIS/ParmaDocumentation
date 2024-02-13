@@ -5,7 +5,7 @@ items:
   id: DialogServiceExtensions
   parent: ParmaGIS.WPF.Modules.ObjectSelectorWindow
   children:
-  - ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogService,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
+  - ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogManager,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
   langs:
   - csharp
   - vb
@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/ObjectSelectorWindowModule.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DialogServiceExtensions
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/ObjectSelectorWindowModule.cs
-    startLine: 27
+    startLine: 26
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectSelectorWindow
   namespace: ParmaGIS.WPF.Modules.ObjectSelectorWindow
@@ -37,22 +37,22 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogService,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
-  commentId: M:ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogService,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
-  id: ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogService,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
+- uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogManager,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogManager,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
+  id: ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogManager,ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
   isExtensionMethod: true
   parent: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions
   langs:
   - csharp
   - vb
-  name: ShowObjectSelector(IDialogService, ObjectSelector)
-  nameWithType: DialogServiceExtensions.ShowObjectSelector(IDialogService, ObjectSelector)
-  fullName: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogService, ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
+  name: ShowObjectSelector(IDialogManager, ObjectSelector)
+  nameWithType: DialogServiceExtensions.ShowObjectSelector(IDialogManager, ObjectSelector)
+  fullName: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector(ParmaGIS.Core.UI.Dialog.IDialogManager, ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector)
   type: Method
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/ObjectSelectorWindowModule.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ShowObjectSelector
     path: ../../ParmaTest/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/ObjectSelectorWindowModule.cs
@@ -61,15 +61,15 @@ items:
   - ParmaGIS.WPF.Modules.ObjectSelectorWindow
   namespace: ParmaGIS.WPF.Modules.ObjectSelectorWindow
   syntax:
-    content: public static ObjectSelectorResults ShowObjectSelector(this IDialogService dialogService, ObjectSelector objectSelector)
+    content: public static ObjectSelectorResults ShowObjectSelector(this IDialogManager dialogService, ObjectSelector objectSelector)
     parameters:
     - id: dialogService
-      type: ParmaGIS.Core.UI.Dialog.IDialogService
+      type: ParmaGIS.Core.UI.Dialog.IDialogManager
     - id: objectSelector
       type: ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector
     return:
       type: ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelectorResults
-    content.vb: Public Shared Function ShowObjectSelector(dialogService As IDialogService, objectSelector As ObjectSelector) As ObjectSelectorResults
+    content.vb: Public Shared Function ShowObjectSelector(dialogService As IDialogManager, objectSelector As ObjectSelector) As ObjectSelectorResults
   overload: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector*
 references:
 - uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow
@@ -349,17 +349,17 @@ references:
   fullName: System
 - uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector*
   commentId: Overload:ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector
-  href: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.html#ParmaGIS_WPF_Modules_ObjectSelectorWindow_DialogServiceExtensions_ShowObjectSelector_ParmaGIS_Core_UI_Dialog_IDialogService_ParmaGIS_WPF_Modules_ObjectSelectorWindow_ObjectSelector_
+  href: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.html#ParmaGIS_WPF_Modules_ObjectSelectorWindow_DialogServiceExtensions_ShowObjectSelector_ParmaGIS_Core_UI_Dialog_IDialogManager_ParmaGIS_WPF_Modules_ObjectSelectorWindow_ObjectSelector_
   name: ShowObjectSelector
   nameWithType: DialogServiceExtensions.ShowObjectSelector
   fullName: ParmaGIS.WPF.Modules.ObjectSelectorWindow.DialogServiceExtensions.ShowObjectSelector
-- uid: ParmaGIS.Core.UI.Dialog.IDialogService
-  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogService
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager
+  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogManager
   parent: ParmaGIS.Core.UI.Dialog
-  href: ParmaGIS.Core.UI.Dialog.IDialogService.html
-  name: IDialogService
-  nameWithType: IDialogService
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogService
+  href: ParmaGIS.Core.UI.Dialog.IDialogManager.html
+  name: IDialogManager
+  nameWithType: IDialogManager
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogManager
 - uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector
   commentId: T:ParmaGIS.WPF.Modules.ObjectSelectorWindow.ObjectSelector
   parent: ParmaGIS.WPF.Modules.ObjectSelectorWindow

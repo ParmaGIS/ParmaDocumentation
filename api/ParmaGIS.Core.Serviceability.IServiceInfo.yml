@@ -6,7 +6,10 @@ items:
   parent: ParmaGIS.Core.Serviceability
   children:
   - ParmaGIS.Core.Serviceability.IServiceInfo.ImplementationType
+  - ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver
   - ParmaGIS.Core.Serviceability.IServiceInfo.Lifetime
+  - ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation
+  - ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
   - ParmaGIS.Core.Serviceability.IServiceInfo.ServiceType
   - ParmaGIS.Core.Serviceability.IServiceInfo.State
   langs:
@@ -19,7 +22,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IServiceInfo
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
@@ -48,7 +51,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceType
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
@@ -79,7 +82,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ImplementationType
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
@@ -96,6 +99,35 @@ items:
       type: System.Type
     content.vb: ReadOnly Property ImplementationType As Type
   overload: ParmaGIS.Core.Serviceability.IServiceInfo.ImplementationType*
+- uid: ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
+  commentId: P:ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
+  id: ParameterType
+  parent: ParmaGIS.Core.Serviceability.IServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: ParameterType
+  nameWithType: IServiceInfo.ParameterType
+  fullName: ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ParameterType
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
+    startLine: 13
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: Type? ParameterType { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: ReadOnly Property ParameterType As Type
+  overload: ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType*
 - uid: ParmaGIS.Core.Serviceability.IServiceInfo.Lifetime
   commentId: P:ParmaGIS.Core.Serviceability.IServiceInfo.Lifetime
   id: Lifetime
@@ -110,11 +142,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Lifetime
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -141,11 +173,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: State
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -156,6 +188,64 @@ items:
       type: ParmaGIS.Core.Serviceability.ServiceState
     content.vb: ReadOnly Property State As ServiceState
   overload: ParmaGIS.Core.Serviceability.IServiceInfo.State*
+- uid: ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation
+  commentId: P:ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation
+  id: ManyImplementation
+  parent: ParmaGIS.Core.Serviceability.IServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: ManyImplementation
+  nameWithType: IServiceInfo.ManyImplementation
+  fullName: ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ManyImplementation
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
+    startLine: 17
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: bool ManyImplementation { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property ManyImplementation As Boolean
+  overload: ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation*
+- uid: ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver
+  commentId: P:ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver
+  id: IsParameterGiver
+  parent: ParmaGIS.Core.Serviceability.IServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: IsParameterGiver
+  nameWithType: IServiceInfo.IsParameterGiver
+  fullName: ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IsParameterGiver
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
+    startLine: 18
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Serviceability
+  syntax:
+    content: bool IsParameterGiver { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsParameterGiver As Boolean
+  overload: ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver*
 references:
 - uid: ParmaGIS.Core.Serviceability
   commentId: N:ParmaGIS.Core.Serviceability
@@ -258,6 +348,12 @@ references:
   name: ImplementationType
   nameWithType: IServiceInfo.ImplementationType
   fullName: ParmaGIS.Core.Serviceability.IServiceInfo.ImplementationType
+- uid: ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType*
+  commentId: Overload:ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
+  href: ParmaGIS.Core.Serviceability.IServiceInfo.html#ParmaGIS_Core_Serviceability_IServiceInfo_ParameterType
+  name: ParameterType
+  nameWithType: IServiceInfo.ParameterType
+  fullName: ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
 - uid: ParmaGIS.Core.Serviceability.IServiceInfo.Lifetime*
   commentId: Overload:ParmaGIS.Core.Serviceability.IServiceInfo.Lifetime
   href: ParmaGIS.Core.Serviceability.IServiceInfo.html#ParmaGIS_Core_Serviceability_IServiceInfo_Lifetime
@@ -284,3 +380,26 @@ references:
   name: ServiceState
   nameWithType: ServiceState
   fullName: ParmaGIS.Core.Serviceability.ServiceState
+- uid: ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation*
+  commentId: Overload:ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation
+  href: ParmaGIS.Core.Serviceability.IServiceInfo.html#ParmaGIS_Core_Serviceability_IServiceInfo_ManyImplementation
+  name: ManyImplementation
+  nameWithType: IServiceInfo.ManyImplementation
+  fullName: ParmaGIS.Core.Serviceability.IServiceInfo.ManyImplementation
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver*
+  commentId: Overload:ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver
+  href: ParmaGIS.Core.Serviceability.IServiceInfo.html#ParmaGIS_Core_Serviceability_IServiceInfo_IsParameterGiver
+  name: IsParameterGiver
+  nameWithType: IServiceInfo.IsParameterGiver
+  fullName: ParmaGIS.Core.Serviceability.IServiceInfo.IsParameterGiver

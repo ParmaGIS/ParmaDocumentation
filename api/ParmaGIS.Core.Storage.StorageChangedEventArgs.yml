@@ -5,14 +5,10 @@ items:
   id: StorageChangedEventArgs
   parent: ParmaGIS.Core.Storage
   children:
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable)
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable,ParmaGIS.Core.Storage.IStorable)
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable},System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})
+  - ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IContainer,System.ComponentModel.PropertyChangedEventArgs)
   - ParmaGIS.Core.Storage.StorageChangedEventArgs.Action
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems
-  - ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName
+  - ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs
+  - ParmaGIS.Core.Storage.StorageChangedEventArgs.Container
   langs:
   - csharp
   - vb
@@ -23,7 +19,7 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StorageChangedEventArgs
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
@@ -44,175 +40,42 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable},System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})
-  commentId: M:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable},System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})
-  id: '#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable},System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})'
+- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IContainer,System.ComponentModel.PropertyChangedEventArgs)
+  commentId: M:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IContainer,System.ComponentModel.PropertyChangedEventArgs)
+  id: '#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IContainer,System.ComponentModel.PropertyChangedEventArgs)'
   parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
   langs:
   - csharp
   - vb
-  name: StorageChangedEventArgs(StorageChangedAction, IEnumerable<IStorable>, IEnumerable<IStorable>)
-  nameWithType: StorageChangedEventArgs.StorageChangedEventArgs(StorageChangedAction, IEnumerable<IStorable>, IEnumerable<IStorable>)
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.StorageChangedEventArgs(ParmaGIS.Core.Storage.StorageChangedAction, System.Collections.Generic.IEnumerable<ParmaGIS.Core.Storage.IStorable>, System.Collections.Generic.IEnumerable<ParmaGIS.Core.Storage.IStorable>)
+  name: StorageChangedEventArgs(StorageChangedAction, IContainer, PropertyChangedEventArgs?)
+  nameWithType: StorageChangedEventArgs.StorageChangedEventArgs(StorageChangedAction, IContainer, PropertyChangedEventArgs?)
+  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.StorageChangedEventArgs(ParmaGIS.Core.Storage.StorageChangedAction, ParmaGIS.Core.Storage.IContainer, System.ComponentModel.PropertyChangedEventArgs?)
   type: Constructor
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 13
+    startLine: 6
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
   syntax:
-    content: public StorageChangedEventArgs(StorageChangedAction action, IEnumerable<IStorable> newItems, IEnumerable<IStorable> oldItems)
+    content: public StorageChangedEventArgs(StorageChangedAction action, IContainer container, PropertyChangedEventArgs? changedEventArgs)
     parameters:
     - id: action
       type: ParmaGIS.Core.Storage.StorageChangedAction
-    - id: newItems
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-    - id: oldItems
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-    content.vb: Public Sub New(action As StorageChangedAction, newItems As IEnumerable(Of IStorable), oldItems As IEnumerable(Of IStorable))
+    - id: container
+      type: ParmaGIS.Core.Storage.IContainer
+    - id: changedEventArgs
+      type: System.ComponentModel.PropertyChangedEventArgs
+    content.vb: Public Sub New(action As StorageChangedAction, container As IContainer, changedEventArgs As PropertyChangedEventArgs)
   overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
-  nameWithType.vb: StorageChangedEventArgs.New(StorageChangedAction, IEnumerable(Of IStorable), IEnumerable(Of IStorable))
-  fullName.vb: ParmaGIS.Core.Storage.StorageChangedEventArgs.New(ParmaGIS.Core.Storage.StorageChangedAction, System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Storage.IStorable), System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Storage.IStorable))
-  name.vb: New(StorageChangedAction, IEnumerable(Of IStorable), IEnumerable(Of IStorable))
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable)
-  commentId: M:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable)
-  id: '#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable)'
-  parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
-  langs:
-  - csharp
-  - vb
-  name: StorageChangedEventArgs(StorageChangedAction, IStorable)
-  nameWithType: StorageChangedEventArgs.StorageChangedEventArgs(StorageChangedAction, IStorable)
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.StorageChangedEventArgs(ParmaGIS.Core.Storage.StorageChangedAction, ParmaGIS.Core.Storage.IStorable)
-  type: Constructor
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: .ctor
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 21
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Storage
-  syntax:
-    content: public StorageChangedEventArgs(StorageChangedAction action, IStorable changedItem)
-    parameters:
-    - id: action
-      type: ParmaGIS.Core.Storage.StorageChangedAction
-    - id: changedItem
-      type: ParmaGIS.Core.Storage.IStorable
-    content.vb: Public Sub New(action As StorageChangedAction, changedItem As IStorable)
-  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
-  nameWithType.vb: StorageChangedEventArgs.New(StorageChangedAction, IStorable)
-  fullName.vb: ParmaGIS.Core.Storage.StorageChangedEventArgs.New(ParmaGIS.Core.Storage.StorageChangedAction, ParmaGIS.Core.Storage.IStorable)
-  name.vb: New(StorageChangedAction, IStorable)
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable,ParmaGIS.Core.Storage.IStorable)
-  commentId: M:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable,ParmaGIS.Core.Storage.IStorable)
-  id: '#ctor(ParmaGIS.Core.Storage.StorageChangedAction,ParmaGIS.Core.Storage.IStorable,ParmaGIS.Core.Storage.IStorable)'
-  parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
-  langs:
-  - csharp
-  - vb
-  name: StorageChangedEventArgs(StorageChangedAction, IStorable, IStorable)
-  nameWithType: StorageChangedEventArgs.StorageChangedEventArgs(StorageChangedAction, IStorable, IStorable)
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.StorageChangedEventArgs(ParmaGIS.Core.Storage.StorageChangedAction, ParmaGIS.Core.Storage.IStorable, ParmaGIS.Core.Storage.IStorable)
-  type: Constructor
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: .ctor
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 34
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Storage
-  syntax:
-    content: public StorageChangedEventArgs(StorageChangedAction action, IStorable newItem, IStorable oldItem)
-    parameters:
-    - id: action
-      type: ParmaGIS.Core.Storage.StorageChangedAction
-    - id: newItem
-      type: ParmaGIS.Core.Storage.IStorable
-    - id: oldItem
-      type: ParmaGIS.Core.Storage.IStorable
-    content.vb: Public Sub New(action As StorageChangedAction, newItem As IStorable, oldItem As IStorable)
-  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
-  nameWithType.vb: StorageChangedEventArgs.New(StorageChangedAction, IStorable, IStorable)
-  fullName.vb: ParmaGIS.Core.Storage.StorageChangedEventArgs.New(ParmaGIS.Core.Storage.StorageChangedAction, ParmaGIS.Core.Storage.IStorable, ParmaGIS.Core.Storage.IStorable)
-  name.vb: New(StorageChangedAction, IStorable, IStorable)
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})
-  commentId: M:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})
-  id: '#ctor(ParmaGIS.Core.Storage.StorageChangedAction,System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable})'
-  parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
-  langs:
-  - csharp
-  - vb
-  name: StorageChangedEventArgs(StorageChangedAction, IEnumerable<IStorable>)
-  nameWithType: StorageChangedEventArgs.StorageChangedEventArgs(StorageChangedAction, IEnumerable<IStorable>)
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.StorageChangedEventArgs(ParmaGIS.Core.Storage.StorageChangedAction, System.Collections.Generic.IEnumerable<ParmaGIS.Core.Storage.IStorable>)
-  type: Constructor
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: .ctor
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 38
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Storage
-  syntax:
-    content: public StorageChangedEventArgs(StorageChangedAction action, IEnumerable<IStorable> newItems)
-    parameters:
-    - id: action
-      type: ParmaGIS.Core.Storage.StorageChangedAction
-    - id: newItems
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-    content.vb: Public Sub New(action As StorageChangedAction, newItems As IEnumerable(Of IStorable))
-  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
-  nameWithType.vb: StorageChangedEventArgs.New(StorageChangedAction, IEnumerable(Of IStorable))
-  fullName.vb: ParmaGIS.Core.Storage.StorageChangedEventArgs.New(ParmaGIS.Core.Storage.StorageChangedAction, System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Storage.IStorable))
-  name.vb: New(StorageChangedAction, IEnumerable(Of IStorable))
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName
-  commentId: P:ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName
-  id: TypeName
-  parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
-  langs:
-  - csharp
-  - vb
-  name: TypeName
-  nameWithType: StorageChangedEventArgs.TypeName
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName
-  type: Property
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: TypeName
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 44
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Storage
-  syntax:
-    content: public string TypeName { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property TypeName As String
-  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName*
+  nameWithType.vb: StorageChangedEventArgs.New(StorageChangedAction, IContainer, PropertyChangedEventArgs)
+  fullName.vb: ParmaGIS.Core.Storage.StorageChangedEventArgs.New(ParmaGIS.Core.Storage.StorageChangedAction, ParmaGIS.Core.Storage.IContainer, System.ComponentModel.PropertyChangedEventArgs)
+  name.vb: New(StorageChangedAction, IContainer, PropertyChangedEventArgs)
 - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.Action
   commentId: P:ParmaGIS.Core.Storage.StorageChangedEventArgs.Action
   id: Action
@@ -227,11 +90,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Action
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 45
+    startLine: 13
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
@@ -242,64 +105,64 @@ items:
       type: ParmaGIS.Core.Storage.StorageChangedAction
     content.vb: Public ReadOnly Property Action As StorageChangedAction
   overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.Action*
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems
-  commentId: P:ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems
-  id: NewItems
+- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.Container
+  commentId: P:ParmaGIS.Core.Storage.StorageChangedEventArgs.Container
+  id: Container
   parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
   langs:
   - csharp
   - vb
-  name: NewItems
-  nameWithType: StorageChangedEventArgs.NewItems
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems
+  name: Container
+  nameWithType: StorageChangedEventArgs.Container
+  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.Container
   type: Property
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: NewItems
+    id: Container
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 46
+    startLine: 14
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
   syntax:
-    content: public IEnumerable<IStorable> NewItems { get; }
+    content: public IContainer Container { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-    content.vb: Public ReadOnly Property NewItems As IEnumerable(Of IStorable)
-  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems*
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems
-  commentId: P:ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems
-  id: OldItems
+      type: ParmaGIS.Core.Storage.IContainer
+    content.vb: Public ReadOnly Property Container As IContainer
+  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.Container*
+- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs
+  commentId: P:ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs
+  id: ChangedEventArgs
   parent: ParmaGIS.Core.Storage.StorageChangedEventArgs
   langs:
   - csharp
   - vb
-  name: OldItems
-  nameWithType: StorageChangedEventArgs.OldItems
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems
+  name: ChangedEventArgs
+  nameWithType: StorageChangedEventArgs.ChangedEventArgs
+  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs
   type: Property
   source:
     remote:
       path: common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: OldItems
+    id: ChangedEventArgs
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 47
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
   syntax:
-    content: public IEnumerable<IStorable> OldItems { get; }
+    content: public PropertyChangedEventArgs? ChangedEventArgs { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-    content.vb: Public ReadOnly Property OldItems As IEnumerable(Of IStorable)
-  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems*
+      type: System.ComponentModel.PropertyChangedEventArgs
+    content.vb: Public ReadOnly Property ChangedEventArgs As PropertyChangedEventArgs
+  overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs*
 references:
 - uid: ParmaGIS.Core.Storage
   commentId: N:ParmaGIS.Core.Storage
@@ -570,7 +433,7 @@ references:
   fullName: System
 - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
   commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor
-  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs__ctor_ParmaGIS_Core_Storage_StorageChangedAction_System_Collections_Generic_IEnumerable_ParmaGIS_Core_Storage_IStorable__System_Collections_Generic_IEnumerable_ParmaGIS_Core_Storage_IStorable__
+  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs__ctor_ParmaGIS_Core_Storage_StorageChangedAction_ParmaGIS_Core_Storage_IContainer_System_ComponentModel_PropertyChangedEventArgs_
   name: StorageChangedEventArgs
   nameWithType: StorageChangedEventArgs.StorageChangedEventArgs
   fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.StorageChangedEventArgs
@@ -584,143 +447,63 @@ references:
   name: StorageChangedAction
   nameWithType: StorageChangedAction
   fullName: ParmaGIS.Core.Storage.StorageChangedAction
-- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.IStorable}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<IStorable>
-  nameWithType: IEnumerable<IStorable>
-  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Core.Storage.IStorable>
-  nameWithType.vb: IEnumerable(Of IStorable)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Storage.IStorable)
-  name.vb: IEnumerable(Of IStorable)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: ParmaGIS.Core.Storage.IStorable
-    name: IStorable
-    href: ParmaGIS.Core.Storage.IStorable.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ParmaGIS.Core.Storage.IStorable
-    name: IStorable
-    href: ParmaGIS.Core.Storage.IStorable.html
-  - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: ParmaGIS.Core.Storage.IContainer
+  commentId: T:ParmaGIS.Core.Storage.IContainer
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IContainer.html
+  name: IContainer
+  nameWithType: IContainer
+  fullName: ParmaGIS.Core.Storage.IContainer
+- uid: System.ComponentModel.PropertyChangedEventArgs
+  commentId: T:System.ComponentModel.PropertyChangedEventArgs
+  parent: System.ComponentModel
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventargs
+  name: PropertyChangedEventArgs
+  nameWithType: PropertyChangedEventArgs
+  fullName: System.ComponentModel.PropertyChangedEventArgs
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
   spec.csharp:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Collections
-    name: Collections
+  - uid: System.ComponentModel
+    name: ComponentModel
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
   spec.vb:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Collections
-    name: Collections
+  - uid: System.ComponentModel
+    name: ComponentModel
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ParmaGIS.Core.Storage.IStorable
-  commentId: T:ParmaGIS.Core.Storage.IStorable
-  parent: ParmaGIS.Core.Storage
-  href: ParmaGIS.Core.Storage.IStorable.html
-  name: IStorable
-  nameWithType: IStorable
-  fullName: ParmaGIS.Core.Storage.IStorable
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName*
-  commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName
-  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs_TypeName
-  name: TypeName
-  nameWithType: StorageChangedEventArgs.TypeName
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.TypeName
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
 - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.Action*
   commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.Action
   href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs_Action
   name: Action
   nameWithType: StorageChangedEventArgs.Action
   fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.Action
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems*
-  commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems
-  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs_NewItems
-  name: NewItems
-  nameWithType: StorageChangedEventArgs.NewItems
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.NewItems
-- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems*
-  commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems
-  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs_OldItems
-  name: OldItems
-  nameWithType: StorageChangedEventArgs.OldItems
-  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.OldItems
+- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.Container*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.Container
+  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs_Container
+  name: Container
+  nameWithType: StorageChangedEventArgs.Container
+  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.Container
+- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs
+  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs_ChangedEventArgs
+  name: ChangedEventArgs
+  nameWithType: StorageChangedEventArgs.ChangedEventArgs
+  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs.ChangedEventArgs

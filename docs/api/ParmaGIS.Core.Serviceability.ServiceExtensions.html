@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/dev/apiSpec/new?filename=ParmaGIS_Core_Serviceability_ServiceExtensions.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Serviceability.ServiceExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Core_Serviceability_ServiceExtensions.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Serviceability.ServiceExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +91,7 @@
 
   <h1 id="ParmaGIS_Core_Serviceability_ServiceExtensions" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions" class="text-break">
     Class ServiceExtensions
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -156,16 +156,16 @@
 
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddParameterGiver_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddParameterGiver__3_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___1_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``3(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)">
-  AddParameterGiver&lt;TService, TImplementation, TParameter&gt;(IServiceCollection, ServiceLifetime, TImplementation?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddParameterGiver__2_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddParameterGiver``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object)">
+  AddParameterGiver&lt;TParameterGiver, TParameter&gt;(IServiceCollection, ServiceLifetime, object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddParameterGiver&lt;TService, TImplementation, TParameter&gt;(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, TImplementation? instance = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddParameterGiver&lt;TParameterGiver, TParameter&gt;(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, object? instance = null) where TParameterGiver : IParameterGiver</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -174,16 +174,14 @@
     <dd></dd>
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
     <dd></dd>
-    <dt><code>instance</code> <span class="xref">TImplementation</span></dt>
+    <dt><code>instance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd></dd>
   </dl>
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
-    <dt><code>TService</code></dt>
-    <dd></dd>
-    <dt><code>TImplementation</code></dt>
+    <dt><code>TParameterGiver</code></dt>
     <dd></dd>
     <dt><code>TParameter</code></dt>
     <dd></dd>
@@ -200,23 +198,31 @@
 
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_ParmaGIS_Core_Serviceability_IServiceCollection_System_Type_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.Type)">
-  AddService(IServiceCollection, Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_ParmaGIS_Core_Serviceability_IServiceCollection_System_String_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object,System.Boolean)">
+  AddService(IServiceCollection, string, Type, ServiceLifetime, object?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddService(this IServiceCollection serviceCollection, Type serviceType)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddService(this IServiceCollection serviceCollection, string serviceName, Type serviceType, ServiceLifetime lifetime = ServiceLifetime.Transient, object? instance = null, bool manyImplementation = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>serviceCollection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
     <dd></dd>
+    <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
     <dt><code>serviceType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
+    <dd></dd>
+    <dt><code>instance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>manyImplementation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -233,16 +239,16 @@
 
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___0_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0)">
-  AddService&lt;TService&gt;(IServiceCollection, ServiceLifetime, TService?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___0_System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)">
+  AddService&lt;TService&gt;(IServiceCollection, ServiceLifetime, TService?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddService&lt;TService&gt;(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, TService? instance = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddService&lt;TService&gt;(this IServiceCollection serviceCollection, ServiceLifetime lifetime, TService? instance = default, bool manyImplementation = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -252,6 +258,8 @@
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
     <dd></dd>
     <dt><code>instance</code> <span class="xref">TService</span></dt>
+    <dd></dd>
+    <dt><code>manyImplementation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -273,16 +281,60 @@
 
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*"></a>
 
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__2_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___1_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1)">
-  AddService&lt;TService, TImplementation&gt;(IServiceCollection, ServiceLifetime, TImplementation?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_String_ParmaGIS_Core_Serviceability_ServiceLifetime___0_System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``0,System.Boolean)">
+  AddService&lt;TService&gt;(IServiceCollection, string, ServiceLifetime, TService?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddService&lt;TService, TImplementation&gt;(this IServiceCollection serviceCollection, ServiceLifetime lifetime = ServiceLifetime.Transient, TImplementation? instance = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddService&lt;TService&gt;(this IServiceCollection serviceCollection, string serviceName = null, ServiceLifetime lifetime = ServiceLifetime.Transient, TService? instance = default, bool manyImplementation = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceCollection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
+    <dd></dd>
+    <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
+    <dd></dd>
+    <dt><code>instance</code> <span class="xref">TService</span></dt>
+    <dd></dd>
+    <dt><code>manyImplementation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TService</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*"></a>
+
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__2_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___1_System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)">
+  AddService&lt;TService, TImplementation&gt;(IServiceCollection, ServiceLifetime, TImplementation?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddService&lt;TService, TImplementation&gt;(this IServiceCollection serviceCollection, ServiceLifetime lifetime, TImplementation? instance = null, bool manyImplementation = false) where TImplementation : class, TService</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -292,6 +344,8 @@
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
     <dd></dd>
     <dt><code>instance</code> <span class="xref">TImplementation</span></dt>
+    <dd></dd>
+    <dt><code>manyImplementation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -313,11 +367,98 @@
 
 
 
+  <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService*"></a>
+
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__2_ParmaGIS_Core_Serviceability_IServiceCollection_System_String_ParmaGIS_Core_Serviceability_ServiceLifetime___1_System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.AddService``2(ParmaGIS.Core.Serviceability.IServiceCollection,System.String,ParmaGIS.Core.Serviceability.ServiceLifetime,``1,System.Boolean)">
+  AddService&lt;TService, TImplementation&gt;(IServiceCollection, string, ServiceLifetime, TImplementation?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddService&lt;TService, TImplementation&gt;(this IServiceCollection serviceCollection, string serviceName = null, ServiceLifetime lifetime = ServiceLifetime.Transient, TImplementation? instance = null, bool manyImplementation = false) where TImplementation : class, TService</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceCollection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
+    <dd></dd>
+    <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
+    <dd></dd>
+    <dt><code>instance</code> <span class="xref">TImplementation</span></dt>
+    <dd></dd>
+    <dt><code>manyImplementation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TService</code></dt>
+    <dd></dd>
+    <dt><code>TImplementation</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations*"></a>
+
+  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_GetImplementations__1_ParmaGIS_Core_Serviceability_IServiceProvider_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.GetImplementations``1(ParmaGIS.Core.Serviceability.IServiceProvider)">
+  GetImplementations&lt;T&gt;(IServiceProvider)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; GetImplementations&lt;T&gt;(this IServiceProvider serviceProvider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceProvider</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceProvider.html">IServiceProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_GetService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.GetService*"></a>
 
   <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_GetService__1_ParmaGIS_Core_Serviceability_IServiceProvider_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.GetService``1(ParmaGIS.Core.Serviceability.IServiceProvider)">
   GetService&lt;T&gt;(IServiceProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -354,93 +495,11 @@
 
 
 
-  <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices*"></a>
-
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_GetServices__1_ParmaGIS_Core_Serviceability_IServiceProvider_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.GetServices``1(ParmaGIS.Core.Serviceability.IServiceProvider)">
-  GetServices&lt;T&gt;(IServiceProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L35"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; GetServices&lt;T&gt;(this IServiceProvider serviceProvider)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serviceProvider</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceProvider.html">IServiceProvider</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_ResolveAll_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll*"></a>
-
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_ResolveAll__1_ParmaGIS_Core_Serviceability_IServiceManager_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.ResolveAll``1(ParmaGIS.Core.Serviceability.IServiceManager)">
-  ResolveAll&lt;T&gt;(IServiceManager)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L55"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; ResolveAll&lt;T&gt;(this IServiceManager serviceManager)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serviceManager</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html">IServiceManager</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_Resolve_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve*"></a>
 
   <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_Resolve__1_ParmaGIS_Core_Serviceability_IServiceManager_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager)">
   Resolve&lt;T&gt;(IServiceManager)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -477,54 +536,11 @@
 
 
 
-  <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_Resolve_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve*"></a>
-
-  <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_Resolve__1_ParmaGIS_Core_Serviceability_IServiceManager_System_String_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.Resolve``1(ParmaGIS.Core.Serviceability.IServiceManager,System.String)">
-  Resolve&lt;T&gt;(IServiceManager, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L51"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Resolve&lt;T&gt;(this IServiceManager serviceManager, string name)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serviceManager</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html">IServiceManager</a></dt>
-    <dd></dd>
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">T</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <a id="ParmaGIS_Core_Serviceability_ServiceExtensions_TryGetService_" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService*"></a>
 
   <h3 id="ParmaGIS_Core_Serviceability_ServiceExtensions_TryGetService__1_ParmaGIS_Core_Serviceability_IServiceProvider___0__" data-uid="ParmaGIS.Core.Serviceability.ServiceExtensions.TryGetService``1(ParmaGIS.Core.Serviceability.IServiceProvider,``0@)">
   TryGetService&lt;T&gt;(IServiceProvider, out T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -567,7 +583,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/dev/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Serviceability/ServiceExtensions.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

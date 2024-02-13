@@ -1,0 +1,1446 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Core.Storage.StorageProvider`1
+  commentId: T:ParmaGIS.Core.Storage.StorageProvider`1
+  id: StorageProvider`1
+  parent: ParmaGIS.Core.Storage
+  children:
+  - ParmaGIS.Core.Storage.StorageProvider`1.#ctor(ParmaGIS.Core.Storage.IStorage)
+  - ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
+  - ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged
+  - ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  - ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  - ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  - ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
+  - ParmaGIS.Core.Storage.StorageProvider`1.Save
+  langs:
+  - csharp
+  - vb
+  name: StorageProvider<T>
+  nameWithType: StorageProvider<T>
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>
+  type: Class
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: StorageProvider
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 9
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: 'public class StorageProvider<T> : IEnumerable<T>, IEnumerable, INotifyCollectionChanged'
+    typeParameters:
+    - id: T
+    content.vb: Public Class StorageProvider(Of T) Implements IEnumerable(Of T), IEnumerable, INotifyCollectionChanged
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - ParmaGIS.Modules.Data.Storages.DBServerStorage
+  - ParmaGIS.Modules.Data.Storages.SpaceStorage
+  implements:
+  - System.Collections.Generic.IEnumerable{{T}}
+  - System.Collections.IEnumerable
+  - System.Collections.Specialized.INotifyCollectionChanged
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  nameWithType.vb: StorageProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T)
+  name.vb: StorageProvider(Of T)
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  commentId: P:ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  id: ItemType
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: ItemType
+  nameWithType: StorageProvider<T>.ItemType
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.ItemType
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ItemType
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 13
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: public static string ItemType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ItemType As String
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.ItemType*
+  nameWithType.vb: StorageProvider(Of T).ItemType
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).ItemType
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  id: RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: RegisterType<TItem>(Func<IContainer, T>, Action<IContainer, T>)
+  nameWithType: StorageProvider<T>.RegisterType<TItem>(Func<IContainer, T>, Action<IContainer, T>)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.RegisterType<TItem>(System.Func<ParmaGIS.Core.Storage.IContainer, T>, System.Action<ParmaGIS.Core.Storage.IContainer, T>)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RegisterType
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 37
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: 'public static void RegisterType<TItem>(Func<IContainer, T> deserializer, Action<IContainer, T> serializer) where TItem : class, T'
+    parameters:
+    - id: deserializer
+      type: System.Func{ParmaGIS.Core.Storage.IContainer,{T}}
+    - id: serializer
+      type: System.Action{ParmaGIS.Core.Storage.IContainer,{T}}
+    typeParameters:
+    - id: TItem
+    content.vb: Public Shared Sub RegisterType(Of TItem As {Class, T})(deserializer As Func(Of IContainer, T), serializer As Action(Of IContainer, T))
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType*
+  nameWithType.vb: StorageProvider(Of T).RegisterType(Of TItem)(Func(Of IContainer, T), Action(Of IContainer, T))
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).RegisterType(Of TItem)(System.Func(Of ParmaGIS.Core.Storage.IContainer, T), System.Action(Of ParmaGIS.Core.Storage.IContainer, T))
+  name.vb: RegisterType(Of TItem)(Func(Of IContainer, T), Action(Of IContainer, T))
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged
+  commentId: E:ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged
+  id: CollectionChanged
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: CollectionChanged
+  nameWithType: StorageProvider<T>.CollectionChanged
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.CollectionChanged
+  type: Event
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CollectionChanged
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 47
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  summary: Occurs when the collection changes.
+  example: []
+  syntax:
+    content: public event NotifyCollectionChangedEventHandler? CollectionChanged
+    return:
+      type: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+    content.vb: Public Event CollectionChanged As NotifyCollectionChangedEventHandler
+  implements:
+  - System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  nameWithType.vb: StorageProvider(Of T).CollectionChanged
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).CollectionChanged
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.#ctor(ParmaGIS.Core.Storage.IStorage)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.#ctor(ParmaGIS.Core.Storage.IStorage)
+  id: '#ctor(ParmaGIS.Core.Storage.IStorage)'
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: StorageProvider(IStorage)
+  nameWithType: StorageProvider<T>.StorageProvider(IStorage)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.StorageProvider(ParmaGIS.Core.Storage.IStorage)
+  type: Constructor
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: .ctor
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 49
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: public StorageProvider(IStorage storage)
+    parameters:
+    - id: storage
+      type: ParmaGIS.Core.Storage.IStorage
+    content.vb: Public Sub New(storage As IStorage)
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.#ctor*
+  nameWithType.vb: StorageProvider(Of T).New(IStorage)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).New(ParmaGIS.Core.Storage.IStorage)
+  name.vb: New(IStorage)
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
+  id: Add(`0)
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: StorageProvider<T>.Add(T)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Add
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 62
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: public void Add(T server)
+    parameters:
+    - id: server
+      type: '{T}'
+    content.vb: Public Sub Add(server As T)
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.Add*
+  nameWithType.vb: StorageProvider(Of T).Add(T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Add(T)
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
+  id: Remove(`0)
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: StorageProvider<T>.Remove(T)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Remove
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 72
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: public void Remove(T server)
+    parameters:
+    - id: server
+      type: '{T}'
+    content.vb: Public Sub Remove(server As T)
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.Remove*
+  nameWithType.vb: StorageProvider(Of T).Remove(T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Remove(T)
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Save
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Save
+  id: Save
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: Save()
+  nameWithType: StorageProvider<T>.Save()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Save()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Save
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 79
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  syntax:
+    content: public void Save()
+    content.vb: Public Sub Save()
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.Save*
+  nameWithType.vb: StorageProvider(Of T).Save()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Save()
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  id: GetEnumerator
+  parent: ParmaGIS.Core.Storage.StorageProvider`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: StorageProvider<T>.GetEnumerator()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetEnumerator
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+    startLine: 91
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Storage
+  summary: Returns an enumerator that iterates through the collection.
+  example: []
+  syntax:
+    content: public IEnumerator<T> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{T}}
+      description: An enumerator that can be used to iterate through the collection.
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
+  overload: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
+  nameWithType.vb: StorageProvider(Of T).GetEnumerator()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).GetEnumerator()
+references:
+- uid: ParmaGIS.Core.Storage
+  commentId: N:ParmaGIS.Core.Storage
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Storage
+  nameWithType: ParmaGIS.Core.Storage
+  fullName: ParmaGIS.Core.Storage
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Storage
+    name: Storage
+    href: ParmaGIS.Core.Storage.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Storage
+    name: Storage
+    href: ParmaGIS.Core.Storage.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Collections.Specialized.INotifyCollectionChanged
+  commentId: T:System.Collections.Specialized.INotifyCollectionChanged
+  parent: System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged
+  name: INotifyCollectionChanged
+  nameWithType: INotifyCollectionChanged
+  fullName: System.Collections.Specialized.INotifyCollectionChanged
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  name: ForEach<T>(IEnumerable<T>, Action<T, int>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  name: ForEach<T>(IEnumerable<T>, Action<T>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: System.Collections.Specialized
+  commentId: N:System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Specialized
+  nameWithType: System.Collections.Specialized
+  fullName: System.Collections.Specialized
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Specialized
+    name: Specialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Specialized
+    name: Specialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  name: ForEach<T>(IEnumerable<T>, Action<T, int>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  commentId: T:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  parent: ParmaGIS.Core.Utilities.Collections
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html
+  name: EnumarableExtensions
+  nameWithType: EnumarableExtensions
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  name: ForEach<T>(IEnumerable<T>, Action<T>)
+  nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+    name: ForEach
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections
+  commentId: N:ParmaGIS.Core.Utilities.Collections
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Utilities.Collections
+  nameWithType: ParmaGIS.Core.Utilities.Collections
+  fullName: ParmaGIS.Core.Utilities.Collections
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Collections
+    name: Collections
+    href: ParmaGIS.Core.Utilities.Collections.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Collections
+    name: Collections
+    href: ParmaGIS.Core.Utilities.Collections.html
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.ItemType*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_ItemType
+  name: ItemType
+  nameWithType: StorageProvider<T>.ItemType
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.ItemType
+  nameWithType.vb: StorageProvider(Of T).ItemType
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).ItemType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.RegisterType
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+  name: RegisterType
+  nameWithType: StorageProvider<T>.RegisterType
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.RegisterType
+  nameWithType.vb: StorageProvider(Of T).RegisterType
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).RegisterType
+- uid: System.Func{ParmaGIS.Core.Storage.IContainer,{T}}
+  commentId: T:System.Func{ParmaGIS.Core.Storage.IContainer,`0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<IContainer, T>
+  nameWithType: Func<IContainer, T>
+  fullName: System.Func<ParmaGIS.Core.Storage.IContainer, T>
+  nameWithType.vb: Func(Of IContainer, T)
+  fullName.vb: System.Func(Of ParmaGIS.Core.Storage.IContainer, T)
+  name.vb: Func(Of IContainer, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: ParmaGIS.Core.Storage.IContainer
+    name: IContainer
+    href: ParmaGIS.Core.Storage.IContainer.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Storage.IContainer
+    name: IContainer
+    href: ParmaGIS.Core.Storage.IContainer.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action{ParmaGIS.Core.Storage.IContainer,{T}}
+  commentId: T:System.Action{ParmaGIS.Core.Storage.IContainer,`0}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<IContainer, T>
+  nameWithType: Action<IContainer, T>
+  fullName: System.Action<ParmaGIS.Core.Storage.IContainer, T>
+  nameWithType.vb: Action(Of IContainer, T)
+  fullName.vb: System.Action(Of ParmaGIS.Core.Storage.IContainer, T)
+  name.vb: Action(Of IContainer, T)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: ParmaGIS.Core.Storage.IContainer
+    name: IContainer
+    href: ParmaGIS.Core.Storage.IContainer.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Storage.IContainer
+    name: IContainer
+    href: ParmaGIS.Core.Storage.IContainer.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  commentId: E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  parent: System.Collections.Specialized.INotifyCollectionChanged
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged.collectionchanged
+  name: CollectionChanged
+  nameWithType: INotifyCollectionChanged.CollectionChanged
+  fullName: System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+  commentId: T:System.Collections.Specialized.NotifyCollectionChangedEventHandler
+  parent: System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventhandler
+  name: NotifyCollectionChangedEventHandler
+  nameWithType: NotifyCollectionChangedEventHandler
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.#ctor*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.#ctor
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1__ctor_ParmaGIS_Core_Storage_IStorage_
+  name: StorageProvider
+  nameWithType: StorageProvider<T>.StorageProvider
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.StorageProvider
+  nameWithType.vb: StorageProvider(Of T).New
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).New
+  name.vb: New
+- uid: ParmaGIS.Core.Storage.IStorage
+  commentId: T:ParmaGIS.Core.Storage.IStorage
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IStorage.html
+  name: IStorage
+  nameWithType: IStorage
+  fullName: ParmaGIS.Core.Storage.IStorage
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Add*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.Add
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
+  name: Add
+  nameWithType: StorageProvider<T>.Add
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Add
+  nameWithType.vb: StorageProvider(Of T).Add
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Add
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.Remove
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
+  name: Remove
+  nameWithType: StorageProvider<T>.Remove
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Remove
+  nameWithType.vb: StorageProvider(Of T).Remove
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Remove
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Save*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.Save
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
+  name: Save
+  nameWithType: StorageProvider<T>.Save
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Save
+  nameWithType.vb: StorageProvider(Of T).Save
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Save
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator*
+  commentId: Overload:ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
+  name: GetEnumerator
+  nameWithType: StorageProvider<T>.GetEnumerator
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.GetEnumerator
+  nameWithType.vb: StorageProvider(Of T).GetEnumerator
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{{T}}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerator{{T}}
+  commentId: T:System.Collections.Generic.IEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

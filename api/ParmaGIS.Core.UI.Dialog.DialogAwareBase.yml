@@ -23,12 +23,12 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DialogAwareBase
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 32
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 6
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -60,6 +60,36 @@ items:
   extensionMethods:
   - ParmaGIS.Core.UI.Dialog.DialogAwareBase.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory2``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.UI.Dialog.DialogAwareBase,{TProperty}}},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
   - ParmaGIS.Core.UI.Dialog.DialogAwareBase.ParmaGIS.Core.UI.Reactive.URExtensions.ToURPropertyWithHistory``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.UI.Dialog.DialogAwareBase,{TProperty}}},System.Func{{TProperty},System.Collections.IEnumerable},System.Action{{TProperty}},{TProperty},ParmaGIS.Core.UI.Reactive.URHistory,System.Collections.Generic.ICollection{System.IDisposable})
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CloseCallBack
+  commentId: E:ParmaGIS.Core.UI.Dialog.DialogAwareBase.CloseCallBack
+  id: CloseCallBack
+  parent: ParmaGIS.Core.UI.Dialog.DialogAwareBase
+  langs:
+  - csharp
+  - vb
+  name: CloseCallBack
+  nameWithType: DialogAwareBase.CloseCallBack
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CloseCallBack
+  type: Event
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CloseCallBack
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 11
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Dialog
+  example: []
+  syntax:
+    content: public event Action<IDialogResult>? CloseCallBack
+    return:
+      type: System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult}
+    content.vb: Public Event CloseCallBack As Action(Of IDialogResult)
+  implements:
+  - ParmaGIS.Core.UI.Dialog.IDialogAware.CloseCallBack
 - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title
   commentId: P:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title
   id: Title
@@ -73,12 +103,12 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Title
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 37
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 14
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -105,12 +135,12 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ButtonResult
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 38
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -137,12 +167,12 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Parameters
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 39
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 16
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -153,96 +183,6 @@ items:
       type: ParmaGIS.Core.UI.Dialog.IDialogParamters
     content.vb: Public Property Parameters As IDialogParamters
   overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters*
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CloseCallBack
-  commentId: E:ParmaGIS.Core.UI.Dialog.DialogAwareBase.CloseCallBack
-  id: CloseCallBack
-  parent: ParmaGIS.Core.UI.Dialog.DialogAwareBase
-  langs:
-  - csharp
-  - vb
-  name: CloseCallBack
-  nameWithType: DialogAwareBase.CloseCallBack
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CloseCallBack
-  type: Event
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CloseCallBack
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 41
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Dialog
-  example: []
-  syntax:
-    content: public event Action<IDialogResult>? CloseCallBack
-    return:
-      type: System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult}
-    content.vb: Public Event CloseCallBack As Action(Of IDialogResult)
-  implements:
-  - ParmaGIS.Core.UI.Dialog.IDialogAware.CloseCallBack
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose
-  id: CanClose
-  parent: ParmaGIS.Core.UI.Dialog.DialogAwareBase
-  langs:
-  - csharp
-  - vb
-  name: CanClose()
-  nameWithType: DialogAwareBase.CanClose()
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose()
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CanClose
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 43
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Dialog
-  example: []
-  syntax:
-    content: public virtual bool CanClose()
-    return:
-      type: System.Boolean
-    content.vb: Public Overridable Function CanClose() As Boolean
-  overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose*
-  implements:
-  - ParmaGIS.Core.UI.Dialog.IDialogAware.CanClose
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close
-  id: Close
-  parent: ParmaGIS.Core.UI.Dialog.DialogAwareBase
-  langs:
-  - csharp
-  - vb
-  name: Close()
-  nameWithType: DialogAwareBase.Close()
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close()
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Close
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 48
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Dialog
-  example: []
-  syntax:
-    content: public virtual void Close()
-    content.vb: Public Overridable Sub Close()
-  overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close*
-  implements:
-  - ParmaGIS.Core.UI.Dialog.IDialogAware.Close
 - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack(ParmaGIS.Core.UI.Dialog.IDialogResult)
   commentId: M:ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack(ParmaGIS.Core.UI.Dialog.IDialogResult)
   id: OnCloseCallBack(ParmaGIS.Core.UI.Dialog.IDialogResult)
@@ -256,12 +196,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCloseCallBack
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 53
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 19
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -288,12 +228,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCloseCallBack
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 57
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 24
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -301,6 +241,66 @@ items:
     content: protected void OnCloseCallBack()
     content.vb: Protected Sub OnCloseCallBack()
   overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack*
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose
+  id: CanClose
+  parent: ParmaGIS.Core.UI.Dialog.DialogAwareBase
+  langs:
+  - csharp
+  - vb
+  name: CanClose()
+  nameWithType: DialogAwareBase.CanClose()
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CanClose
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 29
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Dialog
+  example: []
+  syntax:
+    content: public virtual bool CanClose()
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function CanClose() As Boolean
+  overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose*
+  implements:
+  - ParmaGIS.Core.UI.Dialog.IDialogAware.CanClose
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close
+  id: Close
+  parent: ParmaGIS.Core.UI.Dialog.DialogAwareBase
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: DialogAwareBase.Close()
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Close
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 34
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Dialog
+  example: []
+  syntax:
+    content: public virtual void Close()
+    content.vb: Public Overridable Sub Close()
+  overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Close*
+  implements:
+  - ParmaGIS.Core.UI.Dialog.IDialogAware.Close
 - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnShow(ParmaGIS.Core.UI.Dialog.IDialogParamters)
   commentId: M:ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnShow(ParmaGIS.Core.UI.Dialog.IDialogParamters)
   id: OnShow(ParmaGIS.Core.UI.Dialog.IDialogParamters)
@@ -314,12 +314,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-      branch: origin/dev
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnShow
-    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/IDialogAware.cs
-    startLine: 62
+    path: ../../ParmaTest/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
+    startLine: 39
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
@@ -1553,63 +1553,6 @@ references:
   - uid: ParmaGIS.Core.UI.Reactive
     name: Reactive
     href: ParmaGIS.Core.UI.Reactive.html
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title
-  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_Title
-  name: Title
-  nameWithType: DialogAwareBase.Title
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title
-- uid: ParmaGIS.Core.UI.Dialog.IDialogAware.Title
-  commentId: P:ParmaGIS.Core.UI.Dialog.IDialogAware.Title
-  parent: ParmaGIS.Core.UI.Dialog.IDialogAware
-  href: ParmaGIS.Core.UI.Dialog.IDialogAware.html#ParmaGIS_Core_UI_Dialog_IDialogAware_Title
-  name: Title
-  nameWithType: IDialogAware.Title
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogAware.Title
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.ButtonResult*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.ButtonResult
-  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_ButtonResult
-  name: ButtonResult
-  nameWithType: DialogAwareBase.ButtonResult
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.ButtonResult
-- uid: ParmaGIS.Core.UI.Dialog.IDialogAware.ButtonResult
-  commentId: P:ParmaGIS.Core.UI.Dialog.IDialogAware.ButtonResult
-  parent: ParmaGIS.Core.UI.Dialog.IDialogAware
-  href: ParmaGIS.Core.UI.Dialog.IDialogAware.html#ParmaGIS_Core_UI_Dialog_IDialogAware_ButtonResult
-  name: ButtonResult
-  nameWithType: IDialogAware.ButtonResult
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogAware.ButtonResult
-- uid: ParmaGIS.Core.UI.Dialog.ButtonResult
-  commentId: T:ParmaGIS.Core.UI.Dialog.ButtonResult
-  parent: ParmaGIS.Core.UI.Dialog
-  href: ParmaGIS.Core.UI.Dialog.ButtonResult.html
-  name: ButtonResult
-  nameWithType: ButtonResult
-  fullName: ParmaGIS.Core.UI.Dialog.ButtonResult
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters
-  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_Parameters
-  name: Parameters
-  nameWithType: DialogAwareBase.Parameters
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters
-- uid: ParmaGIS.Core.UI.Dialog.IDialogParamters
-  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogParamters
-  parent: ParmaGIS.Core.UI.Dialog
-  href: ParmaGIS.Core.UI.Dialog.IDialogParamters.html
-  name: IDialogParamters
-  nameWithType: IDialogParamters
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogParamters
 - uid: ParmaGIS.Core.UI.Dialog.IDialogAware.CloseCallBack
   commentId: E:ParmaGIS.Core.UI.Dialog.IDialogAware.CloseCallBack
   parent: ParmaGIS.Core.UI.Dialog.IDialogAware
@@ -1678,6 +1621,76 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title
+  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_Title
+  name: Title
+  nameWithType: DialogAwareBase.Title
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Title
+- uid: ParmaGIS.Core.UI.Dialog.IDialogAware.Title
+  commentId: P:ParmaGIS.Core.UI.Dialog.IDialogAware.Title
+  parent: ParmaGIS.Core.UI.Dialog.IDialogAware
+  href: ParmaGIS.Core.UI.Dialog.IDialogAware.html#ParmaGIS_Core_UI_Dialog_IDialogAware_Title
+  name: Title
+  nameWithType: IDialogAware.Title
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogAware.Title
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.ButtonResult*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.ButtonResult
+  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_ButtonResult
+  name: ButtonResult
+  nameWithType: DialogAwareBase.ButtonResult
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.ButtonResult
+- uid: ParmaGIS.Core.UI.Dialog.IDialogAware.ButtonResult
+  commentId: P:ParmaGIS.Core.UI.Dialog.IDialogAware.ButtonResult
+  parent: ParmaGIS.Core.UI.Dialog.IDialogAware
+  href: ParmaGIS.Core.UI.Dialog.IDialogAware.html#ParmaGIS_Core_UI_Dialog_IDialogAware_ButtonResult
+  name: ButtonResult
+  nameWithType: IDialogAware.ButtonResult
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogAware.ButtonResult
+- uid: ParmaGIS.Core.UI.Dialog.ButtonResult
+  commentId: T:ParmaGIS.Core.UI.Dialog.ButtonResult
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.ButtonResult.html
+  name: ButtonResult
+  nameWithType: ButtonResult
+  fullName: ParmaGIS.Core.UI.Dialog.ButtonResult
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters
+  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_Parameters
+  name: Parameters
+  nameWithType: DialogAwareBase.Parameters
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Parameters
+- uid: ParmaGIS.Core.UI.Dialog.IDialogParamters
+  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogParamters
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.IDialogParamters.html
+  name: IDialogParamters
+  nameWithType: IDialogParamters
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogParamters
+- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack
+  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_OnCloseCallBack_ParmaGIS_Core_UI_Dialog_IDialogResult_
+  name: OnCloseCallBack
+  nameWithType: DialogAwareBase.OnCloseCallBack
+  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack
+- uid: ParmaGIS.Core.UI.Dialog.IDialogResult
+  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogResult
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.IDialogResult.html
+  name: IDialogResult
+  nameWithType: IDialogResult
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogResult
 - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose
   href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_CanClose
@@ -1739,19 +1752,6 @@ references:
     href: ParmaGIS.Core.UI.Dialog.IDialogAware.html#ParmaGIS_Core_UI_Dialog_IDialogAware_Close
   - name: (
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack
-  href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_OnCloseCallBack_ParmaGIS_Core_UI_Dialog_IDialogResult_
-  name: OnCloseCallBack
-  nameWithType: DialogAwareBase.OnCloseCallBack
-  fullName: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack
-- uid: ParmaGIS.Core.UI.Dialog.IDialogResult
-  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogResult
-  parent: ParmaGIS.Core.UI.Dialog
-  href: ParmaGIS.Core.UI.Dialog.IDialogResult.html
-  name: IDialogResult
-  nameWithType: IDialogResult
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogResult
 - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnShow*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnShow
   href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_OnShow_ParmaGIS_Core_UI_Dialog_IDialogParamters_

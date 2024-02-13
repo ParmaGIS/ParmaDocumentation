@@ -5,7 +5,6 @@ items:
   id: ModuleExtensions
   parent: ParmaGIS.Core.Modularity
   children:
-  - ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity(ParmaGIS.Core.Entity.EntityInfo)
   - ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
   langs:
   - csharp
@@ -17,11 +16,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/ModuleExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleExtensions
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/ModuleExtensions.cs
-    startLine: 41
+    startLine: 2
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
@@ -53,11 +52,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/ModuleExtensions.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetModule
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/ModuleExtensions.cs
-    startLine: 43
+    startLine: 4
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
@@ -75,38 +74,6 @@ items:
   nameWithType.vb: ModuleExtensions.GetModule(Of T)(IModuleManager)
   fullName.vb: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule(Of T)(ParmaGIS.Core.Modularity.IModuleManager)
   name.vb: GetModule(Of T)(IModuleManager)
-- uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity(ParmaGIS.Core.Entity.EntityInfo)
-  commentId: M:ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity(ParmaGIS.Core.Entity.EntityInfo)
-  id: GetModuleEntity(ParmaGIS.Core.Entity.EntityInfo)
-  isExtensionMethod: true
-  parent: ParmaGIS.Core.Modularity.ModuleExtensions
-  langs:
-  - csharp
-  - vb
-  name: GetModuleEntity(EntityInfo)
-  nameWithType: ModuleExtensions.GetModuleEntity(EntityInfo)
-  fullName: ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity(ParmaGIS.Core.Entity.EntityInfo)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Modularity/ModuleExtensions.cs
-      branch: origin/dev
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetModuleEntity
-    path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/ModuleExtensions.cs
-    startLine: 48
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Modularity
-  syntax:
-    content: public static ModuleEntity GetModuleEntity(this EntityInfo entityInfo)
-    parameters:
-    - id: entityInfo
-      type: ParmaGIS.Core.Entity.EntityInfo
-    return:
-      type: ParmaGIS.Core.Modularity.ModuleEntity
-    content.vb: Public Shared Function GetModuleEntity(entityInfo As EntityInfo) As ModuleEntity
-  overload: ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity*
 references:
 - uid: ParmaGIS.Core.Modularity
   commentId: N:ParmaGIS.Core.Modularity
@@ -395,53 +362,3 @@ references:
   name: IModule
   nameWithType: IModule
   fullName: ParmaGIS.Core.Modularity.IModule
-- uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity*
-  commentId: Overload:ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity
-  href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModuleEntity_ParmaGIS_Core_Entity_EntityInfo_
-  name: GetModuleEntity
-  nameWithType: ModuleExtensions.GetModuleEntity
-  fullName: ParmaGIS.Core.Modularity.ModuleExtensions.GetModuleEntity
-- uid: ParmaGIS.Core.Entity.EntityInfo
-  commentId: T:ParmaGIS.Core.Entity.EntityInfo
-  parent: ParmaGIS.Core.Entity
-  href: ParmaGIS.Core.Entity.EntityInfo.html
-  name: EntityInfo
-  nameWithType: EntityInfo
-  fullName: ParmaGIS.Core.Entity.EntityInfo
-- uid: ParmaGIS.Core.Modularity.ModuleEntity
-  commentId: T:ParmaGIS.Core.Modularity.ModuleEntity
-  parent: ParmaGIS.Core.Modularity
-  href: ParmaGIS.Core.Modularity.ModuleEntity.html
-  name: ModuleEntity
-  nameWithType: ModuleEntity
-  fullName: ParmaGIS.Core.Modularity.ModuleEntity
-- uid: ParmaGIS.Core.Entity
-  commentId: N:ParmaGIS.Core.Entity
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Entity
-  nameWithType: ParmaGIS.Core.Entity
-  fullName: ParmaGIS.Core.Entity
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Entity
-    name: Entity
-    href: ParmaGIS.Core.Entity.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Entity
-    name: Entity
-    href: ParmaGIS.Core.Entity.html

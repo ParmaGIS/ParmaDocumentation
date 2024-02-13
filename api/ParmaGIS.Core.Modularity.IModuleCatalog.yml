@@ -4,7 +4,8 @@ items:
   commentId: T:ParmaGIS.Core.Modularity.IModuleCatalog
   id: IModuleCatalog
   parent: ParmaGIS.Core.Modularity
-  children: []
+  children:
+  - ParmaGIS.Core.Modularity.IModuleCatalog.Item(System.Type)
   langs:
   - csharp
   - vb
@@ -15,11 +16,11 @@ items:
   source:
     remote:
       path: common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
-      branch: origin/dev
+      branch: origin/master
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IModuleCatalog
     path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
@@ -30,8 +31,42 @@ items:
   - ParmaGIS.Core.Catalog.IInfoCatalog{ParmaGIS.Core.Modularity.IModuleInfo}.Item(System.String)
   - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.GetEnumerator
   extensionMethods:
-  - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
-  - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
+  - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
+  - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
+- uid: ParmaGIS.Core.Modularity.IModuleCatalog.Item(System.Type)
+  commentId: P:ParmaGIS.Core.Modularity.IModuleCatalog.Item(System.Type)
+  id: Item(System.Type)
+  parent: ParmaGIS.Core.Modularity.IModuleCatalog
+  langs:
+  - csharp
+  - vb
+  name: this[Type]
+  nameWithType: IModuleCatalog.this[Type]
+  fullName: ParmaGIS.Core.Modularity.IModuleCatalog.this[System.Type]
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
+      branch: origin/master
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: this[]
+    path: ../../ParmaTest/common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
+    startLine: 8
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Modularity
+  syntax:
+    content: IModuleInfo? this[Type moduleType] { get; }
+    parameters:
+    - id: moduleType
+      type: System.Type
+    return:
+      type: ParmaGIS.Core.Modularity.IModuleInfo
+    content.vb: ReadOnly Default Property this[](moduleType As Type) As IModuleInfo
+  overload: ParmaGIS.Core.Modularity.IModuleCatalog.Item*
+  nameWithType.vb: IModuleCatalog.this[](Type)
+  fullName.vb: ParmaGIS.Core.Modularity.IModuleCatalog.this[](System.Type)
+  name.vb: this[](Type)
 references:
 - uid: ParmaGIS.Core.Modularity
   commentId: N:ParmaGIS.Core.Modularity
@@ -116,21 +151,21 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
   - name: )
-- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
-  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
-  parent: ParmaGIS.Core.Utilities.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
-  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   name: ForEach<IModuleInfo>(IEnumerable<IModuleInfo>, Action<IModuleInfo, int>)
   nameWithType: EnumarableExtensions.ForEach<IModuleInfo>(IEnumerable<IModuleInfo>, Action<IModuleInfo, int>)
-  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<ParmaGIS.Core.Modularity.IModuleInfo>(System.Collections.Generic.IEnumerable<ParmaGIS.Core.Modularity.IModuleInfo>, System.Action<ParmaGIS.Core.Modularity.IModuleInfo, int>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<ParmaGIS.Core.Modularity.IModuleInfo>(System.Collections.Generic.IEnumerable<ParmaGIS.Core.Modularity.IModuleInfo>, System.Action<ParmaGIS.Core.Modularity.IModuleInfo, int>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of IModuleInfo)(IEnumerable(Of IModuleInfo), Action(Of IModuleInfo, Integer))
-  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of ParmaGIS.Core.Modularity.IModuleInfo)(System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Modularity.IModuleInfo), System.Action(Of ParmaGIS.Core.Modularity.IModuleInfo, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of ParmaGIS.Core.Modularity.IModuleInfo)(System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Modularity.IModuleInfo), System.Action(Of ParmaGIS.Core.Modularity.IModuleInfo, Integer))
   name.vb: ForEach(Of IModuleInfo)(IEnumerable(Of IModuleInfo), Action(Of IModuleInfo, Integer))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: <
   - uid: ParmaGIS.Core.Modularity.IModuleInfo
     name: IModuleInfo
@@ -165,9 +200,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: (
   - name: Of
   - name: " "
@@ -207,21 +242,21 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   - name: )
-- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
-  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
-  parent: ParmaGIS.Core.Utilities.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
-  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   name: ForEach<IModuleInfo>(IEnumerable<IModuleInfo>, Action<IModuleInfo>)
   nameWithType: EnumarableExtensions.ForEach<IModuleInfo>(IEnumerable<IModuleInfo>, Action<IModuleInfo>)
-  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<ParmaGIS.Core.Modularity.IModuleInfo>(System.Collections.Generic.IEnumerable<ParmaGIS.Core.Modularity.IModuleInfo>, System.Action<ParmaGIS.Core.Modularity.IModuleInfo>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<ParmaGIS.Core.Modularity.IModuleInfo>(System.Collections.Generic.IEnumerable<ParmaGIS.Core.Modularity.IModuleInfo>, System.Action<ParmaGIS.Core.Modularity.IModuleInfo>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of IModuleInfo)(IEnumerable(Of IModuleInfo), Action(Of IModuleInfo))
-  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of ParmaGIS.Core.Modularity.IModuleInfo)(System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Modularity.IModuleInfo), System.Action(Of ParmaGIS.Core.Modularity.IModuleInfo))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of ParmaGIS.Core.Modularity.IModuleInfo)(System.Collections.Generic.IEnumerable(Of ParmaGIS.Core.Modularity.IModuleInfo), System.Action(Of ParmaGIS.Core.Modularity.IModuleInfo))
   name.vb: ForEach(Of IModuleInfo)(IEnumerable(Of IModuleInfo), Action(Of IModuleInfo))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: <
   - uid: ParmaGIS.Core.Modularity.IModuleInfo
     name: IModuleInfo
@@ -250,9 +285,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo},System.Action{ParmaGIS.Core.Modularity.IModuleInfo})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: (
   - name: Of
   - name: " "
@@ -401,20 +436,20 @@ references:
     name: IModuleInfo
     href: ParmaGIS.Core.Modularity.IModuleInfo.html
   - name: )
-- uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
-  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   name: ForEach<T>(IEnumerable<T>, Action<T, int>)
   nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
-  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
-  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
   name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: <
   - name: T
   - name: '>'
@@ -443,9 +478,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: (
   - name: Of
   - name: " "
@@ -479,27 +514,27 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.EnumarableExtensions
-  commentId: T:ParmaGIS.Core.Utilities.EnumarableExtensions
-  parent: ParmaGIS.Core.Utilities
-  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  commentId: T:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  parent: ParmaGIS.Core.Utilities.Collections
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html
   name: EnumarableExtensions
   nameWithType: EnumarableExtensions
-  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions
-- uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
-  commentId: M:ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   name: ForEach<T>(IEnumerable<T>, Action<T>)
   nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
-  fullName: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
-  fullName.vb: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
   name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: <
   - name: T
   - name: '>'
@@ -522,9 +557,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.EnumarableExtensions.html#ParmaGIS_Core_Utilities_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: (
   - name: Of
   - name: " "
@@ -672,12 +707,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ParmaGIS.Core.Utilities
-  commentId: N:ParmaGIS.Core.Utilities
+- uid: ParmaGIS.Core.Utilities.Collections
+  commentId: N:ParmaGIS.Core.Utilities.Collections
   href: ParmaGIS.html
-  name: ParmaGIS.Core.Utilities
-  nameWithType: ParmaGIS.Core.Utilities
-  fullName: ParmaGIS.Core.Utilities
+  name: ParmaGIS.Core.Utilities.Collections
+  nameWithType: ParmaGIS.Core.Utilities.Collections
+  fullName: ParmaGIS.Core.Utilities.Collections
   spec.csharp:
   - uid: ParmaGIS
     name: ParmaGIS
@@ -690,6 +725,10 @@ references:
   - uid: ParmaGIS.Core.Utilities
     name: Utilities
     href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Collections
+    name: Collections
+    href: ParmaGIS.Core.Utilities.Collections.html
   spec.vb:
   - uid: ParmaGIS
     name: ParmaGIS
@@ -702,3 +741,38 @@ references:
   - uid: ParmaGIS.Core.Utilities
     name: Utilities
     href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Collections
+    name: Collections
+    href: ParmaGIS.Core.Utilities.Collections.html
+- uid: ParmaGIS.Core.Modularity.IModuleCatalog.Item*
+  commentId: Overload:ParmaGIS.Core.Modularity.IModuleCatalog.Item
+  href: ParmaGIS.Core.Modularity.IModuleCatalog.html#ParmaGIS_Core_Modularity_IModuleCatalog_Item_System_Type_
+  name: this
+  nameWithType: IModuleCatalog.this
+  fullName: ParmaGIS.Core.Modularity.IModuleCatalog.this
+  nameWithType.vb: IModuleCatalog.this[]
+  fullName.vb: ParmaGIS.Core.Modularity.IModuleCatalog.this[]
+  name.vb: this[]
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: ParmaGIS.Core.Modularity.IModuleInfo
+  commentId: T:ParmaGIS.Core.Modularity.IModuleInfo
+  parent: ParmaGIS.Core.Modularity
+  href: ParmaGIS.Core.Modularity.IModuleInfo.html
+  name: IModuleInfo
+  nameWithType: IModuleInfo
+  fullName: ParmaGIS.Core.Modularity.IModuleInfo
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
