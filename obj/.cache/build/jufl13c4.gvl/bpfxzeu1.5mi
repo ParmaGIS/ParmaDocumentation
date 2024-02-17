@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JS-YAML - YAML 1.2 parser / writer for JavaScript | site </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="JS-YAML - YAML 1.2 parser / writer for JavaScript | site ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="site">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="js-yaml---yaml-12-parser--writer-for-javascript" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="1" sourceendlinenumber="2">JS-YAML - YAML 1.2 parser / writer for JavaScript</h1>
+
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="4" sourceendlinenumber="5"><a href="https://github.com/nodeca/js-yaml/actions" data-raw-source="[![CI](https://github.com/nodeca/js-yaml/workflows/CI/badge.svg?branch=master)](https://github.com/nodeca/js-yaml/actions)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="4" sourceendlinenumber="4"><img src="https://github.com/nodeca/js-yaml/workflows/CI/badge.svg?branch=master" alt="CI" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="4" sourceendlinenumber="4"></a>
+<a href="https://www.npmjs.org/package/js-yaml" data-raw-source="[![NPM version](https://img.shields.io/npm/v/js-yaml.svg)](https://www.npmjs.org/package/js-yaml)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="5" sourceendlinenumber="5"><img src="https://img.shields.io/npm/v/js-yaml.svg" alt="NPM version" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="5" sourceendlinenumber="5"></a></p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="7" sourceendlinenumber="7"><strong><a href="http://nodeca.github.com/js-yaml/" data-raw-source="[Online Demo](http://nodeca.github.com/js-yaml/)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="7" sourceendlinenumber="7">Online Demo</a></strong></p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="10" sourceendlinenumber="12">This is an implementation of <a href="http://yaml.org/" data-raw-source="[YAML](http://yaml.org/)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="10" sourceendlinenumber="10">YAML</a>, a human-friendly data
+serialization language. Started as <a href="http://pyyaml.org/" data-raw-source="[PyYAML](http://pyyaml.org/)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="11" sourceendlinenumber="11">PyYAML</a> port, it was
+completely rewritten from scratch. Now it&#39;s very fast, and supports 1.2 spec.</p>
+<h2 id="installation" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="15" sourceendlinenumber="16">Installation</h2>
+<h3 id="yaml-module-for-nodejs" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="18" sourceendlinenumber="18">YAML module for node.js</h3>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="20" sourceendlinenumber="22"><code>npm install js-yaml
+</code></pre><h3 id="cli-executable" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="25" sourceendlinenumber="25">CLI executable</h3>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="27" sourceendlinenumber="27">If you want to inspect your YAML files from CLI, install js-yaml globally:</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="29" sourceendlinenumber="31"><code>npm install -g js-yaml
+</code></pre><h4 id="usage" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="33" sourceendlinenumber="33">Usage</h4>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="35" sourceendlinenumber="46"><code>usage: js-yaml [-h] [-v] [-c] [-t] file
+
+Positional arguments:
+  file           File with YAML document(s)
+
+Optional arguments:
+  -h, --help     Show this help message and exit.
+  -v, --version  Show program&#39;s version number and exit.
+  -c, --compact  Display errors in compact mode
+  -t, --trace    Show stack trace on error
+</code></pre><h2 id="api" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="49" sourceendlinenumber="50">API</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="52" sourceendlinenumber="54">Here we cover the most &#39;useful&#39; methods. If you need advanced details (creating
+your own tags), see <a href="https://github.com/nodeca/js-yaml/tree/master/examples" data-raw-source="[examples](https://github.com/nodeca/js-yaml/tree/master/examples)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="53" sourceendlinenumber="53">examples</a>
+for more info.</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="56" sourceendlinenumber="67"><code class="lang-javascript">const yaml = require(&#39;js-yaml&#39;);
+const fs   = require(&#39;fs&#39;);
+
+// Get document, or throw exception on error
+try {
+  const doc = yaml.load(fs.readFileSync(&#39;/home/ixti/example.yml&#39;, &#39;utf8&#39;));
+  console.log(doc);
+} catch (e) {
+  console.log(e);
+}
+</code></pre><h3 id="load-string---options-" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="70" sourceendlinenumber="70">load (string [ , options ])</h3>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="72" sourceendlinenumber="74">Parses <code>string</code> as single YAML document. Returns either a
+plain object, a string, a number, <code>null</code> or <code>undefined</code>, or throws <code>YAMLException</code> on error. By default, does
+not support regexps, functions and undefined.</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="76" sourceendlinenumber="76">options:</p>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="78" sourceendlinenumber="90">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="78" sourceendlinenumber="79"><code>filename</code> <em>(default: null)</em> - string to be used as a file path in
+error/warning messages.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="80" sourceendlinenumber="81"><code>onWarning</code> <em>(default: null)</em> - function to call on warning messages.
+Loader will call this function with an instance of <code>YAMLException</code> for each warning.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="82" sourceendlinenumber="89"><code>schema</code> <em>(default: <code>DEFAULT_SCHEMA</code>)</em> - specifies a schema to use.<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="83" sourceendlinenumber="89">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="83" sourceendlinenumber="84"><code>FAILSAFE_SCHEMA</code> - only strings, arrays and plain objects:
+<a href="http://www.yaml.org/spec/1.2/spec.html#id2802346" data-raw-source="http://www.yaml.org/spec/1.2/spec.html#id2802346" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="84" sourceendlinenumber="84">http://www.yaml.org/spec/1.2/spec.html#id2802346</a></li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="85" sourceendlinenumber="86"><code>JSON_SCHEMA</code> - all JSON-supported types:
+<a href="http://www.yaml.org/spec/1.2/spec.html#id2803231" data-raw-source="http://www.yaml.org/spec/1.2/spec.html#id2803231" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="86" sourceendlinenumber="86">http://www.yaml.org/spec/1.2/spec.html#id2803231</a></li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="87" sourceendlinenumber="88"><code>CORE_SCHEMA</code> - same as <code>JSON_SCHEMA</code>:
+<a href="http://www.yaml.org/spec/1.2/spec.html#id2804923" data-raw-source="http://www.yaml.org/spec/1.2/spec.html#id2804923" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="88" sourceendlinenumber="88">http://www.yaml.org/spec/1.2/spec.html#id2804923</a></li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="89" sourceendlinenumber="89"><code>DEFAULT_SCHEMA</code> - all supported YAML types.</li>
+</ul>
+</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="90" sourceendlinenumber="90"><code>json</code> <em>(default: false)</em> - compatibility with JSON.parse behaviour. If true, then duplicate keys in a mapping will override values rather than throwing an error.</li>
+</ul>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="92" sourceendlinenumber="93">NOTE: This function <strong>does not</strong> understand multi-document sources, it throws
+exception on those.</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="95" sourceendlinenumber="98">NOTE: JS-YAML <strong>does not</strong> support schema-specific tag resolution restrictions.
+So, the JSON schema is not as strictly defined in the YAML specification.
+It allows numbers in any notation, use <code>Null</code> and <code>NULL</code> as <code>null</code>, etc.
+The core schema also has no such restrictions. It allows binary notation for integers.</p>
+<h3 id="loadall-string--iterator--options-" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="101" sourceendlinenumber="101">loadAll (string [, iterator] [, options ])</h3>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="103" sourceendlinenumber="104">Same as <code>load()</code>, but understands multi-document sources. Applies
+<code>iterator</code> to each document if specified, or returns array of documents.</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="106" sourceendlinenumber="112"><code class="lang-javascript">const yaml = require(&#39;js-yaml&#39;);
+
+yaml.loadAll(data, function (doc) {
+  console.log(doc);
+});
+</code></pre><h3 id="dump-object---options-" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="115" sourceendlinenumber="115">dump (object [ , options ])</h3>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="117" sourceendlinenumber="119">Serializes <code>object</code> as a YAML document. Uses <code>DEFAULT_SCHEMA</code>, so it will
+throw an exception if you try to dump regexps or functions. However, you can
+disable exceptions by setting the <code>skipInvalid</code> option to <code>true</code>.</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="121" sourceendlinenumber="121">options:</p>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="123" sourceendlinenumber="140">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="123" sourceendlinenumber="123"><code>indent</code> <em>(default: 2)</em> - indentation width to use (in spaces).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="124" sourceendlinenumber="124"><code>noArrayIndent</code> <em>(default: false)</em> - when true, will not add an indentation level to array elements</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="125" sourceendlinenumber="126"><code>skipInvalid</code> <em>(default: false)</em> - do not throw on invalid types (like function
+in the safe schema) and skip pairs and single values with such types.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="127" sourceendlinenumber="128"><code>flowLevel</code> <em>(default: -1)</em> - specifies level of nesting, when to switch from
+block to flow style for collections. -1 means block style everwhere</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="129" sourceendlinenumber="129"><code>styles</code> - &quot;tag&quot; =&gt; &quot;style&quot; map. Each tag may have own set of styles.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="130" sourceendlinenumber="130"><code>schema</code> <em>(default: <code>DEFAULT_SCHEMA</code>)</em> specifies a schema to use.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="131" sourceendlinenumber="132"><code>sortKeys</code> <em>(default: <code>false</code>)</em> - if <code>true</code>, sort keys when dumping YAML. If a
+function, use the function to sort the keys.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="133" sourceendlinenumber="133"><code>lineWidth</code> <em>(default: <code>80</code>)</em> - set max line width. Set <code>-1</code> for unlimited width.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="134" sourceendlinenumber="134"><code>noRefs</code> <em>(default: <code>false</code>)</em> - if <code>true</code>, don&#39;t convert duplicate objects into references</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="135" sourceendlinenumber="136"><code>noCompatMode</code> <em>(default: <code>false</code>)</em> - if <code>true</code> don&#39;t try to be compatible with older
+yaml versions. Currently: don&#39;t quote &quot;yes&quot;, &quot;no&quot; and so on, as required for YAML 1.1</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="137" sourceendlinenumber="137"><code>condenseFlow</code> <em>(default: <code>false</code>)</em> - if <code>true</code> flow sequences will be condensed, omitting the space between <code>a, b</code>. Eg. <code>&#39;[a,b]&#39;</code>, and omitting the space between <code>key: value</code> and quoting the key. Eg. <code>&#39;{&quot;a&quot;:b}&#39;</code> Can be useful when using yaml for pretty URL query params as spaces are %-encoded.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="138" sourceendlinenumber="138"><code>quotingType</code> <em>(<code>&#39;</code> or <code>&quot;</code>, default: <code>&#39;</code>)</em> - strings will be quoted using this quoting style. If you specify single quotes, double quotes will still be used for non-printable characters.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="139" sourceendlinenumber="139"><code>forceQuotes</code> <em>(default: <code>false</code>)</em> - if <code>true</code>, all non-key strings will be quoted even if they normally don&#39;t need to.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="140" sourceendlinenumber="140"><code>replacer</code> - callback <code>function (key, value)</code> called recursively on each key/value in source object (see <code>replacer</code> docs for <code>JSON.stringify</code>).</li>
+</ul>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="142" sourceendlinenumber="144">The following table show availlable styles (e.g. &quot;canonical&quot;,
+&quot;binary&quot;...) available for each tag (.e.g. !!null, !!int ...). Yaml
+output is shown on the right side after <code>=&gt;</code> (default setting) or <code>-&gt;</code>:</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="146" sourceendlinenumber="168"><code class="lang-none">!!null
+  &quot;canonical&quot;   -&gt; &quot;~&quot;
+  &quot;lowercase&quot;   =&gt; &quot;null&quot;
+  &quot;uppercase&quot;   -&gt; &quot;NULL&quot;
+  &quot;camelcase&quot;   -&gt; &quot;Null&quot;
+
+!!int
+  &quot;binary&quot;      -&gt; &quot;0b1&quot;, &quot;0b101010&quot;, &quot;0b1110001111010&quot;
+  &quot;octal&quot;       -&gt; &quot;0o1&quot;, &quot;0o52&quot;, &quot;0o16172&quot;
+  &quot;decimal&quot;     =&gt; &quot;1&quot;, &quot;42&quot;, &quot;7290&quot;
+  &quot;hexadecimal&quot; -&gt; &quot;0x1&quot;, &quot;0x2A&quot;, &quot;0x1C7A&quot;
+
+!!bool
+  &quot;lowercase&quot;   =&gt; &quot;true&quot;, &quot;false&quot;
+  &quot;uppercase&quot;   -&gt; &quot;TRUE&quot;, &quot;FALSE&quot;
+  &quot;camelcase&quot;   -&gt; &quot;True&quot;, &quot;False&quot;
+
+!!float
+  &quot;lowercase&quot;   =&gt; &quot;.nan&quot;, &#39;.inf&#39;
+  &quot;uppercase&quot;   -&gt; &quot;.NAN&quot;, &#39;.INF&#39;
+  &quot;camelcase&quot;   -&gt; &quot;.NaN&quot;, &#39;.Inf&#39;
+</code></pre><p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="170" sourceendlinenumber="170">Example:</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="172" sourceendlinenumber="179"><code class="lang-javascript">dump(object, {
+  &#39;styles&#39;: {
+    &#39;!!null&#39;: &#39;canonical&#39; // dump null as ~
+  },
+  &#39;sortKeys&#39;: true        // sort object keys
+});
+</code></pre><h2 id="supported-yaml-types" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="181" sourceendlinenumber="182">Supported YAML types</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="184" sourceendlinenumber="186">The list of standard YAML tags and corresponding JavaScript types. See also
+<a href="http://pyyaml.org/wiki/YAMLTagDiscussion" data-raw-source="[YAML tag discussion](http://pyyaml.org/wiki/YAMLTagDiscussion)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="185" sourceendlinenumber="185">YAML tag discussion</a> and
+<a href="http://yaml.org/type/" data-raw-source="[YAML types repository](http://yaml.org/type/)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="186" sourceendlinenumber="186">YAML types repository</a>.</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="188" sourceendlinenumber="201"><code>!!null &#39;&#39;                   # null
+!!bool &#39;yes&#39;                # bool
+!!int &#39;3...&#39;                # number
+!!float &#39;3.14...&#39;           # number
+!!binary &#39;...base64...&#39;     # buffer
+!!timestamp &#39;YYYY-...&#39;      # date
+!!omap [ ... ]              # array of key-value pairs
+!!pairs [ ... ]             # array or array pairs
+!!set { ... }               # array of objects with given keys and null values
+!!str &#39;...&#39;                 # string
+!!seq [ ... ]               # array
+!!map { ... }               # object
+</code></pre><p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="203" sourceendlinenumber="203"><strong>JavaScript-specific tags</strong></p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="205" sourceendlinenumber="206">See <a href="https://github.com/nodeca/js-yaml-js-types" data-raw-source="[js-yaml-js-types](https://github.com/nodeca/js-yaml-js-types)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="205" sourceendlinenumber="205">js-yaml-js-types</a> for
+extra types.</p>
+<h2 id="caveats" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="209" sourceendlinenumber="210">Caveats</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="212" sourceendlinenumber="214">Note, that you use arrays or objects as key in JS-YAML. JS does not allow objects
+or arrays as keys, and stringifies (by calling <code>toString()</code> method) them at the
+moment of adding them.</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="216" sourceendlinenumber="223"><code class="lang-yaml">---
+? [ foo, bar ]
+: - baz
+? { foo: bar }
+: - baz
+  - baz
+</code></pre><pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="225" sourceendlinenumber="227"><code class="lang-javascript">{ &quot;foo,bar&quot;: [&quot;baz&quot;], &quot;[object Object]&quot;: [&quot;baz&quot;, &quot;baz&quot;] }
+</code></pre><p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="229" sourceendlinenumber="230">Also, reading of properties on implicit block mapping keys is not supported yet.
+So, the following YAML document cannot be loaded.</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="232" sourceendlinenumber="238"><code class="lang-yaml">&amp;anchor foo:
+  foo: bar
+  *anchor: duplicate key
+  baz: bat
+  *anchor: duplicate key
+</code></pre><h2 id="js-yaml-for-enterprise" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="241" sourceendlinenumber="242">js-yaml for enterprise</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="244" sourceendlinenumber="244">Available as part of the Tidelift Subscription</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="246" sourceendlinenumber="246">The maintainers of js-yaml and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. <a href="https://tidelift.com/subscription/pkg/npm-js-yaml?utm_source=npm-js-yaml&amp;utm_medium=referral&amp;utm_campaign=enterprise&amp;utm_term=repo" data-raw-source="[Learn more.](https://tidelift.com/subscription/pkg/npm-js-yaml?utm_source=npm-js-yaml&amp;utm_medium=referral&amp;utm_campaign=enterprise&amp;utm_term=repo)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/README.md" sourcestartlinenumber="246" sourceendlinenumber="246">Learn more.</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ParmaGIS/ParmaGISDocumentation/blob/main/node_modules/js-yaml/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
