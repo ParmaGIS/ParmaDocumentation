@@ -12,7 +12,7 @@
 Схема отчёта – путь до схемы отчёта.  
 Папка с библиотеками – путь до папки с дополнительными схемами.  
 
-![CreateProjectImage](/user_guide/tools/Report/resources/CreateProjectImage.png) 
+![CreateProjectImage](/user_guide/tools/Report/resources/CreateProjectImage.png?raw=true) 
 
 ВАЖНО!!! Путь до схем в папке с библиотеками должен совпадать с ```schemeLocation```, указанном в схеме отчёта.
 Например:
@@ -46,9 +46,9 @@
 ## Редактирование макета
 Интерфейс состоит из множества блоков с заголовками и полями для ввода. Чтобы редактировать макет интерфейса, нужно перейти в режим редактирования. Для этого нужно нажать кнопку «Редактировать отчёт» в верхнем меню. Чтобы выйти из режима редактирования, нужно нажать кнопку «Готово».
 
-![DefaultModeImage](/user_guide/tools/Report/resources/DefaultModeImage.png)
+![DefaultModeImage](/user_guide/tools/Report/resources/DefaultModeImage.png?raw=true)
 
-![EditModeImage](/user_guide/tools/Report/resources/EditModeImage.png)
+![EditModeImage](/user_guide/tools/Report/resources/EditModeImage.png?raw=true)
 
 В режиме редактирования можно переименовывать блоки интерфейса, изменять их порядок, размер и объединять в группы.  
 Для изменения порядка блоков интерфейса нужно перетащить левой кнопкой мыши один блок на другой.  
@@ -56,22 +56,22 @@
 
 Чтобы сохранить макет, нужно нажать кнопку «Сохранить макет». При последующих открытиях проекта, сохраненный макет будет автоматически загружаться.
 
-Чтобы отменить изменения макета, нужно нажать кнопку «Отменить изменения». После этого все изменения сбросятся до момента последнего сохранения макета
+Чтобы отменить изменения макета, нужно нажать кнопку «Отменить изменения». После этого все изменения сбросятся до момента последнего сохранения макета.
 
 
 ### Группы
 Внутри каждой сущности имеется возможность создать группу. Для этого нужно нажать кнопку «Создать группу» и выбрать тип группы: вкладки или список.
 
-![CreateGroupImage](/user_guide/tools/Report/resources/CreateGroupImage.png)
+![CreateGroupImage](/user_guide/tools/Report/resources/CreateGroupImage.png?raw=true)
 
 Чтобы добавить блок интерфейса в группу, нужно выбрать нужный блок в выпадающем списке группы и нажать добавить.  
 
-![FillGroupImage](/user_guide/tools/Report/resources/FillGroupImage.png)
+![FillGroupImage](/user_guide/tools/Report/resources/FillGroupImage.png?raw=true)
 
 Чтобы удалить блок интерфейса из группы, нужно нажать на крестик рядом с этим блоком.  
 
-![DeleteFromGroupImage](/user_guide/tools/Report/resources/DeleteFromGroupImage.png)
+![DeleteFromGroupImage](/user_guide/tools/Report/resources/DeleteFromGroupImage.png?raw=true)
 
 Чтобы удалить группу, нужно нажать кнопку «Удалить группу». После удаления группы все элементы вернутся в сущность, в которой находились.
 
-![DeleteGroupImage](/user_guide/tools/Report/resources/DeleteGroupImage.png)
+![DeleteGroupImage](/user_guide/tools/Report/resources/DeleteGroupImage.png?raw=true)
