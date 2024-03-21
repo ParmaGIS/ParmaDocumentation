@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>argparse | site </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="argparse | site ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="site">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="argparse" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="1" sourceendlinenumber="2">argparse</h1>
+
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="4" sourceendlinenumber="5"><a href="http://travis-ci.org/nodeca/argparse" data-raw-source="[![Build Status](https://secure.travis-ci.org/nodeca/argparse.svg?branch=master)](http://travis-ci.org/nodeca/argparse)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="4" sourceendlinenumber="4"><img src="https://secure.travis-ci.org/nodeca/argparse.svg?branch=master" alt="Build Status" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="4" sourceendlinenumber="4"></a>
+<a href="https://www.npmjs.org/package/argparse" data-raw-source="[![NPM version](https://img.shields.io/npm/v/argparse.svg)](https://www.npmjs.org/package/argparse)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="5" sourceendlinenumber="5"><img src="https://img.shields.io/npm/v/argparse.svg" alt="NPM version" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="5" sourceendlinenumber="5"></a></p>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="7" sourceendlinenumber="7">CLI arguments parser for node.js, with <a href="https://docs.python.org/3.9/library/argparse.html#sub-commands" data-raw-source="[sub-commands](https://docs.python.org/3.9/library/argparse.html#sub-commands)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="7" sourceendlinenumber="7">sub-commands</a> support. Port of python&#39;s <a href="http://docs.python.org/dev/library/argparse.html" data-raw-source="[argparse](http://docs.python.org/dev/library/argparse.html)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="7" sourceendlinenumber="7">argparse</a> (version <a href="https://github.com/python/cpython/blob/v3.9.0rc1/Lib/argparse.py" data-raw-source="[3.9.0](https://github.com/python/cpython/blob/v3.9.0rc1/Lib/argparse.py)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="7" sourceendlinenumber="7">3.9.0</a>).</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="9" sourceendlinenumber="9"><strong>Difference with original.</strong></p>
+<ul sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="11" sourceendlinenumber="15">
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="11" sourceendlinenumber="12">JS has no keyword arguments support.<ul sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="12" sourceendlinenumber="12">
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="12" sourceendlinenumber="12">Pass options instead: <code>new ArgumentParser({ description: &#39;example&#39;, add_help: true })</code>.</li>
+</ul>
+</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="13" sourceendlinenumber="14">JS has no python&#39;s types <code>int</code>, <code>float</code>, ...<ul sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="14" sourceendlinenumber="14">
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="14" sourceendlinenumber="14">Use string-typed names: <code>.add_argument(&#39;-b&#39;, { type: &#39;int&#39;, help: &#39;help&#39; })</code>.</li>
+</ul>
+</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="15" sourceendlinenumber="15"><code>%r</code> format specifier uses <code>require(&#39;util&#39;).inspect()</code>.</li>
+</ul>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="17" sourceendlinenumber="17">More details in <a href="./doc" data-raw-source="[doc](./doc)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="17" sourceendlinenumber="17">doc</a>.</p>
+<h2 id="example" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="20" sourceendlinenumber="21">Example</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="23" sourceendlinenumber="23"><code>test.js</code> file:</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="25" sourceendlinenumber="42"><code class="lang-javascript">#!/usr/bin/env node
+&#39;use strict&#39;;
+
+const { ArgumentParser } = require(&#39;argparse&#39;);
+const { version } = require(&#39;./package.json&#39;);
+
+const parser = new ArgumentParser({
+  description: &#39;Argparse example&#39;
+});
+
+parser.add_argument(&#39;-v&#39;, &#39;--version&#39;, { action: &#39;version&#39;, version });
+parser.add_argument(&#39;-f&#39;, &#39;--foo&#39;, { help: &#39;foo bar&#39; });
+parser.add_argument(&#39;-b&#39;, &#39;--bar&#39;, { help: &#39;bar foo&#39; });
+parser.add_argument(&#39;--baz&#39;, { help: &#39;baz bar&#39; });
+
+console.dir(parser.parse_args());
+</code></pre><p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="44" sourceendlinenumber="44">Display help:</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="46" sourceendlinenumber="58"><code>$ ./test.js -h
+usage: test.js [-h] [-v] [-f FOO] [-b BAR] [--baz BAZ]
+
+Argparse example
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -v, --version      show program&#39;s version number and exit
+  -f FOO, --foo FOO  foo bar
+  -b BAR, --bar BAR  bar foo
+  --baz BAZ          baz bar
+</code></pre><p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="60" sourceendlinenumber="60">Parse arguments:</p>
+<pre sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="62" sourceendlinenumber="65"><code>$ ./test.js -f=3 --bar=4 --baz 5
+{ foo: &#39;3&#39;, bar: &#39;4&#39;, baz: &#39;5&#39; }
+</code></pre><h2 id="api-docs" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="68" sourceendlinenumber="69">API docs</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="71" sourceendlinenumber="72">Since this is a port with minimal divergence, there&#39;s no separate documentation.
+Use original one instead, with notes about difference.</p>
+<ol sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="74" sourceendlinenumber="76">
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="74" sourceendlinenumber="74"><a href="https://docs.python.org/3.9/library/argparse.html" data-raw-source="[Original doc](https://docs.python.org/3.9/library/argparse.html)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="74" sourceendlinenumber="74">Original doc</a>.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="75" sourceendlinenumber="75"><a href="https://docs.python.org/3.9/howto/argparse.html" data-raw-source="[Original tutorial](https://docs.python.org/3.9/howto/argparse.html)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="75" sourceendlinenumber="75">Original tutorial</a>.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="76" sourceendlinenumber="76"><a href="./doc" data-raw-source="[Difference with python](./doc)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="76" sourceendlinenumber="76">Difference with python</a>.</li>
+</ol>
+<h2 id="argparse-for-enterprise" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="79" sourceendlinenumber="80">argparse for enterprise</h2>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="82" sourceendlinenumber="82">Available as part of the Tidelift Subscription</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="84" sourceendlinenumber="84">The maintainers of argparse and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. <a href="https://tidelift.com/subscription/pkg/npm-argparse?utm_source=npm-argparse&amp;utm_medium=referral&amp;utm_campaign=enterprise&amp;utm_term=repo" data-raw-source="[Learn more.](https://tidelift.com/subscription/pkg/npm-argparse?utm_source=npm-argparse&amp;utm_medium=referral&amp;utm_campaign=enterprise&amp;utm_term=repo)" sourcefile="ParmaGISDocumentation/node_modules/argparse/README.md" sourcestartlinenumber="84" sourceendlinenumber="84">Learn more.</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ParmaGIS/ParmaGISDocumentation/blob/main/node_modules/argparse/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

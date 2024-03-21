@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Changelog | site </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Changelog | site ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="site">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="changelog" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="1" sourceendlinenumber="1">Changelog</h1>
+
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="3" sourceendlinenumber="3">All notable changes to this project will be documented in this file.</p>
+<p sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="5" sourceendlinenumber="6">The format is based on <a href="https://keepachangelog.com/en/1.0.0/" data-raw-source="[Keep a Changelog](https://keepachangelog.com/en/1.0.0/)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="5" sourceendlinenumber="5">Keep a Changelog</a>,
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html" data-raw-source="[Semantic Versioning](https://semver.org/spec/v2.0.0.html)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="6" sourceendlinenumber="6">Semantic Versioning</a>.</p>
+<h2 id="410---2021-04-15" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="9" sourceendlinenumber="9"><a href="https://github.com/nodeca/js-yaml/compare/4.0.0...4.1.0" data-raw-source="[4.1.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="9" sourceendlinenumber="9">4.1.0</a> - 2021-04-15</h2>
+<h3 id="added" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="10" sourceendlinenumber="10">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="11" sourceendlinenumber="13">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="11" sourceendlinenumber="11">Types are now exported as <code>yaml.types.XXX</code>.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="12" sourceendlinenumber="13">Every type now has <code>options</code> property with original arguments kept as they were
+(see <code>yaml.types.int.options</code> as an example).</li>
+</ul>
+<h3 id="changed" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="15" sourceendlinenumber="15">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="16" sourceendlinenumber="17">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="16" sourceendlinenumber="17"><code>Schema.extend()</code> now keeps old type order in case of conflicts
+(e.g. Schema.extend([ a, b, c ]).extend([ b, a, d ]) is now ordered as <code>abcd</code> instead of <code>cbad</code>).</li>
+</ul>
+<h2 id="400---2021-01-03" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="20" sourceendlinenumber="20"><a href="https://github.com/nodeca/js-yaml/compare/3.14.0...4.0.0" data-raw-source="[4.0.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="20" sourceendlinenumber="20">4.0.0</a> - 2021-01-03</h2>
+<h3 id="changed-1" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="21" sourceendlinenumber="21">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="22" sourceendlinenumber="42">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="22" sourceendlinenumber="22">Check <a href="migrate_v3_to_v4.md" data-raw-source="[migration guide](migrate_v3_to_v4.md)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="22" sourceendlinenumber="22">migration guide</a> to see details for all breaking changes.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="23" sourceendlinenumber="24">Breaking: &quot;unsafe&quot; tags <code>!!js/function</code>, <code>!!js/regexp</code>, <code>!!js/undefined</code> are
+moved to <a href="https://github.com/nodeca/js-yaml-js-types" data-raw-source="[js-yaml-js-types](https://github.com/nodeca/js-yaml-js-types)" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="24" sourceendlinenumber="24">js-yaml-js-types</a> package.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="25" sourceendlinenumber="26">Breaking: removed <code>safe*</code> functions. Use <code>load</code>, <code>loadAll</code>, <code>dump</code>
+instead which are all now safe by default.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="27" sourceendlinenumber="28"><code>yaml.DEFAULT_SAFE_SCHEMA</code> and <code>yaml.DEFAULT_FULL_SCHEMA</code> are removed, use
+<code>yaml.DEFAULT_SCHEMA</code> instead.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="29" sourceendlinenumber="29"><code>yaml.Schema.create(schema, tags)</code> is removed, use <code>schema.extend(tags)</code> instead.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="30" sourceendlinenumber="30"><code>!!binary</code> now always mapped to <code>Uint8Array</code> on load.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="31" sourceendlinenumber="31">Reduced nesting of <code>/lib</code> folder.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="32" sourceendlinenumber="33">Parse numbers according to YAML 1.2 instead of YAML 1.1 (<code>01234</code> is now decimal,
+<code>0o1234</code> is octal, <code>1:23</code> is parsed as string instead of base60).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="34" sourceendlinenumber="34"><code>dump()</code> no longer quotes <code>:</code>, <code>[</code>, <code>]</code>, <code>(</code>, <code>)</code> except when necessary, #470, #557.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="35" sourceendlinenumber="36">Line and column in exceptions are now formatted as <code>(X:Y)</code> instead of
+<code>at line X, column Y</code> (also present in compact format), #332.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="37" sourceendlinenumber="37">Code snippet created in exceptions now contains multiple lines with line numbers.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="38" sourceendlinenumber="39"><code>dump()</code> now serializes <code>undefined</code> as <code>null</code> in collections and removes keys with
+<code>undefined</code> in mappings, #571.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="40" sourceendlinenumber="40"><code>dump()</code> with <code>skipInvalid=true</code> now serializes invalid items in collections as null.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="41" sourceendlinenumber="41">Custom tags starting with <code>!</code> are now dumped as <code>!tag</code> instead of <code>!&lt;!tag&gt;</code>, #576.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="42" sourceendlinenumber="42">Custom tags starting with <code>tag:yaml.org,2002:</code> are now shorthanded using <code>!!</code>, #258.</li>
+</ul>
+<h3 id="added-1" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="44" sourceendlinenumber="44">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="45" sourceendlinenumber="51">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="45" sourceendlinenumber="45">Added <code>.mjs</code> (es modules) support.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="46" sourceendlinenumber="47">Added <code>quotingType</code> and <code>forceQuotes</code> options for dumper to configure
+string literal style, #290, #529.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="48" sourceendlinenumber="49">Added <code>styles: { &#39;!!null&#39;: &#39;empty&#39; }</code> option for dumper
+(serializes <code>{ foo: null }</code> as &quot;<code>foo:</code>&quot;), #570.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="50" sourceendlinenumber="50">Added <code>replacer</code> option (similar to option in JSON.stringify), #339.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="51" sourceendlinenumber="51">Custom <code>Tag</code> can now handle all tags or multiple tags with the same prefix, #385.</li>
+</ul>
+<h3 id="fixed" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="53" sourceendlinenumber="53">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="54" sourceendlinenumber="64">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="54" sourceendlinenumber="54">Astral characters are no longer encoded by <code>dump()</code>, #587.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="55" sourceendlinenumber="55">&quot;duplicate mapping key&quot; exception now points at the correct column, #452.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="56" sourceendlinenumber="57">Extra commas in flow collections (e.g. <code>[foo,,bar]</code>) now throw an exception
+instead of producing null, #321.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="58" sourceendlinenumber="58"><code>__proto__</code> key no longer overrides object prototype, #164.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="59" sourceendlinenumber="59">Removed <code>bower.json</code>.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="60" sourceendlinenumber="61">Tags are now url-decoded in <code>load()</code> and url-encoded in <code>dump()</code>
+(previously usage of custom non-ascii tags may have led to invalid YAML that can&#39;t be parsed).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="62" sourceendlinenumber="62">Anchors now work correctly with empty nodes, #301.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="63" sourceendlinenumber="63">Fix incorrect parsing of invalid block mapping syntax, #418.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="64" sourceendlinenumber="64">Throw an error if block sequence/mapping indent contains a tab, #80.</li>
+</ul>
+<h2 id="3141---2020-12-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="67" sourceendlinenumber="67">[3.14.1] - 2020-12-07</h2>
+<h3 id="security" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="68" sourceendlinenumber="68">Security</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="69" sourceendlinenumber="69">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="69" sourceendlinenumber="69">Fix possible code execution in (already unsafe) <code>.load()</code> (in &amp;anchor).</li>
+</ul>
+<h2 id="3140---2020-05-22" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="72" sourceendlinenumber="72"><a href="https://github.com/nodeca/js-yaml/compare/3.13.1...3.14.0" data-raw-source="[3.14.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="72" sourceendlinenumber="72">3.14.0</a> - 2020-05-22</h2>
+<h3 id="changed-2" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="73" sourceendlinenumber="73">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="74" sourceendlinenumber="76">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="74" sourceendlinenumber="74">Support <code>safe/loadAll(input, options)</code> variant of call.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="75" sourceendlinenumber="75">CI: drop outdated nodejs versions.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="76" sourceendlinenumber="76">Dev deps bump.</li>
+</ul>
+<h3 id="fixed-1" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="78" sourceendlinenumber="78">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="79" sourceendlinenumber="82">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="79" sourceendlinenumber="79">Quote <code>=</code> in plain scalars #519.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="80" sourceendlinenumber="80">Check the node type for <code>!&lt;?&gt;</code> tag in case user manually specifies it.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="81" sourceendlinenumber="81">Verify that there are no null-bytes in input.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="82" sourceendlinenumber="82">Fix wrong quote position when writing condensed flow, #526.</li>
+</ul>
+<h2 id="3131---2019-04-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="85" sourceendlinenumber="85"><a href="https://github.com/nodeca/js-yaml/compare/3.13.0...3.13.1" data-raw-source="[3.13.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="85" sourceendlinenumber="85">3.13.1</a> - 2019-04-05</h2>
+<h3 id="security-1" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="86" sourceendlinenumber="86">Security</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="87" sourceendlinenumber="87">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="87" sourceendlinenumber="87">Fix possible code execution in (already unsafe) <code>.load()</code>, #480.</li>
+</ul>
+<h2 id="3130---2019-03-20" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="90" sourceendlinenumber="90"><a href="https://github.com/nodeca/js-yaml/compare/3.12.2...3.13.0" data-raw-source="[3.13.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="90" sourceendlinenumber="90">3.13.0</a> - 2019-03-20</h2>
+<h3 id="security-2" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="91" sourceendlinenumber="91">Security</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="92" sourceendlinenumber="93">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="92" sourceendlinenumber="93">Security fix: <code>safeLoad()</code> can hang when arrays with nested refs
+used as key. Now throws exception for nested arrays. #475.</li>
+</ul>
+<h2 id="3122---2019-02-26" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="96" sourceendlinenumber="96"><a href="https://github.com/nodeca/js-yaml/compare/3.12.1...3.12.2" data-raw-source="[3.12.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="96" sourceendlinenumber="96">3.12.2</a> - 2019-02-26</h2>
+<h3 id="fixed-2" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="97" sourceendlinenumber="97">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="98" sourceendlinenumber="98">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="98" sourceendlinenumber="98">Fix <code>noArrayIndent</code> option for root level, #468.</li>
+</ul>
+<h2 id="3121---2019-01-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="101" sourceendlinenumber="101"><a href="https://github.com/nodeca/js-yaml/compare/3.12.0...3.12.1" data-raw-source="[3.12.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="101" sourceendlinenumber="101">3.12.1</a> - 2019-01-05</h2>
+<h3 id="added-2" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="102" sourceendlinenumber="102">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="103" sourceendlinenumber="103">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="103" sourceendlinenumber="103">Added <code>noArrayIndent</code> option, #432.</li>
+</ul>
+<h2 id="3120---2018-06-02" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="106" sourceendlinenumber="106"><a href="https://github.com/nodeca/js-yaml/compare/3.11.0...3.12.0" data-raw-source="[3.12.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="106" sourceendlinenumber="106">3.12.0</a> - 2018-06-02</h2>
+<h3 id="changed-3" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="107" sourceendlinenumber="107">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="108" sourceendlinenumber="108">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="108" sourceendlinenumber="108">Support arrow functions without a block statement, #421.</li>
+</ul>
+<h2 id="3110---2018-03-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="111" sourceendlinenumber="111"><a href="https://github.com/nodeca/js-yaml/compare/3.10.0...3.11.0" data-raw-source="[3.11.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="111" sourceendlinenumber="111">3.11.0</a> - 2018-03-05</h2>
+<h3 id="added-3" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="112" sourceendlinenumber="112">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="113" sourceendlinenumber="113">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="113" sourceendlinenumber="113">Add arrow functions suport for <code>!!js/function</code>.</li>
+</ul>
+<h3 id="fixed-3" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="115" sourceendlinenumber="115">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="116" sourceendlinenumber="116">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="116" sourceendlinenumber="116">Fix dump in bin/octal/hex formats for negative integers, #399.</li>
+</ul>
+<h2 id="3100---2017-09-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="119" sourceendlinenumber="119"><a href="https://github.com/nodeca/js-yaml/compare/3.9.1...3.10.0" data-raw-source="[3.10.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="119" sourceendlinenumber="119">3.10.0</a> - 2017-09-10</h2>
+<h3 id="fixed-4" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="120" sourceendlinenumber="120">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="121" sourceendlinenumber="122">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="121" sourceendlinenumber="121">Fix <code>condenseFlow</code> output (quote keys for sure, instead of spaces), #371, #370.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="122" sourceendlinenumber="122">Dump astrals as codepoints instead of surrogate pair, #368.</li>
+</ul>
+<h2 id="391---2017-07-08" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="125" sourceendlinenumber="125"><a href="https://github.com/nodeca/js-yaml/compare/3.9.0...3.9.1" data-raw-source="[3.9.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="125" sourceendlinenumber="125">3.9.1</a> - 2017-07-08</h2>
+<h3 id="fixed-5" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="126" sourceendlinenumber="126">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="127" sourceendlinenumber="127">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="127" sourceendlinenumber="127">Ensure stack is present for custom errors in node 7.+, #351.</li>
+</ul>
+<h2 id="390---2017-07-08" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="130" sourceendlinenumber="130"><a href="https://github.com/nodeca/js-yaml/compare/3.8.4...3.9.0" data-raw-source="[3.9.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="130" sourceendlinenumber="130">3.9.0</a> - 2017-07-08</h2>
+<h3 id="added-4" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="131" sourceendlinenumber="131">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="132" sourceendlinenumber="132">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="132" sourceendlinenumber="132">Add <code>condenseFlow</code> option (to create pretty URL query params), #346.</li>
+</ul>
+<h3 id="fixed-6" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="134" sourceendlinenumber="134">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="135" sourceendlinenumber="135">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="135" sourceendlinenumber="135">Support array return from safeLoadAll/loadAll, #350.</li>
+</ul>
+<h2 id="384---2017-05-08" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="138" sourceendlinenumber="138"><a href="https://github.com/nodeca/js-yaml/compare/3.8.3...3.8.4" data-raw-source="[3.8.4]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="138" sourceendlinenumber="138">3.8.4</a> - 2017-05-08</h2>
+<h3 id="fixed-7" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="139" sourceendlinenumber="139">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="140" sourceendlinenumber="140">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="140" sourceendlinenumber="140">Dumper: prevent space after dash for arrays that wrap, #343.</li>
+</ul>
+<h2 id="383---2017-04-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="143" sourceendlinenumber="143"><a href="https://github.com/nodeca/js-yaml/compare/3.8.2...3.8.3" data-raw-source="[3.8.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="143" sourceendlinenumber="143">3.8.3</a> - 2017-04-05</h2>
+<h3 id="fixed-8" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="144" sourceendlinenumber="144">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="145" sourceendlinenumber="145">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="145" sourceendlinenumber="145">Should not allow numbers to begin and end with underscore, #335.</li>
+</ul>
+<h2 id="382---2017-03-02" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="148" sourceendlinenumber="148"><a href="https://github.com/nodeca/js-yaml/compare/3.8.1...3.8.2" data-raw-source="[3.8.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="148" sourceendlinenumber="148">3.8.2</a> - 2017-03-02</h2>
+<h3 id="fixed-9" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="149" sourceendlinenumber="149">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="150" sourceendlinenumber="152">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="150" sourceendlinenumber="150">Fix <code>!!float 123</code> (integers) parse, #333.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="151" sourceendlinenumber="151">Don&#39;t allow leading zeros in floats (except 0, 0.xxx).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="152" sourceendlinenumber="152">Allow positive exponent without sign in floats.</li>
+</ul>
+<h2 id="381---2017-02-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="155" sourceendlinenumber="155"><a href="https://github.com/nodeca/js-yaml/compare/3.8.0...3.8.1" data-raw-source="[3.8.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="155" sourceendlinenumber="155">3.8.1</a> - 2017-02-07</h2>
+<h3 id="changed-4" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="156" sourceendlinenumber="156">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="157" sourceendlinenumber="157">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="157" sourceendlinenumber="157">Maintenance: update browserified build.</li>
+</ul>
+<h2 id="380---2017-02-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="160" sourceendlinenumber="160"><a href="https://github.com/nodeca/js-yaml/compare/3.7.0...3.8.0" data-raw-source="[3.8.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="160" sourceendlinenumber="160">3.8.0</a> - 2017-02-07</h2>
+<h3 id="fixed-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="161" sourceendlinenumber="161">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="162" sourceendlinenumber="164">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="162" sourceendlinenumber="164">Fix reported position for <code>duplicated mapping key</code> errors.
+Now points to block start instead of block end.
+(#243, thanks to @shockey).</li>
+</ul>
+<h2 id="370---2016-11-12" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="167" sourceendlinenumber="167"><a href="https://github.com/nodeca/js-yaml/compare/3.6.1...3.7.0" data-raw-source="[3.7.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="167" sourceendlinenumber="167">3.7.0</a> - 2016-11-12</h2>
+<h3 id="added-5" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="168" sourceendlinenumber="168">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="169" sourceendlinenumber="169">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="169" sourceendlinenumber="169">Support polymorphism for tags (#300, thanks to @monken).</li>
+</ul>
+<h3 id="fixed-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="171" sourceendlinenumber="171">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="172" sourceendlinenumber="172">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="172" sourceendlinenumber="172">Fix parsing of quotes followed by newlines (#304, thanks to @dplepage).</li>
+</ul>
+<h2 id="361---2016-05-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="175" sourceendlinenumber="175"><a href="https://github.com/nodeca/js-yaml/compare/3.6.0...3.6.1" data-raw-source="[3.6.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="175" sourceendlinenumber="175">3.6.1</a> - 2016-05-11</h2>
+<h3 id="fixed-12" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="176" sourceendlinenumber="176">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="177" sourceendlinenumber="177">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="177" sourceendlinenumber="177">Fix output cut on a pipe, #286.</li>
+</ul>
+<h2 id="360---2016-04-16" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="180" sourceendlinenumber="180"><a href="https://github.com/nodeca/js-yaml/compare/3.5.5...3.6.0" data-raw-source="[3.6.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="180" sourceendlinenumber="180">3.6.0</a> - 2016-04-16</h2>
+<h3 id="fixed-13" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="181" sourceendlinenumber="181">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="182" sourceendlinenumber="184">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="182" sourceendlinenumber="183">Dumper rewrite, fix multiple bugs with trailing <code>\n</code>.
+Big thanks to @aepsilon!</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="184" sourceendlinenumber="184">Loader: fix leading/trailing newlines in block scalars, @aepsilon.</li>
+</ul>
+<h2 id="355---2016-03-17" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="187" sourceendlinenumber="187"><a href="https://github.com/nodeca/js-yaml/compare/3.5.4...3.5.5" data-raw-source="[3.5.5]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="187" sourceendlinenumber="187">3.5.5</a> - 2016-03-17</h2>
+<h3 id="fixed-14" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="188" sourceendlinenumber="188">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="189" sourceendlinenumber="189">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="189" sourceendlinenumber="189">Date parse fix: don&#39;t allow dates with on digit in month and day, #268.</li>
+</ul>
+<h2 id="354---2016-03-09" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="192" sourceendlinenumber="192"><a href="https://github.com/nodeca/js-yaml/compare/3.5.3...3.5.4" data-raw-source="[3.5.4]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="192" sourceendlinenumber="192">3.5.4</a> - 2016-03-09</h2>
+<h3 id="added-6" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="193" sourceendlinenumber="193">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="194" sourceendlinenumber="194">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="194" sourceendlinenumber="194"><code>noCompatMode</code> for dumper, to disable quoting YAML 1.1 values.</li>
+</ul>
+<h2 id="353---2016-02-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="197" sourceendlinenumber="197"><a href="https://github.com/nodeca/js-yaml/compare/3.5.2...3.5.3" data-raw-source="[3.5.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="197" sourceendlinenumber="197">3.5.3</a> - 2016-02-11</h2>
+<h3 id="changed-5" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="198" sourceendlinenumber="198">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="199" sourceendlinenumber="199">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="199" sourceendlinenumber="199">Maintenance release.</li>
+</ul>
+<h2 id="352---2016-01-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="202" sourceendlinenumber="202"><a href="https://github.com/nodeca/js-yaml/compare/3.5.1...3.5.2" data-raw-source="[3.5.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="202" sourceendlinenumber="202">3.5.2</a> - 2016-01-11</h2>
+<h3 id="changed-6" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="203" sourceendlinenumber="203">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="204" sourceendlinenumber="204">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="204" sourceendlinenumber="204">Maintenance: missed comma in bower config.</li>
+</ul>
+<h2 id="351---2016-01-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="207" sourceendlinenumber="207"><a href="https://github.com/nodeca/js-yaml/compare/3.5.0...3.5.1" data-raw-source="[3.5.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="207" sourceendlinenumber="207">3.5.1</a> - 2016-01-11</h2>
+<h3 id="changed-7" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="208" sourceendlinenumber="208">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="209" sourceendlinenumber="211">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="209" sourceendlinenumber="209">Removed <code>inherit</code> dependency, #239.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="210" sourceendlinenumber="210">Better browserify workaround for esprima load.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="211" sourceendlinenumber="211">Demo rewrite.</li>
+</ul>
+<h2 id="350---2016-01-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="214" sourceendlinenumber="214"><a href="https://github.com/nodeca/js-yaml/compare/3.4.6...3.5.0" data-raw-source="[3.5.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="214" sourceendlinenumber="214">3.5.0</a> - 2016-01-10</h2>
+<h3 id="fixed-15" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="215" sourceendlinenumber="215">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="216" sourceendlinenumber="219">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="216" sourceendlinenumber="216">Dumper. Fold strings only, #217.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="217" sourceendlinenumber="217">Dumper. <code>norefs</code> option, to clone linked objects, #229.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="218" sourceendlinenumber="218">Loader. Throw a warning for duplicate keys, #166.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="219" sourceendlinenumber="219">Improved browserify support (mark <code>esprima</code> &amp; <code>Buffer</code> excluded).</li>
+</ul>
+<h2 id="346---2015-11-26" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="222" sourceendlinenumber="222"><a href="https://github.com/nodeca/js-yaml/compare/3.4.5...3.4.6" data-raw-source="[3.4.6]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="222" sourceendlinenumber="222">3.4.6</a> - 2015-11-26</h2>
+<h3 id="changed-8" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="223" sourceendlinenumber="223">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="224" sourceendlinenumber="224">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="224" sourceendlinenumber="224">Use standalone <code>inherit</code> to keep browserified files clear.</li>
+</ul>
+<h2 id="345---2015-11-23" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="227" sourceendlinenumber="227"><a href="https://github.com/nodeca/js-yaml/compare/3.4.4...3.4.5" data-raw-source="[3.4.5]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="227" sourceendlinenumber="227">3.4.5</a> - 2015-11-23</h2>
+<h3 id="added-7" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="228" sourceendlinenumber="228">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="229" sourceendlinenumber="229">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="229" sourceendlinenumber="229">Added <code>lineWidth</code> option to dumper.</li>
+</ul>
+<h2 id="344---2015-11-21" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="232" sourceendlinenumber="232"><a href="https://github.com/nodeca/js-yaml/compare/3.4.3...3.4.4" data-raw-source="[3.4.4]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="232" sourceendlinenumber="232">3.4.4</a> - 2015-11-21</h2>
+<h3 id="fixed-16" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="233" sourceendlinenumber="233">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="234" sourceendlinenumber="235">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="234" sourceendlinenumber="234">Fixed floats dump (missed dot for scientific format), #220.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="235" sourceendlinenumber="235">Allow non-printable characters inside quoted scalars, #192.</li>
+</ul>
+<h2 id="343---2015-10-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="238" sourceendlinenumber="238"><a href="https://github.com/nodeca/js-yaml/compare/3.4.2...3.4.3" data-raw-source="[3.4.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="238" sourceendlinenumber="238">3.4.3</a> - 2015-10-10</h2>
+<h3 id="changed-9" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="239" sourceendlinenumber="239">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="240" sourceendlinenumber="240">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="240" sourceendlinenumber="240">Maintenance release - deps bump (esprima, argparse).</li>
+</ul>
+<h2 id="342---2015-09-09" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="243" sourceendlinenumber="243"><a href="https://github.com/nodeca/js-yaml/compare/3.4.1...3.4.2" data-raw-source="[3.4.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="243" sourceendlinenumber="243">3.4.2</a> - 2015-09-09</h2>
+<h3 id="fixed-17" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="244" sourceendlinenumber="244">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="245" sourceendlinenumber="246">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="245" sourceendlinenumber="246">Fixed serialization of duplicated entries in sequences, #205.
+Thanks to @vogelsgesang.</li>
+</ul>
+<h2 id="341---2015-09-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="249" sourceendlinenumber="249"><a href="https://github.com/nodeca/js-yaml/compare/3.4.0...3.4.1" data-raw-source="[3.4.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="249" sourceendlinenumber="249">3.4.1</a> - 2015-09-05</h2>
+<h3 id="fixed-18" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="250" sourceendlinenumber="250">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="251" sourceendlinenumber="251">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="251" sourceendlinenumber="251">Fixed stacktrace handling in generated errors, for browsers (FF/IE).</li>
+</ul>
+<h2 id="340---2015-08-23" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="254" sourceendlinenumber="254"><a href="https://github.com/nodeca/js-yaml/compare/3.3.1...3.4.0" data-raw-source="[3.4.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="254" sourceendlinenumber="254">3.4.0</a> - 2015-08-23</h2>
+<h3 id="changed-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="255" sourceendlinenumber="255">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="256" sourceendlinenumber="258">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="256" sourceendlinenumber="256">Don&#39;t throw on warnings anymore. Use <code>onWarning</code> option to catch.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="257" sourceendlinenumber="257">Throw error on unknown tags (was warning before).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="258" sourceendlinenumber="258">Reworked internals of error class.</li>
+</ul>
+<h3 id="fixed-19" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="260" sourceendlinenumber="260">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="261" sourceendlinenumber="262">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="261" sourceendlinenumber="261">Fixed multiline keys dump, #197. Thanks to @tcr.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="262" sourceendlinenumber="262">Fixed heading line breaks in some scalars (regression).</li>
+</ul>
+<h2 id="331---2015-05-13" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="265" sourceendlinenumber="265"><a href="https://github.com/nodeca/js-yaml/compare/3.3.0...3.3.1" data-raw-source="[3.3.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="265" sourceendlinenumber="265">3.3.1</a> - 2015-05-13</h2>
+<h3 id="added-8" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="266" sourceendlinenumber="266">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="267" sourceendlinenumber="267">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="267" sourceendlinenumber="267">Added <code>.sortKeys</code> dumper option, thanks to @rjmunro.</li>
+</ul>
+<h3 id="fixed-20" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="269" sourceendlinenumber="269">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="270" sourceendlinenumber="270">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="270" sourceendlinenumber="270">Fixed astral characters support, #191.</li>
+</ul>
+<h2 id="330---2015-04-26" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="273" sourceendlinenumber="273"><a href="https://github.com/nodeca/js-yaml/compare/3.2.7...3.3.0" data-raw-source="[3.3.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="273" sourceendlinenumber="273">3.3.0</a> - 2015-04-26</h2>
+<h3 id="changed-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="274" sourceendlinenumber="274">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="275" sourceendlinenumber="276">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="275" sourceendlinenumber="275">Significantly improved long strings formatting in dumper, thanks to @isaacs.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="276" sourceendlinenumber="276">Strip BOM if exists.</li>
+</ul>
+<h2 id="327---2015-02-19" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="279" sourceendlinenumber="279"><a href="https://github.com/nodeca/js-yaml/compare/3.2.6...3.2.7" data-raw-source="[3.2.7]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="279" sourceendlinenumber="279">3.2.7</a> - 2015-02-19</h2>
+<h3 id="changed-12" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="280" sourceendlinenumber="280">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="281" sourceendlinenumber="283">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="281" sourceendlinenumber="281">Maintenance release.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="282" sourceendlinenumber="282">Updated dependencies.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="283" sourceendlinenumber="283">HISTORY.md -&gt; CHANGELOG.md</li>
+</ul>
+<h2 id="326---2015-02-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="286" sourceendlinenumber="286"><a href="https://github.com/nodeca/js-yaml/compare/3.2.5...3.2.6" data-raw-source="[3.2.6]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="286" sourceendlinenumber="286">3.2.6</a> - 2015-02-07</h2>
+<h3 id="fixed-21" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="287" sourceendlinenumber="287">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="288" sourceendlinenumber="289">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="288" sourceendlinenumber="288">Fixed encoding of UTF-16 surrogate pairs. (e.g. &quot;\U0001F431&quot; CAT FACE).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="289" sourceendlinenumber="289">Fixed demo dates dump (#113, thanks to @Hypercubed).</li>
+</ul>
+<h2 id="325---2014-12-28" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="292" sourceendlinenumber="292"><a href="https://github.com/nodeca/js-yaml/compare/3.2.4...3.2.5" data-raw-source="[3.2.5]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="292" sourceendlinenumber="292">3.2.5</a> - 2014-12-28</h2>
+<h3 id="fixed-22" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="293" sourceendlinenumber="293">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="294" sourceendlinenumber="296">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="294" sourceendlinenumber="294">Fixed resolving of all built-in types on empty nodes.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="295" sourceendlinenumber="295">Fixed invalid warning on empty lines within quoted scalars and flow collections.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="296" sourceendlinenumber="296">Fixed bug: Tag on an empty node didn&#39;t resolve in some cases.</li>
+</ul>
+<h2 id="324---2014-12-19" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="299" sourceendlinenumber="299"><a href="https://github.com/nodeca/js-yaml/compare/3.2.3...3.2.4" data-raw-source="[3.2.4]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="299" sourceendlinenumber="299">3.2.4</a> - 2014-12-19</h2>
+<h3 id="fixed-23" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="300" sourceendlinenumber="300">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="301" sourceendlinenumber="301">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="301" sourceendlinenumber="301">Fixed resolving of !!null tag on an empty node.</li>
+</ul>
+<h2 id="323---2014-11-08" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="304" sourceendlinenumber="304"><a href="https://github.com/nodeca/js-yaml/compare/3.2.2...3.2.3" data-raw-source="[3.2.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="304" sourceendlinenumber="304">3.2.3</a> - 2014-11-08</h2>
+<h3 id="fixed-24" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="305" sourceendlinenumber="305">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="306" sourceendlinenumber="307">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="306" sourceendlinenumber="306">Implemented dumping of objects with circular and cross references.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="307" sourceendlinenumber="307">Partially fixed aliasing of constructed objects. (see issue #141 for details)</li>
+</ul>
+<h2 id="322---2014-09-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="310" sourceendlinenumber="310"><a href="https://github.com/nodeca/js-yaml/compare/3.2.1...3.2.2" data-raw-source="[3.2.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="310" sourceendlinenumber="310">3.2.2</a> - 2014-09-07</h2>
+<h3 id="fixed-25" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="311" sourceendlinenumber="311">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="312" sourceendlinenumber="313">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="312" sourceendlinenumber="312">Fixed infinite loop on unindented block scalars.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="313" sourceendlinenumber="313">Rewritten base64 encode/decode in binary type, to keep code licence clear.</li>
+</ul>
+<h2 id="321---2014-08-24" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="316" sourceendlinenumber="316"><a href="https://github.com/nodeca/js-yaml/compare/3.2.0...3.2.1" data-raw-source="[3.2.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="316" sourceendlinenumber="316">3.2.1</a> - 2014-08-24</h2>
+<h3 id="fixed-26" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="317" sourceendlinenumber="317">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="318" sourceendlinenumber="318">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="318" sourceendlinenumber="318">Nothig new. Just fix npm publish error.</li>
+</ul>
+<h2 id="320---2014-08-24" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="321" sourceendlinenumber="321"><a href="https://github.com/nodeca/js-yaml/compare/3.1.0...3.2.0" data-raw-source="[3.2.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="321" sourceendlinenumber="321">3.2.0</a> - 2014-08-24</h2>
+<h3 id="added-9" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="322" sourceendlinenumber="322">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="323" sourceendlinenumber="323">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="323" sourceendlinenumber="323">Added input piping support to CLI.</li>
+</ul>
+<h3 id="fixed-27" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="325" sourceendlinenumber="325">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="326" sourceendlinenumber="326">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="326" sourceendlinenumber="326">Fixed typo, that could cause hand on initial indent (#139).</li>
+</ul>
+<h2 id="310---2014-07-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="329" sourceendlinenumber="329"><a href="https://github.com/nodeca/js-yaml/compare/3.0.2...3.1.0" data-raw-source="[3.1.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="329" sourceendlinenumber="329">3.1.0</a> - 2014-07-07</h2>
+<h3 id="changed-13" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="330" sourceendlinenumber="330">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="331" sourceendlinenumber="340">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="331" sourceendlinenumber="331">1.5x-2x speed boost.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="332" sourceendlinenumber="332">Removed deprecated <code>require(&#39;xxx.yml&#39;)</code> support.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="333" sourceendlinenumber="333">Significant code cleanup and refactoring.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="334" sourceendlinenumber="335">Internal API changed. If you used custom types - see updated examples.
+Others are not affected.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="336" sourceendlinenumber="337">Even if the input string has no trailing line break character,
+it will be parsed as if it has one.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="338" sourceendlinenumber="338">Added benchmark scripts.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="339" sourceendlinenumber="339">Moved bower files to /dist folder</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="340" sourceendlinenumber="340">Bugfixes.</li>
+</ul>
+<h2 id="302---2014-02-27" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="343" sourceendlinenumber="343"><a href="https://github.com/nodeca/js-yaml/compare/3.0.1...3.0.2" data-raw-source="[3.0.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="343" sourceendlinenumber="343">3.0.2</a> - 2014-02-27</h2>
+<h3 id="fixed-28" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="344" sourceendlinenumber="344">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="345" sourceendlinenumber="345">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="345" sourceendlinenumber="345">Fixed bug: &quot;constructor&quot; string parsed as <code>null</code>.</li>
+</ul>
+<h2 id="301---2013-12-22" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="348" sourceendlinenumber="348"><a href="https://github.com/nodeca/js-yaml/compare/3.0.0...3.0.1" data-raw-source="[3.0.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="348" sourceendlinenumber="348">3.0.1</a> - 2013-12-22</h2>
+<h3 id="fixed-29" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="349" sourceendlinenumber="349">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="350" sourceendlinenumber="352">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="350" sourceendlinenumber="350">Fixed parsing of literal scalars. (issue #108)</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="351" sourceendlinenumber="351">Prevented adding unnecessary spaces in object dumps. (issue #68)</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="352" sourceendlinenumber="352">Fixed dumping of objects with very long (&gt; 1024 in length) keys.</li>
+</ul>
+<h2 id="300---2013-12-16" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="355" sourceendlinenumber="355"><a href="https://github.com/nodeca/js-yaml/compare/2.1.3...3.0.0" data-raw-source="[3.0.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="355" sourceendlinenumber="355">3.0.0</a> - 2013-12-16</h2>
+<h3 id="changed-14" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="356" sourceendlinenumber="356">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="357" sourceendlinenumber="363">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="357" sourceendlinenumber="357">Refactored code. Changed API for custom types.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="358" sourceendlinenumber="358">Removed output colors in CLI, dump json by default.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="359" sourceendlinenumber="359">Removed big dependencies from browser version (esprima, buffer). Load <code>esprima</code> manually, if <code>!!js/function</code> needed. <code>!!bin</code> now returns Array in browser</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="360" sourceendlinenumber="360">AMD support.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="361" sourceendlinenumber="361">Don&#39;t quote dumped strings because of <code>-</code> &amp; <code>?</code> (if not first char).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="362" sourceendlinenumber="363"><strong>Deprecated</strong> loading yaml files via <code>require()</code>, as not recommended
+behaviour for node.</li>
+</ul>
+<h2 id="213---2013-10-16" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="366" sourceendlinenumber="366"><a href="https://github.com/nodeca/js-yaml/compare/2.1.2...2.1.3" data-raw-source="[2.1.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="366" sourceendlinenumber="366">2.1.3</a> - 2013-10-16</h2>
+<h3 id="fixed-30" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="367" sourceendlinenumber="367">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="368" sourceendlinenumber="368">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="368" sourceendlinenumber="368">Fix wrong loading of empty block scalars.</li>
+</ul>
+<h2 id="212---2013-10-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="371" sourceendlinenumber="371"><a href="https://github.com/nodeca/js-yaml/compare/2.1.1...2.1.2" data-raw-source="[2.1.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="371" sourceendlinenumber="371">2.1.2</a> - 2013-10-07</h2>
+<h3 id="fixed-31" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="372" sourceendlinenumber="372">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="373" sourceendlinenumber="373">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="373" sourceendlinenumber="373">Fix unwanted line breaks in folded scalars.</li>
+</ul>
+<h2 id="211---2013-10-02" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="376" sourceendlinenumber="376"><a href="https://github.com/nodeca/js-yaml/compare/2.1.0...2.1.1" data-raw-source="[2.1.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="376" sourceendlinenumber="376">2.1.1</a> - 2013-10-02</h2>
+<h3 id="fixed-32" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="377" sourceendlinenumber="377">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="378" sourceendlinenumber="379">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="378" sourceendlinenumber="378">Dumper now respects deprecated booleans syntax from YAML 1.0/1.1</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="379" sourceendlinenumber="379">Fixed reader bug in JSON-like sequences/mappings.</li>
+</ul>
+<h2 id="210---2013-06-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="382" sourceendlinenumber="382"><a href="https://github.com/nodeca/js-yaml/compare/2.0.5...2.1.0" data-raw-source="[2.1.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="382" sourceendlinenumber="382">2.1.0</a> - 2013-06-05</h2>
+<h3 id="added-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="383" sourceendlinenumber="383">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="384" sourceendlinenumber="386">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="384" sourceendlinenumber="385">Add standard YAML schemas: Failsafe (<code>FAILSAFE_SCHEMA</code>),
+JSON (<code>JSON_SCHEMA</code>) and Core (<code>CORE_SCHEMA</code>).</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="386" sourceendlinenumber="386">Add <code>skipInvalid</code> dumper option.</li>
+</ul>
+<h3 id="changed-15" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="388" sourceendlinenumber="388">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="389" sourceendlinenumber="391">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="389" sourceendlinenumber="390">Rename <code>DEFAULT_SCHEMA</code> to <code>DEFAULT_FULL_SCHEMA</code>
+and <code>SAFE_SCHEMA</code> to <code>DEFAULT_SAFE_SCHEMA</code>.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="391" sourceendlinenumber="391">Use <code>safeLoad</code> for <code>require</code> extension.</li>
+</ul>
+<h3 id="fixed-33" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="393" sourceendlinenumber="393">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="394" sourceendlinenumber="394">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="394" sourceendlinenumber="394">Bug fix: export <code>NIL</code> constant from the public interface.</li>
+</ul>
+<h2 id="205---2013-04-26" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="397" sourceendlinenumber="397"><a href="https://github.com/nodeca/js-yaml/compare/2.0.4...2.0.5" data-raw-source="[2.0.5]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="397" sourceendlinenumber="397">2.0.5</a> - 2013-04-26</h2>
+<h3 id="security-3" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="398" sourceendlinenumber="398">Security</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="399" sourceendlinenumber="400">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="399" sourceendlinenumber="400">Close security issue in !!js/function constructor.
+Big thanks to @nealpoole for security audit.</li>
+</ul>
+<h2 id="204---2013-04-08" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="403" sourceendlinenumber="403"><a href="https://github.com/nodeca/js-yaml/compare/2.0.3...2.0.4" data-raw-source="[2.0.4]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="403" sourceendlinenumber="403">2.0.4</a> - 2013-04-08</h2>
+<h3 id="changed-16" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="404" sourceendlinenumber="404">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="405" sourceendlinenumber="405">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="405" sourceendlinenumber="405">Updated .npmignore to reduce package size</li>
+</ul>
+<h2 id="203---2013-02-26" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="408" sourceendlinenumber="408"><a href="https://github.com/nodeca/js-yaml/compare/2.0.2...2.0.3" data-raw-source="[2.0.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="408" sourceendlinenumber="408">2.0.3</a> - 2013-02-26</h2>
+<h3 id="fixed-34" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="409" sourceendlinenumber="409">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="410" sourceendlinenumber="410">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="410" sourceendlinenumber="410">Fixed dumping of empty arrays ans objects. ([] and {} instead of null)</li>
+</ul>
+<h2 id="202---2013-02-15" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="413" sourceendlinenumber="413"><a href="https://github.com/nodeca/js-yaml/compare/2.0.1...2.0.2" data-raw-source="[2.0.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="413" sourceendlinenumber="413">2.0.2</a> - 2013-02-15</h2>
+<h3 id="fixed-35" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="414" sourceendlinenumber="414">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="415" sourceendlinenumber="415">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="415" sourceendlinenumber="415">Fixed input validation: tabs are printable characters.</li>
+</ul>
+<h2 id="201---2013-02-09" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="418" sourceendlinenumber="418"><a href="https://github.com/nodeca/js-yaml/compare/2.0.0...2.0.1" data-raw-source="[2.0.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="418" sourceendlinenumber="418">2.0.1</a> - 2013-02-09</h2>
+<h3 id="fixed-36" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="419" sourceendlinenumber="419">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="420" sourceendlinenumber="420">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="420" sourceendlinenumber="420">Fixed error, when options not passed to function cass</li>
+</ul>
+<h2 id="200---2013-02-09" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="423" sourceendlinenumber="423"><a href="https://github.com/nodeca/js-yaml/compare/1.0.3...2.0.0" data-raw-source="[2.0.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="423" sourceendlinenumber="423">2.0.0</a> - 2013-02-09</h2>
+<h3 id="changed-17" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="424" sourceendlinenumber="424">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="425" sourceendlinenumber="427">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="425" sourceendlinenumber="425">Full rewrite. New architecture. Fast one-stage parsing.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="426" sourceendlinenumber="426">Changed custom types API.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="427" sourceendlinenumber="427">Added YAML dumper.</li>
+</ul>
+<h2 id="103---2012-11-05" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="430" sourceendlinenumber="430"><a href="https://github.com/nodeca/js-yaml/compare/1.0.2...1.0.3" data-raw-source="[1.0.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="430" sourceendlinenumber="430">1.0.3</a> - 2012-11-05</h2>
+<h3 id="fixed-37" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="431" sourceendlinenumber="431">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="432" sourceendlinenumber="432">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="432" sourceendlinenumber="432">Fixed utf-8 files loading.</li>
+</ul>
+<h2 id="102---2012-08-02" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="435" sourceendlinenumber="435"><a href="https://github.com/nodeca/js-yaml/compare/1.0.1...1.0.2" data-raw-source="[1.0.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="435" sourceendlinenumber="435">1.0.2</a> - 2012-08-02</h2>
+<h3 id="fixed-38" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="436" sourceendlinenumber="436">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="437" sourceendlinenumber="438">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="437" sourceendlinenumber="437">Pull out hand-written shims. Use ES5-Shims for old browsers support. See #44.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="438" sourceendlinenumber="438">Fix timstamps incorectly parsed in local time when no time part specified.</li>
+</ul>
+<h2 id="101---2012-07-07" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="441" sourceendlinenumber="441"><a href="https://github.com/nodeca/js-yaml/compare/1.0.0...1.0.1" data-raw-source="[1.0.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="441" sourceendlinenumber="441">1.0.1</a> - 2012-07-07</h2>
+<h3 id="fixed-39" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="442" sourceendlinenumber="442">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="443" sourceendlinenumber="444">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="443" sourceendlinenumber="443">Fixes <code>TypeError: &#39;undefined&#39; is not an object</code> under Safari. Thanks Phuong.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="444" sourceendlinenumber="444">Fix timestamps incorrectly parsed in local time. Thanks @caolan. Closes #46.</li>
+</ul>
+<h2 id="100---2012-07-01" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="447" sourceendlinenumber="447"><a href="https://github.com/nodeca/js-yaml/compare/0.3.7...1.0.0" data-raw-source="[1.0.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="447" sourceendlinenumber="447">1.0.0</a> - 2012-07-01</h2>
+<h3 id="changed-18" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="448" sourceendlinenumber="448">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="449" sourceendlinenumber="453">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="449" sourceendlinenumber="450"><code>y</code>, <code>yes</code>, <code>n</code>, <code>no</code>, <code>on</code>, <code>off</code> are not converted to Booleans anymore.
+Fixes #42.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="451" sourceendlinenumber="452"><code>require(filename)</code> now returns a single document and throws an Error if
+file contains more than one document.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="453" sourceendlinenumber="453">CLI was merged back from js-yaml.bin</li>
+</ul>
+<h2 id="037---2012-02-28" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="456" sourceendlinenumber="456"><a href="https://github.com/nodeca/js-yaml/compare/0.3.6...0.3.7" data-raw-source="[0.3.7]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="456" sourceendlinenumber="456">0.3.7</a> - 2012-02-28</h2>
+<h3 id="fixed-40" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="457" sourceendlinenumber="457">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="458" sourceendlinenumber="458">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="458" sourceendlinenumber="458">Fix export of <code>addConstructor()</code>. Closes #39.</li>
+</ul>
+<h2 id="036---2012-02-22" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="461" sourceendlinenumber="461"><a href="https://github.com/nodeca/js-yaml/compare/0.3.5...0.3.6" data-raw-source="[0.3.6]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="461" sourceendlinenumber="461">0.3.6</a> - 2012-02-22</h2>
+<h3 id="changed-19" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="462" sourceendlinenumber="462">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="463" sourceendlinenumber="463">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="463" sourceendlinenumber="463">Removed AMD parts - too buggy to use. Need help to rewrite from scratch</li>
+</ul>
+<h3 id="fixed-41" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="465" sourceendlinenumber="465">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="466" sourceendlinenumber="466">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="466" sourceendlinenumber="466">Removed YUI compressor warning (renamed <code>double</code> variable). Closes #40.</li>
+</ul>
+<h2 id="035---2012-01-10" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="469" sourceendlinenumber="469"><a href="https://github.com/nodeca/js-yaml/compare/0.3.4...0.3.5" data-raw-source="[0.3.5]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="469" sourceendlinenumber="469">0.3.5</a> - 2012-01-10</h2>
+<h3 id="fixed-42" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="470" sourceendlinenumber="470">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="471" sourceendlinenumber="471">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="471" sourceendlinenumber="471">Workagound for .npmignore fuckup under windows. Thanks to airportyh.</li>
+</ul>
+<h2 id="034---2011-12-24" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="474" sourceendlinenumber="474"><a href="https://github.com/nodeca/js-yaml/compare/0.3.3...0.3.4" data-raw-source="[0.3.4]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="474" sourceendlinenumber="474">0.3.4</a> - 2011-12-24</h2>
+<h3 id="fixed-43" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="475" sourceendlinenumber="475">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="476" sourceendlinenumber="478">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="476" sourceendlinenumber="476">Fixes str[] for oldIEs support.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="477" sourceendlinenumber="477">Adds better has change support for browserified demo.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="478" sourceendlinenumber="478">improves compact output of Error. Closes #33.</li>
+</ul>
+<h2 id="033---2011-12-20" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="481" sourceendlinenumber="481"><a href="https://github.com/nodeca/js-yaml/compare/0.3.2...0.3.3" data-raw-source="[0.3.3]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="481" sourceendlinenumber="481">0.3.3</a> - 2011-12-20</h2>
+<h3 id="added-11" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="482" sourceendlinenumber="482">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="483" sourceendlinenumber="483">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="483" sourceendlinenumber="483">adds <code>compact</code> stringification of Errors.</li>
+</ul>
+<h3 id="changed-20" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="485" sourceendlinenumber="485">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="486" sourceendlinenumber="486">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="486" sourceendlinenumber="486">jsyaml executable moved to separate module.</li>
+</ul>
+<h2 id="032---2011-12-16" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="489" sourceendlinenumber="489"><a href="https://github.com/nodeca/js-yaml/compare/0.3.1...0.3.2" data-raw-source="[0.3.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="489" sourceendlinenumber="489">0.3.2</a> - 2011-12-16</h2>
+<h3 id="added-12" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="490" sourceendlinenumber="490">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="491" sourceendlinenumber="492">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="491" sourceendlinenumber="491">Added jsyaml executable.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="492" sourceendlinenumber="492">Added !!js/function support. Closes #12.</li>
+</ul>
+<h3 id="fixed-44" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="494" sourceendlinenumber="494">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="495" sourceendlinenumber="499">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="495" sourceendlinenumber="495">Fixes ug with block style scalars. Closes #26.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="496" sourceendlinenumber="496">All sources are passing JSLint now.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="497" sourceendlinenumber="497">Fixes bug in Safari. Closes #28.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="498" sourceendlinenumber="498">Fixes bug in Opers. Closes #29.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="499" sourceendlinenumber="499">Improves browser support. Closes #20.</li>
+</ul>
+<h2 id="031---2011-11-18" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="502" sourceendlinenumber="502"><a href="https://github.com/nodeca/js-yaml/compare/0.3.0...0.3.1" data-raw-source="[0.3.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="502" sourceendlinenumber="502">0.3.1</a> - 2011-11-18</h2>
+<h3 id="added-13" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="503" sourceendlinenumber="503">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="504" sourceendlinenumber="506">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="504" sourceendlinenumber="504">Added AMD support for browserified version.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="505" sourceendlinenumber="505">Added permalinks for online demo YAML snippets. Now we have YPaste service, lol.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="506" sourceendlinenumber="506">Added !!js/regexp and !!js/undefined types. Partially solves #12.</li>
+</ul>
+<h3 id="changed-21" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="508" sourceendlinenumber="508">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="509" sourceendlinenumber="509">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="509" sourceendlinenumber="509">Wrapped browserified js-yaml into closure.</li>
+</ul>
+<h3 id="fixed-45" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="511" sourceendlinenumber="511">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="512" sourceendlinenumber="514">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="512" sourceendlinenumber="512">Fixed the resolvement of non-specific tags. Closes #17.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="513" sourceendlinenumber="513">Fixed !!set mapping.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="514" sourceendlinenumber="514">Fixed month parse in dates. Closes #19.</li>
+</ul>
+<h2 id="030---2011-11-09" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="517" sourceendlinenumber="517"><a href="https://github.com/nodeca/js-yaml/compare/0.2.2...0.3.0" data-raw-source="[0.3.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="517" sourceendlinenumber="517">0.3.0</a> - 2011-11-09</h2>
+<h3 id="added-14" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="518" sourceendlinenumber="518">Added</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="519" sourceendlinenumber="521">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="519" sourceendlinenumber="519">Added browserified version. Closes #13.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="520" sourceendlinenumber="520">Added live demo of browserified version.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="521" sourceendlinenumber="521">Ported some of the PyYAML tests. See #14.</li>
+</ul>
+<h3 id="fixed-46" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="523" sourceendlinenumber="523">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="524" sourceendlinenumber="525">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="524" sourceendlinenumber="524">Removed JS.Class dependency. Closes #3.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="525" sourceendlinenumber="525">Fixed timestamp bug when fraction was given.</li>
+</ul>
+<h2 id="022---2011-11-06" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="528" sourceendlinenumber="528"><a href="https://github.com/nodeca/js-yaml/compare/0.2.1...0.2.2" data-raw-source="[0.2.2]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="528" sourceendlinenumber="528">0.2.2</a> - 2011-11-06</h2>
+<h3 id="fixed-47" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="529" sourceendlinenumber="529">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="530" sourceendlinenumber="532">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="530" sourceendlinenumber="530">Fixed crash on docs without ---. Closes #8.</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="531" sourceendlinenumber="531">Fixed multiline string parse</li>
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="532" sourceendlinenumber="532">Fixed tests/comments for using array as key</li>
+</ul>
+<h2 id="021---2011-11-02" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="535" sourceendlinenumber="535"><a href="https://github.com/nodeca/js-yaml/compare/0.2.0...0.2.1" data-raw-source="[0.2.1]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="535" sourceendlinenumber="535">0.2.1</a> - 2011-11-02</h2>
+<h3 id="fixed-48" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="536" sourceendlinenumber="536">Fixed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="537" sourceendlinenumber="537">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="537" sourceendlinenumber="537">Fixed short file read (&lt;4k). Closes #9.</li>
+</ul>
+<h2 id="020---2011-11-02" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="540" sourceendlinenumber="540"><a href="https://github.com/nodeca/js-yaml/releases/tag/0.2.0" data-raw-source="[0.2.0]" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="540" sourceendlinenumber="540">0.2.0</a> - 2011-11-02</h2>
+<h3 id="changed-22" sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="541" sourceendlinenumber="541">Changed</h3>
+<ul sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="542" sourceendlinenumber="542">
+<li sourcefile="ParmaGISDocumentation/node_modules/js-yaml/CHANGELOG.md" sourcestartlinenumber="542" sourceendlinenumber="542">First public release</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ParmaGIS/ParmaGISDocumentation/blob/main/node_modules/js-yaml/CHANGELOG.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
