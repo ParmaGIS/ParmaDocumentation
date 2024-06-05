@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Инструмент отчётов | site ">
       
+      
       <link rel="icon" href="../../../favicon.ico">
       <link rel="stylesheet" href="../../../public/docfx.min.css">
       <link rel="stylesheet" href="../../../public/main.css">
@@ -15,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGISDocumentation/blob/origin/master/user_guide/tools/Report/ReportTool.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaDocumentation/blob/origin/main/user_guide/tools/Report/ReportTool.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -28,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
@@ -87,59 +88,65 @@
 <h1 id="инструмент-отчётов">Инструмент отчётов</h1>
 
 <h2 id="создание-проекта">Создание проекта</h2>
-<p>Перед созданием проекта необходимо скачать нужную вам xsd схему отчёта и папку с дополнительными схемами.<br>
-Чтобы создать проект, нужно нажать кнопку «Создать проект» в верхнем меню. После этого откроется окно создания проекта, которое имеет 4 поля для заполнения:</p>
+<p>Перед созданием проекта необходимо скачать нужные вам xsd схемы.<br>
+Чтобы создать проект, нужно нажать «Проект -&gt; Создать проект» в верхнем меню .</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/74b5383b-fdf1-477a-8ad1-38a8522c98eb" alt="CreateProjectImage"></p>
+<p>После этого откроется окно создания проекта, которое имеет 4 поля для заполнения:</p>
 <ol>
 <li>Имя проекта</li>
 <li>Расположение</li>
 <li>Схема отчёта</li>
-<li>Папка с библиотеками</li>
+<li>Дополнительные схемы</li>
 </ol>
 <p>Имя проекта – название, которое требуется задать проекту.<br>
 Расположение – путь к директории, куда требуется сохранить проект.<br>
 Схема отчёта – путь до схемы отчёта.<br>
-Папка с библиотеками – путь до папки с дополнительными схемами.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/a58351c1-1f73-453d-a95d-573ac21fe59e" alt="CreateProjectImage"></p>
-<p>ВАЖНО!!! Путь до схем в папке с библиотеками должен совпадать с <code>schemeLocation</code>, указанном в схеме отчёта.
-Например:</p>
-<pre><code class="lang-XSD">&lt;xs:import namespace=&quot;http://rosleshoz.gov.ru/fgis-lk/common/simple/types/2.0&quot; schemaLocation=&quot;common2/simpleTypes.xsd&quot;/&gt;
-</code></pre>
-<p>Если в <code>schemeLocation</code> указано &quot;common2/simpleTypes.xsd&quot;, то значит папку с библиотеками нужно переименовать в common2.
-После заполнения всех полей нужно нажать кнопку «Создать проект».
-При успешном создании проекта будет открыт отчёт.</p>
+Дополнительные схемы – пути до файлов дополнительных схем.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/5f48c6a6-9406-45e8-827d-6f50209443d4" alt="CreateProjectImage2"></p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/a20a74e5-c20a-462b-924b-dcd2dc078b0c" alt="CreateProjectImage3"></p>
+<p>После заполнения всех полей нужно нажать кнопку «Создать проект».
+При успешном создании проекта будет открыт отчёт. Если при создании проекта возникнут ошибки, они будут отображены внизу окна создания проекта.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/57a86cd6-cd39-4dd2-92a3-9df66d128052" alt="CreateProjectErrorsImage"></p>
 <h2 id="открытие-проекта">Открытие проекта</h2>
-<p>Чтобы открыть ранее созданный проект, нужно нажать кнопку «Открыть проект» в верхнем меню. Затем нужно перейти в папку с проектом и выбрать файл с расширением <code>.prp</code>. После этого откроется проект.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/1b6a8d68-2864-4730-ae2a-1494ff5004a3" alt="OpenProjectImage"></p>
-<p>В выпадающем списке в верхнем меню находятся все сущности данного отчёта, в том числе и сам отчёт. Если открыт не сам отчёт, а одна из его сущностей, нужно в выпадающем списке выбрать отчёт.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/3d4fe347-6035-463b-b0c5-a3490a946638" alt="SelectEntityImage"></p>
+<p>Чтобы открыть ранее созданный проект, нужно нажать «Проект -&gt; Открыть проект» в верхнем меню. Затем нужно выбрать архив с проектом. После этого откроется проект.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/5b60fb31-e127-4987-88f7-2d6b08369447" alt="OpenProjectImage"></p>
+<p>После открытия проекта на экране появится сгенерированный интерфейс отчёта. Если открылся интерфейс не всего отчёта, а одной из его сущностей, нужно нажать &quot;Проект -&gt; Выбрать сущность&quot; в верхнем меню и выбрать сущность отчёта.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/19305cff-e04f-45d0-9773-11bfaca0af71" alt="SelectEntityImage"></p>
 <h2 id="загрузка-данных-отчёта">Загрузка данных отчёта</h2>
-<p>Чтобы загрузить данные отчёта, нужно нажать кнопку «Загрузить отчёт» в верхнем меню и выбрать нужный файл. Заполненные отчёты имеют формат <code>.xml</code> и по умолчанию хранятся в папке <code>&lt;папка проекта&gt;\xml\</code>.
-После загрузки данных отчёта, поля интерфейса будут заполнены.</p>
+<p>Чтобы загрузить данные отчёта, нужно нажать «Отчёт -&gt; Загрузить отчёт» в верхнем меню и выбрать нужный файл. Заполненные отчёты имеют формат <code>.xml</code>.
+После загрузки данных отчёта, поля интерфейса будут заполнены.
+<img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/0b3dda04-9dba-4725-9567-5db47863a732" alt="LoadDataImage"></p>
 <h2 id="сохранение-данных-отчёта">Сохранение данных отчёта</h2>
-<p>Чтобы сохранить данные отчёта, нужно нажать кнопку «Сохранить отчёт» в верхнем меню. После этого начнется валидация отчёта в соответствие с xsd схемой. Если валидация прошла успешно, нужно выбрать путь для сохранения отчёта. Если при валидации произошли ошибки, будет оповещено о несоответствиях заполненного отчёта с xsd схемой.</p>
+<p>Чтобы сохранить данные отчёта, нужно нажать кнопку «Отчёт -&gt; Сохранить отчёт с валидацией» в верхнем меню. После этого начнется валидация отчёта в соответствие с xsd схемой. Если валидация прошла успешно, нужно выбрать путь для сохранения отчёта и отчёт сохранится. Если при валидации произошли ошибки, будет оповещено о несоответствиях заполненного отчёта с xsd схемой.
+<img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/8cdf14d2-35db-4751-9223-87c9eef7553e" alt="SaveDataImage"></p>
 <h2 id="редактирование-макета">Редактирование макета</h2>
-<p>Интерфейс состоит из множества блоков с заголовками и полями для ввода. Чтобы редактировать макет интерфейса, нужно перейти в режим редактирования. Для этого нужно нажать кнопку «Редактировать отчёт» в верхнем меню. Чтобы выйти из режима редактирования, нужно нажать кнопку «Готово».</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/f6ae6b3b-7c98-4ed1-9d46-289d0dc4da96" alt="DefaultModeImage"></p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/c63a8033-6db9-4874-ae1f-d4cadb68dd39" alt="EditModeImage"></p>
+<p>Интерфейс состоит из множества блоков с заголовками и полями для ввода. Чтобы редактировать макет интерфейса, нужно перейти в режим редактирования. Для этого нужно нажать кнопку «Макет -&gt; Редактировать макет» в верхнем меню. Чтобы выйти из режима редактирования, нужно нажать кнопку «Макет -&gt; Закончить редактирование».</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/2de1beb7-9f30-47de-8c8c-149e86b7ff5d" alt="DefaultModeImage"></p>
 <p>В режиме редактирования можно переименовывать блоки интерфейса, изменять их порядок, размер и объединять в группы.<br>
-Для изменения порядка блоков интерфейса нужно перетащить левой кнопкой мыши один блок на другой.<br>
-Для изменения размеров блока нужно потянуть левой кнопкой мыши правую или нижнюю границу блока.</p>
-<p>Чтобы сохранить макет, нужно нажать кнопку «Сохранить макет». При последующих открытиях проекта, сохраненный макет будет автоматически загружаться.</p>
-<p>Чтобы отменить изменения макета, нужно нажать кнопку «Отменить изменения». После этого все изменения сбросятся до момента последнего сохранения макета.</p>
+Для изменения порядка блоков интерфейса нужно перетащить левой кнопкой мыши один блок на другой (При перетаскивании на группу, нужно перетаскивать на её заголовок. Иначе элемент добавится в группу).<br>
+Для изменения размеров блока нужно нажать на нужный элемент. После этого появятся границы, за которые можно расстягивать элемент, тем самым изменяя его размер.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/d28f84c7-5bf8-48b2-ae6e-d500f36949d7" alt="ResizeImage"></p>
+<p>Чтобы сохранить макет, нужно нажать кнопку «Макет -&gt; Сохранить макет» в верхнем меню. При последующих открытиях проекта, сохраненный макет будет автоматически загружаться.</p>
+<p>Чтобы отменить изменения макета, нужно нажать кнопку «Макет -&gt; Отменить изменения» в верхнем меню. После этого все изменения сбросятся до момента последнего сохранения макета.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/90635ab5-3840-4c31-aa77-f42331bf7ea0" alt="LayoutImage"></p>
+<h3 id="обозреватель-свойств">Обозреватель свойств</h3>
+<p>Для настройки элементов также доступно окно &quot;Обозреватель свойств&quot;. Чтобы его открыть, нужно в режиме редактирования нажать на любой элемент интерфейса.
+В обозревателе свойств доступна возможность изменять имя элемента интерфейса и задавать ему точный размер. При установке опции &quot;Автоматическая ширина / Автоматическая высота&quot; элемент будет расстягиваться до контента который он содержит.
+Для групп в обозревателе свойств также есть возможность создания новой группы и удаления данной группы.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/842b12db-5166-421e-a4b2-d5f5f56124ba" alt="InspectorImage"></p>
 <h3 id="группы">Группы</h3>
-<p>Внутри каждой сущности имеется возможность создать группу. Для этого нужно нажать кнопку «Создать группу» и выбрать тип группы: вкладки или список.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/74d7eb53-cc7e-4c5f-85a3-1efd3b0cb5b4" alt="CreateGroupImage"></p>
-<p>Чтобы добавить блок интерфейса в группу, нужно выбрать нужный блок в выпадающем списке группы и нажать добавить.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/ac0700d0-3a88-44ea-8a74-9adb7538c8c4" alt="FillGroupImage"></p>
-<p>Чтобы удалить блок интерфейса из группы, нужно нажать на крестик рядом с этим блоком.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/62776feb-55c3-4b5f-be08-4054264f42d3" alt="DeleteFromGroupImage"></p>
-<p>Чтобы удалить группу, нужно нажать кнопку «Удалить группу». После удаления группы все элементы вернутся в сущность, в которой находились.</p>
-<p><img src="https://github.com/ParmaGIS/ParmaGISDocumentation/assets/72987701/94d93f1b-b937-4337-bdde-6437b8483761" alt="DeleteGroupImage"></p>
+<p>Группа - это элемент интерфейса который может содержать другие элементы интерфейса.
+Внутри каждой группы имеется возможность создать другую группу. Для этого нужно открыть обозреватель свойств нужной группы и нажать кнопку «Создать группу».</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/7df134e8-fc32-4e23-9987-027da0c55f6b" alt="CreateGroupImage"></p>
+<p>Чтобы добавить блок интерфейса в группу, нужно перетащить нужный блок внутрь группы.</p>
+<p><img src="https://github.com/ParmaGIS/ParmaDocumentation/assets/72987701/0e38555f-bf81-4421-b357-e2a9cf792f73" alt="FillGroupImage"></p>
+<p>Чтобы удалить блок интерфейса из группы, нужно вытащить его в другую группу.</p>
+<p>Чтобы удалить группу, нужно открыть обозреватель свойств группы и нажать кнопку «Удалить группу». После удаления группы все её элементы будут вынесены в родительский элемент этой группы.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGISDocumentation/blob/origin/master/user_guide/tools/Report/ReportTool.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaDocumentation/blob/origin/main/user_guide/tools/Report/ReportTool.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
