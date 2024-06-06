@@ -1,0 +1,296 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  commentId: T:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  id: INavigationPropertyBridge
+  parent: ParmaGIS.Core.DAL.BridgeSchema
+  children:
+  - ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge
+  - ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne
+  - ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired
+  - ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge
+  langs:
+  - csharp
+  - vb
+  name: INavigationPropertyBridge
+  nameWithType: INavigationPropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  type: Interface
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: INavigationPropertyBridge
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+    startLine: 3
+  assemblies:
+  - ParmaGIS.Core.DAL
+  namespace: ParmaGIS.Core.DAL.BridgeSchema
+  summary: Представляет мост навигационного свойства.
+  example: []
+  syntax:
+    content: 'public interface INavigationPropertyBridge : IPropertyBridge'
+    content.vb: Public Interface INavigationPropertyBridge Inherits IPropertyBridge
+  inheritedMembers:
+  - ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.SubjectName
+  - ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.PropertyType
+  - ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.EntityBridge
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge
+  id: ForeignPropertyBridge
+  parent: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  langs:
+  - csharp
+  - vb
+  name: ForeignPropertyBridge
+  nameWithType: INavigationPropertyBridge.ForeignPropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ForeignPropertyBridge
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+    startLine: 22
+  assemblies:
+  - ParmaGIS.Core.DAL
+  namespace: ParmaGIS.Core.DAL.BridgeSchema
+  summary: >-
+    Возварщает мост свойства-значения внешней связи.<br /><example>
+
+    Для простой зависимости в данном свойстве указывается, например, A.IdB.<br /><pre><code class="lang-csharp">class A
+                                                                                 {
+                                                                                     public Guid IdB {get;set;}
+                                                                                     public B InstanceB {get;}
+                                                                                 }
+                                                                                 class B
+                                                                                 {
+                                                                                     public Guid Id {get;}
+                                                                                 }</code></pre></example>
+  example: []
+  syntax:
+    content: IValuePropertyBridge ForeignPropertyBridge { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.Core.DAL.BridgeSchema.IValuePropertyBridge
+    content.vb: ReadOnly Property ForeignPropertyBridge As IValuePropertyBridge
+  overload: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge*
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge
+  id: SourcePropertyBridge
+  parent: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  langs:
+  - csharp
+  - vb
+  name: SourcePropertyBridge
+  nameWithType: INavigationPropertyBridge.SourcePropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SourcePropertyBridge
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+    startLine: 41
+  assemblies:
+  - ParmaGIS.Core.DAL
+  namespace: ParmaGIS.Core.DAL.BridgeSchema
+  summary: >-
+    Возварщает мост свойства-значения хозяина зависимости (сущности источника зависимости).<br /><example>
+
+    Для простой зависимости в данном свойстве указывается, например, B.Id.<br /><pre><code class="lang-csharp">class A
+                                                                                {
+                                                                                    public Guid IdB {get;set;}
+                                                                                    public B InstanceB {get;}
+                                                                                }
+                                                                                class B
+                                                                                {
+                                                                                    public Guid Id {get;}
+                                                                                }</code></pre></example>
+  example: []
+  syntax:
+    content: IValuePropertyBridge SourcePropertyBridge { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.Core.DAL.BridgeSchema.IValuePropertyBridge
+    content.vb: ReadOnly Property SourcePropertyBridge As IValuePropertyBridge
+  overload: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge*
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne
+  id: HasOneWithOne
+  parent: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  langs:
+  - csharp
+  - vb
+  name: HasOneWithOne
+  nameWithType: INavigationPropertyBridge.HasOneWithOne
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: HasOneWithOne
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+    startLine: 43
+  assemblies:
+  - ParmaGIS.Core.DAL
+  namespace: ParmaGIS.Core.DAL.BridgeSchema
+  syntax:
+    content: bool HasOneWithOne { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property HasOneWithOne As Boolean
+  overload: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne*
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired
+  id: IsRequired
+  parent: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge
+  langs:
+  - csharp
+  - vb
+  name: IsRequired
+  nameWithType: INavigationPropertyBridge.IsRequired
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IsRequired
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/BridgeSchema/INavigationPropertyBridge.cs
+    startLine: 44
+  assemblies:
+  - ParmaGIS.Core.DAL
+  namespace: ParmaGIS.Core.DAL.BridgeSchema
+  syntax:
+    content: bool IsRequired { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsRequired As Boolean
+  overload: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired*
+references:
+- uid: ParmaGIS.Core.DAL.BridgeSchema
+  commentId: N:ParmaGIS.Core.DAL.BridgeSchema
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.DAL.BridgeSchema
+  nameWithType: ParmaGIS.Core.DAL.BridgeSchema
+  fullName: ParmaGIS.Core.DAL.BridgeSchema
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.DAL
+    name: DAL
+    href: ParmaGIS.Core.DAL.html
+  - name: .
+  - uid: ParmaGIS.Core.DAL.BridgeSchema
+    name: BridgeSchema
+    href: ParmaGIS.Core.DAL.BridgeSchema.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.DAL
+    name: DAL
+    href: ParmaGIS.Core.DAL.html
+  - name: .
+  - uid: ParmaGIS.Core.DAL.BridgeSchema
+    name: BridgeSchema
+    href: ParmaGIS.Core.DAL.BridgeSchema.html
+- uid: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.SubjectName
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.SubjectName
+  parent: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge
+  href: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_IPropertyBridge_SubjectName
+  name: SubjectName
+  nameWithType: IPropertyBridge.SubjectName
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.SubjectName
+- uid: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.PropertyType
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.PropertyType
+  parent: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge
+  href: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_IPropertyBridge_PropertyType
+  name: PropertyType
+  nameWithType: IPropertyBridge.PropertyType
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.PropertyType
+- uid: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.EntityBridge
+  commentId: P:ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.EntityBridge
+  parent: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge
+  href: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_IPropertyBridge_EntityBridge
+  name: EntityBridge
+  nameWithType: IPropertyBridge.EntityBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.EntityBridge
+- uid: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge
+  commentId: T:ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge
+  parent: ParmaGIS.Core.DAL.BridgeSchema
+  href: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge.html
+  name: IPropertyBridge
+  nameWithType: IPropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.IPropertyBridge
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge*
+  commentId: Overload:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge
+  href: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_INavigationPropertyBridge_ForeignPropertyBridge
+  name: ForeignPropertyBridge
+  nameWithType: INavigationPropertyBridge.ForeignPropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.ForeignPropertyBridge
+- uid: ParmaGIS.Core.DAL.BridgeSchema.IValuePropertyBridge
+  commentId: T:ParmaGIS.Core.DAL.BridgeSchema.IValuePropertyBridge
+  parent: ParmaGIS.Core.DAL.BridgeSchema
+  href: ParmaGIS.Core.DAL.BridgeSchema.IValuePropertyBridge.html
+  name: IValuePropertyBridge
+  nameWithType: IValuePropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.IValuePropertyBridge
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge*
+  commentId: Overload:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge
+  href: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_INavigationPropertyBridge_SourcePropertyBridge
+  name: SourcePropertyBridge
+  nameWithType: INavigationPropertyBridge.SourcePropertyBridge
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.SourcePropertyBridge
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne*
+  commentId: Overload:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne
+  href: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_INavigationPropertyBridge_HasOneWithOne
+  name: HasOneWithOne
+  nameWithType: INavigationPropertyBridge.HasOneWithOne
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.HasOneWithOne
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired*
+  commentId: Overload:ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired
+  href: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.html#ParmaGIS_Core_DAL_BridgeSchema_INavigationPropertyBridge_IsRequired
+  name: IsRequired
+  nameWithType: INavigationPropertyBridge.IsRequired
+  fullName: ParmaGIS.Core.DAL.BridgeSchema.INavigationPropertyBridge.IsRequired

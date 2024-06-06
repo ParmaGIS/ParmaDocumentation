@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface ICatalogRepository
- | site </title>
+      <title>Interface ICatalogRepository | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface ICatalogRepository
- | site ">
+      <meta name="title" content="Interface ICatalogRepository | site ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository" class="text-break">
-    Interface ICatalogRepository
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Interface ICatalogRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -122,29 +120,67 @@
 </h2>
 
 
-  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_AddCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.AddCatalogItemAsync*"></a>
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_AddCatalogItemAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.AddCatalogItemAsync``1(``0)">
-  AddCatalogItemAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogAsync_System_String_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogAsync(System.String,System.Type)">
+  CreateCatalogAsync(string, Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task AddCatalogItemAsync&lt;T&gt;(T catalogItem) where T : class, ICatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalog&gt; CreateCatalogAsync(string name, Type itemType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>catalogItem</code> <span class="xref">T</span></dt>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogAsync__1_System_String_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogAsync``1(System.String)">
+  CreateCatalogAsync&lt;T&gt;(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalog&gt; CreateCatalogAsync&lt;T&gt;(string name) where T : class, ICatalogItem</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -163,29 +199,96 @@
 
 
 
-  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_DeleteCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.DeleteCatalogItemAsync*"></a>
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogItemAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_DeleteCatalogItemAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.DeleteCatalogItemAsync``1(``0)">
-  DeleteCatalogItemAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogItemAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)">
+  CreateCatalogItemAsync(ICatalog)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeleteCatalogItemAsync&lt;T&gt;(T catalogItem) where T : class, ICatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalogItem&gt; CreateCatalogItemAsync(ICatalog catalog)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>catalogItem</code> <span class="xref">T</span></dt>
+    <dt><code>catalog</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogItemAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogItemAsync(System.Type)">
+  CreateCatalogItemAsync(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalogItem&gt; CreateCatalogItemAsync(Type itemType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogItemAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.CreateCatalogItemAsync``1">
+  CreateCatalogItemAsync&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; CreateCatalogItemAsync&lt;T&gt;() where T : class, ICatalogItem</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -194,37 +297,6 @@
     <dt><code>T</code></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetAllCatalogsAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetAllCatalogsAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetAllCatalogsAsync" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetAllCatalogsAsync">
-  GetAllCatalogsAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L17"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;ICatalog&gt;&gt; GetAllCatalogsAsync()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a>&gt;&gt;</dt>
-    <dd></dd>
-  </dl>
-
 
 
 
@@ -239,7 +311,7 @@
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem)">
   GetCatalogAsync(ICatalogItem)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -273,16 +345,52 @@
 
   <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync``1">
-  GetCatalogAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync(System.Type)">
+  GetCatalogAsync(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ICatalog?&gt; GetCatalogAsync&lt;T&gt;() where T : class, ICatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalog?&gt; GetCatalogAsync(Type itemType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogAsync``1">
+  GetCatalogAsync&lt;TItem&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalog?&gt; GetCatalogAsync&lt;TItem&gt;() where TItem : class, ICatalogItem</code></pre>
   </div>
 
 
@@ -294,7 +402,7 @@
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
-    <dt><code>T</code></dt>
+    <dt><code>TItem</code></dt>
     <dd></dd>
   </dl>
 
@@ -309,9 +417,85 @@
 
   <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemAsync*"></a>
 
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_System_Object_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog,System.Object)">
+  GetCatalogItemAsync(ICatalog, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalogItem?&gt; GetCatalogItemAsync(ICatalog catalog, object id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>catalog</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a></dt>
+    <dd></dd>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemAsync_System_Type_System_Object_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemAsync(System.Type,System.Object)">
+  GetCatalogItemAsync(Type, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalogItem?&gt; GetCatalogItemAsync(Type itemType, object id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemAsync*"></a>
+
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemAsync__1_System_Object_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemAsync``1(System.Object)">
   GetCatalogItemAsync&lt;T&gt;(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -352,14 +536,14 @@
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)">
   GetCatalogItemsAsync(ICatalog)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;ICatalogItem&gt;&gt; GetCatalogItemsAsync(ICatalog catalogInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalogItem[]&gt; GetCatalogItemsAsync(ICatalog catalogInfo)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -370,7 +554,7 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>[]&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -388,14 +572,14 @@
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync(System.Type)">
   GetCatalogItemsAsync(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;ICatalogItem&gt;&gt; GetCatalogItemsAsync(Type type)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalogItem[]&gt; GetCatalogItemsAsync(Type type)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -406,7 +590,7 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem.html">ICatalogItem</a>[]&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -424,20 +608,205 @@
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogItemsAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogItemsAsync``1">
   GetCatalogItemsAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;T&gt;&gt; GetCatalogItemsAsync&lt;T&gt;() where T : class, ICatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; GetCatalogItemsAsync&lt;T&gt;() where T : class, ICatalogItem</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogsAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_GetCatalogsAsync" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.GetCatalogsAsync">
+  GetCatalogsAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ICatalog[]&gt; GetCatalogsAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_InsertCatalogAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.InsertCatalogAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_InsertCatalogAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.InsertCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)">
+  InsertCatalogAsync(ICatalog)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task InsertCatalogAsync(ICatalog catalog)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>catalog</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_InsertCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.InsertCatalogItemAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_InsertCatalogItemAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.InsertCatalogItemAsync``1(``0)">
+  InsertCatalogItemAsync&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task InsertCatalogItemAsync&lt;T&gt;(T catalogItem) where T : class, ICatalogItem</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>catalogItem</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_RemoveCatalogAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.RemoveCatalogAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_RemoveCatalogAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalog_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.RemoveCatalogAsync(ParmaGIS.Modules.Data.Space.Catalog.ICatalog)">
+  RemoveCatalogAsync(ICatalog)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RemoveCatalogAsync(ICatalog catalog)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>catalog</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalog.html">ICatalog</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_RemoveCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.RemoveCatalogItemAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_RemoveCatalogItemAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.RemoveCatalogItemAsync``1(``0)">
+  RemoveCatalogItemAsync&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RemoveCatalogItemAsync&lt;T&gt;(T catalogItem) where T : class, ICatalogItem</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>catalogItem</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
     <dd></dd>
   </dl>
 
@@ -460,7 +829,7 @@
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_SaveChangesAsync" data-uid="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.SaveChangesAsync">
   SaveChangesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -491,7 +860,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/Catalog/ICatalogRepository.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

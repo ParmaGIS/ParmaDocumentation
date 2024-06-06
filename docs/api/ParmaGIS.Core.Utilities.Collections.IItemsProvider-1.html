@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IItemsProvider&lt;T&gt;
- | site </title>
+      <title>Interface IItemsProvider&lt;T&gt; | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IItemsProvider&lt;T&gt;
- | site ">
+      <meta name="title" content="Interface IItemsProvider&lt;T&gt; | site ">
       
+      <meta name="description" content="Представляет поставщика сведений о коллекции.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Core_Utilities_Collections_IItemsProvider_1.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Utilities.Collections.IItemsProvider%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Core_Utilities_Collections_IItemsProvider_1.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Utilities.Collections.IItemsProvider%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1" class="text-break">
-    Interface IItemsProvider&lt;T&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Interface IItemsProvider&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,7 +102,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IItemsProvider&lt;T&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IItemsProvider&lt;T&gt; : IItemsProvider</code></pre>
   </div>
 
 
@@ -119,6 +117,13 @@
 
 
 
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.IItemsProvider.html#ParmaGIS_Core_Utilities_Collections_IItemsProvider_FetchCount">IItemsProvider.FetchCount()</a>
+    </div>
+  </dd></dl>
 
 
 
@@ -133,7 +138,7 @@
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_EmptyItem" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem">
   EmptyItem
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -164,44 +169,11 @@
 </h2>
 
 
-  <a id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_FetchCount_" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.FetchCount*"></a>
-
-  <h3 id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_FetchCount" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.FetchCount">
-  FetchCount()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L22"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Получает общее количество доступных элементов.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">int FetchCount()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Количество доступных элементов.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_FetchRange_" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.FetchRange*"></a>
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_FetchRange_System_Int32_System_Int32_" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.FetchRange(System.Int32,System.Int32)">
   FetchRange(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Извлекает ряд элементов.</p>
@@ -209,7 +181,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IList&lt;T&gt; FetchRange(int startIndex, int count)</code></pre>
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;T&gt; FetchRange(int startIndex, int count)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -224,47 +196,13 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
     <dd></dd>
   </dl>
 
 
 
 
-
-
-
-
-
-
-
-  <h2 class="section" id="events">Events
-</h2>
-
-
-
-  <h3 id="ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_ItemsChanged" data-uid="ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.ItemsChanged">
-  ItemsChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">event EventHandler? ItemsChanged</code></pre>
-  </div>
-
-
-
-
-
-
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -276,7 +214,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L31" class="edit-link">Edit this page</a>
         </div>
 
 

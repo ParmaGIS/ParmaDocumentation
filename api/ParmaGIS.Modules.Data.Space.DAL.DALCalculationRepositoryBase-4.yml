@@ -1,0 +1,3088 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  id: DALCalculationRepositoryBase`4
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  children:
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows``1
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`2)
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`3)
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow(System.Type)
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow``1
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable(System.Type)
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable``1
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows``2(System.Func{System.Linq.IQueryable{``0},``1})
+  langs:
+  - csharp
+  - vb
+  name: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  type: Class
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: DALCalculationRepositoryBase
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 9
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'public abstract class DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow> : CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>, IDALCalculationRepository, ICalculationRepository where TCalcTableType : class, ICalcTableType where TCalcTable : class, ICalcTable where TCalcTableRow : class, ICalcTableRow'
+    typeParameters:
+    - id: TObjectId
+    - id: TCalcTableType
+    - id: TCalcTable
+    - id: TCalcTableRow
+    content.vb: Public MustInherit Class DALCalculationRepositoryBase(Of TObjectId, TCalcTableType As {Class, ICalcTableType}, TCalcTable As {Class, ICalcTable}, TCalcTableRow As {Class, ICalcTableRow}) Inherits CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow) Implements IDALCalculationRepository, ICalculationRepository
+  inheritance:
+  - System.Object
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  derivedClasses:
+  - ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository
+  implements:
+  - ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository
+  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+  inheritedMembers:
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CalcTablesChanged
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CalcTableRowsChanged
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTablesAsync
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableTypesAsync
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTablesAsync({TCalcTableType})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync({TCalcTableType})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableAsync({TObjectId})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowAsync({TCalcTableType},{TObjectId})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync({TObjectId})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CreateCalcTableAsync({TCalcTableType},System.String)
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableAsync({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.RemoveCalcTableAsync({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CreateCalcTableRowAsync({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync({TCalcTable},{TCalcTableRow})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.RemoveCalcTableRowAsync({TCalcTableRow})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync({TCalcTableRow})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowAsync``1({TObjectId})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync``1
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync``1({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CreateCalcTableRowAsync``1({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync``1({TCalcTable},{T})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.RemoveCalcTableRowAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.SaveChangesAsync
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  name.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers
+  commentId: P:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers
+  id: Containers
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: Containers
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.Containers
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.Containers
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Containers
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 61
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: protected List<DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer> Containers { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer}
+    content.vb: Protected ReadOnly Property Containers As List(Of DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer)
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).Containers
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).Containers
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  id: GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainer(ICalcTableType)
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer(ICalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainer
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 64
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer GetContainer(ICalcTableType tableType)
+    parameters:
+    - id: tableType
+      type: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    content.vb: Protected Function GetContainer(tableType As ICalcTableType) As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer(ICalcTableType)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`2)
+  id: GetContainer(`2)
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainer(TCalcTable)
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer(TCalcTable)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainer
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 69
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer GetContainer(TCalcTable table)
+    parameters:
+    - id: table
+      type: '{TCalcTable}'
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    content.vb: Protected Function GetContainer(table As TCalcTable) As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer(TCalcTable)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`3)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`3)
+  id: GetContainer(`3)
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainer(TCalcTableRow)
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer(TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer(TCalcTableRow)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainer
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 74
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer GetContainer(TCalcTableRow row)
+    parameters:
+    - id: row
+      type: '{TCalcTableRow}'
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    content.vb: Protected Function GetContainer(row As TCalcTableRow) As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer(TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer(TCalcTableRow)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable(System.Type)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable(System.Type)
+  id: GetContainerOnTable(System.Type)
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainerOnTable(Type)
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnTable(Type)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnTable(System.Type)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainerOnTable
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 79
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer GetContainerOnTable(Type tableType)
+    parameters:
+    - id: tableType
+      type: System.Type
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    content.vb: Protected Function GetContainerOnTable(tableType As Type) As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnTable(Type)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnTable(System.Type)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable``1
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable``1
+  id: GetContainerOnTable``1
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainerOnTable<T>()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnTable<T>()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnTable<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainerOnTable
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 84
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<T> GetContainerOnTable<T>() where T : TCalcTable'
+    typeParameters:
+    - id: T
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer{{T}}
+    content.vb: Protected Function GetContainerOnTable(Of T As TCalcTable)() As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of T)
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnTable(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnTable(Of T)()
+  name.vb: GetContainerOnTable(Of T)()
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow(System.Type)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow(System.Type)
+  id: GetContainerOnRow(System.Type)
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainerOnRow(Type)
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnRow(Type)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnRow(System.Type)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainerOnRow
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 90
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer GetContainerOnRow(Type rowType)
+    parameters:
+    - id: rowType
+      type: System.Type
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    content.vb: Protected Function GetContainerOnRow(rowType As Type) As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnRow(Type)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnRow(System.Type)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow``1
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow``1
+  id: GetContainerOnRow``1
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetContainerOnRow<T>()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnRow<T>()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnRow<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetContainerOnRow
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 94
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'protected DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<T> GetContainerOnRow<T>() where T : TCalcTableRow'
+    typeParameters:
+    - id: T
+    return:
+      type: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{T}}
+    content.vb: Protected Function GetContainerOnRow(Of T As TCalcTableRow)() As DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of T)
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnRow(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnRow(Of T)()
+  name.vb: GetContainerOnRow(Of T)()
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows``1
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows``1
+  id: GetCalcTableRows``1
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: GetCalcTableRows<T>()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRows<T>()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRows<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetCalcTableRows
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 99
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'public abstract IQueryable<T> GetCalcTableRows<T>() where T : TCalcTableRow'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Linq.IQueryable{{T}}
+    content.vb: Public MustOverride Function GetCalcTableRows(Of T As TCalcTableRow)() As IQueryable(Of T)
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRows(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRows(Of T)()
+  name.vb: GetCalcTableRows(Of T)()
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows``2(System.Func{System.Linq.IQueryable{``0},``1})
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows``2(System.Func{System.Linq.IQueryable{``0},``1})
+  id: LoadRows``2(System.Func{System.Linq.IQueryable{``0},``1})
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+  langs:
+  - csharp
+  - vb
+  name: LoadRows<TRow, TRes>(Func<IQueryable<TRow>, TRes>)
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.LoadRows<TRow, TRes>(Func<IQueryable<TRow>, TRes>)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.LoadRows<TRow, TRes>(System.Func<System.Linq.IQueryable<TRow>, TRes>)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: LoadRows
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 101
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'public abstract Task<TRes> LoadRows<TRow, TRes>(Func<IQueryable<TRow>, TRes> loader) where TRow : TCalcTableRow'
+    parameters:
+    - id: loader
+      type: System.Func{System.Linq.IQueryable{{TRow}},{TRes}}
+    typeParameters:
+    - id: TRow
+    - id: TRes
+    return:
+      type: System.Threading.Tasks.Task{{TRes}}
+    content.vb: Public MustOverride Function LoadRows(Of TRow As TCalcTableRow, TRes)(loader As Func(Of IQueryable(Of TRow), TRes)) As Task(Of TRes)
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).LoadRows(Of TRow, TRes)(Func(Of IQueryable(Of TRow), TRes))
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).LoadRows(Of TRow, TRes)(System.Func(Of System.Linq.IQueryable(Of TRow), TRes))
+  name.vb: LoadRows(Of TRow, TRes)(Func(Of IQueryable(Of TRow), TRes))
+references:
+- uid: ParmaGIS.Modules.Data.Space.DAL
+  commentId: N:ParmaGIS.Modules.Data.Space.DAL
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.Space.DAL
+  nameWithType: ParmaGIS.Modules.Data.Space.DAL
+  fullName: ParmaGIS.Modules.Data.Space.DAL
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL
+    name: DAL
+    href: ParmaGIS.Modules.Data.Space.DAL.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL
+    name: DAL
+    href: ParmaGIS.Modules.Data.Space.DAL.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  commentId: T:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}
+  parent: ParmaGIS.Modules.Data.Space.Calculation
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  name: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  name.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+    name: CalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+    name: CalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  href: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.html
+  name: IDALCalculationRepository
+  nameWithType: IDALCalculationRepository
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository
+- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+  parent: ParmaGIS.Modules.Data.Space.Calculation
+  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  name: ICalculationRepository
+  nameWithType: ICalculationRepository
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CalcTablesChanged
+  commentId: E:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CalcTablesChanged
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTablesChanged
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTablesChanged
+  name: CalcTablesChanged
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTablesChanged
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTablesChanged
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTablesChanged
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTablesChanged
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CalcTableRowsChanged
+  commentId: E:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CalcTableRowsChanged
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTableRowsChanged
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTableRowsChanged
+  name: CalcTableRowsChanged
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTableRowsChanged
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTableRowsChanged
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTableRowsChanged
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTableRowsChanged
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__
+  name: OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow>)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow>)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs<ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow>)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs(Of ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow))
+  name.vb: OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+    name: OnCalcTableRowsChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow
+    name: ICalcTableRow
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+    name: OnCalcTableRowsChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow
+    name: ICalcTableRow
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html
+  - name: )
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__
+  name: OnCalcTablesChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable>)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTablesChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable>)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs<ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTable>)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTablesChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs(Of ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTable))
+  name.vb: OnCalcTablesChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+    name: OnCalcTablesChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
+    name: ICalcTable
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+    name: OnCalcTablesChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
+    name: ICalcTable
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - name: )
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTablesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTablesAsync
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync
+  name: GetCalcTablesAsync()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTablesAsync
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTablesAsync
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableTypesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableTypesAsync
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync
+  name: GetCalcTableTypesAsync()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableTypesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableTypesAsync()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableTypesAsync
+    name: GetCalcTableTypesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableTypesAsync
+    name: GetCalcTableTypesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTablesAsync({TCalcTableType})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTablesAsync(`1)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_
+  name: GetCalcTablesAsync(TCalcTableType)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync(TCalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync(TCalcTableType)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync(TCalcTableType)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync(TCalcTableType)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTablesAsync(`1)
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTablesAsync(`1)
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync({TCalcTableType})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`1)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_
+  name: GetCalcTableRowsAsync(TCalcTableType)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTableType)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTableType)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTableType)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`1)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`1)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableAsync({TObjectId})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableAsync(`0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_
+  name: GetCalcTableAsync(TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableAsync(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableAsync(TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableAsync(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableAsync(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableAsync(`0)
+    name: GetCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableAsync(`0)
+    name: GetCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowAsync({TCalcTableType},{TObjectId})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowAsync(`1,`0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  name: GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowAsync(`1,`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowAsync(`1,`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync({TCalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`2)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_
+  name: GetCalcTableRowsAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync({TObjectId})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_
+  name: GetCalcTableRowsAsync(TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`0)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync(`0)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CreateCalcTableAsync({TCalcTableType},System.String)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableAsync(`1,System.String)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_
+  name: CreateCalcTableAsync(TCalcTableType, string)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableAsync(TCalcTableType, string)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableAsync(TCalcTableType, string)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableAsync(TCalcTableType, String)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableAsync(TCalcTableType, String)
+  name.vb: CreateCalcTableAsync(TCalcTableType, String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableAsync(`1,System.String)
+    name: CreateCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableAsync(`1,System.String)
+    name: CreateCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableAsync({TCalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableAsync(`2)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_
+  name: InsertCalcTableAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableAsync(`2)
+    name: InsertCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableAsync(`2)
+    name: InsertCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.RemoveCalcTableAsync({TCalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableAsync(`2)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
+  name: RemoveCalcTableAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableAsync(`2)
+    name: RemoveCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableAsync(`2)
+    name: RemoveCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CreateCalcTableRowAsync({TCalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableRowAsync(`2)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  name: CreateCalcTableRowAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableRowAsync(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableRowAsync(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync({TCalcTable},{TCalcTableRow})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync(`2,`3)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
+  name: InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync(`2,`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync(`2,`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.RemoveCalcTableRowAsync({TCalcTableRow})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableRowAsync(`3)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  name: RemoveCalcTableRowAsync(TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync(TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync(TCalcTableRow)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableRowAsync(`3)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableRowAsync(`3)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync({TCalcTableRow})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync(`3)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  name: InsertCalcTableRowAsync(TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTableRow)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync(`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync(`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync``1({T})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync``1(``0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_
+  name: InsertCalcTableRowAsync<T>(T)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(T)
+  name.vb: InsertCalcTableRowAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync``1(``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync``1(``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowAsync``1({TObjectId})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowAsync``1(`0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  name: GetCalcTableRowAsync<T>(TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync<T>(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync<T>(TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(Of T)(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(Of T)(TObjectId)
+  name.vb: GetCalcTableRowAsync(Of T)(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowAsync``1(`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowAsync``1(`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync``1
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1
+  name: GetCalcTableRowsAsync<T>()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)()
+  name.vb: GetCalcTableRowsAsync(Of T)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync``1
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync``1
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.GetCalcTableRowsAsync``1({TCalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync``1(`2)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_
+  name: GetCalcTableRowsAsync<T>(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)(TCalcTable)
+  name.vb: GetCalcTableRowsAsync(Of T)(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync``1(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.GetCalcTableRowsAsync``1(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.CreateCalcTableRowAsync``1({TCalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableRowAsync``1(`2)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_
+  name: CreateCalcTableRowAsync<T>(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync<T>(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync<T>(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(Of T)(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(Of T)(TCalcTable)
+  name.vb: CreateCalcTableRowAsync(Of T)(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableRowAsync``1(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.CreateCalcTableRowAsync``1(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.InsertCalcTableRowAsync``1({TCalcTable},{T})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync``1(`2,``0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_
+  name: InsertCalcTableRowAsync<T>(TCalcTable, T)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(TCalcTable, T)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(TCalcTable, T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(TCalcTable, T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(TCalcTable, T)
+  name.vb: InsertCalcTableRowAsync(Of T)(TCalcTable, T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync``1(`2,``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.InsertCalcTableRowAsync``1(`2,``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.RemoveCalcTableRowAsync``1({T})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableRowAsync``1(``0)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_
+  name: RemoveCalcTableRowAsync<T>(T)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync<T>(T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(Of T)(T)
+  name.vb: RemoveCalcTableRowAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableRowAsync``1(``0)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.RemoveCalcTableRowAsync``1(``0)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.SaveChangesAsync
+  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{{TObjectId},{TCalcTableType},{TCalcTable},{TCalcTableRow}}
+  definition: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.SaveChangesAsync()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).SaveChangesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).SaveChangesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase{`0,`1,`2,`3}.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+  commentId: T:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  name: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  name.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+    name: CalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+    name: CalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation
+  commentId: N:ParmaGIS.Modules.Data.Space.Calculation
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.Space.Calculation
+  nameWithType: ParmaGIS.Modules.Data.Space.Calculation
+  fullName: ParmaGIS.Modules.Data.Space.Calculation
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.Calculation
+    name: Calculation
+    href: ParmaGIS.Modules.Data.Space.Calculation.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.Calculation
+    name: Calculation
+    href: ParmaGIS.Modules.Data.Space.Calculation.html
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTablesChanged
+  commentId: E:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTablesChanged
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTablesChanged
+  name: CalcTablesChanged
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTablesChanged
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTablesChanged
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTablesChanged
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTablesChanged
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTableRowsChanged
+  commentId: E:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTableRowsChanged
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTableRowsChanged
+  name: CalcTableRowsChanged
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTableRowsChanged
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CalcTableRowsChanged
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTableRowsChanged
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CalcTableRowsChanged
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__
+  name: OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow>)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow>)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs<ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow>)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs(Of ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow))
+  name.vb: OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+    name: OnCalcTableRowsChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow
+    name: ICalcTableRow
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
+    name: OnCalcTableRowsChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow
+    name: ICalcTableRow
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html
+  - name: )
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__
+  name: OnCalcTablesChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable>)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTablesChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable>)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs<ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTable>)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTablesChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs(Of ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository, ParmaGIS.Modules.Data.Space.Calculation.ICalcTable))
+  name.vb: OnCalcTablesChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+    name: OnCalcTablesChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
+    name: ICalcTable
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
+    name: OnCalcTablesChanged
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
+    name: RepositoryItemsChangedEventArgs
+    href: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+    name: ICalculationRepository
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
+    name: ICalcTable
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - name: )
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync
+  name: GetCalcTablesAsync()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync
+  name: GetCalcTableTypesAsync()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableTypesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableTypesAsync()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync
+    name: GetCalcTableTypesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync
+    name: GetCalcTableTypesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync(`1)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_
+  name: GetCalcTablesAsync(TCalcTableType)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync(TCalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync(TCalcTableType)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync(TCalcTableType)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync(TCalcTableType)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync(`1)
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync(`1)
+    name: GetCalcTablesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`1)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_
+  name: GetCalcTableRowsAsync(TCalcTableType)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTableType)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTableType)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTableType)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`1)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`1)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_
+  - name: (
+  - name: TCalcTableType
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_
+  name: GetCalcTableAsync(TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableAsync(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableAsync(TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableAsync(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableAsync(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)
+    name: GetCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)
+    name: GetCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  name: GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(TCalcTableType, TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_
+  name: GetCalcTableRowsAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_
+  name: GetCalcTableRowsAsync(TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync(TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`0)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`0)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_
+  - name: (
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)
+  isExternal: true
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_
+  name: CreateCalcTableAsync(TCalcTableType, string)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableAsync(TCalcTableType, string)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableAsync(TCalcTableType, string)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableAsync(TCalcTableType, String)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableAsync(TCalcTableType, String)
+  name.vb: CreateCalcTableAsync(TCalcTableType, String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)
+    name: CreateCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)
+    name: CreateCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_
+  - name: (
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_
+  name: InsertCalcTableAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)
+    name: InsertCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)
+    name: InsertCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
+  name: RemoveCalcTableAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)
+    name: RemoveCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)
+    name: RemoveCalcTableAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  name: CreateCalcTableRowAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
+  name: InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  name: RemoveCalcTableRowAsync(TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync(TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync(TCalcTableRow)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  name: InsertCalcTableRowAsync(TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTableRow)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  - name: (
+  - name: TCalcTableRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_
+  name: InsertCalcTableRowAsync<T>(T)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(T)
+  name.vb: InsertCalcTableRowAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  name: GetCalcTableRowAsync<T>(TObjectId)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync<T>(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync<T>(TObjectId)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(Of T)(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(Of T)(TObjectId)
+  name.vb: GetCalcTableRowAsync(Of T)(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
+    name: GetCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TObjectId
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1
+  name: GetCalcTableRowsAsync<T>()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)()
+  name.vb: GetCalcTableRowsAsync(Of T)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_
+  name: GetCalcTableRowsAsync<T>(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync<T>(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)(TCalcTable)
+  name.vb: GetCalcTableRowsAsync(Of T)(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1(`2)
+    name: GetCalcTableRowsAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_
+  name: CreateCalcTableRowAsync<T>(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync<T>(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync<T>(TCalcTable)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(Of T)(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(Of T)(TCalcTable)
+  name.vb: CreateCalcTableRowAsync(Of T)(TCalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TCalcTable
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
+    name: CreateCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_
+  name: InsertCalcTableRowAsync<T>(TCalcTable, T)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(TCalcTable, T)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(TCalcTable, T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(TCalcTable, T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(TCalcTable, T)
+  name.vb: InsertCalcTableRowAsync(Of T)(TCalcTable, T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
+    name: InsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_
+  name: RemoveCalcTableRowAsync<T>(T)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync<T>(T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(Of T)(T)
+  name.vb: RemoveCalcTableRowAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
+    name: RemoveCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.SaveChangesAsync()
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).SaveChangesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).SaveChangesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_Containers
+  name: Containers
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.Containers
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.Containers
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).Containers
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).Containers
+- uid: System.Collections.Generic.List{ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer}
+  commentId: T:System.Collections.Generic.List{ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer>
+  nameWithType: List<DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer>
+  fullName: System.Collections.Generic.List<ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer>
+  nameWithType.vb: List(Of DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer)
+  fullName.vb: System.Collections.Generic.List(Of ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer)
+  name.vb: List(Of DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    name: ITableContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    name: ITableContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableType_
+  name: GetContainer
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainer
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainer
+- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType
+  commentId: T:ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType
+  parent: ParmaGIS.Modules.Data.Space.Calculation
+  href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType.html
+  name: ICalcTableType
+  nameWithType: ICalcTableType
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  name: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  name.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    name: ITableContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+    name: ITableContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html
+- uid: '{TCalcTable}'
+  commentId: '!:TCalcTable'
+  definition: TCalcTable
+  name: TCalcTable
+  nameWithType: TCalcTable
+  fullName: TCalcTable
+- uid: TCalcTable
+  name: TCalcTable
+  nameWithType: TCalcTable
+  fullName: TCalcTable
+- uid: '{TCalcTableRow}'
+  commentId: '!:TCalcTableRow'
+  definition: TCalcTableRow
+  name: TCalcTableRow
+  nameWithType: TCalcTableRow
+  fullName: TCalcTableRow
+- uid: TCalcTableRow
+  name: TCalcTableRow
+  nameWithType: TCalcTableRow
+  fullName: TCalcTableRow
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable_System_Type_
+  name: GetContainerOnTable
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnTable
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnTable
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnTable
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnTable
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer{{T}}
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer{``0}
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  definition: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  name: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<T>
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<T>
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<T>
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of T)
+  name.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+    name: ITableViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableViewContainer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+    name: ITableViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableViewContainer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  name: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<TTable>
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<TTable>
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<TTable>
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of TTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of TTable)
+  name.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of TTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+    name: ITableViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableViewContainer-1.html
+  - name: <
+  - name: TTable
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer`1
+    name: ITableViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableViewContainer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow_System_Type_
+  name: GetContainerOnRow
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnRow
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetContainerOnRow
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnRow
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetContainerOnRow
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{T}}
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{``0}
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  definition: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  name: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<T>
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<T>
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<T>
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of T)
+  name.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+    name: IRowViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+    name: IRowViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  name: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow)
+  name.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+    name: IRowViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html
+  - name: <
+  - name: TRow
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4
+    name: DALCalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+    name: IRowViewContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRow
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetCalcTableRows__1
+  name: GetCalcTableRows
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRows
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRows
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRows
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRows
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{``0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_LoadRows__2_System_Func_System_Linq_IQueryable___0____1__
+  name: LoadRows
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.LoadRows
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.LoadRows
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).LoadRows
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).LoadRows
+- uid: System.Func{System.Linq.IQueryable{{TRow}},{TRes}}
+  commentId: T:System.Func{System.Linq.IQueryable{``0},``1}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<IQueryable<TRow>, TRes>
+  nameWithType: Func<IQueryable<TRow>, TRes>
+  fullName: System.Func<System.Linq.IQueryable<TRow>, TRes>
+  nameWithType.vb: Func(Of IQueryable(Of TRow), TRes)
+  fullName.vb: System.Func(Of System.Linq.IQueryable(Of TRow), TRes)
+  name.vb: Func(Of IQueryable(Of TRow), TRes)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: TRow
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TRes
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRow
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TRes
+  - name: )
+- uid: System.Threading.Tasks.Task{{TRes}}
+  commentId: T:System.Threading.Tasks.Task{``1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TRes>
+  nameWithType: Task<TRes>
+  fullName: System.Threading.Tasks.Task<TRes>
+  nameWithType.vb: Task(Of TRes)
+  fullName.vb: System.Threading.Tasks.Task(Of TRes)
+  name.vb: Task(Of TRes)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TRes
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRes
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

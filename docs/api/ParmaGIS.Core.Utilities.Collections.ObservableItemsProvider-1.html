@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ObservableItemsProvider&lt;T&gt;
- | site </title>
+      <title>Class ObservableItemsProvider&lt;T&gt; | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ObservableItemsProvider&lt;T&gt;
- | site ">
+      <meta name="title" content="Class ObservableItemsProvider&lt;T&gt; | site ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1" class="text-break">
-    Class ObservableItemsProvider&lt;T&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L38"><i class="bi bi-code-slash"></i></a>
+Class ObservableItemsProvider&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +101,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ObservableItemsProvider&lt;T&gt; : IObservableItemsProvider&lt;T&gt;, IItemsProvider&lt;T&gt;, INotifyCollectionChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public class ObservableItemsProvider&lt;T&gt; : ListItemsProvider&lt;T&gt;, IItemsProvider&lt;T&gt;, IItemsProvider, IDisposable, INotifyCollectionChanged, INotifyPropertyChanged</code></pre>
   </div>
 
 
@@ -118,6 +116,7 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider-1.html">ListItemsProvider</a>&lt;T&gt;</div>
       <div><span class="xref">ObservableItemsProvider&lt;T&gt;</span></div>
     </dd>
   </dl>
@@ -125,16 +124,33 @@
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ParmaGIS.Core.Utilities.Collections.IObservableItemsProvider-1.html">IObservableItemsProvider</a>&lt;T&gt;</div>
       <div><a class="xref" href="ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html">IItemsProvider</a>&lt;T&gt;</div>
+      <div><a class="xref" href="ParmaGIS.Core.Utilities.Collections.IItemsProvider.html">IItemsProvider</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
     </dd>
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_ListItemsProvider_1_Empty">ListItemsProvider&lt;T&gt;.Empty</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_ListItemsProvider_1_EmptyItem">ListItemsProvider&lt;T&gt;.EmptyItem</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_ListItemsProvider_1_Source">ListItemsProvider&lt;T&gt;.Source</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_ListItemsProvider_1_FetchCount">ListItemsProvider&lt;T&gt;.FetchCount()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_ListItemsProvider_1_FetchRange_System_Int32_System_Int32_">ListItemsProvider&lt;T&gt;.FetchRange(int, int)</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -158,38 +174,88 @@
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Reactive.ObservableExtensions.html#ParmaGIS_Core_UI_Reactive_ObservableExtensions_ObserveElementEvent__3___0_System_Func___1_System_IObserver___2__System_IDisposable__">ObservableExtensions.ObserveElementEvent&lt;TCollection, TElement, TResult&gt;(TCollection, Func&lt;TElement, IObserver&lt;TResult&gt;, IDisposable&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_">RulesExtensions.SetErrorRule&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, RulesObserver, Func&lt;TProperty, bool&gt;, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___">RulesExtensions.SetRule&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, RulesObserver, Action&lt;RulesObserver.RuleContext&lt;TProperty&gt;&gt;)</a>
+  </div>
+  </dd></dl>
 
 
 
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_EmptyItem_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.EmptyItem*"></a>
+  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1__ctor_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor*"></a>
 
-  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_EmptyItem" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.EmptyItem">
-  EmptyItem
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1__ctor_System_Collections_Generic_IEnumerable__0__System_IObservable_System_Collections_Specialized_NotifyCollectionChangedEventArgs___0_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.IObservable{System.Collections.Specialized.NotifyCollectionChangedEventArgs},`0)">
+  ObservableItemsProvider(IEnumerable&lt;T&gt;, IObservable&lt;NotifyCollectionChangedEventArgs&gt;, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T EmptyItem { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ObservableItemsProvider(IEnumerable&lt;T&gt; source, IObservable&lt;NotifyCollectionChangedEventArgs&gt; collectionChangedObserver, T emptyItem)</code></pre>
   </div>
 
-
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><span class="xref">T</span></dt>
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>collectionChangedObserver</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs">NotifyCollectionChangedEventArgs</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>emptyItem</code> <span class="xref">T</span></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1__ctor_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor*"></a>
+
+  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1__ctor_System_Collections_ObjectModel_ObservableCollection__0___0_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor(System.Collections.ObjectModel.ObservableCollection{`0},`0)">
+  ObservableItemsProvider(ObservableCollection&lt;T&gt;, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ObservableItemsProvider(ObservableCollection&lt;T&gt; source, T emptyItem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>emptyItem</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
 
 
 
@@ -202,28 +268,22 @@
 </h2>
 
 
-  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_FetchCount_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.FetchCount*"></a>
+  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_Dispose_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.Dispose*"></a>
 
-  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_FetchCount" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.FetchCount">
-  FetchCount()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_Dispose" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Получает общее количество доступных элементов.</p>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int FetchCount()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
 
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Количество доступных элементов.</p>
-</dd>
-  </dl>
 
 
 
@@ -235,36 +295,21 @@
 
 
 
-  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_FetchRange_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.FetchRange*"></a>
+  <a id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_Finalize_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.Finalize*"></a>
 
-  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_FetchRange_System_Int32_System_Int32_" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.FetchRange(System.Int32,System.Int32)">
-  FetchRange(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_Finalize" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.Finalize">
+  ~ObservableItemsProvider()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Извлекает ряд элементов.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IList&lt;T&gt; FetchRange(int startIndex, int count)</code></pre>
+    <pre><code class="lang-csharp hljs">protected ~ObservableItemsProvider()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Наачальный индекс.</p>
-</dd>
-    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Количество элементов для получения.</p>
-</dd>
-  </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -283,7 +328,7 @@
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_CollectionChanged" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.CollectionChanged">
   CollectionChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Occurs when the collection changes.</p>
@@ -312,16 +357,17 @@
 
 
 
-  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_ItemsChanged" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.ItemsChanged">
-  ItemsChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1_PropertyChanged" data-uid="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.PropertyChanged">
+  PropertyChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Occurs when a property value changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler? ItemsChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public event PropertyChangedEventHandler? PropertyChanged</code></pre>
   </div>
 
 
@@ -331,7 +377,7 @@
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventhandler">PropertyChangedEventHandler</a></dt>
     <dd></dd>
   </dl>
 
@@ -345,7 +391,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs/#L38" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

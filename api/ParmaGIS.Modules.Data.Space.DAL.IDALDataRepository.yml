@@ -1,0 +1,702 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  id: IDALDataRepository
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  children:
+  - ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData``1
+  - ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData``2(System.Func{System.Linq.IQueryable{``0},``1})
+  langs:
+  - csharp
+  - vb
+  name: IDALDataRepository
+  nameWithType: IDALDataRepository
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  type: Interface
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALDataRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IDALDataRepository
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALDataRepository.cs
+    startLine: 8
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'public interface IDALDataRepository : IDataRepository'
+    content.vb: Public Interface IDALDataRepository Inherits IDataRepository
+  inheritedMembers:
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData``2(System.Func{System.Linq.IQueryable{``0},``1})
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData``2(System.Func{System.Linq.IQueryable{``0},``1})
+  id: LoadData``2(System.Func{System.Linq.IQueryable{``0},``1})
+  parent: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  langs:
+  - csharp
+  - vb
+  name: LoadData<T, TRes>(Func<IQueryable<T>, TRes>)
+  nameWithType: IDALDataRepository.LoadData<T, TRes>(Func<IQueryable<T>, TRes>)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData<T, TRes>(System.Func<System.Linq.IQueryable<T>, TRes>)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALDataRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: LoadData
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALDataRepository.cs
+    startLine: 10
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'Task<TRes> LoadData<T, TRes>(Func<IQueryable<T>, TRes> loader) where T : class, IDataObject'
+    parameters:
+    - id: loader
+      type: System.Func{System.Linq.IQueryable{{T}},{TRes}}
+    typeParameters:
+    - id: T
+    - id: TRes
+    return:
+      type: System.Threading.Tasks.Task{{TRes}}
+    content.vb: Function LoadData(Of T As {Class, IDataObject}, TRes)(loader As Func(Of IQueryable(Of T), TRes)) As Task(Of TRes)
+  overload: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData*
+  nameWithType.vb: IDALDataRepository.LoadData(Of T, TRes)(Func(Of IQueryable(Of T), TRes))
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData(Of T, TRes)(System.Func(Of System.Linq.IQueryable(Of T), TRes))
+  name.vb: LoadData(Of T, TRes)(Func(Of IQueryable(Of T), TRes))
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData``1
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData``1
+  id: GetData``1
+  parent: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  langs:
+  - csharp
+  - vb
+  name: GetData<T>()
+  nameWithType: IDALDataRepository.GetData<T>()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALDataRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetData
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALDataRepository.cs
+    startLine: 11
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: 'IQueryable<T> GetData<T>() where T : class, IDataObject'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Linq.IQueryable{{T}}
+    content.vb: Function GetData(Of T As {Class, IDataObject})() As IQueryable(Of T)
+  overload: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData*
+  nameWithType.vb: IDALDataRepository.GetData(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData(Of T)()
+  name.vb: GetData(Of T)()
+references:
+- uid: ParmaGIS.Modules.Data.Space.DAL
+  commentId: N:ParmaGIS.Modules.Data.Space.DAL
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.Space.DAL
+  nameWithType: ParmaGIS.Modules.Data.Space.DAL
+  fullName: ParmaGIS.Modules.Data.Space.DAL
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL
+    name: DAL
+    href: ParmaGIS.Modules.Data.Space.DAL.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.DAL
+    name: DAL
+    href: ParmaGIS.Modules.Data.Space.DAL.html
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
+  parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1
+  name: GetDataAsync<T>()
+  nameWithType: IDataRepository.GetDataAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync<T>()
+  nameWithType.vb: IDataRepository.GetDataAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync(Of T)()
+  name.vb: GetDataAsync(Of T)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
+    name: GetDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
+    name: GetDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  isExternal: true
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1_System_Object_
+  name: GetDataAsync<T>(object)
+  nameWithType: IDataRepository.GetDataAsync<T>(object)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync<T>(object)
+  nameWithType.vb: IDataRepository.GetDataAsync(Of T)(Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync(Of T)(Object)
+  name.vb: GetDataAsync(Of T)(Object)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
+    name: GetDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1_System_Object_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
+    name: GetDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_GetDataAsync__1_System_Object_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1({T})
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+  parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  definition: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  name: InsertDataAsync<T>(T)
+  nameWithType: IDataRepository.InsertDataAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync<T>(T)
+  nameWithType.vb: IDataRepository.InsertDataAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(Of T)(T)
+  name.vb: InsertDataAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+    name: InsertDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+    name: InsertDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1({T})
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  definition: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  name: RemoveDataAsync<T>(T)
+  nameWithType: IDataRepository.RemoveDataAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync<T>(T)
+  nameWithType.vb: IDataRepository.RemoveDataAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(Of T)(T)
+  name.vb: RemoveDataAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+    name: RemoveDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+    name: RemoveDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
+  parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: IDataRepository.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_SaveChangesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_SaveChangesAsync
+  - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataRepository
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html
+  name: IDataRepository
+  nameWithType: IDataRepository
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  name: InsertDataAsync<T>(T)
+  nameWithType: IDataRepository.InsertDataAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync<T>(T)
+  nameWithType.vb: IDataRepository.InsertDataAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(Of T)(T)
+  name.vb: InsertDataAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+    name: InsertDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+    name: InsertDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  name: RemoveDataAsync<T>(T)
+  nameWithType: IDataRepository.RemoveDataAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync<T>(T)
+  nameWithType.vb: IDataRepository.RemoveDataAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(Of T)(T)
+  name.vb: RemoveDataAsync(Of T)(T)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+    name: RemoveDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+    name: RemoveDataAsync
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data
+  commentId: N:ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.Space.Data
+  nameWithType: ParmaGIS.Modules.Data.Space.Data
+  fullName: ParmaGIS.Modules.Data.Space.Data
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.Space.Data.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.Space.Data.html
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData
+  href: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.html#ParmaGIS_Modules_Data_Space_DAL_IDALDataRepository_LoadData__2_System_Func_System_Linq_IQueryable___0____1__
+  name: LoadData
+  nameWithType: IDALDataRepository.LoadData
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.LoadData
+- uid: System.Func{System.Linq.IQueryable{{T}},{TRes}}
+  commentId: T:System.Func{System.Linq.IQueryable{``0},``1}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<IQueryable<T>, TRes>
+  nameWithType: Func<IQueryable<T>, TRes>
+  fullName: System.Func<System.Linq.IQueryable<T>, TRes>
+  nameWithType.vb: Func(Of IQueryable(Of T), TRes)
+  fullName.vb: System.Func(Of System.Linq.IQueryable(Of T), TRes)
+  name.vb: Func(Of IQueryable(Of T), TRes)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TRes
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TRes
+  - name: )
+- uid: System.Threading.Tasks.Task{{TRes}}
+  commentId: T:System.Threading.Tasks.Task{``1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TRes>
+  nameWithType: Task<TRes>
+  fullName: System.Threading.Tasks.Task<TRes>
+  nameWithType.vb: Task(Of TRes)
+  fullName.vb: System.Threading.Tasks.Task(Of TRes)
+  name.vb: Task(Of TRes)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TRes
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRes
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData
+  href: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.html#ParmaGIS_Modules_Data_Space_DAL_IDALDataRepository_GetData__1
+  name: GetData
+  nameWithType: IDALDataRepository.GetData
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.GetData
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{``0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq

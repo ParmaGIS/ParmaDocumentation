@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ParmaNode
- | site </title>
+      <title>Class ParmaNode | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ParmaNode
- | site ">
+      <meta name="title" content="Class ParmaNode | site ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode" class="text-break">
-    Class ParmaNode
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L123"><i class="bi bi-code-slash"></i></a>
+Class ParmaNode  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +101,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ParmaNode : ParmaDALObject, INotifyPropertyChanged, IParmaObject, ITreeNode</code></pre>
+    <pre><code class="lang-csharp hljs">public class ParmaNode : BindableBase, INotifyPropertyChanged, ITreeNode, IParmaObject</code></pre>
   </div>
 
 
@@ -114,7 +112,6 @@
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="ParmaGIS.Core.Utilities.BindableBase.html">BindableBase</a></div>
-      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.ParmaDALObject.html">ParmaDALObject</a></div>
       <div><span class="xref">ParmaNode</span></div>
     </dd>
   </dl>
@@ -123,30 +120,24 @@
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
-      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.IParmaObject.html">IParmaObject</a></div>
       <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.IParmaObject.html">IParmaObject</a></div>
     </dd>
   </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.CompartmentNode.html">CompartmentNode</a></div>
-      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.DepartmentNode.html">DepartmentNode</a></div>
-      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.DistrictNode.html">DistrictNode</a></div>
-      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.StandNode.html">StandNode</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.html">Compartment</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.Department.html">Department</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.District.html">District</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.html">Stand</a></div>
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
-    <div>
-      <a class="xref" href="ParmaGIS.Modules.Parma.Space.ParmaDALObject.html#ParmaGIS_Modules_Parma_Space_ParmaDALObject_LazyLoader">ParmaDALObject.LazyLoader</a>
-    </div>
-    <div>
-      <a class="xref" href="ParmaGIS.Modules.Parma.Space.ParmaDALObject.html#ParmaGIS_Modules_Parma_Space_ParmaDALObject_Load__1___0__System_String_">ParmaDALObject.Load&lt;T&gt;(ref T, string)</a>
-    </div>
     <div>
       <a class="xref" href="ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_PropertyChanged">BindableBase.PropertyChanged</a>
     </div>
@@ -174,19 +165,16 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
   </dd></dl>
 
   <dl class="typelist extensionMethods">
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory2__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__">URExtensions.ToURPropertyWithHistory2&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, Action&lt;TProperty&gt;, TProperty, URHistory, ICollection&lt;IDisposable&gt;)</a>
+      <a class="xref" href="ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_">RulesExtensions.SetErrorRule&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, RulesObserver, Func&lt;TProperty, bool&gt;, string)</a>
   </div>
   <div>
-      <a class="xref" href="ParmaGIS.Core.UI.Reactive.URExtensions.html#ParmaGIS_Core_UI_Reactive_URExtensions_ToURPropertyWithHistory__2___0_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___1_System_Collections_IEnumerable__System_Action___1____1_ParmaGIS_Core_UI_Reactive_URHistory_System_Collections_Generic_ICollection_System_IDisposable__">URExtensions.ToURPropertyWithHistory&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, Func&lt;TProperty, IEnumerable?&gt;, Action&lt;TProperty&gt;, TProperty, URHistory, ICollection&lt;IDisposable&gt;)</a>
+      <a class="xref" href="ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___">RulesExtensions.SetRule&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, RulesObserver, Action&lt;RulesObserver.RuleContext&lt;TProperty&gt;&gt;)</a>
   </div>
   </dd></dl>
 
@@ -202,7 +190,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_CountChildren" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountChildren">
   CountChildren
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -233,7 +221,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_CountChildrenToLeaves" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountChildrenToLeaves">
   CountChildrenToLeaves
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -264,7 +252,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Discriminator" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Discriminator">
   Discriminator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -291,42 +279,11 @@
 
 
 
-  <a id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Host_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Host*"></a>
-
-  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Host" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Host">
-  Host
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L143"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParmaNodeLoader? Host { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.html">ParmaNodeLoader</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Id_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Id*"></a>
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Id" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Id">
   Id
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -357,14 +314,14 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Name" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? Name { get; set; }</code></pre>
   </div>
 
 
@@ -388,14 +345,14 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Number" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Number">
   Number
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Number { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int? Number { get; set; }</code></pre>
   </div>
 
 
@@ -404,7 +361,38 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Parent_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Parent*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Parent" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Parent">
+  Parent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ParmaNode? Parent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html">ParmaNode</a></dt>
     <dd></dd>
   </dl>
 
@@ -419,7 +407,7 @@
 
   <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ParentId" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ParentId">
   ParentId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -446,11 +434,79 @@
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)">
+  ChangeParent(ParmaNode?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ChangeParent(ParmaNode? newParent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newParent</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html">ParmaNode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString_" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString" data-uid="ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs/#L123" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNode.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

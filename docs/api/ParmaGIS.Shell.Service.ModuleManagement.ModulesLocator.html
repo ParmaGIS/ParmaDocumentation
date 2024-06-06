@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ModulesLocator
- | site </title>
+      <title>Class ModulesLocator | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ModulesLocator
- | site ">
+      <meta name="title" content="Class ModulesLocator | site ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Shell_Service_ModuleManagement_ModulesLocator.md&amp;value=---%0Auid%3A%20ParmaGIS.Shell.Service.ModuleManagement.ModulesLocator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Shell_Service_ModuleManagement_ModulesLocator.md&amp;value=---%0Auid%3A%20ParmaGIS.Shell.Service.ModuleManagement.ModulesLocator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Shell_Service_ModuleManagement_ModulesLocator" data-uid="ParmaGIS.Shell.Service.ModuleManagement.ModulesLocator" class="text-break">
-    Class ModulesLocator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Shell/Services/ModuleManagement/ModulesLocator.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class ModulesLocator  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Shell/Services/ModuleManagement/ModulesLocator.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -125,7 +123,7 @@
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -162,21 +160,23 @@
 
   <a id="ParmaGIS_Shell_Service_ModuleManagement_ModulesLocator_LoadModules_" data-uid="ParmaGIS.Shell.Service.ModuleManagement.ModulesLocator.LoadModules*"></a>
 
-  <h3 id="ParmaGIS_Shell_Service_ModuleManagement_ModulesLocator_LoadModules_System_String_" data-uid="ParmaGIS.Shell.Service.ModuleManagement.ModulesLocator.LoadModules(System.String)">
-  LoadModules(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Shell/Services/ModuleManagement/ModulesLocator.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Shell_Service_ModuleManagement_ModulesLocator_LoadModules_System_String_System_String_" data-uid="ParmaGIS.Shell.Service.ModuleManagement.ModulesLocator.LoadModules(System.String,System.String)">
+  LoadModules(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Shell/Services/ModuleManagement/ModulesLocator.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Type[] LoadModules(string modulesDirectory)</code></pre>
+    <pre><code class="lang-csharp hljs">public Type[] LoadModules(string modulesDirectoryPath, string commonModulesDirectory = &quot;common&quot;)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>modulesDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>modulesDirectoryPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>commonModulesDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -200,7 +200,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Shell/Services/ModuleManagement/ModulesLocator.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/src/ParmaGIS.Shell/Services/ModuleManagement/ModulesLocator.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

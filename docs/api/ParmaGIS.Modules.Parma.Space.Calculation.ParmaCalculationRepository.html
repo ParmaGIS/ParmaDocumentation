@@ -1,0 +1,1531 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ParmaCalculationRepository | site </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ParmaCalculationRepository | site ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="site">
+            site
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository">
+
+
+
+  <h1 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository" class="text-break">
+Class ParmaCalculationRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ParmaGIS.html">ParmaGIS</a>.<a class="xref" href="ParmaGIS.Modules.html">Modules</a>.<a class="xref" href="ParmaGIS.Modules.Parma.html">Parma</a>.<a class="xref" href="ParmaGIS.Modules.Parma.Space.html">Space</a>.<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.html">Calculation</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Parma.Space.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ParmaCalculationRepository : DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;, IDALCalculationRepository, ICalculationRepository, IThreadsVulnerable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html">CalculationRepositoryBase</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a>, <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>, <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>&gt;</div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a>, <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>, <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>&gt;</div>
+      <div><span class="xref">ParmaCalculationRepository</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.html">IDALCalculationRepository</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html">ICalculationRepository</a></div>
+      <div><a class="xref" href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html">IThreadsVulnerable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_Containers">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.Containers</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableType_">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainer(ICalcTableType)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer__2_">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainer(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer__3_">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainer(ParmaCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable_System_Type_">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainerOnTable(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable__1">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainerOnTable&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow_System_Type_">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainerOnRow(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow__1">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetContainerOnRow&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetCalcTableRows__1">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRows&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_LoadRows__2_System_Func_System_Linq_IQueryable___0____1__">DALCalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.LoadRows&lt;TRow, TRes&gt;(Func&lt;IQueryable&lt;TRow&gt;, TRes&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTablesChanged">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.CalcTablesChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTableRowsChanged">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.CalcTableRowsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTableRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.OnCalcTablesChanged(RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTable&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTablesAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableTypesAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTablesAsync(ParmaCalcTableType)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowsAsync(ParmaCalcTableType)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableAsync(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowAsync(ParmaCalcTableType, Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowsAsync(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowsAsync(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.CreateCalcTableAsync(ParmaCalcTableType, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.InsertCalcTableAsync(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.RemoveCalcTableAsync(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.CreateCalcTableRowAsync(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.InsertCalcTableRowAsync(ParmaCalcTable, ParmaCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.RemoveCalcTableRowAsync(ParmaCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.InsertCalcTableRowAsync(ParmaCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.InsertCalcTableRowAsync&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowAsync&lt;T&gt;(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowsAsync&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.GetCalcTableRowsAsync&lt;T&gt;(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.CreateCalcTableRowAsync&lt;T&gt;(ParmaCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.InsertCalcTableRowAsync&lt;T&gt;(ParmaCalcTable, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.RemoveCalcTableRowAsync&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync">CalculationRepositoryBase&lt;Guid, ParmaCalcTableType, ParmaCalcTable, ParmaCalcTableRow&gt;.SaveChangesAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository__ctor_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.#ctor*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository__ctor_ParmaGIS_Modules_Parma_Space_ParmaSpace_ParmaGIS_Modules_Parma_Space_ParmaDAL_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.#ctor(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Parma.Space.ParmaDAL)">
+  ParmaCalculationRepository(ParmaSpace, ParmaDAL)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ParmaCalculationRepository(ParmaSpace space, ParmaDAL dal)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>space</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.ParmaSpace.html">ParmaSpace</a></dt>
+    <dd></dd>
+    <dt><code>dal</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.ParmaDAL.html">ParmaDAL</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_TaskScheduler_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.TaskScheduler*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_TaskScheduler" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.TaskScheduler">
+  TaskScheduler
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TaskScheduler TaskScheduler { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskscheduler">TaskScheduler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_ThreadSafety_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.ThreadSafety*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_ThreadSafety" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.ThreadSafety">
+  ThreadSafety
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ThreadSafety { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CopyRowsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CopyRowsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CopyRowsAsync__1___0___0_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CopyRowsAsync``1(``0,``0)">
+  CopyRowsAsync&lt;T&gt;(T, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CopyRowsAsync&lt;T&gt;(T sourceTable, T destTable) where T : ParmaCalcTable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sourceTable</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>destTable</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CreateCalcTableAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CreateCalcTableAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CreateCalcTableAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType_System_String_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CreateCalcTableAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType,System.String)">
+  CreateCalcTableAsync(ParmaCalcTableType, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTable&gt; CreateCalcTableAsync(ParmaCalcTableType type, string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a></dt>
+    <dd></dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CreateCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CreateCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable)">
+  CreateCalcTableRowAsync(ParmaCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTableRow&gt; CreateCalcTableRowAsync(ParmaCalcTable calcTable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CreateCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CreateCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_CreateCalcTableRowAsync__1_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.CreateCalcTableRowAsync``1(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable)">
+  CreateCalcTableRowAsync&lt;T&gt;(ParmaCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;T&gt; CreateCalcTableRowAsync&lt;T&gt;(ParmaCalcTable calcTable) where T : class, ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableAsync_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableAsync(System.Guid)">
+  GetCalcTableAsync(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTable?&gt; GetCalcTableAsync(Guid id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableAsync__1_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableAsync``1(System.Guid)">
+  GetCalcTableAsync&lt;T&gt;(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;T?&gt; GetCalcTableAsync&lt;T&gt;(Guid id) where T : ParmaCalcTable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType,System.Guid)">
+  GetCalcTableRowAsync(ParmaCalcTableType, Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTableRow&gt; GetCalcTableRowAsync(ParmaCalcTableType tableType, Guid id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableType</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a></dt>
+    <dd></dd>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowAsync__1_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowAsync``1(System.Guid)">
+  GetCalcTableRowAsync&lt;T&gt;(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;T?&gt; GetCalcTableRowAsync&lt;T&gt;(Guid id) where T : class, ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable)">
+  GetCalcTableRowsAsync(ParmaCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTableRow[]&gt; GetCalcTableRowsAsync(ParmaCalcTable calcTable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType)">
+  GetCalcTableRowsAsync(ParmaCalcTableType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTableRow[]&gt; GetCalcTableRowsAsync(ParmaCalcTableType calcTableType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTableType</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync(System.Guid)">
+  GetCalcTableRowsAsync(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTableRow[]&gt; GetCalcTableRowsAsync(Guid calcTableId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTableId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync__1" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync``1">
+  GetCalcTableRowsAsync&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L271"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;T[]&gt; GetCalcTableRowsAsync&lt;T&gt;() where T : class, ParmaCalcTableRow</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRowsAsync__1_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRowsAsync``1(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable)">
+  GetCalcTableRowsAsync&lt;T&gt;(ParmaCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;T[]&gt; GetCalcTableRowsAsync&lt;T&gt;(ParmaCalcTable calcTable) where T : class, ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRows_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRows*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableRows__1" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableRows``1">
+  GetCalcTableRows&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IQueryable&lt;T&gt; GetCalcTableRows&lt;T&gt;() where T : ParmaCalcTableRow</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableTypesAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableTypesAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTableTypesAsync" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTableTypesAsync">
+  GetCalcTableTypesAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTableType[]&gt; GetCalcTableTypesAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTablesAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTablesAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTablesAsync" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTablesAsync">
+  GetCalcTablesAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTable[]&gt; GetCalcTablesAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTablesAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTablesAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTablesAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTablesAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType)">
+  GetCalcTablesAsync(ParmaCalcTableType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L288"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ParmaCalcTable[]&gt; GetCalcTablesAsync(ParmaCalcTableType calcTableType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTableType</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html">ParmaCalcTableType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTablesAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTablesAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetCalcTablesAsync__1" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetCalcTablesAsync``1">
+  GetCalcTablesAsync&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;T[]&gt; GetCalcTablesAsync&lt;T&gt;() where T : ParmaCalcTable</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetScopeTablesAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetScopeTablesAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetScopeTablesAsync_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetScopeTablesAsync(System.Guid)">
+  GetScopeTablesAsync(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ParmaCalcTable[]&gt; GetScopeTablesAsync(Guid scopeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scopeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetScopeTables_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetScopeTables*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_GetScopeTables__1_System_Guid_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.GetScopeTables``1(System.Guid)">
+  GetScopeTables&lt;T&gt;(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;T[]&gt; GetScopeTables&lt;T&gt;(Guid scopeId) where T : ParmaCalcTable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scopeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable)">
+  InsertCalcTableAsync(ParmaCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L299"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task InsertCalcTableAsync(ParmaCalcTable calcTable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableRow_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable,ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow)">
+  InsertCalcTableRowAsync(ParmaCalcTable, ParmaCalcTableRow)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task InsertCalcTableRowAsync(ParmaCalcTable calcTable, ParmaCalcTableRow row)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+    <dt><code>row</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableRow_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow)">
+  InsertCalcTableRowAsync(ParmaCalcTableRow)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task InsertCalcTableRowAsync(ParmaCalcTableRow row)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>row</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable___0_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable,``0)">
+  InsertCalcTableRowAsync&lt;T&gt;(ParmaCalcTable, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L317"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task InsertCalcTableRowAsync&lt;T&gt;(ParmaCalcTable calcTable, T row) where T : class, ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+    <dt><code>row</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_InsertCalcTableRowAsync__1___0_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.InsertCalcTableRowAsync``1(``0)">
+  InsertCalcTableRowAsync&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L323"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task InsertCalcTableRowAsync&lt;T&gt;(T row) where T : ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>row</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_LoadRows_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.LoadRows*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_LoadRows__2_System_Func_System_Linq_IQueryable___0____1__" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.LoadRows``2(System.Func{System.Linq.IQueryable{``0},``1})">
+  LoadRows&lt;TRow, TRes&gt;(Func&lt;IQueryable&lt;TRow&gt;, TRes&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;TRes&gt; LoadRows&lt;TRow, TRes&gt;(Func&lt;IQueryable&lt;TRow&gt;, TRes&gt; loader) where TRow : ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>loader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TRow&gt;, TRes&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TRes&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TRow</code></dt>
+    <dd></dd>
+    <dt><code>TRes</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_RemoveCalcTableAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.RemoveCalcTableAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_RemoveCalcTableAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTable_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.RemoveCalcTableAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable)">
+  RemoveCalcTableAsync(ParmaCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task RemoveCalcTableAsync(ParmaCalcTable calcTable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTable.html">ParmaCalcTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_RemoveCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.RemoveCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_RemoveCalcTableRowAsync_ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableRow_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.RemoveCalcTableRowAsync(ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow)">
+  RemoveCalcTableRowAsync(ParmaCalcTableRow)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task RemoveCalcTableRowAsync(ParmaCalcTableRow calcTableRow)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTableRow</code> <a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableRow.html">ParmaCalcTableRow</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_RemoveCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.RemoveCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_RemoveCalcTableRowAsync__1___0_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.RemoveCalcTableRowAsync``1(``0)">
+  RemoveCalcTableRowAsync&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L346"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task RemoveCalcTableRowAsync&lt;T&gt;(T calcTableRow) where T : class, ParmaCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTableRow</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_SaveChangesAsync_" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.SaveChangesAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalculationRepository_SaveChangesAsync" data-uid="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.SaveChangesAsync">
+  SaveChangesAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task SaveChangesAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalculationRepository.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

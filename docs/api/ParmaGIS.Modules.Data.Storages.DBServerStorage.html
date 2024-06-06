@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class DBServerStorage
- | site </title>
+      <title>Class DBServerStorage | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class DBServerStorage
- | site ">
+      <meta name="title" content="Class DBServerStorage | site ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Modules_Data_Storages_DBServerStorage.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.Storages.DBServerStorage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Modules_Data_Storages_DBServerStorage.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.Storages.DBServerStorage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Storages_DBServerStorage" data-uid="ParmaGIS.Modules.Data.Storages.DBServerStorage" class="text-break">
-    Class DBServerStorage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class DBServerStorage  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +101,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DBServerStorage : StorageProvider&lt;IDataBaseServerConnection&gt;, IEnumerable&lt;IDataBaseServerConnection&gt;, IEnumerable, INotifyCollectionChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public class DBServerStorage : StorageProvider2&lt;IDataBaseServerConnection&gt;, IEnumerable&lt;InstanceContainer&lt;IDataBaseServerConnection&gt;&gt;, IEnumerable, INotifyCollectionChanged</code></pre>
   </div>
 
 
@@ -113,7 +111,7 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html">StorageProvider</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</div>
+      <div><a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html">StorageProvider2</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</div>
       <div><span class="xref">DBServerStorage</span></div>
     </dd>
   </dl>
@@ -121,36 +119,45 @@
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.InstanceContainer-1.html">InstanceContainer</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;&gt;</div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a></div>
     </dd>
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_ItemType">StorageProvider&lt;IDataBaseServerConnection&gt;.ItemType</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_ItemType">StorageProvider2&lt;IDataBaseServerConnection&gt;.ItemType</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__">StorageProvider&lt;IDataBaseServerConnection&gt;.RegisterType&lt;TItem&gt;(Func&lt;IContainer, IDataBaseServerConnection&gt;, Action&lt;IContainer, IDataBaseServerConnection&gt;)</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__">StorageProvider2&lt;IDataBaseServerConnection&gt;.RegisterType&lt;TItem&gt;(Func&lt;IContainer, IDataBaseServerConnection&gt;, Action&lt;IContainer, IDataBaseServerConnection&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_CollectionChanged">StorageProvider&lt;IDataBaseServerConnection&gt;.CollectionChanged</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_CollectionChanged">StorageProvider2&lt;IDataBaseServerConnection&gt;.CollectionChanged</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_">StorageProvider&lt;IDataBaseServerConnection&gt;.Add(IDataBaseServerConnection)</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_">StorageProvider2&lt;IDataBaseServerConnection&gt;.Add(IDataBaseServerConnection)</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_">StorageProvider&lt;IDataBaseServerConnection&gt;.Remove(IDataBaseServerConnection)</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_">StorageProvider2&lt;IDataBaseServerConnection&gt;.Remove(IDataBaseServerConnection)</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save">StorageProvider&lt;IDataBaseServerConnection&gt;.Save()</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_">StorageProvider2&lt;IDataBaseServerConnection&gt;.Remove(Guid)</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator">StorageProvider&lt;IDataBaseServerConnection&gt;.GetEnumerator()</a>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__">StorageProvider2&lt;IDataBaseServerConnection&gt;.Remove(InstanceContainer&lt;IDataBaseServerConnection&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems">StorageProvider2&lt;IDataBaseServerConnection&gt;.AsItems()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator">StorageProvider2&lt;IDataBaseServerConnection&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save">StorageProvider2&lt;IDataBaseServerConnection&gt;.Save()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -179,10 +186,16 @@
     <dt>Extension Methods</dt>
     <dd>
   <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Reactive.ObservableExtensions.html#ParmaGIS_Core_UI_Reactive_ObservableExtensions_ObserveElementEvent__3___0_System_Func___1_System_IObserver___2__System_IDisposable__">ObservableExtensions.ObserveElementEvent&lt;TCollection, TElement, TResult&gt;(TCollection, Func&lt;TElement, IObserver&lt;TResult&gt;, IDisposable&gt;)</a>
+  </div>
+  <div>
       <a class="xref" href="ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__">EnumarableExtensions.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T, int&gt;)</a>
   </div>
   <div>
       <a class="xref" href="ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__">EnumarableExtensions.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__">EnumarableExtensions.ToSafe&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;Exception, T&gt;)</a>
   </div>
   </dd></dl>
 
@@ -198,7 +211,7 @@
 
   <h3 id="ParmaGIS_Modules_Data_Storages_DBServerStorage__ctor_ParmaGIS_Core_Storage_IStorage_" data-uid="ParmaGIS.Modules.Data.Storages.DBServerStorage.#ctor(ParmaGIS.Core.Storage.IStorage)">
   DBServerStorage(IStorage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -229,7 +242,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

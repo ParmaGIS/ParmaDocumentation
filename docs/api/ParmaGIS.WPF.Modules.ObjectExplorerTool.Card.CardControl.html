@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class CardControl
- | site </title>
+      <title>Class CardControl | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class CardControl
- | site ">
+      <meta name="title" content="Class CardControl | site ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl.md&amp;value=---%0Auid%3A%20ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl.md&amp;value=---%0Auid%3A%20ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl" class="text-break">
-    Class CardControl
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L64"><i class="bi bi-code-slash"></i></a>
+Class CardControl  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +101,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CardControl : ContentControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild</code></pre>
+    <pre><code class="lang-csharp hljs">public class CardControl : ContentControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView</code></pre>
   </div>
 
 
@@ -133,19 +131,19 @@
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.iinputelement">IInputElement</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.markup.iqueryambient">IQueryAmbient</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.markup.iaddchild">IAddChild</a></div>
+      <div><a class="xref" href="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView.html">ICardView</a></div>
     </dd>
   </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.DefaultCard.html">DefaultCard</a></div>
-      <div><a class="xref" href="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.RootCard.html">RootCard</a></div>
+      <div><a class="xref" href="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.html">RootCardView</a></div>
       <div><a class="xref" href="ParmaGIS.WPF.Modules.Parma.UI.Controls.ParmaCardControl.html">ParmaCardControl</a></div>
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -2010,220 +2008,13 @@
     </div>
   </dd></dl>
 
-
-
-
-
-
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl__ctor_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.#ctor*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl__ctor" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.#ctor">
-  CardControl()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L129"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CardControl()</code></pre>
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_">ItemsControlExtensions.FindVisualChild&lt;T&gt;(Visual)</a>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="fields">Fields
-</h2>
-
-
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CloseCommandProperty" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CloseCommandProperty">
-  CloseCommandProperty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L97"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty CloseCommandProperty</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CurrentObjectExplorerProperty" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CurrentObjectExplorerProperty">
-  CurrentObjectExplorerProperty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L118"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty CurrentObjectExplorerProperty</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CurrentObjectProperty" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CurrentObjectProperty">
-  CurrentObjectProperty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L107"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty CurrentObjectProperty</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_LoadCommandProperty" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.LoadCommandProperty">
-  LoadCommandProperty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L87"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty LoadCommandProperty</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OpenCommandProperty" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OpenCommandProperty">
-  OpenCommandProperty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L77"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OpenCommandProperty</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_TitleProperty" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.TitleProperty">
-  TitleProperty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L67"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TitleProperty</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
+  </dd></dl>
 
 
 
@@ -2233,18 +2024,18 @@
 </h2>
 
 
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CloseCommand_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CloseCommand*"></a>
+  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CardContext_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext*"></a>
 
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CloseCommand" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CloseCommand">
-  CloseCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CardContext" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext">
+  CardContext
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICommand CloseCommand { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public CardContext CardContext { get; set; }</code></pre>
   </div>
 
 
@@ -2253,293 +2044,9 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></dt>
+    <dt><a class="xref" href="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardContext.html">CardContext</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CurrentObject_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CurrentObject*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CurrentObject" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CurrentObject">
-  CurrentObject
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L159"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object? CurrentObject { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CurrentObjectExplorer_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CurrentObjectExplorer*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_CurrentObjectExplorer" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CurrentObjectExplorer">
-  CurrentObjectExplorer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L165"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ObjectExplorer CurrentObjectExplorer { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ParmaGIS.WPF.Modules.ObjectExplorerTool.Services.ObjectExplorer.html">ObjectExplorer</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_IsOpen_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.IsOpen*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_IsOpen" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.IsOpen">
-  IsOpen
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L171"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsOpen { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_LoadCommand_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.LoadCommand*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_LoadCommand" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.LoadCommand">
-  LoadCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L149"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICommand LoadCommand { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OpenCommand_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OpenCommand*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OpenCommand" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OpenCommand">
-  OpenCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L144"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICommand OpenCommand { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_Title_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.Title*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_Title" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.Title">
-  Title
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L138"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Возвращает или задает заголовок инструмента</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Title { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OnClose_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OnClose*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OnClose" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OnClose">
-  OnClose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L234"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual bool OnClose()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OnLoad_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OnLoad*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OnLoad_System_Object_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OnLoad(System.Object)">
-  OnLoad(object?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L213"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnLoad(object? param)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>param</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OnOpen_" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OnOpen*"></a>
-
-  <h3 id="ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_CardControl_OnOpen" data-uid="ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.OnOpen">
-  OnOpen()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L218"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual bool OnOpen()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
 
 
 
@@ -2552,7 +2059,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L64" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/CardControl.cs/#L39" class="edit-link">Edit this page</a>
         </div>
 
 

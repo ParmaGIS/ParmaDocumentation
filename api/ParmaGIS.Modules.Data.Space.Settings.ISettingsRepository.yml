@@ -1,0 +1,954 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  id: ISettingsRepository
+  parent: ParmaGIS.Modules.Data.Space.Settings
+  children:
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync``1
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync``1(System.Object,System.Object[],System.Boolean,``0)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync``1(System.Object,System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync``1
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync``1(System.Object,System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync``1(System.Object,System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync``1(System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync``1(System.Object,System.Object)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync``1(``0)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync``1(``0)
+  - ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync
+  langs:
+  - csharp
+  - vb
+  name: ISettingsRepository
+  nameWithType: ISettingsRepository
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  type: Interface
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ISettingsRepository
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 7
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: public interface ISettingsRepository
+    content.vb: Public Interface ISettingsRepository
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync``1(System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync``1(System.Object)
+  id: GetSettingsAsync``1(System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetSettingsAsync<T>(object)
+  nameWithType: ISettingsRepository.GetSettingsAsync<T>(object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync<T>(object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 9
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> GetSettingsAsync<T>(object id) where T : class, ISettingsItem'
+    parameters:
+    - id: id
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetSettingsAsync(Of T As {Class, ISettingsItem})(id As Object) As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync*
+  nameWithType.vb: ISettingsRepository.GetSettingsAsync(Of T)(Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync(Of T)(Object)
+  name.vb: GetSettingsAsync(Of T)(Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync``1(System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync``1(System.Object)
+  id: GetSettingsForScopeAsync``1(System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetSettingsForScopeAsync<T>(object)
+  nameWithType: ISettingsRepository.GetSettingsForScopeAsync<T>(object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync<T>(object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetSettingsForScopeAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 11
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T[]> GetSettingsForScopeAsync<T>(object scopeId) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+    content.vb: Function GetSettingsForScopeAsync(Of T As {Class, ISettingsItem})(scopeId As Object) As Task(Of T())
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync*
+  nameWithType.vb: ISettingsRepository.GetSettingsForScopeAsync(Of T)(Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync(Of T)(Object)
+  name.vb: GetSettingsForScopeAsync(Of T)(Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync``1(System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync``1(System.Object)
+  id: GetSettingsForSubjectAsync``1(System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetSettingsForSubjectAsync<T>(object)
+  nameWithType: ISettingsRepository.GetSettingsForSubjectAsync<T>(object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync<T>(object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetSettingsForSubjectAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 12
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T[]> GetSettingsForSubjectAsync<T>(object subjectId) where T : class, ISettingsItem'
+    parameters:
+    - id: subjectId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+    content.vb: Function GetSettingsForSubjectAsync(Of T As {Class, ISettingsItem})(subjectId As Object) As Task(Of T())
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync*
+  nameWithType.vb: ISettingsRepository.GetSettingsForSubjectAsync(Of T)(Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync(Of T)(Object)
+  name.vb: GetSettingsForSubjectAsync(Of T)(Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync``1(System.Object,System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync``1(System.Object,System.Object)
+  id: GetSettingsForSubjectAsync``1(System.Object,System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetSettingsForSubjectAsync<T>(object, object)
+  nameWithType: ISettingsRepository.GetSettingsForSubjectAsync<T>(object, object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync<T>(object, object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetSettingsForSubjectAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 13
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T[]> GetSettingsForSubjectAsync<T>(object scopeId, object subjectId) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    - id: subjectId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+    content.vb: Function GetSettingsForSubjectAsync(Of T As {Class, ISettingsItem})(scopeId As Object, subjectId As Object) As Task(Of T())
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync*
+  nameWithType.vb: ISettingsRepository.GetSettingsForSubjectAsync(Of T)(Object, Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync(Of T)(Object, Object)
+  name.vb: GetSettingsForSubjectAsync(Of T)(Object, Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync``1
+  id: GetDefaultSettingsAsync``1
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultSettingsAsync<T>()
+  nameWithType: ISettingsRepository.GetDefaultSettingsAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetDefaultSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 15
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> GetDefaultSettingsAsync<T>() where T : class, ISettingsItem'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetDefaultSettingsAsync(Of T As {Class, ISettingsItem})() As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync*
+  nameWithType.vb: ISettingsRepository.GetDefaultSettingsAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync(Of T)()
+  name.vb: GetDefaultSettingsAsync(Of T)()
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync``1(System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync``1(System.Object)
+  id: GetDefaultSettingsForScopeAsync``1(System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultSettingsForScopeAsync<T>(object)
+  nameWithType: ISettingsRepository.GetDefaultSettingsForScopeAsync<T>(object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync<T>(object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetDefaultSettingsForScopeAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 16
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> GetDefaultSettingsForScopeAsync<T>(object scopeId) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetDefaultSettingsForScopeAsync(Of T As {Class, ISettingsItem})(scopeId As Object) As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync*
+  nameWithType.vb: ISettingsRepository.GetDefaultSettingsForScopeAsync(Of T)(Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync(Of T)(Object)
+  name.vb: GetDefaultSettingsForScopeAsync(Of T)(Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync``1(System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync``1(System.Object)
+  id: GetDefaultSettingsForSubjectAsync``1(System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultSettingsForSubjectAsync<T>(object)
+  nameWithType: ISettingsRepository.GetDefaultSettingsForSubjectAsync<T>(object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync<T>(object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetDefaultSettingsForSubjectAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 17
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> GetDefaultSettingsForSubjectAsync<T>(object subjectId) where T : class, ISettingsItem'
+    parameters:
+    - id: subjectId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetDefaultSettingsForSubjectAsync(Of T As {Class, ISettingsItem})(subjectId As Object) As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync*
+  nameWithType.vb: ISettingsRepository.GetDefaultSettingsForSubjectAsync(Of T)(Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync(Of T)(Object)
+  name.vb: GetDefaultSettingsForSubjectAsync(Of T)(Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync``1(System.Object,System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync``1(System.Object,System.Object)
+  id: GetDefaultSettingsForSubjectAsync``1(System.Object,System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultSettingsForSubjectAsync<T>(object, object)
+  nameWithType: ISettingsRepository.GetDefaultSettingsForSubjectAsync<T>(object, object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync<T>(object, object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetDefaultSettingsForSubjectAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 18
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> GetDefaultSettingsForSubjectAsync<T>(object scopeId, object subjectId) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    - id: subjectId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetDefaultSettingsForSubjectAsync(Of T As {Class, ISettingsItem})(scopeId As Object, subjectId As Object) As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync*
+  nameWithType.vb: ISettingsRepository.GetDefaultSettingsForSubjectAsync(Of T)(Object, Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync(Of T)(Object, Object)
+  name.vb: GetDefaultSettingsForSubjectAsync(Of T)(Object, Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync``1(System.Object,System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync``1(System.Object,System.Object)
+  id: GetAllSettingsAsync``1(System.Object,System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAllSettingsAsync<T>(object, object)
+  nameWithType: ISettingsRepository.GetAllSettingsAsync<T>(object, object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync<T>(object, object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetAllSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 20
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T[]> GetAllSettingsAsync<T>(object scopeId, object subjectId) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    - id: subjectId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+    content.vb: Function GetAllSettingsAsync(Of T As {Class, ISettingsItem})(scopeId As Object, subjectId As Object) As Task(Of T())
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync*
+  nameWithType.vb: ISettingsRepository.GetAllSettingsAsync(Of T)(Object, Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync(Of T)(Object, Object)
+  name.vb: GetAllSettingsAsync(Of T)(Object, Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync``1(System.Object,System.Object)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync``1(System.Object,System.Object)
+  id: GetSettingsAsync``1(System.Object,System.Object)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: GetSettingsAsync<T>(object, object)
+  nameWithType: ISettingsRepository.GetSettingsAsync<T>(object, object)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync<T>(object, object)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 21
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> GetSettingsAsync<T>(object scopeId, object subjectId) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    - id: subjectId
+      type: System.Object
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetSettingsAsync(Of T As {Class, ISettingsItem})(scopeId As Object, subjectId As Object) As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync*
+  nameWithType.vb: ISettingsRepository.GetSettingsAsync(Of T)(Object, Object)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync(Of T)(Object, Object)
+  name.vb: GetSettingsAsync(Of T)(Object, Object)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync``1(``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync``1(``0)
+  id: InsertSettingsAsync``1(``0)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: InsertSettingsAsync<T>(T)
+  nameWithType: ISettingsRepository.InsertSettingsAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync<T>(T)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InsertSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 24
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task InsertSettingsAsync<T>(T settingsItem) where T : class, ISettingsItem'
+    parameters:
+    - id: settingsItem
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function InsertSettingsAsync(Of T As {Class, ISettingsItem})(settingsItem As T) As Task
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync*
+  nameWithType.vb: ISettingsRepository.InsertSettingsAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync(Of T)(T)
+  name.vb: InsertSettingsAsync(Of T)(T)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync``1
+  id: CreateSettingsAsync``1
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateSettingsAsync<T>()
+  nameWithType: ISettingsRepository.CreateSettingsAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync<T>()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CreateSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 25
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<T?> CreateSettingsAsync<T>() where T : class, ISettingsItem'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function CreateSettingsAsync(Of T As {Class, ISettingsItem})() As Task(Of T)
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync*
+  nameWithType.vb: ISettingsRepository.CreateSettingsAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync(Of T)()
+  name.vb: CreateSettingsAsync(Of T)()
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync``1(``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync``1(``0)
+  id: RemoveSettingsAsync``1(``0)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: RemoveSettingsAsync<T>(T)
+  nameWithType: ISettingsRepository.RemoveSettingsAsync<T>(T)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync<T>(T)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveSettingsAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 26
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task RemoveSettingsAsync<T>(T settingsItem) where T : class, ISettingsItem'
+    parameters:
+    - id: settingsItem
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function RemoveSettingsAsync(Of T As {Class, ISettingsItem})(settingsItem As T) As Task
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync*
+  nameWithType.vb: ISettingsRepository.RemoveSettingsAsync(Of T)(T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync(Of T)(T)
+  name.vb: RemoveSettingsAsync(Of T)(T)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync``1(System.Object,System.Object[],System.Boolean,``0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync``1(System.Object,System.Object[],System.Boolean,``0)
+  id: ForEachSubjectAsync``1(System.Object,System.Object[],System.Boolean,``0)
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: ForEachSubjectAsync<T>(object, object[], bool, T)
+  nameWithType: ISettingsRepository.ForEachSubjectAsync<T>(object, object[], bool, T)
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync<T>(object, object[], bool, T)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ForEachSubjectAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 28
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: 'Task<Dictionary<object, T?>> ForEachSubjectAsync<T>(object scopeId, object[] subjectsId, bool defaultIfNotSet, T defaultSettings = null) where T : class, ISettingsItem'
+    parameters:
+    - id: scopeId
+      type: System.Object
+    - id: subjectsId
+      type: System.Object[]
+    - id: defaultIfNotSet
+      type: System.Boolean
+    - id: defaultSettings
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.Dictionary{System.Object,{T}}}
+    content.vb: Function ForEachSubjectAsync(Of T As {Class, ISettingsItem})(scopeId As Object, subjectsId As Object(), defaultIfNotSet As Boolean, defaultSettings As T = Nothing) As Task(Of Dictionary(Of Object, T))
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync*
+  nameWithType.vb: ISettingsRepository.ForEachSubjectAsync(Of T)(Object, Object(), Boolean, T)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync(Of T)(Object, Object(), Boolean, T)
+  name.vb: ForEachSubjectAsync(Of T)(Object, Object(), Boolean, T)
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync
+  id: SaveChangesAsync
+  parent: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository
+  langs:
+  - csharp
+  - vb
+  name: SaveChangesAsync()
+  nameWithType: ISettingsRepository.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SaveChangesAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsRepository.cs
+    startLine: 30
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Settings
+  syntax:
+    content: Task SaveChangesAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SaveChangesAsync() As Task
+  overload: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync*
+references:
+- uid: ParmaGIS.Modules.Data.Space.Settings
+  commentId: N:ParmaGIS.Modules.Data.Space.Settings
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.Space.Settings
+  nameWithType: ParmaGIS.Modules.Data.Space.Settings
+  fullName: ParmaGIS.Modules.Data.Space.Settings
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.Settings
+    name: Settings
+    href: ParmaGIS.Modules.Data.Space.Settings.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space
+    name: Space
+    href: ParmaGIS.Modules.Data.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Space.Settings
+    name: Settings
+    href: ParmaGIS.Modules.Data.Space.Settings.html
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetSettingsAsync__1_System_Object_
+  name: GetSettingsAsync
+  nameWithType: ISettingsRepository.GetSettingsAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsAsync
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetSettingsForScopeAsync__1_System_Object_
+  name: GetSettingsForScopeAsync
+  nameWithType: ISettingsRepository.GetSettingsForScopeAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForScopeAsync
+- uid: System.Threading.Tasks.Task{{T}[]}
+  commentId: T:System.Threading.Tasks.Task{`0[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T[]>
+  nameWithType: Task<T[]>
+  fullName: System.Threading.Tasks.Task<T[]>
+  nameWithType.vb: Task(Of T())
+  fullName.vb: System.Threading.Tasks.Task(Of T())
+  name.vb: Task(Of T())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: (
+  - name: )
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetSettingsForSubjectAsync__1_System_Object_
+  name: GetSettingsForSubjectAsync
+  nameWithType: ISettingsRepository.GetSettingsForSubjectAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetSettingsForSubjectAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetDefaultSettingsAsync__1
+  name: GetDefaultSettingsAsync
+  nameWithType: ISettingsRepository.GetDefaultSettingsAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetDefaultSettingsForScopeAsync__1_System_Object_
+  name: GetDefaultSettingsForScopeAsync
+  nameWithType: ISettingsRepository.GetDefaultSettingsForScopeAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForScopeAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetDefaultSettingsForSubjectAsync__1_System_Object_
+  name: GetDefaultSettingsForSubjectAsync
+  nameWithType: ISettingsRepository.GetDefaultSettingsForSubjectAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetDefaultSettingsForSubjectAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_GetAllSettingsAsync__1_System_Object_System_Object_
+  name: GetAllSettingsAsync
+  nameWithType: ISettingsRepository.GetAllSettingsAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.GetAllSettingsAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_InsertSettingsAsync__1___0_
+  name: InsertSettingsAsync
+  nameWithType: ISettingsRepository.InsertSettingsAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.InsertSettingsAsync
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_CreateSettingsAsync__1
+  name: CreateSettingsAsync
+  nameWithType: ISettingsRepository.CreateSettingsAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.CreateSettingsAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_RemoveSettingsAsync__1___0_
+  name: RemoveSettingsAsync
+  nameWithType: ISettingsRepository.RemoveSettingsAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.RemoveSettingsAsync
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_ForEachSubjectAsync__1_System_Object_System_Object___System_Boolean___0_
+  name: ForEachSubjectAsync
+  nameWithType: ISettingsRepository.ForEachSubjectAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.ForEachSubjectAsync
+- uid: System.Object[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.Dictionary{System.Object,{T}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.Dictionary{System.Object,``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Dictionary<object, T>>
+  nameWithType: Task<Dictionary<object, T>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<object, T>>
+  nameWithType.vb: Task(Of Dictionary(Of Object, T))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.Dictionary(Of Object, T))
+  name.vb: Task(Of Dictionary(Of Object, T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsRepository_SaveChangesAsync
+  name: SaveChangesAsync
+  nameWithType: ISettingsRepository.SaveChangesAsync
+  fullName: ParmaGIS.Modules.Data.Space.Settings.ISettingsRepository.SaveChangesAsync

@@ -1,0 +1,652 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt; | site </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt; | site ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/main/apiSpec/new?filename=ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4.md&amp;value=---%0Auid%3A%20ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase%604%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="site">
+            site
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4">
+
+
+
+  <h1 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4" class="text-break">
+Class DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ParmaGIS.html">ParmaGIS</a>.<a class="xref" href="ParmaGIS.Modules.html">Modules</a>.<a class="xref" href="ParmaGIS.Modules.Data.html">Data</a>.<a class="xref" href="ParmaGIS.Modules.Data.Space.html">Space</a>.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.html">DAL</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt; : CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;, IDALCalculationRepository, ICalculationRepository where TCalcTableType : class, ICalcTableType where TCalcTable : class, ICalcTable where TCalcTableRow : class, ICalcTableRow</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TObjectId</code></dt>
+    <dd></dd>
+    <dt><code>TCalcTableType</code></dt>
+    <dd></dd>
+    <dt><code>TCalcTable</code></dt>
+    <dd></dd>
+    <dt><code>TCalcTableRow</code></dt>
+    <dd></dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html">CalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;</div>
+      <div><span class="xref">DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.html">IDALCalculationRepository</a></div>
+      <div><a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html">ICalculationRepository</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalculationRepository.html">ParmaCalculationRepository</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTablesChanged">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.CalcTablesChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTableRowsChanged">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.CalcTableRowsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTableRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.OnCalcTablesChanged(RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTable&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTablesAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableTypesAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTablesAsync(TCalcTableType)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowsAsync(TCalcTableType)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableAsync(TObjectId)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowAsync(TCalcTableType, TObjectId)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowsAsync(TCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowsAsync(TObjectId)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.CreateCalcTableAsync(TCalcTableType, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.InsertCalcTableAsync(TCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.RemoveCalcTableAsync(TCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.CreateCalcTableRowAsync(TCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.RemoveCalcTableRowAsync(TCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.InsertCalcTableRowAsync(TCalcTableRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.InsertCalcTableRowAsync&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowAsync&lt;T&gt;(TObjectId)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowsAsync&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.GetCalcTableRowsAsync&lt;T&gt;(TCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.CreateCalcTableRowAsync&lt;T&gt;(TCalcTable)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.InsertCalcTableRowAsync&lt;T&gt;(TCalcTable, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.RemoveCalcTableRowAsync&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.SaveChangesAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_Containers_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_Containers" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.Containers">
+  Containers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableContainer&gt; Containers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html">ITableContainer</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetCalcTableRows_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetCalcTableRows__1" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetCalcTableRows``1">
+  GetCalcTableRows&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IQueryable&lt;T&gt; GetCalcTableRows&lt;T&gt;() where T : TCalcTableRow</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableType_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)">
+  GetContainer(ICalcTableType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableContainer GetContainer(ICalcTableType tableType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableType</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType.html">ICalcTableType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html">ITableContainer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer__2_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`2)">
+  GetContainer(TCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableContainer GetContainer(TCalcTable table)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>table</code> <span class="xref">TCalcTable</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html">ITableContainer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainer__3_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainer(`3)">
+  GetContainer(TCalcTableRow)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableContainer GetContainer(TCalcTableRow row)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>row</code> <span class="xref">TCalcTableRow</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html">ITableContainer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow(System.Type)">
+  GetContainerOnRow(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableContainer GetContainerOnRow(Type rowType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rowType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html">ITableContainer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnRow__1" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnRow``1">
+  GetContainerOnRow&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.IRowViewContainer&lt;T&gt; GetContainerOnRow&lt;T&gt;() where T : TCalcTableRow</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html">IRowViewContainer</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable(System.Type)">
+  GetContainerOnTable(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableContainer GetContainerOnTable(Type tableType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableContainer.html">ITableContainer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_GetContainerOnTable__1" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.GetContainerOnTable``1">
+  GetContainerOnTable&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DALCalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.ITableViewContainer&lt;T&gt; GetContainerOnTable&lt;T&gt;() where T : TCalcTable</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.html">DALCalculationRepositoryBase</a>&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;.<a class="xref" href="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.ITableViewContainer-1.html">ITableViewContainer</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_LoadRows_" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_LoadRows__2_System_Func_System_Linq_IQueryable___0____1__" data-uid="ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.LoadRows``2(System.Func{System.Linq.IQueryable{``0},``1})">
+  LoadRows&lt;TRow, TRes&gt;(Func&lt;IQueryable&lt;TRow&gt;, TRes&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;TRes&gt; LoadRows&lt;TRow, TRes&gt;(Func&lt;IQueryable&lt;TRow&gt;, TRes&gt; loader) where TRow : TCalcTableRow</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>loader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TRow&gt;, TRes&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TRes&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TRow</code></dt>
+    <dd></dd>
+    <dt><code>TRes</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
