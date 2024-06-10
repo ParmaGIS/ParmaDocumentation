@@ -12,6 +12,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync(System.Type)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync``1
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.String)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.Type)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync``1
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,System.Guid)
@@ -64,6 +65,7 @@ items:
   inheritedMembers:
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.Containers
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
+  - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.String)
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.Type)
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer``1
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItems``1
@@ -483,6 +485,40 @@ items:
     content.vb: Public Overrides Function GetCatalogAsync(catalogItem As ParmaCatalogItem) As Task(Of ParmaCatalog)
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.String)
+  id: GetCatalogAsync(System.String)
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository
+  langs:
+  - csharp
+  - vb
+  name: GetCatalogAsync(string)
+  nameWithType: ParmaCatalogRepository.GetCatalogAsync(string)
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(string)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetCatalogAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
+    startLine: 253
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  syntax:
+    content: public Task<ParmaCatalog?> GetCatalogAsync(string catalogName)
+    parameters:
+    - id: catalogName
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
+    content.vb: Public Function GetCatalogAsync(catalogName As String) As Task(Of ParmaCatalog)
+  overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
+  nameWithType.vb: ParmaCatalogRepository.GetCatalogAsync(String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(String)
+  name.vb: GetCatalogAsync(String)
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.Type)
   commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.Type)
   id: GetCatalogAsync(System.Type)
@@ -501,7 +537,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 253
+    startLine: 258
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -534,7 +570,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 258
+    startLine: 263
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -569,7 +605,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 263
+    startLine: 268
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -604,7 +640,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 269
+    startLine: 274
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -639,7 +675,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 275
+    startLine: 280
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -677,7 +713,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 281
+    startLine: 286
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -712,7 +748,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 287
+    startLine: 292
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -745,7 +781,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 293
+    startLine: 298
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -778,7 +814,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 299
+    startLine: 304
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -813,7 +849,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 305
+    startLine: 310
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -843,7 +879,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 310
+    startLine: 315
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -876,7 +912,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 315
+    startLine: 320
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -914,7 +950,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadCatalogItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 321
+    startLine: 326
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -953,7 +989,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 327
+    startLine: 332
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -986,7 +1022,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 332
+    startLine: 337
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -1024,7 +1060,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 338
+    startLine: 343
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -1258,6 +1294,37 @@ references:
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.String)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.String)
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+  definition: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.String)
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer_System_String_
+  name: GetContainer(string)
+  nameWithType: DALCatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetContainer(string)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetContainer(string)
+  nameWithType.vb: DALCatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetContainer(String)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetContainer(String)
+  name.vb: GetContainer(String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.String)
+    name: GetContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.String)
+    name: GetContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.Type)
   commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer(System.Type)
@@ -2519,6 +2586,36 @@ references:
     href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer__1_
   - name: (
   - name: TCatalog
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.String)
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.String)
+  isExternal: true
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer_System_String_
+  name: GetContainer(string)
+  nameWithType: DALCatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetContainer(string)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetContainer(string)
+  nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetContainer(String)
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetContainer(String)
+  name.vb: GetContainer(String)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.String)
+    name: GetContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.String)
+    name: GetContainer
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_DAL_DALCatalogRepositoryBase_3_GetContainer_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.Type)
   commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.GetContainer(System.Type)

@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
   children:
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.#ctor(System.String,System.String,System.Int32,System.Func{System.Object,ParmaGIS.Core.UI.Settings.ISettingsProvider,System.String},ParmaGIS.Core.UI.Settings.ISettingsProvider,ReactiveHistory.IHistory)
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType(System.Object,System.Object@)
   langs:
   - csharp
   - vb
@@ -20,28 +21,35 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IntInputViewModel
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/IntInputViewModel.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
   syntax:
-    content: 'public class IntInputViewModel : InputViewModelBase, INotifyPropertyChanged, IDisposable'
-    content.vb: Public Class IntInputViewModel Inherits InputViewModelBase Implements INotifyPropertyChanged, IDisposable
+    content: 'public class IntInputViewModel : InputViewModelBase, IDisposable, IInputViewModel, INotifyDataErrorInfo, INotifyPropertyChanged'
+    content.vb: Public Class IntInputViewModel Inherits InputViewModelBase Implements IDisposable, IInputViewModel, INotifyDataErrorInfo, INotifyPropertyChanged
   inheritance:
   - System.Object
   - ParmaGIS.Core.Utilities.BindableBase
   - ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
   implements:
-  - System.ComponentModel.INotifyPropertyChanged
   - System.IDisposable
+  - ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+  - System.ComponentModel.INotifyDataErrorInfo
+  - System.ComponentModel.INotifyPropertyChanged
   inheritedMembers:
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase._regex
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.valueProperty
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Type
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Name
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Title
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.DefaultValue
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Validator
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Value
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.HasErrors
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ErrorsChanged
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(System.String)
   - ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase.History
   - ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase.DisposableContainer
   - ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase.InitProperty``2({TSubject},System.Linq.Expressions.Expression{System.Func{{TSubject},{TProperty}}},{TProperty})
@@ -82,7 +90,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/IntInputViewModel.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -106,6 +114,44 @@ items:
   nameWithType.vb: IntInputViewModel.New(String, String, Integer, Func(Of Object, ISettingsProvider, String), ISettingsProvider, IHistory)
   fullName.vb: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.New(String, String, Integer, System.Func(Of Object, ParmaGIS.Core.UI.Settings.ISettingsProvider, String), ParmaGIS.Core.UI.Settings.ISettingsProvider, ReactiveHistory.IHistory)
   name.vb: New(String, String, Integer, Func(Of Object, ISettingsProvider, String), ISettingsProvider, IHistory)
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType(System.Object,System.Object@)
+  commentId: M:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType(System.Object,System.Object@)
+  id: ConvertToType(System.Object,System.Object@)
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel
+  langs:
+  - csharp
+  - vb
+  name: ConvertToType(object, out object)
+  nameWithType: IntInputViewModel.ConvertToType(object, out object)
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType(object, out object)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/IntInputViewModel.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ConvertToType
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/IntInputViewModel.cs
+    startLine: 41
+  assemblies:
+  - ParmaGIS.WPF.Modules.SettingsTool
+  namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
+  example: []
+  syntax:
+    content: protected override string ConvertToType(object input, out object output)
+    parameters:
+    - id: input
+      type: System.Object
+    - id: output
+      type: System.Object
+    return:
+      type: System.String
+    content.vb: Protected Overrides Function ConvertToType(input As Object, output As Object) As String
+  overridden: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(System.Object,System.Object@)
+  overload: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType*
+  nameWithType.vb: IntInputViewModel.ConvertToType(Object, Object)
+  fullName.vb: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType(Object, Object)
+  name.vb: ConvertToType(Object, Object)
 references:
 - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
   commentId: N:ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -185,14 +231,6 @@ references:
   name: InputViewModelBase
   nameWithType: InputViewModelBase
   fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-- uid: System.ComponentModel.INotifyPropertyChanged
-  commentId: T:System.ComponentModel.INotifyPropertyChanged
-  parent: System.ComponentModel
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
-  name: INotifyPropertyChanged
-  nameWithType: INotifyPropertyChanged
-  fullName: System.ComponentModel.INotifyPropertyChanged
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -201,6 +239,43 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
+- uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+  commentId: T:ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+  parent: ParmaGIS.WPF.Modules.SettingsTool
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: IInputViewModel
+  nameWithType: IInputViewModel
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+- uid: System.ComponentModel.INotifyDataErrorInfo
+  commentId: T:System.ComponentModel.INotifyDataErrorInfo
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifydataerrorinfo
+  name: INotifyDataErrorInfo
+  nameWithType: INotifyDataErrorInfo
+  fullName: System.ComponentModel.INotifyDataErrorInfo
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase._regex
+  commentId: F:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase._regex
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase__regex
+  name: _regex
+  nameWithType: InputViewModelBase._regex
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase._regex
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.valueProperty
+  commentId: F:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.valueProperty
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_valueProperty
+  name: valueProperty
+  nameWithType: InputViewModelBase.valueProperty
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.valueProperty
 - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Type
   commentId: P:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Type
   parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
@@ -243,6 +318,51 @@ references:
   name: Value
   nameWithType: InputViewModelBase.Value
   fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Value
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.HasErrors
+  commentId: P:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.HasErrors
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_HasErrors
+  name: HasErrors
+  nameWithType: InputViewModelBase.HasErrors
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.HasErrors
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ErrorsChanged
+  commentId: E:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ErrorsChanged
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ErrorsChanged
+  name: ErrorsChanged
+  nameWithType: InputViewModelBase.ErrorsChanged
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ErrorsChanged
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(System.String)
+  commentId: M:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(System.String)
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_GetErrors_System_String_
+  name: GetErrors(string)
+  nameWithType: InputViewModelBase.GetErrors(string)
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(string)
+  nameWithType.vb: InputViewModelBase.GetErrors(String)
+  fullName.vb: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(String)
+  name.vb: GetErrors(String)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(System.String)
+    name: GetErrors
+    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_GetErrors_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(System.String)
+    name: GetErrors
+    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_GetErrors_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase.History
   commentId: P:ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase.History
   parent: ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase
@@ -1295,6 +1415,44 @@ references:
   - uid: ParmaGIS.WPF.UI.Utilities
     name: Utilities
     href: ParmaGIS.WPF.UI.Utilities.html
+- uid: ParmaGIS.WPF.Modules.SettingsTool
+  commentId: N:ParmaGIS.WPF.Modules.SettingsTool
+  href: ParmaGIS.html
+  name: ParmaGIS.WPF.Modules.SettingsTool
+  nameWithType: ParmaGIS.WPF.Modules.SettingsTool
+  fullName: ParmaGIS.WPF.Modules.SettingsTool
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules
+    name: Modules
+    href: ParmaGIS.WPF.Modules.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.SettingsTool
+    name: SettingsTool
+    href: ParmaGIS.WPF.Modules.SettingsTool.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules
+    name: Modules
+    href: ParmaGIS.WPF.Modules.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.SettingsTool
+    name: SettingsTool
+    href: ParmaGIS.WPF.Modules.SettingsTool.html
 - uid: System.ComponentModel
   commentId: N:System.ComponentModel
   isExternal: true
@@ -2166,3 +2324,54 @@ references:
   name: ReactiveHistory
   nameWithType: ReactiveHistory
   fullName: ReactiveHistory
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(System.Object,System.Object@)
+  commentId: M:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(System.Object,System.Object@)
+  parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ConvertToType_System_Object_System_Object__
+  name: ConvertToType(object, out object)
+  nameWithType: InputViewModelBase.ConvertToType(object, out object)
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(object, out object)
+  nameWithType.vb: InputViewModelBase.ConvertToType(Object, Object)
+  fullName.vb: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(Object, Object)
+  name.vb: ConvertToType(Object, Object)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(System.Object,System.Object@)
+    name: ConvertToType
+    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ConvertToType_System_Object_System_Object__
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(System.Object,System.Object@)
+    name: ConvertToType
+    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ConvertToType_System_Object_System_Object__
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType*
+  commentId: Overload:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_IntInputViewModel_ConvertToType_System_Object_System_Object__
+  name: ConvertToType
+  nameWithType: IntInputViewModel.ConvertToType
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.IntInputViewModel.ConvertToType

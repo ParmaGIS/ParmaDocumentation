@@ -25,12 +25,12 @@ items:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
   syntax:
-    content: 'public abstract class DALDataTreeRepositoryBase<TObjectId, TData, TTreeProvider> : DALDataRepositoryBase<TObjectId, TData>, IDALDataTreeRepository, IDALDataRepository, IDataRepository where TData : class, IDataObject where TTreeProvider : class, IDALTreeProvider'
+    content: 'public abstract class DALDataTreeRepositoryBase<TObjectId, TData, TTreeProvider> : DALDataRepositoryBase<TObjectId, TData>, IDALDataTreeRepository, IDALDataRepository, IDataTreeRepository, IDataRepository where TData : class, IDataObject where TTreeProvider : class, IDALTreeProvider'
     typeParameters:
     - id: TObjectId
     - id: TData
     - id: TTreeProvider
-    content.vb: Public MustInherit Class DALDataTreeRepositoryBase(Of TObjectId, TData As {Class, IDataObject}, TTreeProvider As {Class, IDALTreeProvider}) Inherits DALDataRepositoryBase(Of TObjectId, TData) Implements IDALDataTreeRepository, IDALDataRepository, IDataRepository
+    content.vb: Public MustInherit Class DALDataTreeRepositoryBase(Of TObjectId, TData As {Class, IDataObject}, TTreeProvider As {Class, IDALTreeProvider}) Inherits DALDataRepositoryBase(Of TObjectId, TData) Implements IDALDataTreeRepository, IDALDataRepository, IDataTreeRepository, IDataRepository
   inheritance:
   - System.Object
   - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}
@@ -40,6 +40,7 @@ items:
   implements:
   - ParmaGIS.Modules.Data.Space.DAL.IDALDataTreeRepository
   - ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  - ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository
   inheritedMembers:
   - ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase{{TObjectId},{TData}}.GetData``1
@@ -228,6 +229,13 @@ references:
   name: IDALDataRepository
   nameWithType: IDALDataRepository
   fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.html
+  name: IDataTreeRepository
+  nameWithType: IDataTreeRepository
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository
   commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataRepository
   parent: ParmaGIS.Modules.Data.Space.Data

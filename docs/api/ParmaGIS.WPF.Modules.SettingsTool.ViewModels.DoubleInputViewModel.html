@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_DoubleInputViewModel" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.DoubleInputViewModel" class="text-break">
-Class DoubleInputViewModel  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class DoubleInputViewModel  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ Class DoubleInputViewModel  <a class="header-action link-secondary" title="View 
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DoubleInputViewModel : InputViewModelBase, INotifyPropertyChanged, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class DoubleInputViewModel : InputViewModelBase, IDisposable, IInputViewModel, INotifyDataErrorInfo, INotifyPropertyChanged</code></pre>
   </div>
 
 
@@ -121,8 +121,10 @@ Class DoubleInputViewModel  <a class="header-action link-secondary" title="View 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html">IInputViewModel</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifydataerrorinfo">INotifyDataErrorInfo</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
     </dd>
   </dl>
 
@@ -130,6 +132,12 @@ Class DoubleInputViewModel  <a class="header-action link-secondary" title="View 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase__regex">InputViewModelBase._regex</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_valueProperty">InputViewModelBase.valueProperty</a>
+    </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Type">InputViewModelBase.Type</a>
     </div>
@@ -147,6 +155,15 @@ Class DoubleInputViewModel  <a class="header-action link-secondary" title="View 
     </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Value">InputViewModelBase.Value</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_HasErrors">InputViewModelBase.HasErrors</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ErrorsChanged">InputViewModelBase.ErrorsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_GetErrors_System_String_">InputViewModelBase.GetErrors(string)</a>
     </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase.html#ParmaGIS_WPF_UI_Utilities_SubjectURBindableBase_History">SubjectURBindableBase.History</a>
@@ -230,7 +247,7 @@ Class DoubleInputViewModel  <a class="header-action link-secondary" title="View 
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_DoubleInputViewModel__ctor_System_String_System_String_System_Double_System_Func_System_Object_ParmaGIS_Core_UI_Settings_ISettingsProvider_System_String__ParmaGIS_Core_UI_Settings_ISettingsProvider_ReactiveHistory_IHistory_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.DoubleInputViewModel.#ctor(System.String,System.String,System.Double,System.Func{System.Object,ParmaGIS.Core.UI.Settings.ISettingsProvider,System.String},ParmaGIS.Core.UI.Settings.ISettingsProvider,ReactiveHistory.IHistory)">
   DoubleInputViewModel(string, string, double, Func&lt;object, ISettingsProvider, string&gt;, ISettingsProvider, IHistory)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -267,11 +284,53 @@ Class DoubleInputViewModel  <a class="header-action link-secondary" title="View 
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_DoubleInputViewModel_ConvertToType_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.DoubleInputViewModel.ConvertToType*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_DoubleInputViewModel_ConvertToType_System_Object_System_Object__" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.DoubleInputViewModel.ConvertToType(System.Object,System.Object@)">
+  ConvertToType(object, out object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string ConvertToType(object input, out object output)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/DoubleInputViewModel.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

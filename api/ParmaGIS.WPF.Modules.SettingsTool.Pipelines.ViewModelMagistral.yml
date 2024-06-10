@@ -25,26 +25,26 @@ items:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.Pipelines
   syntax:
-    content: 'public class ViewModelMagistral : Magistral<ISettingsParameter, InputViewModelBase>, IPipelineware<ISettingsParameter, InputViewModelBase>'
-    content.vb: Public Class ViewModelMagistral Inherits Magistral(Of ISettingsParameter, InputViewModelBase) Implements IPipelineware(Of ISettingsParameter, InputViewModelBase)
+    content: 'public class ViewModelMagistral : Magistral<ISettingsParameter, IInputViewModel>, IPipelineware<ISettingsParameter, IInputViewModel>'
+    content.vb: Public Class ViewModelMagistral Inherits Magistral(Of ISettingsParameter, IInputViewModel) Implements IPipelineware(Of ISettingsParameter, IInputViewModel)
   inheritance:
   - System.Object
-  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
-  - ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
-  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
+  - ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
+  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   implements:
-  - ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+  - ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   inheritedMembers:
-  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  - ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Piplines
-  - ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase,{TOut2}})
-  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{{TIn2},ParmaGIS.Core.UI.Settings.ISettingsParameter})
+  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  - ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  - ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Piplines
+  - ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel,{TOut2}})
+  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{{TIn2},ParmaGIS.Core.UI.Settings.ISettingsParameter})
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -144,17 +144,17 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
-  commentId: T:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
+  commentId: T:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   parent: ParmaGIS.Core.Utilities.Factory
   definition: ParmaGIS.Core.Utilities.Factory.PipelinewareBase`2
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: PipelinewareBase<ISettingsParameter, InputViewModelBase>
-  nameWithType: PipelinewareBase<ISettingsParameter, InputViewModelBase>
-  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>
-  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, InputViewModelBase)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase)
-  name.vb: PipelinewareBase(Of ISettingsParameter, InputViewModelBase)
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: PipelinewareBase<ISettingsParameter, IInputViewModel>
+  nameWithType: PipelinewareBase<ISettingsParameter, IInputViewModel>
+  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>
+  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, IInputViewModel)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel)
+  name.vb: PipelinewareBase(Of ISettingsParameter, IInputViewModel)
   spec.csharp:
   - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase`2
     name: PipelinewareBase
@@ -163,9 +163,9 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   spec.vb:
   - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase`2
@@ -177,21 +177,21 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
-  commentId: T:ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
+  commentId: T:ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   parent: ParmaGIS.Core.Utilities.Factory
   definition: ParmaGIS.Core.Utilities.Factory.MagistralBase`2
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: MagistralBase<ISettingsParameter, InputViewModelBase>
-  nameWithType: MagistralBase<ISettingsParameter, InputViewModelBase>
-  fullName: ParmaGIS.Core.Utilities.Factory.MagistralBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>
-  nameWithType.vb: MagistralBase(Of ISettingsParameter, InputViewModelBase)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.MagistralBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase)
-  name.vb: MagistralBase(Of ISettingsParameter, InputViewModelBase)
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: MagistralBase<ISettingsParameter, IInputViewModel>
+  nameWithType: MagistralBase<ISettingsParameter, IInputViewModel>
+  fullName: ParmaGIS.Core.Utilities.Factory.MagistralBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>
+  nameWithType.vb: MagistralBase(Of ISettingsParameter, IInputViewModel)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.MagistralBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel)
+  name.vb: MagistralBase(Of ISettingsParameter, IInputViewModel)
   spec.csharp:
   - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase`2
     name: MagistralBase
@@ -200,9 +200,9 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   spec.vb:
   - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase`2
@@ -214,21 +214,21 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
-  commentId: T:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
+  commentId: T:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   parent: ParmaGIS.Core.Utilities.Factory
   definition: ParmaGIS.Core.Utilities.Factory.Magistral`2
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: Magistral<ISettingsParameter, InputViewModelBase>
-  nameWithType: Magistral<ISettingsParameter, InputViewModelBase>
-  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>
-  nameWithType.vb: Magistral(Of ISettingsParameter, InputViewModelBase)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase)
-  name.vb: Magistral(Of ISettingsParameter, InputViewModelBase)
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: Magistral<ISettingsParameter, IInputViewModel>
+  nameWithType: Magistral<ISettingsParameter, IInputViewModel>
+  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>
+  nameWithType.vb: Magistral(Of ISettingsParameter, IInputViewModel)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel)
+  name.vb: Magistral(Of ISettingsParameter, IInputViewModel)
   spec.csharp:
   - uid: ParmaGIS.Core.Utilities.Factory.Magistral`2
     name: Magistral
@@ -237,9 +237,9 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   spec.vb:
   - uid: ParmaGIS.Core.Utilities.Factory.Magistral`2
@@ -251,21 +251,21 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
-  commentId: T:ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
+  commentId: T:ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   parent: ParmaGIS.Core.Utilities.Factory
   definition: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: IPipelineware<ISettingsParameter, InputViewModelBase>
-  nameWithType: IPipelineware<ISettingsParameter, InputViewModelBase>
-  fullName: ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>
-  nameWithType.vb: IPipelineware(Of ISettingsParameter, InputViewModelBase)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase)
-  name.vb: IPipelineware(Of ISettingsParameter, InputViewModelBase)
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: IPipelineware<ISettingsParameter, IInputViewModel>
+  nameWithType: IPipelineware<ISettingsParameter, IInputViewModel>
+  fullName: ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>
+  nameWithType.vb: IPipelineware(Of ISettingsParameter, IInputViewModel)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel)
+  name.vb: IPipelineware(Of ISettingsParameter, IInputViewModel)
   spec.csharp:
   - uid: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
     name: IPipelineware
@@ -274,9 +274,9 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   spec.vb:
   - uid: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
@@ -288,46 +288,46 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.Magistral`2.SelectPipeline(`0)
   name: SelectPipeline(ISettingsParameter)
-  nameWithType: Magistral<ISettingsParameter, InputViewModelBase>.SelectPipeline(ISettingsParameter)
-  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  nameWithType.vb: Magistral(Of ISettingsParameter, InputViewModelBase).SelectPipeline(ISettingsParameter)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  nameWithType: Magistral<ISettingsParameter, IInputViewModel>.SelectPipeline(ISettingsParameter)
+  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  nameWithType.vb: Magistral(Of ISettingsParameter, IInputViewModel).SelectPipeline(ISettingsParameter)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
     name: SelectPipeline
   - name: (
   - uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
     name: ISettingsParameter
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.SelectPipeline(ParmaGIS.Core.UI.Settings.ISettingsParameter)
     name: SelectPipeline
   - name: (
   - uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
     name: ISettingsParameter
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.Magistral`2.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{`0,`1})
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: AddPipeline(IPipelineware<ISettingsParameter, InputViewModelBase>)
-  nameWithType: Magistral<ISettingsParameter, InputViewModelBase>.AddPipeline(IPipelineware<ISettingsParameter, InputViewModelBase>)
-  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>)
-  nameWithType.vb: Magistral(Of ISettingsParameter, InputViewModelBase).AddPipeline(IPipelineware(Of ISettingsParameter, InputViewModelBase))
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase))
-  name.vb: AddPipeline(IPipelineware(Of ISettingsParameter, InputViewModelBase))
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: AddPipeline(IPipelineware<ISettingsParameter, IInputViewModel>)
+  nameWithType: Magistral<ISettingsParameter, IInputViewModel>.AddPipeline(IPipelineware<ISettingsParameter, IInputViewModel>)
+  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>)
+  nameWithType.vb: Magistral(Of ISettingsParameter, IInputViewModel).AddPipeline(IPipelineware(Of ISettingsParameter, IInputViewModel))
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel))
+  name.vb: AddPipeline(IPipelineware(Of ISettingsParameter, IInputViewModel))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
@@ -337,13 +337,13 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
@@ -355,24 +355,24 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.Magistral`2.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{`0,`1})
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: AddPipeline(IConditionPipelineware<ISettingsParameter, InputViewModelBase>)
-  nameWithType: Magistral<ISettingsParameter, InputViewModelBase>.AddPipeline(IConditionPipelineware<ISettingsParameter, InputViewModelBase>)
-  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>)
-  nameWithType.vb: Magistral(Of ISettingsParameter, InputViewModelBase).AddPipeline(IConditionPipelineware(Of ISettingsParameter, InputViewModelBase))
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase))
-  name.vb: AddPipeline(IConditionPipelineware(Of ISettingsParameter, InputViewModelBase))
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: AddPipeline(IConditionPipelineware<ISettingsParameter, IInputViewModel>)
+  nameWithType: Magistral<ISettingsParameter, IInputViewModel>.AddPipeline(IConditionPipelineware<ISettingsParameter, IInputViewModel>)
+  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>)
+  nameWithType.vb: Magistral(Of ISettingsParameter, IInputViewModel).AddPipeline(IConditionPipelineware(Of ISettingsParameter, IInputViewModel))
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel))
+  name.vb: AddPipeline(IConditionPipelineware(Of ISettingsParameter, IInputViewModel))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: ParmaGIS.Core.Utilities.Factory.IConditionPipelineware`2
@@ -382,13 +382,13 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(ParmaGIS.Core.Utilities.Factory.IConditionPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: ParmaGIS.Core.Utilities.Factory.IConditionPipelineware`2
@@ -400,24 +400,24 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.Magistral`2.AddPipeline(System.Predicate{`0},ParmaGIS.Core.Utilities.Factory.IPipelineware{`0,`1})
   href: https://learn.microsoft.com/dotnet/api/system.predicate-1
-  name: AddPipeline(Predicate<ISettingsParameter>, IPipelineware<ISettingsParameter, InputViewModelBase>)
-  nameWithType: Magistral<ISettingsParameter, InputViewModelBase>.AddPipeline(Predicate<ISettingsParameter>, IPipelineware<ISettingsParameter, InputViewModelBase>)
-  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.AddPipeline(System.Predicate<ParmaGIS.Core.UI.Settings.ISettingsParameter>, ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>)
-  nameWithType.vb: Magistral(Of ISettingsParameter, InputViewModelBase).AddPipeline(Predicate(Of ISettingsParameter), IPipelineware(Of ISettingsParameter, InputViewModelBase))
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).AddPipeline(System.Predicate(Of ParmaGIS.Core.UI.Settings.ISettingsParameter), ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase))
-  name.vb: AddPipeline(Predicate(Of ISettingsParameter), IPipelineware(Of ISettingsParameter, InputViewModelBase))
+  name: AddPipeline(Predicate<ISettingsParameter>, IPipelineware<ISettingsParameter, IInputViewModel>)
+  nameWithType: Magistral<ISettingsParameter, IInputViewModel>.AddPipeline(Predicate<ISettingsParameter>, IPipelineware<ISettingsParameter, IInputViewModel>)
+  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.AddPipeline(System.Predicate<ParmaGIS.Core.UI.Settings.ISettingsParameter>, ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>)
+  nameWithType.vb: Magistral(Of ISettingsParameter, IInputViewModel).AddPipeline(Predicate(Of ISettingsParameter), IPipelineware(Of ISettingsParameter, IInputViewModel))
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).AddPipeline(System.Predicate(Of ParmaGIS.Core.UI.Settings.ISettingsParameter), ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel))
+  name.vb: AddPipeline(Predicate(Of ISettingsParameter), IPipelineware(Of ISettingsParameter, IInputViewModel))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: System.Predicate`1
@@ -437,13 +437,13 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: System.Predicate`1
@@ -467,24 +467,24 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
-  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  commentId: M:ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
+  parent: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.Magistral`2.AddPipeline(System.Predicate{`0},System.Func{`0,`1})
   href: https://learn.microsoft.com/dotnet/api/system.predicate-1
-  name: AddPipeline(Predicate<ISettingsParameter>, Func<ISettingsParameter, InputViewModelBase>)
-  nameWithType: Magistral<ISettingsParameter, InputViewModelBase>.AddPipeline(Predicate<ISettingsParameter>, Func<ISettingsParameter, InputViewModelBase>)
-  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.AddPipeline(System.Predicate<ParmaGIS.Core.UI.Settings.ISettingsParameter>, System.Func<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>)
-  nameWithType.vb: Magistral(Of ISettingsParameter, InputViewModelBase).AddPipeline(Predicate(Of ISettingsParameter), Func(Of ISettingsParameter, InputViewModelBase))
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).AddPipeline(System.Predicate(Of ParmaGIS.Core.UI.Settings.ISettingsParameter), System.Func(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase))
-  name.vb: AddPipeline(Predicate(Of ISettingsParameter), Func(Of ISettingsParameter, InputViewModelBase))
+  name: AddPipeline(Predicate<ISettingsParameter>, Func<ISettingsParameter, IInputViewModel>)
+  nameWithType: Magistral<ISettingsParameter, IInputViewModel>.AddPipeline(Predicate<ISettingsParameter>, Func<ISettingsParameter, IInputViewModel>)
+  fullName: ParmaGIS.Core.Utilities.Factory.Magistral<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.AddPipeline(System.Predicate<ParmaGIS.Core.UI.Settings.ISettingsParameter>, System.Func<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>)
+  nameWithType.vb: Magistral(Of ISettingsParameter, IInputViewModel).AddPipeline(Predicate(Of ISettingsParameter), Func(Of ISettingsParameter, IInputViewModel))
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.Magistral(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).AddPipeline(System.Predicate(Of ParmaGIS.Core.UI.Settings.ISettingsParameter), System.Func(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel))
+  name.vb: AddPipeline(Predicate(Of ISettingsParameter), Func(Of ISettingsParameter, IInputViewModel))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: System.Predicate`1
@@ -506,13 +506,13 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase})
+  - uid: ParmaGIS.Core.Utilities.Factory.Magistral{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.AddPipeline(System.Predicate{ParmaGIS.Core.UI.Settings.ISettingsParameter},System.Func{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel})
     name: AddPipeline
   - name: (
   - uid: System.Predicate`1
@@ -538,56 +538,56 @@ references:
     name: ISettingsParameter
   - name: ','
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Piplines
-  commentId: P:ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Piplines
-  parent: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Piplines
+  commentId: P:ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Piplines
+  parent: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.MagistralBase`2.Piplines
   name: Piplines
-  nameWithType: MagistralBase<ISettingsParameter, InputViewModelBase>.Piplines
-  fullName: ParmaGIS.Core.Utilities.Factory.MagistralBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.Piplines
-  nameWithType.vb: MagistralBase(Of ISettingsParameter, InputViewModelBase).Piplines
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.MagistralBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).Piplines
-- uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  commentId: M:ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  parent: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+  nameWithType: MagistralBase<ISettingsParameter, IInputViewModel>.Piplines
+  fullName: ParmaGIS.Core.Utilities.Factory.MagistralBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.Piplines
+  nameWithType.vb: MagistralBase(Of ISettingsParameter, IInputViewModel).Piplines
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.MagistralBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).Piplines
+- uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  commentId: M:ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  parent: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.MagistralBase`2.Conveyor(`0)
   name: Conveyor(ISettingsParameter)
-  nameWithType: MagistralBase<ISettingsParameter, InputViewModelBase>.Conveyor(ISettingsParameter)
-  fullName: ParmaGIS.Core.Utilities.Factory.MagistralBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  nameWithType.vb: MagistralBase(Of ISettingsParameter, InputViewModelBase).Conveyor(ISettingsParameter)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.MagistralBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  nameWithType: MagistralBase<ISettingsParameter, IInputViewModel>.Conveyor(ISettingsParameter)
+  fullName: ParmaGIS.Core.Utilities.Factory.MagistralBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  nameWithType.vb: MagistralBase(Of ISettingsParameter, IInputViewModel).Conveyor(ISettingsParameter)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.MagistralBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
     name: Conveyor
   - name: (
   - uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
     name: ISettingsParameter
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Conveyor(ParmaGIS.Core.UI.Settings.ISettingsParameter)
     name: Conveyor
   - name: (
   - uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
     name: ISettingsParameter
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase,{TOut2}})
-  commentId: M:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase,``0})
-  parent: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel,{TOut2}})
+  commentId: M:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel,``0})
+  parent: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.PipelinewareBase`2.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{`1,``0})
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
-  name: Append<TOut2>(IPipelineware<InputViewModelBase, TOut2>)
-  nameWithType: PipelinewareBase<ISettingsParameter, InputViewModelBase>.Append<TOut2>(IPipelineware<InputViewModelBase, TOut2>)
-  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.Append<TOut2>(ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase, TOut2>)
-  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, InputViewModelBase).Append(Of TOut2)(IPipelineware(Of InputViewModelBase, TOut2))
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).Append(Of TOut2)(ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase, TOut2))
-  name.vb: Append(Of TOut2)(IPipelineware(Of InputViewModelBase, TOut2))
+  href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
+  name: Append<TOut2>(IPipelineware<IInputViewModel, TOut2>)
+  nameWithType: PipelinewareBase<ISettingsParameter, IInputViewModel>.Append<TOut2>(IPipelineware<IInputViewModel, TOut2>)
+  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.Append<TOut2>(ParmaGIS.Core.Utilities.Factory.IPipelineware<ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel, TOut2>)
+  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, IInputViewModel).Append(Of TOut2)(IPipelineware(Of IInputViewModel, TOut2))
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).Append(Of TOut2)(ParmaGIS.Core.Utilities.Factory.IPipelineware(Of ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel, TOut2))
+  name.vb: Append(Of TOut2)(IPipelineware(Of IInputViewModel, TOut2))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase,``0})
+  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel,``0})
     name: Append
   - name: <
   - name: TOut2
@@ -596,16 +596,16 @@ references:
   - uid: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
     name: IPipelineware
   - name: <
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: ','
   - name: " "
   - name: TOut2
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase,``0})
+  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Append``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel,``0})
     name: Append
   - name: (
   - name: Of
@@ -618,49 +618,49 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase
-    name: InputViewModelBase
-    href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.html
+  - uid: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel
+    name: IInputViewModel
+    href: ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html
   - name: ','
   - name: " "
   - name: TOut2
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  commentId: M:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  parent: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  commentId: M:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  parent: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.PipelinewareBase`2.Execute(`0)
   name: Execute(ISettingsParameter)
-  nameWithType: PipelinewareBase<ISettingsParameter, InputViewModelBase>.Execute(ISettingsParameter)
-  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
-  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, InputViewModelBase).Execute(ISettingsParameter)
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  nameWithType: PipelinewareBase<ISettingsParameter, IInputViewModel>.Execute(ISettingsParameter)
+  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, IInputViewModel).Execute(ISettingsParameter)
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
     name: Execute
   - name: (
   - uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
     name: ISettingsParameter
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
+  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Execute(ParmaGIS.Core.UI.Settings.ISettingsParameter)
     name: Execute
   - name: (
   - uid: ParmaGIS.Core.UI.Settings.ISettingsParameter
     name: ISettingsParameter
   - name: )
-- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{{TIn2},ParmaGIS.Core.UI.Settings.ISettingsParameter})
-  commentId: M:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,ParmaGIS.Core.UI.Settings.ISettingsParameter})
-  parent: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}
+- uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{{TIn2},ParmaGIS.Core.UI.Settings.ISettingsParameter})
+  commentId: M:ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,ParmaGIS.Core.UI.Settings.ISettingsParameter})
+  parent: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}
   definition: ParmaGIS.Core.Utilities.Factory.PipelinewareBase`2.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,`0})
   name: Prepend<TIn2>(IPipelineware<TIn2, ISettingsParameter>)
-  nameWithType: PipelinewareBase<ISettingsParameter, InputViewModelBase>.Prepend<TIn2>(IPipelineware<TIn2, ISettingsParameter>)
-  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase>.Prepend<TIn2>(ParmaGIS.Core.Utilities.Factory.IPipelineware<TIn2, ParmaGIS.Core.UI.Settings.ISettingsParameter>)
-  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, InputViewModelBase).Prepend(Of TIn2)(IPipelineware(Of TIn2, ISettingsParameter))
-  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase).Prepend(Of TIn2)(ParmaGIS.Core.Utilities.Factory.IPipelineware(Of TIn2, ParmaGIS.Core.UI.Settings.ISettingsParameter))
+  nameWithType: PipelinewareBase<ISettingsParameter, IInputViewModel>.Prepend<TIn2>(IPipelineware<TIn2, ISettingsParameter>)
+  fullName: ParmaGIS.Core.Utilities.Factory.PipelinewareBase<ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel>.Prepend<TIn2>(ParmaGIS.Core.Utilities.Factory.IPipelineware<TIn2, ParmaGIS.Core.UI.Settings.ISettingsParameter>)
+  nameWithType.vb: PipelinewareBase(Of ISettingsParameter, IInputViewModel).Prepend(Of TIn2)(IPipelineware(Of TIn2, ISettingsParameter))
+  fullName.vb: ParmaGIS.Core.Utilities.Factory.PipelinewareBase(Of ParmaGIS.Core.UI.Settings.ISettingsParameter, ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel).Prepend(Of TIn2)(ParmaGIS.Core.Utilities.Factory.IPipelineware(Of TIn2, ParmaGIS.Core.UI.Settings.ISettingsParameter))
   name.vb: Prepend(Of TIn2)(IPipelineware(Of TIn2, ISettingsParameter))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,ParmaGIS.Core.UI.Settings.ISettingsParameter})
+  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,ParmaGIS.Core.UI.Settings.ISettingsParameter})
     name: Prepend
   - name: <
   - name: TIn2
@@ -677,7 +677,7 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,ParmaGIS.Core.UI.Settings.ISettingsParameter})
+  - uid: ParmaGIS.Core.Utilities.Factory.PipelinewareBase{ParmaGIS.Core.UI.Settings.ISettingsParameter,ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel}.Prepend``1(ParmaGIS.Core.Utilities.Factory.IPipelineware{``0,ParmaGIS.Core.UI.Settings.ISettingsParameter})
     name: Prepend
   - name: (
   - name: Of

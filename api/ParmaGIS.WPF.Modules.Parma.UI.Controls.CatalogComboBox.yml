@@ -5,13 +5,11 @@ items:
   id: CatalogComboBox
   parent: ParmaGIS.WPF.Modules.Parma.UI.Controls
   children:
-  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem
-  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItemProperty
-  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace
-  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpaceProperty
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogType
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogTypeProperty
-  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommandProperty
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyNameProperty
   langs:
@@ -28,13 +26,19 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CatalogComboBox
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 52
+    startLine: 56
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
   syntax:
-    content: 'public class CatalogComboBox : ComboBox, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IContainItemStorage, IAddChild'
-    content.vb: Public Class CatalogComboBox Inherits ComboBox Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IContainItemStorage, IAddChild
+    content: >-
+      [TemplatePart(Name = "PART_OpenSettingsButton", Type = typeof(Button))]
+
+      public class CatalogComboBox : ComboBox, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IContainItemStorage, IAddChild
+    content.vb: >-
+      <TemplatePart(Name:="PART_OpenSettingsButton", Type:=GetType(Button))>
+
+      Public Class CatalogComboBox Inherits ComboBox Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IContainItemStorage, IAddChild
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -67,7 +71,6 @@ items:
   - System.Windows.Controls.ComboBox.TextProperty
   - System.Windows.Controls.ComboBox.GetContainerForItemOverride
   - System.Windows.Controls.ComboBox.IsItemItsOwnContainerOverride(System.Object)
-  - System.Windows.Controls.ComboBox.OnApplyTemplate
   - System.Windows.Controls.ComboBox.OnCreateAutomationPeer
   - System.Windows.Controls.ComboBox.OnDropDownClosed(System.EventArgs)
   - System.Windows.Controls.ComboBox.OnDropDownOpened(System.EventArgs)
@@ -76,6 +79,7 @@ items:
   - System.Windows.Controls.ComboBox.OnKeyDown(System.Windows.Input.KeyEventArgs)
   - System.Windows.Controls.ComboBox.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)
   - System.Windows.Controls.ComboBox.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)
+  - System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
   - System.Windows.Controls.ComboBox.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)
   - System.Windows.Controls.ComboBox.HandlesScrolling
   - System.Windows.Controls.ComboBox.HasEffectiveKeyboardFocus
@@ -768,60 +772,17 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Windows.Media.Visual.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItemProperty
-  commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItemProperty
-  id: CatalogItemProperty
-  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
-  langs:
-  - csharp
-  - vb
-  name: CatalogItemProperty
-  nameWithType: CatalogComboBox.CatalogItemProperty
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItemProperty
-  type: Field
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-      branch: origin/main
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CatalogItemProperty
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 54
-  assemblies:
-  - ParmaGIS.WPF.Modules.Parma.UI
-  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
-  syntax:
-    content: public static readonly DependencyProperty CatalogItemProperty
-    return:
-      type: System.Windows.DependencyProperty
-    content.vb: Public Shared ReadOnly CatalogItemProperty As DependencyProperty
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpaceProperty
-  commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpaceProperty
-  id: CatalogSpaceProperty
-  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
-  langs:
-  - csharp
-  - vb
-  name: CatalogSpaceProperty
-  nameWithType: CatalogComboBox.CatalogSpaceProperty
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpaceProperty
-  type: Field
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-      branch: origin/main
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CatalogSpaceProperty
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 55
-  assemblies:
-  - ParmaGIS.WPF.Modules.Parma.UI
-  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
-  syntax:
-    content: public static readonly DependencyProperty CatalogSpaceProperty
-    return:
-      type: System.Windows.DependencyProperty
-    content.vb: Public Shared ReadOnly CatalogSpaceProperty As DependencyProperty
+  attributes:
+  - type: System.Windows.TemplatePartAttribute
+    ctor: System.Windows.TemplatePartAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: PART_OpenSettingsButton
+    - name: Type
+      type: System.Type
+      value: System.Windows.Controls.Button
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogTypeProperty
   commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogTypeProperty
   id: CatalogTypeProperty
@@ -840,7 +801,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CatalogTypeProperty
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 56
+    startLine: 61
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -867,7 +828,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SortPropertyNameProperty
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 57
+    startLine: 62
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -876,6 +837,33 @@ items:
     return:
       type: System.Windows.DependencyProperty
     content.vb: Public Shared ReadOnly SortPropertyNameProperty As DependencyProperty
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommandProperty
+  commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommandProperty
+  id: OpenSettingsCommandProperty
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
+  langs:
+  - csharp
+  - vb
+  name: OpenSettingsCommandProperty
+  nameWithType: CatalogComboBox.OpenSettingsCommandProperty
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommandProperty
+  type: Field
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+      branch: origin/main
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OpenSettingsCommandProperty
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+    startLine: 63
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
+  syntax:
+    content: public static readonly DependencyProperty OpenSettingsCommandProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly OpenSettingsCommandProperty As DependencyProperty
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   id: SortPropertyName
@@ -894,99 +882,58 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SortPropertyName
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 124
+    startLine: 98
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
   syntax:
-    content: public string SortPropertyName { get; set; }
+    content: >-
+      [Bindable(true)]
+
+      public string SortPropertyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property SortPropertyName As String
+    content.vb: >-
+      <Bindable(True)>
+
+      Public Property SortPropertyName As String
   overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName*
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem
-  commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem
-  id: CatalogItem
-  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
-  langs:
-  - csharp
-  - vb
-  name: CatalogItem
-  nameWithType: CatalogComboBox.CatalogItem
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem
-  type: Property
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-      branch: origin/main
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CatalogItem
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 130
-  assemblies:
-  - ParmaGIS.WPF.Modules.Parma.UI
-  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
-  syntax:
-    content: >-
-      [Bindable(true)]
-
-      public object CatalogItem { get; set; }
-    parameters: []
-    return:
-      type: System.Object
-    content.vb: >-
-      <Bindable(True)>
-
-      Public Property CatalogItem As Object
-  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem*
   attributes:
   - type: System.ComponentModel.BindableAttribute
     ctor: System.ComponentModel.BindableAttribute.#ctor(System.Boolean)
     arguments:
     - type: System.Boolean
       value: true
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace
-  commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace
-  id: CatalogSpace
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
+  commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
+  id: OpenSettingsCommand
   parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
   langs:
   - csharp
   - vb
-  name: CatalogSpace
-  nameWithType: CatalogComboBox.CatalogSpace
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace
+  name: OpenSettingsCommand
+  nameWithType: CatalogComboBox.OpenSettingsCommand
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
   type: Property
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
       branch: origin/main
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CatalogSpace
+    id: OpenSettingsCommand
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 143
+    startLine: 106
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
   syntax:
-    content: >-
-      [Bindable(true)]
-
-      public ICatalogSpace CatalogSpace { get; set; }
+    content: public ICommand OpenSettingsCommand { get; set; }
     parameters: []
     return:
-      type: ParmaGIS.Modules.Data.Space.Catalog.ICatalogSpace
-    content.vb: >-
-      <Bindable(True)>
-
-      Public Property CatalogSpace As ICatalogSpace
-  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace*
-  attributes:
-  - type: System.ComponentModel.BindableAttribute
-    ctor: System.ComponentModel.BindableAttribute.#ctor(System.Boolean)
-    arguments:
-    - type: System.Boolean
-      value: true
+      type: System.Windows.Input.ICommand
+    content.vb: Public Property OpenSettingsCommand As ICommand
+  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand*
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogType
   commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogType
   id: CatalogType
@@ -1005,7 +952,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CatalogType
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 152
+    startLine: 112
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -1028,39 +975,35 @@ items:
     arguments:
     - type: System.Boolean
       value: true
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
-  commentId: M:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
-  id: OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate
+  commentId: M:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate
+  id: OnApplyTemplate
   parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
   langs:
   - csharp
   - vb
-  name: OnSelectionChanged(SelectionChangedEventArgs)
-  nameWithType: CatalogComboBox.OnSelectionChanged(SelectionChangedEventArgs)
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+  name: OnApplyTemplate()
+  nameWithType: CatalogComboBox.OnApplyTemplate()
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate()
   type: Method
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
       branch: origin/main
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: OnSelectionChanged
+    id: OnApplyTemplate
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 182
+    startLine: 122
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
-  summary: Responds to a <xref href="System.Windows.Controls.ComboBox" data-throw-if-not-resolved="false"></xref> selection change by raising a <xref href="System.Windows.Controls.Primitives.Selector.SelectionChanged" data-throw-if-not-resolved="false"></xref> event.
+  summary: Called when <xref href="System.Windows.FrameworkElement.ApplyTemplate" data-throw-if-not-resolved="false"></xref> is called.
   example: []
   syntax:
-    content: protected override void OnSelectionChanged(SelectionChangedEventArgs e)
-    parameters:
-    - id: e
-      type: System.Windows.Controls.SelectionChangedEventArgs
-      description: Provides data for <xref href="System.Windows.Controls.SelectionChangedEventArgs" data-throw-if-not-resolved="false"></xref>.
-    content.vb: Protected Overrides Sub OnSelectionChanged(e As SelectionChangedEventArgs)
-  overridden: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
-  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged*
+    content: public override void OnApplyTemplate()
+    content.vb: Public Overrides Sub OnApplyTemplate()
+  overridden: System.Windows.Controls.ComboBox.OnApplyTemplate
+  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate*
 references:
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls
   commentId: N:ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -1390,28 +1333,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Windows.Controls.ComboBox.OnApplyTemplate
-  commentId: M:System.Windows.Controls.ComboBox.OnApplyTemplate
-  parent: System.Windows.Controls.ComboBox
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onapplytemplate
-  name: OnApplyTemplate()
-  nameWithType: ComboBox.OnApplyTemplate()
-  fullName: System.Windows.Controls.ComboBox.OnApplyTemplate()
-  spec.csharp:
-  - uid: System.Windows.Controls.ComboBox.OnApplyTemplate
-    name: OnApplyTemplate
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onapplytemplate
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Windows.Controls.ComboBox.OnApplyTemplate
-    name: OnApplyTemplate
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onapplytemplate
-  - name: (
-  - name: )
 - uid: System.Windows.Controls.ComboBox.OnCreateAutomationPeer
   commentId: M:System.Windows.Controls.ComboBox.OnCreateAutomationPeer
   parent: System.Windows.Controls.ComboBox
@@ -1643,6 +1564,36 @@ references:
     name: KeyEventArgs
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.windows.input.keyeventargs
+  - name: )
+- uid: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+  commentId: M:System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+  parent: System.Windows.Controls.ComboBox
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onselectionchanged
+  name: OnSelectionChanged(SelectionChangedEventArgs)
+  nameWithType: ComboBox.OnSelectionChanged(SelectionChangedEventArgs)
+  fullName: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+  spec.csharp:
+  - uid: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+    name: OnSelectionChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onselectionchanged
+  - name: (
+  - uid: System.Windows.Controls.SelectionChangedEventArgs
+    name: SelectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.selectionchangedeventargs
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+    name: OnSelectionChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onselectionchanged
+  - name: (
+  - uid: System.Windows.Controls.SelectionChangedEventArgs
+    name: SelectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.selectionchangedeventargs
   - name: )
 - uid: System.Windows.Controls.ComboBox.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)
   commentId: M:System.Windows.Controls.ComboBox.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)
@@ -13039,71 +12990,57 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem*
-  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem
-  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_CatalogItem
-  name: CatalogItem
-  nameWithType: CatalogComboBox.CatalogItem
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogItem
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace*
-  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace
-  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_CatalogSpace
-  name: CatalogSpace
-  nameWithType: CatalogComboBox.CatalogSpace
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogSpace
-- uid: ParmaGIS.Modules.Data.Space.Catalog.ICatalogSpace
-  commentId: T:ParmaGIS.Modules.Data.Space.Catalog.ICatalogSpace
-  parent: ParmaGIS.Modules.Data.Space.Catalog
-  href: ParmaGIS.Modules.Data.Space.Catalog.ICatalogSpace.html
-  name: ICatalogSpace
-  nameWithType: ICatalogSpace
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.ICatalogSpace
-- uid: ParmaGIS.Modules.Data.Space.Catalog
-  commentId: N:ParmaGIS.Modules.Data.Space.Catalog
-  href: ParmaGIS.html
-  name: ParmaGIS.Modules.Data.Space.Catalog
-  nameWithType: ParmaGIS.Modules.Data.Space.Catalog
-  fullName: ParmaGIS.Modules.Data.Space.Catalog
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand*
+  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
+  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_OpenSettingsCommand
+  name: OpenSettingsCommand
+  nameWithType: CatalogComboBox.OpenSettingsCommand
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
   spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: ParmaGIS.Modules
-    name: Modules
-    href: ParmaGIS.Modules.html
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
   - name: .
-  - uid: ParmaGIS.Modules.Data
-    name: Data
-    href: ParmaGIS.Modules.Data.html
-  - name: .
-  - uid: ParmaGIS.Modules.Data.Space
-    name: Space
-    href: ParmaGIS.Modules.Data.Space.html
-  - name: .
-  - uid: ParmaGIS.Modules.Data.Space.Catalog
-    name: Catalog
-    href: ParmaGIS.Modules.Data.Space.Catalog.html
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
   spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: ParmaGIS.Modules
-    name: Modules
-    href: ParmaGIS.Modules.html
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
   - name: .
-  - uid: ParmaGIS.Modules.Data
-    name: Data
-    href: ParmaGIS.Modules.Data.html
-  - name: .
-  - uid: ParmaGIS.Modules.Data.Space
-    name: Space
-    href: ParmaGIS.Modules.Data.Space.html
-  - name: .
-  - uid: ParmaGIS.Modules.Data.Space.Catalog
-    name: Catalog
-    href: ParmaGIS.Modules.Data.Space.Catalog.html
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogType*
   commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogType
   href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_CatalogType
@@ -13118,47 +13055,31 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
-- uid: System.Windows.Controls.SelectionChangedEventArgs
-  commentId: T:System.Windows.Controls.SelectionChangedEventArgs
-  parent: System.Windows.Controls
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.windows.controls.selectionchangedeventargs
-  name: SelectionChangedEventArgs
-  nameWithType: SelectionChangedEventArgs
-  fullName: System.Windows.Controls.SelectionChangedEventArgs
-- uid: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
-  commentId: M:System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+- uid: System.Windows.Controls.ComboBox.OnApplyTemplate
+  commentId: M:System.Windows.Controls.ComboBox.OnApplyTemplate
   parent: System.Windows.Controls.ComboBox
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onselectionchanged
-  name: OnSelectionChanged(SelectionChangedEventArgs)
-  nameWithType: ComboBox.OnSelectionChanged(SelectionChangedEventArgs)
-  fullName: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
+  href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onapplytemplate
+  name: OnApplyTemplate()
+  nameWithType: ComboBox.OnApplyTemplate()
+  fullName: System.Windows.Controls.ComboBox.OnApplyTemplate()
   spec.csharp:
-  - uid: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
-    name: OnSelectionChanged
+  - uid: System.Windows.Controls.ComboBox.OnApplyTemplate
+    name: OnApplyTemplate
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onselectionchanged
+    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onapplytemplate
   - name: (
-  - uid: System.Windows.Controls.SelectionChangedEventArgs
-    name: SelectionChangedEventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.selectionchangedeventargs
   - name: )
   spec.vb:
-  - uid: System.Windows.Controls.ComboBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)
-    name: OnSelectionChanged
+  - uid: System.Windows.Controls.ComboBox.OnApplyTemplate
+    name: OnApplyTemplate
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onselectionchanged
+    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.combobox.onapplytemplate
   - name: (
-  - uid: System.Windows.Controls.SelectionChangedEventArgs
-    name: SelectionChangedEventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.controls.selectionchangedeventargs
   - name: )
-- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged*
-  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged
-  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_OnSelectionChanged_System_Windows_Controls_SelectionChangedEventArgs_
-  name: OnSelectionChanged
-  nameWithType: CatalogComboBox.OnSelectionChanged
-  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnSelectionChanged
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate*
+  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate
+  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_OnApplyTemplate
+  name: OnApplyTemplate
+  nameWithType: CatalogComboBox.OnApplyTemplate
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate

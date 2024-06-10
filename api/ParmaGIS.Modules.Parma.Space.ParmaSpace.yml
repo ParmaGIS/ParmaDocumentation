@@ -37,11 +37,12 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
   syntax:
-    content: 'public class ParmaSpace : IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace'
-    content.vb: Public Class ParmaSpace Implements IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace
+    content: 'public class ParmaSpace : IDataTreeSpace, IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace'
+    content.vb: Public Class ParmaSpace Implements IDataTreeSpace, IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace
   inheritance:
   - System.Object
   implements:
+  - ParmaGIS.Modules.Data.Space.Data.IDataTreeSpace
   - ParmaGIS.Modules.Data.Space.Data.IDataSpace
   - ParmaGIS.Modules.Data.Space.Catalog.ICatalogSpace
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationSpace
@@ -398,7 +399,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafeExecute
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 95
+    startLine: 96
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -435,7 +436,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 101
+    startLine: 102
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -499,6 +500,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataTreeSpace
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataTreeSpace
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IDataTreeSpace.html
+  name: IDataTreeSpace
+  nameWithType: IDataTreeSpace
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataTreeSpace
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataSpace
   commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataSpace
   parent: ParmaGIS.Modules.Data.Space.Data

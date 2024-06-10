@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase" class="text-break">
-Class InputViewModelBase  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class InputViewModelBase  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class InputViewModelBase : SubjectURBindableBase, INotifyPropertyChanged, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class InputViewModelBase : SubjectURBindableBase, IDisposable, IInputViewModel, INotifyDataErrorInfo, INotifyPropertyChanged</code></pre>
   </div>
 
 
@@ -120,8 +120,10 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="ParmaGIS.WPF.Modules.SettingsTool.IInputViewModel.html">IInputViewModel</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifydataerrorinfo">INotifyDataErrorInfo</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
     </dd>
   </dl>
 
@@ -219,16 +221,16 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <a id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase__ctor_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.#ctor*"></a>
 
-  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase__ctor_System_Type_System_String_System_String_System_Object_System_Func_System_Object_ParmaGIS_Core_UI_Settings_ISettingsProvider_System_String__ReactiveHistory_IHistory_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.#ctor(System.Type,System.String,System.String,System.Object,System.Func{System.Object,ParmaGIS.Core.UI.Settings.ISettingsProvider,System.String},ReactiveHistory.IHistory)">
-  InputViewModelBase(Type, string, string, object, Func&lt;object, ISettingsProvider, string&gt;, IHistory)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase__ctor_System_Type_System_String_System_String_System_Object_System_Func_System_Object_ParmaGIS_Core_UI_Settings_ISettingsProvider_System_String__ReactiveHistory_IHistory_ParmaGIS_Core_UI_Settings_ISettingsProvider_System_String_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.#ctor(System.Type,System.String,System.String,System.Object,System.Func{System.Object,ParmaGIS.Core.UI.Settings.ISettingsProvider,System.String},ReactiveHistory.IHistory,ParmaGIS.Core.UI.Settings.ISettingsProvider,System.String)">
+  InputViewModelBase(Type, string, string, object, Func&lt;object, ISettingsProvider, string&gt;, IHistory, ISettingsProvider, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected InputViewModelBase(Type type, string name, string title, object defaultValue, Func&lt;object, ISettingsProvider, string&gt; validator, IHistory history)</code></pre>
+    <pre><code class="lang-csharp hljs">public InputViewModelBase(Type type, string name, string title, object defaultValue, Func&lt;object, ISettingsProvider, string&gt; validator, IHistory history, ISettingsProvider settingsProvider, string regexPattern = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -245,10 +247,78 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
     <dd></dd>
     <dt><code>history</code> <span class="xref">IHistory</span></dt>
     <dd></dd>
+    <dt><code>settingsProvider</code> <a class="xref" href="ParmaGIS.Core.UI.Settings.ISettingsProvider.html">ISettingsProvider</a></dt>
+    <dd></dd>
+    <dt><code>regexPattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
   </dl>
 
 
 
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase__regex" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase._regex">
+  _regex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Regex _regex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_valueProperty" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.valueProperty">
+  valueProperty
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReactiveProperty&lt;object&gt; valueProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ReactiveProperty</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -266,7 +336,7 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_DefaultValue" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.DefaultValue">
   DefaultValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -293,11 +363,44 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
 
 
+  <a id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_HasErrors_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.HasErrors*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_HasErrors" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.HasErrors">
+  HasErrors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value that indicates whether the entity has validation errors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasErrors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the entity currently has validation errors; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Name_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Name*"></a>
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Name" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -328,7 +431,7 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Title" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Title">
   Title
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -359,7 +462,7 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Type" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -390,7 +493,7 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Validator" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Validator">
   Validator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -421,14 +524,14 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_Value" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.Value">
   Value
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReactiveProperty&lt;object&gt; Value { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public object Value { get; set; }</code></pre>
   </div>
 
 
@@ -437,7 +540,46 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">ReactiveProperty</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ConvertToType_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ConvertToType_System_Object_System_Object__" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ConvertToType(System.Object,System.Object@)">
+  ConvertToType(object, out object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string ConvertToType(object input, out object output)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -449,10 +591,87 @@ Class InputViewModelBase  <a class="header-action link-secondary" title="View so
 
 
 
+
+
+  <a id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_GetErrors_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_GetErrors_System_String_" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.GetErrors(System.String)">
+  GetErrors(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the validation errors for a specified property or for the entire entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable GetErrors(string? propertyName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the property to retrieve validation errors for; or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string.empty">Empty</a>, to retrieve entity-level errors.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></dt>
+    <dd><p>The validation errors for the property or entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="ParmaGIS_WPF_Modules_SettingsTool_ViewModels_InputViewModelBase_ErrorsChanged" data-uid="ParmaGIS.WPF.Modules.SettingsTool.ViewModels.InputViewModelBase.ErrorsChanged">
+  ErrorsChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Occurs when the validation errors have changed for a property or for the entire entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;DataErrorsChangedEventArgs&gt;? ErrorsChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.dataerrorschangedeventargs">DataErrorsChangedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/main/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/InputViewModelBase.cs/#L23" class="edit-link">Edit this page</a>
         </div>
 
 

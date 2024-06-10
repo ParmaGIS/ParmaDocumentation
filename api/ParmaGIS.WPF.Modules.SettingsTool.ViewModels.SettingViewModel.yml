@@ -5,7 +5,7 @@ items:
   id: SettingViewModel
   parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
   children:
-  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager)
+  - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager,ParmaGIS.Core.UI.Dialog.IDialogManager)
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.Name
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.ParameterGroups
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SaveSettingsCommand
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SettingViewModel
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/SettingViewModel.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -66,16 +66,16 @@ items:
   extensionMethods:
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{{TProperty},System.Boolean},System.String)
   - ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
-- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager)
-  commentId: M:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager)
-  id: '#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager)'
+- uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager,ParmaGIS.Core.UI.Dialog.IDialogManager)
+  commentId: M:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager,ParmaGIS.Core.UI.Dialog.IDialogManager)
+  id: '#ctor(ParmaGIS.Core.UI.Settings.ISettingsProvider,ParmaGIS.Core.UI.Settings.ISettingsManager,ParmaGIS.Core.UI.Dialog.IDialogManager)'
   parent: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel
   langs:
   - csharp
   - vb
-  name: SettingViewModel(ISettingsProvider, ISettingsManager)
-  nameWithType: SettingViewModel.SettingViewModel(ISettingsProvider, ISettingsManager)
-  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SettingViewModel(ParmaGIS.Core.UI.Settings.ISettingsProvider, ParmaGIS.Core.UI.Settings.ISettingsManager)
+  name: SettingViewModel(ISettingsProvider, ISettingsManager, IDialogManager)
+  nameWithType: SettingViewModel.SettingViewModel(ISettingsProvider, ISettingsManager, IDialogManager)
+  fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SettingViewModel(ParmaGIS.Core.UI.Settings.ISettingsProvider, ParmaGIS.Core.UI.Settings.ISettingsManager, ParmaGIS.Core.UI.Dialog.IDialogManager)
   type: Constructor
   source:
     remote:
@@ -84,22 +84,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/SettingViewModel.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
   syntax:
-    content: public SettingViewModel(ISettingsProvider settingsProvider, ISettingsManager settingsManager)
+    content: public SettingViewModel(ISettingsProvider settingsProvider, ISettingsManager settingsManager, IDialogManager dialogManager)
     parameters:
     - id: settingsProvider
       type: ParmaGIS.Core.UI.Settings.ISettingsProvider
     - id: settingsManager
       type: ParmaGIS.Core.UI.Settings.ISettingsManager
-    content.vb: Public Sub New(settingsProvider As ISettingsProvider, settingsManager As ISettingsManager)
+    - id: dialogManager
+      type: ParmaGIS.Core.UI.Dialog.IDialogManager
+    content.vb: Public Sub New(settingsProvider As ISettingsProvider, settingsManager As ISettingsManager, dialogManager As IDialogManager)
   overload: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor*
-  nameWithType.vb: SettingViewModel.New(ISettingsProvider, ISettingsManager)
-  fullName.vb: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.New(ParmaGIS.Core.UI.Settings.ISettingsProvider, ParmaGIS.Core.UI.Settings.ISettingsManager)
-  name.vb: New(ISettingsProvider, ISettingsManager)
+  nameWithType.vb: SettingViewModel.New(ISettingsProvider, ISettingsManager, IDialogManager)
+  fullName.vb: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.New(ParmaGIS.Core.UI.Settings.ISettingsProvider, ParmaGIS.Core.UI.Settings.ISettingsManager, ParmaGIS.Core.UI.Dialog.IDialogManager)
+  name.vb: New(ISettingsProvider, ISettingsManager, IDialogManager)
 - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SaveSettingsCommand
   commentId: P:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SaveSettingsCommand
   id: SaveSettingsCommand
@@ -118,7 +120,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveSettingsCommand
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/SettingViewModel.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -147,7 +149,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Title
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/SettingViewModel.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -176,7 +178,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/SettingViewModel.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -205,7 +207,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterGroups
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.SettingsTool/VIewModels/SettingViewModel.cs
-    startLine: 45
+    startLine: 48
   assemblies:
   - ParmaGIS.WPF.Modules.SettingsTool
   namespace: ParmaGIS.WPF.Modules.SettingsTool.ViewModels
@@ -2102,7 +2104,7 @@ references:
     href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
 - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor*
   commentId: Overload:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.#ctor
-  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_SettingViewModel__ctor_ParmaGIS_Core_UI_Settings_ISettingsProvider_ParmaGIS_Core_UI_Settings_ISettingsManager_
+  href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_SettingViewModel__ctor_ParmaGIS_Core_UI_Settings_ISettingsProvider_ParmaGIS_Core_UI_Settings_ISettingsManager_ParmaGIS_Core_UI_Dialog_IDialogManager_
   name: SettingViewModel
   nameWithType: SettingViewModel.SettingViewModel
   fullName: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SettingViewModel
@@ -2123,6 +2125,13 @@ references:
   name: ISettingsManager
   nameWithType: ISettingsManager
   fullName: ParmaGIS.Core.UI.Settings.ISettingsManager
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager
+  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogManager
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.IDialogManager.html
+  name: IDialogManager
+  nameWithType: IDialogManager
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogManager
 - uid: ParmaGIS.Core.UI.Settings
   commentId: N:ParmaGIS.Core.UI.Settings
   href: ParmaGIS.html
@@ -2161,6 +2170,44 @@ references:
   - uid: ParmaGIS.Core.UI.Settings
     name: Settings
     href: ParmaGIS.Core.UI.Settings.html
+- uid: ParmaGIS.Core.UI.Dialog
+  commentId: N:ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.UI.Dialog
+  nameWithType: ParmaGIS.Core.UI.Dialog
+  fullName: ParmaGIS.Core.UI.Dialog
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Dialog
+    name: Dialog
+    href: ParmaGIS.Core.UI.Dialog.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.UI
+    name: UI
+    href: ParmaGIS.Core.UI.html
+  - name: .
+  - uid: ParmaGIS.Core.UI.Dialog
+    name: Dialog
+    href: ParmaGIS.Core.UI.Dialog.html
 - uid: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SaveSettingsCommand*
   commentId: Overload:ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.SaveSettingsCommand
   href: ParmaGIS.WPF.Modules.SettingsTool.ViewModels.SettingViewModel.html#ParmaGIS_WPF_Modules_SettingsTool_ViewModels_SettingViewModel_SaveSettingsCommand
