@@ -11,6 +11,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.ParmaSpace.DAL
   - ParmaGIS.Modules.Parma.Space.ParmaSpace.Data
   - ParmaGIS.Modules.Parma.Space.ParmaSpace.Description
+  - ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose
   - ParmaGIS.Modules.Parma.Space.ParmaSpace.Name
   - ParmaGIS.Modules.Parma.Space.ParmaSpace.Provider
   - ParmaGIS.Modules.Parma.Space.ParmaSpace.Settings
@@ -28,7 +29,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaSpace
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -37,8 +38,8 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
   syntax:
-    content: 'public class ParmaSpace : IDataTreeSpace, IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace'
-    content.vb: Public Class ParmaSpace Implements IDataTreeSpace, IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace
+    content: 'public class ParmaSpace : IDataTreeSpace, IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace, IDisposable'
+    content.vb: Public Class ParmaSpace Implements IDataTreeSpace, IDataSpace, ICatalogSpace, ICalculationSpace, ISettingsSpace, ISpace, IDisposable
   inheritance:
   - System.Object
   implements:
@@ -48,6 +49,7 @@ items:
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationSpace
   - ParmaGIS.Modules.Data.Space.Settings.ISettingsSpace
   - ParmaGIS.Modules.Data.Space.ISpace
+  - System.IDisposable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -69,7 +71,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TempLocker
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -96,7 +98,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -125,7 +127,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -157,7 +159,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -189,7 +191,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DAL
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -218,7 +220,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Provider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -250,7 +252,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Catalog
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -279,7 +281,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Data
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -308,7 +310,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Calculation
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -337,7 +339,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalculationService
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -366,7 +368,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Settings
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -395,7 +397,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafeExecute
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -432,7 +434,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
@@ -450,6 +452,36 @@ items:
     content.vb: Public Overrides Function ToString() As String
   overridden: System.Object.ToString
   overload: ParmaGIS.Modules.Parma.Space.ParmaSpace.ToString*
+- uid: ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose
+  commentId: M:ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose
+  id: Dispose
+  parent: ParmaGIS.Modules.Parma.Space.ParmaSpace
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ParmaSpace.Dispose()
+  fullName: ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Dispose
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
+    startLine: 107
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose*
+  implements:
+  - System.IDisposable.Dispose
 references:
 - uid: ParmaGIS.Modules.Parma.Space
   commentId: N:ParmaGIS.Modules.Parma.Space
@@ -542,6 +574,14 @@ references:
   name: ISpace
   nameWithType: ISpace
   fullName: ParmaGIS.Modules.Data.Space.ISpace
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -1558,3 +1598,31 @@ references:
   name: ToString
   nameWithType: ParmaSpace.ToString
   fullName: ParmaGIS.Modules.Parma.Space.ParmaSpace.ToString
+- uid: ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose
+  href: ParmaGIS.Modules.Parma.Space.ParmaSpace.html#ParmaGIS_Modules_Parma_Space_ParmaSpace_Dispose
+  name: Dispose
+  nameWithType: ParmaSpace.Dispose
+  fullName: ParmaGIS.Modules.Parma.Space.ParmaSpace.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

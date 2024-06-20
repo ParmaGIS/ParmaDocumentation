@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISettingsSpace
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsSpace.cs
@@ -25,12 +25,13 @@ items:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Settings
   syntax:
-    content: 'public interface ISettingsSpace : ISpace'
-    content.vb: Public Interface ISettingsSpace Inherits ISpace
+    content: 'public interface ISettingsSpace : ISpace, IDisposable'
+    content.vb: Public Interface ISettingsSpace Inherits ISpace, IDisposable
   inheritedMembers:
   - ParmaGIS.Modules.Data.Space.ISpace.Name
   - ParmaGIS.Modules.Data.Space.ISpace.Description
   - ParmaGIS.Modules.Data.Space.ISpace.Provider
+  - System.IDisposable.Dispose
 - uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsSpace.Settings
   commentId: P:ParmaGIS.Modules.Data.Space.Settings.ISettingsSpace.Settings
   id: Settings
@@ -45,7 +46,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsSpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Settings
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Settings/ISettingsSpace.cs
@@ -128,6 +129,28 @@ references:
   name: Provider
   nameWithType: ISpace.Provider
   fullName: ParmaGIS.Modules.Data.Space.ISpace.Provider
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.ISpace
   commentId: T:ParmaGIS.Modules.Data.Space.ISpace
   parent: ParmaGIS.Modules.Data.Space
@@ -135,6 +158,14 @@ references:
   name: ISpace
   nameWithType: ISpace
   fullName: ParmaGIS.Modules.Data.Space.ISpace
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: ParmaGIS.Modules.Data.Space
   commentId: N:ParmaGIS.Modules.Data.Space
   href: ParmaGIS.html
@@ -173,6 +204,13 @@ references:
   - uid: ParmaGIS.Modules.Data.Space
     name: Space
     href: ParmaGIS.Modules.Data.Space.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: ParmaGIS.Modules.Data.Space.Settings.ISettingsSpace.Settings*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Settings.ISettingsSpace.Settings
   href: ParmaGIS.Modules.Data.Space.Settings.ISettingsSpace.html#ParmaGIS_Modules_Data_Space_Settings_ISettingsSpace_Settings

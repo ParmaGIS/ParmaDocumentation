@@ -6,9 +6,11 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Data.Layouts
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.#ctor
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.Age
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.Count
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.Height
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.SecondGrowthSpecies
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.UndergrowthReliability
   langs:
@@ -21,7 +23,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SecondGrowthLayout
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -71,7 +73,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -100,7 +102,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Count
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -129,7 +131,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Height
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -158,7 +160,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Age
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -187,7 +189,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: UndergrowthReliability
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -216,7 +218,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SecondGrowthSpecies
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
@@ -225,12 +227,69 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
   syntax:
-    content: public List<SecondGrowthSpecies> SecondGrowthSpecies { get; }
+    content: public IEnumerable<SecondGrowthSpecies> SecondGrowthSpecies { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies}
-    content.vb: Public ReadOnly Property SecondGrowthSpecies As List(Of SecondGrowthSpecies)
+      type: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies}
+    content.vb: Public ReadOnly Property SecondGrowthSpecies As IEnumerable(Of SecondGrowthSpecies)
   overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.SecondGrowthSpecies*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies
+  id: AddSpecies
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout
+  langs:
+  - csharp
+  - vb
+  name: AddSpecies()
+  nameWithType: SecondGrowthLayout.AddSpecies()
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AddSpecies
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
+    startLine: 33
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public SecondGrowthSpecies AddSpecies()
+    return:
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies
+    content.vb: Public Function AddSpecies() As SecondGrowthSpecies
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
+  id: RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout
+  langs:
+  - csharp
+  - vb
+  name: RemoveSpecies(SecondGrowthSpecies)
+  nameWithType: SecondGrowthLayout.RemoveSpecies(SecondGrowthSpecies)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveSpecies
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/SecondGrowthLayout.cs
+    startLine: 44
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public void RemoveSpecies(SecondGrowthSpecies species)
+    parameters:
+    - id: species
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies
+    content.vb: Public Sub RemoveSpecies(species As SecondGrowthSpecies)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Layouts
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Layouts
@@ -1817,32 +1876,32 @@ references:
   name: SecondGrowthSpecies
   nameWithType: SecondGrowthLayout.SecondGrowthSpecies
   fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.SecondGrowthSpecies
-- uid: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies}
-  commentId: T:System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies}
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies}
+  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<SecondGrowthSpecies>
-  nameWithType: List<SecondGrowthSpecies>
-  fullName: System.Collections.Generic.List<ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies>
-  nameWithType.vb: List(Of SecondGrowthSpecies)
-  fullName.vb: System.Collections.Generic.List(Of ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
-  name.vb: List(Of SecondGrowthSpecies)
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<SecondGrowthSpecies>
+  nameWithType: IEnumerable<SecondGrowthSpecies>
+  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies>
+  nameWithType.vb: IEnumerable(Of SecondGrowthSpecies)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies)
+  name.vb: IEnumerable(Of SecondGrowthSpecies)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies
     name: SecondGrowthSpecies
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1850,29 +1909,29 @@ references:
     name: SecondGrowthSpecies
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1915,3 +1974,76 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_SecondGrowthLayout_AddSpecies
+  name: AddSpecies
+  nameWithType: SecondGrowthLayout.AddSpecies
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.AddSpecies
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies
+  commentId: T:ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies.html
+  name: SecondGrowthSpecies
+  nameWithType: SecondGrowthSpecies
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.SecondGrowthSpecies
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+  commentId: N:ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Parma.Space.Data.Objects
+  nameWithType: ParmaGIS.Modules.Parma.Space.Data.Objects
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Parma.Space.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+    name: Objects
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Parma.Space.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+    name: Objects
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.html
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_SecondGrowthLayout_RemoveSpecies_ParmaGIS_Modules_Parma_Space_Data_Objects_SecondGrowthSpecies_
+  name: RemoveSpecies
+  nameWithType: SecondGrowthLayout.RemoveSpecies
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.SecondGrowthLayout.RemoveSpecies

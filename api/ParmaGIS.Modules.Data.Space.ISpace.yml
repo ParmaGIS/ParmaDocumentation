@@ -18,17 +18,19 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISpace
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
   syntax:
-    content: public interface ISpace
-    content.vb: Public Interface ISpace
+    content: 'public interface ISpace : IDisposable'
+    content.vb: Public Interface ISpace Inherits IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
 - uid: ParmaGIS.Modules.Data.Space.ISpace.Name
   commentId: P:ParmaGIS.Modules.Data.Space.ISpace.Name
   id: Name
@@ -43,11 +45,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
@@ -72,11 +74,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
@@ -101,11 +103,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Provider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
@@ -155,6 +157,43 @@ references:
   - uid: ParmaGIS.Modules.Data.Space
     name: Space
     href: ParmaGIS.Modules.Data.Space.html
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: ParmaGIS.Modules.Data.Space.ISpace.Name*
   commentId: Overload:ParmaGIS.Modules.Data.Space.ISpace.Name
   href: ParmaGIS.Modules.Data.Space.ISpace.html#ParmaGIS_Modules_Data_Space_ISpace_Name
@@ -172,13 +211,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: ParmaGIS.Modules.Data.Space.ISpace.Description*
   commentId: Overload:ParmaGIS.Modules.Data.Space.ISpace.Description
   href: ParmaGIS.Modules.Data.Space.ISpace.html#ParmaGIS_Modules_Data_Space_ISpace_Description

@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TreeSpeciesSettings
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-    startLine: 52
+    startLine: 58
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Settings
@@ -60,11 +60,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-    startLine: 54
+    startLine: 60
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Settings
@@ -89,11 +89,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-    startLine: 58
+    startLine: 64
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Settings
@@ -123,20 +123,20 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Order
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-    startLine: 62
+    startLine: 68
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Settings
   syntax:
-    content: public int Order { get; set; }
+    content: public int? Order { get; set; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property Order As Integer
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Order As Integer?
   overload: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.Order*
 - uid: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.AgeClassRange
   commentId: P:ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.AgeClassRange
@@ -152,20 +152,20 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeClassRange
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Settings/Settings.cs
-    startLine: 63
+    startLine: 69
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Settings
   syntax:
-    content: public int AgeClassRange { get; set; }
+    content: public int? AgeClassRange { get; set; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property AgeClassRange As Integer
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property AgeClassRange As Integer?
   overload: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.AgeClassRange*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Settings
@@ -555,17 +555,57 @@ references:
   name: Order
   nameWithType: TreeSpeciesSettings.Order
   fullName: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.Order
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
   parent: System
-  isExternal: true
+  definition: System.Nullable`1
   href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.AgeClassRange*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.AgeClassRange
   href: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesSettings.html#ParmaGIS_Modules_Parma_Space_Settings_TreeSpeciesSettings_AgeClassRange

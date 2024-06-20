@@ -7,6 +7,7 @@ items:
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.#ctor
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AbsoluteDensity
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Age
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AgeGroup
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AgeGroupId
@@ -16,8 +17,8 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Height
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Id
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.LayerComposition
-  - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.OriginId
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Species
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Stand
   - ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.StandId
@@ -34,7 +35,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: WoodLayerData
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -73,7 +74,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -102,7 +103,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Id
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -133,7 +134,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LayerComposition
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -162,7 +163,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Age
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -191,7 +192,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Height
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -200,11 +201,11 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
   syntax:
-    content: public decimal? Height { get; set; }
+    content: public double? Height { get; set; }
     parameters: []
     return:
-      type: System.Nullable{System.Decimal}
-    content.vb: Public Property Height As Decimal?
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Height As Double?
   overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Height*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter
@@ -220,7 +221,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Diameter
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -229,11 +230,11 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
   syntax:
-    content: public int? Diameter { get; set; }
+    content: public double? Diameter { get; set; }
     parameters: []
     return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property Diameter As Integer?
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Diameter As Double?
   overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density
@@ -249,7 +250,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Density
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -278,7 +279,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AbsoluteDensity
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -307,7 +308,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GrowingStock
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -336,7 +337,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SurvivalAbilityPercentage
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -365,7 +366,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: WoodLayerTypeId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -394,7 +395,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OriginId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -423,7 +424,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeGroupId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -452,7 +453,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StandId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -481,7 +482,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Stand
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -510,7 +511,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: WoodLayerType
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -525,35 +526,6 @@ items:
       type: ParmaGIS.Modules.Parma.Space.Catalog.WoodLayerType
     content.vb: Public Property WoodLayerType As WoodLayerType
   overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.WoodLayerType*
-- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin
-  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin
-  id: Origin
-  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
-  langs:
-  - csharp
-  - vb
-  name: Origin
-  nameWithType: WoodLayerData.Origin
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Origin
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-    startLine: 37
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
-  syntax:
-    content: public Origin? Origin { get; set; }
-    parameters: []
-    return:
-      type: ParmaGIS.Modules.Parma.Space.Catalog.Origin
-    content.vb: Public Property Origin As Origin
-  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AgeGroup
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AgeGroup
   id: AgeGroup
@@ -568,11 +540,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeGroup
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-    startLine: 38
+    startLine: 37
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -597,7 +569,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Species
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
@@ -606,12 +578,69 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
   syntax:
-    content: public List<WoodLayerSpeciesData> Species { get; set; }
+    content: public IEnumerable<WoodLayerSpeciesData> Species { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData}
-    content.vb: Public Property Species As List(Of WoodLayerSpeciesData)
+      type: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData}
+    content.vb: Public ReadOnly Property Species As IEnumerable(Of WoodLayerSpeciesData)
   overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Species*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies
+  id: AddSpecies
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+  langs:
+  - csharp
+  - vb
+  name: AddSpecies()
+  nameWithType: WoodLayerData.AddSpecies()
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AddSpecies
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
+    startLine: 63
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
+  syntax:
+    content: public WoodLayerSpeciesData AddSpecies()
+    return:
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData
+    content.vb: Public Function AddSpecies() As WoodLayerSpeciesData
+  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
+  id: RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+  langs:
+  - csharp
+  - vb
+  name: RemoveSpecies(WoodLayerSpeciesData)
+  nameWithType: WoodLayerData.RemoveSpecies(WoodLayerSpeciesData)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveSpecies
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/WoodLayerData.cs
+    startLine: 71
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
+  syntax:
+    content: public void RemoveSpecies(WoodLayerSpeciesData species)
+    parameters:
+    - id: species
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData
+    content.vb: Public Sub RemoveSpecies(species As WoodLayerSpeciesData)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -1119,6 +1148,41 @@ references:
   name: Height
   nameWithType: WoodLayerData.Height
   fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Height
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double?
+  nameWithType: double?
+  fullName: double?
+  nameWithType.vb: Double?
+  fullName.vb: Double?
+  name.vb: Double?
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_Diameter
+  name: Diameter
+  nameWithType: WoodLayerData.Diameter
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_Density
+  name: Density
+  nameWithType: WoodLayerData.Density
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density
 - uid: System.Nullable{System.Decimal}
   commentId: T:System.Nullable{System.Decimal}
   parent: System
@@ -1142,18 +1206,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.decimal
   - name: '?'
-- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter
-  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_Diameter
-  name: Diameter
-  nameWithType: WoodLayerData.Diameter
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Diameter
-- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density
-  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_Density
-  name: Density
-  nameWithType: WoodLayerData.Density
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Density
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AbsoluteDensity*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AbsoluteDensity
   href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_AbsoluteDensity
@@ -1288,19 +1340,6 @@ references:
   - uid: ParmaGIS.Modules.Parma.Space.Catalog
     name: Catalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.html
-- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin
-  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_Origin
-  name: Origin
-  nameWithType: WoodLayerData.Origin
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Origin
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.Origin
-  commentId: T:ParmaGIS.Modules.Parma.Space.Catalog.Origin
-  parent: ParmaGIS.Modules.Parma.Space.Catalog
-  href: ParmaGIS.Modules.Parma.Space.Catalog.Origin.html
-  name: Origin
-  nameWithType: Origin
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.Origin
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AgeGroup*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AgeGroup
   href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_AgeGroup
@@ -1320,32 +1359,32 @@ references:
   name: Species
   nameWithType: WoodLayerData.Species
   fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.Species
-- uid: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData}
-  commentId: T:System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData}
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData}
+  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<WoodLayerSpeciesData>
-  nameWithType: List<WoodLayerSpeciesData>
-  fullName: System.Collections.Generic.List<ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData>
-  nameWithType.vb: List(Of WoodLayerSpeciesData)
-  fullName.vb: System.Collections.Generic.List(Of ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
-  name.vb: List(Of WoodLayerSpeciesData)
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<WoodLayerSpeciesData>
+  nameWithType: IEnumerable<WoodLayerSpeciesData>
+  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData>
+  nameWithType.vb: IEnumerable(Of WoodLayerSpeciesData)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData)
+  name.vb: IEnumerable(Of WoodLayerSpeciesData)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData
     name: WoodLayerSpeciesData
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1353,29 +1392,29 @@ references:
     name: WoodLayerSpeciesData
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1418,3 +1457,22 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_AddSpecies
+  name: AddSpecies
+  nameWithType: WoodLayerData.AddSpecies
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.AddSpecies
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData
+  commentId: T:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData.html
+  name: WoodLayerSpeciesData
+  nameWithType: WoodLayerSpeciesData
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerSpeciesData
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_RemoveSpecies_ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerSpeciesData_
+  name: RemoveSpecies
+  nameWithType: WoodLayerData.RemoveSpecies
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.RemoveSpecies

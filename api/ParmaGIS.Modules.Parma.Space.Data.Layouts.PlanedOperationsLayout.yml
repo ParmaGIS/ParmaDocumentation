@@ -6,7 +6,10 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Data.Layouts
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.#ctor
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.Measures
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure(ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.TargetSpecies
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.TargetSpeciesId
   langs:
@@ -19,7 +22,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PlanedOperationsLayout
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
@@ -69,7 +72,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
@@ -98,7 +101,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TargetSpeciesId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
@@ -127,7 +130,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TargetSpecies
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
@@ -156,7 +159,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Measures
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
@@ -165,12 +168,95 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
   syntax:
-    content: public List<StandMeasuresData> Measures { get; }
+    content: public IEnumerable<StandMeasuresData> Measures { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData}
-    content.vb: Public ReadOnly Property Measures As List(Of StandMeasuresData)
+      type: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData}
+    content.vb: Public ReadOnly Property Measures As IEnumerable(Of StandMeasuresData)
   overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.Measures*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure
+  id: AddMeasure
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout
+  langs:
+  - csharp
+  - vb
+  name: AddMeasure()
+  nameWithType: PlanedOperationsLayout.AddMeasure()
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AddMeasure
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
+    startLine: 20
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public StandMeasuresData AddMeasure()
+    return:
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData
+    content.vb: Public Function AddMeasure() As StandMeasuresData
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure(ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure(ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
+  id: RemoveMeasure(ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout
+  langs:
+  - csharp
+  - vb
+  name: RemoveMeasure(StandMeasuresData)
+  nameWithType: PlanedOperationsLayout.RemoveMeasure(StandMeasuresData)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure(ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveMeasure
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
+    startLine: 27
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public void RemoveMeasure(StandMeasuresData measures)
+    parameters:
+    - id: measures
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData
+    content.vb: Public Sub RemoveMeasure(measures As StandMeasuresData)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures
+  id: ClearMeasures
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout
+  langs:
+  - csharp
+  - vb
+  name: ClearMeasures()
+  nameWithType: PlanedOperationsLayout.ClearMeasures()
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ClearMeasures
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/PlanedOperationsLayout.cs
+    startLine: 32
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public void ClearMeasures()
+    content.vb: Public Sub ClearMeasures()
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Layouts
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Layouts
@@ -1719,32 +1805,32 @@ references:
   name: Measures
   nameWithType: PlanedOperationsLayout.Measures
   fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.Measures
-- uid: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData}
-  commentId: T:System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData}
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData}
+  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<StandMeasuresData>
-  nameWithType: List<StandMeasuresData>
-  fullName: System.Collections.Generic.List<ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData>
-  nameWithType.vb: List(Of StandMeasuresData)
-  fullName.vb: System.Collections.Generic.List(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
-  name.vb: List(Of StandMeasuresData)
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<StandMeasuresData>
+  nameWithType: IEnumerable<StandMeasuresData>
+  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData>
+  nameWithType.vb: IEnumerable(Of StandMeasuresData)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData)
+  name.vb: IEnumerable(Of StandMeasuresData)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData
     name: StandMeasuresData
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1752,29 +1838,29 @@ references:
     name: StandMeasuresData
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1817,3 +1903,82 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_PlanedOperationsLayout_AddMeasure
+  name: AddMeasure
+  nameWithType: PlanedOperationsLayout.AddMeasure
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.AddMeasure
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData
+  commentId: T:ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData.html
+  name: StandMeasuresData
+  nameWithType: StandMeasuresData
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.StandMeasuresData
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+  commentId: N:ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Parma.Space.Data.Objects
+  nameWithType: ParmaGIS.Modules.Parma.Space.Data.Objects
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Parma.Space.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+    name: Objects
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Parma.Space.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+    name: Objects
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.html
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_PlanedOperationsLayout_RemoveMeasure_ParmaGIS_Modules_Parma_Space_Data_Objects_StandMeasuresData_
+  name: RemoveMeasure
+  nameWithType: PlanedOperationsLayout.RemoveMeasure
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.RemoveMeasure
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_PlanedOperationsLayout_ClearMeasures
+  name: ClearMeasures
+  nameWithType: PlanedOperationsLayout.ClearMeasures
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.PlanedOperationsLayout.ClearMeasures

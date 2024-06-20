@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Data.Layouts
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.#ctor
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AgeClass
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AgeGroup
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AgeGroupId
@@ -13,6 +14,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AvgDiameter
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AvgHeight
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.MinCuttingAge
+  - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
   - ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.WoodLayers
   langs:
   - csharp
@@ -24,7 +26,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaxationCharacteristicsLayout
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -74,7 +76,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -103,7 +105,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AvgAge
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -132,7 +134,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AvgHeight
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -161,7 +163,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AvgDiameter
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -190,7 +192,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeClass
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -219,7 +221,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MinCuttingAge
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -248,7 +250,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeGroupId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -277,7 +279,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AgeGroup
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -306,7 +308,7 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: WoodLayers
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
@@ -315,12 +317,69 @@ items:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
   syntax:
-    content: public List<WoodLayerData> WoodLayers { get; }
+    content: public IEnumerable<WoodLayerData> WoodLayers { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData}
-    content.vb: Public ReadOnly Property WoodLayers As List(Of WoodLayerData)
+      type: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData}
+    content.vb: Public ReadOnly Property WoodLayers As IEnumerable(Of WoodLayerData)
   overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.WoodLayers*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer
+  id: AddWoodLayer
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout
+  langs:
+  - csharp
+  - vb
+  name: AddWoodLayer()
+  nameWithType: TaxationCharacteristicsLayout.AddWoodLayer()
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AddWoodLayer
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
+    startLine: 37
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public WoodLayerData AddWoodLayer()
+    return:
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+    content.vb: Public Function AddWoodLayer() As WoodLayerData
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
+  id: RemoveWoodLayer(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout
+  langs:
+  - csharp
+  - vb
+  name: RemoveWoodLayer(WoodLayerData)
+  nameWithType: TaxationCharacteristicsLayout.RemoveWoodLayer(WoodLayerData)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer(ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveWoodLayer
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/TaxationCharacteristicsLayout.cs
+    startLine: 44
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  syntax:
+    content: public void RemoveWoodLayer(WoodLayerData woodLayer)
+    parameters:
+    - id: woodLayer
+      type: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+    content.vb: Public Sub RemoveWoodLayer(woodLayer As WoodLayerData)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Layouts
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Layouts
@@ -1945,32 +2004,32 @@ references:
   name: WoodLayers
   nameWithType: TaxationCharacteristicsLayout.WoodLayers
   fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.WoodLayers
-- uid: System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData}
-  commentId: T:System.Collections.Generic.List{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData}
+- uid: System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData}
+  commentId: T:System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<WoodLayerData>
-  nameWithType: List<WoodLayerData>
-  fullName: System.Collections.Generic.List<ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData>
-  nameWithType.vb: List(Of WoodLayerData)
-  fullName.vb: System.Collections.Generic.List(Of ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
-  name.vb: List(Of WoodLayerData)
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<WoodLayerData>
+  nameWithType: IEnumerable<WoodLayerData>
+  fullName: System.Collections.Generic.IEnumerable<ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData>
+  nameWithType.vb: IEnumerable(Of WoodLayerData)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData)
+  name.vb: IEnumerable(Of WoodLayerData)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
     name: WoodLayerData
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1978,29 +2037,29 @@ references:
     name: WoodLayerData
     href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -2043,3 +2102,76 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_TaxationCharacteristicsLayout_AddWoodLayer
+  name: AddWoodLayer
+  nameWithType: TaxationCharacteristicsLayout.AddWoodLayer
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.AddWoodLayer
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+  commentId: T:ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData.html
+  name: WoodLayerData
+  nameWithType: WoodLayerData
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.WoodLayerData
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+  commentId: N:ParmaGIS.Modules.Parma.Space.Data.Objects
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Parma.Space.Data.Objects
+  nameWithType: ParmaGIS.Modules.Parma.Space.Data.Objects
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Parma.Space.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+    name: Objects
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data
+    name: Data
+    href: ParmaGIS.Modules.Parma.Space.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects
+    name: Objects
+    href: ParmaGIS.Modules.Parma.Space.Data.Objects.html
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_TaxationCharacteristicsLayout_RemoveWoodLayer_ParmaGIS_Modules_Parma_Space_Data_Objects_WoodLayerData_
+  name: RemoveWoodLayer
+  nameWithType: TaxationCharacteristicsLayout.RemoveWoodLayer
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.TaxationCharacteristicsLayout.RemoveWoodLayer

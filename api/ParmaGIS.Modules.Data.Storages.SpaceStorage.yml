@@ -5,7 +5,7 @@ items:
   id: SpaceStorage
   parent: ParmaGIS.Modules.Data.Storages
   children:
-  - ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage)
+  - ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage,ParmaGIS.Core.Shell.IShellCore)
   langs:
   - csharp
   - vb
@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Storages/SpaceStorage.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SpaceStorage
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceStorage.cs
-    startLine: 5
+    startLine: 6
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
@@ -57,40 +57,42 @@ items:
   - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Space.ISpace}}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Space.ISpace},System.Int32})
   - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Space.ISpace}}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Space.ISpace}})
   - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Space.ISpace}}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Space.ISpace}})
-- uid: ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage)
-  commentId: M:ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage)
-  id: '#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage)'
+- uid: ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage,ParmaGIS.Core.Shell.IShellCore)
+  commentId: M:ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage,ParmaGIS.Core.Shell.IShellCore)
+  id: '#ctor(ParmaGIS.Modules.Data.Storages.DBServerStorage,ParmaGIS.Core.Storage.IStorage,ParmaGIS.Core.Shell.IShellCore)'
   parent: ParmaGIS.Modules.Data.Storages.SpaceStorage
   langs:
   - csharp
   - vb
-  name: SpaceStorage(DBServerStorage, IStorage)
-  nameWithType: SpaceStorage.SpaceStorage(DBServerStorage, IStorage)
-  fullName: ParmaGIS.Modules.Data.Storages.SpaceStorage.SpaceStorage(ParmaGIS.Modules.Data.Storages.DBServerStorage, ParmaGIS.Core.Storage.IStorage)
+  name: SpaceStorage(DBServerStorage, IStorage, IShellCore)
+  nameWithType: SpaceStorage.SpaceStorage(DBServerStorage, IStorage, IShellCore)
+  fullName: ParmaGIS.Modules.Data.Storages.SpaceStorage.SpaceStorage(ParmaGIS.Modules.Data.Storages.DBServerStorage, ParmaGIS.Core.Storage.IStorage, ParmaGIS.Core.Shell.IShellCore)
   type: Constructor
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Storages/SpaceStorage.cs
-      branch: origin/main
+      branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceStorage.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
   syntax:
-    content: public SpaceStorage(DBServerStorage dataBaseServers, IStorage storage)
+    content: public SpaceStorage(DBServerStorage dataBaseServers, IStorage storage, IShellCore shell)
     parameters:
     - id: dataBaseServers
       type: ParmaGIS.Modules.Data.Storages.DBServerStorage
     - id: storage
       type: ParmaGIS.Core.Storage.IStorage
-    content.vb: Public Sub New(dataBaseServers As DBServerStorage, storage As IStorage)
+    - id: shell
+      type: ParmaGIS.Core.Shell.IShellCore
+    content.vb: Public Sub New(dataBaseServers As DBServerStorage, storage As IStorage, shell As IShellCore)
   overload: ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor*
-  nameWithType.vb: SpaceStorage.New(DBServerStorage, IStorage)
-  fullName.vb: ParmaGIS.Modules.Data.Storages.SpaceStorage.New(ParmaGIS.Modules.Data.Storages.DBServerStorage, ParmaGIS.Core.Storage.IStorage)
-  name.vb: New(DBServerStorage, IStorage)
+  nameWithType.vb: SpaceStorage.New(DBServerStorage, IStorage, IShellCore)
+  fullName.vb: ParmaGIS.Modules.Data.Storages.SpaceStorage.New(ParmaGIS.Modules.Data.Storages.DBServerStorage, ParmaGIS.Core.Storage.IStorage, ParmaGIS.Core.Shell.IShellCore)
+  name.vb: New(DBServerStorage, IStorage, IShellCore)
 references:
 - uid: ParmaGIS.Modules.Data.Storages
   commentId: N:ParmaGIS.Modules.Data.Storages
@@ -2105,7 +2107,7 @@ references:
     href: ParmaGIS.Core.Utilities.Collections.html
 - uid: ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor*
   commentId: Overload:ParmaGIS.Modules.Data.Storages.SpaceStorage.#ctor
-  href: ParmaGIS.Modules.Data.Storages.SpaceStorage.html#ParmaGIS_Modules_Data_Storages_SpaceStorage__ctor_ParmaGIS_Modules_Data_Storages_DBServerStorage_ParmaGIS_Core_Storage_IStorage_
+  href: ParmaGIS.Modules.Data.Storages.SpaceStorage.html#ParmaGIS_Modules_Data_Storages_SpaceStorage__ctor_ParmaGIS_Modules_Data_Storages_DBServerStorage_ParmaGIS_Core_Storage_IStorage_ParmaGIS_Core_Shell_IShellCore_
   name: SpaceStorage
   nameWithType: SpaceStorage.SpaceStorage
   fullName: ParmaGIS.Modules.Data.Storages.SpaceStorage.SpaceStorage
@@ -2126,3 +2128,40 @@ references:
   name: IStorage
   nameWithType: IStorage
   fullName: ParmaGIS.Core.Storage.IStorage
+- uid: ParmaGIS.Core.Shell.IShellCore
+  commentId: T:ParmaGIS.Core.Shell.IShellCore
+  parent: ParmaGIS.Core.Shell
+  href: ParmaGIS.Core.Shell.IShellCore.html
+  name: IShellCore
+  nameWithType: IShellCore
+  fullName: ParmaGIS.Core.Shell.IShellCore
+- uid: ParmaGIS.Core.Shell
+  commentId: N:ParmaGIS.Core.Shell
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Shell
+  nameWithType: ParmaGIS.Core.Shell
+  fullName: ParmaGIS.Core.Shell
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Shell
+    name: Shell
+    href: ParmaGIS.Core.Shell.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Shell
+    name: Shell
+    href: ParmaGIS.Core.Shell.html
