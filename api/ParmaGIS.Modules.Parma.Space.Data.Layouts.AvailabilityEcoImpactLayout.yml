@@ -25,10 +25,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AvailabilityEcoImpactLayout
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  summary: Макет 28 Доступность для хозвоздействия.
+  example: []
   syntax:
     content: 'public class AvailabilityEcoImpactLayout : ParmaMinorDataLayout, INotifyPropertyChanged'
     content.vb: Public Class AvailabilityEcoImpactLayout Inherits ParmaMinorDataLayout Implements INotifyPropertyChanged
@@ -78,7 +80,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 11
+    startLine: 20
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
@@ -89,64 +91,6 @@ items:
   nameWithType.vb: AvailabilityEcoImpactLayout.New()
   fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.New()
   name.vb: New()
-- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
-  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
-  id: DistToRoad
-  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout
-  langs:
-  - csharp
-  - vb
-  name: DistToRoad
-  nameWithType: AvailabilityEcoImpactLayout.DistToRoad
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: DistToRoad
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 16
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
-  syntax:
-    content: public decimal? DistToRoad { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Decimal}
-    content.vb: Public Property DistToRoad As Decimal?
-  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad*
-- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
-  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
-  id: TransportTypeId
-  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout
-  langs:
-  - csharp
-  - vb
-  name: TransportTypeId
-  nameWithType: AvailabilityEcoImpactLayout.TransportTypeId
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: TransportTypeId
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 18
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
-  syntax:
-    content: public Guid? TransportTypeId { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Guid}
-    content.vb: Public Property TransportTypeId As Guid?
-  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId
   id: HarvestAvailabilityId
@@ -165,17 +109,81 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HarvestAvailabilityId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 19
+    startLine: 28
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  summary: Возвращает Id признака доступности. (1)
+  example: []
   syntax:
-    content: public Guid? HarvestAvailabilityId { get; set; }
+    content: public Guid? HarvestAvailabilityId { get; }
     parameters: []
     return:
       type: System.Nullable{System.Guid}
-    content.vb: Public Property HarvestAvailabilityId As Guid?
+    content.vb: Public ReadOnly Property HarvestAvailabilityId As Guid?
   overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
+  id: TransportTypeId
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout
+  langs:
+  - csharp
+  - vb
+  name: TransportTypeId
+  nameWithType: AvailabilityEcoImpactLayout.TransportTypeId
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: TransportTypeId
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
+    startLine: 33
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  summary: Возвращает Id типа транспорта. (2)
+  example: []
+  syntax:
+    content: public Guid? TransportTypeId { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Guid}
+    content.vb: Public ReadOnly Property TransportTypeId As Guid?
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
+  id: DistToRoad
+  parent: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout
+  langs:
+  - csharp
+  - vb
+  name: DistToRoad
+  nameWithType: AvailabilityEcoImpactLayout.DistToRoad
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: DistToRoad
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
+    startLine: 38
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  summary: Возвращает или задает расстояние до дороги. (3)
+  example: []
+  syntax:
+    content: public decimal? DistToRoad { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Decimal}
+    content.vb: Public Property DistToRoad As Decimal?
+  overload: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportType
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportType
   id: TransportType
@@ -194,10 +202,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TransportType
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 21
+    startLine: 44
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  summary: Возвращает или задает тип транспорта. (1)
+  example: []
   syntax:
     content: public TransportType? TransportType { get; set; }
     parameters: []
@@ -223,10 +233,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HarvestAvailability
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Layouts/AvailabilityEcoImpactLayout.cs
-    startLine: 22
+    startLine: 49
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Layouts
+  summary: Возвращает или задает признак доступности. (2)
+  example: []
   syntax:
     content: public HarvestAvailability? HarvestAvailability { get; set; }
     parameters: []
@@ -1684,34 +1696,31 @@ references:
   nameWithType.vb: AvailabilityEcoImpactLayout.New
   fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.New
   name.vb: New
-- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
-  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_AvailabilityEcoImpactLayout_DistToRoad
-  name: DistToRoad
-  nameWithType: AvailabilityEcoImpactLayout.DistToRoad
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
-- uid: System.Nullable{System.Decimal}
-  commentId: T:System.Nullable{System.Decimal}
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_AvailabilityEcoImpactLayout_HarvestAvailabilityId
+  name: HarvestAvailabilityId
+  nameWithType: AvailabilityEcoImpactLayout.HarvestAvailabilityId
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
   parent: System
   definition: System.Nullable`1
-  href: https://learn.microsoft.com/dotnet/api/system.decimal
-  name: decimal?
-  nameWithType: decimal?
-  fullName: decimal?
-  nameWithType.vb: Decimal?
-  fullName.vb: Decimal?
-  name.vb: Decimal?
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid?
+  nameWithType: Guid?
+  fullName: System.Guid?
   spec.csharp:
-  - uid: System.Decimal
-    name: decimal
+  - uid: System.Guid
+    name: Guid
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.decimal
+    href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: '?'
   spec.vb:
-  - uid: System.Decimal
-    name: Decimal
+  - uid: System.Guid
+    name: Guid
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.decimal
+    href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: '?'
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
@@ -1747,32 +1756,35 @@ references:
   name: TransportTypeId
   nameWithType: AvailabilityEcoImpactLayout.TransportTypeId
   fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportTypeId
-- uid: System.Nullable{System.Guid}
-  commentId: T:System.Nullable{System.Guid}
+- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
+  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_AvailabilityEcoImpactLayout_DistToRoad
+  name: DistToRoad
+  nameWithType: AvailabilityEcoImpactLayout.DistToRoad
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.DistToRoad
+- uid: System.Nullable{System.Decimal}
+  commentId: T:System.Nullable{System.Decimal}
   parent: System
   definition: System.Nullable`1
-  href: https://learn.microsoft.com/dotnet/api/system.guid
-  name: Guid?
-  nameWithType: Guid?
-  fullName: System.Guid?
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal?
+  nameWithType: decimal?
+  fullName: decimal?
+  nameWithType.vb: Decimal?
+  fullName.vb: Decimal?
+  name.vb: Decimal?
   spec.csharp:
-  - uid: System.Guid
-    name: Guid
+  - uid: System.Decimal
+    name: decimal
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.guid
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
   - name: '?'
   spec.vb:
-  - uid: System.Guid
-    name: Guid
+  - uid: System.Decimal
+    name: Decimal
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.guid
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
   - name: '?'
-- uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId
-  href: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_AvailabilityEcoImpactLayout_HarvestAvailabilityId
-  name: HarvestAvailabilityId
-  nameWithType: AvailabilityEcoImpactLayout.HarvestAvailabilityId
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.HarvestAvailabilityId
 - uid: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportType*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.TransportType
   href: ParmaGIS.Modules.Parma.Space.Data.Layouts.AvailabilityEcoImpactLayout.html#ParmaGIS_Modules_Parma_Space_Data_Layouts_AvailabilityEcoImpactLayout_TransportType
