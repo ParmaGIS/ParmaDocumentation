@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt; | site ">
       
-      
+      <meta name="description" content="Представляет базовую реализацию репозитория каталогов.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3" class="text-break">
-Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
   <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет базовую реализацию репозитория каталогов.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,11 +110,14 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TObjectId</code></dt>
-    <dd></dd>
+    <dd><p>Тип уникального идентификатора.</p>
+</dd>
     <dt><code>TCatalog</code></dt>
-    <dd></dd>
+    <dd><p>Базовый тип каталогов.</p>
+</dd>
     <dt><code>TCatalogItem</code></dt>
-    <dd></dd>
+    <dd><p>Базовый тип элементов каталога.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -177,28 +181,32 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)">
   CreateCatalogAsync(string, Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает каталог.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalog&gt; CreateCatalogAsync(string name, Type itemType)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalog&gt;&gt; CreateCatalogAsync(string name, Type itemType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Название каталога.</p>
+</dd>
     <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип элементов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalog&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalog&gt;&gt;</dt>
+    <dd><p>Созданный каталог.</p>
+</dd>
   </dl>
 
 
@@ -215,26 +223,29 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync__1_System_String_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync``1(System.String)">
   CreateCatalogAsync&lt;TItem&gt;(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает каталог.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalog&gt; CreateCatalogAsync&lt;TItem&gt;(string name) where TItem : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalog&gt;&gt; CreateCatalogAsync&lt;TItem&gt;(string name) where TItem : TCatalogItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Название каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalog&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalog&gt;&gt;</dt>
+    <dd><p>Созданный каталог.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
@@ -256,26 +267,29 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)">
   CreateCatalogItemAsync(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L150"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает элемент каталога.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalogItem&gt; CreateCatalogItemAsync(Type itemType)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalogItem&gt;&gt; CreateCatalogItemAsync(Type itemType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип элемента каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalogItem&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalogItem&gt;&gt;</dt>
+    <dd><p>Созданный элемент каталога.</p>
+</dd>
   </dl>
 
 
@@ -292,26 +306,29 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)">
   CreateCatalogItemAsync(TCatalog)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает элемент каталога.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalogItem&gt; CreateCatalogItemAsync(TCatalog catalog)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalogItem&gt;&gt; CreateCatalogItemAsync(TCatalog catalog)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>catalog</code> <span class="xref">TCatalog</span></dt>
-    <dd></dd>
+    <dd><p>Каталог.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalogItem&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalogItem&gt;&gt;</dt>
+    <dd><p>Созданный элемент каталога</p>
+</dd>
   </dl>
 
 
@@ -328,27 +345,30 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync``1">
   CreateCatalogItemAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает элемент каталога.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T&gt; CreateCatalogItemAsync&lt;T&gt;() where T : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T&gt;&gt; CreateCatalogItemAsync&lt;T&gt;() where T : TCatalogItem</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Созданный элемент каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента каталога.</p>
+</dd>
   </dl>
 
 
@@ -364,26 +384,29 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(System.Type)">
   GetCatalogAsync(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает каталог по типу его элементов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalog?&gt; GetCatalogAsync(Type itemType)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalog?&gt;&gt; GetCatalogAsync(Type itemType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип элемента каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalog&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalog&gt;&gt;</dt>
+    <dd><p>Каталог, которому принадлежат элементы указанного типа.</p>
+</dd>
   </dl>
 
 
@@ -400,26 +423,29 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(`2)">
   GetCatalogAsync(TCatalogItem)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает каталог по его элементу.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalog?&gt; GetCatalogAsync(TCatalogItem catalogItem)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalog?&gt;&gt; GetCatalogAsync(TCatalogItem catalogItem)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>catalogItem</code> <span class="xref">TCatalogItem</span></dt>
-    <dd></dd>
+    <dd><p>Элемент каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalog&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalog&gt;&gt;</dt>
+    <dd><p>Каталог, которому принадлежит элемент.</p>
+</dd>
   </dl>
 
 
@@ -436,27 +462,30 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1">
   GetCatalogAsync&lt;TItem&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает каталог по типу элемента.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalog?&gt; GetCatalogAsync&lt;TItem&gt;() where TItem : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalog?&gt;&gt; GetCatalogAsync&lt;TItem&gt;() where TItem : TCatalogItem</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalog&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalog&gt;&gt;</dt>
+    <dd><p>Каталог, которому принадлежат элементы указанного типа.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TItem</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента каталога.</p>
+</dd>
   </dl>
 
 
@@ -472,28 +501,32 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync_System_Type__0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync(System.Type,`0)">
   GetCatalogItemAsync(Type, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвраает элемент каталога по его типу и уникальному идентификатору.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalogItem?&gt; GetCatalogItemAsync(Type itemType, TObjectId id)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalogItem?&gt;&gt; GetCatalogItemAsync(Type itemType, TObjectId id)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>itemType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип элемента каталога.</p>
+</dd>
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор эелмента.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalogItem&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalogItem&gt;&gt;</dt>
+    <dd><p>Элемент каталога.</p>
+</dd>
   </dl>
 
 
@@ -510,28 +543,32 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync(`1,`0)">
   GetCatalogItemAsync(TCatalog, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элемент каталога по каталогу и уникальному идентификатору.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalogItem?&gt; GetCatalogItemAsync(TCatalog catalog, TObjectId id)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalogItem?&gt;&gt; GetCatalogItemAsync(TCatalog catalog, TObjectId id)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>catalog</code> <span class="xref">TCatalog</span></dt>
-    <dd></dd>
+    <dd><p>Каталог, которому принадлежит элемент.</p>
+</dd>
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalogItem&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalogItem&gt;&gt;</dt>
+    <dd><p>Элеметн каталога.</p>
+</dd>
   </dl>
 
 
@@ -548,32 +585,36 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)">
   GetCatalogItemAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элемент каталога по его типу и уникальному идентификатору.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetCatalogItemAsync&lt;T&gt;(TObjectId id) where T : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetCatalogItemAsync&lt;T&gt;(TObjectId id) where T : TCatalogItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор элемента.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента каталога.</p>
+</dd>
   </dl>
 
 
@@ -589,14 +630,15 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync_System_Type_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync(System.Type)">
   GetCatalogItemsAsync(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элементы каталога указанного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalogItem[]&gt; GetCatalogItemsAsync(Type type)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalogItem[]&gt;&gt; GetCatalogItemsAsync(Type type)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -607,8 +649,9 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalogItem[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalogItem[]&gt;&gt;</dt>
+    <dd><p>Массив элементов каталога.</p>
+</dd>
   </dl>
 
 
@@ -625,26 +668,29 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync(`1)">
   GetCatalogItemsAsync(TCatalog)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элементы каталога.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalogItem[]&gt; GetCatalogItemsAsync(TCatalog catalogInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalogItem[]&gt;&gt; GetCatalogItemsAsync(TCatalog catalog)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>catalogInfo</code> <span class="xref">TCatalog</span></dt>
-    <dd></dd>
+    <dt><code>catalog</code> <span class="xref">TCatalog</span></dt>
+    <dd><p>Каталог.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalogItem[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalogItem[]&gt;&gt;</dt>
+    <dd><p>Массив элементов каталога.</p>
+</dd>
   </dl>
 
 
@@ -661,27 +707,30 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1">
   GetCatalogItemsAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элементы каталога указанного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetCatalogItemsAsync&lt;T&gt;() where T : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetCatalogItemsAsync&lt;T&gt;() where T : TCatalogItem</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив элементов каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов каталога.</p>
+</dd>
   </dl>
 
 
@@ -697,21 +746,23 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync">
   GetCatalogsAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все каталоги репозитория.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCatalog[]&gt; GetCatalogsAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCatalog[]&gt;&gt; GetCatalogsAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCatalog[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCatalog[]&gt;&gt;</dt>
+    <dd><p>Массив каталогов.</p>
+</dd>
   </dl>
 
 
@@ -728,25 +779,27 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogAsync(`1)">
   InsertCatalogAsync(TCatalog)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет каталог в репозиторий.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCatalogAsync(TCatalog catalog)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; InsertCatalogAsync(TCatalog catalog)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>catalog</code> <span class="xref">TCatalog</span></dt>
-    <dd></dd>
+    <dd><p>Добавляемый каталог.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -762,35 +815,32 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <a id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync``1(``0)">
-  InsertCatalogItemAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)">
+  InsertCatalogItemAsync(TCatalogItem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавлеяет элeмент каталога в репозиторий.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCatalogItemAsync&lt;T&gt;(T catalogItem) where T : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; InsertCatalogItemAsync(TCatalogItem catalogItem)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>catalogItem</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><code>catalogItem</code> <span class="xref">TCatalogItem</span></dt>
+    <dd><p>Элемент каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -805,25 +855,27 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogAsync(`1)">
   RemoveCatalogAsync(TCatalog)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Удаляет каталог из репозитория.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task RemoveCatalogAsync(TCatalog catalog)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; RemoveCatalogAsync(TCatalog catalog)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>catalog</code> <span class="xref">TCatalog</span></dt>
-    <dd></dd>
+    <dd><p>Удаляемый каталог.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -839,35 +891,32 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <a id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync``1(``0)">
-  RemoveCatalogItemAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync(`2)">
+  RemoveCatalogItemAsync(TCatalogItem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L129"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Удаляет элемент каталога.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task RemoveCatalogItemAsync&lt;T&gt;(T catalogItem) where T : TCatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; RemoveCatalogItemAsync(TCatalogItem catalogItem)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>catalogItem</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><code>catalogItem</code> <span class="xref">TCatalogItem</span></dt>
+    <dd><p>Удаляемый элемент каталога.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -882,20 +931,21 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 
   <h3 id="ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync" data-uid="ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync">
   SaveChangesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Сохраняет изменения.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task SaveChangesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; SaveChangesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -913,7 +963,7 @@ Class CatalogRepositoryBase&lt;TObjectId, TCatalog, TCatalogItem&gt;  <a class="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

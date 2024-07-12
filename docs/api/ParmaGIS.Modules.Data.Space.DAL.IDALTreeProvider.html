@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IDALTreeProvider | site ">
       
-      
+      <meta name="description" content="Представляет контракт взаимодействия с провайдером древовидного представления поддерживающего архитектуру DataAccessLayer. Данный провайдер представляет уровень получения данных древовидного представления для бизнес логики приложения. Данный провайдер нацелен на реализацию относительно какой-либо ORM.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Space_DAL_IDALTreeProvider" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALTreeProvider" class="text-break">
-Interface IDALTreeProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Interface IDALTreeProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,10 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет контракт взаимодействия с провайдером древовидного представления поддерживающего архитектуру DataAccessLayer.
+Данный провайдер представляет уровень получения данных древовидного представления для бизнес логики приложения.
+Данный провайдер нацелен на реализацию относительно какой-либо ORM.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -152,10 +155,13 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
 
   <h3 id="ParmaGIS_Modules_Data_Space_DAL_IDALTreeProvider_GetNodes" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALTreeProvider.GetNodes">
   GetNodes()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable&lt;T&gt;</a> элементов древовидного представления.
+ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -166,7 +172,8 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Запрос к элементам древовидного дерева.</p>
+</dd>
   </dl>
 
 
@@ -183,10 +190,13 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
 
   <h3 id="ParmaGIS_Modules_Data_Space_DAL_IDALTreeProvider_GetNodes__1" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALTreeProvider.GetNodes``1">
   GetNodes&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable&lt;T&gt;</a> элементов древовидного представления указанного типа.
+ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -197,13 +207,15 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>Запрос к элементам древовидного дерева.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов древовидного представления.</p>
+</dd>
   </dl>
 
 
@@ -219,10 +231,13 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
 
   <h3 id="ParmaGIS_Modules_Data_Space_DAL_IDALTreeProvider_GetRootNodes" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALTreeProvider.GetRootNodes">
   GetRootNodes()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable&lt;T&gt;</a> элементов древовидного представления.
+ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -233,7 +248,8 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Запрос к элементам древовидного дерева.</p>
+</dd>
   </dl>
 
 
@@ -250,34 +266,39 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
 
   <h3 id="ParmaGIS_Modules_Data_Space_DAL_IDALTreeProvider_LoadNodes__2_System_Func_System_Linq_IQueryable___1____0__" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALTreeProvider.LoadNodes``2(System.Func{System.Linq.IQueryable{``1},``0})">
   LoadNodes&lt;TRes, TNode&gt;(Func&lt;IQueryable&lt;TNode&gt;, TRes&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Выполняет функцию потокобезопасно.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;TRes&gt; LoadNodes&lt;TRes, TNode&gt;(Func&lt;IQueryable&lt;TNode&gt;, TRes&gt; loader) where TNode : class, ITreeNode</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;TRes&gt;&gt; LoadNodes&lt;TRes, TNode&gt;(Func&lt;IQueryable&lt;TNode&gt;, TRes&gt; loader) where TNode : class, ITreeNode</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>loader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TNode&gt;, TRes&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция выполняющаяся потокобезопасо.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TRes&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TRes&gt;&gt;</dt>
+    <dd><p>Результат выполнения функции.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TRes</code></dt>
-    <dd></dd>
+    <dd><p>Тип результата выполнения функции.</p>
+</dd>
     <dt><code>TNode</code></dt>
-    <dd></dd>
+    <dd><p>тип элемента древовидного представления.</p>
+</dd>
   </dl>
 
 
@@ -293,7 +314,7 @@ Interface IDALTreeProvider  <a class="header-action link-secondary" title="View 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALTreeProvider.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

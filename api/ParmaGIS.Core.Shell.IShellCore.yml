@@ -28,10 +28,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IShellCore
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Представляет контракт взаимодействия с ядром оболочки. Экземпляр ядра можно получить в <xref href="ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
     content: public interface IShellCore
     content.vb: Public Interface IShellCore
@@ -53,10 +55,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Logger
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 11
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает сервис логирования.
+  example: []
   syntax:
     content: ILogger Logger { get; }
     parameters: []
@@ -82,10 +86,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает менеджер модулей.
+  example: []
   syntax:
     content: IModuleManager ModuleManager { get; }
     parameters: []
@@ -111,10 +117,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает менеджер сервисов.
+  example: []
   syntax:
     content: IServiceManager ServiceManager { get; }
     parameters: []
@@ -140,10 +148,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Storage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 14
+    startLine: 25
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает сервис хранилище.
+  example: []
   syntax:
     content: IStorage Storage { get; }
     parameters: []
@@ -169,10 +179,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Closing
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 16
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возникает, при закрытии ядра.
+  example: []
   syntax:
     content: event EventHandler? Closing
     return:
@@ -196,10 +208,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CoreVersion
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 17
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает версию ядра.
+  example: []
   syntax:
     content: Version CoreVersion { get; }
     parameters: []
@@ -225,10 +239,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PlatformVersion
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 18
+    startLine: 34
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает версию платформы.
+  example: []
   syntax:
     content: Version PlatformVersion { get; }
     parameters: []
@@ -254,10 +270,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Run
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 19
+    startLine: 38
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Запускает ядро.
+  example: []
   syntax:
     content: void Run()
     content.vb: Sub Run()
@@ -280,15 +298,44 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Close
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCore.cs
-    startLine: 20
+    startLine: 41
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Завершает работы ядра.
+  example: []
   syntax:
     content: void Close()
     content.vb: Sub Close()
   overload: ParmaGIS.Core.Shell.IShellCore.Close*
 references:
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)
+  isExternal: true
+  href: ParmaGIS.Core.Serviceability.IServiceProvider.html#ParmaGIS_Core_Serviceability_IServiceProvider_GetService_System_Type_
+  name: GetService(Type)
+  nameWithType: IServiceProvider.GetService(Type)
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)
+    name: GetService
+    href: ParmaGIS.Core.Serviceability.IServiceProvider.html#ParmaGIS_Core_Serviceability_IServiceProvider_GetService_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Serviceability.IServiceProvider.GetService(System.Type)
+    name: GetService
+    href: ParmaGIS.Core.Serviceability.IServiceProvider.html#ParmaGIS_Core_Serviceability_IServiceProvider_GetService_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: ParmaGIS.Core.Shell
   commentId: N:ParmaGIS.Core.Shell
   href: ParmaGIS.html

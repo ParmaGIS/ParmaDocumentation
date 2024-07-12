@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ViewResolver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Представляет простую реализацию <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public class ViewResolver : IViewResolver'
     content.vb: Public Class ViewResolver Implements IViewResolver
@@ -58,15 +60,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver.cs
-    startLine: 6
+    startLine: 14
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.UI.Mvvm.ViewResolver" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ViewResolver(IViewModelManager viewModelManager)
     parameters:
     - id: viewModelManager
       type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менедежер ViewModel.
     content.vb: Public Sub New(viewModelManager As IViewModelManager)
   overload: ParmaGIS.Core.UI.Mvvm.ViewResolver.#ctor*
   nameWithType.vb: ViewResolver.New(IViewModelManager)
@@ -90,20 +95,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryResolve
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver.cs
-    startLine: 11
+    startLine: 21
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Пытается  разрешить View для ViewModrl.
   example: []
   syntax:
     content: public bool TryResolve(object viewModel, out object view)
     parameters:
     - id: viewModel
       type: System.Object
+      description: Экземпляр ViewModel.
     - id: view
       type: System.Object
+      description: Экземпляр View.
     return:
       type: System.Boolean
+      description: Значение true, если удалось найти View для ViewModel, иначе - false.
     content.vb: Public Function TryResolve(viewModel As Object, view As Object) As Boolean
   overload: ParmaGIS.Core.UI.Mvvm.ViewResolver.TryResolve*
   implements:
@@ -112,6 +121,13 @@ items:
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver.TryResolve(Object, Object)
   name.vb: TryResolve(Object, Object)
 references:
+- uid: ParmaGIS.Core.UI.Mvvm.IViewResolver
+  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewResolver
+  parent: ParmaGIS.Core.UI.Mvvm
+  href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html
+  name: IViewResolver
+  nameWithType: IViewResolver
+  fullName: ParmaGIS.Core.UI.Mvvm.IViewResolver
 - uid: ParmaGIS.Core.UI.Mvvm
   commentId: N:ParmaGIS.Core.UI.Mvvm
   href: ParmaGIS.html
@@ -161,13 +177,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ParmaGIS.Core.UI.Mvvm.IViewResolver
-  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewResolver
-  parent: ParmaGIS.Core.UI.Mvvm
-  href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html
-  name: IViewResolver
-  nameWithType: IViewResolver
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewResolver
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -394,6 +403,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.UI.Mvvm.ViewResolver
+  commentId: T:ParmaGIS.Core.UI.Mvvm.ViewResolver
+  href: ParmaGIS.Core.UI.Mvvm.ViewResolver.html
+  name: ViewResolver
+  nameWithType: ViewResolver
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver
 - uid: ParmaGIS.Core.UI.Mvvm.ViewResolver.#ctor*
   commentId: Overload:ParmaGIS.Core.UI.Mvvm.ViewResolver.#ctor
   href: ParmaGIS.Core.UI.Mvvm.ViewResolver.html#ParmaGIS_Core_UI_Mvvm_ViewResolver__ctor_ParmaGIS_Core_UI_Mvvm_IViewModelManager_

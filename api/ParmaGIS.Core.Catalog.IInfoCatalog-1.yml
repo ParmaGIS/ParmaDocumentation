@@ -20,14 +20,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IInfoCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/IInfoCatalog.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Предоставляет простую навигацию по элементам каталога.
+  example: []
   syntax:
     content: 'public interface IInfoCatalog<T> : IEnumerable<T>, IEnumerable where T : IItemInfo'
     typeParameters:
     - id: T
+      description: Тип элементов каталога.
     content.vb: Public Interface IInfoCatalog(Of T As IItemInfo) Inherits IEnumerable(Of T), IEnumerable
   inheritedMembers:
   - System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
@@ -56,17 +59,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/IInfoCatalog.cs
-    startLine: 7
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Возвращает элемент каталога по имени.
+  example: []
   syntax:
     content: T? this[string name] { get; }
     parameters:
     - id: name
       type: System.String
+      description: Имя элемента.
     return:
       type: '{T}'
+      description: Элемент каталога с указанным именем.
     content.vb: ReadOnly Default Property this[](name As String) As T
   overload: ParmaGIS.Core.Catalog.IInfoCatalog`1.Item*
   nameWithType.vb: IInfoCatalog(Of T).this[](String)

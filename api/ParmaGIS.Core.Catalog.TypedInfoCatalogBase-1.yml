@@ -25,14 +25,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TypedInfoCatalogBase
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Представляет базовую реализацию каталога с поимком по типу.
+  example: []
   syntax:
     content: 'public abstract class TypedInfoCatalogBase<T> : IInfoCatalog<T>, IEnumerable<T>, IEnumerable where T : IItemInfo'
     typeParameters:
     - id: T
+      description: Тип элементов каталога
     content.vb: Public MustInherit Class TypedInfoCatalogBase(Of T As IItemInfo) Implements IInfoCatalog(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
@@ -73,10 +76,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Storage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 11
+    startLine: 18
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Возвращает храниллище каталога.
+  example: []
   syntax:
     content: protected ConcurrentDictionary<(string, Type), T> Storage
     return:
@@ -102,10 +107,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 13
+    startLine: 23
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Catalog.TypedInfoCatalogBase%601" data-throw-if-not-resolved="false"></xref> без элементов.
+  example: []
   syntax:
     content: protected TypedInfoCatalogBase()
     content.vb: Protected Sub New()
@@ -131,15 +138,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 15
+    startLine: 29
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Catalog.TypedInfoCatalogBase%601" data-throw-if-not-resolved="false"></xref> с элементов.
+  example: []
   syntax:
     content: protected TypedInfoCatalogBase(Dictionary<(string, Type), T> storage)
     parameters:
     - id: storage
       type: System.Collections.Generic.Dictionary{System.ValueTuple{System.String,System.Type},{T}}
+      description: Словарь с элементами.
     content.vb: Protected Sub New(storage As Dictionary(Of (String, Type), T))
   overload: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1.#ctor*
   nameWithType.vb: TypedInfoCatalogBase(Of T).New(Dictionary(Of (String, Type), T))
@@ -163,18 +173,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 20
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Возвращает элемент каталога по имени.
   example: []
   syntax:
     content: public T? this[string name] { get; }
     parameters:
     - id: name
       type: System.String
+      description: Имя элемента.
     return:
       type: '{T}'
+      description: Элемент каталога с указанным именем.
     content.vb: Public ReadOnly Default Property this[](name As String) As T
   overload: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1.Item*
   implements:
@@ -200,17 +213,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 22
+    startLine: 43
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Возвращает элемент каталога по типу.
+  example: []
   syntax:
     content: public T? this[Type type] { get; }
     parameters:
     - id: type
       type: System.Type
+      description: Тип элемента.
     return:
       type: '{T}'
+      description: Элемент каталогу с указанным типом.
     content.vb: Public ReadOnly Default Property this[](type As Type) As T
   overload: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1.Item*
   nameWithType.vb: TypedInfoCatalogBase(Of T).this[](Type)
@@ -234,7 +251,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetEnumerator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/TypedInfoCatalogBase.cs
-    startLine: 24
+    startLine: 47
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
@@ -1320,6 +1337,31 @@ references:
     name: Concurrent
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent
+- uid: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1
+  commentId: T:ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1
+  href: ParmaGIS.Core.Catalog.TypedInfoCatalogBase-1.html
+  name: TypedInfoCatalogBase<T>
+  nameWithType: TypedInfoCatalogBase<T>
+  fullName: ParmaGIS.Core.Catalog.TypedInfoCatalogBase<T>
+  nameWithType.vb: TypedInfoCatalogBase(Of T)
+  fullName.vb: ParmaGIS.Core.Catalog.TypedInfoCatalogBase(Of T)
+  name.vb: TypedInfoCatalogBase(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1
+    name: TypedInfoCatalogBase
+    href: ParmaGIS.Core.Catalog.TypedInfoCatalogBase-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1
+    name: TypedInfoCatalogBase
+    href: ParmaGIS.Core.Catalog.TypedInfoCatalogBase-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Catalog.TypedInfoCatalogBase`1.#ctor
   href: ParmaGIS.Core.Catalog.TypedInfoCatalogBase-1.html#ParmaGIS_Core_Catalog_TypedInfoCatalogBase_1__ctor

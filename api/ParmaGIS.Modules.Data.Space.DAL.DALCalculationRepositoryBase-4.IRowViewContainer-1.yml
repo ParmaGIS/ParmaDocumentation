@@ -5,6 +5,7 @@ items:
   id: DALCalculationRepositoryBase`4.IRowViewContainer`1
   parent: ParmaGIS.Modules.Data.Space.DAL
   children:
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow(`2)
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.GetRow(`0)
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.GetRows
@@ -23,14 +24,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IRowViewContainer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 43
+    startLine: 104
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Представляет типизированный относительно строк контейнер таблицы.
+  example: []
   syntax:
     content: 'protected interface DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow> : DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer where TRow : TCalcTableRow'
     typeParameters:
     - id: TRow
+      description: Тип строк таблиц расчета.
     content.vb: Protected Interface DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow As TCalcTableRow) Inherits DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
   inheritedMembers:
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.RowType
@@ -64,17 +68,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 46
+    startLine: 112
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает строку по ее уникальному идентификатору.
+  example: []
   syntax:
     content: TRow? GetRow(TObjectId id)
     parameters:
     - id: id
       type: '{TObjectId}'
+      description: Уникальный идентификатор строки.
     return:
       type: '{TRow}'
+      description: Экземпляр строки.
     content.vb: Function GetRow(id As TObjectId) As TRow
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.GetRow*
   nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).GetRow(TObjectId)
@@ -97,14 +105,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRows
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 47
+    startLine: 118
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает запрос к строкам таблиц расчета.
+  example: []
   syntax:
     content: IQueryable<TRow> GetRows()
     return:
       type: System.Linq.IQueryable{{TRow}}
+      description: Запрос к строкам.
     content.vb: Function GetRows() As IQueryable(Of TRow)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.GetRows*
   nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).GetRows()
@@ -127,17 +138,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRows
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 48
+    startLine: 125
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает строки таблицы расчета.
+  example: []
   syntax:
     content: TRow[] GetRows(TObjectId tableId)
     parameters:
     - id: tableId
       type: '{TObjectId}'
+      description: Уникальный идентификатор таблицы расчета.
     return:
       type: '{TRow}[]'
+      description: Массив строк таблицы расчета.
     content.vb: Function GetRows(tableId As TObjectId) As TRow()
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.GetRows*
   nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).GetRows(TObjectId)
@@ -160,21 +175,58 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 49
+    startLine: 132
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Создает строку таблицы расчета.
+  example: []
   syntax:
     content: TRow CreateRow(TCalcTable table)
     parameters:
     - id: table
       type: '{TCalcTable}'
+      description: Таблица расчета.
     return:
       type: '{TRow}'
+      description: Экземпляр созданной строк таблицы расчета.
     content.vb: Function CreateRow(table As TCalcTable) As TRow
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow*
   nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow(TCalcTable)
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow(TCalcTable)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+  id: CreateRow
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1
+  langs:
+  - csharp
+  - vb
+  name: CreateRow()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>.CreateRow()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>.CreateRow()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CreateRow
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 138
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Создает строку таблицы расчета без указания таблицы
+  example: []
+  syntax:
+    content: TRow CreateRow()
+    return:
+      type: '{TRow}'
+      description: ''
+    content.vb: Function CreateRow() As TRow
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow()
 references:
 - uid: ParmaGIS.Modules.Data.Space.DAL
   commentId: N:ParmaGIS.Modules.Data.Space.DAL

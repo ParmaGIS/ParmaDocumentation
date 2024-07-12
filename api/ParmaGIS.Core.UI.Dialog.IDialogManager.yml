@@ -22,20 +22,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDialogManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/IDialogManager.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: >-
+    Менеджер диалогов.
+
+    Предназначен для открытия диалогов и управления ими.
+  example: []
   syntax:
     content: public interface IDialogManager
     content.vb: Public Interface IDialogManager
   extensionMethods:
-  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
-  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(System.Nullable{System.Boolean})
-  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(System.String,System.Nullable{System.Boolean},System.String,System.String)
-  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(System.String,System.String,System.String)
-  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(System.Nullable{System.Boolean})
+  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(System.String,System.Nullable{System.Boolean},System.String,System.String)
+  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(System.String,System.String,System.String)
+  - ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
 - uid: ParmaGIS.Core.UI.Dialog.IDialogManager.Catalog
   commentId: P:ParmaGIS.Core.UI.Dialog.IDialogManager.Catalog
   id: Catalog
@@ -54,10 +59,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Catalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/IDialogManager.cs
-    startLine: 6
+    startLine: 13
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает каталог диалогов.
+  example: []
   syntax:
     content: IDialogCatalog Catalog { get; }
     parameters: []
@@ -83,19 +90,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Show
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/IDialogManager.cs
-    startLine: 7
+    startLine: 21
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Открывает диалог, не захватывая основнной поток.
+  example: []
   syntax:
     content: void Show(Type dialogAwareType, IDialogParameters? parameters, Action<IDialogResult> closeCallBack)
     parameters:
     - id: dialogAwareType
       type: System.Type
+      description: Тип диалога. Должен реализовывать <xref href="ParmaGIS.Core.UI.Dialog.IDialogAware" data-throw-if-not-resolved="false"></xref>.
     - id: parameters
       type: ParmaGIS.Core.UI.Dialog.IDialogParameters
+      description: Параметры диалога.
     - id: closeCallBack
       type: System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult}
+      description: Обработчик закрытия диалога.
     content.vb: Sub Show(dialogAwareType As Type, parameters As IDialogParameters, closeCallBack As Action(Of IDialogResult))
   overload: ParmaGIS.Core.UI.Dialog.IDialogManager.Show*
   nameWithType.vb: IDialogManager.Show(Type, IDialogParameters, Action(Of IDialogResult))
@@ -119,21 +131,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ShowDialog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/IDialogManager.cs
-    startLine: 8
+    startLine: 30
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Открывает диалог, захватывая основной поток.
+  example: []
   syntax:
     content: IDialogResult ShowDialog(Type dialogAwareType, IDialogParameters? parameters, Action<IDialogResult> closeCallBack)
     parameters:
     - id: dialogAwareType
       type: System.Type
+      description: Тип диалога. Должен реализовывать <xref href="ParmaGIS.Core.UI.Dialog.IDialogAware" data-throw-if-not-resolved="false"></xref>.
     - id: parameters
       type: ParmaGIS.Core.UI.Dialog.IDialogParameters
+      description: Параметры диалога.
     - id: closeCallBack
       type: System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult}
+      description: Обработчик закрытия диалога.
     return:
       type: ParmaGIS.Core.UI.Dialog.IDialogResult
+      description: Результат работы дииалога.
     content.vb: Function ShowDialog(dialogAwareType As Type, parameters As IDialogParameters, closeCallBack As Action(Of IDialogResult)) As IDialogResult
   overload: ParmaGIS.Core.UI.Dialog.IDialogManager.ShowDialog*
   nameWithType.vb: IDialogManager.ShowDialog(Type, IDialogParameters, Action(Of IDialogResult))
@@ -178,21 +196,21 @@ references:
   - uid: ParmaGIS.Core.UI.Dialog
     name: Dialog
     href: ParmaGIS.Core.UI.Dialog.html
-- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  parent: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  definition: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  parent: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  definition: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   name: ShowDialog<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  nameWithType: DialogServiceExtesions.ShowDialog<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  nameWithType.vb: DialogServiceExtesions.ShowDialog(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType: DialogManagerExtesions.ShowDialog<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType.vb: DialogManagerExtesions.ShowDialog(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
   name.vb: ShowDialog(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: ShowDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: <
   - name: T
   - name: '>'
@@ -218,9 +236,9 @@ references:
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: ShowDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: (
   - name: Of
   - name: " "
@@ -249,21 +267,21 @@ references:
     name: IDialogParameters
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
-  parent: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  definition: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  parent: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  definition: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
   name: ShowMessageDialog(IDialogManager, string, string, MessageDialogButton?, MessageDialogImage?)
-  nameWithType: DialogServiceExtesions.ShowMessageDialog(IDialogManager, string, string, MessageDialogButton?, MessageDialogImage?)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
-  nameWithType.vb: DialogServiceExtesions.ShowMessageDialog(IDialogManager, String, String, MessageDialogButton?, MessageDialogImage?)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
+  nameWithType: DialogManagerExtesions.ShowMessageDialog(IDialogManager, string, string, MessageDialogButton?, MessageDialogImage?)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
+  nameWithType.vb: DialogManagerExtesions.ShowMessageDialog(IDialogManager, String, String, MessageDialogButton?, MessageDialogImage?)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
   name.vb: ShowMessageDialog(IDialogManager, String, String, MessageDialogButton?, MessageDialogImage?)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
     name: ShowMessageDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -294,9 +312,9 @@ references:
   - name: '?'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
     name: ShowMessageDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -326,21 +344,21 @@ references:
     href: ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage.html
   - name: '?'
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(System.Nullable{System.Boolean})
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
-  parent: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  definition: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(System.Nullable{System.Boolean})
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  parent: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  definition: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
   name: ShowOpenDirectoryDialog(IDialogManager, bool?)
-  nameWithType: DialogServiceExtesions.ShowOpenDirectoryDialog(IDialogManager, bool?)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, bool?)
-  nameWithType.vb: DialogServiceExtesions.ShowOpenDirectoryDialog(IDialogManager, Boolean?)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, Boolean?)
+  nameWithType: DialogManagerExtesions.ShowOpenDirectoryDialog(IDialogManager, bool?)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, bool?)
+  nameWithType.vb: DialogManagerExtesions.ShowOpenDirectoryDialog(IDialogManager, Boolean?)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, Boolean?)
   name.vb: ShowOpenDirectoryDialog(IDialogManager, Boolean?)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
     name: ShowOpenDirectoryDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -354,9 +372,9 @@ references:
   - name: '?'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
     name: ShowOpenDirectoryDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -369,21 +387,21 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '?'
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(System.String,System.Nullable{System.Boolean},System.String,System.String)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
-  parent: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  definition: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(System.String,System.Nullable{System.Boolean},System.String,System.String)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  parent: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  definition: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
   name: ShowOpenFileDialog(IDialogManager, string, bool?, string, string)
-  nameWithType: DialogServiceExtesions.ShowOpenFileDialog(IDialogManager, string, bool?, string, string)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, bool?, string, string)
-  nameWithType.vb: DialogServiceExtesions.ShowOpenFileDialog(IDialogManager, String, Boolean?, String, String)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, Boolean?, String, String)
+  nameWithType: DialogManagerExtesions.ShowOpenFileDialog(IDialogManager, string, bool?, string, string)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, bool?, string, string)
+  nameWithType.vb: DialogManagerExtesions.ShowOpenFileDialog(IDialogManager, String, Boolean?, String, String)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, Boolean?, String, String)
   name.vb: ShowOpenFileDialog(IDialogManager, String, Boolean?, String, String)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
     name: ShowOpenFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -415,9 +433,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
     name: ShowOpenFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -448,21 +466,21 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(System.String,System.String,System.String)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
-  parent: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  definition: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(System.String,System.String,System.String)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  parent: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  definition: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
   name: ShowSaveFileDialog(IDialogManager, string, string, string)
-  nameWithType: DialogServiceExtesions.ShowSaveFileDialog(IDialogManager, string, string, string)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, string)
-  nameWithType.vb: DialogServiceExtesions.ShowSaveFileDialog(IDialogManager, String, String, String)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, String)
+  nameWithType: DialogManagerExtesions.ShowSaveFileDialog(IDialogManager, string, string, string)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, string)
+  nameWithType.vb: DialogManagerExtesions.ShowSaveFileDialog(IDialogManager, String, String, String)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, String)
   name.vb: ShowSaveFileDialog(IDialogManager, String, String, String)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
     name: ShowSaveFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -487,9 +505,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
     name: ShowSaveFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -513,21 +531,21 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  parent: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  definition: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+- uid: ParmaGIS.Core.UI.Dialog.IDialogManager.ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  parent: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  definition: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   name: Show<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  nameWithType: DialogServiceExtesions.Show<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  nameWithType.vb: DialogServiceExtesions.Show(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType: DialogManagerExtesions.Show<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType.vb: DialogManagerExtesions.Show(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
   name.vb: Show(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: Show
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: <
   - name: T
   - name: '>'
@@ -553,9 +571,9 @@ references:
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: Show
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: (
   - name: Of
   - name: " "
@@ -584,20 +602,20 @@ references:
     name: IDialogParameters
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
   isExternal: true
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   name: ShowDialog<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  nameWithType: DialogServiceExtesions.ShowDialog<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  nameWithType.vb: DialogServiceExtesions.ShowDialog(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType: DialogManagerExtesions.ShowDialog<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType.vb: DialogManagerExtesions.ShowDialog(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
   name.vb: ShowDialog(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: ShowDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: <
   - name: T
   - name: '>'
@@ -623,9 +641,9 @@ references:
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowDialog``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: ShowDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowDialog__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: (
   - name: Of
   - name: " "
@@ -654,27 +672,27 @@ references:
     name: IDialogParameters
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-  commentId: T:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+  commentId: T:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
   parent: ParmaGIS.Core.UI.Dialog
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html
-  name: DialogServiceExtesions
-  nameWithType: DialogServiceExtesions
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html
+  name: DialogManagerExtesions
+  nameWithType: DialogManagerExtesions
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
   isExternal: true
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
   name: ShowMessageDialog(IDialogManager, string, string, MessageDialogButton?, MessageDialogImage?)
-  nameWithType: DialogServiceExtesions.ShowMessageDialog(IDialogManager, string, string, MessageDialogButton?, MessageDialogImage?)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
-  nameWithType.vb: DialogServiceExtesions.ShowMessageDialog(IDialogManager, String, String, MessageDialogButton?, MessageDialogImage?)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
+  nameWithType: DialogManagerExtesions.ShowMessageDialog(IDialogManager, string, string, MessageDialogButton?, MessageDialogImage?)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
+  nameWithType.vb: DialogManagerExtesions.ShowMessageDialog(IDialogManager, String, String, MessageDialogButton?, MessageDialogImage?)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton?, ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage?)
   name.vb: ShowMessageDialog(IDialogManager, String, String, MessageDialogButton?, MessageDialogImage?)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
     name: ShowMessageDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -705,9 +723,9 @@ references:
   - name: '?'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowMessageDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogButton},System.Nullable{ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage})
     name: ShowMessageDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowMessageDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogButton__System_Nullable_ParmaGIS_Core_UI_Dialog_Common_MessageDialogImage__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -737,20 +755,20 @@ references:
     href: ParmaGIS.Core.UI.Dialog.Common.MessageDialogImage.html
   - name: '?'
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
   isExternal: true
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
   name: ShowOpenDirectoryDialog(IDialogManager, bool?)
-  nameWithType: DialogServiceExtesions.ShowOpenDirectoryDialog(IDialogManager, bool?)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, bool?)
-  nameWithType.vb: DialogServiceExtesions.ShowOpenDirectoryDialog(IDialogManager, Boolean?)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, Boolean?)
+  nameWithType: DialogManagerExtesions.ShowOpenDirectoryDialog(IDialogManager, bool?)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, bool?)
+  nameWithType.vb: DialogManagerExtesions.ShowOpenDirectoryDialog(IDialogManager, Boolean?)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, Boolean?)
   name.vb: ShowOpenDirectoryDialog(IDialogManager, Boolean?)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
     name: ShowOpenDirectoryDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -764,9 +782,9 @@ references:
   - name: '?'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenDirectoryDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Nullable{System.Boolean})
     name: ShowOpenDirectoryDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenDirectoryDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Nullable_System_Boolean__
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -779,20 +797,20 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '?'
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
   isExternal: true
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
   name: ShowOpenFileDialog(IDialogManager, string, bool?, string, string)
-  nameWithType: DialogServiceExtesions.ShowOpenFileDialog(IDialogManager, string, bool?, string, string)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, bool?, string, string)
-  nameWithType.vb: DialogServiceExtesions.ShowOpenFileDialog(IDialogManager, String, Boolean?, String, String)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, Boolean?, String, String)
+  nameWithType: DialogManagerExtesions.ShowOpenFileDialog(IDialogManager, string, bool?, string, string)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, bool?, string, string)
+  nameWithType.vb: DialogManagerExtesions.ShowOpenFileDialog(IDialogManager, String, Boolean?, String, String)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, Boolean?, String, String)
   name.vb: ShowOpenFileDialog(IDialogManager, String, Boolean?, String, String)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
     name: ShowOpenFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -824,9 +842,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowOpenFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.Nullable{System.Boolean},System.String,System.String)
     name: ShowOpenFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowOpenFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_Nullable_System_Boolean__System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -857,20 +875,20 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
   isExternal: true
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
   name: ShowSaveFileDialog(IDialogManager, string, string, string)
-  nameWithType: DialogServiceExtesions.ShowSaveFileDialog(IDialogManager, string, string, string)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, string)
-  nameWithType.vb: DialogServiceExtesions.ShowSaveFileDialog(IDialogManager, String, String, String)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, String)
+  nameWithType: DialogManagerExtesions.ShowSaveFileDialog(IDialogManager, string, string, string)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, string, string, string)
+  nameWithType.vb: DialogManagerExtesions.ShowSaveFileDialog(IDialogManager, String, String, String)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager, String, String, String)
   name.vb: ShowSaveFileDialog(IDialogManager, String, String, String)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
     name: ShowSaveFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -895,9 +913,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.ShowSaveFileDialog(ParmaGIS.Core.UI.Dialog.IDialogManager,System.String,System.String,System.String)
     name: ShowSaveFileDialog
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_ShowSaveFileDialog_ParmaGIS_Core_UI_Dialog_IDialogManager_System_String_System_String_System_String_
   - name: (
   - uid: ParmaGIS.Core.UI.Dialog.IDialogManager
     name: IDialogManager
@@ -921,20 +939,20 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  commentId: M:ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+- uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
   isExternal: true
-  href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+  href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   name: Show<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  nameWithType: DialogServiceExtesions.Show<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
-  fullName: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
-  nameWithType.vb: DialogServiceExtesions.Show(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
-  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType: DialogManagerExtesions.Show<T>(IDialogManager, Action<IDialogResult>, IDialogParameters)
+  fullName: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show<T>(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action<ParmaGIS.Core.UI.Dialog.IDialogResult>, ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  nameWithType.vb: DialogManagerExtesions.Show(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
+  fullName.vb: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show(Of T)(ParmaGIS.Core.UI.Dialog.IDialogManager, System.Action(Of ParmaGIS.Core.UI.Dialog.IDialogResult), ParmaGIS.Core.UI.Dialog.IDialogParameters)
   name.vb: Show(Of T)(IDialogManager, Action(Of IDialogResult), IDialogParameters)
   spec.csharp:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: Show
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: <
   - name: T
   - name: '>'
@@ -960,9 +978,9 @@ references:
     href: ParmaGIS.Core.UI.Dialog.IDialogParameters.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
+  - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.Show``1(ParmaGIS.Core.UI.Dialog.IDialogManager,System.Action{ParmaGIS.Core.UI.Dialog.IDialogResult},ParmaGIS.Core.UI.Dialog.IDialogParameters)
     name: Show
-    href: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions.html#ParmaGIS_Core_UI_Dialog_DialogServiceExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
+    href: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions.html#ParmaGIS_Core_UI_Dialog_DialogManagerExtesions_Show__1_ParmaGIS_Core_UI_Dialog_IDialogManager_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__ParmaGIS_Core_UI_Dialog_IDialogParameters_
   - name: (
   - name: Of
   - name: " "
@@ -1004,6 +1022,13 @@ references:
   name: IDialogCatalog
   nameWithType: IDialogCatalog
   fullName: ParmaGIS.Core.UI.Dialog.IDialogCatalog
+- uid: ParmaGIS.Core.UI.Dialog.IDialogAware
+  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogAware
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.IDialogAware.html
+  name: IDialogAware
+  nameWithType: IDialogAware
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogAware
 - uid: ParmaGIS.Core.UI.Dialog.IDialogManager.Show*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.IDialogManager.Show
   href: ParmaGIS.Core.UI.Dialog.IDialogManager.html#ParmaGIS_Core_UI_Dialog_IDialogManager_Show_System_Type_ParmaGIS_Core_UI_Dialog_IDialogParameters_System_Action_ParmaGIS_Core_UI_Dialog_IDialogResult__

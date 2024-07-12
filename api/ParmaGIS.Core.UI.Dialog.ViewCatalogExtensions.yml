@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ViewCatalogExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/ViewCatalogExtensions.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Расширения для каталога представлений <xref href="ParmaGIS.Core.UI.Mvvm.IViewCatalog" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ViewCatalogExtensions
     content.vb: Public Module ViewCatalogExtensions
@@ -56,24 +58,36 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterDialogView
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/ViewCatalogExtensions.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Регистрирует представление для диалога.
+  example: []
   syntax:
     content: 'public static void RegisterDialogView<TView, TViewModel>(this IViewCatalog catalog) where TViewModel : IDialogAware'
     parameters:
     - id: catalog
       type: ParmaGIS.Core.UI.Mvvm.IViewCatalog
+      description: Каталог представлений.
     typeParameters:
     - id: TView
+      description: Представление (View) диалога.
     - id: TViewModel
+      description: Диалог (ViewModel).
     content.vb: Public Shared Sub RegisterDialogView(Of TView, TViewModel As IDialogAware)(catalog As IViewCatalog)
   overload: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView*
   nameWithType.vb: ViewCatalogExtensions.RegisterDialogView(Of TView, TViewModel)(IViewCatalog)
   fullName.vb: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView(Of TView, TViewModel)(ParmaGIS.Core.UI.Mvvm.IViewCatalog)
   name.vb: RegisterDialogView(Of TView, TViewModel)(IViewCatalog)
 references:
+- uid: ParmaGIS.Core.UI.Mvvm.IViewCatalog
+  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewCatalog
+  parent: ParmaGIS.Core.UI.Mvvm
+  href: ParmaGIS.Core.UI.Mvvm.IViewCatalog.html
+  name: IViewCatalog
+  nameWithType: IViewCatalog
+  fullName: ParmaGIS.Core.UI.Mvvm.IViewCatalog
 - uid: ParmaGIS.Core.UI.Dialog
   commentId: N:ParmaGIS.Core.UI.Dialog
   href: ParmaGIS.html
@@ -342,26 +356,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView
-  href: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.html#ParmaGIS_Core_UI_Dialog_ViewCatalogExtensions_RegisterDialogView__2_ParmaGIS_Core_UI_Mvvm_IViewCatalog_
-  name: RegisterDialogView
-  nameWithType: ViewCatalogExtensions.RegisterDialogView
-  fullName: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView
-- uid: ParmaGIS.Core.UI.Mvvm.IViewCatalog
-  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewCatalog
-  parent: ParmaGIS.Core.UI.Mvvm
-  href: ParmaGIS.Core.UI.Mvvm.IViewCatalog.html
-  name: IViewCatalog
-  nameWithType: IViewCatalog
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewCatalog
 - uid: ParmaGIS.Core.UI.Mvvm
   commentId: N:ParmaGIS.Core.UI.Mvvm
   href: ParmaGIS.html
@@ -400,3 +394,16 @@ references:
   - uid: ParmaGIS.Core.UI.Mvvm
     name: Mvvm
     href: ParmaGIS.Core.UI.Mvvm.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView
+  href: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.html#ParmaGIS_Core_UI_Dialog_ViewCatalogExtensions_RegisterDialogView__2_ParmaGIS_Core_UI_Mvvm_IViewCatalog_
+  name: RegisterDialogView
+  nameWithType: ViewCatalogExtensions.RegisterDialogView
+  fullName: ParmaGIS.Core.UI.Dialog.ViewCatalogExtensions.RegisterDialogView

@@ -24,10 +24,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ILogger
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Представляет свойства и методы для реализации сервиса логирования.
+  example: []
   syntax:
     content: public interface ILogger
     content.vb: Public Interface ILogger
@@ -49,10 +51,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LogEvent
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 7
+    startLine: 13
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Происходит при возникновении новой записи <xref href="ParmaGIS.Core.Log.Note" data-throw-if-not-resolved="false"></xref> в сервисе логирования.
+  example: []
   syntax:
     content: event EventHandler<Note> LogEvent
     return:
@@ -76,10 +80,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: History
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 8
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает эурнал записей в сервисе логирования.
+  example: []
   syntax:
     content: IEnumerable<Note> History { get; }
     parameters: []
@@ -105,15 +111,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Log
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 9
+    startLine: 23
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Отправляет сообщение в сервис логирования с текущим временем, владельцем и форматом записи журнала по цмолчанию
+  example: []
   syntax:
     content: void Log(string message)
     parameters:
     - id: message
       type: System.String
+      description: Сообщение.
     content.vb: Sub Log(message As String)
   overload: ParmaGIS.Core.Log.ILogger.Log*
   nameWithType.vb: ILogger.Log(String)
@@ -137,21 +146,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Log
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 10
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Отправляет сообщение в сервис логирования с указанным временем, владельцем и форматом записи журнала.
+  example: []
   syntax:
     content: void Log(DateTime dateTime, string owner, string message, string bodyFormat)
     parameters:
     - id: dateTime
       type: System.DateTime
+      description: Время создания сообщения.
     - id: owner
       type: System.String
+      description: Владелец сообщения.
     - id: message
       type: System.String
+      description: Сообщение.
     - id: bodyFormat
       type: System.String
+      description: Формат сообщения.
     content.vb: Sub Log(dateTime As Date, owner As String, message As String, bodyFormat As String)
   overload: ParmaGIS.Core.Log.ILogger.Log*
   nameWithType.vb: ILogger.Log(Date, String, String, String)
@@ -175,17 +190,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Log
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ILogger.cs
-    startLine: 11
+    startLine: 39
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Отправляет сообщение в сервис логирования с указанным вледельцем, текущим временем и форматом записи журнала по умолчанию.
+  example: []
   syntax:
     content: void Log(string owner, string message)
     parameters:
     - id: owner
       type: System.String
+      description: Владелец сообщения.
     - id: message
       type: System.String
+      description: Сообщение.
     content.vb: Sub Log(owner As String, message As String)
   overload: ParmaGIS.Core.Log.ILogger.Log*
   nameWithType.vb: ILogger.Log(String, String)
@@ -222,6 +241,12 @@ references:
   - uid: ParmaGIS.Core.Log
     name: Log
     href: ParmaGIS.Core.Log.html
+- uid: ParmaGIS.Core.Log.Note
+  commentId: T:ParmaGIS.Core.Log.Note
+  href: ParmaGIS.Core.Log.Note.html
+  name: Note
+  nameWithType: Note
+  fullName: ParmaGIS.Core.Log.Note
 - uid: System.EventHandler{ParmaGIS.Core.Log.Note}
   commentId: T:System.EventHandler{ParmaGIS.Core.Log.Note}
   parent: System

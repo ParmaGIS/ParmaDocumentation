@@ -5,11 +5,13 @@ items:
   id: AsyncVirtualizingCollectionView
   parent: ParmaGIS.Core.UI.Utilities.Threading.Collections
   children:
-  - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32)
+  - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32,System.Int32)
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Add(System.Object)
+  - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Clear
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.CollectionChanged
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Contains(System.Object)
+  - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync(System.Object)
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.CopyTo(System.Array,System.Int32)
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Count
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.EmptyItem
@@ -17,6 +19,7 @@ items:
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.GetEnumerator
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.GetItemAsync(System.Int32)
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOf(System.Object)
+  - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync(System.Object)
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Insert(System.Int32,System.Object)
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IsFixedSize
   - ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IsLoading
@@ -95,7 +98,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -126,7 +129,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 42
+    startLine: 44
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -139,16 +142,16 @@ items:
     content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
   implements:
   - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32)
-  commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32)
-  id: '#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32)'
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32,System.Int32)
+  commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider,System.Object,System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32,System.Int32)'
   parent: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView
   langs:
   - csharp
   - vb
-  name: AsyncVirtualizingCollectionView(IItemsProvider, object?, TaskScheduler?, int, int)
-  nameWithType: AsyncVirtualizingCollectionView.AsyncVirtualizingCollectionView(IItemsProvider, object?, TaskScheduler?, int, int)
-  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsyncVirtualizingCollectionView(ParmaGIS.Core.Utilities.Collections.IItemsProvider, object?, System.Threading.Tasks.TaskScheduler?, int, int)
+  name: AsyncVirtualizingCollectionView(IItemsProvider, object?, TaskScheduler?, int, int, int)
+  nameWithType: AsyncVirtualizingCollectionView.AsyncVirtualizingCollectionView(IItemsProvider, object?, TaskScheduler?, int, int, int)
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsyncVirtualizingCollectionView(ParmaGIS.Core.Utilities.Collections.IItemsProvider, object?, System.Threading.Tasks.TaskScheduler?, int, int, int)
   type: Constructor
   source:
     remote:
@@ -157,12 +160,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
   syntax:
-    content: public AsyncVirtualizingCollectionView(IItemsProvider itemsProvider, object? emptyItem = null, TaskScheduler? taskScheduler = null, int pageSize = 100, int pageTimeOut = 10000)
+    content: public AsyncVirtualizingCollectionView(IItemsProvider itemsProvider, object? emptyItem = null, TaskScheduler? taskScheduler = null, int pageSize = 100, int pageTimeOut = 10000, int loadingCountView = 0)
     parameters:
     - id: itemsProvider
       type: ParmaGIS.Core.Utilities.Collections.IItemsProvider
@@ -174,11 +177,13 @@ items:
       type: System.Int32
     - id: pageTimeOut
       type: System.Int32
-    content.vb: Public Sub New(itemsProvider As IItemsProvider, emptyItem As Object = Nothing, taskScheduler As TaskScheduler = Nothing, pageSize As Integer = 100, pageTimeOut As Integer = 10000)
+    - id: loadingCountView
+      type: System.Int32
+    content.vb: Public Sub New(itemsProvider As IItemsProvider, emptyItem As Object = Nothing, taskScheduler As TaskScheduler = Nothing, pageSize As Integer = 100, pageTimeOut As Integer = 10000, loadingCountView As Integer = 0)
   overload: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor*
-  nameWithType.vb: AsyncVirtualizingCollectionView.New(IItemsProvider, Object, TaskScheduler, Integer, Integer)
-  fullName.vb: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.New(ParmaGIS.Core.Utilities.Collections.IItemsProvider, Object, System.Threading.Tasks.TaskScheduler, Integer, Integer)
-  name.vb: New(IItemsProvider, Object, TaskScheduler, Integer, Integer)
+  nameWithType.vb: AsyncVirtualizingCollectionView.New(IItemsProvider, Object, TaskScheduler, Integer, Integer, Integer)
+  fullName.vb: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.New(ParmaGIS.Core.Utilities.Collections.IItemsProvider, Object, System.Threading.Tasks.TaskScheduler, Integer, Integer, Integer)
+  name.vb: New(IItemsProvider, Object, TaskScheduler, Integer, Integer, Integer)
 - uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Item(System.Int32)
   commentId: P:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Item(System.Int32)
   id: Item(System.Int32)
@@ -197,7 +202,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 87
+    startLine: 102
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -244,7 +249,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Count
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 123
+    startLine: 150
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -278,7 +283,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsLoading
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 134
+    startLine: 161
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -307,7 +312,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ItemsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 144
+    startLine: 171
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -336,7 +341,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 145
+    startLine: 172
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -368,7 +373,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafety
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 146
+    startLine: 173
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -400,7 +405,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PageSize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 147
+    startLine: 174
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -429,7 +434,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PageTimeOut
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 148
+    startLine: 175
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -458,7 +463,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyItem
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 149
+    startLine: 176
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -487,7 +492,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsFixedSize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 151
+    startLine: 178
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -521,7 +526,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsReadOnly
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 152
+    startLine: 179
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -555,7 +560,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsSynchronized
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 153
+    startLine: 180
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -589,7 +594,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SyncRoot
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 154
+    startLine: 181
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -623,7 +628,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnPropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 156
+    startLine: 183
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -655,7 +660,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 161
+    startLine: 188
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -684,7 +689,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCountAsync
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 218
+    startLine: 262
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -712,7 +717,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetItemAsync
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 226
+    startLine: 270
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -728,6 +733,74 @@ items:
   nameWithType.vb: AsyncVirtualizingCollectionView.GetItemAsync(Integer)
   fullName.vb: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.GetItemAsync(Integer)
   name.vb: GetItemAsync(Integer)
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync(System.Object)
+  commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync(System.Object)
+  id: ContainsAsync(System.Object)
+  parent: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView
+  langs:
+  - csharp
+  - vb
+  name: ContainsAsync(object)
+  nameWithType: AsyncVirtualizingCollectionView.ContainsAsync(object)
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync(object)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ContainsAsync
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
+    startLine: 279
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
+  syntax:
+    content: public Task<bool> ContainsAsync(object item)
+    parameters:
+    - id: item
+      type: System.Object
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Public Function ContainsAsync(item As Object) As Task(Of Boolean)
+  overload: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync*
+  nameWithType.vb: AsyncVirtualizingCollectionView.ContainsAsync(Object)
+  fullName.vb: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync(Object)
+  name.vb: ContainsAsync(Object)
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync(System.Object)
+  commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync(System.Object)
+  id: IndexOfAsync(System.Object)
+  parent: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView
+  langs:
+  - csharp
+  - vb
+  name: IndexOfAsync(object)
+  nameWithType: AsyncVirtualizingCollectionView.IndexOfAsync(object)
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync(object)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IndexOfAsync
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
+    startLine: 284
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
+  syntax:
+    content: public Task<int> IndexOfAsync(object item)
+    parameters:
+    - id: item
+      type: System.Object
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+    content.vb: Public Function IndexOfAsync(item As Object) As Task(Of Integer)
+  overload: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync*
+  nameWithType.vb: AsyncVirtualizingCollectionView.IndexOfAsync(Object)
+  fullName.vb: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync(Object)
+  name.vb: IndexOfAsync(Object)
 - uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.GetEnumerator
   commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.GetEnumerator
   id: GetEnumerator
@@ -746,7 +819,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetEnumerator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 234
+    startLine: 305
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -779,7 +852,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Refresh
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 242
+    startLine: 313
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -787,6 +860,34 @@ items:
     content: public void Refresh()
     content.vb: Public Sub Refresh()
   overload: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Refresh*
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable
+  commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable
+  id: AsAsyncEnumerable
+  parent: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView
+  langs:
+  - csharp
+  - vb
+  name: AsAsyncEnumerable()
+  nameWithType: AsyncVirtualizingCollectionView.AsAsyncEnumerable()
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AsAsyncEnumerable
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
+    startLine: 333
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
+  syntax:
+    content: public IAsyncEnumerable<object> AsAsyncEnumerable()
+    return:
+      type: System.Collections.Generic.IAsyncEnumerable{System.Object}
+    content.vb: Public Function AsAsyncEnumerable() As IAsyncEnumerable(Of Object)
+  overload: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable*
 - uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Add(System.Object)
   commentId: M:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Add(System.Object)
   id: Add(System.Object)
@@ -805,7 +906,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Add
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 252
+    startLine: 343
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -854,7 +955,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Clear
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 257
+    startLine: 348
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -888,7 +989,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Contains
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 262
+    startLine: 353
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -928,7 +1029,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CopyTo
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 267
+    startLine: 358
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -978,7 +1079,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IndexOf
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 272
+    startLine: 363
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -1018,7 +1119,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Insert
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 277
+    startLine: 368
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -1073,7 +1174,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Remove
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 282
+    startLine: 373
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -1119,7 +1220,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveAt
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Utilities/Threading/Collections/AsyncVirtualizingCollectionView.cs
-    startLine: 287
+    startLine: 378
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Utilities.Threading.Collections
@@ -2489,7 +2590,7 @@ references:
   fullName: System.ComponentModel.PropertyChangedEventHandler
 - uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor*
   commentId: Overload:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.#ctor
-  href: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.html#ParmaGIS_Core_UI_Utilities_Threading_Collections_AsyncVirtualizingCollectionView__ctor_ParmaGIS_Core_Utilities_Collections_IItemsProvider_System_Object_System_Threading_Tasks_TaskScheduler_System_Int32_System_Int32_
+  href: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.html#ParmaGIS_Core_UI_Utilities_Threading_Collections_AsyncVirtualizingCollectionView__ctor_ParmaGIS_Core_Utilities_Collections_IItemsProvider_System_Object_System_Threading_Tasks_TaskScheduler_System_Int32_System_Int32_System_Int32_
   name: AsyncVirtualizingCollectionView
   nameWithType: AsyncVirtualizingCollectionView.AsyncVirtualizingCollectionView
   fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsyncVirtualizingCollectionView
@@ -2928,6 +3029,53 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync*
+  commentId: Overload:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync
+  href: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.html#ParmaGIS_Core_UI_Utilities_Threading_Collections_AsyncVirtualizingCollectionView_ContainsAsync_System_Object_
+  name: ContainsAsync
+  nameWithType: AsyncVirtualizingCollectionView.ContainsAsync
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.ContainsAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync*
+  commentId: Overload:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync
+  href: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.html#ParmaGIS_Core_UI_Utilities_Threading_Collections_AsyncVirtualizingCollectionView_IndexOfAsync_System_Object_
+  name: IndexOfAsync
+  nameWithType: AsyncVirtualizingCollectionView.IndexOfAsync
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.IndexOfAsync
 - uid: System.Collections.IEnumerator
   commentId: T:System.Collections.IEnumerator
   parent: System.Collections
@@ -2970,6 +3118,112 @@ references:
   name: Refresh
   nameWithType: AsyncVirtualizingCollectionView.Refresh
   fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Refresh
+- uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable*
+  commentId: Overload:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable
+  href: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.html#ParmaGIS_Core_UI_Utilities_Threading_Collections_AsyncVirtualizingCollectionView_AsAsyncEnumerable
+  name: AsAsyncEnumerable
+  nameWithType: AsyncVirtualizingCollectionView.AsAsyncEnumerable
+  fullName: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.AsAsyncEnumerable
+- uid: System.Collections.Generic.IAsyncEnumerable{System.Object}
+  commentId: T:System.Collections.Generic.IAsyncEnumerable{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  name: IAsyncEnumerable<object>
+  nameWithType: IAsyncEnumerable<object>
+  fullName: System.Collections.Generic.IAsyncEnumerable<object>
+  nameWithType.vb: IAsyncEnumerable(Of Object)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of Object)
+  name.vb: IAsyncEnumerable(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IAsyncEnumerable`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  name: IAsyncEnumerable<T>
+  nameWithType: IAsyncEnumerable<T>
+  fullName: System.Collections.Generic.IAsyncEnumerable<T>
+  nameWithType.vb: IAsyncEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T)
+  name.vb: IAsyncEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Add*
   commentId: Overload:ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.Add
   href: ParmaGIS.Core.UI.Utilities.Threading.Collections.AsyncVirtualizingCollectionView.html#ParmaGIS_Core_UI_Utilities_Threading_Collections_AsyncVirtualizingCollectionView_Add_System_Object_

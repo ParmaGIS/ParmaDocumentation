@@ -5,6 +5,7 @@ items:
   id: ConstructorMeta
   parent: ParmaGIS.Core.Meta.Objects
   children:
+  - ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes
   - ParmaGIS.Core.Meta.Objects.ConstructorMeta.ConstructorInfo
   - ParmaGIS.Core.Meta.Objects.ConstructorMeta.Parameters
   langs:
@@ -21,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConstructorMeta
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ConstructorMeta.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Представляет метаданные конструктора типа.
+  example: []
   syntax:
     content: public class ConstructorMeta
     content.vb: Public Class ConstructorMeta
@@ -56,10 +59,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConstructorInfo
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ConstructorMeta.cs
-    startLine: 9
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает информацию конструктора.
+  example: []
   syntax:
     content: public ConstructorInfo ConstructorInfo { get; }
     parameters: []
@@ -85,17 +90,50 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Parameters
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ConstructorMeta.cs
-    startLine: 16
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает параметры конструктора.
+  example: []
   syntax:
-    content: public ParameterCatalog Parameters { get; }
+    content: public ParameterMetaCatalog Parameters { get; }
     parameters: []
     return:
-      type: ParmaGIS.Core.Meta.Objects.ParameterCatalog
-    content.vb: Public ReadOnly Property Parameters As ParameterCatalog
+      type: ParmaGIS.Core.Meta.Objects.ParameterMetaCatalog
+    content.vb: Public ReadOnly Property Parameters As ParameterMetaCatalog
   overload: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Parameters*
+- uid: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes
+  commentId: P:ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes
+  id: Attributes
+  parent: ParmaGIS.Core.Meta.Objects.ConstructorMeta
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: ConstructorMeta.Attributes
+  fullName: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Meta/Objects/ConstructorMeta.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Attributes
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ConstructorMeta.cs
+    startLine: 37
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает коллекцию атрибутов.
+  example: []
+  syntax:
+    content: public AttributesCollection Attributes { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.Core.Meta.Objects.AttributesCollection
+    content.vb: Public ReadOnly Property Attributes As AttributesCollection
+  overload: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes*
 references:
 - uid: ParmaGIS.Core.Meta.Objects
   commentId: N:ParmaGIS.Core.Meta.Objects
@@ -419,10 +457,23 @@ references:
   name: Parameters
   nameWithType: ConstructorMeta.Parameters
   fullName: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Parameters
-- uid: ParmaGIS.Core.Meta.Objects.ParameterCatalog
-  commentId: T:ParmaGIS.Core.Meta.Objects.ParameterCatalog
+- uid: ParmaGIS.Core.Meta.Objects.ParameterMetaCatalog
+  commentId: T:ParmaGIS.Core.Meta.Objects.ParameterMetaCatalog
   parent: ParmaGIS.Core.Meta.Objects
-  href: ParmaGIS.Core.Meta.Objects.ParameterCatalog.html
-  name: ParameterCatalog
-  nameWithType: ParameterCatalog
-  fullName: ParmaGIS.Core.Meta.Objects.ParameterCatalog
+  href: ParmaGIS.Core.Meta.Objects.ParameterMetaCatalog.html
+  name: ParameterMetaCatalog
+  nameWithType: ParameterMetaCatalog
+  fullName: ParmaGIS.Core.Meta.Objects.ParameterMetaCatalog
+- uid: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes*
+  commentId: Overload:ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes
+  href: ParmaGIS.Core.Meta.Objects.ConstructorMeta.html#ParmaGIS_Core_Meta_Objects_ConstructorMeta_Attributes
+  name: Attributes
+  nameWithType: ConstructorMeta.Attributes
+  fullName: ParmaGIS.Core.Meta.Objects.ConstructorMeta.Attributes
+- uid: ParmaGIS.Core.Meta.Objects.AttributesCollection
+  commentId: T:ParmaGIS.Core.Meta.Objects.AttributesCollection
+  parent: ParmaGIS.Core.Meta.Objects
+  href: ParmaGIS.Core.Meta.Objects.AttributesCollection.html
+  name: AttributesCollection
+  nameWithType: AttributesCollection
+  fullName: ParmaGIS.Core.Meta.Objects.AttributesCollection

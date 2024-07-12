@@ -22,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IContextMenuManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Context
+  summary: Представляет контракт взаимодействия с менеджером контекстных действий.
+  example: []
   syntax:
     content: public interface IContextMenuManager
     content.vb: Public Interface IContextMenuManager
@@ -47,15 +49,19 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterAction
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-    startLine: 9
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Context
+  summary: Регистрирует действие над определенным элементом.
+  example: []
   syntax:
     content: 'void RegisterAction<TAction, TItem>() where TAction : class, IContextMenuAction'
     typeParameters:
     - id: TAction
+      description: Тип контекстного действия.
     - id: TItem
+      description: Тип элемента.
     content.vb: Sub RegisterAction(Of TAction As {Class, IContextMenuAction}, TItem)()
   overload: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction*
   nameWithType.vb: IContextMenuManager.RegisterAction(Of TAction, TItem)()
@@ -79,18 +85,23 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterAction
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-    startLine: 10
+    startLine: 23
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Context
+  summary: Регистрирует действие над определенным элементом с условием.
+  example: []
   syntax:
     content: 'void RegisterAction<TAction, TItem>(Predicate<TItem> condition) where TAction : class, IContextMenuAction'
     parameters:
     - id: condition
       type: System.Predicate{{TItem}}
+      description: Условие выбора действия <code class="typeparamref">TAction</code> для элемента <code class="typeparamref">TItem</code>.
     typeParameters:
     - id: TAction
+      description: Тип контекстного действия.
     - id: TItem
+      description: Тип элемента.
     content.vb: Sub RegisterAction(Of TAction As {Class, IContextMenuAction}, TItem)(condition As Predicate(Of TItem))
   overload: ParmaGIS.Core.UI.Context.IContextMenuManager.RegisterAction*
   nameWithType.vb: IContextMenuManager.RegisterAction(Of TAction, TItem)(Predicate(Of TItem))
@@ -114,17 +125,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetActions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Context/ContextMenuManager.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Context
+  summary: Получает все доступные контекстные действия для элемента.
+  example: []
   syntax:
     content: IEnumerable<IContextMenuAction> GetActions(object item)
     parameters:
     - id: item
       type: System.Object
+      description: Элемент.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Context.IContextMenuAction}
+      description: Перечисление контекстных действий.
     content.vb: Function GetActions(item As Object) As IEnumerable(Of IContextMenuAction)
   overload: ParmaGIS.Core.UI.Context.IContextMenuManager.GetActions*
   nameWithType.vb: IContextMenuManager.GetActions(Object)

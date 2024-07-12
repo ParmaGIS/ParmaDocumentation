@@ -138,17 +138,17 @@ items:
   assemblies:
   - ParmaGIS.Tests.MoqShell
   namespace: ParmaGIS.Tests.MoqShell
-  summary: Возвращает информацию о модуле <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> по его типу
+  summary: Возвращает информацию о модуле <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> по его типу.
   example: []
   syntax:
     content: public IModuleInfo? this[Type moduleType] { get; }
     parameters:
     - id: moduleType
       type: System.Type
-      description: Тип модуля
+      description: Тип модуля.
     return:
       type: ParmaGIS.Core.Modularity.IModuleInfo
-      description: <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модуля
+      description: <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модуля.
     content.vb: Public ReadOnly Default Property this[](moduleType As Type) As IModuleInfo
   overload: ParmaGIS.Tests.MoqShell.MockModuleCatalog.Item*
   implements:
@@ -178,14 +178,17 @@ items:
   assemblies:
   - ParmaGIS.Tests.MoqShell
   namespace: ParmaGIS.Tests.MoqShell
+  summary: Возвращает элемент каталога по имени.
   example: []
   syntax:
     content: public IModuleInfo? this[string name] { get; }
     parameters:
     - id: name
       type: System.String
+      description: Имя элемента.
     return:
       type: ParmaGIS.Core.Modularity.IModuleInfo
+      description: Элемент каталога с указанным именем.
     content.vb: Public ReadOnly Default Property this[](name As String) As IModuleInfo
   overload: ParmaGIS.Tests.MoqShell.MockModuleCatalog.Item*
   implements:
@@ -215,17 +218,17 @@ items:
   assemblies:
   - ParmaGIS.Tests.MoqShell
   namespace: ParmaGIS.Tests.MoqShell
-  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, которые зависят от <code class="paramref">moduleInfo</code>
+  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, которые зависят от <code class="paramref">moduleInfo</code>.
   example: []
   syntax:
     content: public IEnumerable<IModuleInfo> GetAddicted(IModuleInfo moduleInfo)
     parameters:
     - id: moduleInfo
       type: ParmaGIS.Core.Modularity.IModuleInfo
-      description: Модуль, для которого производится поиск зависимых модулей
+      description: Модуль, для которого производится поиск зависимых модулей.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}
-      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> зависимых от <code class="paramref">moduleInfo</code> модулей
+      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> зависимых от <code class="paramref">moduleInfo</code> модулей.
     content.vb: Public Function GetAddicted(moduleInfo As IModuleInfo) As IEnumerable(Of IModuleInfo)
   overload: ParmaGIS.Tests.MoqShell.MockModuleCatalog.GetAddicted*
   implements:
@@ -252,17 +255,17 @@ items:
   assemblies:
   - ParmaGIS.Tests.MoqShell
   namespace: ParmaGIS.Tests.MoqShell
-  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, от которых зависит <code class="paramref">moduleInfo</code>
+  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, от которых зависит <code class="paramref">moduleInfo</code>.
   example: []
   syntax:
     content: public IEnumerable<IModuleInfo> GetDependencies(IModuleInfo moduleInfo)
     parameters:
     - id: moduleInfo
       type: ParmaGIS.Core.Modularity.IModuleInfo
-      description: Модуль, для которого производится поиск зависимостей
+      description: Модуль, для которого производится поиск зависимостей.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}
-      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref>, от которых зависит <code class="paramref">moduleInfo</code>
+      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref>, от которых зависит <code class="paramref">moduleInfo</code>.
     content.vb: Public Function GetDependencies(moduleInfo As IModuleInfo) As IEnumerable(Of IModuleInfo)
   overload: ParmaGIS.Tests.MoqShell.MockModuleCatalog.GetDependencies*
   implements:

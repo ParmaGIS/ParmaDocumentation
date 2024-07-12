@@ -8,9 +8,9 @@ items:
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.#ctor
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTableRowsChanged
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTablesChanged
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync(`2)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)
-  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
-  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
+  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`1)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
@@ -25,13 +25,10 @@ items:
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)
-  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
-  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
-  - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
   - ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
   langs:
   - csharp
@@ -47,17 +44,23 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalculationRepositoryBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 7
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Представляет базовый класс для упрощения реализации репозитория расчетов.
+  example: []
   syntax:
     content: 'public abstract class CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow> : ICalculationRepository where TCalcTableType : class, ICalcTableType where TCalcTable : class, ICalcTable where TCalcTableRow : class, ICalcTableRow'
     typeParameters:
     - id: TObjectId
+      description: Тип первичного ключа.
     - id: TCalcTableType
+      description: Тип типа таблиц расчета.
     - id: TCalcTable
+      description: Тип таблиц расчета.
     - id: TCalcTableRow
+      description: Тип строк в таблицах расчета.
     content.vb: Public MustInherit Class CalculationRepositoryBase(Of TObjectId, TCalcTableType As {Class, ICalcTableType}, TCalcTable As {Class, ICalcTable}, TCalcTableRow As {Class, ICalcTableRow}) Implements ICalculationRepository
   inheritance:
   - System.Object
@@ -94,13 +97,14 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalcTablesChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 14
+    startLine: 21
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Происходит при изменении таблиц расчета в репозитории.
   example: []
   syntax:
-    content: public event EventHandler<RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable>> CalcTablesChanged
+    content: public event EventHandler<RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable>>? CalcTablesChanged
     return:
       type: System.EventHandler{ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable}}
     content.vb: Public Event CalcTablesChanged As EventHandler(Of RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
@@ -126,13 +130,14 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalcTableRowsChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 15
+    startLine: 24
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Происходит при изменении строк таблиц расчета в репозитории.
   example: []
   syntax:
-    content: public event EventHandler<RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow>> CalcTableRowsChanged
+    content: public event EventHandler<RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow>>? CalcTableRowsChanged
     return:
       type: System.EventHandler{ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow}}
     content.vb: Public Event CalcTableRowsChanged As EventHandler(Of RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
@@ -158,10 +163,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 18
+    startLine: 30
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Инициализирует экземпляр класса, наследуемого от <xref href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase%604" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected CalculationRepositoryBase()
     content.vb: Protected Sub New()
@@ -187,15 +194,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCalcTableRowsChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 26
+    startLine: 40
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Вызывает событие изменения строк в таблице расчетов.
+  example: []
   syntax:
     content: protected void OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTableRow> args)
     parameters:
     - id: args
       type: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow}
+      description: Параметры события.
     content.vb: Protected Sub OnCalcTableRowsChanged(args As RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTableRow))
@@ -219,15 +229,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCalcTablesChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 31
+    startLine: 49
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Вызывает событие изменения таблицы расчета.
+  example: []
   syntax:
     content: protected void OnCalcTablesChanged(RepositoryItemsChangedEventArgs<ICalculationRepository, ICalcTable> args)
     parameters:
     - id: args
       type: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable}
+      description: Параметры события.
     content.vb: Protected Sub OnCalcTablesChanged(args As RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).OnCalcTablesChanged(RepositoryItemsChangedEventArgs(Of ICalculationRepository, ICalcTable))
@@ -251,15 +264,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTablesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 36
+    startLine: 58
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает все таблицы расчета в репозитории.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTable[]> GetCalcTablesAsync()
+    content: public abstract Task<RepoResponse<TCalcTable[]>> GetCalcTablesAsync()
     return:
-      type: System.Threading.Tasks.Task{{TCalcTable}[]}
-    content.vb: Public MustOverride Function GetCalcTablesAsync() As Task(Of TCalcTable())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTable}[]}}
+      description: Таблицы расчета в репозитории.
+    content.vb: Public MustOverride Function GetCalcTablesAsync() As Task(Of RepoResponse(Of TCalcTable()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync()
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync()
@@ -281,15 +297,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableTypesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 37
+    startLine: 64
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает все типы таблиц расчета в репозитории.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTableType[]> GetCalcTableTypesAsync()
+    content: public abstract Task<RepoResponse<TCalcTableType[]>> GetCalcTableTypesAsync()
     return:
-      type: System.Threading.Tasks.Task{{TCalcTableType}[]}
-    content.vb: Public MustOverride Function GetCalcTableTypesAsync() As Task(Of TCalcTableType())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableType}[]}}
+      description: Типы таблиц расчета.
+    content.vb: Public MustOverride Function GetCalcTableTypesAsync() As Task(Of RepoResponse(Of TCalcTableType()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync()
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync()
@@ -311,18 +330,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTablesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 38
+    startLine: 71
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает таблицы расчета указанного типа.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTable[]> GetCalcTablesAsync(TCalcTableType calcTableType)
+    content: public abstract Task<RepoResponse<TCalcTable[]>> GetCalcTablesAsync(TCalcTableType calcTableType)
     parameters:
     - id: calcTableType
       type: '{TCalcTableType}'
+      description: Тип таблиц расчета.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTable}[]}
-    content.vb: Public MustOverride Function GetCalcTablesAsync(calcTableType As TCalcTableType) As Task(Of TCalcTable())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTable}[]}}
+      description: Таблицы расчета.
+    content.vb: Public MustOverride Function GetCalcTablesAsync(calcTableType As TCalcTableType) As Task(Of RepoResponse(Of TCalcTable()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync(TCalcTableType)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync(TCalcTableType)
@@ -344,18 +367,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 39
+    startLine: 78
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строки таблицы расчета указанного типа.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTableRow[]> GetCalcTableRowsAsync(TCalcTableType calcTableType)
+    content: public abstract Task<RepoResponse<TCalcTableRow[]>> GetCalcTableRowsAsync(TCalcTableType calcTableType)
     parameters:
     - id: calcTableType
       type: '{TCalcTableType}'
+      description: Тип таблицы расчета.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTableRow}[]}
-    content.vb: Public MustOverride Function GetCalcTableRowsAsync(calcTableType As TCalcTableType) As Task(Of TCalcTableRow())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}[]}}
+      description: Строки таблиц расчета.
+    content.vb: Public MustOverride Function GetCalcTableRowsAsync(calcTableType As TCalcTableType) As Task(Of RepoResponse(Of TCalcTableRow()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTableType)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTableType)
@@ -377,18 +404,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 40
+    startLine: 85
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает таблицу расчета по ее уникальному идентификатору.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTable?> GetCalcTableAsync(TObjectId id)
+    content: public abstract Task<RepoResponse<TCalcTable?>> GetCalcTableAsync(TObjectId id)
     parameters:
     - id: id
       type: '{TObjectId}'
+      description: Уникальный идентификатор.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTable}}
-    content.vb: Public MustOverride Function GetCalcTableAsync(id As TObjectId) As Task(Of TCalcTable)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTable}}}
+      description: Таблица расчетов.
+    content.vb: Public MustOverride Function GetCalcTableAsync(id As TObjectId) As Task(Of RepoResponse(Of TCalcTable))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableAsync(TObjectId)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableAsync(TObjectId)
@@ -410,20 +441,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 41
+    startLine: 93
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строку таблицы расчета по типу таблицы и уникальному идентификатору строки.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTableRow?> GetCalcTableRowAsync(TCalcTableType type, TObjectId id)
+    content: public abstract Task<RepoResponse<TCalcTableRow?>> GetCalcTableRowAsync(TCalcTableType type, TObjectId id)
     parameters:
     - id: type
       type: '{TCalcTableType}'
+      description: Тип таблицы расчета.
     - id: id
       type: '{TObjectId}'
+      description: Уникальный идентификатор.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTableRow}}
-    content.vb: Public MustOverride Function GetCalcTableRowAsync(type As TCalcTableType, id As TObjectId) As Task(Of TCalcTableRow)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}}}
+      description: Строка таблицы расчетов.
+    content.vb: Public MustOverride Function GetCalcTableRowAsync(type As TCalcTableType, id As TObjectId) As Task(Of RepoResponse(Of TCalcTableRow))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(TCalcTableType, TObjectId)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(TCalcTableType, TObjectId)
@@ -445,18 +481,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 42
+    startLine: 100
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строки таблицы расчета.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTableRow[]> GetCalcTableRowsAsync(TCalcTable calcTable)
+    content: public abstract Task<RepoResponse<TCalcTableRow[]>> GetCalcTableRowsAsync(TCalcTable calcTable)
     parameters:
     - id: calcTable
       type: '{TCalcTable}'
+      description: Таблица расчетов.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTableRow}[]}
-    content.vb: Public MustOverride Function GetCalcTableRowsAsync(calcTable As TCalcTable) As Task(Of TCalcTableRow())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}[]}}
+      description: Строки таблицы расчета.
+    content.vb: Public MustOverride Function GetCalcTableRowsAsync(calcTable As TCalcTable) As Task(Of RepoResponse(Of TCalcTableRow()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTable)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TCalcTable)
@@ -478,18 +518,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 43
+    startLine: 107
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строки таблицы расчета по уникальному идентифиактору таблицы расчета.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTableRow[]> GetCalcTableRowsAsync(TObjectId calcTableId)
+    content: public abstract Task<RepoResponse<TCalcTableRow[]>> GetCalcTableRowsAsync(TObjectId calcTableId)
     parameters:
     - id: calcTableId
       type: '{TObjectId}'
+      description: Уникальный идентификатор таблицы расчета.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTableRow}[]}
-    content.vb: Public MustOverride Function GetCalcTableRowsAsync(calcTableId As TObjectId) As Task(Of TCalcTableRow())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}[]}}
+      description: Строки таблица расчета.
+    content.vb: Public MustOverride Function GetCalcTableRowsAsync(calcTableId As TObjectId) As Task(Of RepoResponse(Of TCalcTableRow()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TObjectId)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(TObjectId)
@@ -511,20 +555,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 44
+    startLine: 115
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Создает таблице расчета определенного типа и названия.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTable> CreateCalcTableAsync(TCalcTableType type, string name)
+    content: public abstract Task<RepoResponse<TCalcTable>> CreateCalcTableAsync(TCalcTableType type, string name)
     parameters:
     - id: type
       type: '{TCalcTableType}'
+      description: Тип таблицы расчета.
     - id: name
       type: System.String
+      description: Название таблицы расчета.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTable}}
-    content.vb: Public MustOverride Function CreateCalcTableAsync(type As TCalcTableType, name As String) As Task(Of TCalcTable)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTable}}}
+      description: Таблица расчета.
+    content.vb: Public MustOverride Function CreateCalcTableAsync(type As TCalcTableType, name As String) As Task(Of RepoResponse(Of TCalcTable))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableAsync(TCalcTableType, String)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableAsync(TCalcTableType, String)
@@ -547,18 +596,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 45
+    startLine: 122
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Добавляет экземпляр таблицы расчета в репозиторий.
+  example: []
   syntax:
-    content: public abstract Task InsertCalcTableAsync(TCalcTable calcTable)
+    content: public abstract Task<RepoResponse> InsertCalcTableAsync(TCalcTable calcTable)
     parameters:
     - id: calcTable
       type: '{TCalcTable}'
+      description: Новая таблица расчета.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function InsertCalcTableAsync(calcTable As TCalcTable) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public MustOverride Function InsertCalcTableAsync(calcTable As TCalcTable) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync(TCalcTable)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync(TCalcTable)
@@ -580,31 +633,35 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 46
+    startLine: 129
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Удаляет таблицу расчетов из репозитория.
+  example: []
   syntax:
-    content: public abstract Task RemoveCalcTableAsync(TCalcTable calcTable)
+    content: public abstract Task<RepoResponse> RemoveCalcTableAsync(TCalcTable calcTable)
     parameters:
     - id: calcTable
       type: '{TCalcTable}'
+      description: Удаляемая таблица расчета.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function RemoveCalcTableAsync(calcTable As TCalcTable) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public MustOverride Function RemoveCalcTableAsync(calcTable As TCalcTable) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync(TCalcTable)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync(TCalcTable)
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)
-  id: CreateCalcTableRowAsync(`2)
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`1)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`1)
+  id: CreateCalcTableRowAsync(`1)
   parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
   langs:
   - csharp
   - vb
-  name: CreateCalcTableRowAsync(TCalcTable)
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTable)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTable)
+  name: CreateCalcTableRowAsync(TCalcTableType)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync(TCalcTableType)
   type: Method
   source:
     remote:
@@ -613,56 +670,62 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 47
+    startLine: 136
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Создает строку для таблицы расчета.
+  example: []
   syntax:
-    content: public abstract Task<TCalcTableRow> CreateCalcTableRowAsync(TCalcTable calcTable)
+    content: public abstract Task<RepoResponse<TCalcTableRow>> CreateCalcTableRowAsync(TCalcTableType calcTableType)
     parameters:
-    - id: calcTable
-      type: '{TCalcTable}'
+    - id: calcTableType
+      type: '{TCalcTableType}'
+      description: Тип таблицы расчета.
     return:
-      type: System.Threading.Tasks.Task{{TCalcTableRow}}
-    content.vb: Public MustOverride Function CreateCalcTableRowAsync(calcTable As TCalcTable) As Task(Of TCalcTableRow)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}}}
+      description: Созданная строка.
+    content.vb: Public MustOverride Function CreateCalcTableRowAsync(calcTableType As TCalcTableType) As Task(Of RepoResponse(Of TCalcTableRow))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync*
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTable)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTable)
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
-  id: InsertCalcTableRowAsync(`2,`3)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTableType)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(TCalcTableType)
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync(`2)
+  id: CreateAndInsertCalcTableRowAsync(`2)
   parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
   langs:
   - csharp
   - vb
-  name: InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  name: CreateAndInsertCalcTableRowAsync(TCalcTable)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateAndInsertCalcTableRowAsync(TCalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateAndInsertCalcTableRowAsync(TCalcTable)
   type: Method
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: InsertCalcTableRowAsync
+    id: CreateAndInsertCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 48
+    startLine: 143
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Создает строку для таблицы расчета и добавляет ее.
+  example: []
   syntax:
-    content: public abstract Task InsertCalcTableRowAsync(TCalcTable calcTable, TCalcTableRow row)
+    content: public abstract Task<RepoResponse<TCalcTableRow>> CreateAndInsertCalcTableRowAsync(TCalcTable calcTable)
     parameters:
     - id: calcTable
       type: '{TCalcTable}'
-    - id: row
-      type: '{TCalcTableRow}'
+      description: Таблица расчета.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function InsertCalcTableRowAsync(calcTable As TCalcTable, row As TCalcTableRow) As Task
-  overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}}}
+      description: Созданная строка.
+    content.vb: Public MustOverride Function CreateAndInsertCalcTableRowAsync(calcTable As TCalcTable) As Task(Of RepoResponse(Of TCalcTableRow))
+  overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync*
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateAndInsertCalcTableRowAsync(TCalcTable)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateAndInsertCalcTableRowAsync(TCalcTable)
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)
   id: RemoveCalcTableRowAsync(`3)
@@ -681,18 +744,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 49
+    startLine: 150
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Удаляет строку из репозитория.
+  example: []
   syntax:
-    content: public abstract Task RemoveCalcTableRowAsync(TCalcTableRow calcTableRow)
+    content: public abstract Task<RepoResponse> RemoveCalcTableRowAsync(TCalcTableRow calcTableRow)
     parameters:
     - id: calcTableRow
       type: '{TCalcTableRow}'
+      description: Удаляемая строка.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function RemoveCalcTableRowAsync(calcTableRow As TCalcTableRow) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public MustOverride Function RemoveCalcTableRowAsync(calcTableRow As TCalcTableRow) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(TCalcTableRow)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(TCalcTableRow)
@@ -714,31 +781,35 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 51
+    startLine: 157
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Вставляет строку в таблицу расчета.
+  example: []
   syntax:
-    content: public abstract Task InsertCalcTableRowAsync(TCalcTableRow row)
+    content: public abstract Task<RepoResponse> InsertCalcTableRowAsync(TCalcTableRow row)
     parameters:
     - id: row
       type: '{TCalcTableRow}'
+      description: Добавляемоя строка.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function InsertCalcTableRowAsync(row As TCalcTableRow) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public MustOverride Function InsertCalcTableRowAsync(row As TCalcTableRow) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTableRow)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTableRow)
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)
-  id: InsertCalcTableRowAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)
+  id: InsertCalcTableRowAsync(`2,`3)
   parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
   langs:
   - csharp
   - vb
-  name: InsertCalcTableRowAsync<T>(T)
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(T)
+  name: InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
   type: Method
   source:
     remote:
@@ -747,24 +818,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 52
+    startLine: 165
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Вставляет строку в таблицу расчета.
+  example: []
   syntax:
-    content: 'public abstract Task InsertCalcTableRowAsync<T>(T row) where T : TCalcTableRow'
+    content: public abstract Task<RepoResponse> InsertCalcTableRowAsync(TCalcTable table, TCalcTableRow row)
     parameters:
+    - id: table
+      type: '{TCalcTable}'
     - id: row
-      type: '{T}'
-    typeParameters:
-    - id: T
+      type: '{TCalcTableRow}'
+      description: Вставляемая строка.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function InsertCalcTableRowAsync(Of T As TCalcTableRow)(row As T) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public MustOverride Function InsertCalcTableRowAsync(table As TCalcTable, row As TCalcTableRow) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(T)
-  name.vb: InsertCalcTableRowAsync(Of T)(T)
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)
   id: GetCalcTableRowAsync``1(`0)
@@ -783,20 +857,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 54
+    startLine: 173
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строку таблицы расчета.
+  example: []
   syntax:
-    content: 'public abstract Task<T?> GetCalcTableRowAsync<T>(TObjectId id) where T : class, TCalcTableRow'
+    content: 'public abstract Task<RepoResponse<T?>> GetCalcTableRowAsync<T>(TObjectId id) where T : class, TCalcTableRow'
     parameters:
     - id: id
       type: '{TObjectId}'
+      description: Уникальный идентификатор строки таблицы расчета.
     typeParameters:
     - id: T
+      description: Тип строк таблиц расчета.
     return:
-      type: System.Threading.Tasks.Task{{T}}
-    content.vb: Public MustOverride Function GetCalcTableRowAsync(Of T As {Class, TCalcTableRow})(id As TObjectId) As Task(Of T)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+      description: Строка таблицы расчета.
+    content.vb: Public MustOverride Function GetCalcTableRowAsync(Of T As {Class, TCalcTableRow})(id As TObjectId) As Task(Of RepoResponse(Of T))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(Of T)(TObjectId)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync(Of T)(TObjectId)
@@ -819,17 +898,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 55
+    startLine: 180
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строки таблиц расчета заданного типа.
+  example: []
   syntax:
-    content: 'public abstract Task<T[]> GetCalcTableRowsAsync<T>() where T : class, TCalcTableRow'
+    content: 'public abstract Task<RepoResponse<T[]>> GetCalcTableRowsAsync<T>() where T : class, TCalcTableRow'
     typeParameters:
     - id: T
+      description: Тип строк таблиц расчета.
     return:
-      type: System.Threading.Tasks.Task{{T}[]}
-    content.vb: Public MustOverride Function GetCalcTableRowsAsync(Of T As {Class, TCalcTableRow})() As Task(Of T())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+      description: Массив строк таблиц расчета.
+    content.vb: Public MustOverride Function GetCalcTableRowsAsync(Of T As {Class, TCalcTableRow})() As Task(Of RepoResponse(Of T()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)()
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)()
@@ -852,134 +935,29 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 56
+    startLine: 188
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Возвращает строки таблицы расчета заданного типа.
+  example: []
   syntax:
-    content: 'public abstract Task<T[]> GetCalcTableRowsAsync<T>(TCalcTable calcTable) where T : class, TCalcTableRow'
+    content: 'public abstract Task<RepoResponse<T[]>> GetCalcTableRowsAsync<T>(TCalcTable calcTable) where T : class, TCalcTableRow'
     parameters:
     - id: calcTable
       type: '{TCalcTable}'
+      description: Таблица расчета.
     typeParameters:
     - id: T
+      description: Тип строк таблиц расчета.
     return:
-      type: System.Threading.Tasks.Task{{T}[]}
-    content.vb: Public MustOverride Function GetCalcTableRowsAsync(Of T As {Class, TCalcTableRow})(calcTable As TCalcTable) As Task(Of T())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+      description: Массив строк таблицы расчета.
+    content.vb: Public MustOverride Function GetCalcTableRowsAsync(Of T As {Class, TCalcTableRow})(calcTable As TCalcTable) As Task(Of RepoResponse(Of T()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)(TCalcTable)
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync(Of T)(TCalcTable)
   name.vb: GetCalcTableRowsAsync(Of T)(TCalcTable)
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)
-  id: CreateCalcTableRowAsync``1(`2)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
-  langs:
-  - csharp
-  - vb
-  name: CreateCalcTableRowAsync<T>(TCalcTable)
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync<T>(TCalcTable)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync<T>(TCalcTable)
-  type: Method
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CreateCalcTableRowAsync
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 57
-  assemblies:
-  - ParmaGIS.Modules.Data
-  namespace: ParmaGIS.Modules.Data.Space.Calculation
-  syntax:
-    content: 'public abstract Task<T> CreateCalcTableRowAsync<T>(TCalcTable calcTable) where T : class, TCalcTableRow'
-    parameters:
-    - id: calcTable
-      type: '{TCalcTable}'
-    typeParameters:
-    - id: T
-    return:
-      type: System.Threading.Tasks.Task{{T}}
-    content.vb: Public MustOverride Function CreateCalcTableRowAsync(Of T As {Class, TCalcTableRow})(calcTable As TCalcTable) As Task(Of T)
-  overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync*
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(Of T)(TCalcTable)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync(Of T)(TCalcTable)
-  name.vb: CreateCalcTableRowAsync(Of T)(TCalcTable)
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)
-  id: InsertCalcTableRowAsync``1(`2,``0)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
-  langs:
-  - csharp
-  - vb
-  name: InsertCalcTableRowAsync<T>(TCalcTable, T)
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(TCalcTable, T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync<T>(TCalcTable, T)
-  type: Method
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: InsertCalcTableRowAsync
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 58
-  assemblies:
-  - ParmaGIS.Modules.Data
-  namespace: ParmaGIS.Modules.Data.Space.Calculation
-  syntax:
-    content: 'public abstract Task InsertCalcTableRowAsync<T>(TCalcTable calcTable, T row) where T : class, TCalcTableRow'
-    parameters:
-    - id: calcTable
-      type: '{TCalcTable}'
-    - id: row
-      type: '{T}'
-    typeParameters:
-    - id: T
-    return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function InsertCalcTableRowAsync(Of T As {Class, TCalcTableRow})(calcTable As TCalcTable, row As T) As Task
-  overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(TCalcTable, T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync(Of T)(TCalcTable, T)
-  name.vb: InsertCalcTableRowAsync(Of T)(TCalcTable, T)
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)
-  id: RemoveCalcTableRowAsync``1(``0)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
-  langs:
-  - csharp
-  - vb
-  name: RemoveCalcTableRowAsync<T>(T)
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync<T>(T)
-  type: Method
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: RemoveCalcTableRowAsync
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 59
-  assemblies:
-  - ParmaGIS.Modules.Data
-  namespace: ParmaGIS.Modules.Data.Space.Calculation
-  syntax:
-    content: 'public abstract Task RemoveCalcTableRowAsync<T>(T calcTableRow) where T : class, TCalcTableRow'
-    parameters:
-    - id: calcTableRow
-      type: '{T}'
-    typeParameters:
-    - id: T
-    return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function RemoveCalcTableRowAsync(Of T As {Class, TCalcTableRow})(calcTableRow As T) As Task
-  overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync*
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync(Of T)(T)
-  name.vb: RemoveCalcTableRowAsync(Of T)(T)
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync
   id: SaveChangesAsync
@@ -998,15 +976,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs
-    startLine: 61
+    startLine: 194
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
+  summary: Сохраняет изменения в источник.
+  example: []
   syntax:
-    content: public abstract Task SaveChangesAsync()
+    content: public abstract Task<RepoResponse> SaveChangesAsync()
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public MustOverride Function SaveChangesAsync() As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public MustOverride Function SaveChangesAsync() As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync*
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).SaveChangesAsync()
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).SaveChangesAsync()
@@ -1453,6 +1434,49 @@ references:
     href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html
   - name: )
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+  commentId: T:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  name: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  name.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+    name: CalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  - name: <
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4
+    name: CalculationRepositoryBase
+    href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TObjectId
+  - name: ','
+  - name: " "
+  - name: TCalcTableType
+  - name: ','
+  - name: " "
+  - name: TCalcTable
+  - name: ','
+  - name: " "
+  - name: TCalcTableRow
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.#ctor*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.#ctor
   href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4__ctor
@@ -1638,26 +1662,31 @@ references:
   fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTablesAsync
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTablesAsync
-- uid: System.Threading.Tasks.Task{{TCalcTable}[]}
-  commentId: T:System.Threading.Tasks.Task{`2[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTable}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{`2[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TCalcTable[]>
-  nameWithType: Task<TCalcTable[]>
-  fullName: System.Threading.Tasks.Task<TCalcTable[]>
-  nameWithType.vb: Task(Of TCalcTable())
-  fullName.vb: System.Threading.Tasks.Task(Of TCalcTable())
-  name.vb: Task(Of TCalcTable())
+  name: Task<RepoResponse<TCalcTable[]>>
+  nameWithType: Task<RepoResponse<TCalcTable[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TCalcTable[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of TCalcTable()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TCalcTable()))
+  name.vb: Task(Of RepoResponse(Of TCalcTable()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TCalcTable
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1667,8 +1696,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TCalcTable
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: System.Threading.Tasks.Task`1
@@ -1744,26 +1780,31 @@ references:
   fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableTypesAsync
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableTypesAsync
-- uid: System.Threading.Tasks.Task{{TCalcTableType}[]}
-  commentId: T:System.Threading.Tasks.Task{`1[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableType}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{`1[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TCalcTableType[]>
-  nameWithType: Task<TCalcTableType[]>
-  fullName: System.Threading.Tasks.Task<TCalcTableType[]>
-  nameWithType.vb: Task(Of TCalcTableType())
-  fullName.vb: System.Threading.Tasks.Task(Of TCalcTableType())
-  name.vb: Task(Of TCalcTableType())
+  name: Task<RepoResponse<TCalcTableType[]>>
+  nameWithType: Task<RepoResponse<TCalcTableType[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TCalcTableType[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of TCalcTableType()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TCalcTableType()))
+  name.vb: Task(Of RepoResponse(Of TCalcTableType()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TCalcTableType
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1773,8 +1814,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TCalcTableType
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: '{TCalcTableType}'
@@ -1795,26 +1843,31 @@ references:
   fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowsAsync
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowsAsync
-- uid: System.Threading.Tasks.Task{{TCalcTableRow}[]}
-  commentId: T:System.Threading.Tasks.Task{`3[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{`3[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TCalcTableRow[]>
-  nameWithType: Task<TCalcTableRow[]>
-  fullName: System.Threading.Tasks.Task<TCalcTableRow[]>
-  nameWithType.vb: Task(Of TCalcTableRow())
-  fullName.vb: System.Threading.Tasks.Task(Of TCalcTableRow())
-  name.vb: Task(Of TCalcTableRow())
+  name: Task<RepoResponse<TCalcTableRow[]>>
+  nameWithType: Task<RepoResponse<TCalcTableRow[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TCalcTableRow[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of TCalcTableRow()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TCalcTableRow()))
+  name.vb: Task(Of RepoResponse(Of TCalcTableRow()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TCalcTableRow
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1824,8 +1877,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TCalcTableRow
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync*
@@ -1842,24 +1902,29 @@ references:
   name: TObjectId
   nameWithType: TObjectId
   fullName: TObjectId
-- uid: System.Threading.Tasks.Task{{TCalcTable}}
-  commentId: T:System.Threading.Tasks.Task{`2}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTable}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{`2}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TCalcTable>
-  nameWithType: Task<TCalcTable>
-  fullName: System.Threading.Tasks.Task<TCalcTable>
-  nameWithType.vb: Task(Of TCalcTable)
-  fullName.vb: System.Threading.Tasks.Task(Of TCalcTable)
-  name.vb: Task(Of TCalcTable)
+  name: Task<RepoResponse<TCalcTable>>
+  nameWithType: Task<RepoResponse<TCalcTable>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TCalcTable>>
+  nameWithType.vb: Task(Of RepoResponse(Of TCalcTable))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TCalcTable))
+  name.vb: Task(Of RepoResponse(Of TCalcTable))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TCalcTable
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1869,7 +1934,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TCalcTable
+  - name: )
   - name: )
 - uid: TObjectId
   name: TObjectId
@@ -1883,24 +1955,29 @@ references:
   fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.GetCalcTableRowAsync
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).GetCalcTableRowAsync
-- uid: System.Threading.Tasks.Task{{TCalcTableRow}}
-  commentId: T:System.Threading.Tasks.Task{`3}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCalcTableRow}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{`3}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TCalcTableRow>
-  nameWithType: Task<TCalcTableRow>
-  fullName: System.Threading.Tasks.Task<TCalcTableRow>
-  nameWithType.vb: Task(Of TCalcTableRow)
-  fullName.vb: System.Threading.Tasks.Task(Of TCalcTableRow)
-  name.vb: Task(Of TCalcTableRow)
+  name: Task<RepoResponse<TCalcTableRow>>
+  nameWithType: Task<RepoResponse<TCalcTableRow>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TCalcTableRow>>
+  nameWithType.vb: Task(Of RepoResponse(Of TCalcTableRow))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TCalcTableRow))
+  name.vb: Task(Of RepoResponse(Of TCalcTableRow))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TCalcTableRow
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1910,7 +1987,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TCalcTableRow
+  - name: )
   - name: )
 - uid: '{TCalcTable}'
   commentId: '!:TCalcTable'
@@ -1949,14 +2033,39 @@ references:
   fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableAsync
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableAsync
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
   parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<RepoResponse>
+  nameWithType: Task<RepoResponse>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse>
+  nameWithType.vb: Task(Of RepoResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse)
+  name.vb: Task(Of RepoResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse.html
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync
   href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_
@@ -1967,20 +2076,28 @@ references:
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableAsync
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync
-  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1_
   name: CreateCalcTableRowAsync
   nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync
   fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateCalcTableRowAsync
   nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateCalcTableRowAsync
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*
-  commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync
-  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_
-  name: InsertCalcTableRowAsync
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateAndInsertCalcTableRowAsync__2_
+  name: CreateAndInsertCalcTableRowAsync
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateAndInsertCalcTableRowAsync
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.CreateAndInsertCalcTableRowAsync
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateAndInsertCalcTableRowAsync
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).CreateAndInsertCalcTableRowAsync
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
+  name: RemoveCalcTableRowAsync
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync
 - uid: '{TCalcTableRow}'
   commentId: '!:TCalcTableRow'
   definition: TCalcTableRow
@@ -1991,73 +2108,80 @@ references:
   name: TCalcTableRow
   nameWithType: TCalcTableRow
   fullName: TCalcTableRow
-- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync*
-  commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync
-  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_
-  name: RemoveCalcTableRowAsync
-  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.RemoveCalcTableRowAsync
-  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).RemoveCalcTableRowAsync
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: System.Threading.Tasks.Task{{T}}
-  commentId: T:System.Threading.Tasks.Task{``0}
+- uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html#ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_
+  name: InsertCalcTableRowAsync
+  nameWithType: CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.InsertCalcTableRowAsync
+  nameWithType.vb: CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync
+  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).InsertCalcTableRowAsync
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T>
-  nameWithType: Task<T>
-  fullName: System.Threading.Tasks.Task<T>
-  nameWithType.vb: Task(Of T)
-  fullName.vb: System.Threading.Tasks.Task(Of T)
-  name.vb: Task(Of T)
+  name: Task<RepoResponse<T>>
+  nameWithType: Task<RepoResponse<T>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T>>
+  nameWithType.vb: Task(Of RepoResponse(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T))
+  name.vb: Task(Of RepoResponse(Of T))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
-- uid: System.Threading.Tasks.Task{{T}[]}
-  commentId: T:System.Threading.Tasks.Task{`0[]}
+  - name: )
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T[]>
-  nameWithType: Task<T[]>
-  fullName: System.Threading.Tasks.Task<T[]>
-  nameWithType.vb: Task(Of T())
-  fullName.vb: System.Threading.Tasks.Task(Of T())
-  name.vb: Task(Of T())
+  name: Task<RepoResponse<T[]>>
+  nameWithType: Task<RepoResponse<T[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of T()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T()))
+  name.vb: Task(Of RepoResponse(Of T()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -2067,8 +2191,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync*

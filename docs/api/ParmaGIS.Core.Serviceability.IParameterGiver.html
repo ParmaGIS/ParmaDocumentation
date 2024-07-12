@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IParameterGiver | site ">
       
-      
+      <meta name="description" content="Представляет интерфейс взаимодействия с сервисом получения параметров. Данный сервис позволяет зарегистрировать механизм разрешения зависимостей различных типав.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Serviceability_IParameterGiver" data-uid="ParmaGIS.Core.Serviceability.IParameterGiver" class="text-break">
-Interface IParameterGiver  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IParameterGiver  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Interface IParameterGiver  <a class="header-action link-secondary" title="View s
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет интерфейс взаимодействия с сервисом получения параметров.
+Данный сервис позволяет зарегистрировать механизм разрешения зависимостей различных типав.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -113,6 +115,23 @@ Interface IParameterGiver  <a class="header-action link-secondary" title="View s
 
 
 
+  <h2 id="ParmaGIS_Core_Serviceability_IParameterGiver_examples">Examples</h2>
+  <p>Есть класс A, B и AParameterGiver:</p>
+<pre><code class="lang-csharp">class A { public int Property { get; set; } }
+
+class B { public B(A a) { A = a; } }
+
+class AParameterGiver
+{
+    public ParameterType =&gt; typrof(A);
+    public object GetParameter(Type needy, ParameterInfo parameterInfo)
+    {
+        return new A();
+    }
+}</code></pre>
+<p>Класс А в данном случае предоставляется сервисом AParameterGiver.
+Таким образом, при разрешении зависимосетей для создания экземпляра класс B через <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_">Resolve(Type)</a>, классу В установится экземпляр класса А.</p>
+
 
 
 
@@ -124,10 +143,11 @@ Interface IParameterGiver  <a class="header-action link-secondary" title="View s
 
   <h3 id="ParmaGIS_Core_Serviceability_IParameterGiver_ParameterType" data-uid="ParmaGIS.Core.Serviceability.IParameterGiver.ParameterType">
   ParameterType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает тип выдаваемого параметра.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -159,10 +179,11 @@ Interface IParameterGiver  <a class="header-action link-secondary" title="View s
 
   <h3 id="ParmaGIS_Core_Serviceability_IParameterGiver_GetParameter_System_Type_System_Reflection_ParameterInfo_" data-uid="ParmaGIS.Core.Serviceability.IParameterGiver.GetParameter(System.Type,System.Reflection.ParameterInfo)">
   GetParameter(Type, ParameterInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает параметр.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -172,15 +193,18 @@ Interface IParameterGiver  <a class="header-action link-secondary" title="View s
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>needy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип, для которого устанавливается параметр.</p>
+</dd>
     <dt><code>parameterInfo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a></dt>
-    <dd></dd>
+    <dd><p>Информация о параметре.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Экземпляр параметра.</p>
+</dd>
   </dl>
 
 
@@ -197,7 +221,7 @@ Interface IParameterGiver  <a class="header-action link-secondary" title="View s
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs/#L30" class="edit-link">Edit this page</a>
         </div>
 
 

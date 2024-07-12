@@ -23,10 +23,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISpaceBuilder
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpaceBuilder.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: >-
+    Представляет контракт взаимодействия со строителем пространства.
+
+    С помощью него производится настройка и сборка пространства.
+  example: []
   syntax:
     content: 'public interface ISpaceBuilder : INotifyPropertyChanged'
     content.vb: Public Interface ISpaceBuilder Inherits INotifyPropertyChanged
@@ -53,17 +58,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetName
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpaceBuilder.cs
-    startLine: 8
+    startLine: 17
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Устанавливает название пространства.
+  example: []
   syntax:
     content: ISpaceBuilder SetName(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название пространства.
     return:
       type: ParmaGIS.Modules.Data.Space.ISpaceBuilder
+      description: <xref href="ParmaGIS.Modules.Data.Space.ISpaceBuilder" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function SetName(name As String) As ISpaceBuilder
   overload: ParmaGIS.Modules.Data.Space.ISpaceBuilder.SetName*
   nameWithType.vb: ISpaceBuilder.SetName(String)
@@ -87,17 +96,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetDescription
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpaceBuilder.cs
-    startLine: 9
+    startLine: 24
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Задает описание пространства.
+  example: []
   syntax:
     content: ISpaceBuilder SetDescription(string description)
     parameters:
     - id: description
       type: System.String
+      description: Описание пространства.
     return:
       type: ParmaGIS.Modules.Data.Space.ISpaceBuilder
+      description: <xref href="ParmaGIS.Modules.Data.Space.ISpaceBuilder" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function SetDescription(description As String) As ISpaceBuilder
   overload: ParmaGIS.Modules.Data.Space.ISpaceBuilder.SetDescription*
   nameWithType.vb: ISpaceBuilder.SetDescription(String)
@@ -121,17 +134,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetDBProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpaceBuilder.cs
-    startLine: 10
+    startLine: 31
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Задает провайдер базы данных.
+  example: []
   syntax:
     content: ISpaceBuilder SetDBProvider(IDataBaseProvider provider)
     parameters:
     - id: provider
       type: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+      description: Провайдер базы данных.
     return:
       type: ParmaGIS.Modules.Data.Space.ISpaceBuilder
+      description: <xref href="ParmaGIS.Modules.Data.Space.ISpaceBuilder" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function SetDBProvider(provider As IDataBaseProvider) As ISpaceBuilder
   overload: ParmaGIS.Modules.Data.Space.ISpaceBuilder.SetDBProvider*
 - uid: ParmaGIS.Modules.Data.Space.ISpaceBuilder.Build
@@ -152,14 +169,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Build
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpaceBuilder.cs
-    startLine: 11
+    startLine: 37
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Создает экземпляр пространства.
+  example: []
   syntax:
     content: ISpace Build()
     return:
       type: ParmaGIS.Modules.Data.Space.ISpace
+      description: Экземпляр пространства.
     content.vb: Function Build() As ISpace
   overload: ParmaGIS.Modules.Data.Space.ISpaceBuilder.Build*
 references:
@@ -835,6 +855,13 @@ references:
   - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
     name: ReactiveRules
     href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
+- uid: ParmaGIS.Modules.Data.Space.ISpaceBuilder
+  commentId: T:ParmaGIS.Modules.Data.Space.ISpaceBuilder
+  parent: ParmaGIS.Modules.Data.Space
+  href: ParmaGIS.Modules.Data.Space.ISpaceBuilder.html
+  name: ISpaceBuilder
+  nameWithType: ISpaceBuilder
+  fullName: ParmaGIS.Modules.Data.Space.ISpaceBuilder
 - uid: ParmaGIS.Modules.Data.Space.ISpaceBuilder.SetName*
   commentId: Overload:ParmaGIS.Modules.Data.Space.ISpaceBuilder.SetName
   href: ParmaGIS.Modules.Data.Space.ISpaceBuilder.html#ParmaGIS_Modules_Data_Space_ISpaceBuilder_SetName_System_String_
@@ -852,13 +879,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ParmaGIS.Modules.Data.Space.ISpaceBuilder
-  commentId: T:ParmaGIS.Modules.Data.Space.ISpaceBuilder
-  parent: ParmaGIS.Modules.Data.Space
-  href: ParmaGIS.Modules.Data.Space.ISpaceBuilder.html
-  name: ISpaceBuilder
-  nameWithType: ISpaceBuilder
-  fullName: ParmaGIS.Modules.Data.Space.ISpaceBuilder
 - uid: System
   commentId: N:System
   isExternal: true

@@ -7,8 +7,8 @@ items:
   children:
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
-  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
   langs:
   - csharp
@@ -24,10 +24,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataRepository
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 10
+    startLine: 7
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Представляет контракт взаимодействия с репозиторием данных.
+  example: []
   syntax:
     content: public interface IDataRepository
     content.vb: Public Interface IDataRepository
@@ -49,17 +51,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает данные по указанному типу.
+  example: []
   syntax:
-    content: 'Task<T[]> GetDataAsync<T>() where T : class, IDataObject'
+    content: 'Task<RepoResponse<T[]>> GetDataAsync<T>() where T : class, IDataObject'
     typeParameters:
     - id: T
+      description: Тип данных
     return:
-      type: System.Threading.Tasks.Task{{T}[]}
-    content.vb: Function GetDataAsync(Of T As {Class, IDataObject})() As Task(Of T())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+      description: Массив данных указанного типа.
+    content.vb: Function GetDataAsync(Of T As {Class, IDataObject})() As Task(Of RepoResponse(Of T()))
   overload: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync*
   nameWithType.vb: IDataRepository.GetDataAsync(Of T)()
   fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync(Of T)()
@@ -82,34 +88,39 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает данные по указанному типу.
+  example: []
   syntax:
-    content: 'Task<T?> GetDataAsync<T>(object id) where T : class, IDataObject'
+    content: 'Task<RepoResponse<T?>> GetDataAsync<T>(object id) where T : class, IDataObject'
     parameters:
     - id: id
       type: System.Object
+      description: Уникальный идентификатор данных.
     typeParameters:
     - id: T
+      description: Тип данных.
     return:
-      type: System.Threading.Tasks.Task{{T}}
-    content.vb: Function GetDataAsync(Of T As {Class, IDataObject})(id As Object) As Task(Of T)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+      description: Данные.
+    content.vb: Function GetDataAsync(Of T As {Class, IDataObject})(id As Object) As Task(Of RepoResponse(Of T))
   overload: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync*
   nameWithType.vb: IDataRepository.GetDataAsync(Of T)(Object)
   fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync(Of T)(Object)
   name.vb: GetDataAsync(Of T)(Object)
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-  id: InsertDataAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  id: InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
   langs:
   - csharp
   - vb
-  name: InsertDataAsync<T>(T)
-  nameWithType: IDataRepository.InsertDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync<T>(T)
+  name: InsertDataAsync(IDataObject)
+  nameWithType: IDataRepository.InsertDataAsync(IDataObject)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   type: Method
   source:
     remote:
@@ -118,34 +129,33 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 15
+    startLine: 29
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Добавляет данные в репозиторий.
+  example: []
   syntax:
-    content: 'Task InsertDataAsync<T>(T data) where T : class, IDataObject'
+    content: Task<RepoResponse> InsertDataAsync(IDataObject data)
     parameters:
     - id: data
-      type: '{T}'
-    typeParameters:
-    - id: T
+      type: ParmaGIS.Modules.Data.Space.Data.IDataObject
+      description: Добавляемые данные.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Function InsertDataAsync(Of T As {Class, IDataObject})(data As T) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Function InsertDataAsync(data As IDataObject) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync*
-  nameWithType.vb: IDataRepository.InsertDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(Of T)(T)
-  name.vb: InsertDataAsync(Of T)(T)
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-  id: RemoveDataAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  id: RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
   langs:
   - csharp
   - vb
-  name: RemoveDataAsync<T>(T)
-  nameWithType: IDataRepository.RemoveDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync<T>(T)
+  name: RemoveDataAsync(IDataObject)
+  nameWithType: IDataRepository.RemoveDataAsync(IDataObject)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   type: Method
   source:
     remote:
@@ -154,24 +164,23 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 17
+    startLine: 36
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Удалаяет данные из репозитория.
+  example: []
   syntax:
-    content: 'Task RemoveDataAsync<T>(T data) where T : class, IDataObject'
+    content: Task<RepoResponse> RemoveDataAsync(IDataObject data)
     parameters:
     - id: data
-      type: '{T}'
-    typeParameters:
-    - id: T
+      type: ParmaGIS.Modules.Data.Space.Data.IDataObject
+      description: Удаляемые данные.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Function RemoveDataAsync(Of T As {Class, IDataObject})(data As T) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Function RemoveDataAsync(data As IDataObject) As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync*
-  nameWithType.vb: IDataRepository.RemoveDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(Of T)(T)
-  name.vb: RemoveDataAsync(Of T)(T)
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
   commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
   id: SaveChangesAsync
@@ -190,15 +199,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataRepository.cs
-    startLine: 18
+    startLine: 42
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Сохраняет изменения.
+  example: []
   syntax:
-    content: Task SaveChangesAsync()
+    content: Task<RepoResponse> SaveChangesAsync()
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Function SaveChangesAsync() As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Function SaveChangesAsync() As Task(Of RepoResponse)
   overload: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync*
 references:
 - uid: ParmaGIS.Modules.Data.Space.Data
@@ -253,26 +265,31 @@ references:
   name: GetDataAsync
   nameWithType: IDataRepository.GetDataAsync
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync
-- uid: System.Threading.Tasks.Task{{T}[]}
-  commentId: T:System.Threading.Tasks.Task{`0[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T[]>
-  nameWithType: Task<T[]>
-  fullName: System.Threading.Tasks.Task<T[]>
-  nameWithType.vb: Task(Of T())
-  fullName.vb: System.Threading.Tasks.Task(Of T())
-  name.vb: Task(Of T())
+  name: Task<RepoResponse<T[]>>
+  nameWithType: Task<RepoResponse<T[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of T()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T()))
+  name.vb: Task(Of RepoResponse(Of T()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -282,8 +299,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: System.Threading.Tasks.Task`1
@@ -362,24 +386,29 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Threading.Tasks.Task{{T}}
-  commentId: T:System.Threading.Tasks.Task{``0}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T>
-  nameWithType: Task<T>
-  fullName: System.Threading.Tasks.Task<T>
-  nameWithType.vb: Task(Of T)
-  fullName.vb: System.Threading.Tasks.Task(Of T)
-  name.vb: Task(Of T)
+  name: Task<RepoResponse<T>>
+  nameWithType: Task<RepoResponse<T>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T>>
+  nameWithType.vb: Task(Of RepoResponse(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T))
+  name.vb: Task(Of RepoResponse(Of T))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -389,7 +418,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
+  - name: )
   - name: )
 - uid: System
   commentId: N:System
@@ -400,31 +436,53 @@ references:
   fullName: System
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync
-  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
   name: InsertDataAsync
   nameWithType: IDataRepository.InsertDataAsync
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
+  commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataObject
+  parent: ParmaGIS.Modules.Data.Space.Data
+  href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
+  name: IDataObject
+  nameWithType: IDataObject
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataObject
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
   parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<RepoResponse>
+  nameWithType: Task<RepoResponse>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse>
+  nameWithType.vb: Task(Of RepoResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse)
+  name.vb: Task(Of RepoResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse.html
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync
-  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
   name: RemoveDataAsync
   nameWithType: IDataRepository.RemoveDataAsync
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync

@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class StorageProvider&lt;T&gt;
- | site </title>
+      <title>Class StorageProvider&lt;T&gt; | site </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class StorageProvider&lt;T&gt;
- | site ">
+      <meta name="title" content="Class StorageProvider&lt;T&gt; | site ">
       
+      <meta name="description" content="Представляет провайдер хранилища . Предназначен для упрощения хранения коллекций сущностей в .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/master/apiSpec/new?filename=ParmaGIS_Core_Storage_StorageProvider_1.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Storage.StorageProvider%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/test/apiSpec/new?filename=ParmaGIS_Core_Storage_StorageProvider_1.md&amp;value=---%0Auid%3A%20ParmaGIS.Core.Storage.StorageProvider%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Storage_StorageProvider_1" data-uid="ParmaGIS.Core.Storage.StorageProvider`1" class="text-break">
-    Class StorageProvider&lt;T&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class StorageProvider&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,11 +97,13 @@
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет провайдер хранилища <a class="xref" href="ParmaGIS.Core.Storage.IStorage.html">IStorage</a>.
+Предназначен для упрощения хранения коллекций сущностей в <a class="xref" href="ParmaGIS.Core.Storage.IStorage.html">IStorage</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StorageProvider&lt;T&gt; : IEnumerable&lt;T&gt;, IEnumerable, INotifyCollectionChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public class StorageProvider&lt;T&gt; : IEnumerable&lt;InstanceContainer&lt;T&gt;&gt;, IEnumerable, INotifyCollectionChanged</code></pre>
   </div>
 
 
@@ -111,7 +111,8 @@
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов, предоставляемых провайдером.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -125,7 +126,7 @@
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.InstanceContainer-1.html">InstanceContainer</a>&lt;T&gt;&gt;</div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a></div>
     </dd>
@@ -139,7 +140,7 @@
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -169,10 +170,16 @@
     <dt>Extension Methods</dt>
     <dd>
   <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Reactive.ObservableExtensions.html#ParmaGIS_Core_UI_Reactive_ObservableExtensions_ObserveElementEvent__3___0_System_Func___1_System_IObserver___2__System_IDisposable__">ObservableExtensions.ObserveElementEvent&lt;TCollection, TElement, TResult&gt;(TCollection, Func&lt;TElement, IObserver&lt;TResult&gt;, IDisposable&gt;)</a>
+  </div>
+  <div>
       <a class="xref" href="ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__">EnumarableExtensions.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T, int&gt;)</a>
   </div>
   <div>
       <a class="xref" href="ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__">EnumarableExtensions.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__">EnumarableExtensions.ToSafe&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;Exception, T&gt;)</a>
   </div>
   </dd></dl>
 
@@ -188,10 +195,11 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1__ctor_ParmaGIS_Core_Storage_IStorage_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.#ctor(ParmaGIS.Core.Storage.IStorage)">
   StorageProvider(IStorage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="ParmaGIS.Core.Storage.StorageProvider-1.html">StorageProvider&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -201,7 +209,8 @@
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>storage</code> <a class="xref" href="ParmaGIS.Core.Storage.IStorage.html">IStorage</a></dt>
-    <dd></dd>
+    <dd><p>Сервис хранилища.</p>
+</dd>
   </dl>
 
 
@@ -223,14 +232,15 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_ItemType" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.ItemType">
   ItemType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает тип элементов, предоставляемых провайдером.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ItemType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static Type ItemType { get; }</code></pre>
   </div>
 
 
@@ -239,7 +249,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
     <dd></dd>
   </dl>
 
@@ -258,22 +268,57 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_Add__0_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)">
   Add(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет элемент в коллекцию.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(T server)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add(T item)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>server</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>Добавляемый элемент.</p>
+</dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Storage_StorageProvider_1_AsItems_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.AsItems*"></a>
+
+  <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_AsItems" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.AsItems">
+  AsItems()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Представляет провайдер хранилища как пречисление экземпляров элементов хранящихся в контейнерах.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; AsItems()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>Перечисление элементов в контейнерах.</p>
+</dd>
+  </dl>
 
 
 
@@ -289,22 +334,22 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator">
   GetEnumerator()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L199"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+  <div class="markdown level1 summary"><p>Возвращает перечисление контейнеров провайдера хранилища.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;InstanceContainer&lt;T&gt;&gt; GetEnumerator()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</dt>
-    <dd><p>An enumerator that can be used to iterate through the collection.</p>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.InstanceContainer-1.html">InstanceContainer</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Перечисление контейнеров провайдера хранилища.</p>
 </dd>
   </dl>
 
@@ -322,10 +367,11 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})">
   RegisterType&lt;TItem&gt;(Func&lt;IContainer, T&gt;, Action&lt;IContainer, T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Регистрирует функции десериализации и сериализации типа элементов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -335,17 +381,86 @@
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>deserializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.IContainer.html">IContainer</a>, T&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция десериализации типа.</p>
+</dd>
     <dt><code>serializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.IContainer.html">IContainer</a>, T&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция сериализации типа.</p>
+</dd>
   </dl>
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TItem</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента.</p>
+</dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Storage_StorageProvider_1_Remove_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Remove*"></a>
+
+  <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})">
+  Remove(InstanceContainer&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Удаляет элемент из коллекции по его контейнеру.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(InstanceContainer&lt;T&gt; container)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>container</code> <a class="xref" href="ParmaGIS.Core.Storage.InstanceContainer-1.html">InstanceContainer</a>&lt;T&gt;</dt>
+    <dd><p>Контейнер удаляемого элемента.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Storage_StorageProvider_1_Remove_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Remove*"></a>
+
+  <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Remove(System.Guid)">
+  Remove(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Удаляет элемент из коллекции по его уникальному ключу.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(Guid key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>Уникальный ключ удаляемого элемента.</p>
+</dd>
+  </dl>
+
+
 
 
 
@@ -360,20 +475,22 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)">
   Remove(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Удаление элемента из коллекции.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Remove(T server)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Remove(T item)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>server</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>Удаляемый элемент.</p>
+</dd>
   </dl>
 
 
@@ -391,10 +508,11 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_Save" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.Save">
   Save()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L207"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Сохраняет изменения в провайдере хранилища</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -420,10 +538,10 @@
 
   <h3 id="ParmaGIS_Core_Storage_StorageProvider_1_CollectionChanged" data-uid="ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged">
   CollectionChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Occurs when the collection changes.</p>
+  <div class="markdown level1 summary"><p>Возникает при изменении элементов в коллекции.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -452,7 +570,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Storage/StorageProvider.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

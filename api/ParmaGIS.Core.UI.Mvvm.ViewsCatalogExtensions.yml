@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ViewsCatalogExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewsCatalogExtensions.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Расширения для <xref href="ParmaGIS.Core.UI.Mvvm.IViewCatalog" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ViewsCatalogExtensions
     content.vb: Public Module ViewsCatalogExtensions
@@ -57,20 +59,26 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterView
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewsCatalogExtensions.cs
-    startLine: 9
+    startLine: 19
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Регистрирует отношение View к ViewModel.
+  example: []
   syntax:
     content: public static void RegisterView<TView, TViewModel>(this IViewCatalog catalog, string type = "view")
     parameters:
     - id: catalog
       type: ParmaGIS.Core.UI.Mvvm.IViewCatalog
+      description: Каталог представлений.
     - id: type
       type: System.String
+      description: Тип отношения.
     typeParameters:
     - id: TView
+      description: Тип Viewm.
     - id: TViewModel
+      description: Тип ViewModel.
     content.vb: Public Shared Sub RegisterView(Of TView, TViewModel)(catalog As IViewCatalog, type As String = "view")
   overload: ParmaGIS.Core.UI.Mvvm.ViewsCatalogExtensions.RegisterView*
   nameWithType.vb: ViewsCatalogExtensions.RegisterView(Of TView, TViewModel)(IViewCatalog, String)
@@ -95,27 +103,40 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterView
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewsCatalogExtensions.cs
-    startLine: 16
+    startLine: 33
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Регистрирует отношение View к ViewModel.
+  example: []
   syntax:
-    content: public static void RegisterView(this IViewCatalog catalog, Type toolView, Type toolViewModel, string type = "view")
+    content: public static void RegisterView(this IViewCatalog catalog, Type view, Type viewModel, string type = "view")
     parameters:
     - id: catalog
       type: ParmaGIS.Core.UI.Mvvm.IViewCatalog
-    - id: toolView
+      description: Каталог представлений.
+    - id: view
       type: System.Type
-    - id: toolViewModel
+      description: Тип View.
+    - id: viewModel
       type: System.Type
+      description: Тип ViewModel.
     - id: type
       type: System.String
-    content.vb: Public Shared Sub RegisterView(catalog As IViewCatalog, toolView As Type, toolViewModel As Type, type As String = "view")
+      description: Тип отношения.
+    content.vb: Public Shared Sub RegisterView(catalog As IViewCatalog, view As Type, viewModel As Type, type As String = "view")
   overload: ParmaGIS.Core.UI.Mvvm.ViewsCatalogExtensions.RegisterView*
   nameWithType.vb: ViewsCatalogExtensions.RegisterView(IViewCatalog, Type, Type, String)
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewsCatalogExtensions.RegisterView(ParmaGIS.Core.UI.Mvvm.IViewCatalog, System.Type, System.Type, String)
   name.vb: RegisterView(IViewCatalog, Type, Type, String)
 references:
+- uid: ParmaGIS.Core.UI.Mvvm.IViewCatalog
+  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewCatalog
+  parent: ParmaGIS.Core.UI.Mvvm
+  href: ParmaGIS.Core.UI.Mvvm.IViewCatalog.html
+  name: IViewCatalog
+  nameWithType: IViewCatalog
+  fullName: ParmaGIS.Core.UI.Mvvm.IViewCatalog
 - uid: ParmaGIS.Core.UI.Mvvm
   commentId: N:ParmaGIS.Core.UI.Mvvm
   href: ParmaGIS.html
@@ -397,13 +418,6 @@ references:
   name: RegisterView
   nameWithType: ViewsCatalogExtensions.RegisterView
   fullName: ParmaGIS.Core.UI.Mvvm.ViewsCatalogExtensions.RegisterView
-- uid: ParmaGIS.Core.UI.Mvvm.IViewCatalog
-  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewCatalog
-  parent: ParmaGIS.Core.UI.Mvvm
-  href: ParmaGIS.Core.UI.Mvvm.IViewCatalog.html
-  name: IViewCatalog
-  nameWithType: IViewCatalog
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewCatalog
 - uid: System.String
   commentId: T:System.String
   parent: System

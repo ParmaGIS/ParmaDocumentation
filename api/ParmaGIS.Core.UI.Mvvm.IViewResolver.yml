@@ -20,10 +20,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IViewResolver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewResolver.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: >-
+    Представляет интерфейс взаимодействия с разрешителем представлений.
+
+    Позволяет переопределить механизм разрегения View для ViewModel для различных ситуаций.
+  example: []
   syntax:
     content: public interface IViewResolver
     content.vb: Public Interface IViewResolver
@@ -45,19 +50,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryResolve
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewResolver.cs
-    startLine: 4
+    startLine: 14
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Пытается  разрешить View для ViewModrl.
+  example: []
   syntax:
     content: bool TryResolve(object viewModel, out object view)
     parameters:
     - id: viewModel
       type: System.Object
+      description: Экземпляр ViewModel.
     - id: view
       type: System.Object
+      description: Экземпляр View.
     return:
       type: System.Boolean
+      description: Значение true, если удалось найти View для ViewModel, иначе - false.
     content.vb: Function TryResolve(viewModel As Object, view As Object) As Boolean
   overload: ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve*
   nameWithType.vb: IViewResolver.TryResolve(Object, Object)

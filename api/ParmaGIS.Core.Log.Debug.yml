@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Debug
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Debug.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Статический класс для вывода сообщений через сервис логирования и отладки.
+  example: []
   syntax:
     content: public static class Debug
     content.vb: Public Module Debug
@@ -56,10 +58,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Logger
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Debug.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает или задает сервис логирования.
+  example: []
   syntax:
     content: public static ILogger Logger { get; set; }
     parameters: []
@@ -85,15 +89,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Log
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Debug.cs
-    startLine: 16
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Отправляет сообщение в установленный сервис логирования.
+  example: []
   syntax:
     content: public static void Log(string message)
     parameters:
     - id: message
       type: System.String
+      description: Сообщение.
     content.vb: Public Shared Sub Log(message As String)
   overload: ParmaGIS.Core.Log.Debug.Log*
   nameWithType.vb: Debug.Log(String)

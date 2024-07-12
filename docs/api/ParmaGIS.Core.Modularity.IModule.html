@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IModule | site ">
       
-      
+      <meta name="description" content="Предаставляет атомарную часть механизма модулей. Реализация этого интерфейса в библиотеке позволяет определить ммдуль, зарешистрировать сервисы и различные дополнения. Не рекомендуется создавать в библиотеке больше одной реализации .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Modularity_IModule" data-uid="ParmaGIS.Core.Modularity.IModule" class="text-break">
-Interface IModule  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Interface IModule  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,10 @@ Interface IModule  <a class="header-action link-secondary" title="View source" h
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Предаставляет атомарную часть механизма модулей.
+Реализация этого интерфейса в библиотеке позволяет определить ммдуль, зарешистрировать сервисы и различные дополнения.
+Не рекомендуется создавать в библиотеке больше одной реализации <a class="xref" href="ParmaGIS.Core.Modularity.IModule.html">IModule</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -124,10 +127,12 @@ Interface IModule  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="ParmaGIS_Core_Modularity_IModule_OnInitialized_ParmaGIS_Core_Serviceability_IServiceProvider_" data-uid="ParmaGIS.Core.Modularity.IModule.OnInitialized(ParmaGIS.Core.Serviceability.IServiceProvider)">
   OnInitialized(IServiceProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует модуль.
+Метод вызывается после того как у всех модулей произойдет <a class="xref" href="ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_">RegisterTypes(IServiceCollection)</a>. Гарантируется, что сервисы присутствующих модулей буду зарегистрированы до вызова этого метода.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -137,7 +142,8 @@ Interface IModule  <a class="header-action link-secondary" title="View source" h
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>serviceProvider</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceProvider.html">IServiceProvider</a></dt>
-    <dd></dd>
+    <dd><p>Провайдер серивисов. Позволяет осуществить различные действия с сервисами.</p>
+</dd>
   </dl>
 
 
@@ -155,10 +161,12 @@ Interface IModule  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_" data-uid="ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)">
   RegisterTypes(IServiceCollection)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Позволяет зарегистрировать типы сервисов. Вызывается после сбора всех модулей.
+Определенная очередность вызова этого метода не гарантируется.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -168,7 +176,8 @@ Interface IModule  <a class="header-action link-secondary" title="View source" h
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>serviceCollection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>Коллекция сервисов.</p>
+</dd>
   </dl>
 
 
@@ -186,7 +195,7 @@ Interface IModule  <a class="header-action link-secondary" title="View source" h
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Modularity/IModule.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

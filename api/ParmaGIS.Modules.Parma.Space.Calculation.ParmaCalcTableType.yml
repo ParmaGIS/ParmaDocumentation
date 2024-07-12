@@ -5,8 +5,9 @@ items:
   id: ParmaCalcTableType
   parent: ParmaGIS.Modules.Parma.Space.Calculation
   children:
-  - ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor(System.String)
+  - ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor(System.String,System.String)
   - ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Discriminator
+  - ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title
   - ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.ToString
   langs:
   - csharp
@@ -62,6 +63,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Calculation
+  summary: Возвращает название типа таблицы.
   example: []
   syntax:
     content: public string Discriminator { get; }
@@ -72,16 +74,45 @@ items:
   overload: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Discriminator*
   implements:
   - ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType.Discriminator
-- uid: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor(System.String)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor(System.String)
-  id: '#ctor(System.String)'
+- uid: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title
+  commentId: P:ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title
+  id: Title
   parent: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType
   langs:
   - csharp
   - vb
-  name: ParmaCalcTableType(string)
-  nameWithType: ParmaCalcTableType.ParmaCalcTableType(string)
-  fullName: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.ParmaCalcTableType(string)
+  name: Title
+  nameWithType: ParmaCalcTableType.Title
+  fullName: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalcTableType.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Title
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalcTableType.cs
+    startLine: 7
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Calculation
+  syntax:
+    content: public string Title { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Title As String
+  overload: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title*
+- uid: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor(System.String,System.String)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType
+  langs:
+  - csharp
+  - vb
+  name: ParmaCalcTableType(string, string?)
+  nameWithType: ParmaCalcTableType.ParmaCalcTableType(string, string?)
+  fullName: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.ParmaCalcTableType(string, string?)
   type: Constructor
   source:
     remote:
@@ -90,20 +121,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalcTableType.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Calculation
   syntax:
-    content: public ParmaCalcTableType(string discriminator)
+    content: public ParmaCalcTableType(string discriminator, string? title = null)
     parameters:
     - id: discriminator
       type: System.String
-    content.vb: Public Sub New(discriminator As String)
+    - id: title
+      type: System.String
+    content.vb: Public Sub New(discriminator As String, title As String = Nothing)
   overload: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor*
-  nameWithType.vb: ParmaCalcTableType.New(String)
-  fullName.vb: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.New(String)
-  name.vb: New(String)
+  nameWithType.vb: ParmaCalcTableType.New(String, String)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.New(String, String)
+  name.vb: New(String, String)
 - uid: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.ToString
   commentId: M:ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.ToString
   id: ToString
@@ -122,7 +155,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Calculation/ParmaCalcTableType.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Calculation
@@ -473,9 +506,15 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title
+  href: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html#ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType_Title
+  name: Title
+  nameWithType: ParmaCalcTableType.Title
+  fullName: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.Title
 - uid: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.#ctor
-  href: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html#ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType__ctor_System_String_
+  href: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.html#ParmaGIS_Modules_Parma_Space_Calculation_ParmaCalcTableType__ctor_System_String_System_String_
   name: ParmaCalcTableType
   nameWithType: ParmaCalcTableType.ParmaCalcTableType
   fullName: ParmaGIS.Modules.Parma.Space.Calculation.ParmaCalcTableType.ParmaCalcTableType

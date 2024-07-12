@@ -22,10 +22,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceAttribute
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/Attributes/ServiceAttribute.cs
-    startLine: 4
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability.Attributes
+  summary: >-
+    Атрибут определяющий сервис или реализацию сервиса.
+
+    Предназначен для автоматического поиска и регистрации сервисов.
+
+    Не используется на данный момент.
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
@@ -109,17 +116,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/Attributes/ServiceAttribute.cs
-    startLine: 7
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability.Attributes
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ServiceAttribute(ServiceLifetime lifetime, Type serviceType)
     parameters:
     - id: lifetime
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
+      description: Время жизни сервиса.
     - id: serviceType
       type: System.Type
+      description: Тип сервиса.
     content.vb: Public Sub New(lifetime As ServiceLifetime, serviceType As Type)
   overload: ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute.#ctor*
   nameWithType.vb: ServiceAttribute.New(ServiceLifetime, Type)
@@ -143,10 +154,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Lifetime
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/Attributes/ServiceAttribute.cs
-    startLine: 13
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability.Attributes
+  summary: Возвращает время жизни сервиса.
+  example: []
   syntax:
     content: public ServiceLifetime Lifetime { get; }
     parameters: []
@@ -172,10 +185,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/Attributes/ServiceAttribute.cs
-    startLine: 14
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability.Attributes
+  summary: Вовращает тип сервиса.
+  example: []
   syntax:
     content: public Type ServiceType { get; }
     parameters: []
@@ -2016,6 +2031,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute
+  commentId: T:ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute
+  href: ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute.html
+  name: ServiceAttribute
+  nameWithType: ServiceAttribute
+  fullName: ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute
 - uid: ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute.#ctor*
   commentId: Overload:ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute.#ctor
   href: ParmaGIS.Core.Serviceability.Attributes.ServiceAttribute.html#ParmaGIS_Core_Serviceability_Attributes_ServiceAttribute__ctor_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Type_

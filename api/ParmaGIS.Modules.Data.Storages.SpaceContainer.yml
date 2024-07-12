@@ -29,10 +29,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SpaceContainer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Представляет контейнер пространства.
+  example: []
   syntax:
     content: 'public class SpaceContainer : IContainer, INotifyPropertyChanged'
     content.vb: Public Class SpaceContainer Implements IContainer, INotifyPropertyChanged
@@ -70,10 +72,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Key
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 21
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Возвращает ключ контейнера.
   example: []
   syntax:
     content: public Guid Key { get; }
@@ -102,11 +105,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 23
+    startLine: 31
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
-  summary: Occurs when a property value changes.
+  summary: Возникает при изменении значения свойств контейнера.
   example: []
   syntax:
     content: public event PropertyChangedEventHandler? PropertyChanged
@@ -133,10 +136,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 29
+    startLine: 40
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Возвращает или задает название пространства.
+  example: []
   syntax:
     content: public string? Name { get; set; }
     parameters: []
@@ -162,10 +167,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 30
+    startLine: 45
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Возвращает или задает описание пространства.
+  example: []
   syntax:
     content: public string Description { get; set; }
     parameters: []
@@ -191,10 +198,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Provider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 31
+    startLine: 50
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Возвращает или задает провайдер базы данных пространства.
+  example: []
   syntax:
     content: public IDataBaseProvider Provider { get; set; }
     parameters: []
@@ -220,10 +229,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Clear
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 34
+    startLine: 56
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Очищает контейнер пространства.
   example: []
   syntax:
     content: public void Clear()
@@ -249,17 +259,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataBaseProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 39
+    startLine: 66
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Возвращает провайдер базы данных по названию свойства.
+  example: []
   syntax:
     content: public IDataBaseProvider? GetDataBaseProvider(string propertyName)
     parameters:
     - id: propertyName
       type: System.String
+      description: Название свойства, в котором хранится провайдер базы данных.
     return:
       type: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+      description: Провайдер базы данных.
     content.vb: Public Function GetDataBaseProvider(propertyName As String) As IDataBaseProvider
   overload: ParmaGIS.Modules.Data.Storages.SpaceContainer.GetDataBaseProvider*
   nameWithType.vb: SpaceContainer.GetDataBaseProvider(String)
@@ -283,17 +297,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetDataBaseProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 53
+    startLine: 85
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Устанавливает провайдер базы данных в свойство контейнера.
+  example: []
   syntax:
     content: public void SetDataBaseProvider(string propertyName, IDataBaseProvider dbProvider)
     parameters:
     - id: propertyName
       type: System.String
+      description: Название свойства.
     - id: dbProvider
       type: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+      description: Провайдер базы данных.
     content.vb: Public Sub SetDataBaseProvider(propertyName As String, dbProvider As IDataBaseProvider)
   overload: ParmaGIS.Modules.Data.Storages.SpaceContainer.SetDataBaseProvider*
   nameWithType.vb: SpaceContainer.SetDataBaseProvider(String, IDataBaseProvider)
@@ -317,18 +335,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Get
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 58
+    startLine: 95
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Получает значение свойства по его названию.
   example: []
   syntax:
     content: public object? Get(string propertyName)
     parameters:
     - id: propertyName
       type: System.String
+      description: Название свойства.
     return:
       type: System.Object
+      description: Значение свойства.
     content.vb: Public Function [Get](propertyName As String) As Object
   overload: ParmaGIS.Modules.Data.Storages.SpaceContainer.Get*
   implements:
@@ -354,18 +375,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Set
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/SpaceContainer.cs
-    startLine: 63
+    startLine: 105
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Устанавливает значение свойства по его названию.
   example: []
   syntax:
     content: public void Set(string propertyName, object? value)
     parameters:
     - id: propertyName
       type: System.String
+      description: Название свойства.
     - id: value
       type: System.Object
+      description: Значение свойства.
     content.vb: Public Sub [Set](propertyName As String, value As Object)
   overload: ParmaGIS.Modules.Data.Storages.SpaceContainer.Set*
   implements:

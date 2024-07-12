@@ -58,10 +58,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает каталог сервисаов.
+  example: []
   syntax:
     content: IServiceCatalog ServiceCatalog { get; }
     parameters: []
@@ -87,7 +89,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetService
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -122,17 +124,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetImplementations
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 15
+    startLine: 24
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает реализации типа сервиса.
+  example: []
   syntax:
     content: IEnumerable<object> GetImplementations(Type serviceType)
     parameters:
     - id: serviceType
       type: System.Type
+      description: Тип сервиса.
     return:
       type: System.Collections.Generic.IEnumerable{System.Object}
+      description: Перечисление экземпляров реализаций сервиса.
     content.vb: Function GetImplementations(serviceType As Type) As IEnumerable(Of Object)
   overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*
 - uid: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService(System.Type,System.Object@)
@@ -153,19 +159,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryGetService
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 17
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Пытается найти и создать экземпляр типа сервиса.
+  example: []
   syntax:
     content: bool TryGetService(Type serviceType, out object? service)
     parameters:
     - id: serviceType
       type: System.Type
+      description: Тип сервиса.
     - id: service
       type: System.Object
+      description: Экземпляр типа сервиса.
     return:
       type: System.Boolean
+      description: Значение true, если удалось найти и создать экземпляр типа сервиса.
     content.vb: Function TryGetService(serviceType As Type, service As Object) As Boolean
   overload: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService*
   nameWithType.vb: IServiceProvider.TryGetService(Type, Object)
@@ -189,17 +200,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetService
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 19
+    startLine: 39
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает экземпляр сервиса по названию.
+  example: []
   syntax:
     content: object? GetService(string serviceName)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название сервиса.
     return:
       type: System.Object
+      description: Экземпляр сервиса.
     content.vb: Function GetService(serviceName As String) As Object
   overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetService*
   nameWithType.vb: IServiceProvider.GetService(String)
@@ -223,17 +238,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetImplementations
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 21
+    startLine: 46
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает экземпляры реализаций сервиса по его названию.
+  example: []
   syntax:
     content: IEnumerable<object> GetImplementations(string serviceName)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название сервиса.
     return:
       type: System.Collections.Generic.IEnumerable{System.Object}
+      description: Перечисление экземпляров реализации сервиса.
     content.vb: Function GetImplementations(serviceName As String) As IEnumerable(Of Object)
   overload: ParmaGIS.Core.Serviceability.IServiceProvider.GetImplementations*
   nameWithType.vb: IServiceProvider.GetImplementations(String)
@@ -257,19 +276,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryGetService
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceProvider.cs
-    startLine: 23
+    startLine: 54
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Пытается найти и создать экземпляр по названию сервиса.
+  example: []
   syntax:
     content: bool TryGetService(string serviceName, out object? service)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название сервиса.
     - id: service
       type: System.Object
+      description: Экземпляр реализации сервиса.
     return:
       type: System.Boolean
+      description: Значение true, если удаолсь найти и создать экземпляр сервиса, false - иначе.
     content.vb: Function TryGetService(serviceName As String, service As Object) As Boolean
   overload: ParmaGIS.Core.Serviceability.IServiceProvider.TryGetService*
   nameWithType.vb: IServiceProvider.TryGetService(String, Object)

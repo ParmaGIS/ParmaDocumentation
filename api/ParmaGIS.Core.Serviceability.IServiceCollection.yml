@@ -62,10 +62,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает каталог сервисов.
+  example: []
   syntax:
     content: IServiceCatalog ServiceCatalog { get; }
     parameters: []
@@ -91,25 +93,33 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddService
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs
-    startLine: 8
+    startLine: 21
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Добавляет сервис в коллекцию.
+  example: []
   syntax:
     content: void AddService(string serviceName, Type serviceType, Type implementationType, ServiceLifetime lifetime, object? instance, bool manyImplementations)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название сервиса.
     - id: serviceType
       type: System.Type
+      description: Тип сервиса.
     - id: implementationType
       type: System.Type
+      description: Тип реализации сервиса.
     - id: lifetime
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
+      description: Время жизни сервиса.
     - id: instance
       type: System.Object
+      description: Экземпляр сервиса.
     - id: manyImplementations
       type: System.Boolean
+      description: Разрешает множественную реализауию типа сервиса.
     content.vb: Sub AddService(serviceName As String, serviceType As Type, implementationType As Type, lifetime As ServiceLifetime, instance As Object, manyImplementations As Boolean)
   overload: ParmaGIS.Core.Serviceability.IServiceCollection.AddService*
   nameWithType.vb: IServiceCollection.AddService(String, Type, Type, ServiceLifetime, Object, Boolean)
@@ -133,21 +143,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddParameterGiver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs
-    startLine: 9
+    startLine: 30
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Добавляет сервис <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref> в коллекцию сервисов.
+  example: []
   syntax:
     content: void AddParameterGiver(Type parameterGiverType, Type parameterType, ServiceLifetime lifetime, object? instance)
     parameters:
     - id: parameterGiverType
       type: System.Type
+      description: Тип сервиса <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref>.
     - id: parameterType
       type: System.Type
+      description: Тип выдаваемого параметра.
     - id: lifetime
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
+      description: Время жизни сервиса.
     - id: instance
       type: System.Object
+      description: Экземпляр <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref>.
     content.vb: Sub AddParameterGiver(parameterGiverType As Type, parameterType As Type, lifetime As ServiceLifetime, instance As Object)
   overload: ParmaGIS.Core.Serviceability.IServiceCollection.AddParameterGiver*
   nameWithType.vb: IServiceCollection.AddParameterGiver(Type, Type, ServiceLifetime, Object)
@@ -171,25 +187,33 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddService
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs
-    startLine: 10
+    startLine: 41
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Добавляет сервис в коллекцию.
+  example: []
   syntax:
     content: void AddService(string serviceName, Type serviceType, Type implementationType, ServiceLifetime lifetime, Func<object> factory, bool manyImplementations)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название сервиса.
     - id: serviceType
       type: System.Type
+      description: Тип сервиса.
     - id: implementationType
       type: System.Type
+      description: Тип реализации сервиса.
     - id: lifetime
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
+      description: Время жизни сервиса.
     - id: factory
       type: System.Func{System.Object}
+      description: Функция создания экземпляра сервиса.
     - id: manyImplementations
       type: System.Boolean
+      description: Разрешает множественную реализацию типа сервиса.
     content.vb: Sub AddService(serviceName As String, serviceType As Type, implementationType As Type, lifetime As ServiceLifetime, factory As Func(Of Object), manyImplementations As Boolean)
   overload: ParmaGIS.Core.Serviceability.IServiceCollection.AddService*
   nameWithType.vb: IServiceCollection.AddService(String, Type, Type, ServiceLifetime, Func(Of Object), Boolean)
@@ -213,21 +237,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddParameterGiver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs
-    startLine: 11
+    startLine: 50
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Добавляет сервис <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref> в коллекцию сервисов.
+  example: []
   syntax:
     content: void AddParameterGiver(Type parameterGiverType, Type parameterType, ServiceLifetime lifetime, Func<object> factory)
     parameters:
     - id: parameterGiverType
       type: System.Type
+      description: Тип сервиса <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref>.
     - id: parameterType
       type: System.Type
+      description: Тип выдаваемого параметра.
     - id: lifetime
       type: ParmaGIS.Core.Serviceability.ServiceLifetime
+      description: Время жизни сервиса.
     - id: factory
       type: System.Func{System.Object}
+      description: Функция создания экземпляра сервиса.
     content.vb: Sub AddParameterGiver(parameterGiverType As Type, parameterType As Type, lifetime As ServiceLifetime, factory As Func(Of Object))
   overload: ParmaGIS.Core.Serviceability.IServiceCollection.AddParameterGiver*
   nameWithType.vb: IServiceCollection.AddParameterGiver(Type, Type, ServiceLifetime, Func(Of Object))
@@ -1889,6 +1919,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Serviceability.IParameterGiver
+  commentId: T:ParmaGIS.Core.Serviceability.IParameterGiver
+  href: ParmaGIS.Core.Serviceability.IParameterGiver.html
+  name: IParameterGiver
+  nameWithType: IParameterGiver
+  fullName: ParmaGIS.Core.Serviceability.IParameterGiver
 - uid: ParmaGIS.Core.Serviceability.IServiceCollection.AddParameterGiver*
   commentId: Overload:ParmaGIS.Core.Serviceability.IServiceCollection.AddParameterGiver
   href: ParmaGIS.Core.Serviceability.IServiceCollection.html#ParmaGIS_Core_Serviceability_IServiceCollection_AddParameterGiver_System_Type_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_

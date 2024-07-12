@@ -23,10 +23,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Configuration
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/Configuration.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Представляет конфигурацию ядра оболочки.
+  example: []
   syntax:
     content: public class Configuration
     content.vb: Public Class Configuration
@@ -65,15 +67,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/Configuration.cs
-    startLine: 9
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Создает экземпляр класса <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public Configuration(string name = "config")
     parameters:
     - id: name
       type: System.String
+      description: Название коняигурации.
     content.vb: Public Sub New(name As String = "config")
   overload: ParmaGIS.Core.Shell.Configuration.#ctor*
   nameWithType.vb: Configuration.New(String)
@@ -97,10 +102,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/Configuration.cs
-    startLine: 15
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает название конфигурации.
+  example: []
   syntax:
     content: public string Name { get; }
     parameters: []
@@ -126,17 +133,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetParam
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/Configuration.cs
-    startLine: 18
+    startLine: 34
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Задает значение параметра по его названию.
+  example: []
   syntax:
     content: public void SetParam(string name, object value)
     parameters:
     - id: name
       type: System.String
+      description: Название параметра.
     - id: value
       type: System.Object
+      description: Значение параметра.
     content.vb: Public Sub SetParam(name As String, value As Object)
   overload: ParmaGIS.Core.Shell.Configuration.SetParam*
   nameWithType.vb: Configuration.SetParam(String, Object)
@@ -160,17 +171,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetParam
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/Configuration.cs
-    startLine: 23
+    startLine: 44
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Получает значение параметра по его названию.
+  example: []
   syntax:
     content: public object? GetParam(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название параметра
     return:
       type: System.Object
+      description: Значение параметра.
     content.vb: Public Function GetParam(name As String) As Object
   overload: ParmaGIS.Core.Shell.Configuration.GetParam*
   nameWithType.vb: Configuration.GetParam(String)
@@ -911,6 +926,13 @@ references:
   - uid: ParmaGIS.Core.Modularity
     name: Modularity
     href: ParmaGIS.Core.Modularity.html
+- uid: ParmaGIS.Core.Shell.Configuration
+  commentId: T:ParmaGIS.Core.Shell.Configuration
+  parent: ParmaGIS.Core.Shell
+  href: ParmaGIS.Core.Shell.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: ParmaGIS.Core.Shell.Configuration
 - uid: ParmaGIS.Core.Shell.Configuration.#ctor*
   commentId: Overload:ParmaGIS.Core.Shell.Configuration.#ctor
   href: ParmaGIS.Core.Shell.Configuration.html#ParmaGIS_Core_Shell_Configuration__ctor_System_String_

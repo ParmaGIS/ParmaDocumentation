@@ -23,10 +23,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MetaManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaManager.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Представляет статический класс менеджера метаданных для управления метаданными типов.
+  example: []
   syntax:
     content: public static class MetaManager
     content.vb: Public Module MetaManager
@@ -58,10 +60,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MetaCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaManager.cs
-    startLine: 9
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Вовращает каталог метаданных.
+  example: []
   syntax:
     content: public static MetaCatalog MetaCatalog { get; }
     parameters: []
@@ -87,16 +91,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetMeta
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaManager.cs
-    startLine: 11
+    startLine: 22
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Возвращает метаданные типа.
+  example: []
   syntax:
     content: public static TypeMeta GetMeta<T>()
     typeParameters:
     - id: T
+      description: Тип сущности.
     return:
       type: ParmaGIS.Core.Meta.Objects.TypeMeta
+      description: ''
     content.vb: Public Shared Function GetMeta(Of T)() As TypeMeta
   overload: ParmaGIS.Core.Meta.MetaManager.GetMeta*
   nameWithType.vb: MetaManager.GetMeta(Of T)()
@@ -121,19 +129,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetAttribute
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaManager.cs
-    startLine: 16
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Возвращает арибут определенного типа.
+  example: []
   syntax:
     content: 'public static T? GetAttribute<T>(this IEnumerable<Attribute> attributes) where T : Attribute'
     parameters:
     - id: attributes
       type: System.Collections.Generic.IEnumerable{System.Attribute}
+      description: Перечисление атрибута.
     typeParameters:
     - id: T
+      description: Тип атреибута.
     return:
       type: '{T}'
+      description: Атрибут указанного типа.
     content.vb: Public Shared Function GetAttribute(Of T As Attribute)(attributes As IEnumerable(Of Attribute)) As T
   overload: ParmaGIS.Core.Meta.MetaManager.GetAttribute*
   nameWithType.vb: MetaManager.GetAttribute(Of T)(IEnumerable(Of Attribute))
@@ -158,17 +171,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetMeta
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaManager.cs
-    startLine: 21
+    startLine: 43
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Возвращает метаданные типа.
+  example: []
   syntax:
     content: public static TypeMeta GetMeta(this Type type)
     parameters:
     - id: type
       type: System.Type
+      description: Тип сущности.
     return:
       type: ParmaGIS.Core.Meta.Objects.TypeMeta
+      description: Метаданные типа.
     content.vb: Public Shared Function GetMeta(type As Type) As TypeMeta
   overload: ParmaGIS.Core.Meta.MetaManager.GetMeta*
 references:

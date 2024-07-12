@@ -6,10 +6,10 @@ items:
   parent: ParmaGIS.WPF.Modules.ObjectObserverTool
   children:
   - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeProvider``1(ParmaGIS.Core.Serviceability.IServiceProvider)
-  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
-  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
   - ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeView``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   langs:
   - csharp
@@ -25,7 +25,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceProviderExtensions
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterNodeProvider
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
@@ -77,17 +77,17 @@ items:
   nameWithType.vb: ServiceProviderExtensions.RegisterNodeProvider(Of T)(IServiceProvider)
   fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeProvider(Of T)(ParmaGIS.Core.Serviceability.IServiceProvider)
   name.vb: RegisterNodeProvider(Of T)(IServiceProvider)
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  id: RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  id: RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
   isExtensionMethod: true
   parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions
   langs:
   - csharp
   - vb
-  name: RegisterNodeTool<TNode, TVM>(IServiceProvider, bool)
-  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(IServiceProvider, bool)
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, bool)
+  name: RegisterNodeTool<TNode, TVM>(IServiceProvider, bool, float)
+  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(IServiceProvider, bool, float)
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, bool, float)
   type: Method
   source:
     remote:
@@ -96,36 +96,38 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterNodeTool
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
   syntax:
-    content: 'public static void RegisterNodeTool<TNode, TVM>(this IServiceProvider serviceProvider, bool isSingleton = false) where TVM : class, INodeTool'
+    content: 'public static void RegisterNodeTool<TNode, TVM>(this IServiceProvider serviceProvider, bool isSingleton = false, float index = 0) where TVM : class, INodeTool'
     parameters:
     - id: serviceProvider
       type: ParmaGIS.Core.Serviceability.IServiceProvider
     - id: isSingleton
       type: System.Boolean
+    - id: index
+      type: System.Single
     typeParameters:
     - id: TNode
     - id: TVM
-    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, isSingleton As Boolean = False)
+    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, isSingleton As Boolean = False, index As Single = 0)
   overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
-  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Boolean)
-  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, Boolean)
-  name.vb: RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Boolean)
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
-  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
-  id: RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
+  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Boolean, Single)
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, Boolean, Single)
+  name.vb: RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Boolean, Single)
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
+  id: RegisterNodeTool``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
   isExtensionMethod: true
   parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions
   langs:
   - csharp
   - vb
-  name: RegisterNodeTool<TNode, TVM>(IServiceProvider, Predicate<TNode>, bool)
-  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(IServiceProvider, Predicate<TNode>, bool)
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate<TNode>, bool)
+  name: RegisterNodeTool<TNode, TVM>(IServiceProvider, Predicate<TNode>, bool, float)
+  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(IServiceProvider, Predicate<TNode>, bool, float)
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate<TNode>, bool, float)
   type: Method
   source:
     remote:
@@ -134,91 +136,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterNodeTool
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
   syntax:
-    content: 'public static void RegisterNodeTool<TNode, TVM>(this IServiceProvider serviceProvider, Predicate<TNode> condition, bool isSingleton = false) where TVM : class, INodeTool'
-    parameters:
-    - id: serviceProvider
-      type: ParmaGIS.Core.Serviceability.IServiceProvider
-    - id: condition
-      type: System.Predicate{{TNode}}
-    - id: isSingleton
-      type: System.Boolean
-    typeParameters:
-    - id: TNode
-    - id: TVM
-    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, condition As Predicate(Of TNode), isSingleton As Boolean = False)
-  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
-  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Predicate(Of TNode), Boolean)
-  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of TNode), Boolean)
-  name.vb: RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Predicate(Of TNode), Boolean)
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  id: RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean)
-  isExtensionMethod: true
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions
-  langs:
-  - csharp
-  - vb
-  name: RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, bool)
-  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, bool)
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, bool)
-  type: Method
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: RegisterNodeTool
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 32
-  assemblies:
-  - ParmaGIS.WPF.Modules.ObjectObserverTool
-  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
-  syntax:
-    content: 'public static void RegisterNodeTool<TNode, TV, TVM>(this IServiceProvider serviceProvider, bool isSingleton = false) where TV : class, INodeToolView where TVM : class, INodeTool'
-    parameters:
-    - id: serviceProvider
-      type: ParmaGIS.Core.Serviceability.IServiceProvider
-    - id: isSingleton
-      type: System.Boolean
-    typeParameters:
-    - id: TNode
-    - id: TV
-    - id: TVM
-    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TV As {Class, INodeToolView}, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, isSingleton As Boolean = False)
-  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
-  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Boolean)
-  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, Boolean)
-  name.vb: RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Boolean)
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
-  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
-  id: RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean)
-  isExtensionMethod: true
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions
-  langs:
-  - csharp
-  - vb
-  name: RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, Predicate<TNode>, bool)
-  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, Predicate<TNode>, bool)
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate<TNode>, bool)
-  type: Method
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: RegisterNodeTool
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 41
-  assemblies:
-  - ParmaGIS.WPF.Modules.ObjectObserverTool
-  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
-  syntax:
-    content: 'public static void RegisterNodeTool<TNode, TV, TVM>(this IServiceProvider serviceProvider, Predicate<TNode> condition, bool isSingleton = false) where TV : class, INodeToolView where TVM : class, INodeTool'
+    content: 'public static void RegisterNodeTool<TNode, TVM>(this IServiceProvider serviceProvider, Predicate<TNode> condition, bool isSingleton = false, float index = 0) where TVM : class, INodeTool'
     parameters:
     - id: serviceProvider
       type: ParmaGIS.Core.Serviceability.IServiceProvider
@@ -226,15 +149,100 @@ items:
       type: System.Predicate{{TNode}}
     - id: isSingleton
       type: System.Boolean
+    - id: index
+      type: System.Single
+    typeParameters:
+    - id: TNode
+    - id: TVM
+    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, condition As Predicate(Of TNode), isSingleton As Boolean = False, index As Single = 0)
+  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
+  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Predicate(Of TNode), Boolean, Single)
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of TNode), Boolean, Single)
+  name.vb: RegisterNodeTool(Of TNode, TVM)(IServiceProvider, Predicate(Of TNode), Boolean, Single)
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  id: RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Boolean,System.Single)
+  isExtensionMethod: true
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, bool, float)
+  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, bool, float)
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, bool, float)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RegisterNodeTool
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
+    startLine: 33
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool
+  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
+  syntax:
+    content: 'public static void RegisterNodeTool<TNode, TV, TVM>(this IServiceProvider serviceProvider, bool isSingleton = false, float index = 0) where TV : class, INodeToolView where TVM : class, INodeTool'
+    parameters:
+    - id: serviceProvider
+      type: ParmaGIS.Core.Serviceability.IServiceProvider
+    - id: isSingleton
+      type: System.Boolean
+    - id: index
+      type: System.Single
     typeParameters:
     - id: TNode
     - id: TV
     - id: TVM
-    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TV As {Class, INodeToolView}, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, condition As Predicate(Of TNode), isSingleton As Boolean = False)
+    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TV As {Class, INodeToolView}, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, isSingleton As Boolean = False, index As Single = 0)
   overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
-  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Predicate(Of TNode), Boolean)
-  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of TNode), Boolean)
-  name.vb: RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Predicate(Of TNode), Boolean)
+  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Boolean, Single)
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, Boolean, Single)
+  name.vb: RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Boolean, Single)
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
+  id: RegisterNodeTool``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0},System.Boolean,System.Single)
+  isExtensionMethod: true
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, Predicate<TNode>, bool, float)
+  nameWithType: ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(IServiceProvider, Predicate<TNode>, bool, float)
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool<TNode, TV, TVM>(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate<TNode>, bool, float)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RegisterNodeTool
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
+    startLine: 42
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool
+  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
+  syntax:
+    content: 'public static void RegisterNodeTool<TNode, TV, TVM>(this IServiceProvider serviceProvider, Predicate<TNode> condition, bool isSingleton = false, float index = 0) where TV : class, INodeToolView where TVM : class, INodeTool'
+    parameters:
+    - id: serviceProvider
+      type: ParmaGIS.Core.Serviceability.IServiceProvider
+    - id: condition
+      type: System.Predicate{{TNode}}
+    - id: isSingleton
+      type: System.Boolean
+    - id: index
+      type: System.Single
+    typeParameters:
+    - id: TNode
+    - id: TV
+    - id: TVM
+    content.vb: Public Shared Sub RegisterNodeTool(Of TNode, TV As {Class, INodeToolView}, TVM As {Class, INodeTool})(serviceProvider As IServiceProvider, condition As Predicate(Of TNode), isSingleton As Boolean = False, index As Single = 0)
+  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
+  nameWithType.vb: ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Predicate(Of TNode), Boolean, Single)
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool(Of TNode, TV, TVM)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of TNode), Boolean, Single)
+  name.vb: RegisterNodeTool(Of TNode, TV, TVM)(IServiceProvider, Predicate(Of TNode), Boolean, Single)
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeView``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeView``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   id: RegisterNodeView``2(ParmaGIS.Core.Serviceability.IServiceProvider)
@@ -254,7 +262,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterNodeView
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ServiceProviderExtensions.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool
@@ -592,7 +600,7 @@ references:
     href: ParmaGIS.Core.Serviceability.html
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool*
   commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ServiceProviderExtensions_RegisterNodeTool__2_ParmaGIS_Core_Serviceability_IServiceProvider_System_Boolean_
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ServiceProviderExtensions_RegisterNodeTool__2_ParmaGIS_Core_Serviceability_IServiceProvider_System_Boolean_System_Single_
   name: RegisterNodeTool
   nameWithType: ServiceProviderExtensions.RegisterNodeTool
   fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ServiceProviderExtensions.RegisterNodeTool
@@ -607,6 +615,17 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: System.Predicate{{TNode}}
   commentId: T:System.Predicate{``0}
   parent: System

@@ -23,80 +23,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IModuleManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-    startLine: 4
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Modularity
-  syntax:
-    content: public interface IModuleManager
-    content.vb: Public Interface IModuleManager
-  extensionMethods:
-  - ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1
-- uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
-  commentId: M:ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
-  id: GetModule(System.Type)
-  parent: ParmaGIS.Core.Modularity.IModuleManager
-  langs:
-  - csharp
-  - vb
-  name: GetModule(Type)
-  nameWithType: IModuleManager.GetModule(Type)
-  fullName: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetModule
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-    startLine: 6
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Modularity
-  syntax:
-    content: IModuleInfo? GetModule(Type providedType)
-    parameters:
-    - id: providedType
-      type: System.Type
-    return:
-      type: ParmaGIS.Core.Modularity.IModuleInfo
-    content.vb: Function GetModule(providedType As Type) As IModuleInfo
-  overload: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
-- uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
-  commentId: M:ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
-  id: GetModule(System.String)
-  parent: ParmaGIS.Core.Modularity.IModuleManager
-  langs:
-  - csharp
-  - vb
-  name: GetModule(string)
-  nameWithType: IModuleManager.GetModule(string)
-  fullName: ParmaGIS.Core.Modularity.IModuleManager.GetModule(string)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetModule
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
     startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Представляет интерфейс взаимодействия с менеджером модулей.
+  example: []
   syntax:
-    content: IModuleInfo? GetModule(string moduleName)
-    parameters:
-    - id: moduleName
-      type: System.String
-    return:
-      type: ParmaGIS.Core.Modularity.IModuleInfo
-    content.vb: Function GetModule(moduleName As String) As IModuleInfo
-  overload: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
-  nameWithType.vb: IModuleManager.GetModule(String)
-  fullName.vb: ParmaGIS.Core.Modularity.IModuleManager.GetModule(String)
-  name.vb: GetModule(String)
+    content: public interface IModuleManager
+    content.vb: Public Interface IModuleManager
+  extensionMethods:
+  - ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1
 - uid: ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
   commentId: P:ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
   id: ModuleCatalog
@@ -115,10 +52,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвращает каталог модулей.
+  example: []
   syntax:
     content: IModuleCatalog ModuleCatalog { get; }
     parameters: []
@@ -144,10 +83,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModulesDirectory
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
-    startLine: 9
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвращает директорию, в которой располагаются модули.
+  example: []
   syntax:
     content: string ModulesDirectory { get; }
     parameters: []
@@ -155,6 +96,79 @@ items:
       type: System.String
     content.vb: ReadOnly Property ModulesDirectory As String
   overload: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory*
+- uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
+  commentId: M:ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
+  id: GetModule(System.Type)
+  parent: ParmaGIS.Core.Modularity.IModuleManager
+  langs:
+  - csharp
+  - vb
+  name: GetModule(Type)
+  nameWithType: IModuleManager.GetModule(Type)
+  fullName: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.Type)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetModule
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
+    startLine: 25
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Modularity
+  summary: Возвращает информацию о модуле по типу, который содержится в библиотеке этого модуля.
+  example: []
+  syntax:
+    content: IModuleInfo? GetModule(Type providedType)
+    parameters:
+    - id: providedType
+      type: System.Type
+      description: Тип содержащийся в библиотеке модуля.
+    return:
+      type: ParmaGIS.Core.Modularity.IModuleInfo
+      description: Информация о модуле.
+    content.vb: Function GetModule(providedType As Type) As IModuleInfo
+  overload: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
+- uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
+  commentId: M:ParmaGIS.Core.Modularity.IModuleManager.GetModule(System.String)
+  id: GetModule(System.String)
+  parent: ParmaGIS.Core.Modularity.IModuleManager
+  langs:
+  - csharp
+  - vb
+  name: GetModule(string)
+  nameWithType: IModuleManager.GetModule(string)
+  fullName: ParmaGIS.Core.Modularity.IModuleManager.GetModule(string)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetModule
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleManager.cs
+    startLine: 32
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Modularity
+  summary: Возварщает информацию о модуле по названию модуля.
+  example: []
+  syntax:
+    content: IModuleInfo? GetModule(string moduleName)
+    parameters:
+    - id: moduleName
+      type: System.String
+      description: Название модуля.
+    return:
+      type: ParmaGIS.Core.Modularity.IModuleInfo
+      description: Информация о модуле.
+    content.vb: Function GetModule(moduleName As String) As IModuleInfo
+  overload: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
+  nameWithType.vb: IModuleManager.GetModule(String)
+  fullName.vb: ParmaGIS.Core.Modularity.IModuleManager.GetModule(String)
+  name.vb: GetModule(String)
 references:
 - uid: ParmaGIS.Core.Modularity
   commentId: N:ParmaGIS.Core.Modularity
@@ -186,21 +200,21 @@ references:
   - uid: ParmaGIS.Core.Modularity
     name: Modularity
     href: ParmaGIS.Core.Modularity.html
-- uid: ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1
-  commentId: M:ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
-  parent: ParmaGIS.Core.Modularity.ModuleExtensions
-  definition: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
-  href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
+- uid: ParmaGIS.Core.Modularity.IModuleManager.ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1
+  commentId: M:ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  parent: ParmaGIS.Core.Modularity.ModuleManagerExtensions
+  definition: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html#ParmaGIS_Core_Modularity_ModuleManagerExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
   name: GetModule<T>(IModuleManager)
-  nameWithType: ModuleExtensions.GetModule<T>(IModuleManager)
-  fullName: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule<T>(ParmaGIS.Core.Modularity.IModuleManager)
-  nameWithType.vb: ModuleExtensions.GetModule(Of T)(IModuleManager)
-  fullName.vb: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule(Of T)(ParmaGIS.Core.Modularity.IModuleManager)
+  nameWithType: ModuleManagerExtensions.GetModule<T>(IModuleManager)
+  fullName: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule<T>(ParmaGIS.Core.Modularity.IModuleManager)
+  nameWithType.vb: ModuleManagerExtensions.GetModule(Of T)(IModuleManager)
+  fullName.vb: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule(Of T)(ParmaGIS.Core.Modularity.IModuleManager)
   name.vb: GetModule(Of T)(IModuleManager)
   spec.csharp:
-  - uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  - uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
     name: GetModule
-    href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
+    href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html#ParmaGIS_Core_Modularity_ModuleManagerExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
   - name: <
   - name: T
   - name: '>'
@@ -210,9 +224,9 @@ references:
     href: ParmaGIS.Core.Modularity.IModuleManager.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  - uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
     name: GetModule
-    href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
+    href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html#ParmaGIS_Core_Modularity_ModuleManagerExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
   - name: (
   - name: Of
   - name: " "
@@ -223,19 +237,19 @@ references:
     name: IModuleManager
     href: ParmaGIS.Core.Modularity.IModuleManager.html
   - name: )
-- uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
-  commentId: M:ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
-  href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
+- uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  commentId: M:ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html#ParmaGIS_Core_Modularity_ModuleManagerExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
   name: GetModule<T>(IModuleManager)
-  nameWithType: ModuleExtensions.GetModule<T>(IModuleManager)
-  fullName: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule<T>(ParmaGIS.Core.Modularity.IModuleManager)
-  nameWithType.vb: ModuleExtensions.GetModule(Of T)(IModuleManager)
-  fullName.vb: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule(Of T)(ParmaGIS.Core.Modularity.IModuleManager)
+  nameWithType: ModuleManagerExtensions.GetModule<T>(IModuleManager)
+  fullName: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule<T>(ParmaGIS.Core.Modularity.IModuleManager)
+  nameWithType.vb: ModuleManagerExtensions.GetModule(Of T)(IModuleManager)
+  fullName.vb: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule(Of T)(ParmaGIS.Core.Modularity.IModuleManager)
   name.vb: GetModule(Of T)(IModuleManager)
   spec.csharp:
-  - uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  - uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
     name: GetModule
-    href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
+    href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html#ParmaGIS_Core_Modularity_ModuleManagerExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
   - name: <
   - name: T
   - name: '>'
@@ -245,9 +259,9 @@ references:
     href: ParmaGIS.Core.Modularity.IModuleManager.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Modularity.ModuleExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
+  - uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions.GetModule``1(ParmaGIS.Core.Modularity.IModuleManager)
     name: GetModule
-    href: ParmaGIS.Core.Modularity.ModuleExtensions.html#ParmaGIS_Core_Modularity_ModuleExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
+    href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html#ParmaGIS_Core_Modularity_ModuleManagerExtensions_GetModule__1_ParmaGIS_Core_Modularity_IModuleManager_
   - name: (
   - name: Of
   - name: " "
@@ -258,13 +272,50 @@ references:
     name: IModuleManager
     href: ParmaGIS.Core.Modularity.IModuleManager.html
   - name: )
-- uid: ParmaGIS.Core.Modularity.ModuleExtensions
-  commentId: T:ParmaGIS.Core.Modularity.ModuleExtensions
+- uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions
+  commentId: T:ParmaGIS.Core.Modularity.ModuleManagerExtensions
   parent: ParmaGIS.Core.Modularity
-  href: ParmaGIS.Core.Modularity.ModuleExtensions.html
-  name: ModuleExtensions
-  nameWithType: ModuleExtensions
-  fullName: ParmaGIS.Core.Modularity.ModuleExtensions
+  href: ParmaGIS.Core.Modularity.ModuleManagerExtensions.html
+  name: ModuleManagerExtensions
+  nameWithType: ModuleManagerExtensions
+  fullName: ParmaGIS.Core.Modularity.ModuleManagerExtensions
+- uid: ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog*
+  commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
+  href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_ModuleCatalog
+  name: ModuleCatalog
+  nameWithType: IModuleManager.ModuleCatalog
+  fullName: ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
+- uid: ParmaGIS.Core.Modularity.IModuleCatalog
+  commentId: T:ParmaGIS.Core.Modularity.IModuleCatalog
+  parent: ParmaGIS.Core.Modularity
+  href: ParmaGIS.Core.Modularity.IModuleCatalog.html
+  name: IModuleCatalog
+  nameWithType: IModuleCatalog
+  fullName: ParmaGIS.Core.Modularity.IModuleCatalog
+- uid: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory*
+  commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
+  href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_ModulesDirectory
+  name: ModulesDirectory
+  nameWithType: IModuleManager.ModulesDirectory
+  fullName: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: ParmaGIS.Core.Modularity.IModuleManager.GetModule*
   commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.GetModule
   href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_GetModule_System_Type_
@@ -286,40 +337,3 @@ references:
   name: IModuleInfo
   nameWithType: IModuleInfo
   fullName: ParmaGIS.Core.Modularity.IModuleInfo
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog*
-  commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
-  href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_ModuleCatalog
-  name: ModuleCatalog
-  nameWithType: IModuleManager.ModuleCatalog
-  fullName: ParmaGIS.Core.Modularity.IModuleManager.ModuleCatalog
-- uid: ParmaGIS.Core.Modularity.IModuleCatalog
-  commentId: T:ParmaGIS.Core.Modularity.IModuleCatalog
-  parent: ParmaGIS.Core.Modularity
-  href: ParmaGIS.Core.Modularity.IModuleCatalog.html
-  name: IModuleCatalog
-  nameWithType: IModuleCatalog
-  fullName: ParmaGIS.Core.Modularity.IModuleCatalog
-- uid: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory*
-  commentId: Overload:ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory
-  href: ParmaGIS.Core.Modularity.IModuleManager.html#ParmaGIS_Core_Modularity_IModuleManager_ModulesDirectory
-  name: ModulesDirectory
-  nameWithType: IModuleManager.ModulesDirectory
-  fullName: ParmaGIS.Core.Modularity.IModuleManager.ModulesDirectory

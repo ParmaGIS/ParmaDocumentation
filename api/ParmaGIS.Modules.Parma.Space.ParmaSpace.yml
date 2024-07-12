@@ -131,10 +131,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 50
+    startLine: 52
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
+  summary: Возвращает название пространства.
   example: []
   syntax:
     content: public string Name { get; }
@@ -163,10 +164,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 51
+    startLine: 55
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
+  summary: Возвращает описание пространства.
   example: []
   syntax:
     content: public string Description { get; }
@@ -195,7 +197,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DAL
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 52
+    startLine: 56
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -224,10 +226,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Provider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 53
+    startLine: 59
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
+  summary: Возвращает провайдер базы данных.
   example: []
   syntax:
     content: public IDataBaseProvider Provider { get; }
@@ -256,7 +259,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Catalog
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 55
+    startLine: 61
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -285,7 +288,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Data
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 56
+    startLine: 62
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -314,7 +317,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Calculation
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 57
+    startLine: 63
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -343,7 +346,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalculationService
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 58
+    startLine: 64
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -372,7 +375,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Settings
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 59
+    startLine: 65
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -401,12 +404,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafeExecute
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
   syntax:
-    content: 'public Task<TRes> ThreadSafeExecute<T, TRes>(Func<DbSet<T>, TRes> loader) where T : class'
+    content: 'public Task<RepoResponse<TRes>> ThreadSafeExecute<T, TRes>(Func<DbSet<T>, TRes> loader) where T : class'
     parameters:
     - id: loader
       type: System.Func{Microsoft.EntityFrameworkCore.DbSet{{T}},{TRes}}
@@ -414,8 +417,8 @@ items:
     - id: T
     - id: TRes
     return:
-      type: System.Threading.Tasks.Task{{TRes}}
-    content.vb: Public Function ThreadSafeExecute(Of T As Class, TRes)(loader As Func(Of DbSet(Of T), TRes)) As Task(Of TRes)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+    content.vb: Public Function ThreadSafeExecute(Of T As Class, TRes)(loader As Func(Of DbSet(Of T), TRes)) As Task(Of RepoResponse(Of TRes))
   overload: ParmaGIS.Modules.Parma.Space.ParmaSpace.ThreadSafeExecute*
   nameWithType.vb: ParmaSpace.ThreadSafeExecute(Of T, TRes)(Func(Of DbSet(Of T), TRes))
   fullName.vb: ParmaGIS.Modules.Parma.Space.ParmaSpace.ThreadSafeExecute(Of T, TRes)(System.Func(Of Microsoft.EntityFrameworkCore.DbSet(Of T), TRes))
@@ -438,7 +441,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 102
+    startLine: 121
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -470,7 +473,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpace.cs
-    startLine: 107
+    startLine: 126
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -1477,24 +1480,29 @@ references:
   - name: " "
   - name: TRes
   - name: )
-- uid: System.Threading.Tasks.Task{{TRes}}
-  commentId: T:System.Threading.Tasks.Task{``1}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``1}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TRes>
-  nameWithType: Task<TRes>
-  fullName: System.Threading.Tasks.Task<TRes>
-  nameWithType.vb: Task(Of TRes)
-  fullName.vb: System.Threading.Tasks.Task(Of TRes)
-  name.vb: Task(Of TRes)
+  name: Task<RepoResponse<TRes>>
+  nameWithType: Task<RepoResponse<TRes>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TRes>>
+  nameWithType.vb: Task(Of RepoResponse(Of TRes))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TRes))
+  name.vb: Task(Of RepoResponse(Of TRes))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TRes
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1504,7 +1512,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TRes
+  - name: )
   - name: )
 - uid: System.Func`2
   commentId: T:System.Func`2

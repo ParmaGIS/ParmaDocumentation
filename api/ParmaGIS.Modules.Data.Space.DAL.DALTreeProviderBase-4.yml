@@ -8,7 +8,7 @@ items:
   - ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetNodes
   - ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetNodes``1
   - ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetRootNodes
-  - ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes``2(System.Func{System.Linq.IQueryable{``1},``0})
+  - ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes``2(System.Func{System.Linq.IQueryable{``0},``1})
   langs:
   - csharp
   - vb
@@ -23,17 +23,23 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DALTreeProviderBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALTreeProviderBase.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Представляет базовую реализацию провайдера древовидного представления данных поддерживающего архитектуру DataAccessLayer.
+  example: []
   syntax:
     content: 'public abstract class DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject> : TreeNodeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>, IDALTreeProvider, ITreeProvider where TSpace : class, ISpace where TTreeNode : class, ITreeNode where TDataObject : class, IDataObject'
     typeParameters:
     - id: TSpace
+      description: Тип пространства.
     - id: TObjectId
+      description: Тип уникального идентификатора объектов.
     - id: TTreeNode
+      description: Тип элемента древовидного представления.
     - id: TDataObject
+      description: Тип объекта данных.
     content.vb: Public MustInherit Class DALTreeProviderBase(Of TSpace As {Class, ISpace}, TObjectId, TTreeNode As {Class, ITreeNode}, TDataObject As {Class, IDataObject}) Inherits TreeNodeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject) Implements IDALTreeProvider, ITreeProvider
   inheritance:
   - System.Object
@@ -80,14 +86,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALTreeProviderBase.cs
-    startLine: 13
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Возвращает <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> элементов древовидного представления.
+
+    ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+
+    Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.
+  example: []
   syntax:
     content: public abstract IQueryable<TTreeNode> GetNodes()
     return:
       type: System.Linq.IQueryable{{TTreeNode}}
+      description: Запрос к элементам древовидного дерева.
     content.vb: Public MustOverride Function GetNodes() As IQueryable(Of TTreeNode)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetNodes*
   nameWithType.vb: DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).GetNodes()
@@ -110,14 +124,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRootNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALTreeProviderBase.cs
-    startLine: 14
+    startLine: 34
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Возвращает <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> элементов древовидного представления.
+
+    ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+
+    Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.
+  example: []
   syntax:
     content: public abstract IQueryable<TTreeNode> GetRootNodes()
     return:
       type: System.Linq.IQueryable{{TTreeNode}}
+      description: Запрос к элементам древовидного дерева.
     content.vb: Public MustOverride Function GetRootNodes() As IQueryable(Of TTreeNode)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetRootNodes*
   nameWithType.vb: DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).GetRootNodes()
@@ -140,31 +162,40 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALTreeProviderBase.cs
-    startLine: 15
+    startLine: 43
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Возвращает <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> элементов древовидного представления указанного типа.
+
+    ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+
+    Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.
+  example: []
   syntax:
     content: 'public abstract IQueryable<T> GetNodes<T>() where T : TTreeNode'
     typeParameters:
     - id: T
+      description: Тип элементов древовидного представления.
     return:
       type: System.Linq.IQueryable{{T}}
+      description: Запрос к элементам древовидного дерева.
     content.vb: Public MustOverride Function GetNodes(Of T As TTreeNode)() As IQueryable(Of T)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetNodes*
   nameWithType.vb: DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).GetNodes(Of T)()
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).GetNodes(Of T)()
   name.vb: GetNodes(Of T)()
-- uid: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes``2(System.Func{System.Linq.IQueryable{``1},``0})
-  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes``2(System.Func{System.Linq.IQueryable{``1},``0})
-  id: LoadNodes``2(System.Func{System.Linq.IQueryable{``1},``0})
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes``2(System.Func{System.Linq.IQueryable{``0},``1})
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes``2(System.Func{System.Linq.IQueryable{``0},``1})
+  id: LoadNodes``2(System.Func{System.Linq.IQueryable{``0},``1})
   parent: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4
   langs:
   - csharp
   - vb
-  name: LoadNodes<TRes, TNode>(Func<IQueryable<TNode>, TRes>)
-  nameWithType: DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.LoadNodes<TRes, TNode>(Func<IQueryable<TNode>, TRes>)
-  fullName: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.LoadNodes<TRes, TNode>(System.Func<System.Linq.IQueryable<TNode>, TRes>)
+  name: LoadNodes<TNode, TRes>(Func<IQueryable<TNode>, TRes>)
+  nameWithType: DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.LoadNodes<TNode, TRes>(Func<IQueryable<TNode>, TRes>)
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.LoadNodes<TNode, TRes>(System.Func<System.Linq.IQueryable<TNode>, TRes>)
   type: Method
   source:
     remote:
@@ -173,25 +204,31 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALTreeProviderBase.cs
-    startLine: 16
+    startLine: 52
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Выполняет функцию потокобезопасно.
+  example: []
   syntax:
-    content: 'public abstract Task<TRes> LoadNodes<TRes, TNode>(Func<IQueryable<TNode>, TRes> loader) where TNode : TTreeNode'
+    content: 'public abstract Task<RepoResponse<TRes>> LoadNodes<TNode, TRes>(Func<IQueryable<TNode>, TRes> loader) where TNode : TTreeNode'
     parameters:
     - id: loader
       type: System.Func{System.Linq.IQueryable{{TNode}},{TRes}}
+      description: Функция выполняющаяся потокобезопасо.
     typeParameters:
-    - id: TRes
     - id: TNode
+      description: тип элемента древовидного представления.
+    - id: TRes
+      description: Тип результата выполнения функции.
     return:
-      type: System.Threading.Tasks.Task{{TRes}}
-    content.vb: Public MustOverride Function LoadNodes(Of TRes, TNode As TTreeNode)(loader As Func(Of IQueryable(Of TNode), TRes)) As Task(Of TRes)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+      description: Результат выполнения функции.
+    content.vb: Public MustOverride Function LoadNodes(Of TNode As TTreeNode, TRes)(loader As Func(Of IQueryable(Of TNode), TRes)) As Task(Of RepoResponse(Of TRes))
   overload: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes*
-  nameWithType.vb: DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).LoadNodes(Of TRes, TNode)(Func(Of IQueryable(Of TNode), TRes))
-  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).LoadNodes(Of TRes, TNode)(System.Func(Of System.Linq.IQueryable(Of TNode), TRes))
-  name.vb: LoadNodes(Of TRes, TNode)(Func(Of IQueryable(Of TNode), TRes))
+  nameWithType.vb: DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).LoadNodes(Of TNode, TRes)(Func(Of IQueryable(Of TNode), TRes))
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).LoadNodes(Of TNode, TRes)(System.Func(Of System.Linq.IQueryable(Of TNode), TRes))
+  name.vb: LoadNodes(Of TNode, TRes)(Func(Of IQueryable(Of TNode), TRes))
 references:
 - uid: ParmaGIS.Modules.Data.Space.DAL
   commentId: N:ParmaGIS.Modules.Data.Space.DAL
@@ -970,6 +1007,34 @@ references:
   - name: )
   - name: (
   - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetNodes*
   commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.GetNodes
   href: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALTreeProviderBase_4_GetNodes
@@ -1006,34 +1071,6 @@ references:
   - name: Of
   - name: " "
   - name: TTreeNode
-  - name: )
-- uid: System.Linq.IQueryable`1
-  commentId: T:System.Linq.IQueryable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
-  name: IQueryable<T>
-  nameWithType: IQueryable<T>
-  fullName: System.Linq.IQueryable<T>
-  nameWithType.vb: IQueryable(Of T)
-  fullName.vb: System.Linq.IQueryable(Of T)
-  name.vb: IQueryable(Of T)
-  spec.csharp:
-  - uid: System.Linq.IQueryable`1
-    name: IQueryable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Linq.IQueryable`1
-    name: IQueryable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
   - name: )
 - uid: System.Linq
   commentId: N:System.Linq
@@ -1101,14 +1138,14 @@ references:
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes*
   commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase`4.LoadNodes
-  href: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALTreeProviderBase_4_LoadNodes__2_System_Func_System_Linq_IQueryable___1____0__
+  href: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase-4.html#ParmaGIS_Modules_Data_Space_DAL_DALTreeProviderBase_4_LoadNodes__2_System_Func_System_Linq_IQueryable___0____1__
   name: LoadNodes
   nameWithType: DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.LoadNodes
   fullName: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.LoadNodes
   nameWithType.vb: DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).LoadNodes
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALTreeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).LoadNodes
 - uid: System.Func{System.Linq.IQueryable{{TNode}},{TRes}}
-  commentId: T:System.Func{System.Linq.IQueryable{``1},``0}
+  commentId: T:System.Func{System.Linq.IQueryable{``0},``1}
   parent: System
   definition: System.Func`2
   href: https://learn.microsoft.com/dotnet/api/system.func-2
@@ -1156,24 +1193,29 @@ references:
   - name: " "
   - name: TRes
   - name: )
-- uid: System.Threading.Tasks.Task{{TRes}}
-  commentId: T:System.Threading.Tasks.Task{``1}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``1}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TRes>
-  nameWithType: Task<TRes>
-  fullName: System.Threading.Tasks.Task<TRes>
-  nameWithType.vb: Task(Of TRes)
-  fullName.vb: System.Threading.Tasks.Task(Of TRes)
-  name.vb: Task(Of TRes)
+  name: Task<RepoResponse<TRes>>
+  nameWithType: Task<RepoResponse<TRes>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TRes>>
+  nameWithType.vb: Task(Of RepoResponse(Of TRes))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TRes))
+  name.vb: Task(Of RepoResponse(Of TRes))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TRes
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1183,7 +1225,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TRes
+  - name: )
   - name: )
 - uid: System.Func`2
   commentId: T:System.Func`2

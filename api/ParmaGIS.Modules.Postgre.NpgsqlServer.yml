@@ -67,6 +67,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает строку подключения к базе данных.
   example: []
   syntax:
     content: public string ConnectionString { get; set; }
@@ -99,6 +100,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает название подключения.
   example: []
   syntax:
     content: public string Name { get; set; }
@@ -131,6 +133,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает описание подключения.
   example: []
   syntax:
     content: public string Description { get; set; }
@@ -163,11 +166,13 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает подключения к базам данных сервера.
   example: []
   syntax:
     content: public Task<IEnumerable<IDataBaseConnection>> LoadDataBases()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Connection.IDataBaseConnection}}
+      description: Перечисление подключений к базам данных. <xref href="ParmaGIS.Modules.Data.Connection.IDataBaseConnection" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function LoadDataBases() As Task(Of IEnumerable(Of IDataBaseConnection))
   overload: ParmaGIS.Modules.Postgre.NpgsqlServer.LoadDataBases*
   implements:
@@ -637,6 +642,13 @@ references:
   name: Description
   nameWithType: IDataBaseServerConnection.Description
   fullName: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.Description
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseConnection
+  commentId: T:ParmaGIS.Modules.Data.Connection.IDataBaseConnection
+  parent: ParmaGIS.Modules.Data.Connection
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseConnection.html
+  name: IDataBaseConnection
+  nameWithType: IDataBaseConnection
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseConnection
 - uid: ParmaGIS.Modules.Postgre.NpgsqlServer.LoadDataBases*
   commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlServer.LoadDataBases
   href: ParmaGIS.Modules.Postgre.NpgsqlServer.html#ParmaGIS_Modules_Postgre_NpgsqlServer_LoadDataBases

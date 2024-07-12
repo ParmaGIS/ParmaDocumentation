@@ -29,10 +29,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IModuleInfo
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Представляет информацию о модуле.
+  example: []
   syntax:
     content: 'public interface IModuleInfo : IItemInfo'
     content.vb: Public Interface IModuleInfo Inherits IItemInfo
@@ -56,10 +58,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleState
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает состояние модуля.
+  example: []
   syntax:
     content: ModuleState ModuleState { get; }
     parameters: []
@@ -85,10 +89,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Directory
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает путь до папки библиотеки, в которой находится модуль.
+  example: []
   syntax:
     content: string Directory { get; }
     parameters: []
@@ -114,10 +120,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: QualifiedName
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 14
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает полное название модуля.
+  example: []
   syntax:
     content: string QualifiedName { get; }
     parameters: []
@@ -143,10 +151,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Reference
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 15
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает путь до файла библиотеки, в котором находится модуль.
+  example: []
   syntax:
     content: string Reference { get; }
     parameters: []
@@ -172,10 +182,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AssemblyVersion
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 16
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает версию сборки библиотеки, в которой находится модуль.
+  example: []
   syntax:
     content: Version AssemblyVersion { get; }
     parameters: []
@@ -201,10 +213,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AssemblyName
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 17
+    startLine: 42
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает название сборки библиотеки, в которой находится модуль.
+  example: []
   syntax:
     content: string AssemblyName { get; }
     parameters: []
@@ -230,10 +244,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AssemblyFullName
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 18
+    startLine: 47
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает полное название сборки библиотеки, в которой находится модуль.
+  example: []
   syntax:
     content: string AssemblyFullName { get; }
     parameters: []
@@ -259,10 +275,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DependentOnAssemblies
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 19
+    startLine: 52
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвразает название сборок, от которых зависит сборка библиотеки, в которой находится модуль.
+  example: []
   syntax:
     content: IEnumerable<AssemblyName> DependentOnAssemblies { get; }
     parameters: []
@@ -288,14 +306,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadProvidesTypes
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 21
+    startLine: 58
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Загружает типы, которые содержатся в сборке.
+  example: []
   syntax:
     content: Type[] LoadProvidesTypes()
     return:
       type: System.Type[]
+      description: Массив типов.
     content.vb: Function LoadProvidesTypes() As Type()
   overload: ParmaGIS.Core.Modularity.IModuleInfo.LoadProvidesTypes*
 - uid: ParmaGIS.Core.Modularity.IModuleInfo.LoadType
@@ -316,14 +337,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleInfo.cs
-    startLine: 22
+    startLine: 64
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Загружает тип модуля.
+  example: []
   syntax:
     content: Type LoadType()
     return:
       type: System.Type
+      description: Тип модуля.
     content.vb: Function LoadType() As Type
   overload: ParmaGIS.Core.Modularity.IModuleInfo.LoadType*
 references:

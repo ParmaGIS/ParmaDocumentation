@@ -23,10 +23,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConfigurationExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ConfigurationExtensions.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Расширение для клсса <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
     content: public static class ConfigurationExtensions
     content.vb: Public Module ConfigurationExtensions
@@ -59,17 +61,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetLogBodyFormat
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ConfigurationExtensions.cs
-    startLine: 10
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Задает формат записи журнала сервиса логировния.
+  example: []
   syntax:
     content: public static void SetLogBodyFormat(this Configuration configuration, string bodyFormat)
     parameters:
     - id: configuration
       type: ParmaGIS.Core.Shell.Configuration
+      description: Экземпляр класса <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>.
     - id: bodyFormat
       type: System.String
+      description: Формат записи журнала сервиса логирования.
     content.vb: Public Shared Sub SetLogBodyFormat(configuration As Configuration, bodyFormat As String)
   overload: ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat*
   nameWithType.vb: ConfigurationExtensions.SetLogBodyFormat(Configuration, String)
@@ -94,17 +100,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetLogBodyFormat
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ConfigurationExtensions.cs
-    startLine: 14
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает формат записи журнала сервиса логирования.
+  example: []
   syntax:
     content: public static string? GetLogBodyFormat(this Configuration config)
     parameters:
     - id: config
       type: ParmaGIS.Core.Shell.Configuration
+      description: Экземпляр класса <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.String
+      description: Формат записи жернала сервиса логирования.
     content.vb: Public Shared Function GetLogBodyFormat(config As Configuration) As String
   overload: ParmaGIS.Core.Log.ConfigurationExtensions.GetLogBodyFormat*
 - uid: ParmaGIS.Core.Log.ConfigurationExtensions.SetDefaultOwner(ParmaGIS.Core.Shell.Configuration,System.String)
@@ -126,17 +136,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetDefaultOwner
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ConfigurationExtensions.cs
-    startLine: 19
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Задает имя владельца сообщения логиррования по умолчанию.
+  example: []
   syntax:
     content: public static void SetDefaultOwner(this Configuration configuration, string defaultOwner)
     parameters:
     - id: configuration
       type: ParmaGIS.Core.Shell.Configuration
+      description: Экземпляр класса <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>.
     - id: defaultOwner
       type: System.String
+      description: Имя владельца сообщения логирования по умолчанию.
     content.vb: Public Shared Sub SetDefaultOwner(configuration As Configuration, defaultOwner As String)
   overload: ParmaGIS.Core.Log.ConfigurationExtensions.SetDefaultOwner*
   nameWithType.vb: ConfigurationExtensions.SetDefaultOwner(Configuration, String)
@@ -161,20 +175,31 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDefaultOwner
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/ConfigurationExtensions.cs
-    startLine: 23
+    startLine: 47
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает имя владельца сообщения логирования по умолчанию.
+  example: []
   syntax:
     content: public static string? GetDefaultOwner(this Configuration config)
     parameters:
     - id: config
       type: ParmaGIS.Core.Shell.Configuration
+      description: Экземпляр класса <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.String
+      description: Имя владельца сообщения логирования по умолчанию.
     content.vb: Public Shared Function GetDefaultOwner(config As Configuration) As String
   overload: ParmaGIS.Core.Log.ConfigurationExtensions.GetDefaultOwner*
 references:
+- uid: ParmaGIS.Core.Shell.Configuration
+  commentId: T:ParmaGIS.Core.Shell.Configuration
+  parent: ParmaGIS.Core.Shell
+  href: ParmaGIS.Core.Shell.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: ParmaGIS.Core.Shell.Configuration
 - uid: ParmaGIS.Core.Log
   commentId: N:ParmaGIS.Core.Log
   href: ParmaGIS.html
@@ -435,37 +460,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat*
-  commentId: Overload:ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat
-  href: ParmaGIS.Core.Log.ConfigurationExtensions.html#ParmaGIS_Core_Log_ConfigurationExtensions_SetLogBodyFormat_ParmaGIS_Core_Shell_Configuration_System_String_
-  name: SetLogBodyFormat
-  nameWithType: ConfigurationExtensions.SetLogBodyFormat
-  fullName: ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat
-- uid: ParmaGIS.Core.Shell.Configuration
-  commentId: T:ParmaGIS.Core.Shell.Configuration
-  parent: ParmaGIS.Core.Shell
-  href: ParmaGIS.Core.Shell.Configuration.html
-  name: Configuration
-  nameWithType: Configuration
-  fullName: ParmaGIS.Core.Shell.Configuration
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: ParmaGIS.Core.Shell
   commentId: N:ParmaGIS.Core.Shell
   href: ParmaGIS.html
@@ -496,6 +490,30 @@ references:
   - uid: ParmaGIS.Core.Shell
     name: Shell
     href: ParmaGIS.Core.Shell.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat*
+  commentId: Overload:ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat
+  href: ParmaGIS.Core.Log.ConfigurationExtensions.html#ParmaGIS_Core_Log_ConfigurationExtensions_SetLogBodyFormat_ParmaGIS_Core_Shell_Configuration_System_String_
+  name: SetLogBodyFormat
+  nameWithType: ConfigurationExtensions.SetLogBodyFormat
+  fullName: ParmaGIS.Core.Log.ConfigurationExtensions.SetLogBodyFormat
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: ParmaGIS.Core.Log.ConfigurationExtensions.GetLogBodyFormat*
   commentId: Overload:ParmaGIS.Core.Log.ConfigurationExtensions.GetLogBodyFormat
   href: ParmaGIS.Core.Log.ConfigurationExtensions.html#ParmaGIS_Core_Log_ConfigurationExtensions_GetLogBodyFormat_ParmaGIS_Core_Shell_Configuration_

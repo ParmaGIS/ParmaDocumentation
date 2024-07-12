@@ -21,15 +21,19 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DALDataRepositoryBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALDataRepositoryBase.cs
-    startLine: 8
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Представляет базовую реализацию репозитория данных поддерживающего архитектуру DataAccessLayer. <xref href="ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public abstract class DALDataRepositoryBase<TObjectId, TData> : DataRepositoryBase<TObjectId, TData>, IDALDataRepository, IDataRepository where TData : class, IDataObject'
     typeParameters:
     - id: TObjectId
+      description: Тип уникального идентификатора объектов.
     - id: TData
+      description: Базовый тип данных.
     content.vb: Public MustInherit Class DALDataRepositoryBase(Of TObjectId, TData As {Class, IDataObject}) Inherits DataRepositoryBase(Of TObjectId, TData) Implements IDALDataRepository, IDataRepository
   inheritance:
   - System.Object
@@ -40,11 +44,11 @@ items:
   - ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository
   inheritedMembers:
-  - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.SaveChangesAsync
   - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.GetDataAsync``1
   - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.GetDataAsync``1({TObjectId})
-  - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.InsertDataAsync``1({T})
-  - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.RemoveDataAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.InsertDataAsync({TData})
+  - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.RemoveDataAsync({TData})
+  - ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.SaveChangesAsync
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -73,16 +77,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetData
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALDataRepositoryBase.cs
-    startLine: 11
+    startLine: 23
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Возвращает <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> объектов данных.
+
+    ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+
+    Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.
+  example: []
   syntax:
     content: 'public abstract IQueryable<T> GetData<T>() where T : TData'
     typeParameters:
     - id: T
+      description: Тип объектов данных.
     return:
       type: System.Linq.IQueryable{{T}}
+      description: Запрос к объектам данных.
     content.vb: Public MustOverride Function GetData(Of T As TData)() As IQueryable(Of T)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase`2.GetData*
   nameWithType.vb: DALDataRepositoryBase(Of TObjectId, TData).GetData(Of T)()
@@ -106,26 +119,39 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadData
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALDataRepositoryBase.cs
-    startLine: 12
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Выполняет функцию потокобезопасно.
+  example: []
   syntax:
-    content: 'public abstract Task<TRes> LoadData<T, TRes>(Func<IQueryable<T>, TRes> loader) where T : TData'
+    content: 'public abstract Task<RepoResponse<TRes>> LoadData<T, TRes>(Func<IQueryable<T>, TRes> loader) where T : TData'
     parameters:
     - id: loader
       type: System.Func{System.Linq.IQueryable{{T}},{TRes}}
+      description: Функция выполняющаяся потокобезопасно.
     typeParameters:
     - id: T
+      description: Тип объекта данных.
     - id: TRes
+      description: Тип возвращаемого результата.
     return:
-      type: System.Threading.Tasks.Task{{TRes}}
-    content.vb: Public MustOverride Function LoadData(Of T As TData, TRes)(loader As Func(Of IQueryable(Of T), TRes)) As Task(Of TRes)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+      description: Результат выполнения функции.
+    content.vb: Public MustOverride Function LoadData(Of T As TData, TRes)(loader As Func(Of IQueryable(Of T), TRes)) As Task(Of RepoResponse(Of TRes))
   overload: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase`2.LoadData*
   nameWithType.vb: DALDataRepositoryBase(Of TObjectId, TData).LoadData(Of T, TRes)(Func(Of IQueryable(Of T), TRes))
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase(Of TObjectId, TData).LoadData(Of T, TRes)(System.Func(Of System.Linq.IQueryable(Of T), TRes))
   name.vb: LoadData(Of T, TRes)(Func(Of IQueryable(Of T), TRes))
 references:
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  commentId: T:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
+  parent: ParmaGIS.Modules.Data.Space.DAL
+  href: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.html
+  name: IDALDataRepository
+  nameWithType: IDALDataRepository
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
 - uid: ParmaGIS.Modules.Data.Space.DAL
   commentId: N:ParmaGIS.Modules.Data.Space.DAL
   href: ParmaGIS.html
@@ -216,13 +242,6 @@ references:
   - name: " "
   - name: TData
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
-  commentId: T:ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
-  parent: ParmaGIS.Modules.Data.Space.DAL
-  href: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository.html
-  name: IDALDataRepository
-  nameWithType: IDALDataRepository
-  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALDataRepository
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository
   commentId: T:ParmaGIS.Modules.Data.Space.Data.IDataRepository
   parent: ParmaGIS.Modules.Data.Space.Data
@@ -230,28 +249,6 @@ references:
   name: IDataRepository
   nameWithType: IDataRepository
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository
-- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.SaveChangesAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.SaveChangesAsync
-  parent: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}
-  definition: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
-  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
-  name: SaveChangesAsync()
-  nameWithType: DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
-  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
-  - name: (
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.GetDataAsync``1
   commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.GetDataAsync``1
   parent: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}
@@ -316,71 +313,75 @@ references:
   - name: (
   - name: TObjectId
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.InsertDataAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.InsertDataAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.InsertDataAsync({TData})
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.InsertDataAsync(`1)
   parent: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}
-  definition: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1___0_
-  name: InsertDataAsync<T>(T)
-  nameWithType: DataRepositoryBase<TObjectId, TData>.InsertDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.InsertDataAsync<T>(T)
-  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(Of T)(T)
-  name.vb: InsertDataAsync(Of T)(T)
+  definition: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1_
+  name: InsertDataAsync(TData)
+  nameWithType: DataRepositoryBase<TObjectId, TData>.InsertDataAsync(TData)
+  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.InsertDataAsync(TData)
+  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(TData)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(TData)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.InsertDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.InsertDataAsync(`1)
     name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1_
   - name: (
-  - name: T
+  - name: TData
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.InsertDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.InsertDataAsync(`1)
     name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1___0_
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
+  - name: TData
   - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.RemoveDataAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.RemoveDataAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.RemoveDataAsync({TData})
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.RemoveDataAsync(`1)
   parent: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}
-  definition: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1___0_
-  name: RemoveDataAsync<T>(T)
-  nameWithType: DataRepositoryBase<TObjectId, TData>.RemoveDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.RemoveDataAsync<T>(T)
-  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(Of T)(T)
-  name.vb: RemoveDataAsync(Of T)(T)
+  definition: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1_
+  name: RemoveDataAsync(TData)
+  nameWithType: DataRepositoryBase<TObjectId, TData>.RemoveDataAsync(TData)
+  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.RemoveDataAsync(TData)
+  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(TData)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(TData)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.RemoveDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.RemoveDataAsync(`1)
     name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1_
   - name: (
-  - name: T
+  - name: TData
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.RemoveDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.RemoveDataAsync(`1)
     name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1___0_
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
+  - name: TData
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.SaveChangesAsync
+  parent: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{{TObjectId},{TData}}
+  definition: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
+  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
   - name: (
-  - name: T
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase{`0,`1}.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
+  - name: (
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -685,26 +686,6 @@ references:
   - uid: ParmaGIS.Modules.Data.Space.Data
     name: Data
     href: ParmaGIS.Modules.Data.Space.Data.html
-- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
-  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
-  name: SaveChangesAsync()
-  nameWithType: DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
-  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
-  - name: (
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.GetDataAsync``1
   commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.GetDataAsync``1
   href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_GetDataAsync__1
@@ -765,80 +746,73 @@ references:
   - name: (
   - name: TObjectId
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1___0_
-  name: InsertDataAsync<T>(T)
-  nameWithType: DataRepositoryBase<TObjectId, TData>.InsertDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.InsertDataAsync<T>(T)
-  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(Of T)(T)
-  name.vb: InsertDataAsync(Of T)(T)
+- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync(`1)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1_
+  name: InsertDataAsync(TData)
+  nameWithType: DataRepositoryBase<TObjectId, TData>.InsertDataAsync(TData)
+  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.InsertDataAsync(TData)
+  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(TData)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).InsertDataAsync(TData)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync(`1)
     name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1_
   - name: (
-  - name: T
+  - name: TData
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.InsertDataAsync(`1)
     name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1___0_
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_InsertDataAsync__1_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
+  - name: TData
   - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1___0_
-  name: RemoveDataAsync<T>(T)
-  nameWithType: DataRepositoryBase<TObjectId, TData>.RemoveDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.RemoveDataAsync<T>(T)
-  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(Of T)(T)
-  name.vb: RemoveDataAsync(Of T)(T)
+- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync(`1)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1_
+  name: RemoveDataAsync(TData)
+  nameWithType: DataRepositoryBase<TObjectId, TData>.RemoveDataAsync(TData)
+  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.RemoveDataAsync(TData)
+  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(TData)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).RemoveDataAsync(TData)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync(`1)
     name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1_
   - name: (
-  - name: T
+  - name: TData
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.RemoveDataAsync(`1)
     name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1___0_
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_RemoveDataAsync__1_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
+  - name: TData
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase<TObjectId, TData>.SaveChangesAsync()
+  nameWithType.vb: DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase(Of TObjectId, TData).SaveChangesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
   - name: (
-  - name: T
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase`2.GetData*
-  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase`2.GetData
-  href: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_DAL_DALDataRepositoryBase_2_GetData__1
-  name: GetData
-  nameWithType: DALDataRepositoryBase<TObjectId, TData>.GetData
-  fullName: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase<TObjectId, TData>.GetData
-  nameWithType.vb: DALDataRepositoryBase(Of TObjectId, TData).GetData
-  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase(Of TObjectId, TData).GetData
-- uid: System.Linq.IQueryable{{T}}
-  commentId: T:System.Linq.IQueryable{``0}
-  parent: System.Linq
-  definition: System.Linq.IQueryable`1
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase`2.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Data.DataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_Data_DataRepositoryBase_2_SaveChangesAsync
+  - name: (
+  - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   name: IQueryable<T>
   nameWithType: IQueryable<T>
@@ -864,9 +838,18 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Linq.IQueryable`1
-  commentId: T:System.Linq.IQueryable`1
-  isExternal: true
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase`2.GetData*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase`2.GetData
+  href: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase-2.html#ParmaGIS_Modules_Data_Space_DAL_DALDataRepositoryBase_2_GetData__1
+  name: GetData
+  nameWithType: DALDataRepositoryBase<TObjectId, TData>.GetData
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase<TObjectId, TData>.GetData
+  nameWithType.vb: DALDataRepositoryBase(Of TObjectId, TData).GetData
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase(Of TObjectId, TData).GetData
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{``0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   name: IQueryable<T>
   nameWithType: IQueryable<T>
@@ -928,7 +911,7 @@ references:
   nameWithType.vb: DALDataRepositoryBase(Of TObjectId, TData).LoadData
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALDataRepositoryBase(Of TObjectId, TData).LoadData
 - uid: System.Func{System.Linq.IQueryable{{T}},{TRes}}
-  commentId: T:System.Func{System.Linq.IQueryable{``0},``1}
+  commentId: T:System.Func{System.Linq.IQueryable{`0},``0}
   parent: System
   definition: System.Func`2
   href: https://learn.microsoft.com/dotnet/api/system.func-2
@@ -976,24 +959,29 @@ references:
   - name: " "
   - name: TRes
   - name: )
-- uid: System.Threading.Tasks.Task{{TRes}}
-  commentId: T:System.Threading.Tasks.Task{``1}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``1}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TRes>
-  nameWithType: Task<TRes>
-  fullName: System.Threading.Tasks.Task<TRes>
-  nameWithType.vb: Task(Of TRes)
-  fullName.vb: System.Threading.Tasks.Task(Of TRes)
-  name.vb: Task(Of TRes)
+  name: Task<RepoResponse<TRes>>
+  nameWithType: Task<RepoResponse<TRes>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TRes>>
+  nameWithType.vb: Task(Of RepoResponse(Of TRes))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TRes))
+  name.vb: Task(Of RepoResponse(Of TRes))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TRes
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1003,7 +991,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TRes
+  - name: )
   - name: )
 - uid: System.Func`2
   commentId: T:System.Func`2

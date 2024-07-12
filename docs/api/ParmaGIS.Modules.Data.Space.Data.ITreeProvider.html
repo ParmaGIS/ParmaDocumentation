@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface ITreeProvider | site ">
       
-      
+      <meta name="description" content="Представляет контракт взаимодействия с провайдером древовидного представления.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider" class="text-break">
-Interface ITreeProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Interface ITreeProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет контракт взаимодействия с провайдером древовидного представления.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -124,10 +125,11 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_Space" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.Space">
   Space
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает пространство, которому пренадлежит провайдер.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -159,26 +161,29 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetChildrenAsync_ParmaGIS_Modules_Data_Space_Data_ITreeNode_" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetChildrenAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)">
   GetChildrenAsync(ITreeNode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает дочерние элементы элемента.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ITreeNode[]&gt; GetChildrenAsync(ITreeNode parentNode)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;ITreeNode[]&gt;&gt; GetChildrenAsync(ITreeNode parentNode)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>parentNode</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a></dt>
-    <dd></dd>
+    <dd><p>Родительский элемент.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>[]&gt;&gt;</dt>
+    <dd><p>Массив дочерних элементов.</p>
+</dd>
   </dl>
 
 
@@ -195,26 +200,29 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetDataAsync_ParmaGIS_Modules_Data_Space_Data_ITreeNode_" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetDataAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)">
   GetDataAsync(ITreeNode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает связанные с элементом древовидного представления данные.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IDataObject?&gt; GetDataAsync(ITreeNode node)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;IDataObject?&gt;&gt; GetDataAsync(ITreeNode node)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>node</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a></dt>
-    <dd></dd>
+    <dd><p>Элемент древовидного представления.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataObject.html">IDataObject</a>&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.IDataObject.html">IDataObject</a>&gt;&gt;</dt>
+    <dd><p>Объект данных, связанный с элементом древовидного представления.</p>
+</dd>
   </dl>
 
 
@@ -231,26 +239,29 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetNodeAsync_System_Object_" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync(System.Object)">
   GetNodeAsync(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элемент древовидного представления по его уникальному идентификатору.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ITreeNode&gt; GetNodeAsync(object id)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;ITreeNode&gt;&gt; GetNodeAsync(object id)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор элементов древовидного представления.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>&gt;&gt;</dt>
+    <dd><p>Элемент древовидного представления.</p>
+</dd>
   </dl>
 
 
@@ -267,21 +278,23 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetNodesAsync" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync">
   GetNodesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все элементы древовидного представления.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ITreeNode[]&gt; GetNodesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;ITreeNode[]&gt;&gt; GetNodesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>[]&gt;&gt;</dt>
+    <dd><p>Массив всех элементов.</p>
+</dd>
   </dl>
 
 
@@ -298,27 +311,30 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetNodesAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync``1">
   GetNodesAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элементы древовидного представления определенного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; GetNodesAsync&lt;T&gt;() where T : class, ITreeNode</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;T[]&gt;&gt; GetNodesAsync&lt;T&gt;() where T : class, ITreeNode</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив элементов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов.</p>
+</dd>
   </dl>
 
 
@@ -334,26 +350,29 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetParentAsync_ParmaGIS_Modules_Data_Space_Data_ITreeNode_" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetParentAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)">
   GetParentAsync(ITreeNode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает родительский элемент элемента.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ITreeNode?&gt; GetParentAsync(ITreeNode childNode)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;ITreeNode?&gt;&gt; GetParentAsync(ITreeNode childNode)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>childNode</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a></dt>
-    <dd></dd>
+    <dd><p>Дочерний элемент.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>&gt;&gt;</dt>
+    <dd><p>Родительский элемент.</p>
+</dd>
   </dl>
 
 
@@ -370,21 +389,23 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetRootNodesAsync" data-uid="ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetRootNodesAsync">
   GetRootNodesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает корневые элементы древовидного представления.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ITreeNode[]&gt; GetRootNodesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;ITreeNode[]&gt;&gt; GetRootNodesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Data.ITreeNode.html">ITreeNode</a>[]&gt;&gt;</dt>
+    <dd><p>Массив корневых элементов.</p>
+</dd>
   </dl>
 
 
@@ -401,7 +422,7 @@ Interface ITreeProvider  <a class="header-action link-secondary" title="View sou
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

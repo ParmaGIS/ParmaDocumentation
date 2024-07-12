@@ -22,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DialogResult
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogResult.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Представляет результат работы диалога.
+  example: []
   syntax:
     content: 'public class DialogResult : IDialogResult'
     content.vb: Public Class DialogResult Implements IDialogResult
@@ -64,17 +66,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogResult.cs
-    startLine: 4
+    startLine: 12
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.UI.Dialog.DialogResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public DialogResult(ButtonResult buttonResult, IDialogParameters? parameters)
     parameters:
     - id: buttonResult
       type: ParmaGIS.Core.UI.Dialog.ButtonResult
+      description: Рузельтат нажатия кнопок.
     - id: parameters
       type: ParmaGIS.Core.UI.Dialog.IDialogParameters
+      description: Параметры диалога, с которыми он был открыт.
     content.vb: Public Sub New(buttonResult As ButtonResult, parameters As IDialogParameters)
   overload: ParmaGIS.Core.UI.Dialog.DialogResult.#ctor*
   nameWithType.vb: DialogResult.New(ButtonResult, IDialogParameters)
@@ -98,10 +104,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ButtonResult
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogResult.cs
-    startLine: 10
+    startLine: 22
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает результат нажатия кнопок.
   example: []
   syntax:
     content: public ButtonResult ButtonResult { get; }
@@ -130,10 +137,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Parameters
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogResult.cs
-    startLine: 12
+    startLine: 27
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает параметры диалога, с которыми он был открыт.
   example: []
   syntax:
     content: public IDialogParameters Parameters { get; }
@@ -427,6 +435,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult
+  commentId: T:ParmaGIS.Core.UI.Dialog.DialogResult
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html
+  name: DialogResult
+  nameWithType: DialogResult
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult
 - uid: ParmaGIS.Core.UI.Dialog.DialogResult.#ctor*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogResult.#ctor
   href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult__ctor_ParmaGIS_Core_UI_Dialog_ButtonResult_ParmaGIS_Core_UI_Dialog_IDialogParameters_

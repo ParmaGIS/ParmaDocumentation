@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DataModule
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/DataModule.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data
+  summary: Определяет модуль данных в ParmaGIS.
+  example: []
   syntax:
     content: 'public class DataModule : IModule'
     content.vb: Public Class DataModule Implements IModule
@@ -58,16 +60,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnInitialized
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/DataModule.cs
-    startLine: 8
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data
+  summary: >-
+    Инициализирует модуль.
+
+    Метод вызывается после того как у всех модулей произойдет <xref href="ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)" data-throw-if-not-resolved="false"></xref>. Гарантируется, что сервисы присутствующих модулей буду зарегистрированы до вызова этого метода.
   example: []
   syntax:
     content: public void OnInitialized(IServiceProvider serviceProvider)
     parameters:
     - id: serviceProvider
       type: ParmaGIS.Core.Serviceability.IServiceProvider
+      description: Провайдер серивисов. Позволяет осуществить различные действия с сервисами.
     content.vb: Public Sub OnInitialized(serviceProvider As IServiceProvider)
   overload: ParmaGIS.Modules.Data.DataModule.OnInitialized*
   implements:
@@ -90,16 +97,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterTypes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/DataModule.cs
-    startLine: 12
+    startLine: 18
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data
+  summary: >-
+    Позволяет зарегистрировать типы сервисов. Вызывается после сбора всех модулей.
+
+    Определенная очередность вызова этого метода не гарантируется.
   example: []
   syntax:
     content: public void RegisterTypes(IServiceCollection serviceCollection)
     parameters:
     - id: serviceCollection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
+      description: Коллекция сервисов.
     content.vb: Public Sub RegisterTypes(serviceCollection As IServiceCollection)
   overload: ParmaGIS.Modules.Data.DataModule.RegisterTypes*
   implements:
@@ -409,6 +421,31 @@ references:
   - uid: ParmaGIS.Core.Modularity
     name: Modularity
     href: ParmaGIS.Core.Modularity.html
+- uid: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
+  commentId: M:ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
+  parent: ParmaGIS.Core.Modularity.IModule
+  href: ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_
+  name: RegisterTypes(IServiceCollection)
+  nameWithType: IModule.RegisterTypes(IServiceCollection)
+  fullName: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
+    name: RegisterTypes
+    href: ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_
+  - name: (
+  - uid: ParmaGIS.Core.Serviceability.IServiceCollection
+    name: IServiceCollection
+    href: ParmaGIS.Core.Serviceability.IServiceCollection.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
+    name: RegisterTypes
+    href: ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_
+  - name: (
+  - uid: ParmaGIS.Core.Serviceability.IServiceCollection
+    name: IServiceCollection
+    href: ParmaGIS.Core.Serviceability.IServiceCollection.html
+  - name: )
 - uid: ParmaGIS.Modules.Data.DataModule.OnInitialized*
   commentId: Overload:ParmaGIS.Modules.Data.DataModule.OnInitialized
   href: ParmaGIS.Modules.Data.DataModule.html#ParmaGIS_Modules_Data_DataModule_OnInitialized_ParmaGIS_Core_Serviceability_IServiceProvider_
@@ -483,31 +520,6 @@ references:
   name: RegisterTypes
   nameWithType: DataModule.RegisterTypes
   fullName: ParmaGIS.Modules.Data.DataModule.RegisterTypes
-- uid: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
-  commentId: M:ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
-  parent: ParmaGIS.Core.Modularity.IModule
-  href: ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_
-  name: RegisterTypes(IServiceCollection)
-  nameWithType: IModule.RegisterTypes(IServiceCollection)
-  fullName: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
-    name: RegisterTypes
-    href: ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_
-  - name: (
-  - uid: ParmaGIS.Core.Serviceability.IServiceCollection
-    name: IServiceCollection
-    href: ParmaGIS.Core.Serviceability.IServiceCollection.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.Modularity.IModule.RegisterTypes(ParmaGIS.Core.Serviceability.IServiceCollection)
-    name: RegisterTypes
-    href: ParmaGIS.Core.Modularity.IModule.html#ParmaGIS_Core_Modularity_IModule_RegisterTypes_ParmaGIS_Core_Serviceability_IServiceCollection_
-  - name: (
-  - uid: ParmaGIS.Core.Serviceability.IServiceCollection
-    name: IServiceCollection
-    href: ParmaGIS.Core.Serviceability.IServiceCollection.html
-  - name: )
 - uid: ParmaGIS.Core.Serviceability.IServiceCollection
   commentId: T:ParmaGIS.Core.Serviceability.IServiceCollection
   parent: ParmaGIS.Core.Serviceability

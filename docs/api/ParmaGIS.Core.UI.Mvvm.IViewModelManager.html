@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IViewModelManager | site ">
       
-      
+      <meta name="description" content="Менеджер ViewModels. Предназначен для разрешения отношения View к ViewModel и наоборот.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_UI_Mvvm_IViewModelManager" data-uid="ParmaGIS.Core.UI.Mvvm.IViewModelManager" class="text-break">
-Interface IViewModelManager  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IViewModelManager  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.UI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Менеджер ViewModels.
+Предназначен для разрешения отношения View к ViewModel и наоборот.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -121,7 +123,13 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
       <a class="xref" href="ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.html#ParmaGIS_Core_UI_Mvvm_ViewModelManagerExtensions_ToViewResolver_ParmaGIS_Core_UI_Mvvm_IViewModelManager_">ViewModelManagerExtensions.ToViewResolver(IViewModelManager)</a>
   </div>
   <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.html#ParmaGIS_Core_UI_Mvvm_ViewModelManagerExtensions_ToViewResolver__1_ParmaGIS_Core_UI_Mvvm_IViewModelManager_System_Func_System_Object___0__">ViewModelManagerExtensions.ToViewResolver&lt;TView&gt;(IViewModelManager, Func&lt;object, TView&gt;)</a>
+  </div>
+  <div>
       <a class="xref" href="ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.html#ParmaGIS_Core_UI_Mvvm_ViewModelManagerExtensions_ToViewResolver__1_ParmaGIS_Core_UI_Mvvm_IViewModelManager_System_Func___0__">ViewModelManagerExtensions.ToViewResolver&lt;TView&gt;(IViewModelManager, Func&lt;TView&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.html#ParmaGIS_Core_UI_Mvvm_ViewModelManagerExtensions_ToViewResolver__1_ParmaGIS_Core_UI_Mvvm_IViewModelManager___0_">ViewModelManagerExtensions.ToViewResolver&lt;TView&gt;(IViewModelManager, TView)</a>
   </div>
   </dd></dl>
 
@@ -137,10 +145,11 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
 
   <h3 id="ParmaGIS_Core_UI_Mvvm_IViewModelManager_Catalog" data-uid="ParmaGIS.Core.UI.Mvvm.IViewModelManager.Catalog">
   Catalog
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает каталог представлений.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -172,10 +181,11 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
 
   <h3 id="ParmaGIS_Core_UI_Mvvm_IViewModelManager_GetView_System_Type_" data-uid="ParmaGIS.Core.UI.Mvvm.IViewModelManager.GetView(System.Type)">
   GetView(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает экземпляр View для типа ViewModel.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -185,13 +195,15 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>viewModelType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип ViewModel.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Экземпляр View.</p>
+</dd>
   </dl>
 
 
@@ -208,10 +220,11 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
 
   <h3 id="ParmaGIS_Core_UI_Mvvm_IViewModelManager_GetViewModel_System_Type_" data-uid="ParmaGIS.Core.UI.Mvvm.IViewModelManager.GetViewModel(System.Type)">
   GetViewModel(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает экземпляр ViewModel для типа View.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -221,13 +234,15 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>viewType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип View.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Экземпляр ViewModel.</p>
+</dd>
   </dl>
 
 
@@ -244,10 +259,11 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
 
   <h3 id="ParmaGIS_Core_UI_Mvvm_IViewModelManager_TryGetViewModel_System_Type_System_Object__" data-uid="ParmaGIS.Core.UI.Mvvm.IViewModelManager.TryGetViewModel(System.Type,System.Object@)">
   TryGetViewModel(Type, out object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Пытается найти ViewModel для типа View.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -257,15 +273,18 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>viewType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип View.</p>
+</dd>
     <dt><code>instance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Экзепляр ViewModel.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Значение true, если удалось найти ViewModel, иначе - false.</p>
+</dd>
   </dl>
 
 
@@ -282,7 +301,7 @@ Interface IViewModelManager  <a class="header-action link-secondary" title="View
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Mvvm/IViewModelManager.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

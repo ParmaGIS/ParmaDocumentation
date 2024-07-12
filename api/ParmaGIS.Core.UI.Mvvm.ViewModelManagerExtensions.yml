@@ -7,7 +7,9 @@ items:
   children:
   - ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.Resolve(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Object)
   - ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver(ParmaGIS.Core.UI.Mvvm.IViewModelManager)
+  - ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,``0})
   - ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{``0})
+  - ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,``0)
   langs:
   - csharp
   - vb
@@ -22,10 +24,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ViewModelManagerExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Расширения для <xref href="ParmaGIS.Core.UI.Mvvm.IViewModelManager" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ViewModelManagerExtensions
     content.vb: Public Module ViewModelManagerExtensions
@@ -58,19 +62,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Resolve
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Разрешает отношение View для ViewModel.
+  example: []
   syntax:
     content: public static object Resolve(this IViewModelManager manager, object viewModel)
     parameters:
     - id: manager
       type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
     - id: viewModel
       type: System.Object
+      description: Экземпляр ViewModel.
     return:
       type: System.Object
+      description: Экземпляр View.
     content.vb: Public Shared Function Resolve(manager As IViewModelManager, viewModel As Object) As Object
   overload: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.Resolve*
   nameWithType.vb: ViewModelManagerExtensions.Resolve(IViewModelManager, Object)
@@ -95,17 +104,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToViewResolver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
-    startLine: 11
+    startLine: 25
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Конвертирует <xref href="ParmaGIS.Core.UI.Mvvm.IViewModelManager" data-throw-if-not-resolved="false"></xref> в простой <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static IViewResolver ToViewResolver(this IViewModelManager viewModelManager)
     parameters:
     - id: viewModelManager
       type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
     return:
       type: ParmaGIS.Core.UI.Mvvm.IViewResolver
+      description: <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Shared Function ToViewResolver(viewModelManager As IViewModelManager) As IViewResolver
   overload: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver*
 - uid: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{``0})
@@ -127,27 +140,139 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToViewResolver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
-    startLine: 16
+    startLine: 38
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: >-
+    Конвертирыет <xref href="ParmaGIS.Core.UI.Mvvm.IViewModelManager" data-throw-if-not-resolved="false"></xref> в простой <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref> с представлением по умолчанию.
+
+    Представление по умолчанию будет использоваться в случае, когда для ViewModel не удалось найти View.
+  example: []
   syntax:
     content: public static IViewResolver ToViewResolver<TView>(this IViewModelManager viewModelManager, Func<TView> defaultViewFactory)
     parameters:
     - id: viewModelManager
       type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
     - id: defaultViewFactory
       type: System.Func{{TView}}
+      description: Функция создающая экземпляр View.
     typeParameters:
     - id: TView
+      description: Тип View.
     return:
       type: ParmaGIS.Core.UI.Mvvm.IViewResolver
+      description: <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Shared Function ToViewResolver(Of TView)(viewModelManager As IViewModelManager, defaultViewFactory As Func(Of TView)) As IViewResolver
   overload: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver*
   nameWithType.vb: ViewModelManagerExtensions.ToViewResolver(Of TView)(IViewModelManager, Func(Of TView))
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver(Of TView)(ParmaGIS.Core.UI.Mvvm.IViewModelManager, System.Func(Of TView))
   name.vb: ToViewResolver(Of TView)(IViewModelManager, Func(Of TView))
+- uid: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,``0})
+  commentId: M:ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,``0})
+  id: ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,``0})
+  isExtensionMethod: true
+  parent: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToViewResolver<TView>(IViewModelManager, Func<object, TView>)
+  nameWithType: ViewModelManagerExtensions.ToViewResolver<TView>(IViewModelManager, Func<object, TView>)
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver<TView>(ParmaGIS.Core.UI.Mvvm.IViewModelManager, System.Func<object, TView>)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ToViewResolver
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
+    startLine: 51
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Mvvm
+  summary: >-
+    Конвертирыет <xref href="ParmaGIS.Core.UI.Mvvm.IViewModelManager" data-throw-if-not-resolved="false"></xref> в простой <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref> с представлением по умолчанию.
+
+    Представление по умолчанию будет использоваться в случае, когда для ViewModel не удалось найти View.
+  example: []
+  syntax:
+    content: public static IViewResolver ToViewResolver<TView>(this IViewModelManager viewModelManager, Func<object, TView> defaultViewFactory)
+    parameters:
+    - id: viewModelManager
+      type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
+    - id: defaultViewFactory
+      type: System.Func{System.Object,{TView}}
+      description: Функция создающая экземпляр View.
+    typeParameters:
+    - id: TView
+      description: Тип View.
+    return:
+      type: ParmaGIS.Core.UI.Mvvm.IViewResolver
+      description: <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function ToViewResolver(Of TView)(viewModelManager As IViewModelManager, defaultViewFactory As Func(Of Object, TView)) As IViewResolver
+  overload: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver*
+  nameWithType.vb: ViewModelManagerExtensions.ToViewResolver(Of TView)(IViewModelManager, Func(Of Object, TView))
+  fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver(Of TView)(ParmaGIS.Core.UI.Mvvm.IViewModelManager, System.Func(Of Object, TView))
+  name.vb: ToViewResolver(Of TView)(IViewModelManager, Func(Of Object, TView))
+- uid: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,``0)
+  commentId: M:ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,``0)
+  id: ToViewResolver``1(ParmaGIS.Core.UI.Mvvm.IViewModelManager,``0)
+  isExtensionMethod: true
+  parent: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToViewResolver<TView>(IViewModelManager, TView)
+  nameWithType: ViewModelManagerExtensions.ToViewResolver<TView>(IViewModelManager, TView)
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver<TView>(ParmaGIS.Core.UI.Mvvm.IViewModelManager, TView)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ToViewResolver
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewModelManagerExtensions.cs
+    startLine: 64
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Mvvm
+  summary: >-
+    Конвертирыет <xref href="ParmaGIS.Core.UI.Mvvm.IViewModelManager" data-throw-if-not-resolved="false"></xref> в простой <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref> с представлением по умолчанию.
+
+    Представление по умолчанию будет использоваться в случае, когда для ViewModel не удалось найти View.
+  example: []
+  syntax:
+    content: public static IViewResolver ToViewResolver<TView>(this IViewModelManager viewModelManager, TView defaultView)
+    parameters:
+    - id: viewModelManager
+      type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
+    - id: defaultView
+      type: '{TView}'
+      description: Экземпляр View по умолчанию.
+    typeParameters:
+    - id: TView
+      description: Тип View.
+    return:
+      type: ParmaGIS.Core.UI.Mvvm.IViewResolver
+      description: <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function ToViewResolver(Of TView)(viewModelManager As IViewModelManager, defaultView As TView) As IViewResolver
+  overload: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver*
+  nameWithType.vb: ViewModelManagerExtensions.ToViewResolver(Of TView)(IViewModelManager, TView)
+  fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver(Of TView)(ParmaGIS.Core.UI.Mvvm.IViewModelManager, TView)
+  name.vb: ToViewResolver(Of TView)(IViewModelManager, TView)
 references:
+- uid: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewModelManager
+  parent: ParmaGIS.Core.UI.Mvvm
+  href: ParmaGIS.Core.UI.Mvvm.IViewModelManager.html
+  name: IViewModelManager
+  nameWithType: IViewModelManager
+  fullName: ParmaGIS.Core.UI.Mvvm.IViewModelManager
 - uid: ParmaGIS.Core.UI.Mvvm
   commentId: N:ParmaGIS.Core.UI.Mvvm
   href: ParmaGIS.html
@@ -429,19 +554,6 @@ references:
   name: Resolve
   nameWithType: ViewModelManagerExtensions.Resolve
   fullName: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.Resolve
-- uid: ParmaGIS.Core.UI.Mvvm.IViewModelManager
-  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewModelManager
-  parent: ParmaGIS.Core.UI.Mvvm
-  href: ParmaGIS.Core.UI.Mvvm.IViewModelManager.html
-  name: IViewModelManager
-  nameWithType: IViewModelManager
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewModelManager
-- uid: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver*
-  commentId: Overload:ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver
-  href: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.html#ParmaGIS_Core_UI_Mvvm_ViewModelManagerExtensions_ToViewResolver_ParmaGIS_Core_UI_Mvvm_IViewModelManager_
-  name: ToViewResolver
-  nameWithType: ViewModelManagerExtensions.ToViewResolver
-  fullName: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver
 - uid: ParmaGIS.Core.UI.Mvvm.IViewResolver
   commentId: T:ParmaGIS.Core.UI.Mvvm.IViewResolver
   parent: ParmaGIS.Core.UI.Mvvm
@@ -449,6 +561,12 @@ references:
   name: IViewResolver
   nameWithType: IViewResolver
   fullName: ParmaGIS.Core.UI.Mvvm.IViewResolver
+- uid: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver*
+  commentId: Overload:ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver
+  href: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.html#ParmaGIS_Core_UI_Mvvm_ViewModelManagerExtensions_ToViewResolver_ParmaGIS_Core_UI_Mvvm_IViewModelManager_
+  name: ToViewResolver
+  nameWithType: ViewModelManagerExtensions.ToViewResolver
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewModelManagerExtensions.ToViewResolver
 - uid: System.Func{{TView}}
   commentId: T:System.Func{``0}
   parent: System
@@ -506,3 +624,89 @@ references:
   - name: " "
   - name: TResult
   - name: )
+- uid: System.Func{System.Object,{TView}}
+  commentId: T:System.Func{System.Object,``0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<object, TView>
+  nameWithType: Func<object, TView>
+  fullName: System.Func<object, TView>
+  nameWithType.vb: Func(Of Object, TView)
+  fullName.vb: System.Func(Of Object, TView)
+  name.vb: Func(Of Object, TView)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: TView
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: TView
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: '{TView}'
+  commentId: '!:TView'
+  definition: TView
+  name: TView
+  nameWithType: TView
+  fullName: TView
+- uid: TView
+  commentId: '!:TView'
+  name: TView
+  nameWithType: TView
+  fullName: TView

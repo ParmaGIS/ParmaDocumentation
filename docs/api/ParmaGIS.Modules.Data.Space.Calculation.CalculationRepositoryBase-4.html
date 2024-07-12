@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt; | site ">
       
-      
+      <meta name="description" content="Представляет базовый класс для упрощения реализации репозитория расчетов.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4" class="text-break">
-Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
   <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет базовый класс для упрощения реализации репозитория расчетов.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,13 +110,17 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TObjectId</code></dt>
-    <dd></dd>
+    <dd><p>Тип первичного ключа.</p>
+</dd>
     <dt><code>TCalcTableType</code></dt>
-    <dd></dd>
+    <dd><p>Тип типа таблиц расчета.</p>
+</dd>
     <dt><code>TCalcTable</code></dt>
-    <dd></dd>
+    <dd><p>Тип таблиц расчета.</p>
+</dd>
     <dt><code>TCalcTableRow</code></dt>
-    <dd></dd>
+    <dd><p>Тип строк в таблицах расчета.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -179,10 +184,11 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4__ctor" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.#ctor">
   CalculationRepositoryBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса, наследуемого от <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase-4.html">CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcTableRow&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -205,32 +211,75 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 </h2>
 
 
+  <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateAndInsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateAndInsertCalcTableRowAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateAndInsertCalcTableRowAsync(`2)">
+  CreateAndInsertCalcTableRowAsync(TCalcTable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Создает строку для таблицы расчета и добавляет ее.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableRow&gt;&gt; CreateAndInsertCalcTableRowAsync(TCalcTable calcTable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
+    <dd><p>Таблица расчета.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableRow&gt;&gt;</dt>
+    <dd><p>Созданная строка.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync*"></a>
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableAsync__1_System_String_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableAsync(`1,System.String)">
   CreateCalcTableAsync(TCalcTableType, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает таблице расчета определенного типа и названия.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTable&gt; CreateCalcTableAsync(TCalcTableType type, string name)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTable&gt;&gt; CreateCalcTableAsync(TCalcTableType type, string name)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>type</code> <span class="xref">TCalcTableType</span></dt>
-    <dd></dd>
+    <dd><p>Тип таблицы расчета.</p>
+</dd>
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Название таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTable&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTable&gt;&gt;</dt>
+    <dd><p>Таблица расчета.</p>
+</dd>
   </dl>
 
 
@@ -245,71 +294,33 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`2)">
-  CreateCalcTableRowAsync(TCalcTable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync(`1)">
+  CreateCalcTableRowAsync(TCalcTableType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает строку для таблицы расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTableRow&gt; CreateCalcTableRowAsync(TCalcTable calcTable)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableRow&gt;&gt; CreateCalcTableRowAsync(TCalcTableType calcTableType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
+    <dt><code>calcTableType</code> <span class="xref">TCalcTableType</span></dt>
+    <dd><p>Тип таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTableRow&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableRow&gt;&gt;</dt>
+    <dd><p>Созданная строка.</p>
+</dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CreateCalcTableRowAsync__1__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CreateCalcTableRowAsync``1(`2)">
-  CreateCalcTableRowAsync&lt;T&gt;(TCalcTable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L58"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T&gt; CreateCalcTableRowAsync&lt;T&gt;(TCalcTable calcTable) where T : class, TCalcTableRow</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -324,26 +335,29 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableAsync__0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableAsync(`0)">
   GetCalcTableAsync(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает таблицу расчета по ее уникальному идентификатору.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTable?&gt; GetCalcTableAsync(TObjectId id)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTable?&gt;&gt; GetCalcTableAsync(TObjectId id)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTable&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTable&gt;&gt;</dt>
+    <dd><p>Таблица расчетов.</p>
+</dd>
   </dl>
 
 
@@ -360,28 +374,32 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync(`1,`0)">
   GetCalcTableRowAsync(TCalcTableType, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строку таблицы расчета по типу таблицы и уникальному идентификатору строки.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTableRow?&gt; GetCalcTableRowAsync(TCalcTableType type, TObjectId id)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableRow?&gt;&gt; GetCalcTableRowAsync(TCalcTableType type, TObjectId id)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>type</code> <span class="xref">TCalcTableType</span></dt>
-    <dd></dd>
+    <dd><p>Тип таблицы расчета.</p>
+</dd>
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTableRow&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableRow&gt;&gt;</dt>
+    <dd><p>Строка таблицы расчетов.</p>
+</dd>
   </dl>
 
 
@@ -398,32 +416,36 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowAsync``1(`0)">
   GetCalcTableRowAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строку таблицы расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetCalcTableRowAsync&lt;T&gt;(TObjectId id) where T : class, TCalcTableRow</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetCalcTableRowAsync&lt;T&gt;(TObjectId id) where T : class, TCalcTableRow</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор строки таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Строка таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип строк таблиц расчета.</p>
+</dd>
   </dl>
 
 
@@ -439,26 +461,29 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`0)">
   GetCalcTableRowsAsync(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строки таблицы расчета по уникальному идентифиактору таблицы расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTableRow[]&gt; GetCalcTableRowsAsync(TObjectId calcTableId)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableRow[]&gt;&gt; GetCalcTableRowsAsync(TObjectId calcTableId)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTableId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTableRow[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableRow[]&gt;&gt;</dt>
+    <dd><p>Строки таблица расчета.</p>
+</dd>
   </dl>
 
 
@@ -475,26 +500,29 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`1)">
   GetCalcTableRowsAsync(TCalcTableType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строки таблицы расчета указанного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTableRow[]&gt; GetCalcTableRowsAsync(TCalcTableType calcTableType)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableRow[]&gt;&gt; GetCalcTableRowsAsync(TCalcTableType calcTableType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTableType</code> <span class="xref">TCalcTableType</span></dt>
-    <dd></dd>
+    <dd><p>Тип таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTableRow[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableRow[]&gt;&gt;</dt>
+    <dd><p>Строки таблиц расчета.</p>
+</dd>
   </dl>
 
 
@@ -511,26 +539,29 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync(`2)">
   GetCalcTableRowsAsync(TCalcTable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строки таблицы расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTableRow[]&gt; GetCalcTableRowsAsync(TCalcTable calcTable)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableRow[]&gt;&gt; GetCalcTableRowsAsync(TCalcTable calcTable)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
+    <dd><p>Таблица расчетов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTableRow[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableRow[]&gt;&gt;</dt>
+    <dd><p>Строки таблицы расчета.</p>
+</dd>
   </dl>
 
 
@@ -547,27 +578,30 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1">
   GetCalcTableRowsAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строки таблиц расчета заданного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetCalcTableRowsAsync&lt;T&gt;() where T : class, TCalcTableRow</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetCalcTableRowsAsync&lt;T&gt;() where T : class, TCalcTableRow</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив строк таблиц расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип строк таблиц расчета.</p>
+</dd>
   </dl>
 
 
@@ -583,32 +617,36 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableRowsAsync__1__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableRowsAsync``1(`2)">
   GetCalcTableRowsAsync&lt;T&gt;(TCalcTable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L189"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает строки таблицы расчета заданного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetCalcTableRowsAsync&lt;T&gt;(TCalcTable calcTable) where T : class, TCalcTableRow</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetCalcTableRowsAsync&lt;T&gt;(TCalcTable calcTable) where T : class, TCalcTableRow</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
+    <dd><p>Таблица расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив строк таблицы расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип строк таблиц расчета.</p>
+</dd>
   </dl>
 
 
@@ -624,21 +662,23 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTableTypesAsync" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTableTypesAsync">
   GetCalcTableTypesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все типы таблиц расчета в репозитории.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTableType[]&gt; GetCalcTableTypesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTableType[]&gt;&gt; GetCalcTableTypesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTableType[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTableType[]&gt;&gt;</dt>
+    <dd><p>Типы таблиц расчета.</p>
+</dd>
   </dl>
 
 
@@ -655,21 +695,23 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync">
   GetCalcTablesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все таблицы расчета в репозитории.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTable[]&gt; GetCalcTablesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTable[]&gt;&gt; GetCalcTablesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTable[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTable[]&gt;&gt;</dt>
+    <dd><p>Таблицы расчета в репозитории.</p>
+</dd>
   </dl>
 
 
@@ -686,26 +728,29 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_GetCalcTablesAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.GetCalcTablesAsync(`1)">
   GetCalcTablesAsync(TCalcTableType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает таблицы расчета указанного типа.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TCalcTable[]&gt; GetCalcTablesAsync(TCalcTableType calcTableType)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;TCalcTable[]&gt;&gt; GetCalcTablesAsync(TCalcTableType calcTableType)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTableType</code> <span class="xref">TCalcTableType</span></dt>
-    <dd></dd>
+    <dd><p>Тип таблиц расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TCalcTable[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TCalcTable[]&gt;&gt;</dt>
+    <dd><p>Таблицы расчета.</p>
+</dd>
   </dl>
 
 
@@ -722,25 +767,27 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableAsync(`2)">
   InsertCalcTableAsync(TCalcTable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет экземпляр таблицы расчета в репозиторий.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCalcTableAsync(TCalcTable calcTable)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; InsertCalcTableAsync(TCalcTable calcTable)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
+    <dd><p>Новая таблица расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -758,27 +805,29 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__2__3_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`2,`3)">
   InsertCalcTableRowAsync(TCalcTable, TCalcTableRow)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L166"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Вставляет строку в таблицу расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCalcTableRowAsync(TCalcTable calcTable, TCalcTableRow row)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; InsertCalcTableRowAsync(TCalcTable table, TCalcTableRow row)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
+    <dt><code>table</code> <span class="xref">TCalcTable</span></dt>
     <dd></dd>
     <dt><code>row</code> <span class="xref">TCalcTableRow</span></dt>
-    <dd></dd>
+    <dd><p>Вставляемая строка.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -796,112 +845,30 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__3_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync(`3)">
   InsertCalcTableRowAsync(TCalcTableRow)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Вставляет строку в таблицу расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCalcTableRowAsync(TCalcTableRow row)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; InsertCalcTableRowAsync(TCalcTableRow row)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>row</code> <span class="xref">TCalcTableRow</span></dt>
-    <dd></dd>
+    <dd><p>Добавляемоя строка.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1__2___0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(`2,``0)">
-  InsertCalcTableRowAsync&lt;T&gt;(TCalcTable, T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L59"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCalcTableRowAsync&lt;T&gt;(TCalcTable calcTable, T row) where T : class, TCalcTableRow</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
-    <dt><code>row</code> <span class="xref">T</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_InsertCalcTableRowAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.InsertCalcTableRowAsync``1(``0)">
-  InsertCalcTableRowAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L53"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertCalcTableRowAsync&lt;T&gt;(T row) where T : TCalcTableRow</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>row</code> <span class="xref">T</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -916,10 +883,11 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTableRowsChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableRow__" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTableRowsChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow})">
   OnCalcTableRowsChanged(RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTableRow&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Вызывает событие изменения строк в таблице расчетов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -929,7 +897,8 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>args</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html">RepositoryItemsChangedEventArgs</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html">ICalculationRepository</a>, <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html">ICalcTableRow</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Параметры события.</p>
+</dd>
   </dl>
 
 
@@ -947,10 +916,11 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_OnCalcTablesChanged_ParmaGIS_Modules_Data_Space_RepositoryItemsChangedEventArgs_ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable__" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.OnCalcTablesChanged(ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs{ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository,ParmaGIS.Modules.Data.Space.Calculation.ICalcTable})">
   OnCalcTablesChanged(RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTable&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Вызывает событие изменения таблицы расчета.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -960,7 +930,8 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>args</code> <a class="xref" href="ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs-2.html">RepositoryItemsChangedEventArgs</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html">ICalculationRepository</a>, <a class="xref" href="ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html">ICalcTable</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Параметры события.</p>
+</dd>
   </dl>
 
 
@@ -978,25 +949,27 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableAsync__2_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableAsync(`2)">
   RemoveCalcTableAsync(TCalcTable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L130"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Удаляет таблицу расчетов из репозитория.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task RemoveCalcTableAsync(TCalcTable calcTable)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; RemoveCalcTableAsync(TCalcTable calcTable)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTable</code> <span class="xref">TCalcTable</span></dt>
-    <dd></dd>
+    <dd><p>Удаляемая таблица расчета.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1014,69 +987,30 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__3_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync(`3)">
   RemoveCalcTableRowAsync(TCalcTableRow)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Удаляет строку из репозитория.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task RemoveCalcTableRowAsync(TCalcTableRow calcTableRow)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; RemoveCalcTableRowAsync(TCalcTableRow calcTableRow)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>calcTableRow</code> <span class="xref">TCalcTableRow</span></dt>
-    <dd></dd>
+    <dd><p>Удаляемая строка.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_RemoveCalcTableRowAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.RemoveCalcTableRowAsync``1(``0)">
-  RemoveCalcTableRowAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L60"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task RemoveCalcTableRowAsync&lt;T&gt;(T calcTableRow) where T : class, TCalcTableRow</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>calcTableRow</code> <span class="xref">T</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -1091,20 +1025,21 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_SaveChangesAsync" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.SaveChangesAsync">
   SaveChangesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L195"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Сохраняет изменения в источник.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task SaveChangesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; SaveChangesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1125,14 +1060,15 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTableRowsChanged" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTableRowsChanged">
   CalcTableRowsChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Происходит при изменении строк таблиц расчета в репозитории.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler&lt;RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTableRow&gt;&gt; CalcTableRowsChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTableRow&gt;&gt;? CalcTableRowsChanged</code></pre>
   </div>
 
 
@@ -1155,14 +1091,15 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 
   <h3 id="ParmaGIS_Modules_Data_Space_Calculation_CalculationRepositoryBase_4_CalcTablesChanged" data-uid="ParmaGIS.Modules.Data.Space.Calculation.CalculationRepositoryBase`4.CalcTablesChanged">
   CalcTablesChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Происходит при изменении таблиц расчета в репозитории.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler&lt;RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTable&gt;&gt; CalcTablesChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;RepositoryItemsChangedEventArgs&lt;ICalculationRepository, ICalcTable&gt;&gt;? CalcTablesChanged</code></pre>
   </div>
 
 
@@ -1186,7 +1123,7 @@ Class CalculationRepositoryBase&lt;TObjectId, TCalcTableType, TCalcTable, TCalcT
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Calculation/CalculationRepositoryBase.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

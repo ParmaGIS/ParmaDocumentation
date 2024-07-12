@@ -17,15 +17,17 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StorageProviderException
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 10
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Представляет ошибку провайдера хранилища <xref href="ParmaGIS.Core.Storage.StorageProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public class StorageProviderException : Exception, ISerializable'
     content.vb: Public Class StorageProviderException Inherits Exception Implements ISerializable
@@ -66,26 +68,32 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 12
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Storage.StorageProviderException" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public StorageProviderException(string? message, string typeName, IContainer container, Exception? innerException)
     parameters:
     - id: message
       type: System.String
+      description: Сообщение ошибки.
     - id: typeName
       type: System.String
+      description: Название типа, с которым связан контейнер, в котором возникло исключение.
     - id: container
       type: ParmaGIS.Core.Storage.IContainer
+      description: Контейнер, в котором произошло исключение.
     - id: innerException
       type: System.Exception
+      description: Внутренне исключение.
     content.vb: Public Sub New(message As String, typeName As String, container As IContainer, innerException As Exception)
   overload: ParmaGIS.Core.Storage.StorageProviderException.#ctor*
   nameWithType.vb: StorageProviderException.New(String, String, IContainer, Exception)
@@ -104,15 +112,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TypeName
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 18
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает название типа, с которым свящан контейнер.
+  example: []
   syntax:
     content: public string TypeName { get; }
     parameters: []
@@ -133,15 +143,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Container
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 19
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProviderException.cs
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает контейнер, в котором произошла ошибка.
+  example: []
   syntax:
     content: public IContainer Container { get; }
     parameters: []
@@ -150,6 +162,31 @@ items:
     content.vb: Public ReadOnly Property Container As IContainer
   overload: ParmaGIS.Core.Storage.StorageProviderException.Container*
 references:
+- uid: ParmaGIS.Core.Storage.StorageProvider`1
+  commentId: T:ParmaGIS.Core.Storage.StorageProvider`1
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html
+  name: StorageProvider<T>
+  nameWithType: StorageProvider<T>
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>
+  nameWithType.vb: StorageProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T)
+  name.vb: StorageProvider(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1
+    name: StorageProvider
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1
+    name: StorageProvider
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Storage
   commentId: N:ParmaGIS.Core.Storage
   href: ParmaGIS.html
@@ -602,6 +639,13 @@ references:
     name: Serialization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+- uid: ParmaGIS.Core.Storage.StorageProviderException
+  commentId: T:ParmaGIS.Core.Storage.StorageProviderException
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.StorageProviderException.html
+  name: StorageProviderException
+  nameWithType: StorageProviderException
+  fullName: ParmaGIS.Core.Storage.StorageProviderException
 - uid: ParmaGIS.Core.Storage.StorageProviderException.#ctor*
   commentId: Overload:ParmaGIS.Core.Storage.StorageProviderException.#ctor
   href: ParmaGIS.Core.Storage.StorageProviderException.html#ParmaGIS_Core_Storage_StorageProviderException__ctor_System_String_System_String_ParmaGIS_Core_Storage_IContainer_System_Exception_

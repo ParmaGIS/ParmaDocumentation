@@ -5,6 +5,7 @@ items:
   id: ParameterMeta
   parent: ParmaGIS.Core.Meta.Objects
   children:
+  - ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes
   - ParmaGIS.Core.Meta.Objects.ParameterMeta.Name
   - ParmaGIS.Core.Meta.Objects.ParameterMeta.ParameterInfo
   - ParmaGIS.Core.Meta.Objects.ParameterMeta.ParameterType
@@ -22,10 +23,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterMeta
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ParameterMeta.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Представляет метаданные параметра.
+  example: []
   syntax:
     content: 'public class ParameterMeta : IItemInfo'
     content.vb: Public Class ParameterMeta Implements IItemInfo
@@ -59,10 +62,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterInfo
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ParameterMeta.cs
-    startLine: 9
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает информацию о параметре.
+  example: []
   syntax:
     content: public ParameterInfo ParameterInfo { get; }
     parameters: []
@@ -88,10 +93,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ParameterMeta.cs
-    startLine: 16
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает название парамтреа.
   example: []
   syntax:
     content: public string Name { get; }
@@ -120,10 +126,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ParameterMeta.cs
-    startLine: 17
+    startLine: 38
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает тип параметра.
+  example: []
   syntax:
     content: public Type ParameterType { get; }
     parameters: []
@@ -131,6 +139,37 @@ items:
       type: System.Type
     content.vb: Public ReadOnly Property ParameterType As Type
   overload: ParmaGIS.Core.Meta.Objects.ParameterMeta.ParameterType*
+- uid: ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes
+  commentId: P:ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes
+  id: Attributes
+  parent: ParmaGIS.Core.Meta.Objects.ParameterMeta
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: ParameterMeta.Attributes
+  fullName: ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Meta/Objects/ParameterMeta.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Attributes
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/ParameterMeta.cs
+    startLine: 43
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает атрибуты параметра.
+  example: []
+  syntax:
+    content: public AttributesCollection Attributes { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.Core.Meta.Objects.AttributesCollection
+    content.vb: Public ReadOnly Property Attributes As AttributesCollection
+  overload: ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes*
 references:
 - uid: ParmaGIS.Core.Meta.Objects
   commentId: N:ParmaGIS.Core.Meta.Objects
@@ -523,3 +562,16 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
+- uid: ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes*
+  commentId: Overload:ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes
+  href: ParmaGIS.Core.Meta.Objects.ParameterMeta.html#ParmaGIS_Core_Meta_Objects_ParameterMeta_Attributes
+  name: Attributes
+  nameWithType: ParameterMeta.Attributes
+  fullName: ParmaGIS.Core.Meta.Objects.ParameterMeta.Attributes
+- uid: ParmaGIS.Core.Meta.Objects.AttributesCollection
+  commentId: T:ParmaGIS.Core.Meta.Objects.AttributesCollection
+  parent: ParmaGIS.Core.Meta.Objects
+  href: ParmaGIS.Core.Meta.Objects.AttributesCollection.html
+  name: AttributesCollection
+  nameWithType: AttributesCollection
+  fullName: ParmaGIS.Core.Meta.Objects.AttributesCollection

@@ -72,28 +72,28 @@ items:
         items:
         - uid: ParmaGIS.Core.Meta.Objects.AttributesCollection
           name: AttributesCollection
-        - uid: ParmaGIS.Core.Meta.Objects.ConstructorCollection
-          name: ConstructorCollection
         - uid: ParmaGIS.Core.Meta.Objects.ConstructorMeta
           name: ConstructorMeta
-        - uid: ParmaGIS.Core.Meta.Objects.ParameterCatalog
-          name: ParameterCatalog
+        - uid: ParmaGIS.Core.Meta.Objects.ConstructorMetaCollection
+          name: ConstructorMetaCollection
+        - uid: ParmaGIS.Core.Meta.Objects.MethodMeta
+          name: MethodMeta
+        - uid: ParmaGIS.Core.Meta.Objects.MethodMetaCollection
+          name: MethodMetaCollection
         - uid: ParmaGIS.Core.Meta.Objects.ParameterMeta
           name: ParameterMeta
+        - uid: ParmaGIS.Core.Meta.Objects.ParameterMetaCatalog
+          name: ParameterMetaCatalog
+        - uid: ParmaGIS.Core.Meta.Objects.PropertyMeta
+          name: PropertyMeta
+        - uid: ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog
+          name: PropertyMetaCatalog
         - uid: ParmaGIS.Core.Meta.Objects.TypeMeta
           name: TypeMeta
       - uid: ParmaGIS.Core.Meta.MetaCatalog
         name: MetaCatalog
       - uid: ParmaGIS.Core.Meta.MetaManager
         name: MetaManager
-      - uid: ParmaGIS.Core.Meta.MethodMeta
-        name: MethodMeta
-      - uid: ParmaGIS.Core.Meta.MethodMetaCollection
-        name: MethodMetaCollection
-      - uid: ParmaGIS.Core.Meta.PropertyMeta
-        name: PropertyMeta
-      - uid: ParmaGIS.Core.Meta.PropertyMetaCatalog
-        name: PropertyMetaCatalog
     - uid: ParmaGIS.Core.Modularity
       name: Modularity
       items:
@@ -124,8 +124,8 @@ items:
         name: IModuleInfo
       - uid: ParmaGIS.Core.Modularity.IModuleManager
         name: IModuleManager
-      - uid: ParmaGIS.Core.Modularity.ModuleExtensions
-        name: ModuleExtensions
+      - uid: ParmaGIS.Core.Modularity.ModuleManagerExtensions
+        name: ModuleManagerExtensions
       - uid: ParmaGIS.Core.Modularity.ModuleState
         name: ModuleState
     - uid: ParmaGIS.Core.Serviceability
@@ -178,10 +178,10 @@ items:
         name: StorageChangedAction
       - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs
         name: StorageChangedEventArgs
-      - uid: ParmaGIS.Core.Storage.StorageProvider2`1
-        name: StorageProvider2<T>
       - uid: ParmaGIS.Core.Storage.StorageProviderException
         name: StorageProviderException
+      - uid: ParmaGIS.Core.Storage.StorageProvider`1
+        name: StorageProvider<T>
     - uid: ParmaGIS.Core.UI
       name: UI
       items:
@@ -225,12 +225,12 @@ items:
           name: ButtonResult
         - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase
           name: DialogAwareBase
+        - uid: ParmaGIS.Core.UI.Dialog.DialogManagerExtesions
+          name: DialogManagerExtesions
         - uid: ParmaGIS.Core.UI.Dialog.DialogParameters
           name: DialogParameters
         - uid: ParmaGIS.Core.UI.Dialog.DialogResult
           name: DialogResult
-        - uid: ParmaGIS.Core.UI.Dialog.DialogServiceExtesions
-          name: DialogServiceExtesions
         - uid: ParmaGIS.Core.UI.Dialog.DialogState
           name: DialogState
         - uid: ParmaGIS.Core.UI.Dialog.IDialogAware
@@ -404,6 +404,8 @@ items:
         items:
         - uid: ParmaGIS.Core.Utilities.Extensions.DateTimeExtensions
           name: DateTimeExtensions
+        - uid: ParmaGIS.Core.Utilities.Extensions.StringExtensions
+          name: StringExtensions
       - uid: ParmaGIS.Core.Utilities.Factory
         name: Factory
         items:
@@ -486,9 +488,35 @@ items:
           name: IDataBaseProvider
         - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
           name: IDataBaseServerConnection
+      - uid: ParmaGIS.Modules.Data.DataSource
+        name: DataSource
+        items:
+        - uid: ParmaGIS.Modules.Data.DataSource.IDataSource
+          name: IDataSource
+        - uid: ParmaGIS.Modules.Data.DataSource.IDataSource`1
+          name: IDataSource<T>
       - uid: ParmaGIS.Modules.Data.Schema
         name: Schema
         items:
+        - uid: ParmaGIS.Modules.Data.Schema.Attributes
+          name: Attributes
+          items:
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.ForeignKeyAttribute
+            name: ForeignKeyAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.HasFieldAttribute
+            name: HasFieldAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.HasOneWithOneAttribute
+            name: HasOneWithOneAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.KeyAttribute
+            name: KeyAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.NotMappedAttribute
+            name: NotMappedAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.RequiredAttribute
+            name: RequiredAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.WithEntityAttribute
+            name: WithEntityAttribute
+          - uid: ParmaGIS.Modules.Data.Schema.Attributes.WithPropertyAttribute
+            name: WithPropertyAttribute
         - uid: ParmaGIS.Modules.Data.Schema.Helpers
           name: Helpers
           items:
@@ -526,20 +554,8 @@ items:
               name: NavigationPropertyBridgeSerializer
             - uid: ParmaGIS.Modules.Data.Schema.Helpers.BridgeSerializing.ValuePropertyBridgeSerializer
               name: ValuePropertyBridgeSerializer
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.ForeignKeyAttribute
-            name: ForeignKeyAttribute
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.HasFieldAttribute
-            name: HasFieldAttribute
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.HasOneWithOneAttribute
-            name: HasOneWithOneAttribute
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.KeyAttribute
-            name: KeyAttribute
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.NotMappedAttribute
-            name: NotMappedAttribute
           - uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
             name: RelativeAttribute
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.RequiredAttribute
-            name: RequiredAttribute
           - uid: ParmaGIS.Modules.Data.Schema.Helpers.SchemeGenerator
             name: SchemeGenerator
           - uid: ParmaGIS.Modules.Data.Schema.Helpers.SchemeGenerator.DataScheme
@@ -552,10 +568,6 @@ items:
             name: SchemeGenerator.Relation
           - uid: ParmaGIS.Modules.Data.Schema.Helpers.SchemeGenerator.SpaceScheme
             name: SchemeGenerator.SpaceScheme
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.WithEntityAttribute
-            name: WithEntityAttribute
-          - uid: ParmaGIS.Modules.Data.Schema.Helpers.WithPropertyAttribute
-            name: WithPropertyAttribute
         - uid: ParmaGIS.Modules.Data.Schema.IDataScheme
           name: IDataScheme
         - uid: ParmaGIS.Modules.Data.Schema.IEntityScheme
@@ -678,6 +690,12 @@ items:
           name: ISpaceBuilder
         - uid: ParmaGIS.Modules.Data.Space.ISpaceObject
           name: ISpaceObject
+        - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+          name: RepoResponse
+        - uid: ParmaGIS.Modules.Data.Space.RepoResponseResult
+          name: RepoResponseResult
+        - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+          name: RepoResponse<T>
         - uid: ParmaGIS.Modules.Data.Space.RepositoryItemsChangedEventArgs`2
           name: RepositoryItemsChangedEventArgs<TRep, TItem>
       - uid: ParmaGIS.Modules.Data.Storages
@@ -828,6 +846,8 @@ items:
           name: ParmaCatalogRepository
         - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
           name: ParmaDefaultCatalogItem
+        - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
+          name: ParmaDefaultCatalogItemWithShortName
         - uid: ParmaGIS.Modules.Parma.Space.Catalog.PassabilityEvaluation
           name: PassabilityEvaluation
         - uid: ParmaGIS.Modules.Parma.Space.Catalog.PastureType
@@ -890,6 +910,8 @@ items:
           name: UndergrowthDensity
         - uid: ParmaGIS.Modules.Parma.Space.Catalog.UndergrowthReliability
           name: UndergrowthReliability
+        - uid: ParmaGIS.Modules.Parma.Space.Catalog.UnitMeasure
+          name: UnitMeasure
         - uid: ParmaGIS.Modules.Parma.Space.Catalog.ViewableEvaluation
           name: ViewableEvaluation
         - uid: ParmaGIS.Modules.Parma.Space.Catalog.WoodLayerType
@@ -1003,6 +1025,13 @@ items:
             name: ParmaNodeLoader
           - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand
             name: Stand
+      - uid: ParmaGIS.Modules.Parma.Space.DataSource
+        name: DataSource
+        items:
+        - uid: ParmaGIS.Modules.Parma.Space.DataSource.ParmaDataSource
+          name: ParmaDataSource
+        - uid: ParmaGIS.Modules.Parma.Space.DataSource.ParmaDataSource`1
+          name: ParmaDataSource<T>
       - uid: ParmaGIS.Modules.Parma.Space.Internals.NameConverters
         name: Internals.NameConverters
         items:
@@ -1033,6 +1062,8 @@ items:
           name: TreeSpeciesSettings
         - uid: ParmaGIS.Modules.Parma.Space.Settings.TreeSpeciesTypeSettings
           name: TreeSpeciesTypeSettings
+      - uid: ParmaGIS.Modules.Parma.Space.GeometryHelper
+        name: GeometryHelper
       - uid: ParmaGIS.Modules.Parma.Space.IParmaObject
         name: IParmaObject
       - uid: ParmaGIS.Modules.Parma.Space.ParmaDAL
@@ -1252,6 +1283,10 @@ items:
               name: OpenExplorerNodeContextAction
             - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ContextActions.OpenExplorerNodeContextValueAction
               name: OpenExplorerNodeContextValueAction
+            - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ContextActions.OpenSelectionNodesContextAction
+              name: OpenSelectionNodesContextAction
+            - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ContextActions.SaveNodesToSelectionContextAction
+              name: SaveNodesToSelectionContextAction
           - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
             name: ObjectExplorer
             items:
@@ -1265,16 +1300,33 @@ items:
             - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
               name: NodeTools
               items:
+              - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToLeavesTool
+                name: CountSelectedChildrenToLeavesTool
               - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenTool
                 name: CountSelectedChildrenTool
               - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView
                 name: CountSelectedChildrenToolView
+              - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesTool
+                name: CountSelectedChildrenWithToLeavesTool
+              - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+                name: CountSelectedChildrenWithToLeavesToolView
               - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool
                 name: SelectNodeTool
               - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeToolView
                 name: SelectNodeToolView
+              - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs
+                name: SelectionChangedEventArgs
+              - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SimpleSelectNodeTool
+                name: SimpleSelectNodeTool
+              - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SimpleSelectNodeToolView
+                name: SimpleSelectNodeToolView
             - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.RemoveSpaceAction
               name: RemoveSpaceAction
+        - uid: ParmaGIS.WPF.Modules.Data.UI.Converters
+          name: Converters
+          items:
+          - uid: ParmaGIS.WPF.Modules.Data.UI.Converters.ConnectionStringToTitle
+            name: ConnectionStringToTitle
         - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs
           name: Dialogs
           items:
@@ -1290,6 +1342,8 @@ items:
               name: EditBridgesDialogResult
             - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.ViewModels.FillDataTableDialogViewModel
               name: FillDataTableDialogViewModel
+            - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.ViewModels.NotProcessedNodesDialogViewModel
+              name: NotProcessedNodesDialogViewModel
           - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.Views
             name: Views
             items:
@@ -1297,6 +1351,8 @@ items:
               name: EditBridgesDialogView
             - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.Views.FillDataTableDialogView
               name: FillDataTableDialogView
+            - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.Views.NotProcessdNodesDialogView
+              name: NotProcessdNodesDialogView
             - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.Views.SelectServerDialogView
               name: SelectServerDialogView
           - uid: ParmaGIS.WPF.Modules.Data.UI.Dialogs.DialogServiceExtensions
@@ -1343,6 +1399,17 @@ items:
             name: RulesObserver
           - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
             name: RulesObserver.RuleContext<TProperty>
+        - uid: ParmaGIS.WPF.Modules.Data.UI.Selection
+          name: Selection
+          items:
+          - uid: ParmaGIS.WPF.Modules.Data.UI.Selection.ISelectionProvider
+            name: ISelectionProvider
+          - uid: ParmaGIS.WPF.Modules.Data.UI.Selection.SelectionFile
+            name: SelectionFile
+          - uid: ParmaGIS.WPF.Modules.Data.UI.Selection.SelectionManager
+            name: SelectionManager
+          - uid: ParmaGIS.WPF.Modules.Data.UI.Selection.SelectionSource
+            name: SelectionSource
         - uid: ParmaGIS.WPF.Modules.Data.UI.ServiceProviderExtensions
           name: ServiceProviderExtensions
         - uid: ParmaGIS.WPF.Modules.Data.UI.WPFDataModuleDependencyAttribute
@@ -1412,16 +1479,18 @@ items:
         - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views
           name: Views
           items:
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel
+            name: ColumnGroupViewModel
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnViewModel
             name: ColumnViewModel
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterGroupViewModel
+            name: FilterGroupViewModel
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow
             name: FilterSelectorWindow
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterViewModel
             name: FilterViewModel
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupEditToolView
             name: GroupEditToolView
-          - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel
-            name: GroupViewModel
         - uid: ParmaGIS.WPF.Modules.GroupEditTool.GroupEditToolModule
           name: GroupEditToolModule
       - uid: ParmaGIS.WPF.Modules.LoggerTool
@@ -1583,11 +1652,6 @@ items:
       - uid: ParmaGIS.WPF.Modules.ObjectObserverTool
         name: ObjectObserverTool
         items:
-        - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Internals
-          name: Internals
-          items:
-          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Internals.ContextMenuItem
-            name: ContextMenuItem
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
           name: Nodes
           items:
@@ -1608,6 +1672,13 @@ items:
             name: INodeTool
           - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView
             name: INodeToolView
+        - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
+          name: ViewModels
+          items:
+          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager
+            name: IObjectObserverManager
+          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult
+            name: SearchResult
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Views
           name: Views
           items:
@@ -1691,16 +1762,24 @@ items:
                 - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings
                   name: CatalogSettings
                   items:
+                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView
+                    name: BonitetClassSettingsCardView
                   - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.DefaultCatalogSettingsCardView
                     name: DefaultCatalogSettingsCardView
-                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.ForestGroupSettingsCardView
-                    name: ForestGroupSettingsCardView
+                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.MunicipalAreaSettingsCardView
+                    name: MunicipalAreaSettingsCardView
+                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.OrganizationSettingsCardView
+                    name: OrganizationSettingsCardView
                   - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.OriginSettingsCardView
                     name: OriginSettingsCardView
+                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.TaxatorSettingsCardView
+                    name: TaxatorSettingsCardView
                   - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.TreeSpeciesSettingsCardView
                     name: TreeSpeciesSettingsCardView
                   - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.TreeSpeciesTypeSettingsCardView
                     name: TreeSpeciesTypeSettingsCardView
+                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.UnitMeasureSettingsCardView
+                    name: UnitMeasureSettingsCardView
                 - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.DepartmentSettings
                   name: DepartmentSettings
                   items:
@@ -1747,6 +1826,10 @@ items:
               name: AddParmaSpaceNodeTool
             - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectObserver.NodeTools.AddParmaSpaceNodeToolView
               name: AddParmaSpaceNodeToolView
+            - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectObserver.NodeTools.CountSelectedStandsNodeTool
+              name: CountSelectedStandsNodeTool
+            - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectObserver.NodeTools.CountSelectedStandsNodeToolView
+              name: CountSelectedStandsNodeToolView
         - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls
           name: Controls
           items:
@@ -1763,6 +1846,8 @@ items:
             name: CatalogItemFieldToValue
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.FieldDataTypeTemplateSelector
             name: FieldDataTypeTemplateSelector
+          - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.GenerateToolTipForLayoutProperty
+            name: GenerateToolTipForLayoutProperty
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.GetCalcValue
             name: GetCalcValue
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.GetErrorsList
@@ -1771,6 +1856,8 @@ items:
             name: LoadDataTemplateSelector
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.SearchWoodLayerOnType
             name: SearchWoodLayerOnType
+          - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.ShowFirstWoodLayerRow
+            name: ShowFirstWoodLayerRow
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.StringComparerConverter
             name: StringComparerConverter
         - uid: ParmaGIS.WPF.Modules.Parma.UI.Utilities
@@ -2007,10 +2094,14 @@ items:
           name: GridColumnSpringConverter
         - uid: ParmaGIS.WPF.UI.Converters.IconSourceElementConverter
           name: IconSourceElementConverter
+        - uid: ParmaGIS.WPF.UI.Converters.IfEqualsThenValue
+          name: IfEqualsThenValue
         - uid: ParmaGIS.WPF.UI.Converters.IsNullToVisible
           name: IsNullToVisible
         - uid: ParmaGIS.WPF.UI.Converters.KeyToValueFromDictionaryConverter
           name: KeyToValueFromDictionaryConverter
+        - uid: ParmaGIS.WPF.UI.Converters.MultiValueToStringConverter
+          name: MultiValueToStringConverter
         - uid: ParmaGIS.WPF.UI.Converters.ObjectToVisabilityConverter
           name: ObjectToVisabilityConverter
       - uid: ParmaGIS.WPF.UI.Extensions
@@ -2111,6 +2202,8 @@ items:
         - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions
           name: ControlExtensions
           items:
+          - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
+            name: ControlExtensions
           - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
             name: ItemsControlExtensions
         - uid: ParmaGIS.WPF.UI.Utilities.CommandMode

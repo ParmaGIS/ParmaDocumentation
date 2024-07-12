@@ -77,6 +77,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возникает когда подключение было изменено.
   example: []
   syntax:
     content: public event EventHandler ConnectionChanged
@@ -170,6 +171,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает подключение к базе данных.
   example: []
   syntax:
     content: public string ConnectionString { get; set; }
@@ -202,6 +204,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает имя провайдера базы данных.
   example: []
   syntax:
     content: public string Name { get; }
@@ -378,16 +381,20 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Выполняет запрос к базе данных и заполняет таблицу, если это возможно.
   example: []
   syntax:
     content: public int ExecuteRequest(string request, DataTable table)
     parameters:
     - id: request
       type: System.String
+      description: Текстовый запрос.
     - id: table
       type: System.Data.DataTable
+      description: Результирующая таблица.
     return:
       type: System.Int32
+      description: Количество измененных строк.
     content.vb: Public Function ExecuteRequest(request As String, table As DataTable) As Integer
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.ExecuteRequest*
   implements:
@@ -417,11 +424,13 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает схему базы данных.
   example: []
   syntax:
     content: public IDataScheme GetSchema()
     return:
       type: ParmaGIS.Modules.Data.Schema.IDataScheme
+      description: Схема базы данных.
     content.vb: Public Function GetSchema() As IDataScheme
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.GetSchema*
   implements:
@@ -448,18 +457,23 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Загружает таблицу по ее названию.
   example: []
   syntax:
     content: public DataTable LoadTable(string tableName, int? limit = null, int? offset = null)
     parameters:
     - id: tableName
       type: System.String
+      description: название таблицы.
     - id: limit
       type: System.Nullable{System.Int32}
+      description: Количество строк, которые нужно выбрать.
     - id: offset
       type: System.Nullable{System.Int32}
+      description: Количество строк которые нужно пропустить.
     return:
       type: System.Data.DataTable
+      description: <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> с результатом запроса.
     content.vb: Public Function LoadTable(tableName As String, limit As Integer? = Nothing, offset As Integer? = Nothing) As DataTable
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.LoadTable*
   implements:
@@ -489,12 +503,14 @@ items:
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Обновляет данные таблицы. На основе названия базы данных, созадет простой <code>Select * From "table_name"</code> запрос и заполняет таблицу.
   example: []
   syntax:
     content: public void UpdateTable(DataTable table)
     parameters:
     - id: table
       type: System.Data.DataTable
+      description: Таблица, данные которой будут обновлены.
     content.vb: Public Sub UpdateTable(table As DataTable)
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.UpdateTable*
   implements:

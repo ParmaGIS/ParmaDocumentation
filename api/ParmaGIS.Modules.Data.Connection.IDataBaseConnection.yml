@@ -25,10 +25,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataBaseConnection
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Представляет контракт взаимодействия с подключением к базе данных.
+  example: []
   syntax:
     content: public interface IDataBaseConnection
     content.vb: Public Interface IDataBaseConnection
@@ -50,10 +52,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает строку подключения.
+  example: []
   syntax:
     content: string ConnectionString { get; }
     parameters: []
@@ -79,16 +83,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DataBaseName
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 7
+    startLine: 17
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает название базы данных.
+  example: []
   syntax:
-    content: string DataBaseName { get; set; }
+    content: string DataBaseName { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Property DataBaseName As String
+    content.vb: ReadOnly Property DataBaseName As String
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseConnection.DataBaseName*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseConnection.Address
   commentId: P:ParmaGIS.Modules.Data.Connection.IDataBaseConnection.Address
@@ -108,10 +114,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Address
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 8
+    startLine: 22
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает адрес подключения.
+  example: []
   syntax:
     content: string Address { get; }
     parameters: []
@@ -137,10 +145,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Port
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 9
+    startLine: 27
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает порт подключения.
+  example: []
   syntax:
     content: int Port { get; }
     parameters: []
@@ -166,10 +176,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Password
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 10
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает пароль подключения.
+  example: []
   syntax:
     content: string Password { get; }
     parameters: []
@@ -195,14 +207,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadSchema
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseConnection.cs
-    startLine: 12
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает схему базы данных.
+  example: []
   syntax:
     content: IDataScheme LoadSchema()
     return:
       type: ParmaGIS.Modules.Data.Schema.IDataScheme
+      description: Схема данных.
     content.vb: Function LoadSchema() As IDataScheme
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseConnection.LoadSchema*
 references:

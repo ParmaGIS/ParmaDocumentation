@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ContainerConverter
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/ContainerConverter.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Предоставляет вспомогательные методы для контейнеров хранилища.
+  example: []
   syntax:
     content: public static class ContainerConverter
     content.vb: Public Module ContainerConverter
@@ -56,17 +58,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Serialize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/ContainerConverter.cs
-    startLine: 8
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Сериализует значение в контейнер. Значения свойств <code class="paramref">value</code> будут сохранены в контейнер.
+  example: []
   syntax:
     content: public static void Serialize(object value, IContainer container)
     parameters:
     - id: value
       type: System.Object
+      description: Значение, которое будет сохранено в виде контейнера.
     - id: container
       type: ParmaGIS.Core.Storage.IContainer
+      description: Контейнер, который будет заполнен значениями свойств <code class="paramref">value</code>.
     content.vb: Public Shared Sub Serialize(value As Object, container As IContainer)
   overload: ParmaGIS.Core.Storage.ContainerConverter.Serialize*
   nameWithType.vb: ContainerConverter.Serialize(Object, IContainer)
@@ -90,21 +96,33 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Deserialize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/ContainerConverter.cs
-    startLine: 20
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: >-
+    Десериализует контейнер в значение.
+
+    Значения свойств контейнера, будут установлены в соответствующие свойства экземпляра <code class="paramref">type</code>.
+  example: []
   syntax:
     content: public static object Deserialize(IContainer container, Type type)
     parameters:
     - id: container
       type: ParmaGIS.Core.Storage.IContainer
+      description: Контейнер содержащий значения свойств.
     - id: type
       type: System.Type
+      description: Тип выходного объекта.
     return:
       type: System.Object
+      description: Экземпляр типа <code class="paramref">type</code>.
     content.vb: Public Shared Function Deserialize(container As IContainer, type As Type) As Object
   overload: ParmaGIS.Core.Storage.ContainerConverter.Deserialize*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Возникает, если не удаолсь создать экземпляр типа.
 references:
 - uid: ParmaGIS.Core.Storage
   commentId: N:ParmaGIS.Core.Storage
@@ -386,6 +404,14 @@ references:
   name: IContainer
   nameWithType: IContainer
   fullName: ParmaGIS.Core.Storage.IContainer
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: ParmaGIS.Core.Storage.ContainerConverter.Deserialize*
   commentId: Overload:ParmaGIS.Core.Storage.ContainerConverter.Deserialize
   href: ParmaGIS.Core.Storage.ContainerConverter.html#ParmaGIS_Core_Storage_ContainerConverter_Deserialize_ParmaGIS_Core_Storage_IContainer_System_Type_

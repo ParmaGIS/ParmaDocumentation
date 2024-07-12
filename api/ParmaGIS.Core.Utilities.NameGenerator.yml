@@ -5,7 +5,7 @@ items:
   id: NameGenerator
   parent: ParmaGIS.Core.Utilities
   children:
-  - ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String})
+  - ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
   langs:
   - csharp
   - vb
@@ -37,16 +37,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String})
-  commentId: M:ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String})
-  id: Generate(System.String,System.Collections.Generic.IEnumerable{System.String})
+- uid: ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
+  commentId: M:ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
+  id: Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
   parent: ParmaGIS.Core.Utilities.NameGenerator
   langs:
   - csharp
   - vb
-  name: Generate(string, IEnumerable<string>)
-  nameWithType: NameGenerator.Generate(string, IEnumerable<string>)
-  fullName: ParmaGIS.Core.Utilities.NameGenerator.Generate(string, System.Collections.Generic.IEnumerable<string>)
+  name: Generate(string, IEnumerable<string>, string)
+  nameWithType: NameGenerator.Generate(string, IEnumerable<string>, string)
+  fullName: ParmaGIS.Core.Utilities.NameGenerator.Generate(string, System.Collections.Generic.IEnumerable<string>, string)
   type: Method
   source:
     remote:
@@ -60,19 +60,21 @@ items:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
   syntax:
-    content: public static string Generate(string prefixTemplate, IEnumerable<string> existNames)
+    content: public static string Generate(string prefixTemplate, IEnumerable<string> existNames, string separator = " ")
     parameters:
     - id: prefixTemplate
       type: System.String
     - id: existNames
       type: System.Collections.Generic.IEnumerable{System.String}
+    - id: separator
+      type: System.String
     return:
       type: System.String
-    content.vb: Public Shared Function Generate(prefixTemplate As String, existNames As IEnumerable(Of String)) As String
+    content.vb: Public Shared Function Generate(prefixTemplate As String, existNames As IEnumerable(Of String), separator As String = " ") As String
   overload: ParmaGIS.Core.Utilities.NameGenerator.Generate*
-  nameWithType.vb: NameGenerator.Generate(String, IEnumerable(Of String))
-  fullName.vb: ParmaGIS.Core.Utilities.NameGenerator.Generate(String, System.Collections.Generic.IEnumerable(Of String))
-  name.vb: Generate(String, IEnumerable(Of String))
+  nameWithType.vb: NameGenerator.Generate(String, IEnumerable(Of String), String)
+  fullName.vb: ParmaGIS.Core.Utilities.NameGenerator.Generate(String, System.Collections.Generic.IEnumerable(Of String), String)
+  name.vb: Generate(String, IEnumerable(Of String), String)
 references:
 - uid: ParmaGIS.Core.Utilities
   commentId: N:ParmaGIS.Core.Utilities
@@ -343,7 +345,7 @@ references:
   fullName: System
 - uid: ParmaGIS.Core.Utilities.NameGenerator.Generate*
   commentId: Overload:ParmaGIS.Core.Utilities.NameGenerator.Generate
-  href: ParmaGIS.Core.Utilities.NameGenerator.html#ParmaGIS_Core_Utilities_NameGenerator_Generate_System_String_System_Collections_Generic_IEnumerable_System_String__
+  href: ParmaGIS.Core.Utilities.NameGenerator.html#ParmaGIS_Core_Utilities_NameGenerator_Generate_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_
   name: Generate
   nameWithType: NameGenerator.Generate
   fullName: ParmaGIS.Core.Utilities.NameGenerator.Generate

@@ -22,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IModuleCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Предоставляет методы для взаимодействия с каталогом модулей.
+  example: []
   syntax:
     content: 'public interface IModuleCatalog : IInfoCatalog<IModuleInfo>, IEnumerable<IModuleInfo>, IEnumerable'
     content.vb: Public Interface IModuleCatalog Inherits IInfoCatalog(Of IModuleInfo), IEnumerable(Of IModuleInfo), IEnumerable
@@ -54,21 +56,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
-  summary: Возвращает информацию о модуле <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> по его типу
+  summary: Возвращает информацию о модуле <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> по его типу.
   example: []
   syntax:
     content: IModuleInfo? this[Type moduleType] { get; }
     parameters:
     - id: moduleType
       type: System.Type
-      description: Тип модуля
+      description: Тип модуля.
     return:
       type: ParmaGIS.Core.Modularity.IModuleInfo
-      description: <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модуля
+      description: <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модуля.
     content.vb: ReadOnly Default Property this[](moduleType As Type) As IModuleInfo
   overload: ParmaGIS.Core.Modularity.IModuleCatalog.Item*
   nameWithType.vb: IModuleCatalog.this[](Type)
@@ -92,21 +94,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetAddicted
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
-  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, которые зависят от <code class="paramref">moduleInfo</code>
+  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, которые зависят от <code class="paramref">moduleInfo</code>.
   example: []
   syntax:
     content: IEnumerable<IModuleInfo> GetAddicted(IModuleInfo moduleInfo)
     parameters:
     - id: moduleInfo
       type: ParmaGIS.Core.Modularity.IModuleInfo
-      description: Модуль, для которого производится поиск зависимых модулей
+      description: Модуль, для которого производится поиск зависимых модулей.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}
-      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> зависимых от <code class="paramref">moduleInfo</code> модулей
+      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> зависимых от <code class="paramref">moduleInfo</code> модулей.
     content.vb: Function GetAddicted(moduleInfo As IModuleInfo) As IEnumerable(Of IModuleInfo)
   overload: ParmaGIS.Core.Modularity.IModuleCatalog.GetAddicted*
 - uid: ParmaGIS.Core.Modularity.IModuleCatalog.GetDependencies(ParmaGIS.Core.Modularity.IModuleInfo)
@@ -127,21 +129,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDependencies
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/IModuleCatalog.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
-  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, от которых зависит <code class="paramref">moduleInfo</code>
+  summary: Возвращает <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref> модулей, от которых зависит <code class="paramref">moduleInfo</code>.
   example: []
   syntax:
     content: IEnumerable<IModuleInfo> GetDependencies(IModuleInfo moduleInfo)
     parameters:
     - id: moduleInfo
       type: ParmaGIS.Core.Modularity.IModuleInfo
-      description: Модуль, для которого производится поиск зависимостей
+      description: Модуль, для которого производится поиск зависимостей.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Modularity.IModuleInfo}
-      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref>, от которых зависит <code class="paramref">moduleInfo</code>
+      description: Перечисление <xref href="ParmaGIS.Core.Modularity.IModuleInfo" data-throw-if-not-resolved="false"></xref>, от которых зависит <code class="paramref">moduleInfo</code>.
     content.vb: Function GetDependencies(moduleInfo As IModuleInfo) As IEnumerable(Of IModuleInfo)
   overload: ParmaGIS.Core.Modularity.IModuleCatalog.GetDependencies*
 references:

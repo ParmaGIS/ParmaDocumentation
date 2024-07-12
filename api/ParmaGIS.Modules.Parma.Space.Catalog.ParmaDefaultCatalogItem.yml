@@ -7,6 +7,7 @@ items:
   children:
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Code
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.CompareTo(System.Object)
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Name
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.ToString
   langs:
@@ -45,7 +46,6 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.Condition
   - ParmaGIS.Modules.Parma.Space.Catalog.CopyrightHolder
   - ParmaGIS.Modules.Parma.Space.Catalog.CreatingForestPlantationsMethod
-  - ParmaGIS.Modules.Parma.Space.Catalog.CutType
   - ParmaGIS.Modules.Parma.Space.Catalog.CuttingMethod
   - ParmaGIS.Modules.Parma.Space.Catalog.DamageDegree
   - ParmaGIS.Modules.Parma.Space.Catalog.DeathOrUnsatisfactoryConditionCause
@@ -58,10 +58,8 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.FireHazardClass
   - ParmaGIS.Modules.Parma.Space.Catalog.ForestAreaDegree
   - ParmaGIS.Modules.Parma.Space.Catalog.ForestGroup
-  - ParmaGIS.Modules.Parma.Space.Catalog.ForestGrowthConditionsType
   - ParmaGIS.Modules.Parma.Space.Catalog.ForestInventoryOrg
   - ParmaGIS.Modules.Parma.Space.Catalog.ForestTaxDistrict
-  - ParmaGIS.Modules.Parma.Space.Catalog.ForestType
   - ParmaGIS.Modules.Parma.Space.Catalog.ForestUseKind
   - ParmaGIS.Modules.Parma.Space.Catalog.FunctionalZone
   - ParmaGIS.Modules.Parma.Space.Catalog.GardenCategory
@@ -80,12 +78,11 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.NonWoodSpecies
   - ParmaGIS.Modules.Parma.Space.Catalog.Organization
   - ParmaGIS.Modules.Parma.Space.Catalog.Origin
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
   - ParmaGIS.Modules.Parma.Space.Catalog.PassabilityEvaluation
   - ParmaGIS.Modules.Parma.Space.Catalog.PastureType
   - ParmaGIS.Modules.Parma.Space.Catalog.PlaceAbandonedWood
-  - ParmaGIS.Modules.Parma.Space.Catalog.PlannedOperation
   - ParmaGIS.Modules.Parma.Space.Catalog.PlantationPurpuse
-  - ParmaGIS.Modules.Parma.Space.Catalog.PlotType
   - ParmaGIS.Modules.Parma.Space.Catalog.ProtectionCategory
   - ParmaGIS.Modules.Parma.Space.Catalog.RawMaterialCategory
   - ParmaGIS.Modules.Parma.Space.Catalog.Relief
@@ -94,7 +91,6 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.Seasonality
   - ParmaGIS.Modules.Parma.Space.Catalog.SlopeErosionDegree
   - ParmaGIS.Modules.Parma.Space.Catalog.SlopeErosionType
-  - ParmaGIS.Modules.Parma.Space.Catalog.SlopeExposure
   - ParmaGIS.Modules.Parma.Space.Catalog.SmallArchitectForms
   - ParmaGIS.Modules.Parma.Space.Catalog.SoilPower
   - ParmaGIS.Modules.Parma.Space.Catalog.SoilType
@@ -106,7 +102,6 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.TappingCondition
   - ParmaGIS.Modules.Parma.Space.Catalog.TechVioletion
   - ParmaGIS.Modules.Parma.Space.Catalog.TransportType
-  - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
   - ParmaGIS.Modules.Parma.Space.Catalog.UndergrowthDensity
   - ParmaGIS.Modules.Parma.Space.Catalog.UndergrowthReliability
   - ParmaGIS.Modules.Parma.Space.Catalog.ViewableEvaluation
@@ -119,6 +114,7 @@ items:
   - ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem
   - System.IComparable
   inheritedMembers:
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.Id
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
@@ -190,6 +186,35 @@ items:
       type: System.Nullable{System.Int32}
     content.vb: Public Property Code As Integer?
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Code*
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
+  id: Key
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: ParmaDefaultCatalogItem.Key
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaDefaultCatalogItem.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Key
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaDefaultCatalogItem.cs
+    startLine: 8
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  syntax:
+    content: public int? Key { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Key As Integer?
+  overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.CompareTo(System.Object)
   commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.CompareTo(System.Object)
   id: CompareTo(System.Object)
@@ -208,7 +233,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CompareTo
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaDefaultCatalogItem.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -255,7 +280,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaDefaultCatalogItem.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -371,6 +396,13 @@ references:
   name: IComparable
   nameWithType: IComparable
   fullName: System.IComparable
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogItem_CatalogSpaceName
+  name: CatalogSpaceName
+  nameWithType: ParmaCatalogItem.CatalogSpaceName
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.Id
   commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.Id
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
@@ -1553,6 +1585,12 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaDefaultCatalogItem_Key
+  name: Key
+  nameWithType: ParmaDefaultCatalogItem.Key
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
 - uid: System.ArgumentException
   commentId: T:System.ArgumentException
   isExternal: true

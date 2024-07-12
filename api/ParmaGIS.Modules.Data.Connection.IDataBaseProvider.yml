@@ -32,13 +32,44 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataBaseProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 14
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Представляет контракт взаимодействия с провайдером базы данных.
+  example: []
   syntax:
     content: public interface IDataBaseProvider
     content.vb: Public Interface IDataBaseProvider
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
+  commentId: E:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
+  id: ConnectionChanged
+  parent: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+  langs:
+  - csharp
+  - vb
+  name: ConnectionChanged
+  nameWithType: IDataBaseProvider.ConnectionChanged
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
+  type: Event
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ConnectionChanged
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
+    startLine: 17
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возникает когда подключение было изменено.
+  example: []
+  syntax:
+    content: event EventHandler ConnectionChanged
+    return:
+      type: System.EventHandler
+    content.vb: Event ConnectionChanged As EventHandler
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
   commentId: P:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
   id: Server
@@ -57,10 +88,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Server
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает сервер баз данных текущей базы данных.
+  example: []
   syntax:
     content: IDataBaseServerConnection Server { get; }
     parameters: []
@@ -86,10 +119,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает имя провайдера базы данных.
+  example: []
   syntax:
     content: string Name { get; }
     parameters: []
@@ -115,10 +150,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает подключение к базе данных.
+  example: []
   syntax:
     content: string ConnectionString { get; }
     parameters: []
@@ -144,14 +181,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetSchema
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 19
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает схему базы данных.
+  example: []
   syntax:
     content: IDataScheme GetSchema()
     return:
       type: ParmaGIS.Modules.Data.Schema.IDataScheme
+      description: Схема базы данных.
     content.vb: Function GetSchema() As IDataScheme
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.GetSchema*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.LoadTable(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})
@@ -172,21 +212,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 21
+    startLine: 47
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Загружает таблицу по ее названию.
+  example: []
   syntax:
     content: DataTable LoadTable(string tableName, int? limit = null, int? offset = null)
     parameters:
     - id: tableName
       type: System.String
+      description: название таблицы.
     - id: limit
       type: System.Nullable{System.Int32}
+      description: Количество строк, которые нужно выбрать.
     - id: offset
       type: System.Nullable{System.Int32}
+      description: Количество строк которые нужно пропустить.
     return:
       type: System.Data.DataTable
+      description: <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> с результатом запроса.
     content.vb: Function LoadTable(tableName As String, limit As Integer? = Nothing, offset As Integer? = Nothing) As DataTable
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.LoadTable*
   nameWithType.vb: IDataBaseProvider.LoadTable(String, Integer?, Integer?)
@@ -210,19 +256,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ExecuteRequest
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 22
+    startLine: 54
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Выполняет запрос к базе данных и заполняет таблицу, если это возможно.
+  example: []
   syntax:
     content: int ExecuteRequest(string request, DataTable table)
     parameters:
     - id: request
       type: System.String
+      description: Текстовый запрос.
     - id: table
       type: System.Data.DataTable
+      description: Результирующая таблица.
     return:
       type: System.Int32
+      description: Количество измененных строк.
     content.vb: Function ExecuteRequest(request As String, table As DataTable) As Integer
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ExecuteRequest*
   nameWithType.vb: IDataBaseProvider.ExecuteRequest(String, DataTable)
@@ -246,14 +297,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateDataAdapter
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 24
+    startLine: 60
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Создает адаптер данных для базы данных.
+  example: []
   syntax:
     content: DbDataAdapter CreateDataAdapter()
     return:
       type: System.Data.Common.DbDataAdapter
+      description: <xref href="System.Data.Common.DbDataAdapter" data-throw-if-not-resolved="false"></xref> адаптер данных.
     content.vb: Function CreateDataAdapter() As DbDataAdapter
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand
@@ -274,14 +328,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCommand
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 25
+    startLine: 66
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Создает команду к базе данных.
+  example: []
   syntax:
     content: DbCommand CreateCommand()
     return:
       type: System.Data.Common.DbCommand
+      description: <xref href="System.Data.Common.DbCommand" data-throw-if-not-resolved="false"></xref> команда.
     content.vb: Function CreateCommand() As DbCommand
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder(System.Data.Common.DbDataAdapter)
@@ -302,17 +359,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCommandBuilder
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 26
+    startLine: 73
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Создает автоматического строителя команд. <xref href="System.Data.Common.DbCommandBuilder" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: DbCommandBuilder CreateCommandBuilder(DbDataAdapter dbDataAdapter)
     parameters:
     - id: dbDataAdapter
       type: System.Data.Common.DbDataAdapter
+      description: Адаптер данных, на основе которого будет создан строител команд.
     return:
       type: System.Data.Common.DbCommandBuilder
+      description: Строитель комманд <xref href="System.Data.Common.DbCommandBuilder" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function CreateCommandBuilder(dbDataAdapter As DbDataAdapter) As DbCommandBuilder
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection
@@ -333,14 +394,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateConnection
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 27
+    startLine: 79
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Создает подключение к базе данных.
+  example: []
   syntax:
     content: DbConnection CreateConnection()
     return:
       type: System.Data.Common.DbConnection
+      description: Подключение к базе данных <xref href="System.Data.Common.DbConnection" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function CreateConnection() As DbConnection
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator
@@ -361,14 +425,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateConfigurator
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 28
+    startLine: 85
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Создает настройщик слоя источника данных. <xref href="ParmaGIS.Core.DAL.ISourceLayerConfigurator" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: ISourceLayerConfigurator CreateConfigurator()
     return:
       type: ParmaGIS.Core.DAL.ISourceLayerConfigurator
+      description: Настройщик слоя подключения.
     content.vb: Function CreateConfigurator() As ISourceLayerConfigurator
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.UpdateTable(System.Data.DataTable)
@@ -389,44 +456,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: UpdateTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 29
+    startLine: 91
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Обновляет данные таблицы. На основе названия базы данных, созадет простой <code>Select * From "table_name"</code> запрос и заполняет таблицу.
+  example: []
   syntax:
     content: void UpdateTable(DataTable table)
     parameters:
     - id: table
       type: System.Data.DataTable
+      description: Таблица, данные которой будут обновлены.
     content.vb: Sub UpdateTable(table As DataTable)
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.UpdateTable*
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
-  commentId: E:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
-  id: ConnectionChanged
-  parent: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
-  langs:
-  - csharp
-  - vb
-  name: ConnectionChanged
-  nameWithType: IDataBaseProvider.ConnectionChanged
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionChanged
-  type: Event
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ConnectionChanged
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseProvider.cs
-    startLine: 31
-  assemblies:
-  - ParmaGIS.Modules.Data
-  namespace: ParmaGIS.Modules.Data.Connection
-  syntax:
-    content: event EventHandler ConnectionChanged
-    return:
-      type: System.EventHandler
-    content.vb: Event ConnectionChanged As EventHandler
 references:
 - uid: ParmaGIS.Modules.Data.Connection
   commentId: N:ParmaGIS.Modules.Data.Connection
@@ -466,6 +509,21 @@ references:
   - uid: ParmaGIS.Modules.Data.Connection
     name: Connection
     href: ParmaGIS.Modules.Data.Connection.html
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server*
   commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.Server
   href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_Server
@@ -496,13 +554,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString*
   commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ConnectionString
   href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_ConnectionString
@@ -560,6 +611,14 @@ references:
   - uid: ParmaGIS.Modules.Data.Schema
     name: Schema
     href: ParmaGIS.Modules.Data.Schema.html
+- uid: System.Data.DataTable
+  commentId: T:System.Data.DataTable
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.datatable
+  name: DataTable
+  nameWithType: DataTable
+  fullName: System.Data.DataTable
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.LoadTable*
   commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.LoadTable
   href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_LoadTable_System_String_System_Nullable_System_Int32__System_Nullable_System_Int32__
@@ -589,14 +648,33 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '?'
-- uid: System.Data.DataTable
-  commentId: T:System.Data.DataTable
-  parent: System.Data
+- uid: System.Data
+  commentId: N:System.Data
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.data.datatable
-  name: DataTable
-  nameWithType: DataTable
-  fullName: System.Data.DataTable
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
@@ -625,33 +703,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Data
-  commentId: N:System.Data
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Data
-  nameWithType: System.Data
-  fullName: System.Data
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Data
-    name: Data
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Data
-    name: Data
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ExecuteRequest*
   commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.ExecuteRequest
   href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_ExecuteRequest_System_String_System_Data_DataTable_
@@ -669,12 +720,6 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateDataAdapter
-  name: CreateDataAdapter
-  nameWithType: IDataBaseProvider.CreateDataAdapter
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter
 - uid: System.Data.Common.DbDataAdapter
   commentId: T:System.Data.Common.DbDataAdapter
   parent: System.Data.Common
@@ -683,6 +728,12 @@ references:
   name: DbDataAdapter
   nameWithType: DbDataAdapter
   fullName: System.Data.Common.DbDataAdapter
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateDataAdapter
+  name: CreateDataAdapter
+  nameWithType: IDataBaseProvider.CreateDataAdapter
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateDataAdapter
 - uid: System.Data.Common
   commentId: N:System.Data.Common
   isExternal: true
@@ -720,12 +771,6 @@ references:
     name: Common
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.data.common
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateCommand
-  name: CreateCommand
-  nameWithType: IDataBaseProvider.CreateCommand
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand
 - uid: System.Data.Common.DbCommand
   commentId: T:System.Data.Common.DbCommand
   parent: System.Data.Common
@@ -734,12 +779,12 @@ references:
   name: DbCommand
   nameWithType: DbCommand
   fullName: System.Data.Common.DbCommand
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateCommandBuilder_System_Data_Common_DbDataAdapter_
-  name: CreateCommandBuilder
-  nameWithType: IDataBaseProvider.CreateCommandBuilder
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateCommand
+  name: CreateCommand
+  nameWithType: IDataBaseProvider.CreateCommand
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommand
 - uid: System.Data.Common.DbCommandBuilder
   commentId: T:System.Data.Common.DbCommandBuilder
   parent: System.Data.Common
@@ -748,12 +793,12 @@ references:
   name: DbCommandBuilder
   nameWithType: DbCommandBuilder
   fullName: System.Data.Common.DbCommandBuilder
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateConnection
-  name: CreateConnection
-  nameWithType: IDataBaseProvider.CreateConnection
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateCommandBuilder_System_Data_Common_DbDataAdapter_
+  name: CreateCommandBuilder
+  nameWithType: IDataBaseProvider.CreateCommandBuilder
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateCommandBuilder
 - uid: System.Data.Common.DbConnection
   commentId: T:System.Data.Common.DbConnection
   parent: System.Data.Common
@@ -762,12 +807,12 @@ references:
   name: DbConnection
   nameWithType: DbConnection
   fullName: System.Data.Common.DbConnection
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateConfigurator
-  name: CreateConfigurator
-  nameWithType: IDataBaseProvider.CreateConfigurator
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateConnection
+  name: CreateConnection
+  nameWithType: IDataBaseProvider.CreateConnection
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConnection
 - uid: ParmaGIS.Core.DAL.ISourceLayerConfigurator
   commentId: T:ParmaGIS.Core.DAL.ISourceLayerConfigurator
   parent: ParmaGIS.Core.DAL
@@ -775,6 +820,12 @@ references:
   name: ISourceLayerConfigurator
   nameWithType: ISourceLayerConfigurator
   fullName: ParmaGIS.Core.DAL.ISourceLayerConfigurator
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.html#ParmaGIS_Modules_Data_Connection_IDataBaseProvider_CreateConfigurator
+  name: CreateConfigurator
+  nameWithType: IDataBaseProvider.CreateConfigurator
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.CreateConfigurator
 - uid: ParmaGIS.Core.DAL
   commentId: N:ParmaGIS.Core.DAL
   href: ParmaGIS.html
@@ -811,11 +862,3 @@ references:
   name: UpdateTable
   nameWithType: IDataBaseProvider.UpdateTable
   fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider.UpdateTable
-- uid: System.EventHandler
-  commentId: T:System.EventHandler
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.eventhandler
-  name: EventHandler
-  nameWithType: EventHandler
-  fullName: System.EventHandler

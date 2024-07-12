@@ -19,15 +19,17 @@ items:
   type: Interface
   source:
     remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataBaseServerConnection
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
-    startLine: 5
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
+    startLine: 8
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Представляет контракт взаимодействия с подключением к серверу баз данных.
+  example: []
   syntax:
     content: public interface IDataBaseServerConnection
     content.vb: Public Interface IDataBaseServerConnection
@@ -44,15 +46,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
-    startLine: 7
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает название подключения.
+  example: []
   syntax:
     content: string Name { get; }
     parameters: []
@@ -73,15 +77,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
-    startLine: 8
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
+    startLine: 18
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает описание подключения.
+  example: []
   syntax:
     content: string Description { get; }
     parameters: []
@@ -102,15 +108,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionString
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
-    startLine: 9
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
+    startLine: 23
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает строку подключения к базе данных.
+  example: []
   syntax:
     content: string ConnectionString { get; }
     parameters: []
@@ -131,19 +139,22 @@ items:
   type: Method
   source:
     remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadDataBases
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
-    startLine: 10
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
+    startLine: 29
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Возвращает подключения к базам данных сервера.
+  example: []
   syntax:
     content: Task<IEnumerable<IDataBaseConnection>> LoadDataBases()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{ParmaGIS.Modules.Data.Connection.IDataBaseConnection}}
+      description: Перечисление подключений к базам данных. <xref href="ParmaGIS.Modules.Data.Connection.IDataBaseConnection" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function LoadDataBases() As Task(Of IEnumerable(Of IDataBaseConnection))
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.LoadDataBases*
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider(System.String)
@@ -159,22 +170,26 @@ items:
   type: Method
   source:
     remote:
-      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
+      path: common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateProvider
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServer.cs
-    startLine: 11
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Connection/IDataBaseServerConnection.cs
+    startLine: 36
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Connection
+  summary: Создает провайдер базы данных по строке подключения.
+  example: []
   syntax:
     content: IDataBaseProvider CreateProvider(string connectionString)
     parameters:
     - id: connectionString
       type: System.String
+      description: Строка подключения.
     return:
       type: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+      description: Провайдер базы данных. <xref href="ParmaGIS.Modules.Data.Connection.IDataBaseProvider" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function CreateProvider(connectionString As String) As IDataBaseProvider
   overload: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider*
   nameWithType.vb: IDataBaseServerConnection.CreateProvider(String)
@@ -255,6 +270,13 @@ references:
   name: ConnectionString
   nameWithType: IDataBaseServerConnection.ConnectionString
   fullName: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.ConnectionString
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseConnection
+  commentId: T:ParmaGIS.Modules.Data.Connection.IDataBaseConnection
+  parent: ParmaGIS.Modules.Data.Connection
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseConnection.html
+  name: IDataBaseConnection
+  nameWithType: IDataBaseConnection
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseConnection
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.LoadDataBases*
   commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.LoadDataBases
   href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html#ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection_LoadDataBases
@@ -373,12 +395,6 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider*
-  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider
-  href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html#ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection_CreateProvider_System_String_
-  name: CreateProvider
-  nameWithType: IDataBaseServerConnection.CreateProvider
-  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider
 - uid: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
   commentId: T:ParmaGIS.Modules.Data.Connection.IDataBaseProvider
   parent: ParmaGIS.Modules.Data.Connection
@@ -386,3 +402,9 @@ references:
   name: IDataBaseProvider
   nameWithType: IDataBaseProvider
   fullName: ParmaGIS.Modules.Data.Connection.IDataBaseProvider
+- uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider*
+  commentId: Overload:ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider
+  href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html#ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection_CreateProvider_System_String_
+  name: CreateProvider
+  nameWithType: IDataBaseServerConnection.CreateProvider
+  fullName: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.CreateProvider

@@ -55,7 +55,7 @@ items:
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
-  summary: Возвращает провайдер сервисов <xref href="ParmaGIS.Core.Serviceability.IServiceProvider" data-throw-if-not-resolved="false"></xref>
+  summary: Возвращает провайдер сервисов <xref href="ParmaGIS.Core.Serviceability.IServiceProvider" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: IServiceProvider ServiceProvider { get; }
@@ -82,17 +82,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterTypeFactory
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceManager.cs
-    startLine: 12
+    startLine: 18
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Регистрирует функцию создания для типа.
+  example: []
   syntax:
     content: void RegisterTypeFactory(Type type, Func<object?> factory)
     parameters:
     - id: type
       type: System.Type
+      description: Тип, для которого регистрируется функция создания.
     - id: factory
       type: System.Func{System.Object}
+      description: Функция создания экземпляра типа.
     content.vb: Sub RegisterTypeFactory(type As Type, factory As Func(Of Object))
   overload: ParmaGIS.Core.Serviceability.IServiceManager.RegisterTypeFactory*
   nameWithType.vb: IServiceManager.RegisterTypeFactory(Type, Func(Of Object))
@@ -116,17 +120,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Resolve
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceManager.cs
-    startLine: 14
+    startLine: 25
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Разрешает зависимости типа и создает его экземпляр.
+  example: []
   syntax:
     content: object Resolve(Type type)
     parameters:
     - id: type
       type: System.Type
+      description: Тип, экземпляр которого необходимо создать.
     return:
       type: System.Object
+      description: Экземпляр типа.
     content.vb: Function Resolve(type As Type) As Object
   overload: ParmaGIS.Core.Serviceability.IServiceManager.Resolve*
 references:

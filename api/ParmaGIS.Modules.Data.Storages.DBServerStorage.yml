@@ -20,31 +20,36 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DBServerStorage
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: >-
+    Представляет хранилище подключений к серверам баз данных.
+
+    Данное хранилище обеспечивает хранение элементов между сеансами работы приложения.
+  example: []
   syntax:
-    content: 'public class DBServerStorage : StorageProvider2<IDataBaseServerConnection>, IEnumerable<InstanceContainer<IDataBaseServerConnection>>, IEnumerable, INotifyCollectionChanged'
-    content.vb: Public Class DBServerStorage Inherits StorageProvider2(Of IDataBaseServerConnection) Implements IEnumerable(Of InstanceContainer(Of IDataBaseServerConnection)), IEnumerable, INotifyCollectionChanged
+    content: 'public class DBServerStorage : StorageProvider<IDataBaseServerConnection>, IEnumerable<InstanceContainer<IDataBaseServerConnection>>, IEnumerable, INotifyCollectionChanged'
+    content.vb: Public Class DBServerStorage Inherits StorageProvider(Of IDataBaseServerConnection) Implements IEnumerable(Of InstanceContainer(Of IDataBaseServerConnection)), IEnumerable, INotifyCollectionChanged
   inheritance:
   - System.Object
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
   implements:
   - System.Collections.Generic.IEnumerable{ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}}
   - System.Collections.IEnumerable
   - System.Collections.Specialized.INotifyCollectionChanged
   inheritedMembers:
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.ItemType
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.CollectionChanged
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
-  - ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.ItemType
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.CollectionChanged
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
+  - ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -75,15 +80,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Storages/DBServerStorage.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Storages
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Modules.Data.Storages.DBServerStorage" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public DBServerStorage(IStorage storage)
     parameters:
     - id: storage
       type: ParmaGIS.Core.Storage.IStorage
+      description: Сервис хранилища.
     content.vb: Public Sub New(storage As IStorage)
   overload: ParmaGIS.Modules.Data.Storages.DBServerStorage.#ctor*
   nameWithType.vb: DBServerStorage.New(IStorage)
@@ -139,30 +147,30 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  commentId: T:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  commentId: T:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
   parent: ParmaGIS.Core.Storage
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html
-  name: StorageProvider2<IDataBaseServerConnection>
-  nameWithType: StorageProvider2<IDataBaseServerConnection>
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  name.vb: StorageProvider2(Of IDataBaseServerConnection)
+  definition: ParmaGIS.Core.Storage.StorageProvider`1
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html
+  name: StorageProvider<IDataBaseServerConnection>
+  nameWithType: StorageProvider<IDataBaseServerConnection>
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  name.vb: StorageProvider(Of IDataBaseServerConnection)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1
-    name: StorageProvider2
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1
+    name: StorageProvider
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html
   - name: <
   - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
     name: IDataBaseServerConnection
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: '>'
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1
-    name: StorageProvider2
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1
+    name: StorageProvider
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html
   - name: (
   - name: Of
   - name: " "
@@ -231,31 +239,31 @@ references:
   name: INotifyCollectionChanged
   nameWithType: INotifyCollectionChanged
   fullName: System.Collections.Specialized.INotifyCollectionChanged
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.ItemType
-  commentId: P:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.ItemType
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.ItemType
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_ItemType
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.ItemType
+  commentId: P:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.ItemType
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_ItemType
   name: ItemType
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.ItemType
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.ItemType
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).ItemType
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).ItemType
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+  nameWithType: StorageProvider<IDataBaseServerConnection>.ItemType
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.ItemType
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).ItemType
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).ItemType
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
   name: RegisterType<TItem>(Func<IContainer, IDataBaseServerConnection>, Action<IContainer, IDataBaseServerConnection>)
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.RegisterType<TItem>(Func<IContainer, IDataBaseServerConnection>, Action<IContainer, IDataBaseServerConnection>)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.RegisterType<TItem>(System.Func<ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>, System.Action<ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>)
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).RegisterType(Of TItem)(Func(Of IContainer, IDataBaseServerConnection), Action(Of IContainer, IDataBaseServerConnection))
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).RegisterType(Of TItem)(System.Func(Of ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection), System.Action(Of ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection))
+  nameWithType: StorageProvider<IDataBaseServerConnection>.RegisterType<TItem>(Func<IContainer, IDataBaseServerConnection>, Action<IContainer, IDataBaseServerConnection>)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.RegisterType<TItem>(System.Func<ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>, System.Action<ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>)
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).RegisterType(Of TItem)(Func(Of IContainer, IDataBaseServerConnection), Action(Of IContainer, IDataBaseServerConnection))
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).RegisterType(Of TItem)(System.Func(Of ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection), System.Action(Of ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection))
   name.vb: RegisterType(Of TItem)(Func(Of IContainer, IDataBaseServerConnection), Action(Of IContainer, IDataBaseServerConnection))
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
     name: RegisterType
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
   - name: <
   - name: TItem
   - name: '>'
@@ -292,9 +300,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
     name: RegisterType
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
   - name: (
   - name: Of
   - name: " "
@@ -336,86 +344,86 @@ references:
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.CollectionChanged
-  commentId: E:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.CollectionChanged
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.CollectionChanged
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_CollectionChanged
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.CollectionChanged
+  commentId: E:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.CollectionChanged
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_CollectionChanged
   name: CollectionChanged
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.CollectionChanged
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.CollectionChanged
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).CollectionChanged
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).CollectionChanged
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.Add(`0)
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_
+  nameWithType: StorageProvider<IDataBaseServerConnection>.CollectionChanged
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.CollectionChanged
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).CollectionChanged
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).CollectionChanged
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
   name: Add(IDataBaseServerConnection)
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.Add(IDataBaseServerConnection)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).Add(IDataBaseServerConnection)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  nameWithType: StorageProvider<IDataBaseServerConnection>.Add(IDataBaseServerConnection)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).Add(IDataBaseServerConnection)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
     name: Add
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
   - name: (
   - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
     name: IDataBaseServerConnection
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Add(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
     name: Add
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
   - name: (
   - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
     name: IDataBaseServerConnection
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(`0)
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
   name: Remove(IDataBaseServerConnection)
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.Remove(IDataBaseServerConnection)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).Remove(IDataBaseServerConnection)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  nameWithType: StorageProvider<IDataBaseServerConnection>.Remove(IDataBaseServerConnection)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).Remove(IDataBaseServerConnection)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
   - name: (
   - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
     name: IDataBaseServerConnection
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
   - name: (
   - uid: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection
     name: IDataBaseServerConnection
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(System.Guid)
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.Remove(System.Guid)
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_
   name: Remove(Guid)
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.Remove(Guid)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Remove(System.Guid)
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).Remove(Guid)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Remove(System.Guid)
+  nameWithType: StorageProvider<IDataBaseServerConnection>.Remove(Guid)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Remove(System.Guid)
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).Remove(Guid)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Remove(System.Guid)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_
   - name: (
   - uid: System.Guid
     name: Guid
@@ -423,30 +431,30 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(System.Guid)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_
   - name: (
   - uid: System.Guid
     name: Guid
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
   name: Remove(InstanceContainer<IDataBaseServerConnection>)
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.Remove(InstanceContainer<IDataBaseServerConnection>)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Remove(ParmaGIS.Core.Storage.InstanceContainer<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>)
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).Remove(InstanceContainer(Of IDataBaseServerConnection))
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Remove(ParmaGIS.Core.Storage.InstanceContainer(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection))
+  nameWithType: StorageProvider<IDataBaseServerConnection>.Remove(InstanceContainer<IDataBaseServerConnection>)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Remove(ParmaGIS.Core.Storage.InstanceContainer<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>)
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).Remove(InstanceContainer(Of IDataBaseServerConnection))
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Remove(ParmaGIS.Core.Storage.InstanceContainer(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection))
   name.vb: Remove(InstanceContainer(Of IDataBaseServerConnection))
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
   - name: (
   - uid: ParmaGIS.Core.Storage.InstanceContainer`1
     name: InstanceContainer
@@ -458,9 +466,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Remove(ParmaGIS.Core.Storage.InstanceContainer{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
   - name: (
   - uid: ParmaGIS.Core.Storage.InstanceContainer`1
     name: InstanceContainer
@@ -473,70 +481,70 @@ references:
     href: ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.AsItems
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.AsItems
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_AsItems
   name: AsItems()
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.AsItems()
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.AsItems()
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).AsItems()
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).AsItems()
+  nameWithType: StorageProvider<IDataBaseServerConnection>.AsItems()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.AsItems()
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).AsItems()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).AsItems()
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
     name: AsItems
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_AsItems
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.AsItems
     name: AsItems
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_AsItems
   - name: (
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.GetEnumerator
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
   name: GetEnumerator()
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.GetEnumerator()
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.GetEnumerator()
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).GetEnumerator()
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).GetEnumerator()
+  nameWithType: StorageProvider<IDataBaseServerConnection>.GetEnumerator()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.GetEnumerator()
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).GetEnumerator()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).GetEnumerator()
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
     name: GetEnumerator
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.GetEnumerator
     name: GetEnumerator
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
   - name: (
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
-  parent: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
-  definition: ParmaGIS.Core.Storage.StorageProvider2`1.Save
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save
+- uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
+  parent: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+  definition: ParmaGIS.Core.Storage.StorageProvider`1.Save
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
   name: Save()
-  nameWithType: StorageProvider2<IDataBaseServerConnection>.Save()
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Save()
-  nameWithType.vb: StorageProvider2(Of IDataBaseServerConnection).Save()
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Save()
+  nameWithType: StorageProvider<IDataBaseServerConnection>.Save()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection>.Save()
+  nameWithType.vb: StorageProvider(Of IDataBaseServerConnection).Save()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection).Save()
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
     name: Save
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
+  - uid: ParmaGIS.Core.Storage.StorageProvider{ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}.Save
     name: Save
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
   - name: (
   - name: )
 - uid: System.Object.Equals(System.Object)
@@ -1239,26 +1247,26 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1
-  commentId: T:ParmaGIS.Core.Storage.StorageProvider2`1
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html
-  name: StorageProvider2<T>
-  nameWithType: StorageProvider2<T>
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>
-  nameWithType.vb: StorageProvider2(Of T)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T)
-  name.vb: StorageProvider2(Of T)
+- uid: ParmaGIS.Core.Storage.StorageProvider`1
+  commentId: T:ParmaGIS.Core.Storage.StorageProvider`1
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html
+  name: StorageProvider<T>
+  nameWithType: StorageProvider<T>
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>
+  nameWithType.vb: StorageProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T)
+  name.vb: StorageProvider(Of T)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1
-    name: StorageProvider2
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1
+    name: StorageProvider
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1
-    name: StorageProvider2
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1
+    name: StorageProvider
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html
   - name: (
   - name: Of
   - name: " "
@@ -1423,28 +1431,28 @@ references:
     name: Specialized
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.ItemType
-  commentId: P:ParmaGIS.Core.Storage.StorageProvider2`1.ItemType
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_ItemType
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  commentId: P:ParmaGIS.Core.Storage.StorageProvider`1.ItemType
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_ItemType
   name: ItemType
-  nameWithType: StorageProvider2<T>.ItemType
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.ItemType
-  nameWithType.vb: StorageProvider2(Of T).ItemType
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).ItemType
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  nameWithType: StorageProvider<T>.ItemType
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.ItemType
+  nameWithType.vb: StorageProvider(Of T).ItemType
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).ItemType
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
   isExternal: true
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
   name: RegisterType<TItem>(Func<IContainer, T>, Action<IContainer, T>)
-  nameWithType: StorageProvider2<T>.RegisterType<TItem>(Func<IContainer, T>, Action<IContainer, T>)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.RegisterType<TItem>(System.Func<ParmaGIS.Core.Storage.IContainer, T>, System.Action<ParmaGIS.Core.Storage.IContainer, T>)
-  nameWithType.vb: StorageProvider2(Of T).RegisterType(Of TItem)(Func(Of IContainer, T), Action(Of IContainer, T))
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).RegisterType(Of TItem)(System.Func(Of ParmaGIS.Core.Storage.IContainer, T), System.Action(Of ParmaGIS.Core.Storage.IContainer, T))
+  nameWithType: StorageProvider<T>.RegisterType<TItem>(Func<IContainer, T>, Action<IContainer, T>)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.RegisterType<TItem>(System.Func<ParmaGIS.Core.Storage.IContainer, T>, System.Action<ParmaGIS.Core.Storage.IContainer, T>)
+  nameWithType.vb: StorageProvider(Of T).RegisterType(Of TItem)(Func(Of IContainer, T), Action(Of IContainer, T))
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).RegisterType(Of TItem)(System.Func(Of ParmaGIS.Core.Storage.IContainer, T), System.Action(Of ParmaGIS.Core.Storage.IContainer, T))
   name.vb: RegisterType(Of TItem)(Func(Of IContainer, T), Action(Of IContainer, T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
     name: RegisterType
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
   - name: <
   - name: TItem
   - name: '>'
@@ -1477,9 +1485,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.RegisterType``1(System.Func{ParmaGIS.Core.Storage.IContainer,`0},System.Action{ParmaGIS.Core.Storage.IContainer,`0})
     name: RegisterType
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_RegisterType__1_System_Func_ParmaGIS_Core_Storage_IContainer__0__System_Action_ParmaGIS_Core_Storage_IContainer__0__
   - name: (
   - name: Of
   - name: " "
@@ -1517,71 +1525,71 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.CollectionChanged
-  commentId: E:ParmaGIS.Core.Storage.StorageProvider2`1.CollectionChanged
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_CollectionChanged
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged
+  commentId: E:ParmaGIS.Core.Storage.StorageProvider`1.CollectionChanged
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_CollectionChanged
   name: CollectionChanged
-  nameWithType: StorageProvider2<T>.CollectionChanged
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.CollectionChanged
-  nameWithType.vb: StorageProvider2(Of T).CollectionChanged
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).CollectionChanged
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.Add(`0)
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.Add(`0)
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_
+  nameWithType: StorageProvider<T>.CollectionChanged
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.CollectionChanged
+  nameWithType.vb: StorageProvider(Of T).CollectionChanged
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).CollectionChanged
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
   name: Add(T)
-  nameWithType: StorageProvider2<T>.Add(T)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.Add(T)
-  nameWithType.vb: StorageProvider2(Of T).Add(T)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).Add(T)
+  nameWithType: StorageProvider<T>.Add(T)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Add(T)
+  nameWithType.vb: StorageProvider(Of T).Add(T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Add(T)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Add(`0)
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
     name: Add
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
   - name: (
   - name: T
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Add(`0)
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Add(`0)
     name: Add
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Add__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Add__0_
   - name: (
   - name: T
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(`0)
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.Remove(`0)
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
   name: Remove(T)
-  nameWithType: StorageProvider2<T>.Remove(T)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.Remove(T)
-  nameWithType.vb: StorageProvider2(Of T).Remove(T)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).Remove(T)
+  nameWithType: StorageProvider<T>.Remove(T)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Remove(T)
+  nameWithType.vb: StorageProvider(Of T).Remove(T)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Remove(T)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(`0)
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
   - name: (
   - name: T
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(`0)
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(`0)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove__0_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove__0_
   - name: (
   - name: T
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(System.Guid)
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.Remove(System.Guid)
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(System.Guid)
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Remove(System.Guid)
   isExternal: true
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_
   name: Remove(Guid)
-  nameWithType: StorageProvider2<T>.Remove(Guid)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.Remove(System.Guid)
-  nameWithType.vb: StorageProvider2(Of T).Remove(Guid)
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).Remove(System.Guid)
+  nameWithType: StorageProvider<T>.Remove(Guid)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Remove(System.Guid)
+  nameWithType.vb: StorageProvider(Of T).Remove(Guid)
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Remove(System.Guid)
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(System.Guid)
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(System.Guid)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_
   - name: (
   - uid: System.Guid
     name: Guid
@@ -1589,28 +1597,28 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(System.Guid)
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(System.Guid)
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_System_Guid_
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_System_Guid_
   - name: (
   - uid: System.Guid
     name: Guid
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
   name: Remove(InstanceContainer<T>)
-  nameWithType: StorageProvider2<T>.Remove(InstanceContainer<T>)
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.Remove(ParmaGIS.Core.Storage.InstanceContainer<T>)
-  nameWithType.vb: StorageProvider2(Of T).Remove(InstanceContainer(Of T))
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).Remove(ParmaGIS.Core.Storage.InstanceContainer(Of T))
+  nameWithType: StorageProvider<T>.Remove(InstanceContainer<T>)
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Remove(ParmaGIS.Core.Storage.InstanceContainer<T>)
+  nameWithType.vb: StorageProvider(Of T).Remove(InstanceContainer(Of T))
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Remove(ParmaGIS.Core.Storage.InstanceContainer(Of T))
   name.vb: Remove(InstanceContainer(Of T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
   - name: (
   - uid: ParmaGIS.Core.Storage.InstanceContainer`1
     name: InstanceContainer
@@ -1620,9 +1628,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Remove(ParmaGIS.Core.Storage.InstanceContainer{`0})
     name: Remove
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Remove_ParmaGIS_Core_Storage_InstanceContainer__0__
   - name: (
   - uid: ParmaGIS.Core.Storage.InstanceContainer`1
     name: InstanceContainer
@@ -1633,64 +1641,64 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.AsItems
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.AsItems
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.AsItems
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.AsItems
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_AsItems
   name: AsItems()
-  nameWithType: StorageProvider2<T>.AsItems()
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.AsItems()
-  nameWithType.vb: StorageProvider2(Of T).AsItems()
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).AsItems()
+  nameWithType: StorageProvider<T>.AsItems()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.AsItems()
+  nameWithType.vb: StorageProvider(Of T).AsItems()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).AsItems()
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.AsItems
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.AsItems
     name: AsItems
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_AsItems
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.AsItems
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.AsItems
     name: AsItems
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_AsItems
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_AsItems
   - name: (
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.GetEnumerator
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.GetEnumerator
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
   name: GetEnumerator()
-  nameWithType: StorageProvider2<T>.GetEnumerator()
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.GetEnumerator()
-  nameWithType.vb: StorageProvider2(Of T).GetEnumerator()
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).GetEnumerator()
+  nameWithType: StorageProvider<T>.GetEnumerator()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.GetEnumerator()
+  nameWithType.vb: StorageProvider(Of T).GetEnumerator()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).GetEnumerator()
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.GetEnumerator
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
     name: GetEnumerator
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.GetEnumerator
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.GetEnumerator
     name: GetEnumerator
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_GetEnumerator
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_GetEnumerator
   - name: (
   - name: )
-- uid: ParmaGIS.Core.Storage.StorageProvider2`1.Save
-  commentId: M:ParmaGIS.Core.Storage.StorageProvider2`1.Save
-  href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save
+- uid: ParmaGIS.Core.Storage.StorageProvider`1.Save
+  commentId: M:ParmaGIS.Core.Storage.StorageProvider`1.Save
+  href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
   name: Save()
-  nameWithType: StorageProvider2<T>.Save()
-  fullName: ParmaGIS.Core.Storage.StorageProvider2<T>.Save()
-  nameWithType.vb: StorageProvider2(Of T).Save()
-  fullName.vb: ParmaGIS.Core.Storage.StorageProvider2(Of T).Save()
+  nameWithType: StorageProvider<T>.Save()
+  fullName: ParmaGIS.Core.Storage.StorageProvider<T>.Save()
+  nameWithType.vb: StorageProvider(Of T).Save()
+  fullName.vb: ParmaGIS.Core.Storage.StorageProvider(Of T).Save()
   spec.csharp:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Save
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Save
     name: Save
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Storage.StorageProvider2`1.Save
+  - uid: ParmaGIS.Core.Storage.StorageProvider`1.Save
     name: Save
-    href: ParmaGIS.Core.Storage.StorageProvider2-1.html#ParmaGIS_Core_Storage_StorageProvider2_1_Save
+    href: ParmaGIS.Core.Storage.StorageProvider-1.html#ParmaGIS_Core_Storage_StorageProvider_1_Save
   - name: (
   - name: )
 - uid: ParmaGIS.Core.UI.Reactive.ObservableExtensions.ObserveElementEvent``3(``0,System.Func{``1,System.IObserver{``2},System.IDisposable})
@@ -2101,6 +2109,13 @@ references:
   - uid: ParmaGIS.Core.Utilities.Collections
     name: Collections
     href: ParmaGIS.Core.Utilities.Collections.html
+- uid: ParmaGIS.Modules.Data.Storages.DBServerStorage
+  commentId: T:ParmaGIS.Modules.Data.Storages.DBServerStorage
+  parent: ParmaGIS.Modules.Data.Storages
+  href: ParmaGIS.Modules.Data.Storages.DBServerStorage.html
+  name: DBServerStorage
+  nameWithType: DBServerStorage
+  fullName: ParmaGIS.Modules.Data.Storages.DBServerStorage
 - uid: ParmaGIS.Modules.Data.Storages.DBServerStorage.#ctor*
   commentId: Overload:ParmaGIS.Modules.Data.Storages.DBServerStorage.#ctor
   href: ParmaGIS.Modules.Data.Storages.DBServerStorage.html#ParmaGIS_Modules_Data_Storages_DBServerStorage__ctor_ParmaGIS_Core_Storage_IStorage_

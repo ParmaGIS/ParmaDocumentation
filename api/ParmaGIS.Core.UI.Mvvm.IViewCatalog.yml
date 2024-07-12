@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IViewCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewCatalog.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Каталог представлений. Содержит отношения View к ViewModel.
+  example: []
   syntax:
     content: 'public interface IViewCatalog : IInfoCatalog<IViewInfo>, IEnumerable<IViewInfo>, IEnumerable'
     content.vb: Public Interface IViewCatalog Inherits IInfoCatalog(Of IViewInfo), IEnumerable(Of IViewInfo), IEnumerable
@@ -57,21 +59,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterView
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewCatalog.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Регистрирует View.
+  example: []
   syntax:
     content: void RegisterView(Type viewType, Type viewModelType, string name, string type)
     parameters:
     - id: viewType
       type: System.Type
+      description: Тип View.
     - id: viewModelType
       type: System.Type
+      description: Тип ViewModel.
     - id: name
       type: System.String
+      description: Название отношения.
     - id: type
       type: System.String
+      description: Тип отношения.
     content.vb: Sub RegisterView(viewType As Type, viewModelType As Type, name As String, type As String)
   overload: ParmaGIS.Core.UI.Mvvm.IViewCatalog.RegisterView*
   nameWithType.vb: IViewCatalog.RegisterView(Type, Type, String, String)

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IDALCatalogRepository | site ">
       
-      
+      <meta name="description" content="Представляет контракт взаимодействия с репозиторием каталогов поддерживающего архитектуру DataAccessLayer. Данный репозиторий представляет уровень получения данных каталогов для бизнес логики приложения. Данный репозиторий нацелен на реализацию относительно какой-либо ORM.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_Space_DAL_IDALCatalogRepository" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALCatalogRepository" class="text-break">
-Interface IDALCatalogRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Interface IDALCatalogRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,10 @@ Interface IDALCatalogRepository  <a class="header-action link-secondary" title="
   <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет контракт взаимодействия с репозиторием каталогов поддерживающего архитектуру DataAccessLayer.
+Данный репозиторий представляет уровень получения данных каталогов для бизнес логики приложения.
+Данный репозиторий нацелен на реализацию относительно какой-либо ORM.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +159,10 @@ Interface IDALCatalogRepository  <a class="header-action link-secondary" title="
       <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogAsync__1_System_String_">ICatalogRepository.CreateCatalogAsync&lt;T&gt;(string)</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_InsertCatalogItemAsync__1___0_">ICatalogRepository.InsertCatalogItemAsync&lt;T&gt;(T)</a>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_InsertCatalogItemAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_">ICatalogRepository.InsertCatalogItemAsync(ICatalogItem)</a>
     </div>
     <div>
-      <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_RemoveCatalogItemAsync__1___0_">ICatalogRepository.RemoveCatalogItemAsync&lt;T&gt;(T)</a>
+      <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_RemoveCatalogItemAsync_ParmaGIS_Modules_Data_Space_Catalog_ICatalogItem_">ICatalogRepository.RemoveCatalogItemAsync(ICatalogItem)</a>
     </div>
     <div>
       <a class="xref" href="ParmaGIS.Modules.Data.Space.Catalog.ICatalogRepository.html#ParmaGIS_Modules_Data_Space_Catalog_ICatalogRepository_CreateCatalogItemAsync__1">ICatalogRepository.CreateCatalogItemAsync&lt;T&gt;()</a>
@@ -188,10 +191,13 @@ Interface IDALCatalogRepository  <a class="header-action link-secondary" title="
 
   <h3 id="ParmaGIS_Modules_Data_Space_DAL_IDALCatalogRepository_GetCatalogItems__1" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALCatalogRepository.GetCatalogItems``1">
   GetCatalogItems&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable&lt;T&gt;</a> элементов каталога.
+ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -202,13 +208,15 @@ Interface IDALCatalogRepository  <a class="header-action link-secondary" title="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>Запрос к элементов катаолга.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов каталога.</p>
+</dd>
   </dl>
 
 
@@ -224,34 +232,39 @@ Interface IDALCatalogRepository  <a class="header-action link-secondary" title="
 
   <h3 id="ParmaGIS_Modules_Data_Space_DAL_IDALCatalogRepository_LoadCatalogItems__2_System_Func_System_Linq_IQueryable___0____1__" data-uid="ParmaGIS.Modules.Data.Space.DAL.IDALCatalogRepository.LoadCatalogItems``2(System.Func{System.Linq.IQueryable{``0},``1})">
   LoadCatalogItems&lt;TItem, TRes&gt;(Func&lt;IQueryable&lt;TItem&gt;, TRes&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Выполняет функцию потокобезопасно.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;TRes&gt; LoadCatalogItems&lt;TItem, TRes&gt;(Func&lt;IQueryable&lt;TItem&gt;, TRes&gt; loader) where TItem : class, ICatalogItem</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RepoResponse&lt;TRes&gt;&gt; LoadCatalogItems&lt;TItem, TRes&gt;(Func&lt;IQueryable&lt;TItem&gt;, TRes&gt; loader) where TItem : class, ICatalogItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>loader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TItem&gt;, TRes&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция выполняющаяся потокобезопасно.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TRes&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;TRes&gt;&gt;</dt>
+    <dd><p>Результат выполнения функции.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TItem</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов каталога.</p>
+</dd>
     <dt><code>TRes</code></dt>
-    <dd></dd>
+    <dd><p>Тип результата выполнения функции.</p>
+</dd>
   </dl>
 
 
@@ -267,7 +280,7 @@ Interface IDALCatalogRepository  <a class="header-action link-secondary" title="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCatalogRepository.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

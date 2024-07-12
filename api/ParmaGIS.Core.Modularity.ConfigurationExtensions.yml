@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConfigurationExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/ConfigurationExtensions.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Расширения для конфигурации <xref href="ParmaGIS.Core.Shell.Configuration" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ConfigurationExtensions
     content.vb: Public Module ConfigurationExtensions
@@ -57,17 +59,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetModulesDirectory
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/ConfigurationExtensions.cs
-    startLine: 8
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Задает путь до папки с модулями.
+  example: []
   syntax:
     content: public static void SetModulesDirectory(this Configuration configuration, string modulesDirecotry)
     parameters:
     - id: configuration
       type: ParmaGIS.Core.Shell.Configuration
+      description: Конфигурация.
     - id: modulesDirecotry
       type: System.String
+      description: Директория, в которой находятся модули.
     content.vb: Public Shared Sub SetModulesDirectory(configuration As Configuration, modulesDirecotry As String)
   overload: ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory*
   nameWithType.vb: ConfigurationExtensions.SetModulesDirectory(Configuration, String)
@@ -92,20 +98,31 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetModulesDirectory
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/ConfigurationExtensions.cs
-    startLine: 12
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity
+  summary: Возвращает путь до папки с модулями.
+  example: []
   syntax:
     content: public static string? GetModulesDirectory(this Configuration config)
     parameters:
     - id: config
       type: ParmaGIS.Core.Shell.Configuration
+      description: Конфигурация.
     return:
       type: System.String
+      description: Путь до папки с модулями.
     content.vb: Public Shared Function GetModulesDirectory(config As Configuration) As String
   overload: ParmaGIS.Core.Modularity.ConfigurationExtensions.GetModulesDirectory*
 references:
+- uid: ParmaGIS.Core.Shell.Configuration
+  commentId: T:ParmaGIS.Core.Shell.Configuration
+  parent: ParmaGIS.Core.Shell
+  href: ParmaGIS.Core.Shell.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: ParmaGIS.Core.Shell.Configuration
 - uid: ParmaGIS.Core.Modularity
   commentId: N:ParmaGIS.Core.Modularity
   href: ParmaGIS.html
@@ -366,37 +383,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory*
-  commentId: Overload:ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory
-  href: ParmaGIS.Core.Modularity.ConfigurationExtensions.html#ParmaGIS_Core_Modularity_ConfigurationExtensions_SetModulesDirectory_ParmaGIS_Core_Shell_Configuration_System_String_
-  name: SetModulesDirectory
-  nameWithType: ConfigurationExtensions.SetModulesDirectory
-  fullName: ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory
-- uid: ParmaGIS.Core.Shell.Configuration
-  commentId: T:ParmaGIS.Core.Shell.Configuration
-  parent: ParmaGIS.Core.Shell
-  href: ParmaGIS.Core.Shell.Configuration.html
-  name: Configuration
-  nameWithType: Configuration
-  fullName: ParmaGIS.Core.Shell.Configuration
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: ParmaGIS.Core.Shell
   commentId: N:ParmaGIS.Core.Shell
   href: ParmaGIS.html
@@ -427,6 +413,30 @@ references:
   - uid: ParmaGIS.Core.Shell
     name: Shell
     href: ParmaGIS.Core.Shell.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory*
+  commentId: Overload:ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory
+  href: ParmaGIS.Core.Modularity.ConfigurationExtensions.html#ParmaGIS_Core_Modularity_ConfigurationExtensions_SetModulesDirectory_ParmaGIS_Core_Shell_Configuration_System_String_
+  name: SetModulesDirectory
+  nameWithType: ConfigurationExtensions.SetModulesDirectory
+  fullName: ParmaGIS.Core.Modularity.ConfigurationExtensions.SetModulesDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: ParmaGIS.Core.Modularity.ConfigurationExtensions.GetModulesDirectory*
   commentId: Overload:ParmaGIS.Core.Modularity.ConfigurationExtensions.GetModulesDirectory
   href: ParmaGIS.Core.Modularity.ConfigurationExtensions.html#ParmaGIS_Core_Modularity_ConfigurationExtensions_GetModulesDirectory_ParmaGIS_Core_Shell_Configuration_

@@ -6,8 +6,6 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Catalog
   children:
   - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
-  - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode
-  - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle
   - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.StockNom
   - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
   - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
@@ -25,28 +23,32 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TreeSpecies
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 58
+    startLine: 64
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   syntax:
-    content: 'public class TreeSpecies : ParmaDefaultCatalogItem, INotifyPropertyChanged, IParmaObject, ICatalogItem, IComparable'
-    content.vb: Public Class TreeSpecies Inherits ParmaDefaultCatalogItem Implements INotifyPropertyChanged, IParmaObject, ICatalogItem, IComparable
+    content: 'public class TreeSpecies : ParmaDefaultCatalogItemWithShortName, INotifyPropertyChanged, IParmaObject, ICatalogItem, IComparable'
+    content.vb: Public Class TreeSpecies Inherits ParmaDefaultCatalogItemWithShortName Implements INotifyPropertyChanged, IParmaObject, ICatalogItem, IComparable
   inheritance:
   - System.Object
   - ParmaGIS.Core.Utilities.BindableBase
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
   implements:
   - System.ComponentModel.INotifyPropertyChanged
   - ParmaGIS.Modules.Parma.Space.IParmaObject
   - ParmaGIS.Modules.Data.Space.Catalog.ICatalogItem
   - System.IComparable
   inheritedMembers:
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName.ShortName
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Name
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Code
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.CompareTo(System.Object)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.ToString
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.Id
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
@@ -60,122 +62,6 @@ items:
   extensionMethods:
   - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{{TProperty},System.Boolean},System.String)
   - ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
-  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
-  id: TreeSpeciesTypeId
-  parent: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
-  langs:
-  - csharp
-  - vb
-  name: TreeSpeciesTypeId
-  nameWithType: TreeSpecies.TreeSpeciesTypeId
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: TreeSpeciesTypeId
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 60
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Catalog
-  syntax:
-    content: public Guid TreeSpeciesTypeId { get; set; }
-    parameters: []
-    return:
-      type: System.Guid
-    content.vb: Public Property TreeSpeciesTypeId As Guid
-  overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId*
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
-  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
-  id: TreeSpeciesType
-  parent: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
-  langs:
-  - csharp
-  - vb
-  name: TreeSpeciesType
-  nameWithType: TreeSpecies.TreeSpeciesType
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: TreeSpeciesType
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 62
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Catalog
-  syntax:
-    content: public TreeSpeciesType TreeSpeciesType { get; set; }
-    parameters: []
-    return:
-      type: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
-    content.vb: Public Property TreeSpeciesType As TreeSpeciesType
-  overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType*
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle
-  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle
-  id: ShortTitle
-  parent: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
-  langs:
-  - csharp
-  - vb
-  name: ShortTitle
-  nameWithType: TreeSpecies.ShortTitle
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ShortTitle
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 63
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Catalog
-  syntax:
-    content: public string? ShortTitle { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property ShortTitle As String
-  overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle*
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode
-  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode
-  id: Gulfcode
-  parent: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
-  langs:
-  - csharp
-  - vb
-  name: Gulfcode
-  nameWithType: TreeSpecies.Gulfcode
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Gulfcode
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 64
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Catalog
-  syntax:
-    content: public int? Gulfcode { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property Gulfcode As Integer?
-  overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
   commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
   id: BonitetNorm
@@ -194,7 +80,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: BonitetNorm
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -223,7 +109,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StockNom
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
-    startLine: 66
+    startLine: 67
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -234,6 +120,64 @@ items:
       type: System.Nullable{System.Int32}
     content.vb: Public Property StockNom As Integer?
   overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.StockNom*
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
+  id: TreeSpeciesTypeId
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
+  langs:
+  - csharp
+  - vb
+  name: TreeSpeciesTypeId
+  nameWithType: TreeSpecies.TreeSpeciesTypeId
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: TreeSpeciesTypeId
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
+    startLine: 68
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  syntax:
+    content: public Guid TreeSpeciesTypeId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property TreeSpeciesTypeId As Guid
+  overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId*
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
+  id: TreeSpeciesType
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies
+  langs:
+  - csharp
+  - vb
+  name: TreeSpeciesType
+  nameWithType: TreeSpecies.TreeSpeciesType
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: TreeSpeciesType
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogs.cs
+    startLine: 70
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  syntax:
+    content: public TreeSpeciesType TreeSpeciesType { get; set; }
+    parameters: []
+    return:
+      type: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
+    content.vb: Public Property TreeSpeciesType As TreeSpeciesType
+  overload: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Catalog
   commentId: N:ParmaGIS.Modules.Parma.Space.Catalog
@@ -313,6 +257,13 @@ references:
   name: ParmaDefaultCatalogItem
   nameWithType: ParmaDefaultCatalogItem
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
+  commentId: T:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
+  parent: ParmaGIS.Modules.Parma.Space.Catalog
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName.html
+  name: ParmaDefaultCatalogItemWithShortName
+  nameWithType: ParmaDefaultCatalogItemWithShortName
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
 - uid: System.ComponentModel.INotifyPropertyChanged
   commentId: T:System.ComponentModel.INotifyPropertyChanged
   parent: System.ComponentModel
@@ -343,6 +294,13 @@ references:
   name: IComparable
   nameWithType: IComparable
   fullName: System.IComparable
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName.ShortName
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName.ShortName
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaDefaultCatalogItemWithShortName_ShortName
+  name: ShortName
+  nameWithType: ParmaDefaultCatalogItemWithShortName.ShortName
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItemWithShortName.ShortName
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Name
   commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Name
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
@@ -357,6 +315,13 @@ references:
   name: Code
   nameWithType: ParmaDefaultCatalogItem.Code
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Code
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaDefaultCatalogItem_Key
+  name: Key
+  nameWithType: ParmaDefaultCatalogItem.Key
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.Key
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.CompareTo(System.Object)
   commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.CompareTo(System.Object)
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem
@@ -407,6 +372,13 @@ references:
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaDefaultCatalogItem.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaDefaultCatalogItem_ToString
   - name: (
   - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
+  commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
+  parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogItem_CatalogSpaceName
+  name: CatalogSpaceName
+  nameWithType: ParmaCatalogItem.CatalogSpaceName
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.CatalogSpaceName
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.Id
   commentId: P:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.Id
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
@@ -1515,56 +1487,12 @@ references:
   - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
     name: ReactiveRules
     href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
-  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_TreeSpeciesTypeId
-  name: TreeSpeciesTypeId
-  nameWithType: TreeSpecies.TreeSpeciesTypeId
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
-- uid: System.Guid
-  commentId: T:System.Guid
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.guid
-  name: Guid
-  nameWithType: Guid
-  fullName: System.Guid
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
-  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_TreeSpeciesType
-  name: TreeSpeciesType
-  nameWithType: TreeSpecies.TreeSpeciesType
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
-  commentId: T:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
-  parent: ParmaGIS.Modules.Parma.Space.Catalog
-  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType.html
-  name: TreeSpeciesType
-  nameWithType: TreeSpeciesType
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle
-  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_ShortTitle
-  name: ShortTitle
-  nameWithType: TreeSpecies.ShortTitle
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.ShortTitle
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode
-  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_Gulfcode
-  name: Gulfcode
-  nameWithType: TreeSpecies.Gulfcode
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.Gulfcode
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
+  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_BonitetNorm
+  name: BonitetNorm
+  nameWithType: TreeSpecies.BonitetNorm
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
 - uid: System.Nullable{System.Int32}
   commentId: T:System.Nullable{System.Int32}
   parent: System
@@ -1616,15 +1544,36 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
-  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_BonitetNorm
-  name: BonitetNorm
-  nameWithType: TreeSpecies.BonitetNorm
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.BonitetNorm
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.StockNom*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.StockNom
   href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_StockNom
   name: StockNom
   nameWithType: TreeSpecies.StockNom
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.StockNom
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
+  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_TreeSpeciesTypeId
+  name: TreeSpeciesTypeId
+  nameWithType: TreeSpecies.TreeSpeciesTypeId
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesTypeId
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
+  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.html#ParmaGIS_Modules_Parma_Space_Catalog_TreeSpecies_TreeSpeciesType
+  name: TreeSpeciesType
+  nameWithType: TreeSpecies.TreeSpeciesType
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpecies.TreeSpeciesType
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
+  commentId: T:ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType
+  parent: ParmaGIS.Modules.Parma.Space.Catalog
+  href: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType.html
+  name: TreeSpeciesType
+  nameWithType: TreeSpeciesType
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.TreeSpeciesType

@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RelativeAttribute
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/Helpers/RelativeAttribute.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema.Helpers
+  summary: Представляет атрибут определяющий отношение.
+  example: []
   syntax:
     content: 'public class RelativeAttribute : Attribute'
     content.vb: Public Class RelativeAttribute Inherits Attribute
@@ -74,35 +76,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
-  commentId: P:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
-  id: SourcePropertyName
-  parent: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
-  langs:
-  - csharp
-  - vb
-  name: SourcePropertyName
-  nameWithType: RelativeAttribute.SourcePropertyName
-  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
-  type: Property
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Data/Schema/Helpers/RelativeAttribute.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: SourcePropertyName
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/Helpers/RelativeAttribute.cs
-    startLine: 6
-  assemblies:
-  - ParmaGIS.Modules.Data
-  namespace: ParmaGIS.Modules.Data.Schema.Helpers
-  syntax:
-    content: public string SourcePropertyName { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property SourcePropertyName As String
-  overload: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName*
 - uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor(System.String)
   commentId: M:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -121,20 +94,54 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/Helpers/RelativeAttribute.cs
-    startLine: 8
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema.Helpers
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public RelativeAttribute(string sourcePropertyName)
     parameters:
     - id: sourcePropertyName
       type: System.String
+      description: Название свойства источника, с которым связано описываемое свойство.
     content.vb: Public Sub New(sourcePropertyName As String)
   overload: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor*
   nameWithType.vb: RelativeAttribute.New(String)
   fullName.vb: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.New(String)
   name.vb: New(String)
+- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
+  commentId: P:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
+  id: SourcePropertyName
+  parent: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
+  langs:
+  - csharp
+  - vb
+  name: SourcePropertyName
+  nameWithType: RelativeAttribute.SourcePropertyName
+  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Schema/Helpers/RelativeAttribute.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SourcePropertyName
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/Helpers/RelativeAttribute.cs
+    startLine: 21
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Schema.Helpers
+  summary: Возвращает название свойства источника, с которым связано описываемое свойство.
+  example: []
+  syntax:
+    content: public string SourcePropertyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SourcePropertyName As String
+  overload: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName*
 references:
 - uid: ParmaGIS.Modules.Data.Schema.Helpers
   commentId: N:ParmaGIS.Modules.Data.Schema.Helpers
@@ -1976,12 +1983,21 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName*
-  commentId: Overload:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
-  href: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.html#ParmaGIS_Modules_Data_Schema_Helpers_RelativeAttribute_SourcePropertyName
-  name: SourcePropertyName
-  nameWithType: RelativeAttribute.SourcePropertyName
-  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
+- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
+  commentId: T:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
+  href: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.html
+  name: RelativeAttribute
+  nameWithType: RelativeAttribute
+  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute
+- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor*
+  commentId: Overload:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor
+  href: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.html#ParmaGIS_Modules_Data_Schema_Helpers_RelativeAttribute__ctor_System_String_
+  name: RelativeAttribute
+  nameWithType: RelativeAttribute.RelativeAttribute
+  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.RelativeAttribute
+  nameWithType.vb: RelativeAttribute.New
+  fullName.vb: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.New
+  name.vb: New
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1993,12 +2009,9 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor*
-  commentId: Overload:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.#ctor
-  href: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.html#ParmaGIS_Modules_Data_Schema_Helpers_RelativeAttribute__ctor_System_String_
-  name: RelativeAttribute
-  nameWithType: RelativeAttribute.RelativeAttribute
-  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.RelativeAttribute
-  nameWithType.vb: RelativeAttribute.New
-  fullName.vb: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.New
-  name.vb: New
+- uid: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName*
+  commentId: Overload:ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName
+  href: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.html#ParmaGIS_Modules_Data_Schema_Helpers_RelativeAttribute_SourcePropertyName
+  name: SourcePropertyName
+  nameWithType: RelativeAttribute.SourcePropertyName
+  fullName: ParmaGIS.Modules.Data.Schema.Helpers.RelativeAttribute.SourcePropertyName

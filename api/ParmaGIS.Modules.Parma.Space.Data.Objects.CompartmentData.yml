@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Data.Objects
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Area
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Compartment
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.District
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.DistrictId
@@ -19,6 +20,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Relief
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.ReliefId
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.RentPossibility
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.StockTable
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.StockTableId
   - ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Taxator
@@ -39,7 +41,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CompartmentData
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -53,6 +55,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.IParmaObject
   - ParmaGIS.Modules.Data.Space.Data.IDataObject
   inheritedMembers:
+  - ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.DataSpaceName
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -60,6 +63,64 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape
+  id: Shape
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData
+  langs:
+  - csharp
+  - vb
+  name: Shape
+  nameWithType: CompartmentData.Shape
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Shape
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
+    startLine: 28
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
+  syntax:
+    content: public Geometry? Shape { get; set; }
+    parameters: []
+    return:
+      type: NetTopologySuite.Geometries.Geometry
+    content.vb: Public Property Shape As Geometry
+  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape
+  id: CentroidShape
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData
+  langs:
+  - csharp
+  - vb
+  name: CentroidShape
+  nameWithType: CompartmentData.CentroidShape
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CentroidShape
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
+    startLine: 29
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
+  syntax:
+    content: public Geometry? CentroidShape { get; set; }
+    parameters: []
+    return:
+      type: NetTopologySuite.Geometries.Geometry
+    content.vb: Public Property CentroidShape As Geometry
+  overload: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Id
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Id
   id: Id
@@ -78,7 +139,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Id
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 24
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -109,7 +170,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DistrictId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 26
+    startLine: 34
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -138,7 +199,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ReliefId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 27
+    startLine: 35
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -167,7 +228,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HighConservationValueForestsId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 28
+    startLine: 36
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -196,7 +257,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FireHazardClassId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 29
+    startLine: 37
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -225,7 +286,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestInventoryOrgId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 30
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -254,7 +315,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaxatorId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 31
+    startLine: 39
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -283,7 +344,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StockTableId
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 32
+    startLine: 40
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -312,7 +373,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Area
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 34
+    startLine: 42
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -341,7 +402,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: UpdatingYear
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 35
+    startLine: 43
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -370,7 +431,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaxesRank
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 36
+    startLine: 44
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -399,7 +460,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RentPossibility
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -428,7 +489,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Compartment
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 39
+    startLine: 47
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -457,7 +518,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: District
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 40
+    startLine: 48
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -486,7 +547,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Relief
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -515,7 +576,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: HighConservationValueForests
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 42
+    startLine: 50
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -544,7 +605,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FireHazardClass
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 43
+    startLine: 51
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -573,7 +634,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ForestInventoryOrg
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 44
+    startLine: 52
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -602,7 +663,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Taxator
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 45
+    startLine: 53
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -631,7 +692,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StockTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Objects/CompartmentData.cs
-    startLine: 47
+    startLine: 55
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Objects
@@ -729,6 +790,13 @@ references:
   name: IDataObject
   nameWithType: IDataObject
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataObject
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.DataSpaceName
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.DataSpaceName
+  parent: ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.html#ParmaGIS_Modules_Parma_Space_Data_Objects_ParmaDataObject_DataSpaceName
+  name: DataSpaceName
+  nameWithType: ParmaDataObject.DataSpaceName
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.DataSpaceName
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -1039,6 +1107,47 @@ references:
   - uid: ParmaGIS.Modules.Data.Space.Data
     name: Data
     href: ParmaGIS.Modules.Data.Space.Data.html
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_CompartmentData_Shape
+  name: Shape
+  nameWithType: CompartmentData.Shape
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.Shape
+- uid: NetTopologySuite.Geometries.Geometry
+  commentId: T:NetTopologySuite.Geometries.Geometry
+  parent: NetTopologySuite.Geometries
+  isExternal: true
+  name: Geometry
+  nameWithType: Geometry
+  fullName: NetTopologySuite.Geometries.Geometry
+- uid: NetTopologySuite.Geometries
+  commentId: N:NetTopologySuite.Geometries
+  isExternal: true
+  name: NetTopologySuite.Geometries
+  nameWithType: NetTopologySuite.Geometries
+  fullName: NetTopologySuite.Geometries
+  spec.csharp:
+  - uid: NetTopologySuite
+    name: NetTopologySuite
+    isExternal: true
+  - name: .
+  - uid: NetTopologySuite.Geometries
+    name: Geometries
+    isExternal: true
+  spec.vb:
+  - uid: NetTopologySuite
+    name: NetTopologySuite
+    isExternal: true
+  - name: .
+  - uid: NetTopologySuite.Geometries
+    name: Geometries
+    isExternal: true
+- uid: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape
+  href: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.html#ParmaGIS_Modules_Parma_Space_Data_Objects_CompartmentData_CentroidShape
+  name: CentroidShape
+  nameWithType: CompartmentData.CentroidShape
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Objects.CompartmentData.CentroidShape
 - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.Id
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject.Id
   parent: ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject

@@ -24,10 +24,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IEntityScheme
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/IDataScheme.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema
+  summary: Представляет схему сущности.
+  example: []
   syntax:
     content: public interface IEntityScheme
     content.vb: Public Interface IEntityScheme
@@ -49,10 +51,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/IDataScheme.cs
-    startLine: 20
+    startLine: 35
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema
+  summary: Возвращает название сущности.
+  example: []
   syntax:
     content: string Name { get; }
     parameters: []
@@ -78,10 +82,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Properties
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/IDataScheme.cs
-    startLine: 21
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema
+  summary: Возвращает свойства сущности.
+  example: []
   syntax:
     content: IEnumerable<IPropertyScheme> Properties { get; }
     parameters: []
@@ -107,10 +113,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Space
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/IDataScheme.cs
-    startLine: 22
+    startLine: 41
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema
+  summary: Возвращает схему пространства, в котором определена сущность.
+  example: []
   syntax:
     content: ISpaceScheme Space { get; }
     parameters: []
@@ -136,10 +144,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Type
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/IDataScheme.cs
-    startLine: 23
+    startLine: 44
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema
+  summary: Возвращает тип сущности.
+  example: []
   syntax:
     content: Type Type { get; }
     parameters: []
@@ -165,12 +175,14 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PrimaryKey
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/IDataScheme.cs
-    startLine: 24
+    startLine: 47
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema
+  summary: Возвращает свойство, определяющее первичный ключ данных.
+  example: []
   syntax:
-    content: IPropertyScheme PrimaryKey { get; }
+    content: IPropertyScheme? PrimaryKey { get; }
     parameters: []
     return:
       type: ParmaGIS.Modules.Data.Schema.IPropertyScheme

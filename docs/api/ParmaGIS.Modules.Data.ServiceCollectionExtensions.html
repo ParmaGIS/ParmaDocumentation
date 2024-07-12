@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ServiceCollectionExtensions | site ">
       
-      
+      <meta name="description" content="Расширение класса .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions" class="text-break">
-Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <dl><dt>Assembly</dt><dd>ParmaGIS.Modules.Data.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Расширение класса <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterDBServer__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_Func_ParmaGIS_Core_Storage_IContainer_ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection__System_Action_ParmaGIS_Core_Storage_IContainer_ParmaGIS_Modules_Data_Connection_IDataBaseServerConnection__" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBServer``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection},System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection})">
   RegisterDBServer&lt;TDBServer&gt;(IServiceCollection, Func&lt;IContainer, IDataBaseServerConnection&gt;, Action&lt;IContainer, IDataBaseServerConnection&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Регистрирует новый тип подключения к базе данных.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,18 +171,22 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>collection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>Коллекция сервисов.</p>
+</dd>
     <dt><code>deserializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.IContainer.html">IContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция, преобразующая контейнер в экземпляр подключения к базе данных типа <code class="typeparamref">TDBServer</code>.</p>
+</dd>
     <dt><code>serializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="ParmaGIS.Core.Storage.IContainer.html">IContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection.html">IDataBaseServerConnection</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция, записывающая экземпляр подключения к базе данных типа <code class="typeparamref">TDBServer</code> в контейнер.</p>
+</dd>
   </dl>
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TDBServer</code></dt>
-    <dd></dd>
+    <dd><p>Тип подключения к базе данных.</p>
+</dd>
   </dl>
 
 
@@ -196,10 +202,11 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="ParmaGIS_Modules_Data_ServiceCollectionExtensions_RegisterSpace__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_Func_ParmaGIS_Modules_Data_Storages_SpaceContainer_ParmaGIS_Modules_Data_Space_ISpace__System_Action_ParmaGIS_Modules_Data_Storages_SpaceContainer_ParmaGIS_Modules_Data_Space_ISpace__" data-uid="ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace``1(ParmaGIS.Core.Serviceability.IServiceCollection,System.Func{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace},System.Action{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace})">
   RegisterSpace&lt;TSpace&gt;(IServiceCollection, Func&lt;SpaceContainer, ISpace&gt;, Action&lt;SpaceContainer, ISpace&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Регистрирует новый тип пространства данных.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -209,18 +216,22 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>collection</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceCollection.html">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>Коллекция сервисов.</p>
+</dd>
     <dt><code>deserializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Storages.SpaceContainer.html">SpaceContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Space.ISpace.html">ISpace</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция, преобразующая контейнер в экземпляр пространства данных типа <code class="typeparamref">TSpace</code>.</p>
+</dd>
     <dt><code>serializer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Storages.SpaceContainer.html">SpaceContainer</a>, <a class="xref" href="ParmaGIS.Modules.Data.Space.ISpace.html">ISpace</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция, записывающая экземпляр пространства данных типа <code class="typeparamref">TSpace</code> в контейнер.</p>
+</dd>
   </dl>
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TSpace</code></dt>
-    <dd></dd>
+    <dd><p>Тип пространства данных.</p>
+</dd>
   </dl>
 
 
@@ -236,7 +247,7 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

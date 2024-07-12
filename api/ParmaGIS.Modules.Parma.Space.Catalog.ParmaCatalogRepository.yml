@@ -26,10 +26,10 @@ items:
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetScopeCatalogItems(System.Type,System.Guid,System.Nullable{System.Boolean},System.Boolean)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetScopeCatalogItems``1(System.Guid,System.Nullable{System.Boolean},System.Boolean)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync``1(``0)
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.LoadCatalogItems``2(System.Func{System.Linq.IQueryable{``0},``1})
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync``1(``0)
+  - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.TaskScheduler
   - ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.ThreadSafety
@@ -47,7 +47,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaCatalogRepository
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -70,26 +70,26 @@ items:
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetContainer``1
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItems``1
   - ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.LoadCatalogItems``2(System.Func{System.Linq.IQueryable{{TItem}},{TRes}})
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(System.Type)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync(System.Type,System.Guid)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,System.Guid)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync(System.Type)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync``1(System.String)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync``1
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync``1({T})
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -115,7 +115,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 87
+    startLine: 89
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -149,7 +149,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafety
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 95
+    startLine: 97
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -181,7 +181,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 96
+    startLine: 98
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
@@ -213,12 +213,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetScopeCatalogItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 184
+    startLine: 193
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   syntax:
-    content: 'public Task<T[]> GetScopeCatalogItems<T>(Guid scopeId, bool? hidden = null, bool withNull = true) where T : ParmaCatalogItem'
+    content: 'public Task<RepoResponse<T[]>> GetScopeCatalogItems<T>(Guid scopeId, bool? hidden = null, bool withNull = true) where T : ParmaCatalogItem'
     parameters:
     - id: scopeId
       type: System.Guid
@@ -229,8 +229,8 @@ items:
     typeParameters:
     - id: T
     return:
-      type: System.Threading.Tasks.Task{{T}[]}
-    content.vb: Public Function GetScopeCatalogItems(Of T As ParmaCatalogItem)(scopeId As Guid, hidden As Boolean? = Nothing, withNull As Boolean = True) As Task(Of T())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+    content.vb: Public Function GetScopeCatalogItems(Of T As ParmaCatalogItem)(scopeId As Guid, hidden As Boolean? = Nothing, withNull As Boolean = True) As Task(Of RepoResponse(Of T()))
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetScopeCatalogItems*
   nameWithType.vb: ParmaCatalogRepository.GetScopeCatalogItems(Of T)(Guid, Boolean?, Boolean)
   fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetScopeCatalogItems(Of T)(System.Guid, Boolean?, Boolean)
@@ -253,12 +253,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetScopeCatalogItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 201
+    startLine: 210
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   syntax:
-    content: public Task<ParmaCatalogItem[]> GetScopeCatalogItems(Type itemType, Guid scopeId, bool? hidden = null, bool withNull = true)
+    content: public Task<RepoResponse<ParmaCatalogItem[]>> GetScopeCatalogItems(Type itemType, Guid scopeId, bool? hidden = null, bool withNull = true)
     parameters:
     - id: itemType
       type: System.Type
@@ -269,8 +269,8 @@ items:
     - id: withNull
       type: System.Boolean
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}
-    content.vb: Public Function GetScopeCatalogItems(itemType As Type, scopeId As Guid, hidden As Boolean? = Nothing, withNull As Boolean = True) As Task(Of ParmaCatalogItem())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}}
+    content.vb: Public Function GetScopeCatalogItems(itemType As Type, scopeId As Guid, hidden As Boolean? = Nothing, withNull As Boolean = True) As Task(Of RepoResponse(Of ParmaCatalogItem()))
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetScopeCatalogItems*
   nameWithType.vb: ParmaCatalogRepository.GetScopeCatalogItems(Type, Guid, Boolean?, Boolean)
   fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetScopeCatalogItems(System.Type, System.Guid, Boolean?, Boolean)
@@ -293,21 +293,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 221
+    startLine: 230
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Создает каталог.
   example: []
   syntax:
-    content: public override Task<ParmaCatalog> CreateCatalogAsync(string name, Type itemType)
+    content: public override Task<RepoResponse<ParmaCatalog>> CreateCatalogAsync(string name, Type itemType)
     parameters:
     - id: name
       type: System.String
+      description: Название каталога.
     - id: itemType
       type: System.Type
+      description: Тип элементов.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-    content.vb: Public Overrides Function CreateCatalogAsync(name As String, itemType As Type) As Task(Of ParmaCatalog)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+      description: Созданный каталог.
+    content.vb: Public Overrides Function CreateCatalogAsync(name As String, itemType As Type) As Task(Of RepoResponse(Of ParmaCatalog))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync*
   nameWithType.vb: ParmaCatalogRepository.CreateCatalogAsync(String, Type)
@@ -331,21 +335,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 226
+    startLine: 235
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Создает каталог.
   example: []
   syntax:
-    content: 'public override Task<ParmaCatalog> CreateCatalogAsync<TItem>(string name) where TItem : ParmaCatalogItem'
+    content: 'public override Task<RepoResponse<ParmaCatalog>> CreateCatalogAsync<TItem>(string name) where TItem : ParmaCatalogItem'
     parameters:
     - id: name
       type: System.String
+      description: Название каталога.
     typeParameters:
     - id: TItem
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-    content.vb: Public Overrides Function CreateCatalogAsync(Of TItem As ParmaCatalogItem)(name As String) As Task(Of ParmaCatalog)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+      description: Созданный каталог.
+    content.vb: Public Overrides Function CreateCatalogAsync(Of TItem As ParmaCatalogItem)(name As String) As Task(Of RepoResponse(Of ParmaCatalog))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync``1(System.String)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync*
   nameWithType.vb: ParmaCatalogRepository.CreateCatalogAsync(Of TItem)(String)
@@ -369,19 +376,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 231
+    startLine: 240
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Создает элемент каталога.
   example: []
   syntax:
-    content: public override Task<ParmaCatalogItem> CreateCatalogItemAsync(ParmaCatalog catalog)
+    content: public override Task<RepoResponse<ParmaCatalogItem>> CreateCatalogItemAsync(ParmaCatalog catalog)
     parameters:
     - id: catalog
       type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+      description: Каталог.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-    content.vb: Public Overrides Function CreateCatalogItemAsync(catalog As ParmaCatalog) As Task(Of ParmaCatalogItem)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}}
+      description: Созданный элемент каталога
+    content.vb: Public Overrides Function CreateCatalogItemAsync(catalog As ParmaCatalog) As Task(Of RepoResponse(Of ParmaCatalogItem))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync(System.Type)
@@ -402,19 +412,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 238
+    startLine: 247
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Создает элемент каталога.
   example: []
   syntax:
-    content: public override Task<ParmaCatalogItem> CreateCatalogItemAsync(Type itemType)
+    content: public override Task<RepoResponse<ParmaCatalogItem>> CreateCatalogItemAsync(Type itemType)
     parameters:
     - id: itemType
       type: System.Type
+      description: Тип элемента каталога.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-    content.vb: Public Overrides Function CreateCatalogItemAsync(itemType As Type) As Task(Of ParmaCatalogItem)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}}
+      description: Созданный элемент каталога.
+    content.vb: Public Overrides Function CreateCatalogItemAsync(itemType As Type) As Task(Of RepoResponse(Of ParmaCatalogItem))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync``1
@@ -435,18 +448,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 244
+    startLine: 253
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Создает элемент каталога.
   example: []
   syntax:
-    content: 'public override Task<T> CreateCatalogItemAsync<T>() where T : ParmaCatalogItem'
+    content: 'public override Task<RepoResponse<T>> CreateCatalogItemAsync<T>() where T : ParmaCatalogItem'
     typeParameters:
     - id: T
+      description: Тип элемента каталога.
     return:
-      type: System.Threading.Tasks.Task{{T}}
-    content.vb: Public Overrides Function CreateCatalogItemAsync(Of T As ParmaCatalogItem)() As Task(Of T)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+      description: Созданный элемент каталога.
+    content.vb: Public Overrides Function CreateCatalogItemAsync(Of T As ParmaCatalogItem)() As Task(Of RepoResponse(Of T))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync``1
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync*
   nameWithType.vb: ParmaCatalogRepository.CreateCatalogItemAsync(Of T)()
@@ -470,19 +486,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 250
+    startLine: 259
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает каталог по его элементу.
   example: []
   syntax:
-    content: public override Task<ParmaCatalog?> GetCatalogAsync(ParmaCatalogItem catalogItem)
+    content: public override Task<RepoResponse<ParmaCatalog?>> GetCatalogAsync(ParmaCatalogItem catalogItem)
     parameters:
     - id: catalogItem
       type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+      description: Элемент каталога.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-    content.vb: Public Overrides Function GetCatalogAsync(catalogItem As ParmaCatalogItem) As Task(Of ParmaCatalog)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+      description: Каталог, которому принадлежит элемент.
+    content.vb: Public Overrides Function GetCatalogAsync(catalogItem As ParmaCatalogItem) As Task(Of RepoResponse(Of ParmaCatalog))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(System.String)
@@ -503,18 +522,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 255
+    startLine: 264
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
   syntax:
-    content: public Task<ParmaCatalog?> GetCatalogAsync(string catalogName)
+    content: public Task<RepoResponse<ParmaCatalog?>> GetCatalogAsync(string catalogName)
     parameters:
     - id: catalogName
       type: System.String
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-    content.vb: Public Function GetCatalogAsync(catalogName As String) As Task(Of ParmaCatalog)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+    content.vb: Public Function GetCatalogAsync(catalogName As String) As Task(Of RepoResponse(Of ParmaCatalog))
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
   nameWithType.vb: ParmaCatalogRepository.GetCatalogAsync(String)
   fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync(String)
@@ -537,19 +556,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 260
+    startLine: 269
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает каталог по типу его элементов.
   example: []
   syntax:
-    content: public override Task<ParmaCatalog?> GetCatalogAsync(Type itemType)
+    content: public override Task<RepoResponse<ParmaCatalog?>> GetCatalogAsync(Type itemType)
     parameters:
     - id: itemType
       type: System.Type
+      description: Тип элемента каталога.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-    content.vb: Public Overrides Function GetCatalogAsync(itemType As Type) As Task(Of ParmaCatalog)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+      description: Каталог, которому принадлежат элементы указанного типа.
+    content.vb: Public Overrides Function GetCatalogAsync(itemType As Type) As Task(Of RepoResponse(Of ParmaCatalog))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(System.Type)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync``1
@@ -570,18 +592,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 265
+    startLine: 274
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает каталог по типу элемента.
   example: []
   syntax:
-    content: 'public override Task<ParmaCatalog?> GetCatalogAsync<TItem>() where TItem : ParmaCatalogItem'
+    content: 'public override Task<RepoResponse<ParmaCatalog?>> GetCatalogAsync<TItem>() where TItem : ParmaCatalogItem'
     typeParameters:
     - id: TItem
+      description: Тип элемента каталога.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-    content.vb: Public Overrides Function GetCatalogAsync(Of TItem As ParmaCatalogItem)() As Task(Of ParmaCatalog)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+      description: Каталог, которому принадлежат элементы указанного типа.
+    content.vb: Public Overrides Function GetCatalogAsync(Of TItem As ParmaCatalogItem)() As Task(Of RepoResponse(Of ParmaCatalog))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
   nameWithType.vb: ParmaCatalogRepository.GetCatalogAsync(Of TItem)()
@@ -605,21 +630,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 270
+    startLine: 279
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвраает элемент каталога по его типу и уникальному идентификатору.
   example: []
   syntax:
-    content: public override Task<ParmaCatalogItem?> GetCatalogItemAsync(Type itemType, Guid id)
+    content: public override Task<RepoResponse<ParmaCatalogItem?>> GetCatalogItemAsync(Type itemType, Guid id)
     parameters:
     - id: itemType
       type: System.Type
+      description: Тип элемента каталога.
     - id: id
       type: System.Guid
+      description: Уникальный идентификатор эелмента.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-    content.vb: Public Overrides Function GetCatalogItemAsync(itemType As Type, id As Guid) As Task(Of ParmaCatalogItem)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}}
+      description: Элемент каталога.
+    content.vb: Public Overrides Function GetCatalogItemAsync(itemType As Type, id As Guid) As Task(Of RepoResponse(Of ParmaCatalogItem))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync(System.Type,System.Guid)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,System.Guid)
@@ -640,21 +669,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 276
+    startLine: 285
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает элемент каталога по каталогу и уникальному идентификатору.
   example: []
   syntax:
-    content: public override Task<ParmaCatalogItem?> GetCatalogItemAsync(ParmaCatalog catalog, Guid id)
+    content: public override Task<RepoResponse<ParmaCatalogItem?>> GetCatalogItemAsync(ParmaCatalog catalog, Guid id)
     parameters:
     - id: catalog
       type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+      description: Каталог, которому принадлежит элемент.
     - id: id
       type: System.Guid
+      description: Уникальный идентификатор.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-    content.vb: Public Overrides Function GetCatalogItemAsync(catalog As ParmaCatalog, id As Guid) As Task(Of ParmaCatalogItem)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}}
+      description: Элеметн каталога.
+    content.vb: Public Overrides Function GetCatalogItemAsync(catalog As ParmaCatalog, id As Guid) As Task(Of RepoResponse(Of ParmaCatalogItem))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,System.Guid)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync``1(System.Guid)
@@ -675,21 +708,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 282
+    startLine: 291
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает элемент каталога по его типу и уникальному идентификатору.
   example: []
   syntax:
-    content: 'public override Task<T?> GetCatalogItemAsync<T>(Guid id) where T : ParmaCatalogItem'
+    content: 'public override Task<RepoResponse<T?>> GetCatalogItemAsync<T>(Guid id) where T : ParmaCatalogItem'
     parameters:
     - id: id
       type: System.Guid
+      description: Уникальный идентификатор элемента.
     typeParameters:
     - id: T
+      description: Тип элемента каталога.
     return:
-      type: System.Threading.Tasks.Task{{T}}
-    content.vb: Public Overrides Function GetCatalogItemAsync(Of T As ParmaCatalogItem)(id As Guid) As Task(Of T)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+      description: Элемент каталога.
+    content.vb: Public Overrides Function GetCatalogItemAsync(Of T As ParmaCatalogItem)(id As Guid) As Task(Of RepoResponse(Of T))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync*
   nameWithType.vb: ParmaCatalogRepository.GetCatalogItemAsync(Of T)(Guid)
@@ -713,17 +750,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 288
+    startLine: 297
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: >-
+    Возвращает <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> элементов каталога.
+
+    ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+
+    Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.
   example: []
   syntax:
     content: 'public override IQueryable<T> GetCatalogItems<T>() where T : ParmaCatalogItem'
     typeParameters:
     - id: T
+      description: Тип элементов каталога.
     return:
       type: System.Linq.IQueryable{{T}}
+      description: Запрос к элементам каталога.
     content.vb: Public Overrides Function GetCatalogItems(Of T As ParmaCatalogItem)() As IQueryable(Of T)
   overridden: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItems``1
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems*
@@ -748,19 +793,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 294
+    startLine: 303
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает элементы каталога указанного типа.
   example: []
   syntax:
-    content: public override Task<ParmaCatalogItem[]> GetCatalogItemsAsync(Type itemType)
+    content: public override Task<RepoResponse<ParmaCatalogItem[]>> GetCatalogItemsAsync(Type itemType)
     parameters:
     - id: itemType
       type: System.Type
+      description: Тип элементов каталога
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}
-    content.vb: Public Overrides Function GetCatalogItemsAsync(itemType As Type) As Task(Of ParmaCatalogItem())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}}
+      description: Массив элементов каталога.
+    content.vb: Public Overrides Function GetCatalogItemsAsync(itemType As Type) As Task(Of RepoResponse(Of ParmaCatalogItem()))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync(System.Type)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
@@ -781,19 +829,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 300
+    startLine: 309
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает элементы каталога.
   example: []
   syntax:
-    content: public override Task<ParmaCatalogItem[]> GetCatalogItemsAsync(ParmaCatalog catalog)
+    content: public override Task<RepoResponse<ParmaCatalogItem[]>> GetCatalogItemsAsync(ParmaCatalog catalog)
     parameters:
     - id: catalog
       type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+      description: Каталог.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}
-    content.vb: Public Overrides Function GetCatalogItemsAsync(catalog As ParmaCatalog) As Task(Of ParmaCatalogItem())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}}
+      description: Массив элементов каталога.
+    content.vb: Public Overrides Function GetCatalogItemsAsync(catalog As ParmaCatalog) As Task(Of RepoResponse(Of ParmaCatalogItem()))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync``1
@@ -814,18 +865,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 306
+    startLine: 315
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает элементы каталога указанного типа.
   example: []
   syntax:
-    content: 'public override Task<T[]> GetCatalogItemsAsync<T>() where T : ParmaCatalogItem'
+    content: 'public override Task<RepoResponse<T[]>> GetCatalogItemsAsync<T>() where T : ParmaCatalogItem'
     typeParameters:
     - id: T
+      description: Тип элементов каталога.
     return:
-      type: System.Threading.Tasks.Task{{T}[]}
-    content.vb: Public Overrides Function GetCatalogItemsAsync(Of T As ParmaCatalogItem)() As Task(Of T())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+      description: Массив элементов каталога.
+    content.vb: Public Overrides Function GetCatalogItemsAsync(Of T As ParmaCatalogItem)() As Task(Of RepoResponse(Of T()))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemsAsync*
   nameWithType.vb: ParmaCatalogRepository.GetCatalogItemsAsync(Of T)()
@@ -849,16 +903,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 312
+    startLine: 321
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Возвращает все каталоги репозитория.
   example: []
   syntax:
-    content: public override Task<ParmaCatalog[]> GetCatalogsAsync()
+    content: public override Task<RepoResponse<ParmaCatalog[]>> GetCatalogsAsync()
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]}
-    content.vb: Public Overrides Function GetCatalogsAsync() As Task(Of ParmaCatalog())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]}}
+      description: Массив каталогов.
+    content.vb: Public Overrides Function GetCatalogsAsync() As Task(Of RepoResponse(Of ParmaCatalog()))
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogsAsync*
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
@@ -879,31 +935,34 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 317
+    startLine: 326
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Добавляет каталог в репозиторий.
   example: []
   syntax:
-    content: public override Task InsertCatalogAsync(ParmaCatalog catalog)
+    content: public override Task<RepoResponse> InsertCatalogAsync(ParmaCatalog catalog)
     parameters:
     - id: catalog
       type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+      description: Добавляемый каталог.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Overrides Function InsertCatalogAsync(catalog As ParmaCatalog) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public Overrides Function InsertCatalogAsync(catalog As ParmaCatalog) As Task(Of RepoResponse)
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogAsync*
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync``1(``0)
-  id: InsertCatalogItemAsync``1(``0)
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  id: InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository
   langs:
   - csharp
   - vb
-  name: InsertCatalogItemAsync<T>(T)
-  nameWithType: ParmaCatalogRepository.InsertCatalogItemAsync<T>(T)
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync<T>(T)
+  name: InsertCatalogItemAsync(ParmaCatalogItem)
+  nameWithType: ParmaCatalogRepository.InsertCatalogItemAsync(ParmaCatalogItem)
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   type: Method
   source:
     remote:
@@ -912,26 +971,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 322
+    startLine: 331
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Добавлеяет элeмент каталога в репозиторий.
   example: []
   syntax:
-    content: 'public override Task InsertCatalogItemAsync<T>(T catalogItem) where T : ParmaCatalogItem'
+    content: public override Task<RepoResponse> InsertCatalogItemAsync(ParmaCatalogItem catalogItem)
     parameters:
     - id: catalogItem
-      type: '{T}'
-    typeParameters:
-    - id: T
+      type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+      description: Элемент каталога.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Overrides Function InsertCatalogItemAsync(Of T As ParmaCatalogItem)(catalogItem As T) As Task
-  overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync``1({T})
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public Overrides Function InsertCatalogItemAsync(catalogItem As ParmaCatalogItem) As Task(Of RepoResponse)
+  overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync*
-  nameWithType.vb: ParmaCatalogRepository.InsertCatalogItemAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync(Of T)(T)
-  name.vb: InsertCatalogItemAsync(Of T)(T)
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.LoadCatalogItems``2(System.Func{System.Linq.IQueryable{``0},``1})
   commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.LoadCatalogItems``2(System.Func{System.Linq.IQueryable{``0},``1})
   id: LoadCatalogItems``2(System.Func{System.Linq.IQueryable{``0},``1})
@@ -950,22 +1007,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadCatalogItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 332
+    startLine: 336
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Выполняет функцию потокобезопасно.
   example: []
   syntax:
-    content: 'public override Task<TRes> LoadCatalogItems<TItem, TRes>(Func<IQueryable<TItem>, TRes> loader) where TItem : ParmaCatalogItem'
+    content: 'public override Task<RepoResponse<TRes>> LoadCatalogItems<TItem, TRes>(Func<IQueryable<TItem>, TRes> loader) where TItem : ParmaCatalogItem'
     parameters:
     - id: loader
       type: System.Func{System.Linq.IQueryable{{TItem}},{TRes}}
+      description: Функция, выполняющаяся потокобезопасно.
     typeParameters:
     - id: TItem
+      description: Тип элементов каталога.
     - id: TRes
+      description: Тип результата выполнения функции.
     return:
-      type: System.Threading.Tasks.Task{{TRes}}
-    content.vb: Public Overrides Function LoadCatalogItems(Of TItem As ParmaCatalogItem, TRes)(loader As Func(Of IQueryable(Of TItem), TRes)) As Task(Of TRes)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+      description: Результат выполнения функции.
+    content.vb: Public Overrides Function LoadCatalogItems(Of TItem As ParmaCatalogItem, TRes)(loader As Func(Of IQueryable(Of TItem), TRes)) As Task(Of RepoResponse(Of TRes))
   overridden: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.LoadCatalogItems``2(System.Func{System.Linq.IQueryable{{TItem}},{TRes}})
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.LoadCatalogItems*
   nameWithType.vb: ParmaCatalogRepository.LoadCatalogItems(Of TItem, TRes)(Func(Of IQueryable(Of TItem), TRes))
@@ -989,31 +1051,34 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 338
+    startLine: 342
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Удаляет каталог из репозитория.
   example: []
   syntax:
-    content: public override Task RemoveCatalogAsync(ParmaCatalog catalog)
+    content: public override Task<RepoResponse> RemoveCatalogAsync(ParmaCatalog catalog)
     parameters:
     - id: catalog
       type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+      description: Удаляемый каталог.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Overrides Function RemoveCatalogAsync(catalog As ParmaCatalog) As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public Overrides Function RemoveCatalogAsync(catalog As ParmaCatalog) As Task(Of RepoResponse)
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogAsync*
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync``1(``0)
-  id: RemoveCatalogItemAsync``1(``0)
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  id: RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   parent: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository
   langs:
   - csharp
   - vb
-  name: RemoveCatalogItemAsync<T>(T)
-  nameWithType: ParmaCatalogRepository.RemoveCatalogItemAsync<T>(T)
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync<T>(T)
+  name: RemoveCatalogItemAsync(ParmaCatalogItem)
+  nameWithType: ParmaCatalogRepository.RemoveCatalogItemAsync(ParmaCatalogItem)
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   type: Method
   source:
     remote:
@@ -1022,26 +1087,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Catalog/ParmaCatalogRepository.cs
-    startLine: 343
+    startLine: 347
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Удаляет элемент каталога.
   example: []
   syntax:
-    content: 'public override Task RemoveCatalogItemAsync<T>(T catalogItem) where T : ParmaCatalogItem'
+    content: public override Task<RepoResponse> RemoveCatalogItemAsync(ParmaCatalogItem catalogItem)
     parameters:
     - id: catalogItem
-      type: '{T}'
-    typeParameters:
-    - id: T
+      type: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+      description: Удаляемый элемент каталога.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Overrides Function RemoveCatalogItemAsync(Of T As ParmaCatalogItem)(catalogItem As T) As Task
-  overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync``1({T})
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public Overrides Function RemoveCatalogItemAsync(catalogItem As ParmaCatalogItem) As Task(Of RepoResponse)
+  overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync*
-  nameWithType.vb: ParmaCatalogRepository.RemoveCatalogItemAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync(Of T)(T)
-  name.vb: RemoveCatalogItemAsync(Of T)(T)
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync
   commentId: M:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync
   id: SaveChangesAsync
@@ -1064,12 +1127,14 @@ items:
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Catalog
+  summary: Сохраняет изменения.
   example: []
   syntax:
-    content: public override Task SaveChangesAsync()
+    content: public override Task<RepoResponse> SaveChangesAsync()
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Overrides Function SaveChangesAsync() As Task
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+      description: ''
+    content.vb: Public Overrides Function SaveChangesAsync() As Task(Of RepoResponse)
   overridden: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
   overload: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.SaveChangesAsync*
 references:
@@ -1491,106 +1556,27 @@ references:
   - name: TRes
   - name: )
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
-  name: CreateCatalogAsync(string, Type)
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.CreateCatalogAsync(string, Type)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.CreateCatalogAsync(string, System.Type)
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).CreateCatalogAsync(String, Type)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).CreateCatalogAsync(String, System.Type)
-  name.vb: CreateCatalogAsync(String, Type)
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
+  name: GetCatalogsAsync()
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogsAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogsAsync()
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogsAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogsAsync()
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
-    name: CreateCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
+    name: GetCatalogsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
   - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
-    name: CreateCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
+    name: GetCatalogsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
   - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
-  name: CreateCatalogItemAsync(ParmaCatalog)
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.CreateCatalogItemAsync(ParmaCatalog)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).CreateCatalogItemAsync(ParmaCatalog)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
-  - name: (
-  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
-    name: ParmaCatalog
-    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
-  - name: (
-  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
-    name: ParmaCatalog
-    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
-  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
-  name: CreateCatalogItemAsync(Type)
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.CreateCatalogItemAsync(Type)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.CreateCatalogItemAsync(System.Type)
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).CreateCatalogItemAsync(Type)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).CreateCatalogItemAsync(System.Type)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
@@ -1619,6 +1605,37 @@ references:
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
     name: ParmaCatalogItem
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
+  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  name: GetCatalogAsync<TItem>()
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogAsync<TItem>()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogAsync<TItem>()
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogAsync(Of TItem)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogAsync(Of TItem)()
+  name.vb: GetCatalogAsync(Of TItem)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
+    name: GetCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  - name: <
+  - name: TItem
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
+    name: GetCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+  - name: (
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(System.Type)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync(System.Type)
@@ -1649,6 +1666,45 @@ references:
     name: Type
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
+  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  name: GetCatalogItemAsync<T>(Guid)
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogItemAsync<T>(Guid)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogItemAsync<T>(System.Guid)
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogItemAsync(Of T)(Guid)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogItemAsync(Of T)(System.Guid)
+  name.vb: GetCatalogItemAsync(Of T)(Guid)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
+    name: GetCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
+    name: GetCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync(System.Type,System.Guid)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync(System.Type,System.Guid)
@@ -1732,6 +1788,37 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
+  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  name: GetCatalogItemsAsync<T>()
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogItemsAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogItemsAsync<T>()
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogItemsAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogItemsAsync(Of T)()
+  name.vb: GetCatalogItemsAsync(Of T)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
+    name: GetCatalogItemsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
+    name: GetCatalogItemsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync(System.Type)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync(System.Type)
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
@@ -1790,28 +1877,6 @@ references:
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
-  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
-  name: GetCatalogsAsync()
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogsAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogsAsync()
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogsAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogsAsync()
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
-    name: GetCatalogsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogsAsync
-    name: GetCatalogsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
-  - name: (
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
@@ -1868,27 +1933,48 @@ references:
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
-  name: SaveChangesAsync()
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.SaveChangesAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.SaveChangesAsync()
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).SaveChangesAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).SaveChangesAsync()
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
+  name: CreateCatalogAsync(string, Type)
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.CreateCatalogAsync(string, Type)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.CreateCatalogAsync(string, System.Type)
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).CreateCatalogAsync(String, Type)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).CreateCatalogAsync(String, System.Type)
+  name.vb: CreateCatalogAsync(String, Type)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
+    name: CreateCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
   - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync(System.String,System.Type)
+    name: CreateCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
   - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync``1(System.String)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogAsync``1(System.String)
@@ -1929,6 +2015,62 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_
+  name: InsertCatalogItemAsync(ParmaCatalogItem)
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.InsertCatalogItemAsync(ParmaCatalogItem)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).InsertCatalogItemAsync(ParmaCatalogItem)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+    name: InsertCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+    name: ParmaCatalogItem
+    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+    name: InsertCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+    name: ParmaCatalogItem
+    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_
+  name: RemoveCatalogItemAsync(ParmaCatalogItem)
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.RemoveCatalogItemAsync(ParmaCatalogItem)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).RemoveCatalogItemAsync(ParmaCatalogItem)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+    name: RemoveCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+    name: ParmaCatalogItem
+    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
+    name: RemoveCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
+    name: ParmaCatalogItem
+    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync``1
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync``1
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
@@ -1960,172 +2102,85 @@ references:
   - name: )
   - name: (
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
-  name: GetCatalogAsync<TItem>()
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogAsync<TItem>()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogAsync<TItem>()
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogAsync(Of TItem)()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogAsync(Of TItem)()
-  name.vb: GetCatalogAsync(Of TItem)()
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
+  name: CreateCatalogItemAsync(ParmaCatalog)
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.CreateCatalogItemAsync(ParmaCatalog)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).CreateCatalogItemAsync(ParmaCatalog)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
-    name: GetCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
-  - name: <
-  - name: TItem
-  - name: '>'
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
   - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+    name: ParmaCatalog
+    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogAsync``1
-    name: GetCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
   - name: (
-  - name: Of
-  - name: " "
-  - name: TItem
+  - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
+    name: ParmaCatalog
+    href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
   - name: )
-  - name: (
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
-  name: GetCatalogItemAsync<T>(Guid)
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogItemAsync<T>(Guid)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogItemAsync<T>(System.Guid)
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogItemAsync(Of T)(Guid)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogItemAsync(Of T)(System.Guid)
-  name.vb: GetCatalogItemAsync(Of T)(Guid)
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
+  name: CreateCatalogItemAsync(Type)
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.CreateCatalogItemAsync(Type)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.CreateCatalogItemAsync(System.Type)
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).CreateCatalogItemAsync(Type)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).CreateCatalogItemAsync(System.Type)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
-    name: GetCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
-  - name: <
-  - name: T
-  - name: '>'
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
   - name: (
-  - uid: System.Guid
-    name: Guid
+  - uid: System.Type
+    name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.guid
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemAsync``1(System.Guid)
-    name: GetCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.CreateCatalogItemAsync(System.Type)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Guid
-    name: Guid
+  - uid: System.Type
+    name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.guid
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
-  name: GetCatalogItemsAsync<T>()
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.GetCatalogItemsAsync<T>()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.GetCatalogItemsAsync<T>()
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).GetCatalogItemsAsync(Of T)()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).GetCatalogItemsAsync(Of T)()
-  name.vb: GetCatalogItemsAsync(Of T)()
+  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.SaveChangesAsync()
+  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).SaveChangesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).SaveChangesAsync()
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
-    name: GetCatalogItemsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
-  - name: <
-  - name: T
-  - name: '>'
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.GetCatalogItemsAsync``1
-    name: GetCatalogItemsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync``1(``0)
-  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_
-  name: InsertCatalogItemAsync<T>(T)
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.InsertCatalogItemAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.InsertCatalogItemAsync<T>(T)
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).InsertCatalogItemAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).InsertCatalogItemAsync(Of T)(T)
-  name.vb: InsertCatalogItemAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync``1(``0)
-    name: InsertCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.InsertCatalogItemAsync``1(``0)
-    name: InsertCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync``1(``0)
-  parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  definition: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_
-  name: RemoveCatalogItemAsync<T>(T)
-  nameWithType: CatalogRepositoryBase<Guid, ParmaCatalog, ParmaCatalogItem>.RemoveCatalogItemAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>.RemoveCatalogItemAsync<T>(T)
-  nameWithType.vb: CatalogRepositoryBase(Of Guid, ParmaCatalog, ParmaCatalogItem).RemoveCatalogItemAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of System.Guid, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog, ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem).RemoveCatalogItemAsync(Of T)(T)
-  name.vb: RemoveCatalogItemAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync``1(``0)
-    name: RemoveCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase{System.Guid,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog,ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}.RemoveCatalogItemAsync``1(``0)
-    name: RemoveCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -2776,98 +2831,25 @@ references:
   - name: TRes
   - name: )
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
-  isExternal: true
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
-  name: CreateCatalogAsync(string, Type)
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogAsync(string, Type)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogAsync(string, System.Type)
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogAsync(String, Type)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogAsync(String, System.Type)
-  name.vb: CreateCatalogAsync(String, Type)
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
+  name: GetCatalogsAsync()
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync()
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync()
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
-    name: CreateCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
+    name: GetCatalogsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
   - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
-    name: CreateCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
+    name: GetCatalogsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
   - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
-  name: CreateCatalogItemAsync(TCatalog)
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(TCatalog)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(TCatalog)
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(TCatalog)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(TCatalog)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
-  - name: (
-  - name: TCatalog
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
-  - name: (
-  - name: TCatalog
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
-  isExternal: true
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
-  name: CreateCatalogItemAsync(Type)
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(Type)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(System.Type)
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(Type)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(System.Type)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
-    name: CreateCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(`2)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(`2)
@@ -2890,6 +2872,35 @@ references:
     href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__2_
   - name: (
   - name: TCatalogItem
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  name: GetCatalogAsync<TItem>()
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogAsync<TItem>()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogAsync<TItem>()
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogAsync(Of TItem)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogAsync(Of TItem)()
+  name.vb: GetCatalogAsync(Of TItem)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
+    name: GetCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  - name: <
+  - name: TItem
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
+    name: GetCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+  - name: (
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(System.Type)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(System.Type)
@@ -2919,6 +2930,37 @@ references:
     name: Type
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  name: GetCatalogItemAsync<T>(TObjectId)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemAsync<T>(TObjectId)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemAsync<T>(TObjectId)
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemAsync(Of T)(TObjectId)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemAsync(Of T)(TObjectId)
+  name.vb: GetCatalogItemAsync(Of T)(TObjectId)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
+    name: GetCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: TObjectId
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
+    name: GetCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: TObjectId
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync(System.Type,`0)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync(System.Type,`0)
@@ -2983,6 +3025,35 @@ references:
   - name: " "
   - name: TObjectId
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  name: GetCatalogItemsAsync<T>()
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemsAsync<T>()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemsAsync<T>()
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemsAsync(Of T)()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemsAsync(Of T)()
+  name.vb: GetCatalogItemsAsync(Of T)()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
+    name: GetCatalogItemsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
+    name: GetCatalogItemsAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync(System.Type)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync(System.Type)
   isExternal: true
@@ -3034,26 +3105,6 @@ references:
   - name: (
   - name: TCatalog
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
-  name: GetCatalogsAsync()
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync()
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync()
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-    name: GetCatalogsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-    name: GetCatalogsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
-  - name: (
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogAsync(`1)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogAsync(`1)
   href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogAsync__1_
@@ -3098,25 +3149,47 @@ references:
   - name: (
   - name: TCatalog
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
-  name: SaveChangesAsync()
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.SaveChangesAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.SaveChangesAsync()
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).SaveChangesAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).SaveChangesAsync()
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
+  isExternal: true
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
+  name: CreateCatalogAsync(string, Type)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogAsync(string, Type)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogAsync(string, System.Type)
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogAsync(String, Type)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogAsync(String, System.Type)
+  name.vb: CreateCatalogAsync(String, Type)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
+    name: CreateCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
   - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
-    name: SaveChangesAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync(System.String,System.Type)
+    name: CreateCatalogAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogAsync_System_String_System_Type_
   - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync``1(System.String)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogAsync``1(System.String)
@@ -3156,6 +3229,50 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_
+  name: InsertCatalogItemAsync(TCatalogItem)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.InsertCatalogItemAsync(TCatalogItem)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.InsertCatalogItemAsync(TCatalogItem)
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).InsertCatalogItemAsync(TCatalogItem)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).InsertCatalogItemAsync(TCatalogItem)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)
+    name: InsertCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_
+  - name: (
+  - name: TCatalogItem
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)
+    name: InsertCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__2_
+  - name: (
+  - name: TCatalogItem
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_
+  name: RemoveCatalogItemAsync(TCatalogItem)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.RemoveCatalogItemAsync(TCatalogItem)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.RemoveCatalogItemAsync(TCatalogItem)
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).RemoveCatalogItemAsync(TCatalogItem)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).RemoveCatalogItemAsync(TCatalogItem)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync(`2)
+    name: RemoveCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_
+  - name: (
+  - name: TCatalogItem
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync(`2)
+    name: RemoveCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__2_
+  - name: (
+  - name: TCatalogItem
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync``1
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync``1
   href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1
@@ -3185,156 +3302,76 @@ references:
   - name: )
   - name: (
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
-  name: GetCatalogAsync<TItem>()
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogAsync<TItem>()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogAsync<TItem>()
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogAsync(Of TItem)()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogAsync(Of TItem)()
-  name.vb: GetCatalogAsync(Of TItem)()
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
+  name: CreateCatalogItemAsync(TCatalog)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(TCatalog)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(TCatalog)
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(TCatalog)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(TCatalog)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
-    name: GetCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
-  - name: <
-  - name: TItem
-  - name: '>'
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
+  - name: (
+  - name: TCatalog
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(`1)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync__1_
+  - name: (
+  - name: TCatalog
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
+  isExternal: true
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
+  name: CreateCatalogItemAsync(Type)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(Type)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.CreateCatalogItemAsync(System.Type)
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(Type)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).CreateCatalogItemAsync(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.CreateCatalogItemAsync(System.Type)
+    name: CreateCatalogItemAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_CreateCatalogItemAsync_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
+  name: SaveChangesAsync()
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.SaveChangesAsync()
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.SaveChangesAsync()
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).SaveChangesAsync()
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).SaveChangesAsync()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync``1
-    name: GetCatalogAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogAsync__1
+  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.SaveChangesAsync
+    name: SaveChangesAsync
+    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_SaveChangesAsync
   - name: (
-  - name: Of
-  - name: " "
-  - name: TItem
-  - name: )
-  - name: (
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
-  name: GetCatalogItemAsync<T>(TObjectId)
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemAsync<T>(TObjectId)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemAsync<T>(TObjectId)
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemAsync(Of T)(TObjectId)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemAsync(Of T)(TObjectId)
-  name.vb: GetCatalogItemAsync(Of T)(TObjectId)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
-    name: GetCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: TObjectId
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemAsync``1(`0)
-    name: GetCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemAsync__1__0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: TObjectId
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
-  name: GetCatalogItemsAsync<T>()
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemsAsync<T>()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogItemsAsync<T>()
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemsAsync(Of T)()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogItemsAsync(Of T)()
-  name.vb: GetCatalogItemsAsync(Of T)()
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
-    name: GetCatalogItemsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
-    name: GetCatalogItemsAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogItemsAsync__1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_
-  name: InsertCatalogItemAsync<T>(T)
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.InsertCatalogItemAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.InsertCatalogItemAsync<T>(T)
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).InsertCatalogItemAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).InsertCatalogItemAsync(Of T)(T)
-  name.vb: InsertCatalogItemAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync``1(``0)
-    name: InsertCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync``1(``0)
-    name: InsertCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_InsertCatalogItemAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_
-  name: RemoveCatalogItemAsync<T>(T)
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.RemoveCatalogItemAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.RemoveCatalogItemAsync<T>(T)
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).RemoveCatalogItemAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).RemoveCatalogItemAsync(Of T)(T)
-  name.vb: RemoveCatalogItemAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync``1(``0)
-    name: RemoveCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogItemAsync``1(``0)
-    name: RemoveCatalogItemAsync
-    href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_RemoveCatalogItemAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.#ctor*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.#ctor
@@ -3516,26 +3553,31 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '?'
-- uid: System.Threading.Tasks.Task{{T}[]}
-  commentId: T:System.Threading.Tasks.Task{`0[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T[]>
-  nameWithType: Task<T[]>
-  fullName: System.Threading.Tasks.Task<T[]>
-  nameWithType.vb: Task(Of T())
-  fullName.vb: System.Threading.Tasks.Task(Of T())
-  name.vb: Task(Of T())
+  name: Task<RepoResponse<T[]>>
+  nameWithType: Task<RepoResponse<T[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of T()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T()))
+  name.vb: Task(Of RepoResponse(Of T()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -3545,8 +3587,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: System.Nullable`1
@@ -3613,28 +3662,33 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ParmaCatalogItem[]>
-  nameWithType: Task<ParmaCatalogItem[]>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]>
-  nameWithType.vb: Task(Of ParmaCatalogItem())
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem())
-  name.vb: Task(Of ParmaCatalogItem())
+  name: Task<RepoResponse<ParmaCatalogItem[]>>
+  nameWithType: Task<RepoResponse<ParmaCatalogItem[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of ParmaCatalogItem()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem()))
+  name.vb: Task(Of RepoResponse(Of ParmaCatalogItem()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
     name: ParmaCatalogItem
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -3644,10 +3698,17 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
     name: ParmaCatalogItem
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogAsync*
@@ -3667,26 +3728,31 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ParmaCatalog>
-  nameWithType: Task<ParmaCatalog>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog>
-  nameWithType.vb: Task(Of ParmaCatalog)
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog)
-  name.vb: Task(Of ParmaCatalog)
+  name: Task<RepoResponse<ParmaCatalog>>
+  nameWithType: Task<RepoResponse<ParmaCatalog>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog>>
+  nameWithType.vb: Task(Of RepoResponse(Of ParmaCatalog))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog))
+  name.vb: Task(Of RepoResponse(Of ParmaCatalog))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -3696,9 +3762,16 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
+  - name: )
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.CreateCatalogItemAsync
@@ -3713,32 +3786,43 @@ references:
   name: ParmaCatalog
   nameWithType: ParmaCatalog
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ParmaCatalogItem>
-  nameWithType: Task<ParmaCatalogItem>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>
-  nameWithType.vb: Task(Of ParmaCatalogItem)
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem)
-  name.vb: Task(Of ParmaCatalogItem)
+  name: Task<RepoResponse<ParmaCatalogItem>>
+  nameWithType: Task<RepoResponse<ParmaCatalogItem>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem>>
+  nameWithType.vb: Task(Of RepoResponse(Of ParmaCatalogItem))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem))
+  name.vb: Task(Of RepoResponse(Of ParmaCatalogItem))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem
     name: ParmaCatalogItem
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
   - name: (
   - name: Of
   - name: " "
@@ -3746,24 +3830,30 @@ references:
     name: ParmaCatalogItem
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogItem.html
   - name: )
-- uid: System.Threading.Tasks.Task{{T}}
-  commentId: T:System.Threading.Tasks.Task{``0}
+  - name: )
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T>
-  nameWithType: Task<T>
-  fullName: System.Threading.Tasks.Task<T>
-  nameWithType.vb: Task(Of T)
-  fullName.vb: System.Threading.Tasks.Task(Of T)
-  name.vb: Task(Of T)
+  name: Task<RepoResponse<T>>
+  nameWithType: Task<RepoResponse<T>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T>>
+  nameWithType.vb: Task(Of RepoResponse(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T))
+  name.vb: Task(Of RepoResponse(Of T))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -3773,7 +3863,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
+  - name: )
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogAsync
@@ -3794,16 +3891,9 @@ references:
   name: GetCatalogItemAsync
   nameWithType: ParmaCatalogRepository.GetCatalogItemAsync
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItemAsync
-- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems
-  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_GetCatalogItems__1
-  name: GetCatalogItems
-  nameWithType: ParmaCatalogRepository.GetCatalogItems
-  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems
-- uid: System.Linq.IQueryable{{T}}
-  commentId: T:System.Linq.IQueryable{``0}
-  parent: System.Linq
-  definition: System.Linq.IQueryable`1
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   name: IQueryable<T>
   nameWithType: IQueryable<T>
@@ -3829,9 +3919,16 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Linq.IQueryable`1
-  commentId: T:System.Linq.IQueryable`1
-  isExternal: true
+- uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_GetCatalogItems__1
+  name: GetCatalogItems
+  nameWithType: ParmaCatalogRepository.GetCatalogItems
+  fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogItems
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{``0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   name: IQueryable<T>
   nameWithType: IQueryable<T>
@@ -3896,28 +3993,33 @@ references:
   name: GetCatalogsAsync
   nameWithType: ParmaCatalogRepository.GetCatalogsAsync
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.GetCatalogsAsync
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ParmaCatalog[]>
-  nameWithType: Task<ParmaCatalog[]>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]>
-  nameWithType.vb: Task(Of ParmaCatalog())
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog())
-  name.vb: Task(Of ParmaCatalog())
+  name: Task<RepoResponse<ParmaCatalog[]>>
+  nameWithType: Task<RepoResponse<ParmaCatalog[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of ParmaCatalog()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog()))
+  name.vb: Task(Of RepoResponse(Of ParmaCatalog()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -3927,10 +4029,17 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog
     name: ParmaCatalog
     href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalog.html
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogAsync*
@@ -3939,30 +4048,45 @@ references:
   name: InsertCatalogAsync
   nameWithType: ParmaCatalogRepository.InsertCatalogAsync
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogAsync
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse}
   parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<RepoResponse>
+  nameWithType: Task<RepoResponse>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse>
+  nameWithType.vb: Task(Of RepoResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse)
+  name.vb: Task(Of RepoResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse.html
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync
-  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_InsertCatalogItemAsync__1___0_
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_InsertCatalogItemAsync_ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogItem_
   name: InsertCatalogItemAsync
   nameWithType: ParmaCatalogRepository.InsertCatalogItemAsync
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.InsertCatalogItemAsync
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.LoadCatalogItems*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.LoadCatalogItems
   href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_LoadCatalogItems__2_System_Func_System_Linq_IQueryable___0____1__
@@ -4018,24 +4142,29 @@ references:
   - name: " "
   - name: TRes
   - name: )
-- uid: System.Threading.Tasks.Task{{TRes}}
-  commentId: T:System.Threading.Tasks.Task{``1}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``1}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TRes>
-  nameWithType: Task<TRes>
-  fullName: System.Threading.Tasks.Task<TRes>
-  nameWithType.vb: Task(Of TRes)
-  fullName.vb: System.Threading.Tasks.Task(Of TRes)
-  name.vb: Task(Of TRes)
+  name: Task<RepoResponse<TRes>>
+  nameWithType: Task<RepoResponse<TRes>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TRes>>
+  nameWithType.vb: Task(Of RepoResponse(Of TRes))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TRes))
+  name.vb: Task(Of RepoResponse(Of TRes))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TRes
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -4045,7 +4174,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TRes
+  - name: )
   - name: )
 - uid: System.Func`2
   commentId: T:System.Func`2
@@ -4089,7 +4225,7 @@ references:
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogAsync
 - uid: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync
-  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_RemoveCatalogItemAsync__1___0_
+  href: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.html#ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogRepository_RemoveCatalogItemAsync_ParmaGIS_Modules_Parma_Space_Catalog_ParmaCatalogItem_
   name: RemoveCatalogItemAsync
   nameWithType: ParmaCatalogRepository.RemoveCatalogItemAsync
   fullName: ParmaGIS.Modules.Parma.Space.Catalog.ParmaCatalogRepository.RemoveCatalogItemAsync

@@ -24,10 +24,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IServiceCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCatalog.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Представляет интерфейс взаимодействия для каталога сервисов.
+  example: []
   syntax:
     content: 'public interface IServiceCatalog : IInfoCatalog<IServiceInfo>, IEnumerable<IServiceInfo>, IEnumerable'
     content.vb: Public Interface IServiceCatalog Inherits IInfoCatalog(Of IServiceInfo), IEnumerable(Of IServiceInfo), IEnumerable
@@ -56,17 +58,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCatalog.cs
-    startLine: 9
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает информацию о сервисе по его типу.
+  example: []
   syntax:
     content: IServiceInfo? this[Type type] { get; }
     parameters:
     - id: type
       type: System.Type
+      description: Тип сервиса.
     return:
       type: ParmaGIS.Core.Serviceability.IServiceInfo
+      description: Информация о сервисе.
     content.vb: ReadOnly Default Property this[](type As Type) As IServiceInfo
   overload: ParmaGIS.Core.Serviceability.IServiceCatalog.Item*
   nameWithType.vb: IServiceCatalog.this[](Type)
@@ -90,17 +96,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceExist
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCatalog.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Проверяет существование сервиса с указанным типом.
+  example: []
   syntax:
     content: bool ServiceExist(Type type)
     parameters:
     - id: type
       type: System.Type
+      description: Тип искомого сервиса.
     return:
       type: System.Boolean
+      description: Значение true, если сервис с таким типом зарегистрирован, иначе - false.
     content.vb: Function ServiceExist(type As Type) As Boolean
   overload: ParmaGIS.Core.Serviceability.IServiceCatalog.ServiceExist*
 - uid: ParmaGIS.Core.Serviceability.IServiceCatalog.ServiceExist(System.String)
@@ -121,17 +131,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceExist
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCatalog.cs
-    startLine: 11
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Проверяет существование сервиса по указанному названию.
+  example: []
   syntax:
     content: bool ServiceExist(string serviceName)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название искомого сервиса.
     return:
       type: System.Boolean
+      description: Значение true, если сервис с таким названием зарегистрирован, иначе - false.
     content.vb: Function ServiceExist(serviceName As String) As Boolean
   overload: ParmaGIS.Core.Serviceability.IServiceCatalog.ServiceExist*
   nameWithType.vb: IServiceCatalog.ServiceExist(String)
@@ -155,17 +169,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetImplementations
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCatalog.cs
-    startLine: 12
+    startLine: 38
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возварщает все реализации сервиса указанного типа.
+  example: []
   syntax:
     content: IEnumerable<IServiceInfo> GetImplementations(Type serviceType)
     parameters:
     - id: serviceType
       type: System.Type
+      description: Тип сервиса.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Serviceability.IServiceInfo}
+      description: Перечисление реализаций сервиса.
     content.vb: Function GetImplementations(serviceType As Type) As IEnumerable(Of IServiceInfo)
   overload: ParmaGIS.Core.Serviceability.IServiceCatalog.GetImplementations*
 - uid: ParmaGIS.Core.Serviceability.IServiceCatalog.GetImplementations(System.String)
@@ -186,17 +204,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetImplementations
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceCatalog.cs
-    startLine: 13
+    startLine: 45
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возварщает все реализации сервиса указанного названия.
+  example: []
   syntax:
     content: IEnumerable<IServiceInfo> GetImplementations(string serviceName)
     parameters:
     - id: serviceName
       type: System.String
+      description: Название сервиса.
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.Serviceability.IServiceInfo}
+      description: Перечисление реализаций сервиса.
     content.vb: Function GetImplementations(serviceName As String) As IEnumerable(Of IServiceInfo)
   overload: ParmaGIS.Core.Serviceability.IServiceCatalog.GetImplementations*
   nameWithType.vb: IServiceCatalog.GetImplementations(String)

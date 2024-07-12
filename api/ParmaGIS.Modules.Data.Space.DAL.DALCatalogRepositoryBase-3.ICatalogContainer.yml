@@ -27,10 +27,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ICatalogContainer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 13
+    startLine: 23
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Представляет контракт взаимодействия с контейнером каталога.
+
+    Предназначен для упрощения реализации репозитория каталогов.
+  example: []
   syntax:
     content: protected interface DALCatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.ICatalogContainer
     content.vb: Protected Interface DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer
@@ -55,10 +60,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ItemType
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 15
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает тип элемента каталога.
+  example: []
   syntax:
     content: Type ItemType { get; }
     parameters: []
@@ -86,10 +93,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Catalog
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 16
+    startLine: 29
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает каталог.
+  example: []
   syntax:
     content: TCatalog Catalog { get; }
     parameters: []
@@ -117,14 +126,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetItems
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 17
+    startLine: 36
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает элементы каталога.
+  example: []
   syntax:
     content: TCatalogItem[] GetItems()
     return:
       type: '{TCatalogItem}[]'
+      description: Массив элементов каталога.
     content.vb: Function GetItems() As TCatalogItem()
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.ICatalogContainer.GetItems*
   nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer.GetItems()
@@ -147,17 +159,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetItem
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 18
+    startLine: 43
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает элемент каталога по его уникальному идентификатору.
+  example: []
   syntax:
     content: TCatalogItem? GetItem(TObjectId id)
     parameters:
     - id: id
       type: '{TObjectId}'
+      description: Уникальный идентификатор элемента каталога.
     return:
       type: '{TCatalogItem}'
+      description: Элемент каталога.
     content.vb: Function GetItem(id As TObjectId) As TCatalogItem
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.ICatalogContainer.GetItem*
   nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer.GetItem(TObjectId)
@@ -180,15 +196,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddItem
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 19
+    startLine: 49
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Добавляет элемент каталога.
+  example: []
   syntax:
     content: void AddItem(TCatalogItem item)
     parameters:
     - id: item
       type: '{TCatalogItem}'
+      description: Добавляемый элемент каталога.
     content.vb: Sub AddItem(item As TCatalogItem)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.ICatalogContainer.AddItem*
   nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer.AddItem(TCatalogItem)
@@ -211,15 +230,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveItem
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 20
+    startLine: 55
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Удалаяет элемент каталога.
+  example: []
   syntax:
     content: void RemoveItem(TCatalogItem item)
     parameters:
     - id: item
       type: '{TCatalogItem}'
+      description: Удаляемый элемент.
     content.vb: Sub RemoveItem(item As TCatalogItem)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.ICatalogContainer.RemoveItem*
   nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer.RemoveItem(TCatalogItem)
@@ -242,14 +264,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateItem
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 21
+    startLine: 61
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Создает элемент каталога.
+  example: []
   syntax:
     content: TCatalogItem CreateItem()
     return:
       type: '{TCatalogItem}'
+      description: Созданный элемент каталога.
     content.vb: Function CreateItem() As TCatalogItem
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.ICatalogContainer.CreateItem*
   nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer.CreateItem()
@@ -272,14 +297,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetItemsQuery
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCatalogRepositoryBase.cs
-    startLine: 22
+    startLine: 67
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает запрос к элементам каталога.
+  example: []
   syntax:
     content: IQueryable<TCatalogItem> GetItemsQuery()
     return:
       type: System.Linq.IQueryable{{TCatalogItem}}
+      description: Запрос к элементам каталога.
     content.vb: Function GetItemsQuery() As IQueryable(Of TCatalogItem)
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCatalogRepositoryBase`3.ICatalogContainer.GetItemsQuery*
   nameWithType.vb: DALCatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).ICatalogContainer.GetItemsQuery()

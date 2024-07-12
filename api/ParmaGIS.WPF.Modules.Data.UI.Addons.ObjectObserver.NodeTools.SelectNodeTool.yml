@@ -10,11 +10,13 @@ items:
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.CountSelectedChildrenToLeaves
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Dispose
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Execute(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext,System.Object)
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.NODE_CHILDREN_SELECTED
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.NODE_CHILDREN_TO_LEAVES_SELECTED
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.NODE_SELECTED
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.NODE_UNSELECTED
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionStateChanged
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.TreeNode
   langs:
   - csharp
@@ -30,7 +32,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SelectNodeTool
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 14
+    startLine: 378
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -76,7 +78,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NODE_UNSELECTED
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 16
+    startLine: 380
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -103,7 +105,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NODE_SELECTED
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 17
+    startLine: 381
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -130,7 +132,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NODE_CHILDREN_SELECTED
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 18
+    startLine: 382
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -157,7 +159,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NODE_CHILDREN_TO_LEAVES_SELECTED
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 19
+    startLine: 383
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -166,44 +168,33 @@ items:
     return:
       type: System.Int32
     content.vb: Public Const NODE_CHILDREN_TO_LEAVES_SELECTED As Integer = 3
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
-  commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
-  id: SelectionState
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionStateChanged
+  commentId: E:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionStateChanged
+  id: SelectionStateChanged
   parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool
   langs:
   - csharp
   - vb
-  name: SelectionState
-  nameWithType: SelectNodeTool.SelectionState
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
-  type: Property
+  name: SelectionStateChanged
+  nameWithType: SelectNodeTool.SelectionStateChanged
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionStateChanged
+  type: Event
   source:
     remote:
       path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: SelectionState
+    id: SelectionStateChanged
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 35
+    startLine: 392
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
-  summary: >-
-    0 - не выбран
-
-    1 - выбран
-
-    2 - выбраны все дети
-
-    3 - выбраны все дети до листьев
-  example: []
   syntax:
-    content: public int SelectionState { get; set; }
-    parameters: []
+    content: public event EventHandler<SelectionChangedEventArgs> SelectionStateChanged
     return:
-      type: System.Int32
-    content.vb: Public Property SelectionState As Integer
-  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState*
+      type: System.EventHandler{ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs}
+    content.vb: Public Event SelectionStateChanged As EventHandler(Of SelectionChangedEventArgs)
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.CountSelectedChildren
   commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.CountSelectedChildren
   id: CountSelectedChildren
@@ -222,7 +213,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CountSelectedChildren
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 47
+    startLine: 394
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -251,7 +242,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CountSelectedChildrenToLeaves
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 69
+    startLine: 403
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -280,7 +271,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Context
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 104
+    startLine: 415
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -309,7 +300,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TreeNode
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 105
+    startLine: 416
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -320,6 +311,44 @@ items:
       type: ParmaGIS.Modules.Data.Space.Data.ITreeNode
     content.vb: Public Property TreeNode As ITreeNode
   overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.TreeNode*
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
+  commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
+  id: SelectionState
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool
+  langs:
+  - csharp
+  - vb
+  name: SelectionState
+  nameWithType: SelectNodeTool.SelectionState
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SelectionState
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
+    startLine: 424
+  assemblies:
+  - ParmaGIS.WPF.Modules.Data.UI
+  namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
+  summary: >-
+    0 - не выбран
+
+    1 - выбран
+
+    2 - выбраны все дети
+
+    3 - выбраны все дети до листьев
+  example: []
+  syntax:
+    content: public int SelectionState { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SelectionState As Integer
+  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState*
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Execute(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext,System.Object)
   commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Execute(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext,System.Object)
   id: Execute(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext,System.Object)
@@ -338,7 +367,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Execute
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 315
+    startLine: 600
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -357,6 +386,35 @@ items:
   nameWithType.vb: SelectNodeTool.Execute(NodeContext, Object)
   fullName.vb: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Execute(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext, Object)
   name.vb: Execute(NodeContext, Object)
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize
+  id: Finalize
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool
+  langs:
+  - csharp
+  - vb
+  name: ~SelectNodeTool()
+  nameWithType: SelectNodeTool.~SelectNodeTool()
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.~SelectNodeTool()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Finalize
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
+    startLine: 631
+  assemblies:
+  - ParmaGIS.WPF.Modules.Data.UI
+  namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
+  syntax:
+    content: protected ~SelectNodeTool()
+    content.vb: 'Protected '
+  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Dispose
   commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Dispose
   id: Dispose
@@ -375,7 +433,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/SelectNodeTool.cs
-    startLine: 330
+    startLine: 636
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -1597,12 +1655,67 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState*
-  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
-  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_SelectionState
-  name: SelectionState
-  nameWithType: SelectNodeTool.SelectionState
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
+- uid: System.EventHandler{ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs}
+  commentId: T:System.EventHandler{ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<SelectionChangedEventArgs>
+  nameWithType: EventHandler<SelectionChangedEventArgs>
+  fullName: System.EventHandler<ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs>
+  nameWithType.vb: EventHandler(Of SelectionChangedEventArgs)
+  fullName.vb: System.EventHandler(Of ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs)
+  name.vb: EventHandler(Of SelectionChangedEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs
+    name: SelectionChangedEventArgs
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs.html
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs
+    name: SelectionChangedEventArgs
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectionChangedEventArgs.html
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.CountSelectedChildren*
   commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.CountSelectedChildren
   href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_CountSelectedChildren
@@ -1744,6 +1857,12 @@ references:
   - uid: ParmaGIS.Modules.Data.Space.Data
     name: Data
     href: ParmaGIS.Modules.Data.Space.Data.html
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState*
+  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_SelectionState
+  name: SelectionState
+  nameWithType: SelectNodeTool.SelectionState
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.SelectionState
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Execute*
   commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Execute
   href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_Execute_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_System_Object_
@@ -1791,6 +1910,17 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize*
+  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_Finalize
+  name: ~SelectNodeTool
+  nameWithType: SelectNodeTool.~SelectNodeTool
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.~SelectNodeTool
+  spec.csharp:
+  - name: "~"
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Finalize*
+    name: SelectNodeTool
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_Finalize
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Dispose*
   commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.Dispose
   href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SelectNodeTool.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_SelectNodeTool_Dispose

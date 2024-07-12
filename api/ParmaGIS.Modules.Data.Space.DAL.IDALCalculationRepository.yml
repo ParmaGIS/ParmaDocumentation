@@ -21,10 +21,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDALCalculationRepository
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCalculationRepository.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Представляет контракт взаимодействия с репозиторием таблиц расчета поддерживающего архитектуру DataAccessLayer.
+
+    Данный репозиторий представляет уровень получения данных таблиц расчета для бизнес логики приложения.
+
+    Данный репозиторий нацелен на реализацию относительно какой-либо ORM.
+  example: []
   syntax:
     content: 'public interface IDALCalculationRepository : ICalculationRepository'
     content.vb: Public Interface IDALCalculationRepository Inherits ICalculationRepository
@@ -38,19 +45,16 @@ items:
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync(System.Object)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType,System.String)
+  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateAndInsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowAsync``1(System.Object)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync``1
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,{T})
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1({T})
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1({T})
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.SaveChangesAsync
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CalcTablesChanged
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CalcTableRowsChanged
@@ -72,16 +76,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRows
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCalculationRepository.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Возвращает <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> строк таблиц расчета.
+
+    ВАЖНО. Использовать данный метод только в полном понимании того, зачем он нужен.
+
+    Данный метод не обеспечивает гарантии безопасного выполнения относительно многопотчного использования.
+  example: []
   syntax:
     content: IQueryable<T> GetCalcTableRows<T>()
     typeParameters:
     - id: T
+      description: Тип строк таблиц расчета.
     return:
       type: System.Linq.IQueryable{{T}}
+      description: Запрос к строкам таблиц расчета.
     content.vb: Function GetCalcTableRows(Of T)() As IQueryable(Of T)
   overload: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows*
   nameWithType.vb: IDALCalculationRepository.GetCalcTableRows(Of T)()
@@ -105,21 +118,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadRows
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/IDALCalculationRepository.cs
-    startLine: 15
+    startLine: 31
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Выполняет функцию потокобезопасно.
+  example: []
   syntax:
-    content: 'Task<TRes> LoadRows<TRow, TRes>(Func<IQueryable<TRow>, TRes> loader) where TRow : class, ICalcTableRow'
+    content: 'Task<RepoResponse<TRes>> LoadRows<TRow, TRes>(Func<IQueryable<TRow>, TRes> loader) where TRow : class, ICalcTableRow'
     parameters:
     - id: loader
       type: System.Func{System.Linq.IQueryable{{TRow}},{TRes}}
+      description: Функция выполняющаяся потокобезопасно.
     typeParameters:
     - id: TRow
+      description: Тип строки таблицы расчета.
     - id: TRes
+      description: Тип результата выполнения функции.
     return:
-      type: System.Threading.Tasks.Task{{TRes}}
-    content.vb: Function LoadRows(Of TRow As {Class, ICalcTableRow}, TRes)(loader As Func(Of IQueryable(Of TRow), TRes)) As Task(Of TRes)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+      description: Результат выполнения функции.
+    content.vb: Function LoadRows(Of TRow As {Class, ICalcTableRow}, TRes)(loader As Func(Of IQueryable(Of TRow), TRes)) As Task(Of RepoResponse(Of TRes))
   overload: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.LoadRows*
   nameWithType.vb: IDALCalculationRepository.LoadRows(Of TRow, TRes)(Func(Of IQueryable(Of TRow), TRes))
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.LoadRows(Of TRow, TRes)(System.Func(Of System.Linq.IQueryable(Of TRow), TRes))
@@ -428,6 +447,31 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateAndInsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateAndInsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
+  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateAndInsertCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
+  name: CreateAndInsertCalcTableRowAsync(ICalcTable)
+  nameWithType: ICalculationRepository.CreateAndInsertCalcTableRowAsync(ICalcTable)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateAndInsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateAndInsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+    name: CreateAndInsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateAndInsertCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
+    name: ICalcTable
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateAndInsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+    name: CreateAndInsertCalcTableRowAsync
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateAndInsertCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
+  - name: (
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
+    name: ICalcTable
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
   parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
@@ -478,30 +522,30 @@ references:
     name: ICalcTable
     href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
   parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
-  name: CreateCalcTableRowAsync(ICalcTable)
-  nameWithType: ICalculationRepository.CreateCalcTableRowAsync(ICalcTable)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableType_
+  name: CreateCalcTableRowAsync(ICalcTableType)
+  nameWithType: ICalculationRepository.CreateCalcTableRowAsync(ICalcTableType)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
     name: CreateCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableType_
   - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType
+    name: ICalcTableType
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
     name: CreateCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync_ParmaGIS_Modules_Data_Space_Calculation_ICalcTableType_
   - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
+  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType
+    name: ICalcTableType
+    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType.html
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
@@ -668,85 +712,6 @@ references:
     name: ICalcTable
     href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
-  name: CreateCalcTableRowAsync<T>(ICalcTable)
-  nameWithType: ICalculationRepository.CreateCalcTableRowAsync<T>(ICalcTable)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync<T>(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  nameWithType.vb: ICalculationRepository.CreateCalcTableRowAsync(Of T)(ICalcTable)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync(Of T)(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  name.vb: CreateCalcTableRowAsync(Of T)(ICalcTable)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-    name: CreateCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.CreateCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-    name: CreateCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_CreateCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,{T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
-  definition: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable___0_
-  name: InsertCalcTableRowAsync<T>(ICalcTable, T)
-  nameWithType: ICalculationRepository.InsertCalcTableRowAsync<T>(ICalcTable, T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync<T>(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable, T)
-  nameWithType.vb: ICalculationRepository.InsertCalcTableRowAsync(Of T)(ICalcTable, T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(Of T)(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable, T)
-  name.vb: InsertCalcTableRowAsync(Of T)(ICalcTable, T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
   parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
@@ -771,72 +736,6 @@ references:
   - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow
     name: ICalcTableRow
     href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow.html
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
-  definition: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1___0_
-  name: InsertCalcTableRowAsync<T>(T)
-  nameWithType: ICalculationRepository.InsertCalcTableRowAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync<T>(T)
-  nameWithType.vb: ICalculationRepository.InsertCalcTableRowAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(Of T)(T)
-  name.vb: InsertCalcTableRowAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-  parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
-  definition: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_RemoveCalcTableRowAsync__1___0_
-  name: RemoveCalcTableRowAsync<T>(T)
-  nameWithType: ICalculationRepository.RemoveCalcTableRowAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync<T>(T)
-  nameWithType.vb: ICalculationRepository.RemoveCalcTableRowAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync(Of T)(T)
-  name.vb: RemoveCalcTableRowAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-    name: RemoveCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_RemoveCalcTableRowAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-    name: RemoveCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_RemoveCalcTableRowAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.SaveChangesAsync
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.SaveChangesAsync
@@ -878,109 +777,6 @@ references:
   name: ICalculationRepository
   nameWithType: ICalculationRepository
   fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable___0_
-  name: InsertCalcTableRowAsync<T>(ICalcTable, T)
-  nameWithType: ICalculationRepository.InsertCalcTableRowAsync<T>(ICalcTable, T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync<T>(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable, T)
-  nameWithType.vb: ICalculationRepository.InsertCalcTableRowAsync(Of T)(ICalcTable, T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(Of T)(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable, T)
-  name.vb: InsertCalcTableRowAsync(Of T)(ICalcTable, T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1_ParmaGIS_Modules_Data_Space_Calculation_ICalcTable___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable
-    name: ICalcTable
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalcTable.html
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1___0_
-  name: InsertCalcTableRowAsync<T>(T)
-  nameWithType: ICalculationRepository.InsertCalcTableRowAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync<T>(T)
-  nameWithType.vb: ICalculationRepository.InsertCalcTableRowAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(Of T)(T)
-  name.vb: InsertCalcTableRowAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync``1(``0)
-    name: InsertCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_InsertCalcTableRowAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_RemoveCalcTableRowAsync__1___0_
-  name: RemoveCalcTableRowAsync<T>(T)
-  nameWithType: ICalculationRepository.RemoveCalcTableRowAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync<T>(T)
-  nameWithType.vb: ICalculationRepository.RemoveCalcTableRowAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync(Of T)(T)
-  name.vb: RemoveCalcTableRowAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-    name: RemoveCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_RemoveCalcTableRowAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.RemoveCalcTableRowAsync``1(``0)
-    name: RemoveCalcTableRowAsync
-    href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_RemoveCalcTableRowAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Calculation
   commentId: N:ParmaGIS.Modules.Data.Space.Calculation
   href: ParmaGIS.html
@@ -1027,16 +823,9 @@ references:
   - uid: ParmaGIS.Modules.Data.Space.Calculation
     name: Calculation
     href: ParmaGIS.Modules.Data.Space.Calculation.html
-- uid: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows*
-  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows
-  href: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.html#ParmaGIS_Modules_Data_Space_DAL_IDALCalculationRepository_GetCalcTableRows__1
-  name: GetCalcTableRows
-  nameWithType: IDALCalculationRepository.GetCalcTableRows
-  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows
-- uid: System.Linq.IQueryable{{T}}
-  commentId: T:System.Linq.IQueryable{``0}
-  parent: System.Linq
-  definition: System.Linq.IQueryable`1
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   name: IQueryable<T>
   nameWithType: IQueryable<T>
@@ -1062,9 +851,16 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Linq.IQueryable`1
-  commentId: T:System.Linq.IQueryable`1
-  isExternal: true
+- uid: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows
+  href: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.html#ParmaGIS_Modules_Data_Space_DAL_IDALCalculationRepository_GetCalcTableRows__1
+  name: GetCalcTableRows
+  nameWithType: IDALCalculationRepository.GetCalcTableRows
+  fullName: ParmaGIS.Modules.Data.Space.DAL.IDALCalculationRepository.GetCalcTableRows
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{``0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   name: IQueryable<T>
   nameWithType: IQueryable<T>
@@ -1172,24 +968,29 @@ references:
   - name: " "
   - name: TRes
   - name: )
-- uid: System.Threading.Tasks.Task{{TRes}}
-  commentId: T:System.Threading.Tasks.Task{``1}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``1}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TRes>
-  nameWithType: Task<TRes>
-  fullName: System.Threading.Tasks.Task<TRes>
-  nameWithType.vb: Task(Of TRes)
-  fullName.vb: System.Threading.Tasks.Task(Of TRes)
-  name.vb: Task(Of TRes)
+  name: Task<RepoResponse<TRes>>
+  nameWithType: Task<RepoResponse<TRes>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TRes>>
+  nameWithType.vb: Task(Of RepoResponse(Of TRes))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TRes))
+  name.vb: Task(Of RepoResponse(Of TRes))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: TRes
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1199,7 +1000,14 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: TRes
+  - name: )
   - name: )
 - uid: System.Func`2
   commentId: T:System.Func`2

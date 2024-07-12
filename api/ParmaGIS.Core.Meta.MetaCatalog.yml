@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MetaCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaCatalog.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Представляет каталог метаданных типа.
+  example: []
   syntax:
     content: 'public class MetaCatalog : InfoCatalogBase<TypeMeta>, IInfoCatalog<TypeMeta>, IEnumerable<TypeMeta>, IEnumerable'
     content.vb: Public Class MetaCatalog Inherits InfoCatalogBase(Of TypeMeta) Implements IInfoCatalog(Of TypeMeta), IEnumerable(Of TypeMeta), IEnumerable
@@ -67,17 +69,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetInfo
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/MetaCatalog.cs
-    startLine: 8
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta
+  summary: Возвращает метаданные типа.
+  example: []
   syntax:
     content: public TypeMeta GetInfo(Type type)
     parameters:
     - id: type
       type: System.Type
+      description: Тип, метаданные которого необходимо получаить.
     return:
       type: ParmaGIS.Core.Meta.Objects.TypeMeta
+      description: Метаданные типа.
     content.vb: Public Function GetInfo(type As Type) As TypeMeta
   overload: ParmaGIS.Core.Meta.MetaCatalog.GetInfo*
 references:

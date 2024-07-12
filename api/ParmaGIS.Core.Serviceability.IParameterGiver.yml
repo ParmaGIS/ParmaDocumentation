@@ -21,10 +21,38 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IParameterGiver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs
-    startLine: 5
+    startLine: 29
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: >-
+    Представляет интерфейс взаимодействия с сервисом получения параметров.
+
+    Данный сервис позволяет зарегистрировать механизм разрешения зависимостей различных типав.
+  example:
+  - >-
+    Есть класс A, B и AParameterGiver:
+
+    <pre><code class="lang-csharp">class A { public int Property { get; set; } }
+
+
+    class B { public B(A a) { A = a; } }
+
+
+    class AParameterGiver
+
+    {
+        public ParameterType =&gt; typrof(A);
+        public object GetParameter(Type needy, ParameterInfo parameterInfo)
+        {
+            return new A();
+        }
+    }</code></pre>
+
+
+    Класс А в данном случае предоставляется сервисом AParameterGiver.
+
+    Таким образом, при разрешении зависимосетей для создания экземпляра класс B через <xref href="ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)" data-throw-if-not-resolved="false"></xref>, классу В установится экземпляр класса А.
   syntax:
     content: public interface IParameterGiver
     content.vb: Public Interface IParameterGiver
@@ -46,10 +74,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs
-    startLine: 7
+    startLine: 34
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает тип выдаваемого параметра.
+  example: []
   syntax:
     content: Type ParameterType { get; }
     parameters: []
@@ -75,22 +105,54 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetParameter
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IParameterGiver.cs
-    startLine: 8
+    startLine: 42
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает параметр.
+  example: []
   syntax:
     content: object GetParameter(Type needy, ParameterInfo parameterInfo)
     parameters:
     - id: needy
       type: System.Type
+      description: Тип, для которого устанавливается параметр.
     - id: parameterInfo
       type: System.Reflection.ParameterInfo
+      description: Информация о параметре.
     return:
       type: System.Object
+      description: Экземпляр параметра.
     content.vb: Function GetParameter(needy As Type, parameterInfo As ParameterInfo) As Object
   overload: ParmaGIS.Core.Serviceability.IParameterGiver.GetParameter*
 references:
+- uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  isExternal: true
+  href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  name: Resolve(Type)
+  nameWithType: IServiceManager.Resolve(Type)
+  fullName: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+    name: Resolve
+    href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+    name: Resolve
+    href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: ParmaGIS.Core.Serviceability
   commentId: N:ParmaGIS.Core.Serviceability
   href: ParmaGIS.html

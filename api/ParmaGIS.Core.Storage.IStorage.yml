@@ -25,10 +25,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IStorage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: >-
+    Представляет контракт взаимодействия с хранилищем.
+
+    Хранилище предназначено для сохранения различных данных между сеансами работы приложения.
+  example: []
   syntax:
     content: 'public interface IStorage : IEnumerable<IContainer>, IEnumerable'
     content.vb: Public Interface IStorage Inherits IEnumerable(Of IContainer), IEnumerable
@@ -56,19 +61,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Set
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 7
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Устанавливает значение свойству, по его названию и ключу контейнера.
+  example: []
   syntax:
     content: void Set(Guid key, string propertyName, object? value)
     parameters:
     - id: key
       type: System.Guid
+      description: Уникальный ключ контейнера.
     - id: propertyName
       type: System.String
+      description: Название свойства.
     - id: value
       type: System.Object
+      description: Значение свойства.
     content.vb: Sub [Set](key As Guid, propertyName As String, value As Object)
   overload: ParmaGIS.Core.Storage.IStorage.Set*
   nameWithType.vb: IStorage.Set(Guid, String, Object)
@@ -92,19 +102,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Get
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 8
+    startLine: 25
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает значение свойства по его названию и ключу контейнера.
+  example: []
   syntax:
     content: object? Get(Guid key, string propertyName)
     parameters:
     - id: key
       type: System.Guid
+      description: Уникальный ключ контейнера
     - id: propertyName
       type: System.String
+      description: Название свойства.
     return:
       type: System.Object
+      description: Значение свйоства.
     content.vb: Function [Get](key As Guid, propertyName As String) As Object
   overload: ParmaGIS.Core.Storage.IStorage.Get*
   nameWithType.vb: IStorage.Get(Guid, String)
@@ -128,17 +143,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 9
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает контейнер по его уникальному ключу.
+  example: []
   syntax:
     content: IContainer this[Guid key] { get; }
     parameters:
     - id: key
       type: System.Guid
+      description: Уникальный ключ контейнера.
     return:
       type: ParmaGIS.Core.Storage.IContainer
+      description: Контейнер.
     content.vb: ReadOnly Default Property this[](key As Guid) As IContainer
   overload: ParmaGIS.Core.Storage.IStorage.Item*
   nameWithType.vb: IStorage.this[](Guid)
@@ -162,19 +181,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryGetContainer
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 10
+    startLine: 40
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Пытается получить контейнер по его ключу.
+  example: []
   syntax:
     content: bool TryGetContainer(Guid key, out IContainer container)
     parameters:
     - id: key
       type: System.Guid
+      description: Уникальный ключ контейнера.
     - id: container
       type: ParmaGIS.Core.Storage.IContainer
+      description: Контейнер.
     return:
       type: System.Boolean
+      description: Значение true, если удалось найти контейнер, иначе - false.
     content.vb: Function TryGetContainer(key As Guid, container As IContainer) As Boolean
   overload: ParmaGIS.Core.Storage.IStorage.TryGetContainer*
   nameWithType.vb: IStorage.TryGetContainer(Guid, IContainer)
@@ -198,10 +222,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChanges
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 11
+    startLine: 45
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: 'Сохраняет изменения в хранилище: удаление/добавление контейнеров, изменения свойств в них.'
+  example: []
   syntax:
     content: void SaveChanges()
     content.vb: Sub SaveChanges()
@@ -224,10 +250,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StorageChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/IStorage.cs
-    startLine: 13
+    startLine: 50
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возникает при изменении хранилища.
+  example: []
   syntax:
     content: event EventHandler<StorageChangedEventArgs>? StorageChanged
     return:

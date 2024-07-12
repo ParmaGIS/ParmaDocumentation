@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AttributesCollection
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/AttributesCollection.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Представляет коллекцию атрибутов.
+  example: []
   syntax:
     content: 'public class AttributesCollection : IEnumerable<Attribute>, IEnumerable'
     content.vb: Public Class AttributesCollection Implements IEnumerable(Of Attribute), IEnumerable
@@ -64,7 +66,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetEnumerator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/AttributesCollection.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
@@ -97,19 +99,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Add
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/AttributesCollection.cs
-    startLine: 27
+    startLine: 44
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Добавляет атрибут определенного типа
+  example: []
   syntax:
     content: 'public void Add<T>(T attribute) where T : Attribute'
     parameters:
     - id: attribute
       type: '{T}'
+      description: Экземпляр атрибута.
     typeParameters:
     - id: T
+      description: Тип атрибута.
     content.vb: Public Sub Add(Of T As Attribute)(attribute As T)
   overload: ParmaGIS.Core.Meta.Objects.AttributesCollection.Add*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Возникает, если атрибут данного типа уже указан и указать такой аттрибут несколько раз нельзя.
   nameWithType.vb: AttributesCollection.Add(Of T)(T)
   fullName.vb: ParmaGIS.Core.Meta.Objects.AttributesCollection.Add(Of T)(T)
   name.vb: Add(Of T)(T)
@@ -1328,6 +1338,13 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: ParmaGIS.Core.Meta.Objects.AttributesCollection.Add*
   commentId: Overload:ParmaGIS.Core.Meta.Objects.AttributesCollection.Add
   href: ParmaGIS.Core.Meta.Objects.AttributesCollection.html#ParmaGIS_Core_Meta_Objects_AttributesCollection_Add__1___0_

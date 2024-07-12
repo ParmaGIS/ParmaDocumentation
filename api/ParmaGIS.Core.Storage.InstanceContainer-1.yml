@@ -20,19 +20,22 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InstanceContainer
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 22
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Представляет контейнер экземпляра сущности, с которой связан <xref href="ParmaGIS.Core.Storage.IContainer" data-throw-if-not-resolved="false"></xref> в <xref href="ParmaGIS.Core.Storage.IStorage" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public class InstanceContainer<T>
     typeParameters:
     - id: T
+      description: Тип экземпляра. который храниться в контейнере.
     content.vb: Public Class InstanceContainer(Of T)
   inheritance:
   - System.Object
@@ -60,15 +63,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Instance
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 43
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 44
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает или задает экземпляр тпиа, хранящийся в контейнере.
+  example: []
   syntax:
     content: public T? Instance { get; set; }
     parameters: []
@@ -91,15 +96,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Key
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 74
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 76
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает Уникальный ключ контейнера.
+  example: []
   syntax:
     content: public Guid Key { get; }
     parameters: []
@@ -122,15 +129,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TypeName
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 75
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 79
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает название типа.
+  example: []
   syntax:
     content: public string TypeName { get; }
     parameters: []
@@ -153,15 +162,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Container
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 76
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 82
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает контейнер, хранящий значения свойств экземпляра типа.
+  example: []
   syntax:
     content: public IContainer Container { get; }
     parameters: []
@@ -184,15 +195,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Exception
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 77
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 85
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает исключение, возникшее в контейнере.
+  example: []
   syntax:
     content: public StorageProviderException? Exception { get; }
     parameters: []
@@ -215,15 +228,17 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Storage/StorageProvider.cs
+      path: common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChanges
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageProvider.cs
-    startLine: 80
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/InstanceContainer.cs
+    startLine: 90
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Сохраняет изменения в экземпляре <xref href="ParmaGIS.Core.Storage.InstanceContainer%601.Instance" data-throw-if-not-resolved="false"></xref> в контейнер <xref href="ParmaGIS.Core.Storage.InstanceContainer%601.Container" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public void SaveChanges()
     content.vb: Public Sub SaveChanges()
@@ -231,6 +246,20 @@ items:
   nameWithType.vb: InstanceContainer(Of T).SaveChanges()
   fullName.vb: ParmaGIS.Core.Storage.InstanceContainer(Of T).SaveChanges()
 references:
+- uid: ParmaGIS.Core.Storage.IContainer
+  commentId: T:ParmaGIS.Core.Storage.IContainer
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IContainer.html
+  name: IContainer
+  nameWithType: IContainer
+  fullName: ParmaGIS.Core.Storage.IContainer
+- uid: ParmaGIS.Core.Storage.IStorage
+  commentId: T:ParmaGIS.Core.Storage.IStorage
+  parent: ParmaGIS.Core.Storage
+  href: ParmaGIS.Core.Storage.IStorage.html
+  name: IStorage
+  nameWithType: IStorage
+  fullName: ParmaGIS.Core.Storage.IStorage
 - uid: ParmaGIS.Core.Storage
   commentId: N:ParmaGIS.Core.Storage
   href: ParmaGIS.html
@@ -559,13 +588,6 @@ references:
   fullName: ParmaGIS.Core.Storage.InstanceContainer<T>.Container
   nameWithType.vb: InstanceContainer(Of T).Container
   fullName.vb: ParmaGIS.Core.Storage.InstanceContainer(Of T).Container
-- uid: ParmaGIS.Core.Storage.IContainer
-  commentId: T:ParmaGIS.Core.Storage.IContainer
-  parent: ParmaGIS.Core.Storage
-  href: ParmaGIS.Core.Storage.IContainer.html
-  name: IContainer
-  nameWithType: IContainer
-  fullName: ParmaGIS.Core.Storage.IContainer
 - uid: ParmaGIS.Core.Storage.InstanceContainer`1.Exception*
   commentId: Overload:ParmaGIS.Core.Storage.InstanceContainer`1.Exception
   href: ParmaGIS.Core.Storage.InstanceContainer-1.html#ParmaGIS_Core_Storage_InstanceContainer_1_Exception
@@ -581,6 +603,22 @@ references:
   name: StorageProviderException
   nameWithType: StorageProviderException
   fullName: ParmaGIS.Core.Storage.StorageProviderException
+- uid: ParmaGIS.Core.Storage.InstanceContainer`1.Instance
+  commentId: P:ParmaGIS.Core.Storage.InstanceContainer`1.Instance
+  href: ParmaGIS.Core.Storage.InstanceContainer-1.html#ParmaGIS_Core_Storage_InstanceContainer_1_Instance
+  name: Instance
+  nameWithType: InstanceContainer<T>.Instance
+  fullName: ParmaGIS.Core.Storage.InstanceContainer<T>.Instance
+  nameWithType.vb: InstanceContainer(Of T).Instance
+  fullName.vb: ParmaGIS.Core.Storage.InstanceContainer(Of T).Instance
+- uid: ParmaGIS.Core.Storage.InstanceContainer`1.Container
+  commentId: P:ParmaGIS.Core.Storage.InstanceContainer`1.Container
+  href: ParmaGIS.Core.Storage.InstanceContainer-1.html#ParmaGIS_Core_Storage_InstanceContainer_1_Container
+  name: Container
+  nameWithType: InstanceContainer<T>.Container
+  fullName: ParmaGIS.Core.Storage.InstanceContainer<T>.Container
+  nameWithType.vb: InstanceContainer(Of T).Container
+  fullName.vb: ParmaGIS.Core.Storage.InstanceContainer(Of T).Container
 - uid: ParmaGIS.Core.Storage.InstanceContainer`1.SaveChanges*
   commentId: Overload:ParmaGIS.Core.Storage.InstanceContainer`1.SaveChanges
   href: ParmaGIS.Core.Storage.InstanceContainer-1.html#ParmaGIS_Core_Storage_InstanceContainer_1_SaveChanges

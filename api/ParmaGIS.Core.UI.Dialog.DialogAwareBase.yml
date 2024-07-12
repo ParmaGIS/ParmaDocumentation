@@ -29,10 +29,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DialogAwareBase
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Базовая реализация ViewModel диалога.
+  example: []
   syntax:
     content: 'public abstract class DialogAwareBase : BindableBase, INotifyPropertyChanged, IDialogAware'
     content.vb: Public MustInherit Class DialogAwareBase Inherits BindableBase Implements INotifyPropertyChanged, IDialogAware
@@ -45,6 +47,7 @@ items:
   - ParmaGIS.Core.UI.Dialog.Common.OpenFileDialog
   - ParmaGIS.Core.UI.Dialog.Common.SaveFileDialog
   - ParmaGIS.WPF.Modules.Data.UI.Dialogs.ViewModels.FillDataTableDialogViewModel
+  - ParmaGIS.WPF.Modules.Data.UI.Dialogs.ViewModels.NotProcessedNodesDialogViewModel
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.CreateReportProjectViewModel
   implements:
   - System.ComponentModel.INotifyPropertyChanged
@@ -81,10 +84,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CloseCallBack
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возникает при закрытии диалога.
   example: []
   syntax:
     content: public event Action<IDialogResult>? CloseCallBack
@@ -111,10 +115,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Title
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 13
+    startLine: 20
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает или задает заголовок диалога.
   example: []
   syntax:
     content: public string Title { get; set; }
@@ -143,10 +148,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ButtonResult
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 14
+    startLine: 23
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает или задает нажатую кнопку.
   example: []
   syntax:
     content: public ButtonResult ButtonResult { get; set; }
@@ -175,10 +181,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Parameters
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 15
+    startLine: 26
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает параметры диалога, с которым он был открыт.
+  example: []
   syntax:
     content: public IDialogParameters? Parameters { get; }
     parameters: []
@@ -204,15 +212,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCloseCallBack
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Вызывает событие закрытия диалога.
+  example: []
   syntax:
     content: protected void OnCloseCallBack(IDialogResult? result)
     parameters:
     - id: result
       type: ParmaGIS.Core.UI.Dialog.IDialogResult
+      description: Результат работы диалога.
     content.vb: Protected Sub OnCloseCallBack(result As IDialogResult)
   overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnCloseCallBack*
   nameWithType.vb: DialogAwareBase.OnCloseCallBack(IDialogResult)
@@ -236,10 +247,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCloseCallBack
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 23
+    startLine: 40
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Вызывает событие закрытия диалога с пустым результатом <xref href="ParmaGIS.Core.UI.Dialog.DialogResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected void OnCloseCallBack()
     content.vb: Protected Sub OnCloseCallBack()
@@ -262,15 +275,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CanClose
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 28
+    startLine: 49
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Возвращает возможность закрытия диалога.
   example: []
   syntax:
     content: public virtual bool CanClose()
     return:
       type: System.Boolean
+      description: Значение true, если можно закрыть диалог, иначе - false.
     content.vb: Public Overridable Function CanClose() As Boolean
   overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose*
   implements:
@@ -293,10 +308,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Close
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 33
+    startLine: 57
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Закрывает диалог.
   example: []
   syntax:
     content: public virtual void Close()
@@ -322,16 +338,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Show
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 38
+    startLine: 66
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Открывает диалог.
   example: []
   syntax:
     content: public void Show(IDialogParameters? parameters)
     parameters:
     - id: parameters
       type: ParmaGIS.Core.UI.Dialog.IDialogParameters
+      description: Параметры диалога.
     content.vb: Public Sub Show(parameters As IDialogParameters)
   overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.Show*
   implements:
@@ -357,15 +375,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnShow
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogAwareBase.cs
-    startLine: 44
+    startLine: 76
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Вызывается при открытии диалога.
+  example: []
   syntax:
     content: protected virtual void OnShow(IDialogParameters? parameters)
     parameters:
     - id: parameters
       type: ParmaGIS.Core.UI.Dialog.IDialogParameters
+      description: Параметры с которыми открывается диалог.
     content.vb: Protected Overridable Sub OnShow(parameters As IDialogParameters)
   overload: ParmaGIS.Core.UI.Dialog.DialogAwareBase.OnShow*
   nameWithType.vb: DialogAwareBase.OnShow(IDialogParameters)
@@ -1622,6 +1643,13 @@ references:
   name: IDialogResult
   nameWithType: IDialogResult
   fullName: ParmaGIS.Core.UI.Dialog.IDialogResult
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult
+  commentId: T:ParmaGIS.Core.UI.Dialog.DialogResult
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html
+  name: DialogResult
+  nameWithType: DialogResult
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult
 - uid: ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogAwareBase.CanClose
   href: ParmaGIS.Core.UI.Dialog.DialogAwareBase.html#ParmaGIS_Core_UI_Dialog_DialogAwareBase_CanClose

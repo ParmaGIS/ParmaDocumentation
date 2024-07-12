@@ -5,7 +5,6 @@ items:
   id: IViewInfo
   parent: ParmaGIS.Core.UI.Mvvm
   children:
-  - ParmaGIS.Core.UI.Mvvm.IViewInfo.Name
   - ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
   - ParmaGIS.Core.UI.Mvvm.IViewInfo.View
   - ParmaGIS.Core.UI.Mvvm.IViewInfo.ViewModel
@@ -23,42 +22,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IViewInfo
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewInfo.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Информация об отношении View к ViewModel.
+  example: []
   syntax:
     content: 'public interface IViewInfo : IItemInfo'
     content.vb: Public Interface IViewInfo Inherits IItemInfo
-- uid: ParmaGIS.Core.UI.Mvvm.IViewInfo.Name
-  commentId: P:ParmaGIS.Core.UI.Mvvm.IViewInfo.Name
-  id: Name
-  parent: ParmaGIS.Core.UI.Mvvm.IViewInfo
-  langs:
-  - csharp
-  - vb
-  name: Name
-  nameWithType: IViewInfo.Name
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewInfo.Name
-  type: Property
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Mvvm/IViewInfo.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Name
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewInfo.cs
-    startLine: 8
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Mvvm
-  syntax:
-    content: string Name { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: ReadOnly Property Name As String
-  overload: ParmaGIS.Core.UI.Mvvm.IViewInfo.Name*
+  inheritedMembers:
+  - ParmaGIS.Core.Catalog.IItemInfo.Name
 - uid: ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
   commentId: P:ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
   id: Type
@@ -77,10 +51,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Type
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewInfo.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Возварщает тип отношения.
+  example: []
   syntax:
     content: string Type { get; }
     parameters: []
@@ -106,10 +82,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: View
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewInfo.cs
-    startLine: 10
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Возварщает тип View.
+  example: []
   syntax:
     content: Type View { get; }
     parameters: []
@@ -135,10 +113,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ViewModel
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/IViewInfo.cs
-    startLine: 11
+    startLine: 18
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Возварщает тип ViewModel.
+  example: []
   syntax:
     content: Type ViewModel { get; }
     parameters: []
@@ -185,12 +165,56 @@ references:
   - uid: ParmaGIS.Core.UI.Mvvm
     name: Mvvm
     href: ParmaGIS.Core.UI.Mvvm.html
-- uid: ParmaGIS.Core.UI.Mvvm.IViewInfo.Name*
-  commentId: Overload:ParmaGIS.Core.UI.Mvvm.IViewInfo.Name
-  href: ParmaGIS.Core.UI.Mvvm.IViewInfo.html#ParmaGIS_Core_UI_Mvvm_IViewInfo_Name
+- uid: ParmaGIS.Core.Catalog.IItemInfo.Name
+  commentId: P:ParmaGIS.Core.Catalog.IItemInfo.Name
+  parent: ParmaGIS.Core.Catalog.IItemInfo
+  href: ParmaGIS.Core.Catalog.IItemInfo.html#ParmaGIS_Core_Catalog_IItemInfo_Name
   name: Name
-  nameWithType: IViewInfo.Name
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewInfo.Name
+  nameWithType: IItemInfo.Name
+  fullName: ParmaGIS.Core.Catalog.IItemInfo.Name
+- uid: ParmaGIS.Core.Catalog.IItemInfo
+  commentId: T:ParmaGIS.Core.Catalog.IItemInfo
+  parent: ParmaGIS.Core.Catalog
+  href: ParmaGIS.Core.Catalog.IItemInfo.html
+  name: IItemInfo
+  nameWithType: IItemInfo
+  fullName: ParmaGIS.Core.Catalog.IItemInfo
+- uid: ParmaGIS.Core.Catalog
+  commentId: N:ParmaGIS.Core.Catalog
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Catalog
+  nameWithType: ParmaGIS.Core.Catalog
+  fullName: ParmaGIS.Core.Catalog
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Catalog
+    name: Catalog
+    href: ParmaGIS.Core.Catalog.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Catalog
+    name: Catalog
+    href: ParmaGIS.Core.Catalog.html
+- uid: ParmaGIS.Core.UI.Mvvm.IViewInfo.Type*
+  commentId: Overload:ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
+  href: ParmaGIS.Core.UI.Mvvm.IViewInfo.html#ParmaGIS_Core_UI_Mvvm_IViewInfo_Type
+  name: Type
+  nameWithType: IViewInfo.Type
+  fullName: ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -209,12 +233,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Core.UI.Mvvm.IViewInfo.Type*
-  commentId: Overload:ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
-  href: ParmaGIS.Core.UI.Mvvm.IViewInfo.html#ParmaGIS_Core_UI_Mvvm_IViewInfo_Type
-  name: Type
-  nameWithType: IViewInfo.Type
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewInfo.Type
 - uid: ParmaGIS.Core.UI.Mvvm.IViewInfo.View*
   commentId: Overload:ParmaGIS.Core.UI.Mvvm.IViewInfo.View
   href: ParmaGIS.Core.UI.Mvvm.IViewInfo.html#ParmaGIS_Core_UI_Mvvm_IViewInfo_View

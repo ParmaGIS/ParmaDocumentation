@@ -5,9 +5,10 @@ items:
   id: ViewResolver`1
   parent: ParmaGIS.Core.UI.Mvvm
   children:
+  - ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,`0})
   - ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{`0})
   - ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,`0)
-  - ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve(System.Object,System.Object@)
+  - ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve(System.Object,`0@)
   langs:
   - csharp
   - vb
@@ -22,14 +23,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ViewResolver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver1.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Представляет простую реализацию <xref href="ParmaGIS.Core.UI.Mvvm.IViewResolver" data-throw-if-not-resolved="false"></xref> определенного типа View
+  example: []
   syntax:
     content: 'public class ViewResolver<T> : IViewResolver'
     typeParameters:
     - id: T
+      description: Тип View.
     content.vb: Public Class ViewResolver(Of T) Implements IViewResolver
   inheritance:
   - System.Object
@@ -46,6 +50,44 @@ items:
   nameWithType.vb: ViewResolver(Of T)
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T)
   name.vb: ViewResolver(Of T)
+- uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,`0})
+  commentId: M:ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,`0})
+  id: '#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{System.Object,`0})'
+  parent: ParmaGIS.Core.UI.Mvvm.ViewResolver`1
+  langs:
+  - csharp
+  - vb
+  name: ViewResolver(IViewModelManager, Func<object, T>)
+  nameWithType: ViewResolver<T>.ViewResolver(IViewModelManager, Func<object, T>)
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver<T>.ViewResolver(ParmaGIS.Core.UI.Mvvm.IViewModelManager, System.Func<object, T>)
+  type: Constructor
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: .ctor
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver1.cs
+    startLine: 19
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.UI.Mvvm.ViewResolver%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public ViewResolver(IViewModelManager viewModelManager, Func<object, T> defaultViewFactory)
+    parameters:
+    - id: viewModelManager
+      type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
+    - id: defaultViewFactory
+      type: System.Func{System.Object,{T}}
+      description: Функция создания View по умолчанию.
+    content.vb: Public Sub New(viewModelManager As IViewModelManager, defaultViewFactory As Func(Of Object, T))
+  overload: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor*
+  nameWithType.vb: ViewResolver(Of T).New(IViewModelManager, Func(Of Object, T))
+  fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T).New(ParmaGIS.Core.UI.Mvvm.IViewModelManager, System.Func(Of Object, T))
+  name.vb: New(IViewModelManager, Func(Of Object, T))
 - uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{`0})
   commentId: M:ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{`0})
   id: '#ctor(ParmaGIS.Core.UI.Mvvm.IViewModelManager,System.Func{`0})'
@@ -64,17 +106,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver1.cs
-    startLine: 9
+    startLine: 30
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.UI.Mvvm.ViewResolver%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ViewResolver(IViewModelManager viewModelManager, Func<T> defaultViewFactory)
     parameters:
     - id: viewModelManager
       type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
     - id: defaultViewFactory
       type: System.Func{{T}}
+      description: Функция создания View по умолчанию.
     content.vb: Public Sub New(viewModelManager As IViewModelManager, defaultViewFactory As Func(Of T))
   overload: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor*
   nameWithType.vb: ViewResolver(Of T).New(IViewModelManager, Func(Of T))
@@ -98,32 +144,36 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver1.cs
-    startLine: 15
+    startLine: 38
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.UI.Mvvm.ViewResolver%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ViewResolver(IViewModelManager viewModelManager, T defaultView)
     parameters:
     - id: viewModelManager
       type: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+      description: Менеджер ViewModel.
     - id: defaultView
       type: '{T}'
+      description: Экземпляр View по умолчанию.
     content.vb: Public Sub New(viewModelManager As IViewModelManager, defaultView As T)
   overload: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor*
   nameWithType.vb: ViewResolver(Of T).New(IViewModelManager, T)
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T).New(ParmaGIS.Core.UI.Mvvm.IViewModelManager, T)
   name.vb: New(IViewModelManager, T)
-- uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve(System.Object,System.Object@)
-  commentId: M:ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve(System.Object,System.Object@)
-  id: TryResolve(System.Object,System.Object@)
+- uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve(System.Object,`0@)
+  commentId: M:ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve(System.Object,`0@)
+  id: TryResolve(System.Object,`0@)
   parent: ParmaGIS.Core.UI.Mvvm.ViewResolver`1
   langs:
   - csharp
   - vb
-  name: TryResolve(object, out object)
-  nameWithType: ViewResolver<T>.TryResolve(object, out object)
-  fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver<T>.TryResolve(object, out object)
+  name: TryResolve(object, out T)
+  nameWithType: ViewResolver<T>.TryResolve(object, out T)
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver<T>.TryResolve(object, out T)
   type: Method
   source:
     remote:
@@ -132,28 +182,37 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryResolve
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewResolver1.cs
-    startLine: 17
+    startLine: 48
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Пытается  разрешить View для ViewModrl.
   example: []
   syntax:
-    content: public bool TryResolve(object viewModel, out object view)
+    content: public bool TryResolve(object viewModel, out T view)
     parameters:
     - id: viewModel
       type: System.Object
+      description: Экземпляр ViewModel.
     - id: view
-      type: System.Object
+      type: '{T}'
+      description: Экземпляр View.
     return:
       type: System.Boolean
-    content.vb: Public Function TryResolve(viewModel As Object, view As Object) As Boolean
+      description: Значение true, если удалось найти View для ViewModel, иначе - false.
+    content.vb: Public Function TryResolve(viewModel As Object, view As T) As Boolean
   overload: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve*
-  implements:
-  - ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(System.Object,System.Object@)
-  nameWithType.vb: ViewResolver(Of T).TryResolve(Object, Object)
-  fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T).TryResolve(Object, Object)
-  name.vb: TryResolve(Object, Object)
+  nameWithType.vb: ViewResolver(Of T).TryResolve(Object, T)
+  fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T).TryResolve(Object, T)
+  name.vb: TryResolve(Object, T)
 references:
+- uid: ParmaGIS.Core.UI.Mvvm.IViewResolver
+  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewResolver
+  parent: ParmaGIS.Core.UI.Mvvm
+  href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html
+  name: IViewResolver
+  nameWithType: IViewResolver
+  fullName: ParmaGIS.Core.UI.Mvvm.IViewResolver
 - uid: ParmaGIS.Core.UI.Mvvm
   commentId: N:ParmaGIS.Core.UI.Mvvm
   href: ParmaGIS.html
@@ -203,13 +262,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ParmaGIS.Core.UI.Mvvm.IViewResolver
-  commentId: T:ParmaGIS.Core.UI.Mvvm.IViewResolver
-  parent: ParmaGIS.Core.UI.Mvvm
-  href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html
-  name: IViewResolver
-  nameWithType: IViewResolver
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewResolver
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -436,9 +488,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1
+  commentId: T:ParmaGIS.Core.UI.Mvvm.ViewResolver`1
+  href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html
+  name: ViewResolver<T>
+  nameWithType: ViewResolver<T>
+  fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver<T>
+  nameWithType.vb: ViewResolver(Of T)
+  fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T)
+  name.vb: ViewResolver(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1
+    name: ViewResolver
+    href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1
+    name: ViewResolver
+    href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor*
   commentId: Overload:ParmaGIS.Core.UI.Mvvm.ViewResolver`1.#ctor
-  href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html#ParmaGIS_Core_UI_Mvvm_ViewResolver_1__ctor_ParmaGIS_Core_UI_Mvvm_IViewModelManager_System_Func__0__
+  href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html#ParmaGIS_Core_UI_Mvvm_ViewResolver_1__ctor_ParmaGIS_Core_UI_Mvvm_IViewModelManager_System_Func_System_Object__0__
   name: ViewResolver
   nameWithType: ViewResolver<T>.ViewResolver
   fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver<T>.ViewResolver
@@ -452,6 +529,81 @@ references:
   name: IViewModelManager
   nameWithType: IViewModelManager
   fullName: ParmaGIS.Core.UI.Mvvm.IViewModelManager
+- uid: System.Func{System.Object,{T}}
+  commentId: T:System.Func{System.Object,`0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<object, T>
+  nameWithType: Func<object, T>
+  fullName: System.Func<object, T>
+  nameWithType.vb: Func(Of Object, T)
+  fullName.vb: System.Func(Of Object, T)
+  name.vb: Func(Of Object, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: System.Func{{T}}
   commentId: T:System.Func{`0}
   parent: System
@@ -521,57 +673,12 @@ references:
   fullName: T
 - uid: ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve*
   commentId: Overload:ParmaGIS.Core.UI.Mvvm.ViewResolver`1.TryResolve
-  href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html#ParmaGIS_Core_UI_Mvvm_ViewResolver_1_TryResolve_System_Object_System_Object__
+  href: ParmaGIS.Core.UI.Mvvm.ViewResolver-1.html#ParmaGIS_Core_UI_Mvvm_ViewResolver_1_TryResolve_System_Object__0__
   name: TryResolve
   nameWithType: ViewResolver<T>.TryResolve
   fullName: ParmaGIS.Core.UI.Mvvm.ViewResolver<T>.TryResolve
   nameWithType.vb: ViewResolver(Of T).TryResolve
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ViewResolver(Of T).TryResolve
-- uid: ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(System.Object,System.Object@)
-  commentId: M:ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(System.Object,System.Object@)
-  parent: ParmaGIS.Core.UI.Mvvm.IViewResolver
-  isExternal: true
-  href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html#ParmaGIS_Core_UI_Mvvm_IViewResolver_TryResolve_System_Object_System_Object__
-  name: TryResolve(object, out object)
-  nameWithType: IViewResolver.TryResolve(object, out object)
-  fullName: ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(object, out object)
-  nameWithType.vb: IViewResolver.TryResolve(Object, Object)
-  fullName.vb: ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(Object, Object)
-  name.vb: TryResolve(Object, Object)
-  spec.csharp:
-  - uid: ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(System.Object,System.Object@)
-    name: TryResolve
-    href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html#ParmaGIS_Core_UI_Mvvm_IViewResolver_TryResolve_System_Object_System_Object__
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - name: out
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.UI.Mvvm.IViewResolver.TryResolve(System.Object,System.Object@)
-    name: TryResolve
-    href: ParmaGIS.Core.UI.Mvvm.IViewResolver.html#ParmaGIS_Core_UI_Mvvm_IViewResolver_TryResolve_System_Object_System_Object__
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System

@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceProviderExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewsCatalogExtensions.cs
-    startLine: 23
+    startLine: 43
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: Расширения для <xref href="ParmaGIS.Core.Serviceability.IServiceProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ServiceProviderExtensions
     content.vb: Public Module ServiceProviderExtensions
@@ -56,30 +58,48 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterView
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Mvvm/ViewsCatalogExtensions.cs
-    startLine: 25
+    startLine: 55
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Mvvm
+  summary: >-
+    Регистрирует отношение View к ViewModel.
+
+    Если не указывать функции создания экземпляров View и/или ViewModel, то будет использоваться <xref href="ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)" data-throw-if-not-resolved="false"></xref> для создания экхемпляров.
+  example: []
   syntax:
     content: public static void RegisterView<TView, TViewModel>(this IServiceProvider serviceProvider, string type = "view", Func<object>? viewFactory = null, Func<object>? viewModelFactory = null)
     parameters:
     - id: serviceProvider
       type: ParmaGIS.Core.Serviceability.IServiceProvider
+      description: Провайдер сервисов.
     - id: type
       type: System.String
+      description: Тип отношения.
     - id: viewFactory
       type: System.Func{System.Object}
+      description: Функция создания экземпляра View.
     - id: viewModelFactory
       type: System.Func{System.Object}
+      description: Функция создания экзкмпляра ViewModel.
     typeParameters:
     - id: TView
+      description: Тип View.
     - id: TViewModel
+      description: Тип ViewModel.
     content.vb: Public Shared Sub RegisterView(Of TView, TViewModel)(serviceProvider As IServiceProvider, type As String = "view", viewFactory As Func(Of Object) = Nothing, viewModelFactory As Func(Of Object) = Nothing)
   overload: ParmaGIS.Core.UI.Mvvm.ServiceProviderExtensions.RegisterView*
   nameWithType.vb: ServiceProviderExtensions.RegisterView(Of TView, TViewModel)(IServiceProvider, String, Func(Of Object), Func(Of Object))
   fullName.vb: ParmaGIS.Core.UI.Mvvm.ServiceProviderExtensions.RegisterView(Of TView, TViewModel)(ParmaGIS.Core.Serviceability.IServiceProvider, String, System.Func(Of Object), System.Func(Of Object))
   name.vb: RegisterView(Of TView, TViewModel)(IServiceProvider, String, Func(Of Object), Func(Of Object))
 references:
+- uid: ParmaGIS.Core.Serviceability.IServiceProvider
+  commentId: T:ParmaGIS.Core.Serviceability.IServiceProvider
+  parent: ParmaGIS.Core.Serviceability
+  href: ParmaGIS.Core.Serviceability.IServiceProvider.html
+  name: IServiceProvider
+  nameWithType: IServiceProvider
+  fullName: ParmaGIS.Core.Serviceability.IServiceProvider
 - uid: ParmaGIS.Core.UI.Mvvm
   commentId: N:ParmaGIS.Core.UI.Mvvm
   href: ParmaGIS.html
@@ -348,6 +368,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: ParmaGIS.Core.Serviceability
+  commentId: N:ParmaGIS.Core.Serviceability
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Serviceability
+  nameWithType: ParmaGIS.Core.Serviceability
+  fullName: ParmaGIS.Core.Serviceability
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Serviceability
+    name: Serviceability
+    href: ParmaGIS.Core.Serviceability.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Serviceability
+    name: Serviceability
+    href: ParmaGIS.Core.Serviceability.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -355,19 +405,39 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  isExternal: true
+  href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  name: Resolve(Type)
+  nameWithType: IServiceManager.Resolve(Type)
+  fullName: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+    name: Resolve
+    href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+    name: Resolve
+    href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: ParmaGIS.Core.UI.Mvvm.ServiceProviderExtensions.RegisterView*
   commentId: Overload:ParmaGIS.Core.UI.Mvvm.ServiceProviderExtensions.RegisterView
   href: ParmaGIS.Core.UI.Mvvm.ServiceProviderExtensions.html#ParmaGIS_Core_UI_Mvvm_ServiceProviderExtensions_RegisterView__2_ParmaGIS_Core_Serviceability_IServiceProvider_System_String_System_Func_System_Object__System_Func_System_Object__
   name: RegisterView
   nameWithType: ServiceProviderExtensions.RegisterView
   fullName: ParmaGIS.Core.UI.Mvvm.ServiceProviderExtensions.RegisterView
-- uid: ParmaGIS.Core.Serviceability.IServiceProvider
-  commentId: T:ParmaGIS.Core.Serviceability.IServiceProvider
-  parent: ParmaGIS.Core.Serviceability
-  href: ParmaGIS.Core.Serviceability.IServiceProvider.html
-  name: IServiceProvider
-  nameWithType: IServiceProvider
-  fullName: ParmaGIS.Core.Serviceability.IServiceProvider
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -414,36 +484,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: ParmaGIS.Core.Serviceability
-  commentId: N:ParmaGIS.Core.Serviceability
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Serviceability
-  nameWithType: ParmaGIS.Core.Serviceability
-  fullName: ParmaGIS.Core.Serviceability
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Serviceability
-    name: Serviceability
-    href: ParmaGIS.Core.Serviceability.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Serviceability
-    name: Serviceability
-    href: ParmaGIS.Core.Serviceability.html
 - uid: System.Func`1
   commentId: T:System.Func`1
   isExternal: true

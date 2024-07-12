@@ -8,6 +8,7 @@ items:
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.AddRow(`3)
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.AddTable(`2)
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CalcTableType
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateRow
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateRow(`2)
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateTable(System.String)
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.GetRow(`0)
@@ -33,10 +34,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ITableContainer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 14
+    startLine: 25
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: >-
+    Контейнер таблицы расчетов.
+
+    Позволяет упростить работу с таблицами и строками в репозетории.
+  example: []
   syntax:
     content: protected interface DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer
     content.vb: Protected Interface DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
@@ -61,10 +67,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RowType
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 16
+    startLine: 28
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает тип строки таблицы расчета.
+  example: []
   syntax:
     content: Type RowType { get; }
     parameters: []
@@ -92,10 +100,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TableType
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 17
+    startLine: 31
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает системный тип таблицы расчета.
+  example: []
   syntax:
     content: Type TableType { get; }
     parameters: []
@@ -123,10 +133,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalcTableType
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 18
+    startLine: 34
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает тип таблицы расчета.
+  example: []
   syntax:
     content: TCalcTableType CalcTableType { get; }
     parameters: []
@@ -154,10 +166,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRows
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 20
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает строки таблиц расчета.
+  example: []
   syntax:
     content: TCalcTableRow[] GetRows()
     return:
@@ -184,10 +198,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRows
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 21
+    startLine: 41
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает строки таблицы расчета.
+  example: []
   syntax:
     content: TCalcTableRow[] GetRows(TObjectId tableId)
     parameters:
@@ -217,10 +233,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 22
+    startLine: 44
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает строку по ее уникальному идентификатору.
+  example: []
   syntax:
     content: TCalcTableRow? GetRow(TObjectId id)
     parameters:
@@ -250,10 +268,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetTables
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 23
+    startLine: 47
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает таблицы расчетов.
+  example: []
   syntax:
     content: TCalcTable[] GetTables()
     return:
@@ -280,10 +300,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 24
+    startLine: 50
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Возвращает таблицу расчетов по ее уникальнмоу идентификатору.
+  example: []
   syntax:
     content: TCalcTable? GetTable(TObjectId id)
     parameters:
@@ -313,10 +335,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 26
+    startLine: 53
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Добавляет таблице расчетов.
+  example: []
   syntax:
     content: void AddTable(TCalcTable table)
     parameters:
@@ -344,10 +368,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 27
+    startLine: 56
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Добавляет таблице расчетов.
+  example: []
   syntax:
     content: void RemoveTable(TCalcTable table)
     parameters:
@@ -375,10 +401,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 28
+    startLine: 59
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Добавляет строку таблицы расчетов.
+  example: []
   syntax:
     content: void AddRow(TCalcTableRow row)
     parameters:
@@ -406,10 +434,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 29
+    startLine: 62
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Удалаяет строку таблицы расчетов.
+  example: []
   syntax:
     content: void RemoveRow(TCalcTableRow row)
     parameters:
@@ -437,10 +467,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 31
+    startLine: 65
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Создает таблицу расчетов.
+  example: []
   syntax:
     content: TCalcTable CreateTable(string name)
     parameters:
@@ -471,10 +503,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 32
+    startLine: 68
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Создает строку таблицы расчетов.
+  example: []
   syntax:
     content: TCalcTableRow CreateRow(TCalcTable table)
     parameters:
@@ -486,6 +520,36 @@ items:
   overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateRow*
   nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer.CreateRow(TCalcTable)
   fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer.CreateRow(TCalcTable)
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateRow
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateRow
+  id: CreateRow
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
+  langs:
+  - csharp
+  - vb
+  name: CreateRow()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer.CreateRow()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer.CreateRow()
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CreateRow
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
+    startLine: 69
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.DAL
+  syntax:
+    content: TCalcTableRow CreateRow()
+    return:
+      type: '{TCalcTableRow}'
+    content.vb: Function CreateRow() As TCalcTableRow
+  overload: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CreateRow*
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer.CreateRow()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer.CreateRow()
 references:
 - uid: ParmaGIS.Modules.Data.Space.DAL
   commentId: N:ParmaGIS.Modules.Data.Space.DAL

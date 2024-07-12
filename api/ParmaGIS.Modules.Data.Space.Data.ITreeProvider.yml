@@ -27,10 +27,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ITreeProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Представляет контракт взаимодействия с провайдером древовидного представления.
+  example: []
   syntax:
     content: public interface ITreeProvider
     content.vb: Public Interface ITreeProvider
@@ -52,10 +54,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Space
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает пространство, которому пренадлежит провайдер.
+  example: []
   syntax:
     content: ISpace Space { get; }
     parameters: []
@@ -81,15 +85,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRootNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает корневые элементы древовидного представления.
+  example: []
   syntax:
-    content: Task<ITreeNode[]> GetRootNodesAsync()
+    content: Task<RepoResponse<ITreeNode[]>> GetRootNodesAsync()
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}
-    content.vb: Function GetRootNodesAsync() As Task(Of ITreeNode())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
+      description: Массив корневых элементов.
+    content.vb: Function GetRootNodesAsync() As Task(Of RepoResponse(Of ITreeNode()))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetRootNodesAsync*
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetParentAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
   commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetParentAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
@@ -109,18 +116,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetParentAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает родительский элемент элемента.
+  example: []
   syntax:
-    content: Task<ITreeNode?> GetParentAsync(ITreeNode childNode)
+    content: Task<RepoResponse<ITreeNode?>> GetParentAsync(ITreeNode childNode)
     parameters:
     - id: childNode
       type: ParmaGIS.Modules.Data.Space.Data.ITreeNode
+      description: Дочерний элемент.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode}
-    content.vb: Function GetParentAsync(childNode As ITreeNode) As Task(Of ITreeNode)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode}}
+      description: Родительский элемент.
+    content.vb: Function GetParentAsync(childNode As ITreeNode) As Task(Of RepoResponse(Of ITreeNode))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetParentAsync*
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetChildrenAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
   commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetChildrenAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
@@ -140,18 +151,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetChildrenAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 12
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает дочерние элементы элемента.
+  example: []
   syntax:
-    content: Task<ITreeNode[]> GetChildrenAsync(ITreeNode parentNode)
+    content: Task<RepoResponse<ITreeNode[]>> GetChildrenAsync(ITreeNode parentNode)
     parameters:
     - id: parentNode
       type: ParmaGIS.Modules.Data.Space.Data.ITreeNode
+      description: Родительский элемент.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}
-    content.vb: Function GetChildrenAsync(parentNode As ITreeNode) As Task(Of ITreeNode())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
+      description: Массив дочерних элементов.
+    content.vb: Function GetChildrenAsync(parentNode As ITreeNode) As Task(Of RepoResponse(Of ITreeNode()))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetChildrenAsync*
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync
   commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync
@@ -171,15 +186,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 13
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает все элементы древовидного представления.
+  example: []
   syntax:
-    content: Task<ITreeNode[]> GetNodesAsync()
+    content: Task<RepoResponse<ITreeNode[]>> GetNodesAsync()
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}
-    content.vb: Function GetNodesAsync() As Task(Of ITreeNode())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
+      description: Массив всех элементов.
+    content.vb: Function GetNodesAsync() As Task(Of RepoResponse(Of ITreeNode()))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync*
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync``1
   commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync``1
@@ -199,17 +217,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 14
+    startLine: 45
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает элементы древовидного представления определенного типа.
+  example: []
   syntax:
-    content: 'Task<T[]> GetNodesAsync<T>() where T : class, ITreeNode'
+    content: 'Task<RepoResponse<T[]>> GetNodesAsync<T>() where T : class, ITreeNode'
     typeParameters:
     - id: T
+      description: Тип элементов.
     return:
-      type: System.Threading.Tasks.Task{{T}[]}
-    content.vb: Function GetNodesAsync(Of T As {Class, ITreeNode})() As Task(Of T())
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+      description: Массив элементов.
+    content.vb: Function GetNodesAsync(Of T As {Class, ITreeNode})() As Task(Of RepoResponse(Of T()))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync*
   nameWithType.vb: ITreeProvider.GetNodesAsync(Of T)()
   fullName.vb: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync(Of T)()
@@ -232,18 +254,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 15
+    startLine: 52
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает связанные с элементом древовидного представления данные.
+  example: []
   syntax:
-    content: Task<IDataObject?> GetDataAsync(ITreeNode node)
+    content: Task<RepoResponse<IDataObject?>> GetDataAsync(ITreeNode node)
     parameters:
     - id: node
       type: ParmaGIS.Modules.Data.Space.Data.ITreeNode
+      description: Элемент древовидного представления.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.IDataObject}
-    content.vb: Function GetDataAsync(node As ITreeNode) As Task(Of IDataObject)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.IDataObject}}
+      description: Объект данных, связанный с элементом древовидного представления.
+    content.vb: Function GetDataAsync(node As ITreeNode) As Task(Of RepoResponse(Of IDataObject))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetDataAsync*
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync(System.Object)
   commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync(System.Object)
@@ -263,18 +289,22 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodeAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 16
+    startLine: 59
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает элемент древовидного представления по его уникальному идентификатору.
+  example: []
   syntax:
-    content: Task<ITreeNode> GetNodeAsync(object id)
+    content: Task<RepoResponse<ITreeNode>> GetNodeAsync(object id)
     parameters:
     - id: id
       type: System.Object
+      description: Уникальный идентификатор элементов древовидного представления.
     return:
-      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode}
-    content.vb: Function GetNodeAsync(id As Object) As Task(Of ITreeNode)
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode}}
+      description: Элемент древовидного представления.
+    content.vb: Function GetNodeAsync(id As Object) As Task(Of RepoResponse(Of ITreeNode))
   overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync*
   nameWithType.vb: ITreeProvider.GetNodeAsync(Object)
   fullName.vb: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync(Object)
@@ -383,28 +413,33 @@ references:
   name: GetRootNodesAsync
   nameWithType: ITreeProvider.GetRootNodesAsync
   fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetRootNodesAsync
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ITreeNode[]>
-  nameWithType: Task<ITreeNode[]>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.Data.ITreeNode[]>
-  nameWithType.vb: Task(Of ITreeNode())
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.Data.ITreeNode())
-  name.vb: Task(Of ITreeNode())
+  name: Task<RepoResponse<ITreeNode[]>>
+  nameWithType: Task<RepoResponse<ITreeNode[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Data.Space.Data.ITreeNode[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of ITreeNode()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Data.Space.Data.ITreeNode()))
+  name.vb: Task(Of RepoResponse(Of ITreeNode()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Data.Space.Data.ITreeNode
     name: ITreeNode
     href: ParmaGIS.Modules.Data.Space.Data.ITreeNode.html
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -414,10 +449,17 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - uid: ParmaGIS.Modules.Data.Space.Data.ITreeNode
     name: ITreeNode
     href: ParmaGIS.Modules.Data.Space.Data.ITreeNode.html
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: System.Threading.Tasks.Task`1
@@ -498,26 +540,31 @@ references:
   name: ITreeNode
   nameWithType: ITreeNode
   fullName: ParmaGIS.Modules.Data.Space.Data.ITreeNode
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.ITreeNode}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ITreeNode>
-  nameWithType: Task<ITreeNode>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.Data.ITreeNode>
-  nameWithType.vb: Task(Of ITreeNode)
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.Data.ITreeNode)
-  name.vb: Task(Of ITreeNode)
+  name: Task<RepoResponse<ITreeNode>>
+  nameWithType: Task<RepoResponse<ITreeNode>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Data.Space.Data.ITreeNode>>
+  nameWithType.vb: Task(Of RepoResponse(Of ITreeNode))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Data.Space.Data.ITreeNode))
+  name.vb: Task(Of RepoResponse(Of ITreeNode))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Data.Space.Data.ITreeNode
     name: ITreeNode
     href: ParmaGIS.Modules.Data.Space.Data.ITreeNode.html
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -527,9 +574,16 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - uid: ParmaGIS.Modules.Data.Space.Data.ITreeNode
     name: ITreeNode
     href: ParmaGIS.Modules.Data.Space.Data.ITreeNode.html
+  - name: )
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetChildrenAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetChildrenAsync
@@ -543,26 +597,31 @@ references:
   name: GetNodesAsync
   nameWithType: ITreeProvider.GetNodesAsync
   fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync
-- uid: System.Threading.Tasks.Task{{T}[]}
-  commentId: T:System.Threading.Tasks.Task{`0[]}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{T}[]}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``0[]}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<T[]>
-  nameWithType: Task<T[]>
-  fullName: System.Threading.Tasks.Task<T[]>
-  nameWithType.vb: Task(Of T())
-  fullName.vb: System.Threading.Tasks.Task(Of T())
-  name.vb: Task(Of T())
+  name: Task<RepoResponse<T[]>>
+  nameWithType: Task<RepoResponse<T[]>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<T[]>>
+  nameWithType.vb: Task(Of RepoResponse(Of T()))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of T()))
+  name.vb: Task(Of RepoResponse(Of T()))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - name: T
   - name: '['
   - name: ']'
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -572,8 +631,15 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
   - name: (
+  - name: )
   - name: )
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetDataAsync*
@@ -582,26 +648,31 @@ references:
   name: GetDataAsync
   nameWithType: ITreeProvider.GetDataAsync
   fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetDataAsync
-- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.IDataObject}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.Data.IDataObject}
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.IDataObject}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.IDataObject}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IDataObject>
-  nameWithType: Task<IDataObject>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.Data.IDataObject>
-  nameWithType.vb: Task(Of IDataObject)
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.Data.IDataObject)
-  name.vb: Task(Of IDataObject)
+  name: Task<RepoResponse<IDataObject>>
+  nameWithType: Task<RepoResponse<IDataObject>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<ParmaGIS.Modules.Data.Space.Data.IDataObject>>
+  nameWithType.vb: Task(Of RepoResponse(Of IDataObject))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of ParmaGIS.Modules.Data.Space.Data.IDataObject))
+  name.vb: Task(Of RepoResponse(Of IDataObject))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
   - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
     name: IDataObject
     href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -611,9 +682,16 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
   - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
     name: IDataObject
     href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
+  - name: )
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync

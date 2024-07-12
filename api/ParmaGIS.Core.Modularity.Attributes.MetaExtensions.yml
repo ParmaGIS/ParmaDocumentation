@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MetaExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/Attributes/MetaExtensions.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity.Attributes
+  summary: Расширения для матаданных
+  example: []
   syntax:
     content: public static class MetaExtensions
     content.vb: Public Module MetaExtensions
@@ -56,19 +58,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetModuleMeta
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/Attributes/MetaExtensions.cs
-    startLine: 10
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity.Attributes
+  summary: Возвращает метаданные модуля.
+  example: []
   syntax:
     content: public static ModuleMeta GetModuleMeta(this TypeMeta meta)
     parameters:
     - id: meta
       type: ParmaGIS.Core.Meta.Objects.TypeMeta
+      description: Метаданные типа модуля.
     return:
       type: ParmaGIS.Core.Modularity.Attributes.ModuleMeta
+      description: Метаданные модуля.
     content.vb: Public Shared Function GetModuleMeta(meta As TypeMeta) As ModuleMeta
   overload: ParmaGIS.Core.Modularity.Attributes.MetaExtensions.GetModuleMeta*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Возникает если тип, передаваемый в метаданных, не является модулем, то есть не реализует <xref href="ParmaGIS.Core.Modularity.IModule" data-throw-if-not-resolved="false"></xref>.
 references:
 - uid: ParmaGIS.Core.Modularity.Attributes
   commentId: N:ParmaGIS.Core.Modularity.Attributes
@@ -345,6 +355,20 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Modularity.IModule
+  commentId: T:ParmaGIS.Core.Modularity.IModule
+  parent: ParmaGIS.Core.Modularity
+  href: ParmaGIS.Core.Modularity.IModule.html
+  name: IModule
+  nameWithType: IModule
+  fullName: ParmaGIS.Core.Modularity.IModule
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: ParmaGIS.Core.Modularity.Attributes.MetaExtensions.GetModuleMeta*
   commentId: Overload:ParmaGIS.Core.Modularity.Attributes.MetaExtensions.GetModuleMeta
   href: ParmaGIS.Core.Modularity.Attributes.MetaExtensions.html#ParmaGIS_Core_Modularity_Attributes_MetaExtensions_GetModuleMeta_ParmaGIS_Core_Meta_Objects_TypeMeta_
@@ -365,6 +389,36 @@ references:
   name: ModuleMeta
   nameWithType: ModuleMeta
   fullName: ParmaGIS.Core.Modularity.Attributes.ModuleMeta
+- uid: ParmaGIS.Core.Modularity
+  commentId: N:ParmaGIS.Core.Modularity
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Modularity
+  nameWithType: ParmaGIS.Core.Modularity
+  fullName: ParmaGIS.Core.Modularity
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Modularity
+    name: Modularity
+    href: ParmaGIS.Core.Modularity.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Modularity
+    name: Modularity
+    href: ParmaGIS.Core.Modularity.html
 - uid: ParmaGIS.Core.Meta.Objects
   commentId: N:ParmaGIS.Core.Meta.Objects
   href: ParmaGIS.html

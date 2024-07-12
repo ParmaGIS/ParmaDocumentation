@@ -1,0 +1,391 @@
+### YamlMime:ManagedReference
+items:
+- uid: ParmaGIS.Modules.Data.DataSource.IDataSource
+  commentId: T:ParmaGIS.Modules.Data.DataSource.IDataSource
+  id: IDataSource
+  parent: ParmaGIS.Modules.Data.DataSource
+  children:
+  - ParmaGIS.Modules.Data.DataSource.IDataSource.Execute``1(System.Func{System.Linq.IQueryable,``0})
+  - ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType
+  langs:
+  - csharp
+  - vb
+  name: IDataSource
+  nameWithType: IDataSource
+  fullName: ParmaGIS.Modules.Data.DataSource.IDataSource
+  type: Interface
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/DataSource/IDataSource.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IDataSource
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/DataSource/IDataSource.cs
+    startLine: 11
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.DataSource
+  summary: Представляет контракт взаимодействия с источником данных.
+  example: []
+  syntax:
+    content: public interface IDataSource
+    content.vb: Public Interface IDataSource
+- uid: ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType
+  commentId: P:ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType
+  id: ItemType
+  parent: ParmaGIS.Modules.Data.DataSource.IDataSource
+  langs:
+  - csharp
+  - vb
+  name: ItemType
+  nameWithType: IDataSource.ItemType
+  fullName: ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/DataSource/IDataSource.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ItemType
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/DataSource/IDataSource.cs
+    startLine: 16
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.DataSource
+  summary: Возвращает тип элементов источника данных.
+  example: []
+  syntax:
+    content: Type ItemType { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: ReadOnly Property ItemType As Type
+  overload: ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType*
+- uid: ParmaGIS.Modules.Data.DataSource.IDataSource.Execute``1(System.Func{System.Linq.IQueryable,``0})
+  commentId: M:ParmaGIS.Modules.Data.DataSource.IDataSource.Execute``1(System.Func{System.Linq.IQueryable,``0})
+  id: Execute``1(System.Func{System.Linq.IQueryable,``0})
+  parent: ParmaGIS.Modules.Data.DataSource.IDataSource
+  langs:
+  - csharp
+  - vb
+  name: Execute<TRes>(Func<IQueryable, TRes>)
+  nameWithType: IDataSource.Execute<TRes>(Func<IQueryable, TRes>)
+  fullName: ParmaGIS.Modules.Data.DataSource.IDataSource.Execute<TRes>(System.Func<System.Linq.IQueryable, TRes>)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/DataSource/IDataSource.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Execute
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/DataSource/IDataSource.cs
+    startLine: 26
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.DataSource
+  summary: >-
+    Исполняет переданную функцию в контексте источниека данных.
+
+    Не рекомендуется типом результата выполнения функции указывать <xref href="System.Linq.IQueryable" data-throw-if-not-resolved="false"></xref> или любой другой тип, который может быть результатом выполнения отложенной операции.
+
+    Поведение данного метода в таком случае может быть непредсказуемым.
+  example: []
+  syntax:
+    content: Task<RepoResponse<TRes>> Execute<TRes>(Func<IQueryable, TRes> func)
+    parameters:
+    - id: func
+      type: System.Func{System.Linq.IQueryable,{TRes}}
+      description: Функция, которая будет выполнена источником данных. В первый аргумент передается <xref href="System.Linq.IQueryable" data-throw-if-not-resolved="false"></xref> для исполнения запросов к источнику данных.
+    typeParameters:
+    - id: TRes
+      description: Тип результа выполнения функции.
+    return:
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+      description: Возвращает результат выполнения функции.
+    content.vb: Function Execute(Of TRes)(func As Func(Of IQueryable, TRes)) As Task(Of RepoResponse(Of TRes))
+  overload: ParmaGIS.Modules.Data.DataSource.IDataSource.Execute*
+  nameWithType.vb: IDataSource.Execute(Of TRes)(Func(Of IQueryable, TRes))
+  fullName.vb: ParmaGIS.Modules.Data.DataSource.IDataSource.Execute(Of TRes)(System.Func(Of System.Linq.IQueryable, TRes))
+  name.vb: Execute(Of TRes)(Func(Of IQueryable, TRes))
+references:
+- uid: ParmaGIS.Modules.Data.DataSource
+  commentId: N:ParmaGIS.Modules.Data.DataSource
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.DataSource
+  nameWithType: ParmaGIS.Modules.Data.DataSource
+  fullName: ParmaGIS.Modules.Data.DataSource
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.DataSource
+    name: DataSource
+    href: ParmaGIS.Modules.Data.DataSource.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.DataSource
+    name: DataSource
+    href: ParmaGIS.Modules.Data.DataSource.html
+- uid: ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType*
+  commentId: Overload:ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType
+  href: ParmaGIS.Modules.Data.DataSource.IDataSource.html#ParmaGIS_Modules_Data_DataSource_IDataSource_ItemType
+  name: ItemType
+  nameWithType: IDataSource.ItemType
+  fullName: ParmaGIS.Modules.Data.DataSource.IDataSource.ItemType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Linq.IQueryable
+  commentId: T:System.Linq.IQueryable
+  parent: System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable
+  name: IQueryable
+  nameWithType: IQueryable
+  fullName: System.Linq.IQueryable
+- uid: ParmaGIS.Modules.Data.DataSource.IDataSource.Execute*
+  commentId: Overload:ParmaGIS.Modules.Data.DataSource.IDataSource.Execute
+  href: ParmaGIS.Modules.Data.DataSource.IDataSource.html#ParmaGIS_Modules_Data_DataSource_IDataSource_Execute__1_System_Func_System_Linq_IQueryable___0__
+  name: Execute
+  nameWithType: IDataSource.Execute
+  fullName: ParmaGIS.Modules.Data.DataSource.IDataSource.Execute
+- uid: System.Func{System.Linq.IQueryable,{TRes}}
+  commentId: T:System.Func{System.Linq.IQueryable,``0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<IQueryable, TRes>
+  nameWithType: Func<IQueryable, TRes>
+  fullName: System.Func<System.Linq.IQueryable, TRes>
+  nameWithType.vb: Func(Of IQueryable, TRes)
+  fullName.vb: System.Func(Of System.Linq.IQueryable, TRes)
+  name.vb: Func(Of IQueryable, TRes)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable
+  - name: ','
+  - name: " "
+  - name: TRes
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable
+  - name: ','
+  - name: " "
+  - name: TRes
+  - name: )
+- uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TRes}}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{``1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<RepoResponse<TRes>>
+  nameWithType: Task<RepoResponse<TRes>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Modules.Data.Space.RepoResponse<TRes>>
+  nameWithType.vb: Task(Of RepoResponse(Of TRes))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Modules.Data.Space.RepoResponse(Of TRes))
+  name.vb: Task(Of RepoResponse(Of TRes))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: <
+  - name: TRes
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Data.Space.RepoResponse`1
+    name: RepoResponse
+    href: ParmaGIS.Modules.Data.Space.RepoResponse-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRes
+  - name: )
+  - name: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -24,10 +24,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Note
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Представляет запись жернала в сервисе логирования.
+  example: []
   syntax:
     content: public class Note
     content.vb: Public Class Note
@@ -59,21 +61,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 6
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Log.Note" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public Note(DateTime dateTime, string owner, string message, string bodyFormat)
     parameters:
     - id: dateTime
       type: System.DateTime
+      description: Время создания записи журнала.
     - id: owner
       type: System.String
+      description: Владелец записи журнала.
     - id: message
       type: System.String
+      description: Сообщение в записи журнала.
     - id: bodyFormat
       type: System.String
+      description: Формат записи журнала. Формат сообщения используется при создании <xref href="ParmaGIS.Core.Log.Note.Body" data-throw-if-not-resolved="false"></xref> через <xref href="System.String.Format(System.String%2cSystem.Object%5b%5d)" data-throw-if-not-resolved="false"></xref>, где <code class="paramref">dateTime</code>, <code class="paramref">owner</code>, <code class="paramref">message</code> указываются в соответствующем порядке.
     content.vb: Public Sub New(dateTime As Date, owner As String, message As String, bodyFormat As String)
   overload: ParmaGIS.Core.Log.Note.#ctor*
   nameWithType.vb: Note.New(Date, String, String, String)
@@ -97,10 +105,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Message
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 14
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает сообщение записи журнала.
+  example: []
   syntax:
     content: public string Message { get; }
     parameters: []
@@ -126,10 +136,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DateTime
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 15
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает время созадния записи журнала.
+  example: []
   syntax:
     content: public DateTime DateTime { get; }
     parameters: []
@@ -155,10 +167,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Owner
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 16
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает владельца сообщение записи журнала.
+  example: []
   syntax:
     content: public string Owner { get; }
     parameters: []
@@ -184,10 +198,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Body
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Log/Note.cs
-    startLine: 17
+    startLine: 42
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Log
+  summary: Возвращает тело записи журнала, собранное по указанному формату.
+  example: []
   syntax:
     content: public string Body { get; }
     parameters: []
@@ -463,6 +479,70 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Log.Note
+  commentId: T:ParmaGIS.Core.Log.Note
+  href: ParmaGIS.Core.Log.Note.html
+  name: Note
+  nameWithType: Note
+  fullName: ParmaGIS.Core.Log.Note
+- uid: ParmaGIS.Core.Log.Note.Body
+  commentId: P:ParmaGIS.Core.Log.Note.Body
+  href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note_Body
+  name: Body
+  nameWithType: Note.Body
+  fullName: ParmaGIS.Core.Log.Note.Body
+- uid: System.String.Format(System.String,System.Object[])
+  commentId: M:System.String.Format(System.String,System.Object[])
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string.format#system-string-format(system-string-system-object())
+  name: Format(string, params object[])
+  nameWithType: string.Format(string, params object[])
+  fullName: string.Format(string, params object[])
+  nameWithType.vb: String.Format(String, ParamArray Object())
+  fullName.vb: String.Format(String, ParamArray Object())
+  name.vb: Format(String, ParamArray Object())
+  spec.csharp:
+  - uid: System.String.Format(System.String,System.Object[])
+    name: Format
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string.format#system-string-format(system-string-system-object())
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: System.String.Format(System.String,System.Object[])
+    name: Format
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string.format#system-string-format(system-string-system-object())
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
 - uid: ParmaGIS.Core.Log.Note.#ctor*
   commentId: Overload:ParmaGIS.Core.Log.Note.#ctor
   href: ParmaGIS.Core.Log.Note.html#ParmaGIS_Core_Log_Note__ctor_System_DateTime_System_String_System_String_System_String_

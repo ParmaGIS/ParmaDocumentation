@@ -21,10 +21,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceCollectionExtensions
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data
+  summary: Расширение класса <xref href="ParmaGIS.Core.Serviceability.IServiceCollection" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ServiceCollectionExtensions
     content.vb: Public Module ServiceCollectionExtensions
@@ -57,21 +59,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterSpace
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs
-    startLine: 13
+    startLine: 23
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data
+  summary: Регистрирует новый тип пространства данных.
+  example: []
   syntax:
     content: 'public static void RegisterSpace<TSpace>(this IServiceCollection collection, Func<SpaceContainer, ISpace> deserializer, Action<SpaceContainer, ISpace> serializer) where TSpace : class, ISpace'
     parameters:
     - id: collection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
+      description: Коллекция сервисов.
     - id: deserializer
       type: System.Func{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace}
+      description: Функция, преобразующая контейнер в экземпляр пространства данных типа <code class="typeparamref">TSpace</code>.
     - id: serializer
       type: System.Action{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace}
+      description: Функция, записывающая экземпляр пространства данных типа <code class="typeparamref">TSpace</code> в контейнер.
     typeParameters:
     - id: TSpace
+      description: Тип пространства данных.
     content.vb: Public Shared Sub RegisterSpace(Of TSpace As {Class, ISpace})(collection As IServiceCollection, deserializer As Func(Of SpaceContainer, ISpace), serializer As Action(Of SpaceContainer, ISpace))
   overload: ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace*
   nameWithType.vb: ServiceCollectionExtensions.RegisterSpace(Of TSpace)(IServiceCollection, Func(Of SpaceContainer, ISpace), Action(Of SpaceContainer, ISpace))
@@ -96,27 +104,40 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterDBServer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/ServiceCollectionExtensions.cs
-    startLine: 21
+    startLine: 38
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data
+  summary: Регистрирует новый тип подключения к базе данных.
+  example: []
   syntax:
     content: 'public static void RegisterDBServer<TDBServer>(this IServiceCollection collection, Func<IContainer, IDataBaseServerConnection> deserializer, Action<IContainer, IDataBaseServerConnection> serializer) where TDBServer : class, IDataBaseServerConnection'
     parameters:
     - id: collection
       type: ParmaGIS.Core.Serviceability.IServiceCollection
+      description: Коллекция сервисов.
     - id: deserializer
       type: System.Func{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+      description: Функция, преобразующая контейнер в экземпляр подключения к базе данных типа <code class="typeparamref">TDBServer</code>.
     - id: serializer
       type: System.Action{ParmaGIS.Core.Storage.IContainer,ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection}
+      description: Функция, записывающая экземпляр подключения к базе данных типа <code class="typeparamref">TDBServer</code> в контейнер.
     typeParameters:
     - id: TDBServer
+      description: Тип подключения к базе данных.
     content.vb: Public Shared Sub RegisterDBServer(Of TDBServer As {Class, IDataBaseServerConnection})(collection As IServiceCollection, deserializer As Func(Of IContainer, IDataBaseServerConnection), serializer As Action(Of IContainer, IDataBaseServerConnection))
   overload: ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBServer*
   nameWithType.vb: ServiceCollectionExtensions.RegisterDBServer(Of TDBServer)(IServiceCollection, Func(Of IContainer, IDataBaseServerConnection), Action(Of IContainer, IDataBaseServerConnection))
   fullName.vb: ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterDBServer(Of TDBServer)(ParmaGIS.Core.Serviceability.IServiceCollection, System.Func(Of ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection), System.Action(Of ParmaGIS.Core.Storage.IContainer, ParmaGIS.Modules.Data.Connection.IDataBaseServerConnection))
   name.vb: RegisterDBServer(Of TDBServer)(IServiceCollection, Func(Of IContainer, IDataBaseServerConnection), Action(Of IContainer, IDataBaseServerConnection))
 references:
+- uid: ParmaGIS.Core.Serviceability.IServiceCollection
+  commentId: T:ParmaGIS.Core.Serviceability.IServiceCollection
+  parent: ParmaGIS.Core.Serviceability
+  href: ParmaGIS.Core.Serviceability.IServiceCollection.html
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: ParmaGIS.Core.Serviceability.IServiceCollection
 - uid: ParmaGIS.Modules.Data
   commentId: N:ParmaGIS.Modules.Data
   href: ParmaGIS.html
@@ -377,6 +398,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: ParmaGIS.Core.Serviceability
+  commentId: N:ParmaGIS.Core.Serviceability
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Serviceability
+  nameWithType: ParmaGIS.Core.Serviceability
+  fullName: ParmaGIS.Core.Serviceability
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Serviceability
+    name: Serviceability
+    href: ParmaGIS.Core.Serviceability.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Serviceability
+    name: Serviceability
+    href: ParmaGIS.Core.Serviceability.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -390,13 +441,6 @@ references:
   name: RegisterSpace
   nameWithType: ServiceCollectionExtensions.RegisterSpace
   fullName: ParmaGIS.Modules.Data.ServiceCollectionExtensions.RegisterSpace
-- uid: ParmaGIS.Core.Serviceability.IServiceCollection
-  commentId: T:ParmaGIS.Core.Serviceability.IServiceCollection
-  parent: ParmaGIS.Core.Serviceability
-  href: ParmaGIS.Core.Serviceability.IServiceCollection.html
-  name: IServiceCollection
-  nameWithType: IServiceCollection
-  fullName: ParmaGIS.Core.Serviceability.IServiceCollection
 - uid: System.Func{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace}
   commentId: T:System.Func{ParmaGIS.Modules.Data.Storages.SpaceContainer,ParmaGIS.Modules.Data.Space.ISpace}
   parent: System
@@ -483,36 +527,6 @@ references:
     name: ISpace
     href: ParmaGIS.Modules.Data.Space.ISpace.html
   - name: )
-- uid: ParmaGIS.Core.Serviceability
-  commentId: N:ParmaGIS.Core.Serviceability
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Serviceability
-  nameWithType: ParmaGIS.Core.Serviceability
-  fullName: ParmaGIS.Core.Serviceability
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Serviceability
-    name: Serviceability
-    href: ParmaGIS.Core.Serviceability.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Serviceability
-    name: Serviceability
-    href: ParmaGIS.Core.Serviceability.html
 - uid: System.Func`2
   commentId: T:System.Func`2
   isExternal: true

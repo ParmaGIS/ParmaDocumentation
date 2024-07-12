@@ -25,6 +25,8 @@ items:
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema.Helpers
+  summary: Представляет генератор схем. Содержит удобные методы для создания схем данных.
+  example: []
   syntax:
     content: public class SchemeGenerator
     content.vb: Public Class SchemeGenerator
@@ -56,19 +58,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GenerateScheme
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/Helpers/SchemeGenerator.cs
-    startLine: 267
+    startLine: 307
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema.Helpers
+  summary: Создает схему по перечислению типов сущностей.
+  example: []
   syntax:
     content: public static IDataScheme GenerateScheme(string name, IEnumerable<Type> types)
     parameters:
     - id: name
       type: System.String
+      description: Название схемы данных и пространства.
     - id: types
       type: System.Collections.Generic.IEnumerable{System.Type}
+      description: Перечисление типов сущностей.
     return:
       type: ParmaGIS.Modules.Data.Schema.IDataScheme
+      description: Схема данных с названием <code class="paramref">name</code> и с одним пространством с названием <code class="paramref">name</code>.
     content.vb: Public Shared Function GenerateScheme(name As String, types As IEnumerable(Of Type)) As IDataScheme
   overload: ParmaGIS.Modules.Data.Schema.Helpers.SchemeGenerator.GenerateScheme*
   nameWithType.vb: SchemeGenerator.GenerateScheme(String, IEnumerable(Of Type))
@@ -92,19 +99,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GenerateScheme
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Schema/Helpers/SchemeGenerator.cs
-    startLine: 272
+    startLine: 318
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Schema.Helpers
+  summary: Создает схему по перечислению типов сещностей.
+  example: []
   syntax:
     content: public static IDataScheme GenerateScheme(string dataSchemeName, IEnumerable<(string SpaceName, Type EntityType)> spaceTypes)
     parameters:
     - id: dataSchemeName
       type: System.String
+      description: Название схемы данных.
     - id: spaceTypes
       type: System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Type}}
+      description: Перечисление типов с названием пространств, в которых будут определены типы.
     return:
       type: ParmaGIS.Modules.Data.Schema.IDataScheme
+      description: Схема данных с названием <code class="paramref">dataSchemeName</code> и пространствами, объединяющие типы с одинаковыми названиями пространств.
     content.vb: Public Shared Function GenerateScheme(dataSchemeName As String, spaceTypes As IEnumerable(Of (SpaceName As String, EntityType As Type))) As IDataScheme
   overload: ParmaGIS.Modules.Data.Schema.Helpers.SchemeGenerator.GenerateScheme*
   nameWithType.vb: SchemeGenerator.GenerateScheme(String, IEnumerable(Of (SpaceName As String, EntityType As Type)))

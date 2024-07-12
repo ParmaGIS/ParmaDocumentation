@@ -23,10 +23,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StorageChangedEventArgs
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Представляет аргументы события изменения хранилища.
+  example: []
   syntax:
     content: public class StorageChangedEventArgs
     content.vb: Public Class StorageChangedEventArgs
@@ -58,19 +60,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Storage.StorageChangedEventArgs" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public StorageChangedEventArgs(StorageChangedAction action, IContainer container, PropertyChangedEventArgs? changedEventArgs)
     parameters:
     - id: action
       type: ParmaGIS.Core.Storage.StorageChangedAction
+      description: Действие, произведенное над контейнером.
     - id: container
       type: ParmaGIS.Core.Storage.IContainer
+      description: Контейнер, над которым были произведены действия.
     - id: changedEventArgs
       type: System.ComponentModel.PropertyChangedEventArgs
+      description: Аргументы события изменения свойствв, при <xref href="ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub New(action As StorageChangedAction, container As IContainer, changedEventArgs As PropertyChangedEventArgs)
   overload: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
   nameWithType.vb: StorageChangedEventArgs.New(StorageChangedAction, IContainer, PropertyChangedEventArgs)
@@ -94,10 +101,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Action
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 13
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает действие, котороые было произведено над контейнером.
+  example: []
   syntax:
     content: public StorageChangedAction Action { get; }
     parameters: []
@@ -123,10 +132,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Container
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 14
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает контейнер, над которым были произведены действия.
+  example: []
   syntax:
     content: public IContainer Container { get; }
     parameters: []
@@ -152,10 +163,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ChangedEventArgs
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Storage/StorageChangedEventArgs.cs
-    startLine: 15
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Storage
+  summary: Возвращает аргументы события изменения свойств при <xref href="ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public PropertyChangedEventArgs? ChangedEventArgs { get; }
     parameters: []
@@ -431,6 +444,18 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Storage.StorageChangedEventArgs
+  commentId: T:ParmaGIS.Core.Storage.StorageChangedEventArgs
+  href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html
+  name: StorageChangedEventArgs
+  nameWithType: StorageChangedEventArgs
+  fullName: ParmaGIS.Core.Storage.StorageChangedEventArgs
+- uid: ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
+  commentId: F:ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
+  href: ParmaGIS.Core.Storage.StorageChangedAction.html#ParmaGIS_Core_Storage_StorageChangedAction_ContainerChanged
+  name: ContainerChanged
+  nameWithType: StorageChangedAction.ContainerChanged
+  fullName: ParmaGIS.Core.Storage.StorageChangedAction.ContainerChanged
 - uid: ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor*
   commentId: Overload:ParmaGIS.Core.Storage.StorageChangedEventArgs.#ctor
   href: ParmaGIS.Core.Storage.StorageChangedEventArgs.html#ParmaGIS_Core_Storage_StorageChangedEventArgs__ctor_ParmaGIS_Core_Storage_StorageChangedAction_ParmaGIS_Core_Storage_IContainer_System_ComponentModel_PropertyChangedEventArgs_

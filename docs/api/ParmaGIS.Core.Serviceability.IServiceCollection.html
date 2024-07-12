@@ -125,7 +125,7 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
       <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_Serviceability_ServiceLifetime___0_System_Boolean_">ServiceExtensions.AddService&lt;TService&gt;(IServiceCollection, ServiceLifetime, TService?, bool)</a>
   </div>
   <div>
-      <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_String_ParmaGIS_Core_Serviceability_ServiceLifetime___0_System_Boolean_">ServiceExtensions.AddService&lt;TService&gt;(IServiceCollection, string, ServiceLifetime, TService?, bool)</a>
+      <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection_System_String_ParmaGIS_Core_Serviceability_ServiceLifetime___0_System_Boolean_">ServiceExtensions.AddService&lt;TService&gt;(IServiceCollection, string?, ServiceLifetime, TService?, bool)</a>
   </div>
   <div>
       <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceExtensions.html#ParmaGIS_Core_Serviceability_ServiceExtensions_AddService__1_ParmaGIS_Core_Serviceability_IServiceCollection___0_">ServiceExtensions.AddService&lt;TService&gt;(IServiceCollection, TService)</a>
@@ -159,10 +159,11 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Serviceability_IServiceCollection_ServiceCatalog" data-uid="ParmaGIS.Core.Serviceability.IServiceCollection.ServiceCatalog">
   ServiceCatalog
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает каталог сервисов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -194,10 +195,11 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Serviceability_IServiceCollection_AddParameterGiver_System_Type_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Func_System_Object__" data-uid="ParmaGIS.Core.Serviceability.IServiceCollection.AddParameterGiver(System.Type,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Func{System.Object})">
   AddParameterGiver(Type, Type, ServiceLifetime, Func&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет сервис <a class="xref" href="ParmaGIS.Core.Serviceability.IParameterGiver.html">IParameterGiver</a> в коллекцию сервисов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -207,13 +209,17 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>parameterGiverType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип сервиса <a class="xref" href="ParmaGIS.Core.Serviceability.IParameterGiver.html">IParameterGiver</a>.</p>
+</dd>
     <dt><code>parameterType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип выдаваемого параметра.</p>
+</dd>
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>Время жизни сервиса.</p>
+</dd>
     <dt><code>factory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция создания экземпляра сервиса.</p>
+</dd>
   </dl>
 
 
@@ -231,10 +237,11 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Serviceability_IServiceCollection_AddParameterGiver_System_Type_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_" data-uid="ParmaGIS.Core.Serviceability.IServiceCollection.AddParameterGiver(System.Type,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object)">
   AddParameterGiver(Type, Type, ServiceLifetime, object?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет сервис <a class="xref" href="ParmaGIS.Core.Serviceability.IParameterGiver.html">IParameterGiver</a> в коллекцию сервисов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -244,13 +251,17 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>parameterGiverType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип сервиса <a class="xref" href="ParmaGIS.Core.Serviceability.IParameterGiver.html">IParameterGiver</a>.</p>
+</dd>
     <dt><code>parameterType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип выдаваемого параметра.</p>
+</dd>
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>Время жизни сервиса.</p>
+</dd>
     <dt><code>instance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Экземпляр <a class="xref" href="ParmaGIS.Core.Serviceability.IParameterGiver.html">IParameterGiver</a>.</p>
+</dd>
   </dl>
 
 
@@ -268,10 +279,11 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Serviceability_IServiceCollection_AddService_System_String_System_Type_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Func_System_Object__System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.IServiceCollection.AddService(System.String,System.Type,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Func{System.Object},System.Boolean)">
   AddService(string, Type, Type, ServiceLifetime, Func&lt;object&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет сервис в коллекцию.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -281,17 +293,23 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Название сервиса.</p>
+</dd>
     <dt><code>serviceType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип сервиса.</p>
+</dd>
     <dt><code>implementationType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип реализации сервиса.</p>
+</dd>
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>Время жизни сервиса.</p>
+</dd>
     <dt><code>factory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция создания экземпляра сервиса.</p>
+</dd>
     <dt><code>manyImplementations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Разрешает множественную реализацию типа сервиса.</p>
+</dd>
   </dl>
 
 
@@ -309,10 +327,11 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Serviceability_IServiceCollection_AddService_System_String_System_Type_System_Type_ParmaGIS_Core_Serviceability_ServiceLifetime_System_Object_System_Boolean_" data-uid="ParmaGIS.Core.Serviceability.IServiceCollection.AddService(System.String,System.Type,System.Type,ParmaGIS.Core.Serviceability.ServiceLifetime,System.Object,System.Boolean)">
   AddService(string, Type, Type, ServiceLifetime, object?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Serviceability/IServiceCollection.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет сервис в коллекцию.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -322,17 +341,23 @@ Interface IServiceCollection  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>serviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Название сервиса.</p>
+</dd>
     <dt><code>serviceType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип сервиса.</p>
+</dd>
     <dt><code>implementationType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd></dd>
+    <dd><p>Тип реализации сервиса.</p>
+</dd>
     <dt><code>lifetime</code> <a class="xref" href="ParmaGIS.Core.Serviceability.ServiceLifetime.html">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>Время жизни сервиса.</p>
+</dd>
     <dt><code>instance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>Экземпляр сервиса.</p>
+</dd>
     <dt><code>manyImplementations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Разрешает множественную реализауию типа сервиса.</p>
+</dd>
   </dl>
 
 

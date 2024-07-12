@@ -5,6 +5,8 @@ items:
   id: INodeProvider
   parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
   children:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
   - ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.Index
   - ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
   - ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadRoot
@@ -23,7 +25,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: INodeProvider
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
@@ -48,7 +50,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Index
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
@@ -77,7 +79,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadRoot
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
@@ -105,18 +107,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Search
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
   syntax:
-    content: IItemsProvider<object> Search(string query)
+    content: Task<SearchResult[]> Search(string query)
     parameters:
     - id: query
       type: System.String
     return:
-      type: ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}
-    content.vb: Function Search(query As String) As IItemsProvider(Of Object)
+      type: System.Threading.Tasks.Task{ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult[]}
+    content.vb: Function Search(query As String) As Task(Of SearchResult())
   overload: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.Search*
   nameWithType.vb: INodeProvider.Search(String)
   fullName.vb: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.Search(String)
@@ -139,7 +141,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadChildrenAsync
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
@@ -152,6 +154,68 @@ items:
       type: System.Threading.Tasks.Task{ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}}
     content.vb: Function LoadChildrenAsync(parentContext As NodeContext) As Task(Of IItemsProvider(Of Object))
   overload: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync*
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  id: CanGetChildren(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider
+  langs:
+  - csharp
+  - vb
+  name: CanGetChildren(NodeContext)
+  nameWithType: INodeProvider.CanGetChildren(NodeContext)
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CanGetChildren
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
+    startLine: 16
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool
+  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
+  syntax:
+    content: Task<bool> CanGetChildren(NodeContext parentContext)
+    parameters:
+    - id: parentContext
+      type: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function CanGetChildren(parentContext As NodeContext) As Task(Of Boolean)
+  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren*
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  id: GetKey(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider
+  langs:
+  - csharp
+  - vb
+  name: GetKey(NodeContext)
+  nameWithType: INodeProvider.GetKey(NodeContext)
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetKey
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Nodes/INodeProvider.cs
+    startLine: 18
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool
+  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
+  syntax:
+    content: string GetKey(NodeContext nodeContext)
+    parameters:
+    - id: nodeContext
+      type: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+    return:
+      type: System.String
+    content.vb: Function GetKey(nodeContext As NodeContext) As String
+  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey*
 references:
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
   commentId: N:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
@@ -246,138 +310,28 @@ references:
   name: Search
   nameWithType: INodeProvider.Search
   fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.Search
-- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}
-  commentId: T:ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}
-  parent: ParmaGIS.Core.Utilities.Collections
-  definition: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-  href: https://learn.microsoft.com/dotnet/api/system.object
-  name: IItemsProvider<object>
-  nameWithType: IItemsProvider<object>
-  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<object>
-  nameWithType.vb: IItemsProvider(Of Object)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of Object)
-  name.vb: IItemsProvider(Of Object)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-    name: IItemsProvider
-  - name: <
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '>'
-  spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-    name: IItemsProvider
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-  commentId: T:ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
-  name: IItemsProvider<T>
-  nameWithType: IItemsProvider<T>
-  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>
-  nameWithType.vb: IItemsProvider(Of T)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T)
-  name.vb: IItemsProvider(Of T)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-    name: IItemsProvider
-    href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-    name: IItemsProvider
-    href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: ParmaGIS.Core.Utilities.Collections
-  commentId: N:ParmaGIS.Core.Utilities.Collections
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Utilities.Collections
-  nameWithType: ParmaGIS.Core.Utilities.Collections
-  fullName: ParmaGIS.Core.Utilities.Collections
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Utilities
-    name: Utilities
-    href: ParmaGIS.Core.Utilities.html
-  - name: .
-  - uid: ParmaGIS.Core.Utilities.Collections
-    name: Collections
-    href: ParmaGIS.Core.Utilities.Collections.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Utilities
-    name: Utilities
-    href: ParmaGIS.Core.Utilities.html
-  - name: .
-  - uid: ParmaGIS.Core.Utilities.Collections
-    name: Collections
-    href: ParmaGIS.Core.Utilities.Collections.html
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync*
-  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_INodeProvider_LoadChildrenAsync_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_
-  name: LoadChildrenAsync
-  nameWithType: INodeProvider.LoadChildrenAsync
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-  commentId: T:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
-  name: NodeContext
-  nameWithType: NodeContext
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-- uid: System.Threading.Tasks.Task{ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}}
-  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}}
+- uid: System.Threading.Tasks.Task{ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult[]}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult[]}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IItemsProvider<object>>
-  nameWithType: Task<IItemsProvider<object>>
-  fullName: System.Threading.Tasks.Task<ParmaGIS.Core.Utilities.Collections.IItemsProvider<object>>
-  nameWithType.vb: Task(Of IItemsProvider(Of Object))
-  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of Object))
-  name.vb: Task(Of IItemsProvider(Of Object))
+  name: Task<SearchResult[]>
+  nameWithType: Task<SearchResult[]>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult[]>
+  nameWithType.vb: Task(Of SearchResult())
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult())
+  name.vb: Task(Of SearchResult())
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-    name: IItemsProvider
-  - name: <
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '>'
+  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult
+    name: SearchResult
+    href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult.html
+  - name: '['
+  - name: ']'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -387,15 +341,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
-    name: IItemsProvider
+  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult
+    name: SearchResult
+    href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult.html
   - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   - name: )
 - uid: System.Threading.Tasks.Task`1
@@ -463,3 +412,108 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_INodeProvider_LoadChildrenAsync_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_
+  name: LoadChildrenAsync
+  nameWithType: INodeProvider.LoadChildrenAsync
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.LoadChildrenAsync
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+  commentId: T:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
+  name: NodeContext
+  nameWithType: NodeContext
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+- uid: System.Threading.Tasks.Task{ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}}
+  commentId: T:System.Threading.Tasks.Task{ParmaGIS.Core.Utilities.Collections.IItemsProvider{System.Object}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IItemsProvider<object>>
+  nameWithType: Task<IItemsProvider<object>>
+  fullName: System.Threading.Tasks.Task<ParmaGIS.Core.Utilities.Collections.IItemsProvider<object>>
+  nameWithType.vb: Task(Of IItemsProvider(Of Object))
+  fullName.vb: System.Threading.Tasks.Task(Of ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of Object))
+  name.vb: Task(Of IItemsProvider(Of Object))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+    name: IItemsProvider
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
+    name: IItemsProvider
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_INodeProvider_CanGetChildren_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_
+  name: CanGetChildren
+  nameWithType: INodeProvider.CanGetChildren
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.CanGetChildren
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_INodeProvider_GetKey_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_
+  name: GetKey
+  nameWithType: INodeProvider.GetKey
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeProvider.GetKey

@@ -22,10 +22,23 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISpace
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: >-
+    Представляет контракт взаимодействия с пространством данных.
+
+    Пространство данных или просто пространство - центральное понятие в системе данных ParmaGIS.
+
+    Пространство определяет то как данные из их источника представляются в экземплярах типов C#.
+
+    Существуют различные пространства данных, которые отвечают за определенную часть системы данных источника.
+
+    Источником данных является база данных, к которой определяется подключения через соответствующий провайдер, однако, в теории источником данных может быть что угодно.
+
+    На данный момент не реализована какая-либо система валидации провайдеров для создания пространств, это возложено на плечи разработчиков пространства и строителя к нему.
+  example: []
   syntax:
     content: 'public interface ISpace : IDisposable'
     content.vb: Public Interface ISpace Inherits IDisposable
@@ -49,10 +62,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 8
+    startLine: 20
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Возвращает название пространства.
+  example: []
   syntax:
     content: string Name { get; }
     parameters: []
@@ -78,10 +93,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 9
+    startLine: 24
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Возвращает описание пространства.
+  example: []
   syntax:
     content: string Description { get; }
     parameters: []
@@ -107,10 +124,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Provider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/ISpace.cs
-    startLine: 10
+    startLine: 29
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space
+  summary: Возвращает провайдер базы данных.
+  example: []
   syntax:
     content: IDataBaseProvider Provider { get; }
     parameters: []

@@ -173,29 +173,41 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <a id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_CreateSettingsAsync_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.CreateSettingsAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_CreateSettingsAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.CreateSettingsAsync``1">
-  CreateSettingsAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_CreateSettingsAsync__1__0__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.CreateSettingsAsync``1(`0,`0)">
+  CreateSettingsAsync&lt;T&gt;(TObjectId?, TObjectId?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает элемент настроек.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; CreateSettingsAsync&lt;T&gt;() where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T&gt;&gt; CreateSettingsAsync&lt;T&gt;(TObjectId? scopeId = default, TObjectId? subjectId = default) where T : class, TSettingsItem</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
+    <dd><p>Уникальный идентификатор области настроек.</p>
+</dd>
+    <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
+    <dd><p>Уникальный идентификатор субъекта настроек.</p>
+</dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
 
@@ -211,38 +223,45 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_ForEachSubjectAsync__1__0__0___System_Boolean___0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.ForEachSubjectAsync``1(`0,`0[],System.Boolean,``0)">
   ForEachSubjectAsync&lt;T&gt;(TObjectId, TObjectId[], bool, T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Для каждого субъекта из массива ищет элемент настроек.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;Dictionary&lt;TObjectId, T?&gt;&gt; ForEachSubjectAsync&lt;T&gt;(TObjectId scopeId, TObjectId[] subjectsId, bool defaultIfNotSet, T defaultSettings = null) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;Dictionary&lt;TObjectId, T?&gt;&gt;&gt; ForEachSubjectAsync&lt;T&gt;(TObjectId scopeId, TObjectId[] subjectsId, bool defaultIfNotSet, T defaultSettings = null) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор области.</p>
+</dd>
     <dt><code>subjectsId</code> TObjectId[]</dt>
-    <dd></dd>
+    <dd><p>Субъекты настроек, для которых нужно найти элементы настроек.</p>
+</dd>
     <dt><code>defaultIfNotSet</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Если значение <code>true</code>, то в случае отсутствия элемента настроек будет осуществляться поиск значения по умолчанию, если оно не задано в <code class="paramref">defaultSettings</code>.</p>
+</dd>
     <dt><code>defaultSettings</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>Элемент настроек по умолчанию.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;TObjectId, T&gt;&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;TObjectId, T&gt;&gt;&gt;</dt>
+    <dd><p>Словарь настроек для субъектов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов настроек.</p>
+</dd>
   </dl>
 
 
@@ -258,34 +277,39 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetAllSettingsAsync__1__0__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetAllSettingsAsync``1(`0,`0)">
   GetAllSettingsAsync&lt;T&gt;(TObjectId, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все настроек для указаной области и субъекта настроек.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetAllSettingsAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetAllSettingsAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор области настроек.</p>
+</dd>
     <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор субъекта настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив элементов настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов настроек.</p>
+</dd>
   </dl>
 
 
@@ -301,27 +325,30 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetDefaultSettingsAsync__1" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetDefaultSettingsAsync``1">
   GetDefaultSettingsAsync&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элемент настройки по умолчанию, то есть уникальный идентификатор субъекта и области равны значению по умолчанию.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetDefaultSettingsAsync&lt;T&gt;() where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetDefaultSettingsAsync&lt;T&gt;() where T : class, TSettingsItem</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
 
@@ -337,32 +364,36 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetDefaultSettingsForScopeAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetDefaultSettingsForScopeAsync``1(`0)">
   GetDefaultSettingsForScopeAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает значение по умолчанию для области настроек, то есть уникальный идентификатор субъекта равен значению по умолчанию.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetDefaultSettingsForScopeAsync&lt;T&gt;(TObjectId scopeId) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetDefaultSettingsForScopeAsync&lt;T&gt;(TObjectId scopeId) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор области.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
 
@@ -378,75 +409,36 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetDefaultSettingsForSubjectAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetDefaultSettingsForSubjectAsync``1(`0)">
   GetDefaultSettingsForSubjectAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает значение по умолчанию для субъекта настроек, то есть уникальный идентификатор области равен значению по умолчанию</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetDefaultSettingsForSubjectAsync&lt;T&gt;(TObjectId subjectId) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetDefaultSettingsForSubjectAsync&lt;T&gt;(TObjectId subjectId) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор субъекта настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <a id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetDefaultSettingsForSubjectAsync_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetDefaultSettingsForSubjectAsync*"></a>
-
-  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetDefaultSettingsForSubjectAsync__1__0__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetDefaultSettingsForSubjectAsync``1(`0,`0)">
-  GetDefaultSettingsForSubjectAsync&lt;T&gt;(TObjectId, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L15"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetDefaultSettingsForSubjectAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : class, TSettingsItem</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
-    <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
 
@@ -462,32 +454,36 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsAsync``1(`0)">
   GetSettingsAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элемент настроек по его типу и уникальному идентификатору.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetSettingsAsync&lt;T&gt;(TObjectId id) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetSettingsAsync&lt;T&gt;(TObjectId id) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор элемента.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
 
@@ -503,34 +499,39 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsAsync__1__0__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsAsync``1(`0,`0)">
   GetSettingsAsync&lt;T&gt;(TObjectId, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L103"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает элемент настроек для указанной области и субъекта настроек.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T?&gt; GetSettingsAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetSettingsAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор области настроек.</p>
+</dd>
     <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор субъекта настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
   </dl>
 
 
@@ -546,32 +547,36 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsForScopeAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsForScopeAsync``1(`0)">
   GetSettingsForScopeAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все настройки для указанной области.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetSettingsForScopeAsync&lt;T&gt;(TObjectId scopeId) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetSettingsForScopeAsync&lt;T&gt;(TObjectId scopeId) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор области настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив элементов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов настроек.</p>
+</dd>
   </dl>
 
 
@@ -587,32 +592,36 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsForSubjectAsync__1__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsForSubjectAsync``1(`0)">
   GetSettingsForSubjectAsync&lt;T&gt;(TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все настройки для указанного субъекта.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetSettingsForSubjectAsync&lt;T&gt;(TObjectId subjectId) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetSettingsForSubjectAsync&lt;T&gt;(TObjectId subjectId) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор субъктов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив элементов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов настроек.</p>
+</dd>
   </dl>
 
 
@@ -628,34 +637,87 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsForSubjectAsync__1__0__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsForSubjectAsync``1(`0,`0)">
   GetSettingsForSubjectAsync&lt;T&gt;(TObjectId, TObjectId)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает все настройки для указанной области и субъекта.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;T[]&gt; GetSettingsForSubjectAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T[]&gt;&gt; GetSettingsForSubjectAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : class, TSettingsItem</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор области настроек.</p>
+</dd>
     <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
-    <dd></dd>
+    <dd><p>Уникальный идентификатор субъекта настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T[]&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T[]&gt;&gt;</dt>
+    <dd><p>Массив элементов настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип элемента настроек.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsOrDefaultAsync_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsOrDefaultAsync*"></a>
+
+  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_GetSettingsOrDefaultAsync__1__0__0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.GetSettingsOrDefaultAsync``1(`0,`0)">
+  GetSettingsOrDefaultAsync&lt;T&gt;(TObjectId, TObjectId)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Возвращает элемент настроек или значение по умолчанию для субъекта в области.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&lt;T?&gt;&gt; GetSettingsOrDefaultAsync&lt;T&gt;(TObjectId scopeId, TObjectId subjectId) where T : class, TSettingsItem</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scopeId</code> <span class="xref">TObjectId</span></dt>
+    <dd><p>Уникальный идентификатор области настроек.</p>
+</dd>
+    <dt><code>subjectId</code> <span class="xref">TObjectId</span></dt>
+    <dd><p>Уникальный идентификатор субъекта настроек.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse-1.html">RepoResponse</a>&lt;T&gt;&gt;</dt>
+    <dd><p>Элемент настроек.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Тип элементов настроек.</p>
+</dd>
   </dl>
 
 
@@ -669,35 +731,32 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <a id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_InsertSettingsAsync_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.InsertSettingsAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_InsertSettingsAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.InsertSettingsAsync``1(``0)">
-  InsertSettingsAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_InsertSettingsAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.InsertSettingsAsync(`1)">
+  InsertSettingsAsync(TSettingsItem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Добавляет элемент настроек в репозиторий.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task InsertSettingsAsync&lt;T&gt;(T settingsItem) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; InsertSettingsAsync(TSettingsItem settingsItem)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>settingsItem</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><code>settingsItem</code> <span class="xref">TSettingsItem</span></dt>
+    <dd><p>Добавляемый элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -710,35 +769,32 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <a id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_RemoveSettingsAsync_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.RemoveSettingsAsync*"></a>
 
-  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_RemoveSettingsAsync__1___0_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.RemoveSettingsAsync``1(``0)">
-  RemoveSettingsAsync&lt;T&gt;(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_RemoveSettingsAsync__1_" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.RemoveSettingsAsync(`1)">
+  RemoveSettingsAsync(TSettingsItem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Удаляет элемент настроек из репозитория.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task RemoveSettingsAsync&lt;T&gt;(T settingsItem) where T : class, TSettingsItem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; RemoveSettingsAsync(TSettingsItem settingsItem)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>settingsItem</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><code>settingsItem</code> <span class="xref">TSettingsItem</span></dt>
+    <dd><p>Удаляемый элемент настроек.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -753,20 +809,21 @@ Class SettingsRepositoryBase&lt;TObjectId, TSettingsItem&gt;  <a class="header-a
 
   <h3 id="ParmaGIS_Modules_Data_Space_Settings_SettingsRepositoryBase_2_SaveChangesAsync" data-uid="ParmaGIS.Modules.Data.Space.Settings.SettingsRepositoryBase`2.SaveChangesAsync">
   SaveChangesAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/modules/ParmaGIS.Modules.Data/Space/Settings/SettingsRepositoryBase.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Сохраняет изменения.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task SaveChangesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;RepoResponse&gt; SaveChangesAsync()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="ParmaGIS.Modules.Data.Space.RepoResponse.html">RepoResponse</a>&gt;</dt>
     <dd></dd>
   </dl>
 

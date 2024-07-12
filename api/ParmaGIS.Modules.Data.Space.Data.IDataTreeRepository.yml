@@ -20,18 +20,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDataTreeRepository
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataTreeRepository.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Представляет репозиторий данных древовидного представления.
+  example: []
   syntax:
     content: 'public interface IDataTreeRepository : IDataRepository'
     content.vb: Public Interface IDataTreeRepository Inherits IDataRepository
   inheritedMembers:
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.GetDataAsync``1(System.Object)
-  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1({T})
-  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1({T})
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  - ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   - ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.TreeProvider
   commentId: P:ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.TreeProvider
@@ -51,10 +53,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TreeProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/IDataTreeRepository.cs
-    startLine: 4
+    startLine: 10
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает провайдер древовидного представления.
+  example: []
   syntax:
     content: ITreeProvider TreeProvider { get; }
     parameters: []
@@ -178,71 +182,55 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
-  definition: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
-  name: InsertDataAsync<T>(T)
-  nameWithType: IDataRepository.InsertDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync<T>(T)
-  nameWithType.vb: IDataRepository.InsertDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(Of T)(T)
-  name.vb: InsertDataAsync(Of T)(T)
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
+  name: InsertDataAsync(IDataObject)
+  nameWithType: IDataRepository.InsertDataAsync(IDataObject)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
     name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
   - name: (
-  - name: T
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
+    name: IDataObject
+    href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
     name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
+    name: IDataObject
+    href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
   - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1({T})
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   parent: ParmaGIS.Modules.Data.Space.Data.IDataRepository
-  definition: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
-  name: RemoveDataAsync<T>(T)
-  nameWithType: IDataRepository.RemoveDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync<T>(T)
-  nameWithType.vb: IDataRepository.RemoveDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(Of T)(T)
-  name.vb: RemoveDataAsync(Of T)(T)
+  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
+  name: RemoveDataAsync(IDataObject)
+  nameWithType: IDataRepository.RemoveDataAsync(IDataObject)
+  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
     name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
   - name: (
-  - name: T
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
+    name: IDataObject
+    href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(ParmaGIS.Modules.Data.Space.Data.IDataObject)
     name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
+    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync_ParmaGIS_Modules_Data_Space_Data_IDataObject_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
+  - uid: ParmaGIS.Modules.Data.Space.Data.IDataObject
+    name: IDataObject
+    href: ParmaGIS.Modules.Data.Space.Data.IDataObject.html
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
   commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.SaveChangesAsync
@@ -270,68 +258,6 @@ references:
   name: IDataRepository
   nameWithType: IDataRepository
   fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
-  name: InsertDataAsync<T>(T)
-  nameWithType: IDataRepository.InsertDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync<T>(T)
-  nameWithType.vb: IDataRepository.InsertDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync(Of T)(T)
-  name.vb: InsertDataAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-    name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.InsertDataAsync``1(``0)
-    name: InsertDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_InsertDataAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
-- uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-  commentId: M:ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-  href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
-  name: RemoveDataAsync<T>(T)
-  nameWithType: IDataRepository.RemoveDataAsync<T>(T)
-  fullName: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync<T>(T)
-  nameWithType.vb: IDataRepository.RemoveDataAsync(Of T)(T)
-  fullName.vb: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync(Of T)(T)
-  name.vb: RemoveDataAsync(Of T)(T)
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-    name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Data.Space.Data.IDataRepository.RemoveDataAsync``1(``0)
-    name: RemoveDataAsync
-    href: ParmaGIS.Modules.Data.Space.Data.IDataRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataRepository_RemoveDataAsync__1___0_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: )
 - uid: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.TreeProvider*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.TreeProvider
   href: ParmaGIS.Modules.Data.Space.Data.IDataTreeRepository.html#ParmaGIS_Modules_Data_Space_Data_IDataTreeRepository_TreeProvider

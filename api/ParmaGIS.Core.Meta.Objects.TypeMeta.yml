@@ -25,10 +25,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TypeMeta
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Представляет метаданые типа. Метаданные типа - это кэшированое хранилище данных типа, полученные из рефлексии. Нужен для ускорения получения данных о типе, таких как атрибуты, свойства, методы и тд. Рекомендуется использвать <xref href="ParmaGIS.Core.Meta.MetaManager.GetMeta(System.Type)" data-throw-if-not-resolved="false"></xref> для работы с рефлексией.
+  example: []
   syntax:
     content: 'public class TypeMeta : IItemInfo'
     content.vb: Public Class TypeMeta Implements IItemInfo
@@ -65,10 +67,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 22
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает название типа.
   example: []
   syntax:
     content: public string Name { get; }
@@ -97,10 +100,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Type
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 23
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает тип.
+  example: []
   syntax:
     content: public Type Type { get; }
     parameters: []
@@ -126,10 +131,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Attributes
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 24
+    startLine: 42
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает коллекцию втрибутов типа.
+  example: []
   syntax:
     content: public AttributesCollection Attributes { get; }
     parameters: []
@@ -155,15 +162,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Properties
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 25
+    startLine: 47
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает коллекцию свойств типа.
+  example: []
   syntax:
     content: public PropertyMetaCatalog Properties { get; }
     parameters: []
     return:
-      type: ParmaGIS.Core.Meta.PropertyMetaCatalog
+      type: ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog
     content.vb: Public ReadOnly Property Properties As PropertyMetaCatalog
   overload: ParmaGIS.Core.Meta.Objects.TypeMeta.Properties*
 - uid: ParmaGIS.Core.Meta.Objects.TypeMeta.Methods
@@ -184,15 +193,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Methods
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 26
+    startLine: 52
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает коллекцию методов типа.
+  example: []
   syntax:
     content: public MethodMetaCollection Methods { get; }
     parameters: []
     return:
-      type: ParmaGIS.Core.Meta.MethodMetaCollection
+      type: ParmaGIS.Core.Meta.Objects.MethodMetaCollection
     content.vb: Public ReadOnly Property Methods As MethodMetaCollection
   overload: ParmaGIS.Core.Meta.Objects.TypeMeta.Methods*
 - uid: ParmaGIS.Core.Meta.Objects.TypeMeta.Constructors
@@ -213,18 +224,47 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Constructors
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Meta/Objects/TypeMeta.cs
-    startLine: 28
+    startLine: 57
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Meta.Objects
+  summary: Возвращает коллекцию конструеторов типа.
+  example: []
   syntax:
-    content: public ConstructorCollection Constructors { get; }
+    content: public ConstructorMetaCollection Constructors { get; }
     parameters: []
     return:
-      type: ParmaGIS.Core.Meta.Objects.ConstructorCollection
-    content.vb: Public ReadOnly Property Constructors As ConstructorCollection
+      type: ParmaGIS.Core.Meta.Objects.ConstructorMetaCollection
+    content.vb: Public ReadOnly Property Constructors As ConstructorMetaCollection
   overload: ParmaGIS.Core.Meta.Objects.TypeMeta.Constructors*
 references:
+- uid: ParmaGIS.Core.Meta.MetaManager.GetMeta(System.Type)
+  commentId: M:ParmaGIS.Core.Meta.MetaManager.GetMeta(System.Type)
+  isExternal: true
+  href: ParmaGIS.Core.Meta.MetaManager.html#ParmaGIS_Core_Meta_MetaManager_GetMeta_System_Type_
+  name: GetMeta(Type)
+  nameWithType: MetaManager.GetMeta(Type)
+  fullName: ParmaGIS.Core.Meta.MetaManager.GetMeta(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Meta.MetaManager.GetMeta(System.Type)
+    name: GetMeta
+    href: ParmaGIS.Core.Meta.MetaManager.html#ParmaGIS_Core_Meta_MetaManager_GetMeta_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Meta.MetaManager.GetMeta(System.Type)
+    name: GetMeta
+    href: ParmaGIS.Core.Meta.MetaManager.html#ParmaGIS_Core_Meta_MetaManager_GetMeta_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: ParmaGIS.Core.Meta.Objects
   commentId: N:ParmaGIS.Core.Meta.Objects
   href: ParmaGIS.html
@@ -792,66 +832,36 @@ references:
   name: Properties
   nameWithType: TypeMeta.Properties
   fullName: ParmaGIS.Core.Meta.Objects.TypeMeta.Properties
-- uid: ParmaGIS.Core.Meta.PropertyMetaCatalog
-  commentId: T:ParmaGIS.Core.Meta.PropertyMetaCatalog
-  parent: ParmaGIS.Core.Meta
-  href: ParmaGIS.Core.Meta.PropertyMetaCatalog.html
+- uid: ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog
+  commentId: T:ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog
+  parent: ParmaGIS.Core.Meta.Objects
+  href: ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog.html
   name: PropertyMetaCatalog
   nameWithType: PropertyMetaCatalog
-  fullName: ParmaGIS.Core.Meta.PropertyMetaCatalog
-- uid: ParmaGIS.Core.Meta
-  commentId: N:ParmaGIS.Core.Meta
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Meta
-  nameWithType: ParmaGIS.Core.Meta
-  fullName: ParmaGIS.Core.Meta
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Meta
-    name: Meta
-    href: ParmaGIS.Core.Meta.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Meta
-    name: Meta
-    href: ParmaGIS.Core.Meta.html
+  fullName: ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog
 - uid: ParmaGIS.Core.Meta.Objects.TypeMeta.Methods*
   commentId: Overload:ParmaGIS.Core.Meta.Objects.TypeMeta.Methods
   href: ParmaGIS.Core.Meta.Objects.TypeMeta.html#ParmaGIS_Core_Meta_Objects_TypeMeta_Methods
   name: Methods
   nameWithType: TypeMeta.Methods
   fullName: ParmaGIS.Core.Meta.Objects.TypeMeta.Methods
-- uid: ParmaGIS.Core.Meta.MethodMetaCollection
-  commentId: T:ParmaGIS.Core.Meta.MethodMetaCollection
-  parent: ParmaGIS.Core.Meta
-  href: ParmaGIS.Core.Meta.MethodMetaCollection.html
+- uid: ParmaGIS.Core.Meta.Objects.MethodMetaCollection
+  commentId: T:ParmaGIS.Core.Meta.Objects.MethodMetaCollection
+  parent: ParmaGIS.Core.Meta.Objects
+  href: ParmaGIS.Core.Meta.Objects.MethodMetaCollection.html
   name: MethodMetaCollection
   nameWithType: MethodMetaCollection
-  fullName: ParmaGIS.Core.Meta.MethodMetaCollection
+  fullName: ParmaGIS.Core.Meta.Objects.MethodMetaCollection
 - uid: ParmaGIS.Core.Meta.Objects.TypeMeta.Constructors*
   commentId: Overload:ParmaGIS.Core.Meta.Objects.TypeMeta.Constructors
   href: ParmaGIS.Core.Meta.Objects.TypeMeta.html#ParmaGIS_Core_Meta_Objects_TypeMeta_Constructors
   name: Constructors
   nameWithType: TypeMeta.Constructors
   fullName: ParmaGIS.Core.Meta.Objects.TypeMeta.Constructors
-- uid: ParmaGIS.Core.Meta.Objects.ConstructorCollection
-  commentId: T:ParmaGIS.Core.Meta.Objects.ConstructorCollection
+- uid: ParmaGIS.Core.Meta.Objects.ConstructorMetaCollection
+  commentId: T:ParmaGIS.Core.Meta.Objects.ConstructorMetaCollection
   parent: ParmaGIS.Core.Meta.Objects
-  href: ParmaGIS.Core.Meta.Objects.ConstructorCollection.html
-  name: ConstructorCollection
-  nameWithType: ConstructorCollection
-  fullName: ParmaGIS.Core.Meta.Objects.ConstructorCollection
+  href: ParmaGIS.Core.Meta.Objects.ConstructorMetaCollection.html
+  name: ConstructorMetaCollection
+  nameWithType: ConstructorMetaCollection
+  fullName: ParmaGIS.Core.Meta.Objects.ConstructorMetaCollection

@@ -86,7 +86,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ImplementationType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
@@ -117,10 +117,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParameterType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает тип параметра для <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: Type? ParameterType { get; }
     parameters: []
@@ -146,11 +148,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Lifetime
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
-  summary: Возвращает вариант жизненного цикла сервиса.
+  summary: Возвращает время жизни сервиса.
   example: []
   syntax:
     content: ServiceLifetime Lifetime { get; }
@@ -177,10 +179,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: State
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает состояние сервиса.
+  example: []
   syntax:
     content: ServiceState State { get; }
     parameters: []
@@ -206,10 +210,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ManyImplementation
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 17
+    startLine: 25
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает true, если для сервиса разрешена множественная реализация.
+  example: []
   syntax:
     content: bool ManyImplementation { get; }
     parameters: []
@@ -235,10 +241,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsParameterGiver
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Serviceability/IServiceInfo.cs
-    startLine: 18
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Serviceability
+  summary: Возвращает true, если сервис является <xref href="ParmaGIS.Core.Serviceability.IParameterGiver" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: bool IsParameterGiver { get; }
     parameters: []
@@ -348,6 +356,12 @@ references:
   name: ImplementationType
   nameWithType: IServiceInfo.ImplementationType
   fullName: ParmaGIS.Core.Serviceability.IServiceInfo.ImplementationType
+- uid: ParmaGIS.Core.Serviceability.IParameterGiver
+  commentId: T:ParmaGIS.Core.Serviceability.IParameterGiver
+  href: ParmaGIS.Core.Serviceability.IParameterGiver.html
+  name: IParameterGiver
+  nameWithType: IParameterGiver
+  fullName: ParmaGIS.Core.Serviceability.IParameterGiver
 - uid: ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType*
   commentId: Overload:ParmaGIS.Core.Serviceability.IServiceInfo.ParameterType
   href: ParmaGIS.Core.Serviceability.IServiceInfo.html#ParmaGIS_Core_Serviceability_IServiceInfo_ParameterType

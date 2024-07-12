@@ -6,7 +6,7 @@ items:
   parent: ParmaGIS.Modules.Parma.Space.Data.Tree
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.#ctor(System.Int32,ParmaGIS.Modules.Parma.Space.Data.Tree.District)
-  - ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   - ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.Parent
   - ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ToString
   langs:
@@ -23,7 +23,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Compartment
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 41
+    startLine: 37
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -47,6 +47,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountChildren
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountChildrenToLeaves
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountStand
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
   - ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
@@ -77,7 +78,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 45
+    startLine: 41
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -111,7 +112,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Parent
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 50
+    startLine: 46
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -122,40 +123,42 @@ items:
       type: ParmaGIS.Modules.Parma.Space.Data.Tree.District
     content.vb: Public ReadOnly Property Parent As District
   overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.Parent*
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-  id: ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  id: CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   parent: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment
   langs:
   - csharp
   - vb
-  name: ChangeParent(ParmaNode?)
-  nameWithType: Compartment.ChangeParent(ParmaNode?)
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode?)
+  name: CanChangeParent(ParmaNode?)
+  nameWithType: Compartment.CanChangeParent(ParmaNode?)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode?)
   type: Method
   source:
     remote:
       path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ChangeParent
+    id: CanChangeParent
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 53
+    startLine: 49
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
   example: []
   syntax:
-    content: public override void ChangeParent(ParmaNode? newParent)
+    content: public override bool CanChangeParent(ParmaNode? newParent)
     parameters:
     - id: newParent
       type: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
-    content.vb: Public Overrides Sub ChangeParent(newParent As ParmaNode)
-  overridden: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent*
-  nameWithType.vb: Compartment.ChangeParent(ParmaNode)
-  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-  name.vb: ChangeParent(ParmaNode)
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function CanChangeParent(newParent As ParmaNode) As Boolean
+  overridden: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent*
+  nameWithType.vb: Compartment.CanChangeParent(ParmaNode)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  name.vb: CanChangeParent(ParmaNode)
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ToString
   commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ToString
   id: ToString
@@ -174,7 +177,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 62
+    startLine: 54
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -346,6 +349,31 @@ references:
   name: CountStand
   nameWithType: ParmaNode.CountStand
   fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountStand
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  name: ChangeParent(ParmaNode)
+  nameWithType: ParmaNode.ChangeParent(ParmaNode)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+    name: ChangeParent
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+    name: ParmaNode
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+    name: ChangeParent
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+    name: ParmaNode
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
+  - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   commentId: E:ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   parent: ParmaGIS.Core.Utilities.BindableBase
@@ -1480,37 +1508,48 @@ references:
   name: Parent
   nameWithType: Compartment.Parent
   fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.Parent
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
-  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
-  name: ChangeParent(ParmaNode)
-  nameWithType: ParmaNode.ChangeParent(ParmaNode)
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_CanChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  name: CanChangeParent(ParmaNode)
+  nameWithType: ParmaNode.CanChangeParent(ParmaNode)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   spec.csharp:
-  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-    name: ChangeParent
-    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+    name: CanChangeParent
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_CanChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
   - name: (
   - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
     name: ParmaNode
     href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
-    name: ChangeParent
-    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+    name: CanChangeParent
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_CanChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
   - name: (
   - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
     name: ParmaNode
     href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
   - name: )
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent
-  href: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.html#ParmaGIS_Modules_Parma_Space_Data_Tree_Compartment_ChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
-  name: ChangeParent
-  nameWithType: Compartment.ChangeParent
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.ChangeParent
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.html#ParmaGIS_Modules_Parma_Space_Data_Tree_Compartment_CanChangeParent_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  name: CanChangeParent
+  nameWithType: Compartment.CanChangeParent
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment.CanChangeParent
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
   commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
   parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode

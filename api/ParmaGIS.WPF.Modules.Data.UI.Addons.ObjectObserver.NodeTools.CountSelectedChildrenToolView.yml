@@ -5,9 +5,8 @@ items:
   id: CountSelectedChildrenToolView
   parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
   children:
-  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.#ctor
-  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context
-  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip
   langs:
   - csharp
   - vb
@@ -17,18 +16,18 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenWithToLeavesToolView.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CountSelectedChildrenToolView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
-    startLine: 9
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenWithToLeavesToolView.cs
+    startLine: 64
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
   syntax:
-    content: 'public class CountSelectedChildrenToolView : TextBlock, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IServiceProvider, IContentHost, IAddChild, INodeToolView'
-    content.vb: Public Class CountSelectedChildrenToolView Inherits TextBlock Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IServiceProvider, IContentHost, IAddChild, INodeToolView
+    content: 'public class CountSelectedChildrenToolView : CountSelectedChildrenWithToLeavesToolView, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IServiceProvider, IContentHost, IAddChild, INodeToolView'
+    content.vb: Public Class CountSelectedChildrenToolView Inherits CountSelectedChildrenWithToLeavesToolView Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IServiceProvider, IContentHost, IAddChild, INodeToolView
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -37,6 +36,7 @@ items:
   - System.Windows.UIElement
   - System.Windows.FrameworkElement
   - System.Windows.Controls.TextBlock
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
   implements:
   - System.Windows.Media.Animation.IAnimatable
   - System.ComponentModel.ISupportInitialize
@@ -48,6 +48,9 @@ items:
   - System.Windows.Markup.IAddChild
   - ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView
   inheritedMembers:
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView._nodeTool
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.Context
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.NodeTool
   - System.Windows.Controls.TextBlock.BackgroundProperty
   - System.Windows.Controls.TextBlock.BaselineOffsetProperty
   - System.Windows.Controls.TextBlock.FontFamilyProperty
@@ -682,101 +685,68 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
   extensionMethods:
+  - System.Windows.DependencyObject.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Boolean)
   - System.Windows.Media.Visual.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context
-  commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context
-  id: Context
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText
+  id: GetText
   parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView
   langs:
   - csharp
   - vb
-  name: Context
-  nameWithType: CountSelectedChildrenToolView.Context
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context
-  type: Property
+  name: GetText()
+  nameWithType: CountSelectedChildrenToolView.GetText()
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText()
+  type: Method
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenWithToLeavesToolView.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Context
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
-    startLine: 14
+    id: GetText
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenWithToLeavesToolView.cs
+    startLine: 66
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
   example: []
   syntax:
-    content: public NodeContext Context { get; set; }
-    parameters: []
+    content: protected override string GetText()
     return:
-      type: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-    content.vb: Public Property Context As NodeContext
-  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context*
-  implements:
-  - ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.Context
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool
-  commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool
-  id: NodeTool
+      type: System.String
+    content.vb: Protected Overrides Function GetText() As String
+  overridden: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetText
+  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText*
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip
+  id: GetToolTip
   parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView
   langs:
   - csharp
   - vb
-  name: NodeTool
-  nameWithType: CountSelectedChildrenToolView.NodeTool
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool
-  type: Property
+  name: GetToolTip()
+  nameWithType: CountSelectedChildrenToolView.GetToolTip()
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip()
+  type: Method
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenWithToLeavesToolView.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: NodeTool
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
-    startLine: 25
+    id: GetToolTip
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenWithToLeavesToolView.cs
+    startLine: 70
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
-  summary: Сначала присваивается это
   example: []
   syntax:
-    content: public INodeTool NodeTool { get; set; }
-    parameters: []
+    content: protected override string GetToolTip()
     return:
-      type: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeTool
-    content.vb: Public Property NodeTool As INodeTool
-  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool*
-  implements:
-  - ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.NodeTool
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.#ctor
-  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.#ctor
-  id: '#ctor'
-  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView
-  langs:
-  - csharp
-  - vb
-  name: CountSelectedChildrenToolView()
-  nameWithType: CountSelectedChildrenToolView.CountSelectedChildrenToolView()
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.CountSelectedChildrenToolView()
-  type: Constructor
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: .ctor
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectObserver/NodeTools/CountSelectedChildrenToolView.cs
-    startLine: 35
-  assemblies:
-  - ParmaGIS.WPF.Modules.Data.UI
-  namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
-  syntax:
-    content: public CountSelectedChildrenToolView()
-    content.vb: Public Sub New()
-  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.#ctor*
-  nameWithType.vb: CountSelectedChildrenToolView.New()
-  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.New()
-  name.vb: New()
+      type: System.String
+    content.vb: Protected Overrides Function GetToolTip() As String
+  overridden: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetToolTip
+  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip*
 references:
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
   commentId: N:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
@@ -907,6 +877,13 @@ references:
   name: TextBlock
   nameWithType: TextBlock
   fullName: System.Windows.Controls.TextBlock
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  commentId: T:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html
+  name: CountSelectedChildrenWithToLeavesToolView
+  nameWithType: CountSelectedChildrenWithToLeavesToolView
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
 - uid: System.Windows.Media.Animation.IAnimatable
   commentId: T:System.Windows.Media.Animation.IAnimatable
   parent: System.Windows.Media.Animation
@@ -978,6 +955,27 @@ references:
   name: INodeToolView
   nameWithType: INodeToolView
   fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView._nodeTool
+  commentId: F:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView._nodeTool
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView__nodeTool
+  name: _nodeTool
+  nameWithType: CountSelectedChildrenWithToLeavesToolView._nodeTool
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView._nodeTool
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.Context
+  commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.Context
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_Context
+  name: Context
+  nameWithType: CountSelectedChildrenWithToLeavesToolView.Context
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.Context
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.NodeTool
+  commentId: P:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.NodeTool
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_NodeTool
+  name: NodeTool
+  nameWithType: CountSelectedChildrenWithToLeavesToolView.NodeTool
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.NodeTool
 - uid: System.Windows.Controls.TextBlock.BackgroundProperty
   commentId: F:System.Windows.Controls.TextBlock.BackgroundProperty
   parent: System.Windows.Controls.TextBlock
@@ -11263,6 +11261,57 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: System.Windows.DependencyObject.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Boolean)
+  commentId: M:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+  parent: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
+  definition: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+  href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ControlExtensions_GetVisualTreeChild__1_System_Windows_DependencyObject_System_Boolean_
+  name: GetVisualTreeChild<T>(DependencyObject, bool)
+  nameWithType: ControlExtensions.GetVisualTreeChild<T>(DependencyObject, bool)
+  fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild<T>(System.Windows.DependencyObject, bool)
+  nameWithType.vb: ControlExtensions.GetVisualTreeChild(Of T)(DependencyObject, Boolean)
+  fullName.vb: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild(Of T)(System.Windows.DependencyObject, Boolean)
+  name.vb: GetVisualTreeChild(Of T)(DependencyObject, Boolean)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+    name: GetVisualTreeChild
+    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ControlExtensions_GetVisualTreeChild__1_System_Windows_DependencyObject_System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.dependencyobject
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+    name: GetVisualTreeChild
+    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ControlExtensions_GetVisualTreeChild__1_System_Windows_DependencyObject_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.dependencyobject
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: System.Windows.Media.Visual.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1
   commentId: M:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
   parent: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
@@ -11604,6 +11653,63 @@ references:
   - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools
     name: Tools
     href: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.html
+- uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+  commentId: M:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+  isExternal: true
+  href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ControlExtensions_GetVisualTreeChild__1_System_Windows_DependencyObject_System_Boolean_
+  name: GetVisualTreeChild<T>(DependencyObject, bool)
+  nameWithType: ControlExtensions.GetVisualTreeChild<T>(DependencyObject, bool)
+  fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild<T>(System.Windows.DependencyObject, bool)
+  nameWithType.vb: ControlExtensions.GetVisualTreeChild(Of T)(DependencyObject, Boolean)
+  fullName.vb: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild(Of T)(System.Windows.DependencyObject, Boolean)
+  name.vb: GetVisualTreeChild(Of T)(DependencyObject, Boolean)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+    name: GetVisualTreeChild
+    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ControlExtensions_GetVisualTreeChild__1_System_Windows_DependencyObject_System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.dependencyobject
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Windows.DependencyObject,System.Boolean)
+    name: GetVisualTreeChild
+    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ControlExtensions_GetVisualTreeChild__1_System_Windows_DependencyObject_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.dependencyobject
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
+  commentId: T:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
+  parent: ParmaGIS.WPF.UI.Utilities.ControlExtensions
+  href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.html
+  name: ControlExtensions
+  nameWithType: ControlExtensions
+  fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
 - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
   commentId: M:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
   isExternal: true
@@ -11695,98 +11801,64 @@ references:
   - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions
     name: ControlExtensions
     href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.html
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context*
-  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context
-  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenToolView_Context
-  name: Context
-  nameWithType: CountSelectedChildrenToolView.Context
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.Context
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.Context
-  commentId: P:ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.Context
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Tools_INodeToolView_Context
-  name: Context
-  nameWithType: INodeToolView.Context
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.Context
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-  commentId: T:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
-  name: NodeContext
-  nameWithType: NodeContext
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-  commentId: N:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-  href: ParmaGIS.html
-  name: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-  nameWithType: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetText
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetText
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_GetText
+  name: GetText()
+  nameWithType: CountSelectedChildrenWithToLeavesToolView.GetText()
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetText()
   spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.WPF
-    name: WPF
-    href: ParmaGIS.WPF.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules
-    name: Modules
-    href: ParmaGIS.WPF.Modules.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool
-    name: ObjectObserverTool
-    href: ParmaGIS.WPF.Modules.ObjectObserverTool.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-    name: Nodes
-    href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.html
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetText
+    name: GetText
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_GetText
+  - name: (
+  - name: )
   spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.WPF
-    name: WPF
-    href: ParmaGIS.WPF.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules
-    name: Modules
-    href: ParmaGIS.WPF.Modules.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool
-    name: ObjectObserverTool
-    href: ParmaGIS.WPF.Modules.ObjectObserverTool.html
-  - name: .
-  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
-    name: Nodes
-    href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.html
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool*
-  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool
-  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenToolView_NodeTool
-  name: NodeTool
-  nameWithType: CountSelectedChildrenToolView.NodeTool
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.NodeTool
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.NodeTool
-  commentId: P:ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.NodeTool
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Tools_INodeToolView_NodeTool
-  name: NodeTool
-  nameWithType: INodeToolView.NodeTool
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeToolView.NodeTool
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeTool
-  commentId: T:ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeTool
-  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeTool.html
-  name: INodeTool
-  nameWithType: INodeTool
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools.INodeTool
-- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.#ctor*
-  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.#ctor
-  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenToolView__ctor
-  name: CountSelectedChildrenToolView
-  nameWithType: CountSelectedChildrenToolView.CountSelectedChildrenToolView
-  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.CountSelectedChildrenToolView
-  nameWithType.vb: CountSelectedChildrenToolView.New
-  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.New
-  name.vb: New
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetText
+    name: GetText
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_GetText
+  - name: (
+  - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText*
+  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenToolView_GetText
+  name: GetText
+  nameWithType: CountSelectedChildrenToolView.GetText
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetText
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetToolTip
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetToolTip
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_GetToolTip
+  name: GetToolTip()
+  nameWithType: CountSelectedChildrenWithToLeavesToolView.GetToolTip()
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetToolTip()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetToolTip
+    name: GetToolTip
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_GetToolTip
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.GetToolTip
+    name: GetToolTip
+    href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenWithToLeavesToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenWithToLeavesToolView_GetToolTip
+  - name: (
+  - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip*
+  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectObserver_NodeTools_CountSelectedChildrenToolView_GetToolTip
+  name: GetToolTip
+  nameWithType: CountSelectedChildrenToolView.GetToolTip
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.CountSelectedChildrenToolView.GetToolTip

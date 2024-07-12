@@ -20,15 +20,19 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ITableContainer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 53
+    startLine: 146
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
+  summary: Представляет типизированный относительно таблицы и строк контейнер таблицы.
+  example: []
   syntax:
     content: 'protected interface DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer<TTable, TRow> : DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableViewContainer<TTable>, DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>, DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.ITableContainer where TTable : TCalcTable where TRow : TCalcTableRow'
     typeParameters:
     - id: TTable
+      description: Тип таблицы расчета.
     - id: TRow
+      description: Тип строки таблицы расчета.
     content.vb: Protected Interface DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer(Of TTable As TCalcTable, TRow As TCalcTableRow) Inherits DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableViewContainer(Of TTable), DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow), DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).ITableContainer
   inheritedMembers:
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableViewContainer{{TTable}}.GetTables
@@ -38,6 +42,7 @@ items:
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{TRow}}.GetRows
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{TRow}}.GetRows({TObjectId})
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{TRow}}.CreateRow({TCalcTable})
+  - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{TRow}}.CreateRow
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.RowType
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.TableType
   - ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.CalcTableType
@@ -67,7 +72,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateRow
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/DAL/DALCalculationRepositoryBase.cs
-    startLine: 57
+    startLine: 155
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.DAL
@@ -305,6 +310,28 @@ references:
     href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow__2_
   - name: (
   - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{TRow}}.CreateRow
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{`5}.CreateRow
+  parent: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{{TRow}}
+  definition: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow
+  name: CreateRow()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>.CreateRow()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>.CreateRow()
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{`5}.CreateRow
+    name: CreateRow
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer{`5}.CreateRow
+    name: CreateRow
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow
+  - name: (
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.RowType
   commentId: P:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer.RowType
@@ -738,6 +765,26 @@ references:
     href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow__2_
   - name: (
   - name: TCalcTable
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+  commentId: M:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+  href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow
+  name: CreateRow()
+  nameWithType: DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>.CreateRow()
+  fullName: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase<TObjectId, TCalcTableType, TCalcTable, TCalcTableRow>.IRowViewContainer<TRow>.CreateRow()
+  nameWithType.vb: DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow()
+  fullName.vb: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase(Of TObjectId, TCalcTableType, TCalcTable, TCalcTableRow).IRowViewContainer(Of TRow).CreateRow()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+    name: CreateRow
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.IRowViewContainer`1.CreateRow
+    name: CreateRow
+    href: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase-4.IRowViewContainer-1.html#ParmaGIS_Modules_Data_Space_DAL_DALCalculationRepositoryBase_4_IRowViewContainer_1_CreateRow
+  - name: (
   - name: )
 - uid: ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer
   commentId: T:ParmaGIS.Modules.Data.Space.DAL.DALCalculationRepositoryBase`4.ITableContainer

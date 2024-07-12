@@ -40,7 +40,7 @@ items:
   - System.Object
   derivedClasses:
   - ParmaGIS.Core.Meta.MetaCatalog
-  - ParmaGIS.Core.Meta.PropertyMetaCatalog
+  - ParmaGIS.Core.Meta.Objects.PropertyMetaCatalog
   implements:
   - ParmaGIS.Core.Catalog.IInfoCatalog{{T}}
   - System.Collections.Generic.IEnumerable{{T}}
@@ -78,10 +78,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Storage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/InfoCatalogBase.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Хранилище элементов каталога.
+  example: []
   syntax:
     content: protected ConcurrentDictionary<string, T> Storage
     return:
@@ -107,10 +109,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/InfoCatalogBase.cs
-    startLine: 15
+    startLine: 21
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Инициалозирует экземпляр класса <xref href="ParmaGIS.Core.Catalog.InfoCatalogBase%601" data-throw-if-not-resolved="false"></xref> без элементов.
+  example: []
   syntax:
     content: protected InfoCatalogBase()
     content.vb: Protected Sub New()
@@ -136,15 +140,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/InfoCatalogBase.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Инициалозирует экземпляр класса <xref href="ParmaGIS.Core.Catalog.InfoCatalogBase%601" data-throw-if-not-resolved="false"></xref> с элементами.
+  example: []
   syntax:
     content: protected InfoCatalogBase(Dictionary<string, T> storage)
     parameters:
     - id: storage
       type: System.Collections.Generic.Dictionary{System.String,{T}}
+      description: Словарь начальных элементов.
     content.vb: Protected Sub New(storage As Dictionary(Of String, T))
   overload: ParmaGIS.Core.Catalog.InfoCatalogBase`1.#ctor*
   nameWithType.vb: InfoCatalogBase(Of T).New(Dictionary(Of String, T))
@@ -168,18 +175,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/InfoCatalogBase.cs
-    startLine: 22
+    startLine: 34
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
+  summary: Возвращает элемент каталога по имени.
   example: []
   syntax:
     content: public T? this[string name] { get; }
     parameters:
     - id: name
       type: System.String
+      description: Имя элемента.
     return:
       type: '{T}'
+      description: Элемент каталога с указанным именем.
     content.vb: Public ReadOnly Default Property this[](name As String) As T
   overload: ParmaGIS.Core.Catalog.InfoCatalogBase`1.Item*
   implements:
@@ -205,7 +215,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetEnumerator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Catalog/InfoCatalogBase.cs
-    startLine: 24
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Catalog
@@ -1275,6 +1285,31 @@ references:
     name: Concurrent
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent
+- uid: ParmaGIS.Core.Catalog.InfoCatalogBase`1
+  commentId: T:ParmaGIS.Core.Catalog.InfoCatalogBase`1
+  href: ParmaGIS.Core.Catalog.InfoCatalogBase-1.html
+  name: InfoCatalogBase<T>
+  nameWithType: InfoCatalogBase<T>
+  fullName: ParmaGIS.Core.Catalog.InfoCatalogBase<T>
+  nameWithType.vb: InfoCatalogBase(Of T)
+  fullName.vb: ParmaGIS.Core.Catalog.InfoCatalogBase(Of T)
+  name.vb: InfoCatalogBase(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Catalog.InfoCatalogBase`1
+    name: InfoCatalogBase
+    href: ParmaGIS.Core.Catalog.InfoCatalogBase-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Catalog.InfoCatalogBase`1
+    name: InfoCatalogBase
+    href: ParmaGIS.Core.Catalog.InfoCatalogBase-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Catalog.InfoCatalogBase`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Catalog.InfoCatalogBase`1.#ctor
   href: ParmaGIS.Core.Catalog.InfoCatalogBase-1.html#ParmaGIS_Core_Catalog_InfoCatalogBase_1__ctor

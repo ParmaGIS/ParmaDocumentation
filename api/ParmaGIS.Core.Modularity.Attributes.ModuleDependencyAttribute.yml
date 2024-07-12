@@ -22,10 +22,19 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleDependencyAttribute
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/Attributes/ModuleDependencyAttribute.cs
-    startLine: 4
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity.Attributes
+  summary: >-
+    Представляет атрибут зависимости модуля.
+
+    Можно указать от каких модулей и каких версий зависит текущий модуль.
+
+    Предназначен только для упрощения доступа к данным зависимостей.
+
+    Не заменяет описание зависимостей в .csproj.
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
@@ -118,17 +127,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/Attributes/ModuleDependencyAttribute.cs
-    startLine: 7
+    startLine: 18
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity.Attributes
+  summary: Инициализирует класс <xref href="ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ModuleDependencyAttribute(string moduleName, string moduleVersion)
     parameters:
     - id: moduleName
       type: System.String
+      description: Название модуля, от которого зависит текущий модуль.
     - id: moduleVersion
       type: System.String
+      description: Версия моделя, от которого зависит текущий модуль.
     content.vb: Public Sub New(moduleName As String, moduleVersion As String)
   overload: ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute.#ctor*
   nameWithType.vb: ModuleDependencyAttribute.New(String, String)
@@ -152,10 +165,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleName
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/Attributes/ModuleDependencyAttribute.cs
-    startLine: 13
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity.Attributes
+  summary: Возвращает название модуля, от которого зависит текущий модуль.
+  example: []
   syntax:
     content: public string ModuleName { get; }
     parameters: []
@@ -181,10 +196,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleVersion
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Modularity/Attributes/ModuleDependencyAttribute.cs
-    startLine: 14
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Modularity.Attributes
+  summary: Возвращает версию модуля, от которого зависит текущий модуль.
+  example: []
   syntax:
     content: public string ModuleVersion { get; }
     parameters: []
@@ -2039,6 +2056,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute
+  commentId: T:ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute
+  parent: ParmaGIS.Core.Modularity.Attributes
+  href: ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute.html
+  name: ModuleDependencyAttribute
+  nameWithType: ModuleDependencyAttribute
+  fullName: ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute
 - uid: ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute.#ctor*
   commentId: Overload:ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute.#ctor
   href: ParmaGIS.Core.Modularity.Attributes.ModuleDependencyAttribute.html#ParmaGIS_Core_Modularity_Attributes_ModuleDependencyAttribute__ctor_System_String_System_String_

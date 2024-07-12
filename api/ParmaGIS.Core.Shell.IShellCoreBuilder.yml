@@ -22,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IShellCoreBuilder
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCoreBuilder.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Представляет контракт взаимодействия с конструктором ядра оболочки.
+  example: []
   syntax:
     content: public interface IShellCoreBuilder
     content.vb: Public Interface IShellCoreBuilder
@@ -47,10 +49,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Configuration
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCoreBuilder.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Возвращает или задает конфигурацию ядра оболочки.
+  example: []
   syntax:
     content: Configuration Configuration { get; set; }
     parameters: []
@@ -76,17 +80,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterTypes
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCoreBuilder.cs
-    startLine: 9
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Добавляет функцию, которая будет вызвана в начале этапа регистрации типов.
+  example: []
   syntax:
     content: IShellCoreBuilder RegisterTypes(Action<IServiceCollection> registrator)
     parameters:
     - id: registrator
       type: System.Action{ParmaGIS.Core.Serviceability.IServiceCollection}
+      description: Функция регистрации типов.
     return:
       type: ParmaGIS.Core.Shell.IShellCoreBuilder
+      description: Конструктор оболочки.
     content.vb: Function RegisterTypes(registrator As Action(Of IServiceCollection)) As IShellCoreBuilder
   overload: ParmaGIS.Core.Shell.IShellCoreBuilder.RegisterTypes*
   nameWithType.vb: IShellCoreBuilder.RegisterTypes(Action(Of IServiceCollection))
@@ -110,14 +118,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Build
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Shell/IShellCoreBuilder.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Shell
+  summary: Создает экземпляр ядра оболочки.
+  example: []
   syntax:
     content: IShellCore Build()
     return:
       type: ParmaGIS.Core.Shell.IShellCore
+      description: Экземпляр ядра оболочки.
     content.vb: Function Build() As IShellCore
   overload: ParmaGIS.Core.Shell.IShellCoreBuilder.Build*
 references:

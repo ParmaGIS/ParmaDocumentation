@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IDialogCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/IDialogCatalog.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Представляет контракт взаимодействия с каталогом диалогов.
+  example: []
   syntax:
     content: 'public interface IDialogCatalog : IInfoCatalog<IDialogInfo>, IEnumerable<IDialogInfo>, IEnumerable'
     content.vb: Public Interface IDialogCatalog Inherits IInfoCatalog(Of IDialogInfo), IEnumerable(Of IDialogInfo), IEnumerable
@@ -52,17 +54,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterDialog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/IDialogCatalog.cs
-    startLine: 8
+    startLine: 16
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog
+  summary: Регистрирует диалог.
+  example: []
   syntax:
     content: void RegisterDialog(Type dialogAwareType, string name)
     parameters:
     - id: dialogAwareType
       type: System.Type
+      description: Тип диалога. Должен реализовывать <xref href="ParmaGIS.Core.UI.Dialog.IDialogAware" data-throw-if-not-resolved="false"></xref>.
     - id: name
       type: System.String
+      description: название
     content.vb: Sub RegisterDialog(dialogAwareType As Type, name As String)
   overload: ParmaGIS.Core.UI.Dialog.IDialogCatalog.RegisterDialog*
   nameWithType.vb: IDialogCatalog.RegisterDialog(Type, String)
@@ -923,6 +929,13 @@ references:
   - uid: ParmaGIS.Core.Utilities.Collections
     name: Collections
     href: ParmaGIS.Core.Utilities.Collections.html
+- uid: ParmaGIS.Core.UI.Dialog.IDialogAware
+  commentId: T:ParmaGIS.Core.UI.Dialog.IDialogAware
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.IDialogAware.html
+  name: IDialogAware
+  nameWithType: IDialogAware
+  fullName: ParmaGIS.Core.UI.Dialog.IDialogAware
 - uid: ParmaGIS.Core.UI.Dialog.IDialogCatalog.RegisterDialog*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.IDialogCatalog.RegisterDialog
   href: ParmaGIS.Core.UI.Dialog.IDialogCatalog.html#ParmaGIS_Core_UI_Dialog_IDialogCatalog_RegisterDialog_System_Type_System_String_
