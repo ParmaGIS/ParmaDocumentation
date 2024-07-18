@@ -22,10 +22,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: BindableBase
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: >-
+    Представляет абстрактный класс упрощающий реализацию <xref href="System.ComponentModel.INotifyPropertyChanged" data-throw-if-not-resolved="false"></xref> и взаимодействие с ним.
+
+    Является одной из главных составляющих инфраструктуры MVVM.
+  example: []
   syntax:
     content: 'public abstract class BindableBase : INotifyPropertyChanged'
     content.vb: Public MustInherit Class BindableBase Implements INotifyPropertyChanged
@@ -57,6 +62,7 @@ items:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardAwareBase
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.XActions.ExplorerActionAwareBase
   - ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+  - ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.ViewModels.StandForms.CatalogItems`1
   - ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectObserver.NodeTools.CountSelectedStandsNodeTool
   - ParmaGIS.WPF.Modules.Postgre.UI.PostgreConnectioinContainer
   - ParmaGIS.WPF.Modules.ReportTool.ViewModels.ContentItemViewModel
@@ -96,11 +102,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 9
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
-  summary: Occurs when a property value changes.
+  summary: Возникает при изменении свойства объекта.
   example: []
   syntax:
     content: public event PropertyChangedEventHandler? PropertyChanged
@@ -127,25 +133,33 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetProperty
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 11
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Устанавливает значение свойства и вызывает событие его изменения.
+  example: []
   syntax:
     content: protected virtual bool SetProperty<T>(ref T storage, T value, bool withSame = false, string? propertyName = null)
     parameters:
     - id: storage
       type: '{T}'
+      description: Поле, которое хранит свойство.
     - id: value
       type: '{T}'
+      description: Значение, устанавливаемое в <code class="paramref">storage</code>.
     - id: withSame
       type: System.Boolean
+      description: Если установлено <code>true</code>, то событие изменения свойства будет возникать даже если <code class="paramref">storage</code> и <code class="paramref">value</code> равны.
     - id: propertyName
       type: System.String
+      description: 'Название свойства. Данный параметр может быть задан автоматически: <xref href="ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)" data-throw-if-not-resolved="false"></xref>.'
     typeParameters:
     - id: T
+      description: Тип значения свойства.
     return:
       type: System.Boolean
+      description: Значение <code>true</code>, если значение <code class="paramref">storage</code> было изменено на <code class="paramref">value</code>.
     content.vb: Protected Overridable Function SetProperty(Of T)(storage As T, value As T, withSame As Boolean = False, propertyName As String = Nothing) As Boolean
   overload: ParmaGIS.Core.Utilities.BindableBase.SetProperty*
   nameWithType.vb: BindableBase.SetProperty(Of T)(T, T, Boolean, String)
@@ -169,21 +183,45 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnPropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 23
+    startLine: 48
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: >-
+    Вызывает событие изменения свойства. <xref href="ParmaGIS.Core.Utilities.BindableBase.PropertyChanged" data-throw-if-not-resolved="false"></xref>.
+
+    Параметр <code class="paramref">propertyName</code> может быть установлен автоматически: если параметр установлен на <code>null</code>, то автоматически будет установлено название вызывающео члена.
+
+    <example>
+
+    private int _a;
+
+    public int A {get =&gt; _a; set =&gt; SetProperty(ref _a, value);}
+
+    В таком случае <code class="paramref">propertyName</code> будет установлен на "A".
+
+    </example>
+  example: []
   syntax:
     content: protected virtual void OnPropertyChanged(string? propertyName = null)
     parameters:
     - id: propertyName
       type: System.String
+      description: Название свойства.
     content.vb: Protected Overridable Sub OnPropertyChanged(propertyName As String = Nothing)
   overload: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged*
   nameWithType.vb: BindableBase.OnPropertyChanged(String)
   fullName.vb: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(String)
   name.vb: OnPropertyChanged(String)
 references:
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
 - uid: ParmaGIS.Core.Utilities
   commentId: N:ParmaGIS.Core.Utilities
   href: ParmaGIS.html
@@ -225,14 +263,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.ComponentModel.INotifyPropertyChanged
-  commentId: T:System.ComponentModel.INotifyPropertyChanged
-  parent: System.ComponentModel
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
-  name: INotifyPropertyChanged
-  nameWithType: INotifyPropertyChanged
-  fullName: System.ComponentModel.INotifyPropertyChanged
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -730,13 +760,6 @@ references:
   - name: )
   - name: )
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: System.ComponentModel
   commentId: N:System.ComponentModel
   isExternal: true
@@ -764,6 +787,13 @@ references:
     name: ComponentModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
   commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
   isExternal: true
@@ -1093,6 +1123,37 @@ references:
   name: PropertyChangedEventHandler
   nameWithType: PropertyChangedEventHandler
   fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
+  commentId: M:ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
+  parent: ParmaGIS.Core.Utilities.BindableBase
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BindableBase.OnPropertyChanged(string)
+  fullName: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(string)
+  nameWithType.vb: BindableBase.OnPropertyChanged(String)
+  fullName.vb: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.SetProperty*
   commentId: Overload:ParmaGIS.Core.Utilities.BindableBase.SetProperty
   href: ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_SetProperty__1___0____0_System_Boolean_System_String_
@@ -1127,10 +1188,24 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: ParmaGIS.Core.Utilities.BindableBase
+  commentId: T:ParmaGIS.Core.Utilities.BindableBase
+  parent: ParmaGIS.Core.Utilities
+  href: ParmaGIS.Core.Utilities.BindableBase.html
+  name: BindableBase
+  nameWithType: BindableBase
+  fullName: ParmaGIS.Core.Utilities.BindableBase
 - uid: T
   name: T
   nameWithType: T
   fullName: T
+- uid: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
+  commentId: E:ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
+  parent: ParmaGIS.Core.Utilities.BindableBase
+  href: ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BindableBase.PropertyChanged
+  fullName: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
 - uid: ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged*
   commentId: Overload:ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged
   href: ParmaGIS.Core.Utilities.BindableBase.html#ParmaGIS_Core_Utilities_BindableBase_OnPropertyChanged_System_String_

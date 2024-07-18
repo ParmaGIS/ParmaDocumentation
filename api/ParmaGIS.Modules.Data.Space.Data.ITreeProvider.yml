@@ -11,7 +11,9 @@ items:
   - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync
   - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodesAsync``1
   - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetParentAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
+  - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
   - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetRootNodesAsync
+  - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync(System.String,System.Threading.CancellationToken)
   - ParmaGIS.Modules.Data.Space.Data.ITreeProvider.Space
   langs:
   - csharp
@@ -27,7 +29,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ITreeProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -54,7 +56,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Space
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -85,7 +87,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRootNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -116,7 +118,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetParentAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -151,7 +153,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetChildrenAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -186,7 +188,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -217,7 +219,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -254,7 +256,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -289,7 +291,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodeAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Data
@@ -309,6 +311,82 @@ items:
   nameWithType.vb: ITreeProvider.GetNodeAsync(Object)
   fullName.vb: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetNodeAsync(Object)
   name.vb: GetNodeAsync(Object)
+- uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync(System.String,System.Threading.CancellationToken)
+  id: SearchAsync(System.String,System.Threading.CancellationToken)
+  parent: ParmaGIS.Modules.Data.Space.Data.ITreeProvider
+  langs:
+  - csharp
+  - vb
+  name: SearchAsync(string, CancellationToken)
+  nameWithType: ITreeProvider.SearchAsync(string, CancellationToken)
+  fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SearchAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
+    startLine: 68
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Производит поиск по названиям элементов.
+  example: []
+  syntax:
+    content: Task<RepoResponse<ITreeNode[]>> SearchAsync(string query, CancellationToken token = default)
+    parameters:
+    - id: query
+      type: System.String
+      description: Текст поиска в названии элемента.
+    - id: token
+      type: System.Threading.CancellationToken
+      description: Токен завершения задачи.
+    return:
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
+      description: Результат поиска.
+    content.vb: Function SearchAsync(query As String, token As CancellationToken = Nothing) As Task(Of RepoResponse(Of ITreeNode()))
+  overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync*
+  nameWithType.vb: ITreeProvider.SearchAsync(String, CancellationToken)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync(String, System.Threading.CancellationToken)
+  name.vb: SearchAsync(String, CancellationToken)
+- uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
+  id: GetPathAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
+  parent: ParmaGIS.Modules.Data.Space.Data.ITreeProvider
+  langs:
+  - csharp
+  - vb
+  name: GetPathAsync(ITreeNode)
+  nameWithType: ITreeProvider.GetPathAsync(ITreeNode)
+  fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync(ParmaGIS.Modules.Data.Space.Data.ITreeNode)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetPathAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Data/ITreeProvider.cs
+    startLine: 75
+  assemblies:
+  - ParmaGIS.Modules.Data
+  namespace: ParmaGIS.Modules.Data.Space.Data
+  summary: Возвращает иерархический путь до элемента в дереве, где первый элемент это корень дерева, а последний <code class="paramref">child</code>.
+  example: []
+  syntax:
+    content: Task<RepoResponse<ITreeNode[]>> GetPathAsync(ITreeNode child)
+    parameters:
+    - id: child
+      type: ParmaGIS.Modules.Data.Space.Data.ITreeNode
+      description: Элемент дерева, до которого необходимо построить путь.
+    return:
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Data.ITreeNode[]}}
+      description: Путь до <code class="paramref">child</code>.
+    content.vb: Function GetPathAsync(child As ITreeNode) As Task(Of RepoResponse(Of ITreeNode()))
+  overload: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync*
 references:
 - uid: ParmaGIS.Modules.Data.Space.Data
   commentId: N:ParmaGIS.Modules.Data.Space.Data
@@ -717,3 +795,61 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync
+  href: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.html#ParmaGIS_Modules_Data_Space_Data_ITreeProvider_SearchAsync_System_String_System_Threading_CancellationToken_
+  name: SearchAsync
+  nameWithType: ITreeProvider.SearchAsync
+  fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.SearchAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync*
+  commentId: Overload:ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync
+  href: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.html#ParmaGIS_Modules_Data_Space_Data_ITreeProvider_GetPathAsync_ParmaGIS_Modules_Data_Space_Data_ITreeNode_
+  name: GetPathAsync
+  nameWithType: ITreeProvider.GetPathAsync
+  fullName: ParmaGIS.Modules.Data.Space.Data.ITreeProvider.GetPathAsync

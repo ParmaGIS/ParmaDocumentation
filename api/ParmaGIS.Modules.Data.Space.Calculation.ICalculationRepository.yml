@@ -18,9 +18,9 @@ items:
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync(System.Object)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync``1
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableRowsAsync``1(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync
-  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync
+  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync(System.Threading.CancellationToken)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
+  - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(System.Threading.CancellationToken)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTable,ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
   - ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.InsertCalcTableRowAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableRow)
@@ -41,7 +41,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ICalculationRepository
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -50,16 +50,16 @@ items:
   syntax:
     content: public interface ICalculationRepository
     content.vb: Public Interface ICalculationRepository
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync
-  id: GetCalcTablesAsync
+- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(System.Threading.CancellationToken)
+  id: GetCalcTablesAsync(System.Threading.CancellationToken)
   parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
   langs:
   - csharp
   - vb
-  name: GetCalcTablesAsync()
-  nameWithType: ICalculationRepository.GetCalcTablesAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync()
+  name: GetCalcTablesAsync(CancellationToken)
+  nameWithType: ICalculationRepository.GetCalcTablesAsync(CancellationToken)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -68,29 +68,32 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTablesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
   summary: Возвращает все таблицы расчета в репозитории.
   example: []
   syntax:
-    content: Task<RepoResponse<ICalcTable[]>> GetCalcTablesAsync()
+    content: Task<RepoResponse<ICalcTable[]>> GetCalcTablesAsync(CancellationToken token = default)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Calculation.ICalcTable[]}}
       description: Таблицы расчета в репозитории.
-    content.vb: Function GetCalcTablesAsync() As Task(Of RepoResponse(Of ICalcTable()))
+    content.vb: Function GetCalcTablesAsync(token As CancellationToken = Nothing) As Task(Of RepoResponse(Of ICalcTable()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync*
-- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync
-  id: GetCalcTableTypesAsync
+- uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync(System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync(System.Threading.CancellationToken)
+  id: GetCalcTableTypesAsync(System.Threading.CancellationToken)
   parent: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository
   langs:
   - csharp
   - vb
-  name: GetCalcTableTypesAsync()
-  nameWithType: ICalculationRepository.GetCalcTableTypesAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync()
+  name: GetCalcTableTypesAsync(CancellationToken)
+  nameWithType: ICalculationRepository.GetCalcTableTypesAsync(CancellationToken)
+  fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync(System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -99,18 +102,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableTypesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
   summary: Возвращает все типы таблиц расчета в репозитории.
   example: []
   syntax:
-    content: Task<RepoResponse<ICalcTableType[]>> GetCalcTableTypesAsync()
+    content: Task<RepoResponse<ICalcTableType[]>> GetCalcTableTypesAsync(CancellationToken token = default)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType[]}}
       description: Типы таблиц расчета.
-    content.vb: Function GetCalcTableTypesAsync() As Task(Of RepoResponse(Of ICalcTableType()))
+    content.vb: Function GetCalcTableTypesAsync(token As CancellationToken = Nothing) As Task(Of RepoResponse(Of ICalcTableType()))
   overload: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync*
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
   commentId: M:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync(ParmaGIS.Modules.Data.Space.Calculation.ICalcTableType)
@@ -130,7 +136,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTablesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -165,7 +171,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -200,7 +206,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -238,7 +244,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -279,7 +285,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -314,7 +320,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 67
+    startLine: 68
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -352,7 +358,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -393,7 +399,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateAndInsertCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 82
+    startLine: 83
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -428,7 +434,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 89
+    startLine: 90
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -463,7 +469,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCalcTableAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 96
+    startLine: 97
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -498,7 +504,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 103
+    startLine: 104
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -533,7 +539,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 111
+    startLine: 112
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -571,7 +577,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 118
+    startLine: 119
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -606,7 +612,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 126
+    startLine: 127
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -647,7 +653,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 133
+    startLine: 134
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -684,7 +690,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCalcTableRowsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 141
+    startLine: 142
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -725,7 +731,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCalcTableRowAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 148
+    startLine: 149
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -760,7 +766,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 154
+    startLine: 155
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -791,7 +797,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalcTablesChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 157
+    startLine: 158
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -820,7 +826,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CalcTableRowsChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Calculation/ICalculationRepository.cs
-    startLine: 160
+    startLine: 161
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Calculation
@@ -880,10 +886,18 @@ references:
     href: ParmaGIS.Modules.Data.Space.Calculation.html
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_GetCalcTablesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_GetCalcTablesAsync_System_Threading_CancellationToken_
   name: GetCalcTablesAsync
   nameWithType: ICalculationRepository.GetCalcTablesAsync
   fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTablesAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
 - uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Calculation.ICalcTable[]}}
   commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Data.Space.Calculation.ICalcTable[]}}
   parent: System.Threading.Tasks
@@ -933,6 +947,33 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -1000,7 +1041,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync
-  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_GetCalcTableTypesAsync
+  href: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.html#ParmaGIS_Modules_Data_Space_Calculation_ICalculationRepository_GetCalcTableTypesAsync_System_Threading_CancellationToken_
   name: GetCalcTableTypesAsync
   nameWithType: ICalculationRepository.GetCalcTableTypesAsync
   fullName: ParmaGIS.Modules.Data.Space.Calculation.ICalculationRepository.GetCalcTableTypesAsync

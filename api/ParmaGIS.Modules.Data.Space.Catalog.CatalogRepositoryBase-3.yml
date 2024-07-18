@@ -19,7 +19,7 @@ items:
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync(System.Type)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync(`1)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogItemsAsync``1
-  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
+  - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync(System.Threading.CancellationToken)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogAsync(`1)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.InsertCatalogItemAsync(`2)
   - ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.RemoveCatalogAsync(`1)
@@ -39,7 +39,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CatalogRepositoryBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -72,16 +72,16 @@ items:
   nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem)
   fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem)
   name.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem)
-- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-  id: GetCatalogsAsync
+- uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync(System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync(System.Threading.CancellationToken)
+  id: GetCatalogsAsync(System.Threading.CancellationToken)
   parent: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3
   langs:
   - csharp
   - vb
-  name: GetCatalogsAsync()
-  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync()
-  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync()
+  name: GetCatalogsAsync(CancellationToken)
+  nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync(CancellationToken)
+  fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync(System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -90,21 +90,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
   summary: Возвращает все каталоги репозитория.
   example: []
   syntax:
-    content: public abstract Task<RepoResponse<TCatalog[]>> GetCatalogsAsync()
+    content: public abstract Task<RepoResponse<TCatalog[]>> GetCatalogsAsync(CancellationToken token = default)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCatalog}[]}}
       description: Массив каталогов.
-    content.vb: Public MustOverride Function GetCatalogsAsync() As Task(Of RepoResponse(Of TCatalog()))
+    content.vb: Public MustOverride Function GetCatalogsAsync(token As CancellationToken = Nothing) As Task(Of RepoResponse(Of TCatalog()))
   overload: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync*
-  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync()
-  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync()
+  nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync(CancellationToken)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync(System.Threading.CancellationToken)
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(`2)
   commentId: M:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogAsync(`2)
   id: GetCatalogAsync(`2)
@@ -123,7 +126,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -160,7 +163,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -197,7 +200,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -234,7 +237,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -275,7 +278,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -315,7 +318,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -355,7 +358,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -392,7 +395,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 78
+    startLine: 79
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -428,7 +431,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetCatalogItemsAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -465,7 +468,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 92
+    startLine: 93
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -502,7 +505,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 99
+    startLine: 100
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -539,7 +542,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 107
+    startLine: 108
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -580,7 +583,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 114
+    startLine: 115
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -620,7 +623,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InsertCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 121
+    startLine: 122
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -657,7 +660,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 128
+    startLine: 129
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -694,7 +697,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 135
+    startLine: 136
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -731,7 +734,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 142
+    startLine: 143
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -768,7 +771,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCatalogItemAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 149
+    startLine: 150
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -805,7 +808,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Data/Space/Catalog/CatalogRepositoryBase.cs
-    startLine: 155
+    startLine: 156
   assemblies:
   - ParmaGIS.Modules.Data
   namespace: ParmaGIS.Modules.Data.Space.Catalog
@@ -1113,12 +1116,20 @@ references:
   fullName: System
 - uid: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync*
   commentId: Overload:ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase`3.GetCatalogsAsync
-  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync
+  href: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase-3.html#ParmaGIS_Modules_Data_Space_Catalog_CatalogRepositoryBase_3_GetCatalogsAsync_System_Threading_CancellationToken_
   name: GetCatalogsAsync
   nameWithType: CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync
   fullName: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase<TObjectId, TCatalog, TCatalogItem>.GetCatalogsAsync
   nameWithType.vb: CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync
   fullName.vb: ParmaGIS.Modules.Data.Space.Catalog.CatalogRepositoryBase(Of TObjectId, TCatalog, TCatalogItem).GetCatalogsAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
 - uid: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{{TCatalog}[]}}
   commentId: T:System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{`1[]}}
   parent: System.Threading.Tasks
@@ -1164,6 +1175,33 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true

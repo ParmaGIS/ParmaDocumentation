@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class UIDispatcherHelper | site </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class UIDispatcherHelper | site ">
+      
+      <meta name="description" content="Provides a mechanism for invoking actions on the UI dispatcher">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ParmaGIS/ParmaGIS.Net/new/origin/test/apiSpec/new?filename=ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper.md&amp;value=---%0Auid%3A%20ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="site">
+            site
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper">
+
+
+
+  <h1 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper" class="text-break">
+Class UIDispatcherHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ParmaGIS.html">ParmaGIS</a>.<a class="xref" href="ParmaGIS.WPF.html">WPF</a>.<a class="xref" href="ParmaGIS.WPF.UI.html">UI</a>.<a class="xref" href="ParmaGIS.WPF.UI.Utilities.html">Utilities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ParmaGIS.WPF.UI.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides a mechanism for invoking actions on the UI dispatcher</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class UIDispatcherHelper</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">UIDispatcherHelper</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Based on Galasoft MvvmLight DispatcherHelper, but allowing a DispatcherPriority value to be applied.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_AddToQueue_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.AddToQueue*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_AddToQueue_System_Action_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.AddToQueue(System.Action)">
+  AddToQueue(Action)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a new operation to the queue, with the default priority</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddToQueue(Action action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_AddToQueue_System_Action__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Operations are executed in DispatcherPriority order (highest value executes first)</p>
+</div>
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_AddToQueue_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.AddToQueue*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_AddToQueue_System_Action_System_Windows_Threading_DispatcherPriority_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.AddToQueue(System.Action,System.Windows.Threading.DispatcherPriority)">
+  AddToQueue(Action, DispatcherPriority)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a new operation to the queue, with the specified priority</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddToQueue(Action action, DispatcherPriority dispatcherPriority)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+    <dt><code>dispatcherPriority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.threading.dispatcherpriority">DispatcherPriority</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_AddToQueue_System_Action_System_Windows_Threading_DispatcherPriority__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Operations are executed in DispatcherPriority order (highest value executes first)</p>
+</div>
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_Initialise_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.Initialise*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_Initialise" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.Initialise">
+  Initialise()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Initialise()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_InvokeOnUIContext_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.InvokeOnUIContext*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_InvokeOnUIContext_System_Action_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.InvokeOnUIContext(System.Action)">
+  InvokeOnUIContext(Action)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoke the action on the captured UI dispatcher, using the default priority</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void InvokeOnUIContext(Action action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_InvokeOnUIContext_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.InvokeOnUIContext*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_InvokeOnUIContext_System_Action_System_Windows_Threading_DispatcherPriority_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.InvokeOnUIContext(System.Action,System.Windows.Threading.DispatcherPriority)">
+  InvokeOnUIContext(Action, DispatcherPriority)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoke the action on the captured UI dispatcher, using the specified priority</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void InvokeOnUIContext(Action action, DispatcherPriority priority)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.threading.dispatcherpriority">DispatcherPriority</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_ProcessQueueAsync_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.ProcessQueueAsync*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_ProcessQueueAsync" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.ProcessQueueAsync">
+  ProcessQueueAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Execute each operation from the operations queue in order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task ProcessQueueAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_ProcessQueueAsync_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>An operation may result in more items being added to the queue, which will be
+executed in the appropriate order.</p>
+</div>
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_ResetQueue_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.ResetQueue*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_ResetQueue" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.ResetQueue">
+  ResetQueue()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clear any outstanding operations from the queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ResetQueue()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_RunAsync_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.RunAsync*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_RunAsync_System_Action_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.RunAsync(System.Action)">
+  RunAsync(Action)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoke the action on the captured UI dispatcher, using the default priority
+and return an awaitable object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DispatcherOperation RunAsync(Action action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.threading.dispatcheroperation">DispatcherOperation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_RunAsync_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.RunAsync*"></a>
+
+  <h3 id="ParmaGIS_WPF_UI_Utilities_UIDispatcherHelper_RunAsync_System_Action_System_Windows_Threading_DispatcherPriority_" data-uid="ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper.RunAsync(System.Action,System.Windows.Threading.DispatcherPriority)">
+  RunAsync(Action, DispatcherPriority)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoke the action on the captured UI dispatcher, using the specified priority
+and return an awaitable object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DispatcherOperation RunAsync(Action action, DispatcherPriority priority)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.threading.dispatcherpriority">DispatcherPriority</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.threading.dispatcheroperation">DispatcherOperation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/src/ParmaGIS.WPF.UI/Utilities/UIDispatcherHelper.cs/#L15" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

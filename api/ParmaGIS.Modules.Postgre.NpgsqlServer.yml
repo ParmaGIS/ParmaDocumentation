@@ -26,10 +26,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NpgsqlServer
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Представляет подключение к серверу баз данных под управлением СУБД Postgre.
+  example: []
   syntax:
     content: 'public class NpgsqlServer : IDataBaseServerConnection'
     content.vb: Public Class NpgsqlServer Implements IDataBaseServerConnection
@@ -63,7 +65,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -96,7 +98,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 13
+    startLine: 19
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -129,7 +131,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Description
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 14
+    startLine: 22
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -162,7 +164,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadDataBases
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 16
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -195,17 +197,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateDataBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 42
+    startLine: 57
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает базу данных.
+  example: []
   syntax:
     content: public Task<IDataBaseConnection> CreateDataBase(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название базы данных.
     return:
       type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Connection.IDataBaseConnection}
+      description: Подключение к созданной базе данных.
     content.vb: Public Function CreateDataBase(name As String) As Task(Of IDataBaseConnection)
   overload: ParmaGIS.Modules.Postgre.NpgsqlServer.CreateDataBase*
   nameWithType.vb: NpgsqlServer.CreateDataBase(String)
@@ -229,17 +235,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveDataBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 58
+    startLine: 78
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Удаляет базу данных.
+  example: []
   syntax:
     content: public Task RemoveDataBase(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название удаляемой базы данных.
     return:
       type: System.Threading.Tasks.Task
+      description: ''
     content.vb: Public Function RemoveDataBase(name As String) As Task
   overload: ParmaGIS.Modules.Postgre.NpgsqlServer.RemoveDataBase*
   nameWithType.vb: NpgsqlServer.RemoveDataBase(String)
@@ -263,17 +273,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlServer.cs
-    startLine: 72
+    startLine: 96
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает провайдер базы данных <xref href="ParmaGIS.Modules.Postgre.NpgsqlDBProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlDBProvider CreateProvider(string connectionString)
     parameters:
     - id: connectionString
       type: System.String
+      description: Строка подключения.
     return:
       type: ParmaGIS.Modules.Postgre.NpgsqlDBProvider
+      description: Провайдер базы данных Postgre.
     content.vb: Public Function CreateProvider(connectionString As String) As NpgsqlDBProvider
   overload: ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider*
   nameWithType.vb: NpgsqlServer.CreateProvider(String)
@@ -839,12 +853,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider*
-  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider
-  href: ParmaGIS.Modules.Postgre.NpgsqlServer.html#ParmaGIS_Modules_Postgre_NpgsqlServer_CreateProvider_System_String_
-  name: CreateProvider
-  nameWithType: NpgsqlServer.CreateProvider
-  fullName: ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider
   commentId: T:ParmaGIS.Modules.Postgre.NpgsqlDBProvider
   parent: ParmaGIS.Modules.Postgre
@@ -852,3 +860,9 @@ references:
   name: NpgsqlDBProvider
   nameWithType: NpgsqlDBProvider
   fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider
+- uid: ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider*
+  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider
+  href: ParmaGIS.Modules.Postgre.NpgsqlServer.html#ParmaGIS_Modules_Postgre_NpgsqlServer_CreateProvider_System_String_
+  name: CreateProvider
+  nameWithType: NpgsqlServer.CreateProvider
+  fullName: ParmaGIS.Modules.Postgre.NpgsqlServer.CreateProvider

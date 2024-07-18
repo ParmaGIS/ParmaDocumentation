@@ -17,15 +17,17 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyInteraction
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 59
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Представляет реализацию пустого (без входных и выходных параметров) взаимодействия.
+  example: []
   syntax:
     content: 'public class EmptyInteraction : IInteraction'
     content.vb: Public Class EmptyInteraction Implements IInteraction
@@ -54,15 +56,17 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Execute
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 64
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Исполняет взаимодействие.
+  example: []
   syntax:
     content: public void Execute()
     content.vb: Public Sub Execute()
@@ -80,20 +84,23 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterExecuter
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 69
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
+    startLine: 24
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Регистрирует исполнителя взаимодействия.
+  example: []
   syntax:
     content: public void RegisterExecuter(Action executer)
     parameters:
     - id: executer
       type: System.Action
+      description: Исполнитель взаимодействия.
     content.vb: Public Sub RegisterExecuter(executer As Action)
   overload: ParmaGIS.Core.Utilities.EmptyInteraction.RegisterExecuter*
 - uid: ParmaGIS.Core.Utilities.EmptyInteraction.RemoveExecuter(System.Action)
@@ -109,20 +116,23 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveExecuter
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 74
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/EmptyInteraction.cs
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Удаляет исполнителя взаимодействия.
+  example: []
   syntax:
     content: public void RemoveExecuter(Action executer)
     parameters:
     - id: executer
       type: System.Action
+      description: Исполнитель взаимодействия.
     content.vb: Public Sub RemoveExecuter(executer As Action)
   overload: ParmaGIS.Core.Utilities.EmptyInteraction.RemoveExecuter*
 references:

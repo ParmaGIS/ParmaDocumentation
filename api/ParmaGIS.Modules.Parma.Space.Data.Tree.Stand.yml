@@ -7,8 +7,9 @@ items:
   children:
   - ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.#ctor(System.Int32,ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment)
   - ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number
   - ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Parent
-  - ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString
   langs:
   - csharp
   - vb
@@ -23,7 +24,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Stand
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 60
+    startLine: 71
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -41,13 +42,12 @@ items:
   inheritedMembers:
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Id
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ParentId
-  - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Name
-  - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Number
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Discriminator
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountChildren
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountChildrenToLeaves
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CountStand
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
   - ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
@@ -78,7 +78,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 64
+    startLine: 75
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Parent
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 69
+    startLine: 80
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -123,6 +123,64 @@ items:
       type: ParmaGIS.Modules.Parma.Space.Data.Tree.Compartment
     content.vb: Public ReadOnly Property Parent As Compartment
   overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Parent*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name
+  id: Name
+  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Stand.Name
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Name
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
+    startLine: 82
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
+  syntax:
+    content: public string? Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name*
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number
+  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number
+  id: Number
+  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand
+  langs:
+  - csharp
+  - vb
+  name: Number
+  nameWithType: Stand.Number
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number
+  type: Property
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Number
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
+    startLine: 88
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
+  syntax:
+    content: public int? Number { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Number As Integer?
+  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number*
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   id: CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
@@ -141,7 +199,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CanChangeParent
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 93
+    startLine: 119
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -159,38 +217,6 @@ items:
   nameWithType.vb: Stand.CanChangeParent(ParmaNode)
   fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   name.vb: CanChangeParent(ParmaNode)
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString
-  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString
-  id: ToString
-  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand
-  langs:
-  - csharp
-  - vb
-  name: ToString()
-  nameWithType: Stand.ToString()
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString()
-  type: Method
-  source:
-    remote:
-      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ToString
-    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/Nodes.cs
-    startLine: 98
-  assemblies:
-  - ParmaGIS.Modules.Parma.Space
-  namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
-  summary: Returns a string that represents the current object.
-  example: []
-  syntax:
-    content: public override string ToString()
-    return:
-      type: System.String
-      description: A string that represents the current object.
-    content.vb: Public Overrides Function ToString() As String
-  overridden: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
-  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -307,20 +333,6 @@ references:
   name: ParentId
   nameWithType: ParmaNode.ParentId
   fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ParentId
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Name
-  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Name
-  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
-  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Name
-  name: Name
-  nameWithType: ParmaNode.Name
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Name
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Number
-  commentId: P:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Number
-  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
-  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_Number
-  name: Number
-  nameWithType: ParmaNode.Number
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Number
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Discriminator
   commentId: P:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.Discriminator
   parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
@@ -373,6 +385,25 @@ references:
   - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
     name: ParmaNode
     href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
+  - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
+  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString
+  name: ToString()
+  nameWithType: ParmaNode.ToString()
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString()
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
+    name: ToString
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
+    name: ToString
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString
+  - name: (
   - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   commentId: E:ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
@@ -1508,6 +1539,80 @@ references:
   name: Parent
   nameWithType: Stand.Parent
   fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Parent
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.html#ParmaGIS_Modules_Parma_Space_Data_Tree_Stand_Name
+  name: Name
+  nameWithType: Stand.Name
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.html#ParmaGIS_Modules_Parma_Space_Data_Tree_Stand_Number
+  name: Number
+  nameWithType: Stand.Number
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.Number
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.CanChangeParent(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
@@ -1550,39 +1655,3 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
-  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
-  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
-  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString
-  name: ToString()
-  nameWithType: ParmaNode.ToString()
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString()
-  spec.csharp:
-  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
-    name: ToString
-    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.ToString
-    name: ToString
-    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_ToString
-  - name: (
-  - name: )
-- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString*
-  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString
-  href: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.html#ParmaGIS_Modules_Parma_Space_Data_Tree_Stand_ToString
-  name: ToString
-  nameWithType: Stand.ToString
-  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.Stand.ToString
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String

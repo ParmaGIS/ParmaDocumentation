@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISourceLayerConfigurator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/ISourceLayerConfigurator.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core.DAL
   namespace: ParmaGIS.Core.DAL
+  summary: Представляет контракт взаимодействия с настройщиком слоя источника данных в инфраструктуре <xref href="ParmaGIS.Core.DAL" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public interface ISourceLayerConfigurator
     content.vb: Public Interface ISourceLayerConfigurator
@@ -45,15 +47,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Configure
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.DAL/ISourceLayerConfigurator.cs
-    startLine: 6
+    startLine: 13
   assemblies:
   - ParmaGIS.Core.DAL
   namespace: ParmaGIS.Core.DAL
+  summary: Настраивает контекст для подключения к <xref href="Microsoft.EntityFrameworkCore" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: void Configure(DbContextOptionsBuilder optionsBuilder)
     parameters:
     - id: optionsBuilder
       type: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
+      description: Настройки контекста.
     content.vb: Sub Configure(optionsBuilder As DbContextOptionsBuilder)
   overload: ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure*
 references:
@@ -87,20 +92,6 @@ references:
   - uid: ParmaGIS.Core.DAL
     name: DAL
     href: ParmaGIS.Core.DAL.html
-- uid: ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure*
-  commentId: Overload:ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure
-  href: ParmaGIS.Core.DAL.ISourceLayerConfigurator.html#ParmaGIS_Core_DAL_ISourceLayerConfigurator_Configure_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder_
-  name: Configure
-  nameWithType: ISourceLayerConfigurator.Configure
-  fullName: ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure
-- uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
-  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
-  parent: Microsoft.EntityFrameworkCore
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder
-  name: DbContextOptionsBuilder
-  nameWithType: DbContextOptionsBuilder
-  fullName: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
 - uid: Microsoft.EntityFrameworkCore
   commentId: N:Microsoft.EntityFrameworkCore
   isExternal: true
@@ -128,3 +119,17 @@ references:
     name: EntityFrameworkCore
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure*
+  commentId: Overload:ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure
+  href: ParmaGIS.Core.DAL.ISourceLayerConfigurator.html#ParmaGIS_Core_DAL_ISourceLayerConfigurator_Configure_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder_
+  name: Configure
+  nameWithType: ISourceLayerConfigurator.Configure
+  fullName: ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure
+- uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
+  parent: Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder
+  name: DbContextOptionsBuilder
+  nameWithType: DbContextOptionsBuilder
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder

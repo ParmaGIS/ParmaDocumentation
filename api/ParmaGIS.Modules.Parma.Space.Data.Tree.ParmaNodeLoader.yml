@@ -16,10 +16,12 @@ items:
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetNodesAsync``1
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetNodes``1
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetParentAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetRootNodes
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetRootNodesAsync
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.LoadNodes``2(System.Func{System.Linq.IQueryable{``0},``1})
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.RemoveNodeAsync``1(``0)
+  - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync(System.String,System.Threading.CancellationToken)
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.TaskScheduler
   - ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.ThreadSafety
   langs:
@@ -36,7 +38,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaNodeLoader
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -64,6 +66,8 @@ items:
   - ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetParentAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   - ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetRootNodesAsync
   - ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetNodesAsync``1
+  - ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.SearchAsync(System.String,System.Threading.CancellationToken)
+  - ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -89,7 +93,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -121,7 +125,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafety
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -153,7 +157,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -185,7 +189,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveNodeAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -221,7 +225,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AddNodeAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 53
+    startLine: 56
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -257,7 +261,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetChildrenAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 72
+    startLine: 75
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -293,7 +297,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 77
+    startLine: 80
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -329,7 +333,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodeAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 90
+    startLine: 93
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -365,7 +369,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodeAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 98
+    startLine: 101
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -401,7 +405,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 107
+    startLine: 110
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -438,7 +442,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 112
+    startLine: 115
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -481,7 +485,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 117
+    startLine: 120
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -513,7 +517,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 122
+    startLine: 125
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -550,7 +554,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetParentAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 127
+    startLine: 130
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -586,7 +590,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRootNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 135
+    startLine: 138
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -623,7 +627,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRootNodesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 140
+    startLine: 143
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -655,7 +659,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadNodes
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
-    startLine: 145
+    startLine: 148
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -681,6 +685,84 @@ items:
   nameWithType.vb: ParmaNodeLoader.LoadNodes(Of TNode, TRes)(Func(Of IQueryable(Of TNode), TRes))
   fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.LoadNodes(Of TNode, TRes)(System.Func(Of System.Linq.IQueryable(Of TNode), TRes))
   name.vb: LoadNodes(Of TNode, TRes)(Func(Of IQueryable(Of TNode), TRes))
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync(System.String,System.Threading.CancellationToken)
+  id: SearchAsync(System.String,System.Threading.CancellationToken)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader
+  langs:
+  - csharp
+  - vb
+  name: SearchAsync(string, CancellationToken)
+  nameWithType: ParmaNodeLoader.SearchAsync(string, CancellationToken)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SearchAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
+    startLine: 153
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
+  summary: Производит поиск по названиям элементов.
+  example: []
+  syntax:
+    content: public override Task<RepoResponse<ParmaNode[]>> SearchAsync(string query, CancellationToken token = default)
+    parameters:
+    - id: query
+      type: System.String
+      description: Текст поиска в названии элемента.
+    - id: token
+      type: System.Threading.CancellationToken
+      description: Токен завершения задачи.
+    return:
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode[]}}
+      description: Результат поиска.
+    content.vb: Public Overrides Function SearchAsync(query As String, token As CancellationToken = Nothing) As Task(Of RepoResponse(Of ParmaNode()))
+  overridden: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.SearchAsync(System.String,System.Threading.CancellationToken)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync*
+  nameWithType.vb: ParmaNodeLoader.SearchAsync(String, CancellationToken)
+  fullName.vb: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync(String, System.Threading.CancellationToken)
+  name.vb: SearchAsync(String, CancellationToken)
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  commentId: M:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  id: GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  parent: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader
+  langs:
+  - csharp
+  - vb
+  name: GetPathAsync(ParmaNode)
+  nameWithType: ParmaNodeLoader.GetPathAsync(ParmaNode)
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetPathAsync
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/Data/Tree/ParmaNodeLoader.cs
+    startLine: 158
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space.Data.Tree
+  summary: Возвращает иерархический путь до элемента в дереве, где первый элемент это корень дерева, а последний <code class="paramref">child</code>.
+  example: []
+  syntax:
+    content: public override Task<RepoResponse<ParmaNode[]>> GetPathAsync(ParmaNode child)
+    parameters:
+    - id: child
+      type: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+      description: Элемент дерева, до которого необходимо построить путь.
+    return:
+      type: System.Threading.Tasks.Task{ParmaGIS.Modules.Data.Space.RepoResponse{ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode[]}}
+      description: Путь до <code class="paramref">child</code>.
+    content.vb: Public Overrides Function GetPathAsync(child As ParmaNode) As Task(Of RepoResponse(Of ParmaNode()))
+  overridden: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  overload: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync*
 references:
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree
   commentId: N:ParmaGIS.Modules.Parma.Space.Data.Tree
@@ -1240,6 +1322,77 @@ references:
   - name: T
   - name: )
   - name: (
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.SearchAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.SearchAsync(System.String,System.Threading.CancellationToken)
+  parent: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}
+  definition: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.SearchAsync(System.String,System.Threading.CancellationToken)
+  href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_SearchAsync_System_String_System_Threading_CancellationToken_
+  name: SearchAsync(string, CancellationToken)
+  nameWithType: TreeNodeProviderBase<ParmaSpace, Guid, ParmaNode, ParmaDataObject>.SearchAsync(string, CancellationToken)
+  fullName: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase<ParmaGIS.Modules.Parma.Space.ParmaSpace, System.Guid, ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode, ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject>.SearchAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: TreeNodeProviderBase(Of ParmaSpace, Guid, ParmaNode, ParmaDataObject).SearchAsync(String, CancellationToken)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase(Of ParmaGIS.Modules.Parma.Space.ParmaSpace, System.Guid, ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode, ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject).SearchAsync(String, System.Threading.CancellationToken)
+  name.vb: SearchAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.SearchAsync(System.String,System.Threading.CancellationToken)
+    name: SearchAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_SearchAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.SearchAsync(System.String,System.Threading.CancellationToken)
+    name: SearchAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_SearchAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  parent: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}
+  definition: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.GetPathAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_GetPathAsync__2_
+  name: GetPathAsync(ParmaNode)
+  nameWithType: TreeNodeProviderBase<ParmaSpace, Guid, ParmaNode, ParmaDataObject>.GetPathAsync(ParmaNode)
+  fullName: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase<ParmaGIS.Modules.Parma.Space.ParmaSpace, System.Guid, ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode, ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject>.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  nameWithType.vb: TreeNodeProviderBase(Of ParmaSpace, Guid, ParmaNode, ParmaDataObject).GetPathAsync(ParmaNode)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase(Of ParmaGIS.Modules.Parma.Space.ParmaSpace, System.Guid, ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode, ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject).GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+    name: GetPathAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_GetPathAsync__2_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+    name: ParmaNode
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase{ParmaGIS.Modules.Parma.Space.ParmaSpace,System.Guid,ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode,ParmaGIS.Modules.Parma.Space.Data.Objects.ParmaDataObject}.GetPathAsync(ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode)
+    name: GetPathAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_GetPathAsync__2_
+  - name: (
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode
+    name: ParmaNode
+    href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNode.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -1989,6 +2142,70 @@ references:
   - name: )
   - name: (
   - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.SearchAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.SearchAsync(System.String,System.Threading.CancellationToken)
+  isExternal: true
+  href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_SearchAsync_System_String_System_Threading_CancellationToken_
+  name: SearchAsync(string, CancellationToken)
+  nameWithType: TreeNodeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.SearchAsync(string, CancellationToken)
+  fullName: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.SearchAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: TreeNodeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).SearchAsync(String, CancellationToken)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).SearchAsync(String, System.Threading.CancellationToken)
+  name.vb: SearchAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.SearchAsync(System.String,System.Threading.CancellationToken)
+    name: SearchAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_SearchAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.SearchAsync(System.String,System.Threading.CancellationToken)
+    name: SearchAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_SearchAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.GetPathAsync(`2)
+  commentId: M:ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.GetPathAsync(`2)
+  href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_GetPathAsync__2_
+  name: GetPathAsync(TTreeNode)
+  nameWithType: TreeNodeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.GetPathAsync(TTreeNode)
+  fullName: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase<TSpace, TObjectId, TTreeNode, TDataObject>.GetPathAsync(TTreeNode)
+  nameWithType.vb: TreeNodeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).GetPathAsync(TTreeNode)
+  fullName.vb: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase(Of TSpace, TObjectId, TTreeNode, TDataObject).GetPathAsync(TTreeNode)
+  spec.csharp:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.GetPathAsync(`2)
+    name: GetPathAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_GetPathAsync__2_
+  - name: (
+  - name: TTreeNode
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase`4.GetPathAsync(`2)
+    name: GetPathAsync
+    href: ParmaGIS.Modules.Data.Space.Data.TreeNodeProviderBase-4.html#ParmaGIS_Modules_Data_Space_Data_TreeNodeProviderBase_4_GetPathAsync__2_
+  - name: (
+  - name: TTreeNode
+  - name: )
 - uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.#ctor*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.#ctor
   href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNodeLoader__ctor_ParmaGIS_Modules_Parma_Space_ParmaSpace_
@@ -2718,3 +2935,61 @@ references:
   - name: " "
   - name: TResult
   - name: )
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNodeLoader_SearchAsync_System_String_System_Threading_CancellationToken_
+  name: SearchAsync
+  nameWithType: ParmaNodeLoader.SearchAsync
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.SearchAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync
+  href: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.html#ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNodeLoader_GetPathAsync_ParmaGIS_Modules_Parma_Space_Data_Tree_ParmaNode_
+  name: GetPathAsync
+  nameWithType: ParmaNodeLoader.GetPathAsync
+  fullName: ParmaGIS.Modules.Parma.Space.Data.Tree.ParmaNodeLoader.GetPathAsync

@@ -18,15 +18,17 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/Interaction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Interaction
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 36
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Interaction.cs
+    startLine: 7
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Представляет простую реализацию взаимодействия. Может быть тольеко один исполнитель.
+  example: []
   syntax:
     content: 'public class Interaction : IInteraction'
     content.vb: Public Class Interaction Implements IInteraction
@@ -55,15 +57,17 @@ items:
   type: Field
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/Interaction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Executer
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 38
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Interaction.cs
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Возвращает исполнителя.
+  example: []
   syntax:
     content: protected Func<object, object>? Executer
     return:
@@ -82,23 +86,26 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/Interaction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Execute
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 40
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Interaction.cs
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Исполнить взаимодействие.
   example: []
   syntax:
     content: public object Execute(object param)
     parameters:
     - id: param
       type: System.Object
+      description: Параметр взаимодействия.
     return:
       type: System.Object
+      description: Результат взаимодействия.
     content.vb: Public Function Execute(param As Object) As Object
   overload: ParmaGIS.Core.Utilities.Interaction.Execute*
   implements:
@@ -119,21 +126,23 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/Interaction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterExecuter
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 45
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Interaction.cs
+    startLine: 21
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Регистрирует исполнителя взаимодействия.
   example: []
   syntax:
     content: public void RegisterExecuter(Func<object, object> executer)
     parameters:
     - id: executer
       type: System.Func{System.Object,System.Object}
+      description: Исполнитель взаимодействия.
     content.vb: Public Sub RegisterExecuter(executer As Func(Of Object, Object))
   overload: ParmaGIS.Core.Utilities.Interaction.RegisterExecuter*
   implements:
@@ -154,21 +163,23 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/BindableBase.cs
+      path: common/src/ParmaGIS.Core/Utilities/Interaction.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RemoveExecuter
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/BindableBase.cs
-    startLine: 50
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Interaction.cs
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Удаляет исполнителя взаимодействия.
   example: []
   syntax:
     content: public void RemoveExecuter(Func<object, object> executer)
     parameters:
     - id: executer
       type: System.Func{System.Object,System.Object}
+      description: Исполнитель взаимодействия.
     content.vb: Public Sub RemoveExecuter(executer As Func(Of Object, Object))
   overload: ParmaGIS.Core.Utilities.Interaction.RemoveExecuter*
   implements:

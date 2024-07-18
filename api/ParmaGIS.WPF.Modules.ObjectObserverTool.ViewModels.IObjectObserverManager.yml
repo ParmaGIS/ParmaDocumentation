@@ -10,6 +10,7 @@ items:
   - ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedNodes
   - ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.LoadChildren(ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
   - ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.RootNodes
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode
   - ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
   langs:
   - csharp
@@ -25,7 +26,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IObjectObserverManager
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -50,7 +51,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RootNodes
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -61,6 +62,35 @@ items:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext}
     content.vb: ReadOnly Property RootNodes As IEnumerable(Of NodeContext)
   overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.RootNodes*
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode
+  commentId: P:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode
+  id: SelectedNode
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager
+  langs:
+  - csharp
+  - vb
+  name: SelectedNode
+  nameWithType: IObjectObserverManager.SelectedNode
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SelectedNode
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
+    startLine: 25
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool
+  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
+  syntax:
+    content: NodeContext? SelectedNode { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+    content.vb: ReadOnly Property SelectedNode As NodeContext
+  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode*
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
   commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
   id: Update
@@ -79,7 +109,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Update
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 23
+    startLine: 27
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -105,7 +135,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetLoadedChildren
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 25
+    startLine: 29
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -136,7 +166,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadChildren
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 26
+    startLine: 30
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -167,7 +197,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetLoadedNodes
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -195,7 +225,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Expand
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/ViewModels/ObjectObserverToolViewModel.cs
-    startLine: 28
+    startLine: 32
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels
@@ -359,18 +389,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update*
-  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ViewModels_IObjectObserverManager_Update
-  name: Update
-  nameWithType: IObjectObserverManager.Update
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
-- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedChildren*
-  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedChildren
-  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ViewModels_IObjectObserverManager_GetLoadedChildren_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_
-  name: GetLoadedChildren
-  nameWithType: IObjectObserverManager.GetLoadedChildren
-  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedChildren
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ViewModels_IObjectObserverManager_SelectedNode
+  name: SelectedNode
+  nameWithType: IObjectObserverManager.SelectedNode
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.SelectedNode
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
   commentId: T:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
   parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
@@ -378,39 +402,6 @@ references:
   name: NodeContext
   nameWithType: NodeContext
   fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-- uid: System.Collections.Generic.IAsyncEnumerable{ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext}
-  commentId: T:System.Collections.Generic.IAsyncEnumerable{ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IAsyncEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
-  name: IAsyncEnumerable<NodeContext>
-  nameWithType: IAsyncEnumerable<NodeContext>
-  fullName: System.Collections.Generic.IAsyncEnumerable<ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext>
-  nameWithType.vb: IAsyncEnumerable(Of NodeContext)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
-  name.vb: IAsyncEnumerable(Of NodeContext)
-  spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
-  - name: <
-  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-    name: NodeContext
-    href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
-    name: NodeContext
-    href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
-  - name: )
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
   commentId: N:ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
   href: ParmaGIS.html
@@ -457,6 +448,51 @@ references:
   - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
     name: Nodes
     href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.html
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ViewModels_IObjectObserverManager_Update
+  name: Update
+  nameWithType: IObjectObserverManager.Update
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.Update
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedChildren*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedChildren
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.html#ParmaGIS_WPF_Modules_ObjectObserverTool_ViewModels_IObjectObserverManager_GetLoadedChildren_ParmaGIS_WPF_Modules_ObjectObserverTool_Nodes_NodeContext_
+  name: GetLoadedChildren
+  nameWithType: IObjectObserverManager.GetLoadedChildren
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager.GetLoadedChildren
+- uid: System.Collections.Generic.IAsyncEnumerable{ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext}
+  commentId: T:System.Collections.Generic.IAsyncEnumerable{ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  name: IAsyncEnumerable<NodeContext>
+  nameWithType: IAsyncEnumerable<NodeContext>
+  fullName: System.Collections.Generic.IAsyncEnumerable<ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext>
+  nameWithType.vb: IAsyncEnumerable(Of NodeContext)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext)
+  name.vb: IAsyncEnumerable(Of NodeContext)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+    name: NodeContext
+    href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
+    name: NodeContext
+    href: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext.html
+  - name: )
 - uid: System.Collections.Generic.IAsyncEnumerable`1
   commentId: T:System.Collections.Generic.IAsyncEnumerable`1
   isExternal: true

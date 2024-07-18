@@ -368,6 +368,10 @@ items:
           name: ConvertItemsProvider<TSource, TResult>
         - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
           name: EnumarableExtensions
+        - uid: ParmaGIS.Core.Utilities.Collections.Heap`1
+          name: Heap<T>
+        - uid: ParmaGIS.Core.Utilities.Collections.Heap`1.HeapType
+          name: Heap<T>.HeapType
         - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider
           name: IItemsProvider
         - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
@@ -448,6 +452,8 @@ items:
         - uid: ParmaGIS.Core.Utilities.Threading.Collections
           name: Collections
           items:
+          - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
+            name: AsyncEnumerableItemsProvider<T>
           - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider`1
             name: AsyncItemsProvider<T>
           - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncVirtualizingCollection`1
@@ -467,8 +473,12 @@ items:
         name: EmptyInteraction
       - uid: ParmaGIS.Core.Utilities.IInteraction
         name: IInteraction
+      - uid: ParmaGIS.Core.Utilities.IInteraction`2
+        name: IInteraction<TParam, TRes>
       - uid: ParmaGIS.Core.Utilities.Interaction
         name: Interaction
+      - uid: ParmaGIS.Core.Utilities.Interaction`2
+        name: Interaction<TParam, TRes>
       - uid: ParmaGIS.Core.Utilities.NameGenerator
         name: NameGenerator
   - uid: ParmaGIS.Modules
@@ -493,6 +503,8 @@ items:
         items:
         - uid: ParmaGIS.Modules.Data.DataSource.IDataSource
           name: IDataSource
+        - uid: ParmaGIS.Modules.Data.DataSource.IDataSourceSet
+          name: IDataSourceSet
         - uid: ParmaGIS.Modules.Data.DataSource.IDataSource`1
           name: IDataSource<T>
       - uid: ParmaGIS.Modules.Data.Schema
@@ -709,8 +721,6 @@ items:
           name: SpaceStorage
       - uid: ParmaGIS.Modules.Data.DataModule
         name: DataModule
-      - uid: ParmaGIS.Modules.Data.DataModuleDependecyAttribute
-        name: DataModuleDependecyAttribute
       - uid: ParmaGIS.Modules.Data.ServiceCollectionExtensions
         name: ServiceCollectionExtensions
     - uid: ParmaGIS.Modules.Parma.Space
@@ -1426,8 +1436,6 @@ items:
             name: BooleanFilter<T>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.DataSourceScope`1
             name: DataSourceScope<T>
-          - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.FilterRegistration
-            name: FilterRegistration
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.FilterService
             name: FilterService
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IBoolFilter`1
@@ -1491,6 +1499,8 @@ items:
             name: FilterViewModel
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupEditToolView
             name: GroupEditToolView
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel
+            name: GroupViewModel
         - uid: ParmaGIS.WPF.Modules.GroupEditTool.GroupEditToolModule
           name: GroupEditToolModule
       - uid: ParmaGIS.WPF.Modules.LoggerTool
@@ -1661,8 +1671,12 @@ items:
             name: INodeProvider
           - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.INodeView
             name: INodeView
+          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.ISearchResult
+            name: ISearchResult
           - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.NodeContext
             name: NodeContext
+          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes.SearchResult
+            name: SearchResult
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Tools
           name: Tools
           items:
@@ -1677,8 +1691,6 @@ items:
           items:
           - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.IObjectObserverManager
             name: IObjectObserverManager
-          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ViewModels.SearchResult
-            name: SearchResult
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Views
           name: Views
           items:
@@ -1745,6 +1757,11 @@ items:
               - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.ViewModels
                 name: ViewModels
                 items:
+                - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.ViewModels.StandForms
+                  name: StandForms
+                  items:
+                  - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.ViewModels.StandForms.CatalogItems`1
+                    name: CatalogItems<T>
                 - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.ViewModels.ModelToViewModelResolver`2
                   name: ModelToViewModelResolver<TModel, TViewModel>
               - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views
@@ -2037,6 +2054,8 @@ items:
           name: DynamicScrollBar
         - uid: ParmaGIS.WPF.UI.Controls.DynamicScrollViewer
           name: DynamicScrollViewer
+        - uid: ParmaGIS.WPF.UI.Controls.ElementPlacement
+          name: ElementPlacement
         - uid: ParmaGIS.WPF.UI.Controls.FontIcon
           name: FontIcon
         - uid: ParmaGIS.WPF.UI.Controls.FontIconSource
@@ -2063,6 +2082,8 @@ items:
           name: SymbolIconSource
         - uid: ParmaGIS.WPF.UI.Controls.SymbolRegular
           name: SymbolRegular
+        - uid: ParmaGIS.WPF.UI.Controls.TextBox
+          name: TextBox
         - uid: ParmaGIS.WPF.UI.Controls.TreeViewItem
           name: TreeViewItem
         - uid: ParmaGIS.WPF.UI.Controls.ViewResolverControl
@@ -2204,8 +2225,8 @@ items:
           items:
           - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
             name: ControlExtensions
-          - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
-            name: ItemsControlExtensions
+          - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.TreeViewExtensions
+            name: TreeViewExtensions
         - uid: ParmaGIS.WPF.UI.Utilities.CommandMode
           name: CommandMode
         - uid: ParmaGIS.WPF.UI.Utilities.ContextMenuActionBase
@@ -2220,6 +2241,10 @@ items:
           name: RelayCommand<T>
         - uid: ParmaGIS.WPF.UI.Utilities.SubjectURBindableBase
           name: SubjectURBindableBase
+        - uid: ParmaGIS.WPF.UI.Utilities.TreeViewItemHelper
+          name: TreeViewItemHelper
+        - uid: ParmaGIS.WPF.UI.Utilities.UIDispatcherHelper
+          name: UIDispatcherHelper
         - uid: ParmaGIS.WPF.UI.Utilities.URBindableBase
           name: URBindableBase
     - uid: ParmaGIS.WPF.Utilities

@@ -730,7 +730,6 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Windows.DependencyObject.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Boolean)
-  - System.Windows.Media.Visual.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.#ctor
   commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.#ctor
   id: '#ctor'
@@ -789,35 +788,6 @@ items:
       type: System.Collections.Generic.List{ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterViewModel}
     content.vb: Public Property AvailableFilters As List(Of FilterViewModel)
   overload: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilters*
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
-  id: AvailableGroups
-  parent: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow
-  langs:
-  - csharp
-  - vb
-  name: AvailableGroups
-  nameWithType: FilterSelectorWindow.AvailableGroups
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
-  type: Property
-  source:
-    remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: AvailableGroups
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
-    startLine: 30
-  assemblies:
-  - ParmaGIS.WPF.Modules.GroupEditTool
-  namespace: ParmaGIS.WPF.Modules.GroupEditTool.Views
-  syntax:
-    content: public List<ColumnGroupViewModel> AvailableGroups { get; set; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel}
-    content.vb: Public Property AvailableGroups As List(Of ColumnGroupViewModel)
-  overload: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups*
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilterGroups
   commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilterGroups
   id: AvailableFilterGroups
@@ -836,7 +806,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AvailableFilterGroups
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
-    startLine: 31
+    startLine: 30
   assemblies:
   - ParmaGIS.WPF.Modules.GroupEditTool
   namespace: ParmaGIS.WPF.Modules.GroupEditTool.Views
@@ -847,6 +817,35 @@ items:
       type: System.Collections.Generic.List{ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterGroupViewModel}
     content.vb: Public Property AvailableFilterGroups As List(Of FilterGroupViewModel)
   overload: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilterGroups*
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
+  id: AvailableGroups
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow
+  langs:
+  - csharp
+  - vb
+  name: AvailableGroups
+  nameWithType: FilterSelectorWindow.AvailableGroups
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: AvailableGroups
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
+    startLine: 31
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.Views
+  syntax:
+    content: public ObservableCollection<GroupViewModel> AvailableGroups { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel}
+    content.vb: Public Property AvailableGroups As ObservableCollection(Of GroupViewModel)
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups*
 references:
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views
   commentId: N:ParmaGIS.WPF.Modules.GroupEditTool.Views
@@ -11591,45 +11590,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Windows.Media.Visual.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1
-  commentId: M:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-  parent: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
-  definition: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-  href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_
-  name: FindVisualChild<T>(Visual)
-  nameWithType: ItemsControlExtensions.FindVisualChild<T>(Visual)
-  fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild<T>(System.Windows.Media.Visual)
-  nameWithType.vb: ItemsControlExtensions.FindVisualChild(Of T)(Visual)
-  fullName.vb: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild(Of T)(System.Windows.Media.Visual)
-  name.vb: FindVisualChild(Of T)(Visual)
-  spec.csharp:
-  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-    name: FindVisualChild
-    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Windows.Media.Visual
-    name: Visual
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.media.visual
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-    name: FindVisualChild
-    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Windows.Media.Visual
-    name: Visual
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.media.visual
-  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -11943,51 +11903,6 @@ references:
   name: ControlExtensions
   nameWithType: ControlExtensions
   fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions
-- uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-  commentId: M:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-  isExternal: true
-  href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_
-  name: FindVisualChild<T>(Visual)
-  nameWithType: ItemsControlExtensions.FindVisualChild<T>(Visual)
-  fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild<T>(System.Windows.Media.Visual)
-  nameWithType.vb: ItemsControlExtensions.FindVisualChild(Of T)(Visual)
-  fullName.vb: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild(Of T)(System.Windows.Media.Visual)
-  name.vb: FindVisualChild(Of T)(Visual)
-  spec.csharp:
-  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-    name: FindVisualChild
-    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Windows.Media.Visual
-    name: Visual
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.media.visual
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.FindVisualChild``1(System.Windows.Media.Visual)
-    name: FindVisualChild
-    href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html#ParmaGIS_WPF_UI_Utilities_ControlExtensions_ItemsControlExtensions_FindVisualChild__1_System_Windows_Media_Visual_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Windows.Media.Visual
-    name: Visual
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.windows.media.visual
-  - name: )
-- uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
-  commentId: T:ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
-  parent: ParmaGIS.WPF.UI.Utilities.ControlExtensions
-  href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions.html
-  name: ItemsControlExtensions
-  nameWithType: ItemsControlExtensions
-  fullName: ParmaGIS.WPF.UI.Utilities.ControlExtensions.ItemsControlExtensions
 - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions
   commentId: N:ParmaGIS.WPF.UI.Utilities.ControlExtensions
   href: ParmaGIS.html
@@ -12147,45 +12062,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups*
-  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
-  href: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.html#ParmaGIS_WPF_Modules_GroupEditTool_Views_FilterSelectorWindow_AvailableGroups
-  name: AvailableGroups
-  nameWithType: FilterSelectorWindow.AvailableGroups
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
-- uid: System.Collections.Generic.List{ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel}
-  commentId: T:System.Collections.Generic.List{ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<ColumnGroupViewModel>
-  nameWithType: List<ColumnGroupViewModel>
-  fullName: System.Collections.Generic.List<ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel>
-  nameWithType.vb: List(Of ColumnGroupViewModel)
-  fullName.vb: System.Collections.Generic.List(Of ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel)
-  name.vb: List(Of ColumnGroupViewModel)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel
-    name: ColumnGroupViewModel
-    href: ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel
-    name: ColumnGroupViewModel
-    href: ParmaGIS.WPF.Modules.GroupEditTool.Views.ColumnGroupViewModel.html
-  - name: )
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilterGroups*
   commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilterGroups
   href: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.html#ParmaGIS_WPF_Modules_GroupEditTool_Views_FilterSelectorWindow_AvailableFilterGroups
@@ -12225,3 +12101,107 @@ references:
     name: FilterGroupViewModel
     href: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterGroupViewModel.html
   - name: )
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
+  href: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.html#ParmaGIS_WPF_Modules_GroupEditTool_Views_FilterSelectorWindow_AvailableGroups
+  name: AvailableGroups
+  nameWithType: FilterSelectorWindow.AvailableGroups
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
+- uid: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<GroupViewModel>
+  nameWithType: ObservableCollection<GroupViewModel>
+  fullName: System.Collections.ObjectModel.ObservableCollection<ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel>
+  nameWithType.vb: ObservableCollection(Of GroupViewModel)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel)
+  name.vb: ObservableCollection(Of GroupViewModel)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel
+    name: GroupViewModel
+    href: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel
+    name: GroupViewModel
+    href: ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel.html
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel

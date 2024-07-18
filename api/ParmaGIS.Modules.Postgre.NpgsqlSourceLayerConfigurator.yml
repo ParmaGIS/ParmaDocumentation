@@ -22,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NpgsqlSourceLayerConfigurator
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlSourceLayerConfigurator.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Конфигуратор слоя источника даных. Настраивает подключение для <xref href="Microsoft.EntityFrameworkCore" data-throw-if-not-resolved="false"></xref> в инфраструктуре <xref href="ParmaGIS.Core.DAL" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public class NpgsqlSourceLayerConfigurator : ISourceLayerConfigurator'
     content.vb: Public Class NpgsqlSourceLayerConfigurator Implements ISourceLayerConfigurator
@@ -59,15 +61,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlSourceLayerConfigurator.cs
-    startLine: 7
+    startLine: 14
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlSourceLayerConfigurator(NpgsqlDBProvider postgresDBProvider)
     parameters:
     - id: postgresDBProvider
       type: ParmaGIS.Modules.Postgre.NpgsqlDBProvider
+      description: Провайдер базы данных СУБД Postgre.
     content.vb: Public Sub New(postgresDBProvider As NpgsqlDBProvider)
   overload: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator.#ctor*
   nameWithType.vb: NpgsqlSourceLayerConfigurator.New(NpgsqlDBProvider)
@@ -91,10 +96,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DBProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlSourceLayerConfigurator.cs
-    startLine: 11
+    startLine: 22
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает провайдер базы данных.
+  example: []
   syntax:
     content: public NpgsqlDBProvider DBProvider { get; }
     parameters: []
@@ -120,21 +127,80 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Configure
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlSourceLayerConfigurator.cs
-    startLine: 13
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Настраивает контекст для подключения к <xref href="Microsoft.EntityFrameworkCore" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Configure(DbContextOptionsBuilder optionsBuilder)
     parameters:
     - id: optionsBuilder
       type: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
+      description: Настройки контекста.
     content.vb: Public Sub Configure(optionsBuilder As DbContextOptionsBuilder)
   overload: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator.Configure*
   implements:
   - ParmaGIS.Core.DAL.ISourceLayerConfigurator.Configure(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
 references:
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: ParmaGIS.Core.DAL
+  commentId: N:ParmaGIS.Core.DAL
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.DAL
+  nameWithType: ParmaGIS.Core.DAL
+  fullName: ParmaGIS.Core.DAL
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.DAL
+    name: DAL
+    href: ParmaGIS.Core.DAL.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.DAL
+    name: DAL
+    href: ParmaGIS.Core.DAL.html
 - uid: ParmaGIS.Modules.Postgre
   commentId: N:ParmaGIS.Modules.Postgre
   href: ParmaGIS.html
@@ -409,36 +475,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ParmaGIS.Core.DAL
-  commentId: N:ParmaGIS.Core.DAL
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.DAL
-  nameWithType: ParmaGIS.Core.DAL
-  fullName: ParmaGIS.Core.DAL
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.DAL
-    name: DAL
-    href: ParmaGIS.Core.DAL.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.DAL
-    name: DAL
-    href: ParmaGIS.Core.DAL.html
+- uid: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator
+  commentId: T:ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator
+  parent: ParmaGIS.Modules.Postgre
+  href: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator.html
+  name: NpgsqlSourceLayerConfigurator
+  nameWithType: NpgsqlSourceLayerConfigurator
+  fullName: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator
 - uid: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator.#ctor*
   commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator.#ctor
   href: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator.html#ParmaGIS_Modules_Postgre_NpgsqlSourceLayerConfigurator__ctor_ParmaGIS_Modules_Postgre_NpgsqlDBProvider_
@@ -503,30 +546,3 @@ references:
   name: DbContextOptionsBuilder
   nameWithType: DbContextOptionsBuilder
   fullName: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder
-- uid: Microsoft.EntityFrameworkCore
-  commentId: N:Microsoft.EntityFrameworkCore
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft
-  name: Microsoft.EntityFrameworkCore
-  nameWithType: Microsoft.EntityFrameworkCore
-  fullName: Microsoft.EntityFrameworkCore
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.EntityFrameworkCore
-    name: EntityFrameworkCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.EntityFrameworkCore
-    name: EntityFrameworkCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore

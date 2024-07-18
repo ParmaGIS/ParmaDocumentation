@@ -34,11 +34,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NpgsqlDBProvider
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 21
+    startLine: 12
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
-  summary: Предоставляет провайдер СУБД PostgreSQL.
+  summary: Предоставляет провайдер СУБД Postgre.
   example: []
   syntax:
     content: 'public class NpgsqlDBProvider : IDataBaseProvider'
@@ -73,7 +73,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionChanged
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 26
+    startLine: 18
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -104,17 +104,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 28
+    startLine: 26
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает экземпляр класса <xref href="ParmaGIS.Modules.Postgre.NpgsqlDBProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlDBProvider(NpgsqlServer server, string connectionString)
     parameters:
     - id: server
       type: ParmaGIS.Modules.Postgre.NpgsqlServer
+      description: Сервер Postgre.
     - id: connectionString
       type: System.String
+      description: Строка подключения.
     content.vb: Public Sub New(server As NpgsqlServer, connectionString As String)
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.#ctor*
   nameWithType.vb: NpgsqlDBProvider.New(NpgsqlServer, String)
@@ -138,10 +142,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает экземпляр класса <xref href="ParmaGIS.Modules.Postgre.NpgsqlDBProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlDBProvider()
     content.vb: Public Sub New()
@@ -167,7 +173,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConnectionString
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -200,7 +206,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Name
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -233,10 +239,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Server
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 51
+    startLine: 58
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Возвращает сервер Postgre.
+  example: []
   syntax:
     content: public NpgsqlServer Server { get; }
     parameters: []
@@ -262,14 +270,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCommand
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 55
+    startLine: 66
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает команду для базы данных Postgre. <xref href="Npgsql.NpgsqlCommand" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlCommand CreateCommand()
     return:
       type: Npgsql.NpgsqlCommand
+      description: Команда для базы данных Postgre.
     content.vb: Public Function CreateCommand() As NpgsqlCommand
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand*
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommandBuilder(System.Data.Common.DbDataAdapter)
@@ -290,17 +301,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCommandBuilder
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 60
+    startLine: 76
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает компоновщик команд Postgre. <xref href="Npgsql.NpgsqlCommandBuilder" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlCommandBuilder CreateCommandBuilder(DbDataAdapter dbDataAdapter)
     parameters:
     - id: dbDataAdapter
       type: System.Data.Common.DbDataAdapter
+      description: ''
     return:
       type: Npgsql.NpgsqlCommandBuilder
+      description: Экземпляр компановщика команд Postgre.
     content.vb: Public Function CreateCommandBuilder(dbDataAdapter As DbDataAdapter) As NpgsqlCommandBuilder
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommandBuilder*
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection
@@ -321,14 +336,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateConnection
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 65
+    startLine: 85
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает подключение Postgre. <xref href="Npgsql.NpgsqlConnection" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlConnection CreateConnection()
     return:
       type: Npgsql.NpgsqlConnection
+      description: Экземпдяр подключения Postgre.
     content.vb: Public Function CreateConnection() As NpgsqlConnection
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection*
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter
@@ -349,14 +367,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateDataAdapter
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 70
+    startLine: 94
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Создает адаптер базы данных Postgre. <xref href="Npgsql.NpgsqlDataAdapter" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public NpgsqlDataAdapter CreateDataAdapter()
     return:
       type: Npgsql.NpgsqlDataAdapter
+      description: Экземпляр адаптера базы данных Postgre.
     content.vb: Public Function CreateDataAdapter() As NpgsqlDataAdapter
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter*
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.ExecuteRequest(System.String,System.Data.DataTable)
@@ -377,7 +398,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ExecuteRequest
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 75
+    startLine: 100
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -420,7 +441,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetSchema
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 93
+    startLine: 119
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -453,7 +474,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 98
+    startLine: 125
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -499,7 +520,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: UpdateTable
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 114
+    startLine: 142
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
@@ -533,14 +554,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateConfigurator
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Postgre/NpgsqlDBProvider.cs
-    startLine: 129
+    startLine: 161
   assemblies:
   - ParmaGIS.Modules.Postgre
   namespace: ParmaGIS.Modules.Postgre
+  summary: Созадет конфигуратор слоя источника данных Postgre.
+  example: []
   syntax:
     content: public NpgsqlSourceLayerConfigurator CreateConfigurator()
     return:
       type: ParmaGIS.Modules.Postgre.NpgsqlSourceLayerConfigurator
+      description: Экземпляр конфигуратора слоя источника данных Postgre.
     content.vb: Public Function CreateConfigurator() As NpgsqlSourceLayerConfigurator
   overload: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConfigurator*
 references:
@@ -871,6 +895,13 @@ references:
   name: EventHandler
   nameWithType: EventHandler
   fullName: System.EventHandler
+- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider
+  commentId: T:ParmaGIS.Modules.Postgre.NpgsqlDBProvider
+  parent: ParmaGIS.Modules.Postgre
+  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html
+  name: NpgsqlDBProvider
+  nameWithType: NpgsqlDBProvider
+  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.#ctor*
   commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.#ctor
   href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider__ctor_ParmaGIS_Modules_Postgre_NpgsqlServer_System_String_
@@ -930,12 +961,6 @@ references:
   name: Server
   nameWithType: NpgsqlDBProvider.Server
   fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.Server
-- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand*
-  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand
-  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateCommand
-  name: CreateCommand
-  nameWithType: NpgsqlDBProvider.CreateCommand
-  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand
 - uid: Npgsql.NpgsqlCommand
   commentId: T:Npgsql.NpgsqlCommand
   parent: Npgsql
@@ -943,12 +968,25 @@ references:
   name: NpgsqlCommand
   nameWithType: NpgsqlCommand
   fullName: Npgsql.NpgsqlCommand
+- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand*
+  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand
+  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateCommand
+  name: CreateCommand
+  nameWithType: NpgsqlDBProvider.CreateCommand
+  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommand
 - uid: Npgsql
   commentId: N:Npgsql
   isExternal: true
   name: Npgsql
   nameWithType: Npgsql
   fullName: Npgsql
+- uid: Npgsql.NpgsqlCommandBuilder
+  commentId: T:Npgsql.NpgsqlCommandBuilder
+  parent: Npgsql
+  isExternal: true
+  name: NpgsqlCommandBuilder
+  nameWithType: NpgsqlCommandBuilder
+  fullName: Npgsql.NpgsqlCommandBuilder
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommandBuilder*
   commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateCommandBuilder
   href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateCommandBuilder_System_Data_Common_DbDataAdapter_
@@ -963,13 +1001,6 @@ references:
   name: DbDataAdapter
   nameWithType: DbDataAdapter
   fullName: System.Data.Common.DbDataAdapter
-- uid: Npgsql.NpgsqlCommandBuilder
-  commentId: T:Npgsql.NpgsqlCommandBuilder
-  parent: Npgsql
-  isExternal: true
-  name: NpgsqlCommandBuilder
-  nameWithType: NpgsqlCommandBuilder
-  fullName: Npgsql.NpgsqlCommandBuilder
 - uid: System.Data.Common
   commentId: N:System.Data.Common
   isExternal: true
@@ -1007,12 +1038,6 @@ references:
     name: Common
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.data.common
-- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection*
-  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection
-  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateConnection
-  name: CreateConnection
-  nameWithType: NpgsqlDBProvider.CreateConnection
-  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection
 - uid: Npgsql.NpgsqlConnection
   commentId: T:Npgsql.NpgsqlConnection
   parent: Npgsql
@@ -1020,12 +1045,12 @@ references:
   name: NpgsqlConnection
   nameWithType: NpgsqlConnection
   fullName: Npgsql.NpgsqlConnection
-- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter*
-  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter
-  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateDataAdapter
-  name: CreateDataAdapter
-  nameWithType: NpgsqlDBProvider.CreateDataAdapter
-  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter
+- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection*
+  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection
+  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateConnection
+  name: CreateConnection
+  nameWithType: NpgsqlDBProvider.CreateConnection
+  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateConnection
 - uid: Npgsql.NpgsqlDataAdapter
   commentId: T:Npgsql.NpgsqlDataAdapter
   parent: Npgsql
@@ -1033,6 +1058,12 @@ references:
   name: NpgsqlDataAdapter
   nameWithType: NpgsqlDataAdapter
   fullName: Npgsql.NpgsqlDataAdapter
+- uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter*
+  commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter
+  href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_CreateDataAdapter
+  name: CreateDataAdapter
+  nameWithType: NpgsqlDBProvider.CreateDataAdapter
+  fullName: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.CreateDataAdapter
 - uid: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.ExecuteRequest*
   commentId: Overload:ParmaGIS.Modules.Postgre.NpgsqlDBProvider.ExecuteRequest
   href: ParmaGIS.Modules.Postgre.NpgsqlDBProvider.html#ParmaGIS_Modules_Postgre_NpgsqlDBProvider_ExecuteRequest_System_String_System_Data_DataTable_

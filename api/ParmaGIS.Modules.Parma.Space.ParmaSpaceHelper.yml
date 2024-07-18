@@ -8,6 +8,7 @@ items:
   - ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.CreateDataBase(ParmaGIS.Modules.Parma.Space.ParmaSpace)
   - ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillDefaultCalcTablesAsync(ParmaGIS.Modules.Parma.Space.ParmaSpace)
   - ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillDefaultCatalogDataAsync(ParmaGIS.Modules.Parma.Space.ParmaSpace)
+  - ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Data.DataSource.IDataSourceSet)
   langs:
   - csharp
   - vb
@@ -22,7 +23,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaSpaceHelper
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpaceHelper.cs
-    startLine: 7
+    startLine: 16
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -57,7 +58,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FillDefaultCatalogDataAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpaceHelper.cs
-    startLine: 9
+    startLine: 41
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -88,7 +89,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FillDefaultCalcTablesAsync
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpaceHelper.cs
-    startLine: 9603
+    startLine: 47
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -119,7 +120,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateDataBase
     path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpaceHelper.cs
-    startLine: 26137
+    startLine: 53
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space
@@ -132,6 +133,39 @@ items:
       type: System.Threading.Tasks.Task
     content.vb: Public Shared Function CreateDataBase(space As ParmaSpace) As Task
   overload: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.CreateDataBase*
+- uid: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Data.DataSource.IDataSourceSet)
+  commentId: M:ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Data.DataSource.IDataSourceSet)
+  id: FillFrom(ParmaGIS.Modules.Parma.Space.ParmaSpace,ParmaGIS.Modules.Data.DataSource.IDataSourceSet)
+  parent: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper
+  langs:
+  - csharp
+  - vb
+  name: FillFrom(ParmaSpace, IDataSourceSet)
+  nameWithType: ParmaSpaceHelper.FillFrom(ParmaSpace, IDataSourceSet)
+  fullName: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom(ParmaGIS.Modules.Parma.Space.ParmaSpace, ParmaGIS.Modules.Data.DataSource.IDataSourceSet)
+  type: Method
+  source:
+    remote:
+      path: common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpaceHelper.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: FillFrom
+    path: ../ParmaGIS master/common/modules/ParmaGIS.Modules.Parma.Space/ParmaSpaceHelper.cs
+    startLine: 58
+  assemblies:
+  - ParmaGIS.Modules.Parma.Space
+  namespace: ParmaGIS.Modules.Parma.Space
+  syntax:
+    content: public static Task FillFrom(ParmaSpace space, IDataSourceSet set)
+    parameters:
+    - id: space
+      type: ParmaGIS.Modules.Parma.Space.ParmaSpace
+    - id: set
+      type: ParmaGIS.Modules.Data.DataSource.IDataSourceSet
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function FillFrom(space As ParmaSpace, [set] As IDataSourceSet) As Task
+  overload: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom*
 references:
 - uid: ParmaGIS.Modules.Parma.Space
   commentId: N:ParmaGIS.Modules.Parma.Space
@@ -478,3 +512,54 @@ references:
   name: CreateDataBase
   nameWithType: ParmaSpaceHelper.CreateDataBase
   fullName: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.CreateDataBase
+- uid: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom*
+  commentId: Overload:ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom
+  href: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.html#ParmaGIS_Modules_Parma_Space_ParmaSpaceHelper_FillFrom_ParmaGIS_Modules_Parma_Space_ParmaSpace_ParmaGIS_Modules_Data_DataSource_IDataSourceSet_
+  name: FillFrom
+  nameWithType: ParmaSpaceHelper.FillFrom
+  fullName: ParmaGIS.Modules.Parma.Space.ParmaSpaceHelper.FillFrom
+- uid: ParmaGIS.Modules.Data.DataSource.IDataSourceSet
+  commentId: T:ParmaGIS.Modules.Data.DataSource.IDataSourceSet
+  parent: ParmaGIS.Modules.Data.DataSource
+  href: ParmaGIS.Modules.Data.DataSource.IDataSourceSet.html
+  name: IDataSourceSet
+  nameWithType: IDataSourceSet
+  fullName: ParmaGIS.Modules.Data.DataSource.IDataSourceSet
+- uid: ParmaGIS.Modules.Data.DataSource
+  commentId: N:ParmaGIS.Modules.Data.DataSource
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.DataSource
+  nameWithType: ParmaGIS.Modules.Data.DataSource
+  fullName: ParmaGIS.Modules.Data.DataSource
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.DataSource
+    name: DataSource
+    href: ParmaGIS.Modules.Data.DataSource.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.DataSource
+    name: DataSource
+    href: ParmaGIS.Modules.Data.DataSource.html

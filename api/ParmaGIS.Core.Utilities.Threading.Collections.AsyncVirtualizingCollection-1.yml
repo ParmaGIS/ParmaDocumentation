@@ -25,7 +25,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AsyncVirtualizingCollection
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 175
+    startLine: 208
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -92,6 +92,8 @@ items:
   - ParmaGIS.Core.Utilities.Threading.Collections.AsyncVirtualizingCollection`1.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Threading.Collections.AsyncVirtualizingCollection{{T}},{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
   - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
   - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Func{{T},System.Threading.Tasks.Task{{TOut}}},System.Threading.CancellationToken)
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Func{{T},System.Threading.Tasks.Task{{T}[]}},System.Threading.CancellationToken)
   - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,{T}})
   - System.Collections.Generic.IList{`0}.ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2({T},System.Func{{T},{TKey}})
   nameWithType.vb: AsyncVirtualizingCollection(Of T)
@@ -115,7 +117,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 184
+    startLine: 217
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -153,7 +155,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 195
+    startLine: 228
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -197,7 +199,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 207
+    startLine: 240
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -228,7 +230,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsLoading
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 230
+    startLine: 263
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -262,7 +264,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadCount
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 250
+    startLine: 283
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -293,7 +295,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadPage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 264
+    startLine: 297
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -1975,6 +1977,220 @@ references:
   - name: T
   - name: )
   - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Func{{T},System.Threading.Tasks.Task{{TOut}}},System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  name: SelectAsync<T, TOut>(IEnumerable<T>, Func<T, Task<TOut>>, CancellationToken)
+  nameWithType: EnumarableExtensions.SelectAsync<T, TOut>(IEnumerable<T>, Func<T, Task<TOut>>, CancellationToken)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync<T, TOut>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Threading.Tasks.Task<TOut>>, System.Threading.CancellationToken)
+  nameWithType.vb: EnumarableExtensions.SelectAsync(Of T, TOut)(IEnumerable(Of T), Func(Of T, Task(Of TOut)), CancellationToken)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync(Of T, TOut)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of TOut)), System.Threading.CancellationToken)
+  name.vb: SelectAsync(Of T, TOut)(IEnumerable(Of T), Func(Of T, Task(Of TOut)), CancellationToken)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+    name: SelectAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TOut
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TOut
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+    name: SelectAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TOut
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOut
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Func{{T},System.Threading.Tasks.Task{{T}[]}},System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
+  name: SelectManyAsync<T, T>(IEnumerable<T>, Func<T, Task<T[]>>, CancellationToken)
+  nameWithType: EnumarableExtensions.SelectManyAsync<T, T>(IEnumerable<T>, Func<T, Task<T[]>>, CancellationToken)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync<T, T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Threading.Tasks.Task<T[]>>, System.Threading.CancellationToken)
+  nameWithType.vb: EnumarableExtensions.SelectManyAsync(Of T, T)(IEnumerable(Of T), Func(Of T, Task(Of T())), CancellationToken)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync(Of T, T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of T())), System.Threading.CancellationToken)
+  name.vb: SelectManyAsync(Of T, T)(IEnumerable(Of T), Func(Of T, Task(Of T())), CancellationToken)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+    name: SelectManyAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+    name: SelectManyAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: (
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
 - uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,{T}})
   commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
   parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
@@ -3524,6 +3740,218 @@ references:
   - name: " "
   - name: T
   - name: )
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  name: SelectAsync<TIn, TOut>(IEnumerable<TIn>, Func<TIn, Task<TOut>>, CancellationToken)
+  nameWithType: EnumarableExtensions.SelectAsync<TIn, TOut>(IEnumerable<TIn>, Func<TIn, Task<TOut>>, CancellationToken)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync<TIn, TOut>(System.Collections.Generic.IEnumerable<TIn>, System.Func<TIn, System.Threading.Tasks.Task<TOut>>, System.Threading.CancellationToken)
+  nameWithType.vb: EnumarableExtensions.SelectAsync(Of TIn, TOut)(IEnumerable(Of TIn), Func(Of TIn, Task(Of TOut)), CancellationToken)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync(Of TIn, TOut)(System.Collections.Generic.IEnumerable(Of TIn), System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), System.Threading.CancellationToken)
+  name.vb: SelectAsync(Of TIn, TOut)(IEnumerable(Of TIn), Func(Of TIn, Task(Of TOut)), CancellationToken)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+    name: SelectAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - name: <
+  - name: TIn
+  - name: ','
+  - name: " "
+  - name: TOut
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TIn
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TIn
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TOut
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+    name: SelectAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: ','
+  - name: " "
+  - name: TOut
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOut
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+  isExternal: true
+  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
+  name: SelectManyAsync<TIn, T>(IEnumerable<TIn>, Func<TIn, Task<T[]>>, CancellationToken)
+  nameWithType: EnumarableExtensions.SelectManyAsync<TIn, T>(IEnumerable<TIn>, Func<TIn, Task<T[]>>, CancellationToken)
+  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync<TIn, T>(System.Collections.Generic.IEnumerable<TIn>, System.Func<TIn, System.Threading.Tasks.Task<T[]>>, System.Threading.CancellationToken)
+  nameWithType.vb: EnumarableExtensions.SelectManyAsync(Of TIn, T)(IEnumerable(Of TIn), Func(Of TIn, Task(Of T())), CancellationToken)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync(Of TIn, T)(System.Collections.Generic.IEnumerable(Of TIn), System.Func(Of TIn, System.Threading.Tasks.Task(Of T())), System.Threading.CancellationToken)
+  name.vb: SelectManyAsync(Of TIn, T)(IEnumerable(Of TIn), Func(Of TIn, Task(Of T())), CancellationToken)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+    name: SelectManyAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
+  - name: <
+  - name: TIn
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TIn
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TIn
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+    name: SelectManyAsync
+    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: (
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
 - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
   commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
