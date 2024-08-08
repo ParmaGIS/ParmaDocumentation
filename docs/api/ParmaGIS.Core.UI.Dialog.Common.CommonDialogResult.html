@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CommonDialogResult | site ">
       
-      
+      <meta name="description" content="Представляет результат общих диалогов.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult" class="text-break">
-Class CommonDialogResult  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Class CommonDialogResult  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,11 +97,12 @@ Class CommonDialogResult  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.UI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет результат общих диалогов.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CommonDialogResult : IDialogResult</code></pre>
+    <pre><code class="lang-csharp hljs">public class CommonDialogResult : DialogResult, IDialogResult</code></pre>
   </div>
 
 
@@ -111,6 +112,7 @@ Class CommonDialogResult  <a class="header-action link-secondary" title="View so
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="ParmaGIS.Core.UI.Dialog.DialogResult.html">DialogResult</a></div>
       <div><span class="xref">CommonDialogResult</span></div>
     </dd>
   </dl>
@@ -126,6 +128,15 @@ Class CommonDialogResult  <a class="header-action link-secondary" title="View so
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_ButtonResult">DialogResult.ButtonResult</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_Parameters">DialogResult.Parameters</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_IsNotOk">DialogResult.IsNotOk()</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -161,25 +172,29 @@ Class CommonDialogResult  <a class="header-action link-secondary" title="View so
   <a id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult__ctor_" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.#ctor*"></a>
 
   <h3 id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult__ctor_ParmaGIS_Core_UI_Dialog_ButtonResult_ParmaGIS_Core_UI_Dialog_IDialogParameters_System_Collections_Generic_IEnumerable_System_String__" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.#ctor(ParmaGIS.Core.UI.Dialog.ButtonResult,ParmaGIS.Core.UI.Dialog.IDialogParameters,System.Collections.Generic.IEnumerable{System.String})">
-  CommonDialogResult(ButtonResult, IDialogParameters, IEnumerable&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  CommonDialogResult(ButtonResult, IDialogParameters?, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициаллизирует экземплря класса <a class="xref" href="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.html">CommonDialogResult</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommonDialogResult(ButtonResult buttonResult, IDialogParameters parameters, IEnumerable&lt;string&gt; fileNames)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommonDialogResult(ButtonResult buttonResult, IDialogParameters? parameters, IEnumerable&lt;string&gt; fileNames)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>buttonResult</code> <a class="xref" href="ParmaGIS.Core.UI.Dialog.ButtonResult.html">ButtonResult</a></dt>
-    <dd></dd>
+    <dd><p>Результат нажатия кнопки.</p>
+</dd>
     <dt><code>parameters</code> <a class="xref" href="ParmaGIS.Core.UI.Dialog.IDialogParameters.html">IDialogParameters</a></dt>
-    <dd></dd>
+    <dd><p>Параметры, с которыми был вызыван диалог.</p>
+</dd>
     <dt><code>fileNames</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Названия файлов.</p>
+</dd>
   </dl>
 
 
@@ -197,46 +212,15 @@ Class CommonDialogResult  <a class="header-action link-secondary" title="View so
 </h2>
 
 
-  <a id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_ButtonResult_" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult*"></a>
-
-  <h3 id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_ButtonResult" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult">
-  ButtonResult
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L16"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Результат нажатия кнопок.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ButtonResult ButtonResult { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ParmaGIS.Core.UI.Dialog.ButtonResult.html">ButtonResult</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_FileNames_" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames*"></a>
 
   <h3 id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_FileNames" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames">
   FileNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает названия файлов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -260,43 +244,11 @@ Class CommonDialogResult  <a class="header-action link-secondary" title="View so
 
 
 
-  <a id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_Parameters_" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters*"></a>
-
-  <h3 id="ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_Parameters" data-uid="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters">
-  Parameters
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L17"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Результат нажатия кнопок.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IDialogParameters Parameters { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ParmaGIS.Core.UI.Dialog.IDialogParameters.html">IDialogParameters</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

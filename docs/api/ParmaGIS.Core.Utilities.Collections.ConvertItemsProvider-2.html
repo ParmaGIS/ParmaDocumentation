@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ConvertItemsProvider&lt;TSource, TResult&gt; | site ">
       
-      
+      <meta name="description" content="Провайдер элементов с конвертером источника.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2" class="text-break">
-Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Провайдер элементов с конвертером источника.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,9 +110,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TSource</code></dt>
-    <dd></dd>
+    <dd><p>Тип элементов источника.</p>
+</dd>
     <dt><code>TResult</code></dt>
-    <dd></dd>
+    <dd><p>Тип конвертированных элементов.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -179,10 +182,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2__ctor_ParmaGIS_Core_Utilities_Collections_IItemsProvider__0__System_Func__0__1__System_Threading_Tasks_TaskScheduler_" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0},System.Func{`0,`1},System.Threading.Tasks.TaskScheduler)">
   ConvertItemsProvider(IItemsProvider&lt;TSource&gt;, Func&lt;TSource, TResult&gt;, TaskScheduler?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html">ConvertItemsProvider&lt;TSource, TResult&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -192,11 +196,16 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>sourceItemsProvider</code> <a class="xref" href="ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html">IItemsProvider</a>&lt;TSource&gt;</dt>
-    <dd></dd>
+    <dd><p>Исходный провайдер элементов. Источник.</p>
+</dd>
     <dt><code>converter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TSource, TResult&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция преобразующая исходные элементы в необходимые.</p>
+</dd>
     <dt><code>taskScheduler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskscheduler">TaskScheduler</a></dt>
-    <dd></dd>
+    <dd><p>Планировщик задач.
+Передается для обеспечения безопасного взаимодействия с провайдером данных.
+Если <code class="paramref">sourceItemsProvider</code> реализует <a class="xref" href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html">IThreadsVulnerable</a>, то планировщик задач по умолчанию берется от туда.</p>
+</dd>
   </dl>
 
 
@@ -214,10 +223,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2__ctor_ParmaGIS_Core_Utilities_Collections_IItemsProvider__0__System_Func__0__1___1_System_Threading_Tasks_TaskScheduler_" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.#ctor(ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0},System.Func{`0,`1},`1,System.Threading.Tasks.TaskScheduler)">
   ConvertItemsProvider(IItemsProvider&lt;TSource&gt;, Func&lt;TSource, TResult&gt;, TResult, TaskScheduler?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html">ConvertItemsProvider&lt;TSource, TResult&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -227,13 +237,17 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>sourceItemsProvider</code> <a class="xref" href="ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html">IItemsProvider</a>&lt;TSource&gt;</dt>
-    <dd></dd>
+    <dd><p>Исходный проввайдер элементов. Источник.</p>
+</dd>
     <dt><code>converter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TSource, TResult&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция преобразующая исходные элементы в необходимые.</p>
+</dd>
     <dt><code>emptyItem</code> <span class="xref">TResult</span></dt>
-    <dd></dd>
+    <dd><p>Пустой элемент. Используется, когда оригиальный элемент еще не загружен.</p>
+</dd>
     <dt><code>taskScheduler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskscheduler">TaskScheduler</a></dt>
-    <dd></dd>
+    <dd><p>Планировщик задач. Передается для обеспечения безопасного взаимодействия с провайдером данных. Если <code class="paramref">sourceItemsProvider</code> реализует <a class="xref" href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html">IThreadsVulnerable</a>, то планировщик задач по умолчанию берется от туда.</p>
+</dd>
   </dl>
 
 
@@ -255,10 +269,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_EmptyItem" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.EmptyItem">
   EmptyItem
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -286,10 +301,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_SourceItemsProvider" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.SourceItemsProvider">
   SourceItemsProvider
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает исходный провайдер элементов.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -317,10 +333,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_TaskScheduler" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.TaskScheduler">
   TaskScheduler
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает планировщик задач для синхронизации потоков.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -348,10 +365,11 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_ThreadSafety" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.ThreadSafety">
   ThreadSafety
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <code>true</code>, если использование объекта из нескольких потоков, используя <a class="xref" href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler">TaskScheduler</a>, безопасно, иначе - <code>false</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -383,7 +401,7 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_FetchCount" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.FetchCount">
   FetchCount()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Получает общее количество доступных элементов.</p>
@@ -416,7 +434,7 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_FetchRange_System_Int32_System_Int32_" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.FetchRange(System.Int32,System.Int32)">
   FetchRange(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L113"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Извлекает ряд элементов.</p>
@@ -460,10 +478,10 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 
   <h3 id="ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_CollectionChanged" data-uid="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.CollectionChanged">
   CollectionChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Occurs when the collection changes.</p>
+  <div class="markdown level1 summary"><p>Происходит при изменении элементов в коллекции.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -492,7 +510,7 @@ Class ConvertItemsProvider&lt;TSource, TResult&gt;  <a class="header-action link
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

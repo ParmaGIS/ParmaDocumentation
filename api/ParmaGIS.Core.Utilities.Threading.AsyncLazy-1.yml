@@ -18,19 +18,22 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AsyncLazy
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
-    startLine: 15
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
+  summary: Представляет реализацию механизма ленивой асинхронной загрузки значения.
+  example: []
   syntax:
     content: 'public class AsyncLazy<T> : BindableBase, INotifyPropertyChanged'
     typeParameters:
     - id: T
+      description: Тип значения.
     content.vb: Public Class AsyncLazy(Of T) Inherits BindableBase Implements INotifyPropertyChanged
   inheritance:
   - System.Object
@@ -67,22 +70,26 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
     startLine: 21
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Threading.AsyncLazy%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public AsyncLazy(Func<Task<T>> factory, T tempValue = default)
     parameters:
     - id: factory
       type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: Функция создающая значение.
     - id: tempValue
       type: '{T}'
+      description: Временное значение, возвращаемое, пока настоящее значение создается.
     content.vb: Public Sub New(factory As Func(Of Task(Of T)), tempValue As T = Nothing)
   overload: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.#ctor*
   nameWithType.vb: AsyncLazy(Of T).New(Func(Of Task(Of T)), T)
@@ -101,15 +108,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsLoadingValue
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
-    startLine: 27
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
+  summary: Возвращает <code>true</code>, если значение создается.
+  example: []
   syntax:
     content: public bool IsLoadingValue { get; }
     parameters: []
@@ -132,15 +141,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsLoadedValue
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
-    startLine: 28
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
+  summary: Возвращает <code>true</code>, если значение создано.
+  example: []
   syntax:
     content: public bool IsLoadedValue { get; }
     parameters: []
@@ -163,15 +174,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Value
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs
-    startLine: 30
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+    startLine: 41
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
+  summary: Возвращает значение.
+  example: []
   syntax:
     content: public T Value { get; }
     parameters: []
@@ -1335,6 +1348,31 @@ references:
   - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
     name: ReactiveRules
     href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
+- uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1
+  commentId: T:ParmaGIS.Core.Utilities.Threading.AsyncLazy`1
+  href: ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html
+  name: AsyncLazy<T>
+  nameWithType: AsyncLazy<T>
+  fullName: ParmaGIS.Core.Utilities.Threading.AsyncLazy<T>
+  nameWithType.vb: AsyncLazy(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T)
+  name.vb: AsyncLazy(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1
+    name: AsyncLazy
+    href: ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1
+    name: AsyncLazy
+    href: ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.#ctor
   href: ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html#ParmaGIS_Core_Utilities_Threading_AsyncLazy_1__ctor_System_Func_System_Threading_Tasks_Task__0____0_

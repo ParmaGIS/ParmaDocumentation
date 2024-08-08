@@ -21,17 +21,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IItemsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs
-    startLine: 30
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Представляет поставщика сведений о коллекции.
+  summary: Представляет поставщика сведений о коллекции. Провайдер элементов.
   example: []
   syntax:
     content: 'public interface IItemsProvider<T> : IItemsProvider'
     typeParameters:
     - id: T
-      description: The type of items in the collection.
+      description: Тип элементов проводника.
     content.vb: Public Interface IItemsProvider(Of T) Inherits IItemsProvider
   inheritedMembers:
   - ParmaGIS.Core.Utilities.Collections.IItemsProvider.FetchCount
@@ -56,10 +56,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyItem
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs
-    startLine: 32
+    startLine: 41
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.
+  example: []
   syntax:
     content: T EmptyItem { get; }
     parameters: []
@@ -87,7 +89,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchRange
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/IItemsProvider.cs
-    startLine: 40
+    startLine: 49
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections

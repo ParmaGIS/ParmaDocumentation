@@ -25,14 +25,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObservableItemsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Представляет обозреваемый провайдер элементов. Он содержит механизмы для уведомления об изменнии элементов источника.
+  example: []
   syntax:
     content: 'public class ObservableItemsProvider<T> : ListItemsProvider<T>, IItemsProvider<T>, IItemsProvider, IDisposable, INotifyCollectionChanged, INotifyPropertyChanged'
     typeParameters:
     - id: T
+      description: Тип элементов.
     content.vb: Public Class ObservableItemsProvider(Of T) Inherits ListItemsProvider(Of T) Implements IItemsProvider(Of T), IItemsProvider, IDisposable, INotifyCollectionChanged, INotifyPropertyChanged
   inheritance:
   - System.Object
@@ -81,11 +84,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 10
+    startLine: 17
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Occurs when the collection changes.
+  summary: Возникает при изменении элементов коллекции.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler? CollectionChanged
@@ -114,11 +117,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 11
+    startLine: 21
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Occurs when a property value changes.
+  summary: Возникает при изменении свойств.
   example: []
   syntax:
     content: public event PropertyChangedEventHandler? PropertyChanged
@@ -147,17 +150,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 15
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ObservableItemsProvider(ObservableCollection<T> source, T emptyItem)
     parameters:
     - id: source
       type: System.Collections.ObjectModel.ObservableCollection{{T}}
+      description: источник элементов.
     - id: emptyItem
       type: '{T}'
+      description: Пустой элемент.
     content.vb: Public Sub New(source As ObservableCollection(Of T), emptyItem As T)
   overload: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor*
   nameWithType.vb: ObservableItemsProvider(Of T).New(ObservableCollection(Of T), T)
@@ -181,19 +188,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 20
+    startLine: 42
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ObservableItemsProvider(IEnumerable<T> source, IObservable<NotifyCollectionChangedEventArgs> collectionChangedObserver, T emptyItem)
     parameters:
     - id: source
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: Источник элементов.
     - id: collectionChangedObserver
       type: System.IObservable{System.Collections.Specialized.NotifyCollectionChangedEventArgs}
+      description: Обозреватель обновления источника элементов.
     - id: emptyItem
       type: '{T}'
+      description: Пустой элемент.
     content.vb: Public Sub New(source As IEnumerable(Of T), collectionChangedObserver As IObservable(Of NotifyCollectionChangedEventArgs), emptyItem As T)
   overload: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor*
   nameWithType.vb: ObservableItemsProvider(Of T).New(IEnumerable(Of T), IObservable(Of NotifyCollectionChangedEventArgs), T)
@@ -217,10 +229,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Finalize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 28
+    startLine: 52
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Уничтожает <xref href="ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected ~ObservableItemsProvider()
     content.vb: 'Protected '
@@ -246,7 +260,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ObservableItemsProvider.cs
-    startLine: 34
+    startLine: 64
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -1850,6 +1864,31 @@ references:
   name: PropertyChangedEventHandler
   nameWithType: PropertyChangedEventHandler
   fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1
+  href: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider-1.html
+  name: ObservableItemsProvider<T>
+  nameWithType: ObservableItemsProvider<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider<T>
+  nameWithType.vb: ObservableItemsProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider(Of T)
+  name.vb: ObservableItemsProvider(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1
+    name: ObservableItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1
+    name: ObservableItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider`1.#ctor
   href: ParmaGIS.Core.Utilities.Collections.ObservableItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_ObservableItemsProvider_1__ctor_System_Collections_ObjectModel_ObservableCollection__0___0_

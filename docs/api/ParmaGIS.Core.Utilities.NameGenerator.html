@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_NameGenerator" data-uid="ParmaGIS.Core.Utilities.NameGenerator" class="text-break">
-Class NameGenerator  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class NameGenerator  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -155,32 +155,88 @@ Class NameGenerator  <a class="header-action link-secondary" title="View source"
 
   <a id="ParmaGIS_Core_Utilities_NameGenerator_Generate_" data-uid="ParmaGIS.Core.Utilities.NameGenerator.Generate*"></a>
 
-  <h3 id="ParmaGIS_Core_Utilities_NameGenerator_Generate_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_" data-uid="ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)">
-  Generate(string, IEnumerable&lt;string&gt;, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Utilities_NameGenerator_Generate_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_" data-uid="ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)">
+  Generate(string, IEnumerable&lt;string&gt;, string, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Генерирует новое имя.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Generate(string prefixTemplate, IEnumerable&lt;string&gt; existNames, string separator = &quot; &quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Generate(string prefixTemplate, IEnumerable&lt;string&gt; existNames, string separator = &quot; &quot;, int startIndex = 1)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>prefixTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Префикс, по которому ищется совпадения существующих имен.</p>
+</dd>
     <dt><code>existNames</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Перечисление существующих имен.</p>
+</dd>
     <dt><code>separator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Сепаратор.</p>
+</dd>
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Начальный индекс.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Новове имя <code class="paramref">prefixTemplate</code>+<code class="paramref">separator</code>+номер.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Utilities_NameGenerator_GenerateAsync_" data-uid="ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync*"></a>
+
+  <h3 id="ParmaGIS_Core_Utilities_NameGenerator_GenerateAsync_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_" data-uid="ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)">
+  GenerateAsync(string, IEnumerable&lt;string&gt;, string, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Генерирует новое имя.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; GenerateAsync(string prefixTemplate, IEnumerable&lt;string&gt; existNames, string separator = &quot; &quot;, int startIndex = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prefixTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Префикс, по которому ищется совпадения существующих имен.</p>
+</dd>
+    <dt><code>existNames</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Перечисление существующих имен.</p>
+</dd>
+    <dt><code>separator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Сепаратор.</p>
+</dd>
+    <dt><code>startIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Начальный индекс.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Новове имя <code class="paramref">prefixTemplate</code>+<code class="paramref">separator</code>+номер.</p>
+</dd>
   </dl>
 
 
@@ -197,7 +253,7 @@ Class NameGenerator  <a class="header-action link-secondary" title="View source"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

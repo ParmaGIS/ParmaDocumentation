@@ -13,9 +13,9 @@ items:
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.FetchRange(System.Int32,System.Int32)
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnPropertyChanged(System.String)
+  - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnResetCollection
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.PropertyChanged
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.Query
-  - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ResetCollection
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.TaskScheduler
   - ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ThreadSafety
   langs:
@@ -32,14 +32,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: QueryItemProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 14
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: >-
+    Ïðåäñòàâëÿåò ïðîâàéäåð ýëåìåíòîâ èç èñòî÷íèêà ñ ïîääåðæêîé çàïðîñîâ.
+
+    Ôóíêöèè äîñòóïà ê ýëåìåíòàì èç ïðîâàéäåðà êîíâåðòèðóþòñÿ â çàïðîñû ê èñòî÷íèêó, ÷òî ïîçâîëÿåò íå çàãðóæàòü âñå ýëåìåíòû ðàçîì.
+  example: []
   syntax:
     content: 'public class QueryItemProvider<T> : IItemsProvider<T>, IItemsProvider, IThreadsVulnerable, INotifyCollectionChanged, INotifyPropertyChanged'
     typeParameters:
     - id: T
+      description: Òèï ýëåìåíòîâ.
     content.vb: Public Class QueryItemProvider(Of T) Implements IItemsProvider(Of T), IItemsProvider, IThreadsVulnerable, INotifyCollectionChanged, INotifyPropertyChanged
   inheritance:
   - System.Object
@@ -82,11 +88,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 19
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Occurs when the collection changes.
+  summary: Âîçíèêàåò ïðè èçìåíåíèè ýëåìåíòîâ â êîëëåêöèè.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler? CollectionChanged
@@ -115,11 +121,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 20
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Occurs when a property value changes.
+  summary: Âîçíèêàåò ïðè èçìåíåíèè ñâîéñòâ.
   example: []
   syntax:
     content: public event PropertyChangedEventHandler? PropertyChanged
@@ -148,19 +154,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 22
+    startLine: 40
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Èíèöèàëèçèðóåò ýêçåìïëÿð êëàññà <xref href="ParmaGIS.Core.Utilities.Collections.QueryItemProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public QueryItemProvider(IQueryable<T> query, T emptyItem = default, TaskScheduler? taskScheduler = null)
     parameters:
     - id: query
       type: System.Linq.IQueryable{{T}}
+      description: Èñòî÷íèê ýëåìåíòîâ, ïîääåðæèâàþùèé ìåõàíèçì çàïðîñîâ.
     - id: emptyItem
       type: '{T}'
+      description: Ïóñòîé ýëåìåíò, èñïîëüçóåòñÿ ïîêà íàñòîÿùèé ýëåìåíò íå áóäåò çàãðóæåí.
     - id: taskScheduler
       type: System.Threading.Tasks.TaskScheduler
+      description: Ïëàíèðîâùèê çàäà÷.
     content.vb: Public Sub New(query As IQueryable(Of T), emptyItem As T = Nothing, taskScheduler As TaskScheduler = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.#ctor*
   nameWithType.vb: QueryItemProvider(Of T).New(IQueryable(Of T), T, TaskScheduler)
@@ -184,17 +195,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 38
+    startLine: 62
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Èíèöèàëèçèðóåò ýêçåìïëÿð êëàññà <xref href="ParmaGIS.Core.Utilities.Collections.QueryItemProvider%601" data-throw-if-not-resolved="false"></xref> áåç ýëåìåíòîâ..
+  example: []
   syntax:
     content: public QueryItemProvider(T emptyItem = default, TaskScheduler? taskScheduler = null)
     parameters:
     - id: emptyItem
       type: '{T}'
+      description: Ïóñòîé ýëåìåíò.
     - id: taskScheduler
       type: System.Threading.Tasks.TaskScheduler
+      description: Ïëàíèðîâùèê çàäà÷.
     content.vb: Public Sub New(emptyItem As T = Nothing, taskScheduler As TaskScheduler = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.#ctor*
   nameWithType.vb: QueryItemProvider(Of T).New(T, TaskScheduler)
@@ -218,10 +233,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Query
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 43
+    startLine: 71
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: >-
+    Âîçâðàùàåò èëè çàäàåò èñòî÷íèê çàïðîñîâ äëÿ ïðîâàéäåðà ýëåìåíòîâ.
+
+    Ïðè èçìåíåíèè èñòî÷íèêà áóäåò âûçâàíî ñîáûòèå <xref href="ParmaGIS.Core.Utilities.Collections.QueryItemProvider%601.CollectionChanged" data-throw-if-not-resolved="false"></xref> ñ ïàðàìåòðàìè <xref href="System.Collections.Specialized.NotifyCollectionChangedAction.Reset" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public IQueryable<T> Query { get; set; }
     parameters: []
@@ -249,10 +269,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyItem
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 55
+    startLine: 84
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.
   example: []
   syntax:
     content: public T EmptyItem { get; }
@@ -283,10 +304,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafety
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 57
+    startLine: 87
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает <code>true</code>, если использование объекта из нескольких потоков, используя <xref href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler" data-throw-if-not-resolved="false"></xref>, безопасно, иначе - <code>false</code>.
   example: []
   syntax:
     content: public bool ThreadSafety { get; }
@@ -317,10 +339,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 59
+    startLine: 90
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает планировщик задач для синхронизации потоков.
   example: []
   syntax:
     content: public TaskScheduler TaskScheduler { get; set; }
@@ -351,15 +374,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnPropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 73
+    startLine: 108
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Âûçûâàåò ñîáûòèå èçìåíåíèÿ ñâîéñòâà <xref href="ParmaGIS.Core.Utilities.Collections.QueryItemProvider%601.PropertyChanged" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected void OnPropertyChanged(string? propertyName = null)
     parameters:
     - id: propertyName
       type: System.String
+      description: Íàçâàíèå ñâîéñòâà. Ïðè çàäàíèè <code>null</code> áóäåò ðàñ÷èòàíî èñõîäÿ èç íàçâàíèÿ âûçûâàþùåãî ÷ëåíà.
     content.vb: Protected Sub OnPropertyChanged(propertyName As String = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnPropertyChanged*
   nameWithType.vb: QueryItemProvider(Of T).OnPropertyChanged(String)
@@ -383,47 +409,52 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 78
+    startLine: 117
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Âûçûâàåò ñîáûòèå èçìåíåíèÿ êîëëåêöèè.
+  example: []
   syntax:
     content: protected void OnCollectionChanged(NotifyCollectionChangedEventArgs args)
     parameters:
     - id: args
       type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+      description: Ïàðàìåòðû ñîáûòèÿ.
     content.vb: Protected Sub OnCollectionChanged(args As NotifyCollectionChangedEventArgs)
   overload: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnCollectionChanged*
   nameWithType.vb: QueryItemProvider(Of T).OnCollectionChanged(NotifyCollectionChangedEventArgs)
   fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
-- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ResetCollection
-  commentId: M:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ResetCollection
-  id: ResetCollection
+- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnResetCollection
+  commentId: M:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnResetCollection
+  id: OnResetCollection
   parent: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1
   langs:
   - csharp
   - vb
-  name: ResetCollection()
-  nameWithType: QueryItemProvider<T>.ResetCollection()
-  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.ResetCollection()
+  name: OnResetCollection()
+  nameWithType: QueryItemProvider<T>.OnResetCollection()
+  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.OnResetCollection()
   type: Method
   source:
     remote:
       path: common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ResetCollection
+    id: OnResetCollection
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 83
+    startLine: 125
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Âûçûâàåò ñîáûòèå èçìåíåíèÿ êîëëåêöèè ñ ïàðàìåòðàìè <xref href="System.Collections.Specialized.NotifyCollectionChangedAction.Reset" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
-    content: protected void ResetCollection()
-    content.vb: Protected Sub ResetCollection()
-  overload: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ResetCollection*
-  nameWithType.vb: QueryItemProvider(Of T).ResetCollection()
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).ResetCollection()
+    content: protected void OnResetCollection()
+    content.vb: Protected Sub OnResetCollection()
+  overload: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnResetCollection*
+  nameWithType.vb: QueryItemProvider(Of T).OnResetCollection()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).OnResetCollection()
 - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.FetchCount
   commentId: M:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.FetchCount
   id: FetchCount
@@ -442,7 +473,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchCount
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 89
+    startLine: 132
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -477,7 +508,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchRange
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/QueryItemProvider.cs
-    startLine: 94
+    startLine: 138
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -1895,6 +1926,31 @@ references:
   name: PropertyChangedEventHandler
   nameWithType: PropertyChangedEventHandler
   fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1
+  href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html
+  name: QueryItemProvider<T>
+  nameWithType: QueryItemProvider<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>
+  nameWithType.vb: QueryItemProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T)
+  name.vb: QueryItemProvider(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1
+    name: QueryItemProvider
+    href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1
+    name: QueryItemProvider
+    href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.#ctor
   href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1__ctor_System_Linq_IQueryable__0___0_System_Threading_Tasks_TaskScheduler_
@@ -1905,7 +1961,7 @@ references:
   fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).New
   name.vb: New
 - uid: System.Linq.IQueryable{{T}}
-  commentId: T:System.Linq.IQueryable{``0}
+  commentId: T:System.Linq.IQueryable{`0}
   parent: System.Linq
   definition: System.Linq.IQueryable`1
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
@@ -2043,6 +2099,21 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.CollectionChanged
+  commentId: E:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.CollectionChanged
+  href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_CollectionChanged
+  name: CollectionChanged
+  nameWithType: QueryItemProvider<T>.CollectionChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.CollectionChanged
+  nameWithType.vb: QueryItemProvider(Of T).CollectionChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).CollectionChanged
+- uid: System.Collections.Specialized.NotifyCollectionChangedAction.Reset
+  commentId: F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedaction#system-collections-specialized-notifycollectionchangedaction-reset
+  name: Reset
+  nameWithType: NotifyCollectionChangedAction.Reset
+  fullName: System.Collections.Specialized.NotifyCollectionChangedAction.Reset
 - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.Query*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.Query
   href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_Query
@@ -2077,6 +2148,13 @@ references:
   fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>.EmptyItem
   nameWithType.vb: IItemsProvider(Of T).EmptyItem
   fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T).EmptyItem
+- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
+  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
+  name: TaskScheduler
+  nameWithType: IThreadsVulnerable.TaskScheduler
+  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ThreadSafety*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ThreadSafety
   href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_ThreadSafety
@@ -2111,13 +2189,14 @@ references:
   fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.TaskScheduler
   nameWithType.vb: QueryItemProvider(Of T).TaskScheduler
   fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).TaskScheduler
-- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
-  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
-  name: TaskScheduler
-  nameWithType: IThreadsVulnerable.TaskScheduler
-  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.PropertyChanged
+  commentId: E:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.PropertyChanged
+  href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_PropertyChanged
+  name: PropertyChanged
+  nameWithType: QueryItemProvider<T>.PropertyChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.PropertyChanged
+  nameWithType.vb: QueryItemProvider(Of T).PropertyChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).PropertyChanged
 - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnPropertyChanged*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnPropertyChanged
   href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_OnPropertyChanged_System_String_
@@ -2153,14 +2232,14 @@ references:
   name: NotifyCollectionChangedEventArgs
   nameWithType: NotifyCollectionChangedEventArgs
   fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs
-- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ResetCollection*
-  commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.ResetCollection
-  href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_ResetCollection
-  name: ResetCollection
-  nameWithType: QueryItemProvider<T>.ResetCollection
-  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.ResetCollection
-  nameWithType.vb: QueryItemProvider(Of T).ResetCollection
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).ResetCollection
+- uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnResetCollection*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.OnResetCollection
+  href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_OnResetCollection
+  name: OnResetCollection
+  nameWithType: QueryItemProvider<T>.OnResetCollection
+  fullName: ParmaGIS.Core.Utilities.Collections.QueryItemProvider<T>.OnResetCollection
+  nameWithType.vb: QueryItemProvider(Of T).OnResetCollection
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.QueryItemProvider(Of T).OnResetCollection
 - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.FetchCount*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1.FetchCount
   href: ParmaGIS.Core.Utilities.Collections.QueryItemProvider-1.html#ParmaGIS_Core_Utilities_Collections_QueryItemProvider_1_FetchCount

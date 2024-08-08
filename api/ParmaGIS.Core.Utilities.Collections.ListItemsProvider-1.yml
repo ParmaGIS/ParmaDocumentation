@@ -21,19 +21,22 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ListItemsProvider
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 7
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 11
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Представляет провайдер элементов из списка.
+  example: []
   syntax:
     content: 'public class ListItemsProvider<T> : IItemsProvider<T>, IItemsProvider'
     typeParameters:
     - id: T
+      description: Тип элементов.
     content.vb: Public Class ListItemsProvider(Of T) Implements IItemsProvider(Of T), IItemsProvider
   inheritance:
   - System.Object
@@ -66,15 +69,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Empty
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 11
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 18
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает пустой провайдер элементов.
+  example: []
   syntax:
     content: public static ListItemsProvider<T> Empty { get; }
     parameters: []
@@ -97,22 +102,26 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 14
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 26
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ListItemsProvider(IList<T> source, T emptyItem = default)
     parameters:
     - id: source
       type: System.Collections.Generic.IList{{T}}
+      description: Источник данных.
     - id: emptyItem
       type: '{T}'
+      description: Пустой элемент.
     content.vb: Public Sub New(source As IList(Of T), emptyItem As T = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.ListItemsProvider`1.#ctor*
   nameWithType.vb: ListItemsProvider(Of T).New(IList(Of T), T)
@@ -131,22 +140,26 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 20
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.ListItemsProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ListItemsProvider(IEnumerable<T> source, T emptyItem = default)
     parameters:
     - id: source
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: Источник данных.
     - id: emptyItem
       type: '{T}'
+      description: Пустой элемент.
     content.vb: Public Sub New(source As IEnumerable(Of T), emptyItem As T = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.ListItemsProvider`1.#ctor*
   nameWithType.vb: ListItemsProvider(Of T).New(IEnumerable(Of T), T)
@@ -165,15 +178,16 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyItem
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 25
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 43
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.
   example: []
   syntax:
     content: public T EmptyItem { get; }
@@ -199,15 +213,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Source
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 26
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 48
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает исходный список элементов.
+  example: []
   syntax:
     content: protected IList<T> Source { get; }
     parameters: []
@@ -230,12 +246,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchCount
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 31
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 54
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -265,12 +281,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchRange
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider.cs
-    startLine: 36
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ListItemsProvider1.cs
+    startLine: 60
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -674,7 +690,7 @@ references:
   fullName.vb: ParmaGIS.Core.Utilities.Collections.ListItemsProvider(Of T).New
   name.vb: New
 - uid: System.Collections.Generic.IList{{T}}
-  commentId: T:System.Collections.Generic.IList{``0}
+  commentId: T:System.Collections.Generic.IList{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1

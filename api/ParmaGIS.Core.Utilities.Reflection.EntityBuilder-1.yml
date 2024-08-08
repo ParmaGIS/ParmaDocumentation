@@ -22,14 +22,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EntityBuilder
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Представляет строитель объектов с помощью менеджера сервисов <xref href="ParmaGIS.Core.Serviceability.IServiceManager" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public class EntityBuilder<T>
     typeParameters:
     - id: T
+      description: Тип сущности, экземпляр которой необходимо построить.
     content.vb: Public Class EntityBuilder(Of T)
   inheritance:
   - System.Object
@@ -62,15 +65,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs
-    startLine: 9
+    startLine: 18
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Reflection.EntityBuilder%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public EntityBuilder(Func<IServiceManager, T>? factory = null)
     parameters:
     - id: factory
       type: System.Func{ParmaGIS.Core.Serviceability.IServiceManager,{T}}
+      description: >-
+        Фнкция создания экземпляра сущности типа <code class="typeparamref">T</code>.
+            При указании <code>null</code> создание экземпляра сущности будет происходить с помощью <xref href="ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub New(factory As Func(Of IServiceManager, T) = Nothing)
   overload: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.#ctor*
   nameWithType.vb: EntityBuilder(Of T).New(Func(Of IServiceManager, T))
@@ -94,16 +102,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetConcreteBuilder
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs
-    startLine: 14
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Устанавливает строитель сущности наследника по отношению к <code class="typeparamref">T</code>.
+  example: []
   syntax:
     content: 'public EntityBuilder<T> SetConcreteBuilder<TConcrete>() where TConcrete : class, T'
     typeParameters:
     - id: TConcrete
+      description: Тип наследуемый от <code class="typeparamref">T</code>.
     return:
       type: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
+      description: Тот же экземпляр <xref href="ParmaGIS.Core.Utilities.Reflection.EntityBuilder%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function SetConcreteBuilder(Of TConcrete As {Class, T})() As EntityBuilder(Of T)
   overload: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.SetConcreteBuilder*
   nameWithType.vb: EntityBuilder(Of T).SetConcreteBuilder(Of TConcrete)()
@@ -127,22 +139,33 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Build
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs
-    startLine: 21
+    startLine: 40
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Создает сущность типа <code class="typeparamref">T</code>.
+  example: []
   syntax:
     content: public T Build(IServiceManager serviceManager)
     parameters:
     - id: serviceManager
       type: ParmaGIS.Core.Serviceability.IServiceManager
+      description: Менеджер сервисов.
     return:
       type: '{T}'
+      description: Экземпляр сущности типа <code class="typeparamref">T</code>.
     content.vb: Public Function Build(serviceManager As IServiceManager) As T
   overload: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.Build*
   nameWithType.vb: EntityBuilder(Of T).Build(IServiceManager)
   fullName.vb: ParmaGIS.Core.Utilities.Reflection.EntityBuilder(Of T).Build(ParmaGIS.Core.Serviceability.IServiceManager)
 references:
+- uid: ParmaGIS.Core.Serviceability.IServiceManager
+  commentId: T:ParmaGIS.Core.Serviceability.IServiceManager
+  parent: ParmaGIS.Core.Serviceability
+  href: ParmaGIS.Core.Serviceability.IServiceManager.html
+  name: IServiceManager
+  nameWithType: IServiceManager
+  fullName: ParmaGIS.Core.Serviceability.IServiceManager
 - uid: ParmaGIS.Core.Utilities.Reflection
   commentId: N:ParmaGIS.Core.Utilities.Reflection
   href: ParmaGIS.html
@@ -411,6 +434,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: ParmaGIS.Core.Serviceability
+  commentId: N:ParmaGIS.Core.Serviceability
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Serviceability
+  nameWithType: ParmaGIS.Core.Serviceability
+  fullName: ParmaGIS.Core.Serviceability
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Serviceability
+    name: Serviceability
+    href: ParmaGIS.Core.Serviceability.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Serviceability
+    name: Serviceability
+    href: ParmaGIS.Core.Serviceability.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -418,6 +471,59 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
+  commentId: T:ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
+  parent: ParmaGIS.Core.Utilities.Reflection
+  href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html
+  name: EntityBuilder<T>
+  nameWithType: EntityBuilder<T>
+  fullName: ParmaGIS.Core.Utilities.Reflection.EntityBuilder<T>
+  nameWithType.vb: EntityBuilder(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Reflection.EntityBuilder(Of T)
+  name.vb: EntityBuilder(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
+    name: EntityBuilder
+    href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
+    name: EntityBuilder
+    href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  commentId: M:ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  isExternal: true
+  href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  name: Resolve(Type)
+  nameWithType: IServiceManager.Resolve(Type)
+  fullName: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+    name: Resolve
+    href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.Serviceability.IServiceManager.Resolve(System.Type)
+    name: Resolve
+    href: ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.#ctor
   href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html#ParmaGIS_Core_Utilities_Reflection_EntityBuilder_1__ctor_System_Func_ParmaGIS_Core_Serviceability_IServiceManager__0__
@@ -508,32 +614,6 @@ references:
   fullName: ParmaGIS.Core.Utilities.Reflection.EntityBuilder<T>.SetConcreteBuilder
   nameWithType.vb: EntityBuilder(Of T).SetConcreteBuilder
   fullName.vb: ParmaGIS.Core.Utilities.Reflection.EntityBuilder(Of T).SetConcreteBuilder
-- uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
-  commentId: T:ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
-  parent: ParmaGIS.Core.Utilities.Reflection
-  href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html
-  name: EntityBuilder<T>
-  nameWithType: EntityBuilder<T>
-  fullName: ParmaGIS.Core.Utilities.Reflection.EntityBuilder<T>
-  nameWithType.vb: EntityBuilder(Of T)
-  fullName.vb: ParmaGIS.Core.Utilities.Reflection.EntityBuilder(Of T)
-  name.vb: EntityBuilder(Of T)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
-    name: EntityBuilder
-    href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1
-    name: EntityBuilder
-    href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.Build*
   commentId: Overload:ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.Build
   href: ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html#ParmaGIS_Core_Utilities_Reflection_EntityBuilder_1_Build_ParmaGIS_Core_Serviceability_IServiceManager_
@@ -542,49 +622,12 @@ references:
   fullName: ParmaGIS.Core.Utilities.Reflection.EntityBuilder<T>.Build
   nameWithType.vb: EntityBuilder(Of T).Build
   fullName.vb: ParmaGIS.Core.Utilities.Reflection.EntityBuilder(Of T).Build
-- uid: ParmaGIS.Core.Serviceability.IServiceManager
-  commentId: T:ParmaGIS.Core.Serviceability.IServiceManager
-  parent: ParmaGIS.Core.Serviceability
-  href: ParmaGIS.Core.Serviceability.IServiceManager.html
-  name: IServiceManager
-  nameWithType: IServiceManager
-  fullName: ParmaGIS.Core.Serviceability.IServiceManager
 - uid: '{T}'
   commentId: '!:T'
   definition: T
   name: T
   nameWithType: T
   fullName: T
-- uid: ParmaGIS.Core.Serviceability
-  commentId: N:ParmaGIS.Core.Serviceability
-  href: ParmaGIS.html
-  name: ParmaGIS.Core.Serviceability
-  nameWithType: ParmaGIS.Core.Serviceability
-  fullName: ParmaGIS.Core.Serviceability
-  spec.csharp:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Serviceability
-    name: Serviceability
-    href: ParmaGIS.Core.Serviceability.html
-  spec.vb:
-  - uid: ParmaGIS
-    name: ParmaGIS
-    href: ParmaGIS.html
-  - name: .
-  - uid: ParmaGIS.Core
-    name: Core
-    href: ParmaGIS.Core.html
-  - name: .
-  - uid: ParmaGIS.Core.Serviceability
-    name: Serviceability
-    href: ParmaGIS.Core.Serviceability.html
 - uid: T
   name: T
   nameWithType: T

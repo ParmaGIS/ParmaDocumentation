@@ -5,7 +5,7 @@ items:
   id: StringExtensions
   parent: ParmaGIS.Core.Utilities.Extensions
   children:
-  - ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String)
+  - ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String,System.Boolean)
   - ParmaGIS.Core.Utilities.Extensions.StringExtensions.ToStream(System.String)
   langs:
   - csharp
@@ -16,15 +16,17 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StringExtensions
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs
-    startLine: 41
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Extensions
+  summary: Представляет методы расширения для <xref href="System.String" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class StringExtensions
     content.vb: Public Module StringExtensions
@@ -52,65 +54,91 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToStream
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs
-    startLine: 43
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Extensions
+  summary: Превращает строку в поток.
+  example: []
   syntax:
     content: public static Stream ToStream(this string str)
     parameters:
     - id: str
       type: System.String
+      description: Строка.
     return:
       type: System.IO.Stream
+      description: Поток.
     content.vb: Public Shared Function ToStream(str As String) As Stream
   overload: ParmaGIS.Core.Utilities.Extensions.StringExtensions.ToStream*
   nameWithType.vb: StringExtensions.ToStream(String)
   fullName.vb: ParmaGIS.Core.Utilities.Extensions.StringExtensions.ToStream(String)
   name.vb: ToStream(String)
-- uid: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String)
-  commentId: M:ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String)
-  id: DummyEquals(System.String,System.String)
+- uid: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String,System.Boolean)
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String,System.Boolean)
+  id: DummyEquals(System.String,System.String,System.Boolean)
   isExtensionMethod: true
   parent: ParmaGIS.Core.Utilities.Extensions.StringExtensions
   langs:
   - csharp
   - vb
-  name: DummyEquals(string, string?)
-  nameWithType: StringExtensions.DummyEquals(string, string?)
-  fullName: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(string, string?)
+  name: DummyEquals(string, string?, bool)
+  nameWithType: StringExtensions.DummyEquals(string, string?, bool)
+  fullName: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(string, string?, bool)
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DummyEquals
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs
-    startLine: 53
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Extensions
+  summary: >-
+    Глупое примерное сравнение. Примерно сравнивает строки.
+
+    Пытается найти совпадение одной строки в другое.
+  example: []
   syntax:
-    content: public static bool DummyEquals(this string str1, string? str2)
+    content: public static bool DummyEquals(this string str1, string? str2, bool ignoreCase = true)
     parameters:
     - id: str1
       type: System.String
+      description: Первая строка.
     - id: str2
       type: System.String
+      description: Вторая строка.
+    - id: ignoreCase
+      type: System.Boolean
+      description: Игнорировать регистр букв.
     return:
       type: System.Boolean
-    content.vb: Public Shared Function DummyEquals(str1 As String, str2 As String) As Boolean
+      description: Возвращает <code>true</code>, если подстрока <code class="paramref">str1</code> присутствует в строке <code class="paramref">str2</code> или наоборот, иначе <code>false</code>.
+    content.vb: Public Shared Function DummyEquals(str1 As String, str2 As String, ignoreCase As Boolean = True) As Boolean
   overload: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals*
-  nameWithType.vb: StringExtensions.DummyEquals(String, String)
-  fullName.vb: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(String, String)
-  name.vb: DummyEquals(String, String)
+  nameWithType.vb: StringExtensions.DummyEquals(String, String, Boolean)
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(String, String, Boolean)
+  name.vb: DummyEquals(String, String, Boolean)
 references:
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: ParmaGIS.Core.Utilities.Extensions
   commentId: N:ParmaGIS.Core.Utilities.Extensions
   href: ParmaGIS.html
@@ -392,17 +420,6 @@ references:
   name: ToStream
   nameWithType: StringExtensions.ToStream
   fullName: ParmaGIS.Core.Utilities.Extensions.StringExtensions.ToStream
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.IO.Stream
   commentId: T:System.IO.Stream
   parent: System.IO
@@ -440,7 +457,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.io
 - uid: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals*
   commentId: Overload:ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals
-  href: ParmaGIS.Core.Utilities.Extensions.StringExtensions.html#ParmaGIS_Core_Utilities_Extensions_StringExtensions_DummyEquals_System_String_System_String_
+  href: ParmaGIS.Core.Utilities.Extensions.StringExtensions.html#ParmaGIS_Core_Utilities_Extensions_StringExtensions_DummyEquals_System_String_System_String_System_Boolean_
   name: DummyEquals
   nameWithType: StringExtensions.DummyEquals
   fullName: ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals

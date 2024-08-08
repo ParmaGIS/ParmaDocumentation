@@ -18,19 +18,22 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AsyncEnumerableItemsProvider
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 15
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
+    startLine: 13
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Представляет провайдер элементов из <xref href="System.Collections.Generic.IAsyncEnumerable%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public class AsyncEnumerableItemsProvider<T> : IItemsProvider<T>, IItemsProvider'
     typeParameters:
     - id: T
+      description: Тип элементов.
     content.vb: Public Class AsyncEnumerableItemsProvider(Of T) Implements IItemsProvider(Of T), IItemsProvider
   inheritance:
   - System.Object
@@ -48,40 +51,6 @@ items:
   nameWithType.vb: AsyncEnumerableItemsProvider(Of T)
   fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T)
   name.vb: AsyncEnumerableItemsProvider(Of T)
-- uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem
-  commentId: P:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem
-  id: EmptyItem
-  parent: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
-  langs:
-  - csharp
-  - vb
-  name: EmptyItem
-  nameWithType: AsyncEnumerableItemsProvider<T>.EmptyItem
-  fullName: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider<T>.EmptyItem
-  type: Property
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: EmptyItem
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 19
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Threading.Collections
-  example: []
-  syntax:
-    content: public T EmptyItem { get; }
-    parameters: []
-    return:
-      type: '{T}'
-    content.vb: Public ReadOnly Property EmptyItem As T
-  overload: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem*
-  implements:
-  - ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}.EmptyItem
-  nameWithType.vb: AsyncEnumerableItemsProvider(Of T).EmptyItem
-  fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T).EmptyItem
 - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.#ctor(System.Collections.Generic.IAsyncEnumerable{`0},`0)
   commentId: M:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.#ctor(System.Collections.Generic.IAsyncEnumerable{`0},`0)
   id: '#ctor(System.Collections.Generic.IAsyncEnumerable{`0},`0)'
@@ -95,27 +64,66 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 21
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
+    startLine: 22
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public AsyncEnumerableItemsProvider(IAsyncEnumerable<T> source, T emptyItem)
     parameters:
     - id: source
       type: System.Collections.Generic.IAsyncEnumerable{{T}}
+      description: Асинхрронный источник элементов.
     - id: emptyItem
       type: '{T}'
+      description: Пустой элемент.
     content.vb: Public Sub New(source As IAsyncEnumerable(Of T), emptyItem As T)
   overload: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.#ctor*
   nameWithType.vb: AsyncEnumerableItemsProvider(Of T).New(IAsyncEnumerable(Of T), T)
   fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T).New(System.Collections.Generic.IAsyncEnumerable(Of T), T)
   name.vb: New(IAsyncEnumerable(Of T), T)
+- uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem
+  commentId: P:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem
+  id: EmptyItem
+  parent: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
+  langs:
+  - csharp
+  - vb
+  name: EmptyItem
+  nameWithType: AsyncEnumerableItemsProvider<T>.EmptyItem
+  fullName: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider<T>.EmptyItem
+  type: Property
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: EmptyItem
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
+    startLine: 30
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.
+  example: []
+  syntax:
+    content: public T EmptyItem { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public ReadOnly Property EmptyItem As T
+  overload: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem*
+  implements:
+  - ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}.EmptyItem
+  nameWithType.vb: AsyncEnumerableItemsProvider(Of T).EmptyItem
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T).EmptyItem
 - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.FetchCount
   commentId: M:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.FetchCount
   id: FetchCount
@@ -129,12 +137,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchCount
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 29
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
+    startLine: 35
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -164,12 +172,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchRange
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 36
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncEnumerableItemsProvider.cs
+    startLine: 43
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -195,6 +203,34 @@ items:
   fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T).FetchRange(Integer, Integer)
   name.vb: FetchRange(Integer, Integer)
 references:
+- uid: System.Collections.Generic.IAsyncEnumerable`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  name: IAsyncEnumerable<T>
+  nameWithType: IAsyncEnumerable<T>
+  fullName: System.Collections.Generic.IAsyncEnumerable<T>
+  nameWithType.vb: IAsyncEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T)
+  name.vb: IAsyncEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Threading.Collections
   commentId: N:ParmaGIS.Core.Utilities.Threading.Collections
   href: ParmaGIS.html
@@ -575,42 +611,31 @@ references:
   - uid: ParmaGIS.Core.Utilities.Collections
     name: Collections
     href: ParmaGIS.Core.Utilities.Collections.html
-- uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem*
-  commentId: Overload:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem
-  href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html#ParmaGIS_Core_Utilities_Threading_Collections_AsyncEnumerableItemsProvider_1_EmptyItem
-  name: EmptyItem
-  nameWithType: AsyncEnumerableItemsProvider<T>.EmptyItem
-  fullName: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider<T>.EmptyItem
-  nameWithType.vb: AsyncEnumerableItemsProvider(Of T).EmptyItem
-  fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T).EmptyItem
-- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}.EmptyItem
-  commentId: P:ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0}.EmptyItem
-  parent: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}
-  definition: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem
-  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_EmptyItem
-  name: EmptyItem
-  nameWithType: IItemsProvider<T>.EmptyItem
-  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>.EmptyItem
-  nameWithType.vb: IItemsProvider(Of T).EmptyItem
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T).EmptyItem
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem
-  commentId: P:ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem
-  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_EmptyItem
-  name: EmptyItem
-  nameWithType: IItemsProvider<T>.EmptyItem
-  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>.EmptyItem
-  nameWithType.vb: IItemsProvider(Of T).EmptyItem
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T).EmptyItem
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
+- uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
+  commentId: T:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
+  href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html
+  name: AsyncEnumerableItemsProvider<T>
+  nameWithType: AsyncEnumerableItemsProvider<T>
+  fullName: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider<T>
+  nameWithType.vb: AsyncEnumerableItemsProvider(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T)
+  name.vb: AsyncEnumerableItemsProvider(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
+    name: AsyncEnumerableItemsProvider
+    href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1
+    name: AsyncEnumerableItemsProvider
+    href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.#ctor
   href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html#ParmaGIS_Core_Utilities_Threading_Collections_AsyncEnumerableItemsProvider_1__ctor_System_Collections_Generic_IAsyncEnumerable__0___0_
@@ -649,34 +674,12 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections.Generic.IAsyncEnumerable`1
-  commentId: T:System.Collections.Generic.IAsyncEnumerable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
-  name: IAsyncEnumerable<T>
-  nameWithType: IAsyncEnumerable<T>
-  fullName: System.Collections.Generic.IAsyncEnumerable<T>
-  nameWithType.vb: IAsyncEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T)
-  name.vb: IAsyncEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iasyncenumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
@@ -714,6 +717,36 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem*
+  commentId: Overload:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.EmptyItem
+  href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html#ParmaGIS_Core_Utilities_Threading_Collections_AsyncEnumerableItemsProvider_1_EmptyItem
+  name: EmptyItem
+  nameWithType: AsyncEnumerableItemsProvider<T>.EmptyItem
+  fullName: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider<T>.EmptyItem
+  nameWithType.vb: AsyncEnumerableItemsProvider(Of T).EmptyItem
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider(Of T).EmptyItem
+- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}.EmptyItem
+  commentId: P:ParmaGIS.Core.Utilities.Collections.IItemsProvider{`0}.EmptyItem
+  parent: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}
+  definition: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem
+  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_EmptyItem
+  name: EmptyItem
+  nameWithType: IItemsProvider<T>.EmptyItem
+  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>.EmptyItem
+  nameWithType.vb: IItemsProvider(Of T).EmptyItem
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T).EmptyItem
+- uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem
+  commentId: P:ParmaGIS.Core.Utilities.Collections.IItemsProvider`1.EmptyItem
+  href: ParmaGIS.Core.Utilities.Collections.IItemsProvider-1.html#ParmaGIS_Core_Utilities_Collections_IItemsProvider_1_EmptyItem
+  name: EmptyItem
+  nameWithType: IItemsProvider<T>.EmptyItem
+  fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>.EmptyItem
+  nameWithType.vb: IItemsProvider(Of T).EmptyItem
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T).EmptyItem
 - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.FetchCount*
   commentId: Overload:ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider`1.FetchCount
   href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncEnumerableItemsProvider-1.html#ParmaGIS_Core_Utilities_Threading_Collections_AsyncEnumerableItemsProvider_1_FetchCount

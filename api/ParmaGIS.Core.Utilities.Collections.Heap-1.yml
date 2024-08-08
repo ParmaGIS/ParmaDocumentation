@@ -33,7 +33,7 @@ items:
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: a binary heap arranged with the highest or the lowest ranking item at the top of the heap
+  summary: Бинарная куча, организованная так, что элемент с самым высоким или самым низким рангом находится наверху кучи.
   example: []
   syntax:
     content: 'public class Heap<T> where T : IComparable<T>'
@@ -70,15 +70,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 19
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.Heap%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected Heap(Heap<T>.HeapType heapType)
     parameters:
     - id: heapType
       type: ParmaGIS.Core.Utilities.Collections.Heap`1.HeapType
+      description: Тип кучи.
     content.vb: Protected Sub New(heapType As Heap(Of T).HeapType)
   overload: ParmaGIS.Core.Utilities.Collections.Heap`1.#ctor*
   nameWithType.vb: Heap(Of T).New(Heap(Of T).HeapType)
@@ -102,15 +105,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 25
+    startLine: 38
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.Heap%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public Heap(bool maxHeap = true)
     parameters:
     - id: maxHeap
       type: System.Boolean
+      description: Если <code>true</code>, то элементы с большим рангому будут выше в куче, иначе ниже.
     content.vb: Public Sub New(maxHeap As Boolean = True)
   overload: ParmaGIS.Core.Utilities.Collections.Heap`1.#ctor*
   nameWithType.vb: Heap(Of T).New(Boolean)
@@ -134,11 +140,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Clear
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 32
+    startLine: 45
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Clear all items from the heap, and reset status
+  summary: Удаляет все элементы из кучи и сбрасывает статус.
   example: []
   syntax:
     content: public void Clear()
@@ -164,11 +170,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Count
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 43
+    startLine: 56
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: How many items currently in the heap
+  summary: Возвращает текущее количество элементов в куче.
   example: []
   syntax:
     content: public int Count { get; }
@@ -197,17 +203,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Any
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 49
+    startLine: 62
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Are there any items in the heap?
+  summary: Проверяет наличие элементов в куче.
   example: []
   syntax:
     content: public bool Any()
     return:
       type: System.Boolean
-      description: ''
+      description: Возвращает <code>true</code>, если в куче есть элементы, иначе - <code>false</code>.
     content.vb: Public Function Any() As Boolean
   overload: ParmaGIS.Core.Utilities.Collections.Heap`1.Any*
   nameWithType.vb: Heap(Of T).Any()
@@ -230,18 +236,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Enqueue
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 58
+    startLine: 71
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Add a new item to the heap and re-order so the best item is at the top of the heap
+  summary: Добавляет новый элемент в кучу соответственно его рангу.
   example: []
   syntax:
     content: public void Enqueue(T item)
     parameters:
     - id: item
       type: '{T}'
-      description: ''
+      description: Новый элемент.
     content.vb: Public Sub Enqueue(item As T)
   overload: ParmaGIS.Core.Utilities.Collections.Heap`1.Enqueue*
   nameWithType.vb: Heap(Of T).Enqueue(T)
@@ -264,11 +270,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Enqueue
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 93
+    startLine: 106
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Add multiple items to the heap
+  summary: Добавляет несколько элементов в кучу.
   example: []
   syntax:
     content: public void Enqueue(params T[] items)
@@ -299,14 +305,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dequeue
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 109
+    startLine: 121
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Удалите элемент из кучи и переупорядочьте так, чтобы лучший оставшийся элемент оказался наверху кучи.
+  remarks: Обратите внимание, что по правилу два элемента на уровне 1 (индексы массива 1 и 2), если они существуют, имеют ранг выше, чем все их дочерние элементы, и поэтому один из них будет новым лучшим элементом в куче.
+  example: []
   syntax:
     content: public T Dequeue()
     return:
       type: '{T}'
+      description: ''
     content.vb: Public Function Dequeue() As T
   overload: ParmaGIS.Core.Utilities.Collections.Heap`1.Dequeue*
   nameWithType.vb: Heap(Of T).Dequeue()
@@ -329,17 +339,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Peek
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 163
+    startLine: 175
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Returns the item at the top of the heap without removing it
+  summary: Возвращает элемент сверху кучи без его удаления.
   example: []
   syntax:
     content: public T Peek()
     return:
       type: '{T}'
-      description: ''
+      description: Верхний элемент кучи.
     content.vb: Public Function Peek() As T
   overload: ParmaGIS.Core.Utilities.Collections.Heap`1.Peek*
   nameWithType.vb: Heap(Of T).Peek()
@@ -362,7 +372,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToString
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/Heap.cs
-    startLine: 208
+    startLine: 221
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -630,6 +640,31 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Utilities.Collections.Heap`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.Heap`1
+  href: ParmaGIS.Core.Utilities.Collections.Heap-1.html
+  name: Heap<T>
+  nameWithType: Heap<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.Heap<T>
+  nameWithType.vb: Heap(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.Heap(Of T)
+  name.vb: Heap(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.Heap`1
+    name: Heap
+    href: ParmaGIS.Core.Utilities.Collections.Heap-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.Heap`1
+    name: Heap
+    href: ParmaGIS.Core.Utilities.Collections.Heap-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Collections.Heap`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.Heap`1.#ctor
   href: ParmaGIS.Core.Utilities.Collections.Heap-1.html#ParmaGIS_Core_Utilities_Collections_Heap_1__ctor_ParmaGIS_Core_Utilities_Collections_Heap__0__HeapType_

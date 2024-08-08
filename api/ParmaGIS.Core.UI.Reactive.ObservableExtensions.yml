@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObservableExtensions
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Reactive/ObservableExtensions.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Reactive
+  summary: Представляет методы расширения для <xref href="System.IObservable%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ObservableExtensions
     content.vb: Public Module ObservableExtensions
@@ -56,29 +58,65 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObserveElementEvent
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Reactive/ObservableExtensions.cs
-    startLine: 13
+    startLine: 25
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Reactive
+  summary: Обозревает источник событий элементов в коллекции.
+  example: []
   syntax:
     content: 'public static IObservable<TResult> ObserveElementEvent<TCollection, TElement, TResult>(this TCollection source, Func<TElement, IObserver<TResult>, IDisposable> subscribeAction) where TCollection : INotifyCollectionChanged, IEnumerable<TElement> where TElement : class'
     parameters:
     - id: source
       type: '{TCollection}'
+      description: Коллекция - источник элементов.
     - id: subscribeAction
       type: System.Func{{TElement},System.IObserver{{TResult}},System.IDisposable}
+      description: Действия для подписки к событиям элемента.
     typeParameters:
     - id: TCollection
+      description: Тип коллекции.
     - id: TElement
+      description: Тип элементов.
     - id: TResult
+      description: Тип результата обработки события элемента.
     return:
       type: System.IObservable{{TResult}}
+      description: Поток событий элементов коллекции.
     content.vb: Public Shared Function ObserveElementEvent(Of TCollection As {INotifyCollectionChanged, IEnumerable(Of TElement)}, TElement As Class, TResult)(source As TCollection, subscribeAction As Func(Of TElement, IObserver(Of TResult), IDisposable)) As IObservable(Of TResult)
   overload: ParmaGIS.Core.UI.Reactive.ObservableExtensions.ObserveElementEvent*
   nameWithType.vb: ObservableExtensions.ObserveElementEvent(Of TCollection, TElement, TResult)(TCollection, Func(Of TElement, IObserver(Of TResult), IDisposable))
   fullName.vb: ParmaGIS.Core.UI.Reactive.ObservableExtensions.ObserveElementEvent(Of TCollection, TElement, TResult)(TCollection, System.Func(Of TElement, System.IObserver(Of TResult), System.IDisposable))
   name.vb: ObserveElementEvent(Of TCollection, TElement, TResult)(TCollection, Func(Of TElement, IObserver(Of TResult), IDisposable))
 references:
+- uid: System.IObservable`1
+  commentId: T:System.IObservable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: System.IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: System.IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.UI.Reactive
   commentId: N:ParmaGIS.Core.UI.Reactive
   href: ParmaGIS.html
@@ -500,32 +538,4 @@ references:
   - name: ','
   - name: " "
   - name: TResult
-  - name: )
-- uid: System.IObservable`1
-  commentId: T:System.IObservable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
-  name: IObservable<T>
-  nameWithType: IObservable<T>
-  fullName: System.IObservable<T>
-  nameWithType.vb: IObservable(Of T)
-  fullName.vb: System.IObservable(Of T)
-  name.vb: IObservable(Of T)
-  spec.csharp:
-  - uid: System.IObservable`1
-    name: IObservable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.IObservable`1
-    name: IObservable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
   - name: )

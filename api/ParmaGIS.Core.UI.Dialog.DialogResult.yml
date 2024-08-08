@@ -7,6 +7,7 @@ items:
   children:
   - ParmaGIS.Core.UI.Dialog.DialogResult.#ctor(ParmaGIS.Core.UI.Dialog.ButtonResult,ParmaGIS.Core.UI.Dialog.IDialogParameters)
   - ParmaGIS.Core.UI.Dialog.DialogResult.ButtonResult
+  - ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
   - ParmaGIS.Core.UI.Dialog.DialogResult.Parameters
   langs:
   - csharp
@@ -34,9 +35,11 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult
   - ParmaGIS.WPF.Modules.Data.UI.Dialogs.FillDataTableDialogResult
   - ParmaGIS.WPF.Modules.Data.UI.Dialogs.SelectServerDialogResult
   - ParmaGIS.WPF.Modules.Data.UI.Dialogs.ViewModels.EditBridgesDialogResult
+  - ParmaGIS.WPF.Modules.ReportTool.ViewModels.CreateReportProjectDialogResult
   - ParmaGIS.WPF.Utilities.Dialogs.InputValuesDialogResult
   implements:
   - ParmaGIS.Core.UI.Dialog.IDialogResult
@@ -152,6 +155,34 @@ items:
   overload: ParmaGIS.Core.UI.Dialog.DialogResult.Parameters*
   implements:
   - ParmaGIS.Core.UI.Dialog.IDialogResult.Parameters
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+  id: IsNotOk
+  parent: ParmaGIS.Core.UI.Dialog.DialogResult
+  langs:
+  - csharp
+  - vb
+  name: IsNotOk()
+  nameWithType: DialogResult.IsNotOk()
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core.UI/Dialog/DialogResult.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IsNotOk
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/DialogResult.cs
+    startLine: 29
+  assemblies:
+  - ParmaGIS.Core.UI
+  namespace: ParmaGIS.Core.UI.Dialog
+  syntax:
+    content: public bool IsNotOk()
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsNotOk() As Boolean
+  overload: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk*
 references:
 - uid: ParmaGIS.Core.UI.Dialog
   commentId: N:ParmaGIS.Core.UI.Dialog
@@ -491,3 +522,20 @@ references:
   name: Parameters
   nameWithType: IDialogResult.Parameters
   fullName: ParmaGIS.Core.UI.Dialog.IDialogResult.Parameters
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_IsNotOk
+  name: IsNotOk
+  nameWithType: DialogResult.IsNotOk
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

@@ -21,19 +21,22 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SafeEnumerator
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 57
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Представляет безопасный <xref href="System.Collections.Generic.IEnumerator%601" data-throw-if-not-resolved="false"></xref>. При возникновении исключения во время перебора элементов она будет передана в обработчик исключения.
+  example: []
   syntax:
     content: 'public class SafeEnumerator<T> : IEnumerator<T>, IEnumerator, IDisposable'
     typeParameters:
     - id: T
+      description: Тип элементов.
     content.vb: Public Class SafeEnumerator(Of T) Implements IEnumerator(Of T), IEnumerator, IDisposable
   inheritance:
   - System.Object
@@ -65,22 +68,26 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 61
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.SafeEnumerator%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public SafeEnumerator(IEnumerable<T> enumerable, Func<Exception, T> exceptionHandler)
     parameters:
     - id: enumerable
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: Исходное перечисление.
     - id: exceptionHandler
       type: System.Func{System.Exception,{T}}
+      description: Обработчик исключений.
     content.vb: Public Sub New(enumerable As IEnumerable(Of T), exceptionHandler As Func(Of Exception, T))
   overload: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1.#ctor*
   nameWithType.vb: SafeEnumerator(Of T).New(IEnumerable(Of T), Func(Of Exception, T))
@@ -99,22 +106,26 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 64
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.SafeEnumerator%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public SafeEnumerator(IEnumerator<T> enumerator, Func<Exception, T> exceptionHandler)
     parameters:
     - id: enumerator
       type: System.Collections.Generic.IEnumerator{{T}}
+      description: Исходный перечислитель.
     - id: exceptionHandler
       type: System.Func{System.Exception,{T}}
+      description: Обработчик исключений.
     content.vb: Public Sub New(enumerator As IEnumerator(Of T), exceptionHandler As Func(Of Exception, T))
   overload: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1.#ctor*
   nameWithType.vb: SafeEnumerator(Of T).New(IEnumerator(Of T), Func(Of Exception, T))
@@ -133,15 +144,17 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SourceEnumerator
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 70
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает исходный <xref href="System.Collections.Generic.IEnumerator%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public IEnumerator<T> SourceEnumerator { get; }
     parameters: []
@@ -164,12 +177,12 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Current
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 72
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 40
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -200,12 +213,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 76
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 46
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -232,12 +245,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MoveNext
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 81
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 52
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -271,12 +284,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
+      path: common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Reset
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/EnumarableExtensions.cs
-    startLine: 99
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/SafeEnumerator.cs
+    startLine: 71
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -295,6 +308,34 @@ items:
   nameWithType.vb: SafeEnumerator(Of T).Reset()
   fullName.vb: ParmaGIS.Core.Utilities.Collections.SafeEnumerator(Of T).Reset()
 references:
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Collections
   commentId: N:ParmaGIS.Core.Utilities.Collections
   href: ParmaGIS.html
@@ -615,34 +656,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Collections.Generic.IEnumerator`1
-  commentId: T:System.Collections.Generic.IEnumerator`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
-  name: IEnumerator<T>
-  nameWithType: IEnumerator<T>
-  fullName: System.Collections.Generic.IEnumerator<T>
-  nameWithType.vb: IEnumerator(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
-  name.vb: IEnumerator(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerator`1
-    name: IEnumerator
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerator`1
-    name: IEnumerator
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
@@ -707,6 +720,31 @@ references:
     name: Collections
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1
+  commentId: T:ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1
+  href: ParmaGIS.Core.Utilities.Collections.SafeEnumerator-1.html
+  name: SafeEnumerator<T>
+  nameWithType: SafeEnumerator<T>
+  fullName: ParmaGIS.Core.Utilities.Collections.SafeEnumerator<T>
+  nameWithType.vb: SafeEnumerator(Of T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.SafeEnumerator(Of T)
+  name.vb: SafeEnumerator(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1
+    name: SafeEnumerator
+    href: ParmaGIS.Core.Utilities.Collections.SafeEnumerator-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1
+    name: SafeEnumerator
+    href: ParmaGIS.Core.Utilities.Collections.SafeEnumerator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1.#ctor
   href: ParmaGIS.Core.Utilities.Collections.SafeEnumerator-1.html#ParmaGIS_Core_Utilities_Collections_SafeEnumerator_1__ctor_System_Collections_Generic_IEnumerable__0__System_Func_System_Exception__0__
@@ -746,7 +784,7 @@ references:
   - name: T
   - name: )
 - uid: System.Func{System.Exception,{T}}
-  commentId: T:System.Func{System.Exception,``0}
+  commentId: T:System.Func{System.Exception,`0}
   parent: System
   definition: System.Func`2
   href: https://learn.microsoft.com/dotnet/api/system.func-2

@@ -23,10 +23,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISettingsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsProvider.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Представляет контракт взаимодействия с провайдером настроек.
+  example: []
   syntax:
     content: 'public interface ISettingsProvider : INotifyPropertyChanged'
     content.vb: Public Interface ISettingsProvider Inherits INotifyPropertyChanged
@@ -53,17 +55,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetProperty
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsProvider.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: >-
+    Устанавливает значение в параметр.
+
+    Не рекомендуется хранить сложно сериализуемые свойства.
+  example: []
   syntax:
     content: void SetProperty(string name, object value)
     parameters:
     - id: name
       type: System.String
+      description: Название параметра.
     - id: value
       type: System.Object
+      description: Значение параметра.
     content.vb: Sub SetProperty(name As String, value As Object)
   overload: ParmaGIS.Core.UI.Settings.ISettingsProvider.SetProperty*
   nameWithType.vb: ISettingsProvider.SetProperty(String, Object)
@@ -87,17 +96,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetProperty
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsProvider.cs
-    startLine: 7
+    startLine: 21
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Возвращает значение параметра.
+  example: []
   syntax:
     content: object? GetProperty(string name)
     parameters:
     - id: name
       type: System.String
+      description: название параметра.
     return:
       type: System.Object
+      description: Значение параметра
     content.vb: Function GetProperty(name As String) As Object
   overload: ParmaGIS.Core.UI.Settings.ISettingsProvider.GetProperty*
   nameWithType.vb: ISettingsProvider.GetProperty(String)
@@ -121,19 +134,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetProperty
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsProvider.cs
-    startLine: 8
+    startLine: 28
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Возвращает значение параметра приведенное к определенному типу.
+  example: []
   syntax:
     content: T? GetProperty<T>(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название параметра.
     typeParameters:
     - id: T
+      description: Тип параметра.
     return:
       type: '{T}'
+      description: Значение параметра.
     content.vb: Function GetProperty(Of T)(name As String) As T
   overload: ParmaGIS.Core.UI.Settings.ISettingsProvider.GetProperty*
   nameWithType.vb: ISettingsProvider.GetProperty(Of T)(String)
@@ -157,15 +175,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToDefault
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsProvider.cs
-    startLine: 9
+    startLine: 34
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Задает параметру значение по умолчанию.
+  example: []
   syntax:
     content: void ToDefault(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название параметра.
     content.vb: Sub ToDefault(name As String)
   overload: ParmaGIS.Core.UI.Settings.ISettingsProvider.ToDefault*
   nameWithType.vb: ISettingsProvider.ToDefault(String)

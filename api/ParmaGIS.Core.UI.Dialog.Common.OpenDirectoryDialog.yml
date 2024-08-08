@@ -6,7 +6,7 @@ items:
   parent: ParmaGIS.Core.UI.Dialog.Common
   children:
   - ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Close
-  - ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames
+  - ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories
   - ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Multiselect
   - ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.OnShow(ParmaGIS.Core.UI.Dialog.IDialogParameters)
   langs:
@@ -23,10 +23,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OpenDirectoryDialog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/OpenDirectoryDialog.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
+  summary: >-
+    Представляет VM для диалога открытия директорий.
+
+    Должен использоваться в модулях для показа диалога выбора директорий пользователю.
+
+    Платформа должна предоставлять часть V, для показа диалога пользователю.
+  example: []
   syntax:
     content: 'public class OpenDirectoryDialog : DialogAwareBase, INotifyPropertyChanged, IDialogAware'
     content.vb: Public Class OpenDirectoryDialog Inherits DialogAwareBase Implements INotifyPropertyChanged, IDialogAware
@@ -77,10 +84,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Multiselect
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/OpenDirectoryDialog.cs
-    startLine: 9
+    startLine: 19
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
+  summary: Возвращает возможность выбора нискольких директорий.
+  example: []
   syntax:
     content: public bool Multiselect { get; }
     parameters: []
@@ -88,35 +97,37 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property Multiselect As Boolean
   overload: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Multiselect*
-- uid: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames
-  commentId: P:ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames
-  id: FileNames
+- uid: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories
+  commentId: P:ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories
+  id: Directories
   parent: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog
   langs:
   - csharp
   - vb
-  name: FileNames
-  nameWithType: OpenDirectoryDialog.FileNames
-  fullName: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames
+  name: Directories
+  nameWithType: OpenDirectoryDialog.Directories
+  fullName: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories
   type: Property
   source:
     remote:
       path: common/src/ParmaGIS.Core.UI/Dialog/Common/OpenDirectoryDialog.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: FileNames
+    id: Directories
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/OpenDirectoryDialog.cs
-    startLine: 11
+    startLine: 24
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
+  summary: Возвращает или задает названия директорий.
+  example: []
   syntax:
-    content: public IEnumerable<string> FileNames { get; set; }
+    content: public IEnumerable<string> Directories { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IEnumerable{System.String}
-    content.vb: Public Property FileNames As IEnumerable(Of String)
-  overload: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames*
+    content.vb: Public Property Directories As IEnumerable(Of String)
+  overload: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories*
 - uid: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.OnShow(ParmaGIS.Core.UI.Dialog.IDialogParameters)
   commentId: M:ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.OnShow(ParmaGIS.Core.UI.Dialog.IDialogParameters)
   id: OnShow(ParmaGIS.Core.UI.Dialog.IDialogParameters)
@@ -135,7 +146,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnShow
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/OpenDirectoryDialog.cs
-    startLine: 13
+    startLine: 28
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
@@ -171,7 +182,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Close
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/OpenDirectoryDialog.cs
-    startLine: 21
+    startLine: 37
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
@@ -1483,12 +1494,12 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames
-  href: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.html#ParmaGIS_Core_UI_Dialog_Common_OpenDirectoryDialog_FileNames
-  name: FileNames
-  nameWithType: OpenDirectoryDialog.FileNames
-  fullName: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.FileNames
+- uid: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories*
+  commentId: Overload:ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories
+  href: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.html#ParmaGIS_Core_UI_Dialog_Common_OpenDirectoryDialog_Directories
+  name: Directories
+  nameWithType: OpenDirectoryDialog.Directories
+  fullName: ParmaGIS.Core.UI.Dialog.Common.OpenDirectoryDialog.Directories
 - uid: System.Collections.Generic.IEnumerable{System.String}
   commentId: T:System.Collections.Generic.IEnumerable{System.String}
   parent: System.Collections.Generic

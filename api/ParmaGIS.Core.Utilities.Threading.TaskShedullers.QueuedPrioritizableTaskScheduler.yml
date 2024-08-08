@@ -69,21 +69,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: >-
-    Initializes an instance of the LimitedConcurrencyLevelTaskScheduler class with the
-
-    specified degree of parallelism.
+  summary: Инициализирует экземпляр класса LimitedConcurrencyLevelTaskScheduler с указанной степенью параллелизма.
   example: []
   syntax:
     content: public QueuedPrioritizableTaskScheduler(int maxDegreeOfParallelism, bool addWithPrioritet = false)
     parameters:
     - id: maxDegreeOfParallelism
       type: System.Int32
-      description: The maximum degree of parallelism provided by this scheduler.
+      description: Максимальная степень параллелизма, предоставляемая этим планировщиком.
     - id: addWithPrioritet
       type: System.Boolean
     content.vb: Public Sub New(maxDegreeOfParallelism As Integer, addWithPrioritet As Boolean = False)
@@ -109,18 +106,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: QueueTask
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 37
+    startLine: 36
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Queues a task to the scheduler.
+  summary: Помещает задачу в очередь планировщика.
   example: []
   syntax:
     content: protected override sealed void QueueTask(Task task)
     parameters:
     - id: task
       type: System.Threading.Tasks.Task
-      description: The task to be queued.
+      description: Задача, которая будет поставлена ​​в очередь.
     content.vb: Protected NotOverridable Overrides Sub QueueTask(task As Task)
   overridden: System.Threading.Tasks.TaskScheduler.QueueTask(System.Threading.Tasks.Task)
   overload: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.QueueTask*
@@ -142,24 +139,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryExecuteTaskInline
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 104
+    startLine: 103
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Attempts to execute the specified task on the current thread.
+  summary: Пытается выполнить указанную задачу в текущем потоке.
   example: []
   syntax:
     content: protected override sealed bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
     parameters:
     - id: task
       type: System.Threading.Tasks.Task
-      description: The task to be executed.
+      description: Задача, которая будет выполнена.
     - id: taskWasPreviouslyQueued
       type: System.Boolean
       description: ''
     return:
       type: System.Boolean
-      description: Whether the task could be executed on the current thread.
+      description: Может ли задача быть выполнена в текущем потоке.
     content.vb: Protected NotOverridable Overrides Function TryExecuteTaskInline(task As Task, taskWasPreviouslyQueued As Boolean) As Boolean
   overridden: System.Threading.Tasks.TaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)
   overload: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.TryExecuteTaskInline*
@@ -184,21 +181,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TryDequeue
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 119
+    startLine: 118
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Attempts to remove a previously scheduled task from the scheduler.
+  summary: Пытается удалить ранее запланированную задачу из планировщика.
   example: []
   syntax:
     content: protected override sealed bool TryDequeue(Task task)
     parameters:
     - id: task
       type: System.Threading.Tasks.Task
-      description: The task to be removed.
+      description: Задача, которая должна быть удалена.
     return:
       type: System.Boolean
-      description: Whether the task could be found and removed.
+      description: Можно ли найти и удалить задачу.
     content.vb: Protected NotOverridable Overrides Function TryDequeue(task As Task) As Boolean
   overridden: System.Threading.Tasks.TaskScheduler.TryDequeue(System.Threading.Tasks.Task)
   overload: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.TryDequeue*
@@ -220,11 +217,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MaximumConcurrencyLevel
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 125
+    startLine: 124
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Gets the maximum concurrency level supported by this scheduler.
+  summary: Получает максимальный уровень параллелизма, поддерживаемый этим планировщиком.
   example: []
   syntax:
     content: public override sealed int MaximumConcurrencyLevel { get; }
@@ -252,17 +249,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetScheduledTasks
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 129
+    startLine: 128
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Gets an enumerable of the tasks currently scheduled on this scheduler.
+  summary: Возвращает перечисление задач, запланированных в данный момент на этом планировщике.
   example: []
   syntax:
     content: protected override sealed IEnumerable<Task> GetScheduledTasks()
     return:
       type: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
-      description: An enumerable of the tasks currently scheduled.
+      description: Перечисление задач, запланированных в данный момент.
     content.vb: Protected NotOverridable Overrides Function GetScheduledTasks() As IEnumerable(Of Task)
   overridden: System.Threading.Tasks.TaskScheduler.GetScheduledTasks
   overload: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.GetScheduledTasks*
@@ -284,21 +281,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Prioritize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 147
+    startLine: 145
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Reprioritizes a previously queued task to the front of the queue.
+  summary: Перемещает ранее поставленную в очередь задачу в начало очереди.
   example: []
   syntax:
     content: public bool Prioritize(Task task)
     parameters:
     - id: task
       type: System.Threading.Tasks.Task
-      description: The task to be reprioritized.
+      description: Задача, приоритет которой будет изменен.
     return:
       type: System.Boolean
-      description: Whether the task could be found and moved to the front of the queue.
+      description: Можно ли найти задачу и переместить ее в начало очереди.
     content.vb: Public Function Prioritize(task As Task) As Boolean
   overload: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.Prioritize*
 - uid: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.Deprioritize(System.Threading.Tasks.Task)
@@ -319,21 +316,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Deprioritize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/TaskShedullers/QueuedPrioritizableTaskScheduler.cs
-    startLine: 165
+    startLine: 163
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.TaskShedullers
-  summary: Reprioritizes a previously queued task to the back of the queue.
+  summary: Перемещает ранее поставленную в очередь задачу в конец очереди.
   example: []
   syntax:
     content: public bool Deprioritize(Task task)
     parameters:
     - id: task
       type: System.Threading.Tasks.Task
-      description: The task to be reprioritized.
+      description: Задача, приоритет которой будет изменен.
     return:
       type: System.Boolean
-      description: Whether the task could be found and moved to the back of the queue.
+      description: Можно ли найти задачу и переместить ее в конец очереди.
     content.vb: Public Function Deprioritize(task As Task) As Boolean
   overload: ParmaGIS.Core.Utilities.Threading.TaskShedullers.QueuedPrioritizableTaskScheduler.Deprioritize*
 references:

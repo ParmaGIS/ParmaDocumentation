@@ -21,10 +21,15 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ITypeComparer
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/ITypeComparer.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: >-
+    Представляет контракт взаимодействия со сравнивателем типов.
+
+    Предоставляет простой хранить варианты поддерживаемых типов.
+  example: []
   syntax:
     content: public interface ITypeComparer
     content.vb: Public Interface ITypeComparer
@@ -46,10 +51,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ComparableType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/ITypeComparer.cs
-    startLine: 6
+    startLine: 13
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Возвращает тип, с которым будет произведено сравнение.
+  example: []
   syntax:
     content: Type ComparableType { get; }
     parameters: []
@@ -75,17 +82,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Compare
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/ITypeComparer.cs
-    startLine: 7
+    startLine: 20
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Сравнивает объект с типом.
+  example: []
   syntax:
     content: bool Compare(object param)
     parameters:
     - id: param
       type: System.Object
+      description: Объект, тип которого будет сравниваться с <xref href="ParmaGIS.Core.Utilities.Reflection.ITypeComparer.ComparableType" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: Возвращает <code>true</code> если типы совпадают, иначе <code>false</code>.
     content.vb: Function Compare(param As Object) As Boolean
   overload: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.Compare*
   nameWithType.vb: ITypeComparer.Compare(Object)
@@ -151,6 +162,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.ComparableType
+  commentId: P:ParmaGIS.Core.Utilities.Reflection.ITypeComparer.ComparableType
+  parent: ParmaGIS.Core.Utilities.Reflection.ITypeComparer
+  href: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.html#ParmaGIS_Core_Utilities_Reflection_ITypeComparer_ComparableType
+  name: ComparableType
+  nameWithType: ITypeComparer.ComparableType
+  fullName: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.ComparableType
 - uid: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.Compare*
   commentId: Overload:ParmaGIS.Core.Utilities.Reflection.ITypeComparer.Compare
   href: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.html#ParmaGIS_Core_Utilities_Reflection_ITypeComparer_Compare_System_Object_
@@ -179,3 +197,10 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: ParmaGIS.Core.Utilities.Reflection.ITypeComparer
+  commentId: T:ParmaGIS.Core.Utilities.Reflection.ITypeComparer
+  parent: ParmaGIS.Core.Utilities.Reflection
+  href: ParmaGIS.Core.Utilities.Reflection.ITypeComparer.html
+  name: ITypeComparer
+  nameWithType: ITypeComparer
+  fullName: ParmaGIS.Core.Utilities.Reflection.ITypeComparer

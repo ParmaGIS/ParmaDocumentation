@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IHistoryExtensioins
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Reactive/IHistoryExtensioins.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Reactive
+  summary: Представляет методы расширения для <xref href="ReactiveHistory.IHistory" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class IHistoryExtensioins
     content.vb: Public Module IHistoryExtensioins
@@ -56,20 +58,34 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Pause
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Reactive/IHistoryExtensioins.cs
-    startLine: 9
+    startLine: 18
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Reactive
+  summary: >-
+    Ставит историю на паузу <xref href="ReactiveHistory.IHistory.IsPaused" data-throw-if-not-resolved="false"></xref><code>=true</code>, пока выданному контракту не будет вызван <xref href="System.IDisposable.Dispose" data-throw-if-not-resolved="false"></xref>.
+
+    Предназначен для использования в структуре <code>using() {}</code>.
+  example: []
   syntax:
     content: public static IDisposable Pause(this IHistory history)
     parameters:
     - id: history
       type: ReactiveHistory.IHistory
+      description: История.
     return:
       type: System.IDisposable
+      description: Контракт для включения истории вновь.
     content.vb: Public Shared Function Pause(history As IHistory) As IDisposable
   overload: ParmaGIS.Core.UI.Reactive.IHistoryExtensioins.Pause*
 references:
+- uid: ReactiveHistory.IHistory
+  commentId: T:ReactiveHistory.IHistory
+  parent: ReactiveHistory
+  isExternal: true
+  name: IHistory
+  nameWithType: IHistory
+  fullName: ReactiveHistory.IHistory
 - uid: ParmaGIS.Core.UI.Reactive
   commentId: N:ParmaGIS.Core.UI.Reactive
   href: ParmaGIS.html
@@ -338,6 +354,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: ReactiveHistory
+  commentId: N:ReactiveHistory
+  isExternal: true
+  name: ReactiveHistory
+  nameWithType: ReactiveHistory
+  fullName: ReactiveHistory
 - uid: System
   commentId: N:System
   isExternal: true
@@ -345,19 +367,40 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ReactiveHistory.IHistory.IsPaused
+  commentId: P:ReactiveHistory.IHistory.IsPaused
+  isExternal: true
+  name: IsPaused
+  nameWithType: IHistory.IsPaused
+  fullName: ReactiveHistory.IHistory.IsPaused
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
 - uid: ParmaGIS.Core.UI.Reactive.IHistoryExtensioins.Pause*
   commentId: Overload:ParmaGIS.Core.UI.Reactive.IHistoryExtensioins.Pause
   href: ParmaGIS.Core.UI.Reactive.IHistoryExtensioins.html#ParmaGIS_Core_UI_Reactive_IHistoryExtensioins_Pause_ReactiveHistory_IHistory_
   name: Pause
   nameWithType: IHistoryExtensioins.Pause
   fullName: ParmaGIS.Core.UI.Reactive.IHistoryExtensioins.Pause
-- uid: ReactiveHistory.IHistory
-  commentId: T:ReactiveHistory.IHistory
-  parent: ReactiveHistory
-  isExternal: true
-  name: IHistory
-  nameWithType: IHistory
-  fullName: ReactiveHistory.IHistory
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -366,9 +409,3 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: ReactiveHistory
-  commentId: N:ReactiveHistory
-  isExternal: true
-  name: ReactiveHistory
-  nameWithType: ReactiveHistory
-  fullName: ReactiveHistory

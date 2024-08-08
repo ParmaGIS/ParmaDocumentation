@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ServiceCollectionExtension
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ServiceCollectionExtension.cs
-    startLine: 5
+    startLine: 10
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Представляет методы расширения для <xref href="ParmaGIS.Core.Serviceability.IServiceCollection" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static class ServiceCollectionExtension
     content.vb: Public Module ServiceCollectionExtension
@@ -56,20 +58,35 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterSettingsScope
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ServiceCollectionExtension.cs
-    startLine: 7
+    startLine: 18
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Регистрирует область настроек.
+  example: []
   syntax:
     content: public static void RegisterSettingsScope(this IServiceCollection services, ISettingsScope scope)
     parameters:
     - id: services
       type: ParmaGIS.Core.Serviceability.IServiceCollection
+      description: Коллекция сервисов.
     - id: scope
       type: ParmaGIS.Core.UI.Settings.ISettingsScope
+      description: Область настроек.
     content.vb: Public Shared Sub RegisterSettingsScope(services As IServiceCollection, scope As ISettingsScope)
   overload: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: ''
 references:
+- uid: ParmaGIS.Core.Serviceability.IServiceCollection
+  commentId: T:ParmaGIS.Core.Serviceability.IServiceCollection
+  parent: ParmaGIS.Core.Serviceability
+  href: ParmaGIS.Core.Serviceability.IServiceCollection.html
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: ParmaGIS.Core.Serviceability.IServiceCollection
 - uid: ParmaGIS.Core.UI.Settings
   commentId: N:ParmaGIS.Core.UI.Settings
   href: ParmaGIS.html
@@ -338,33 +355,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope*
-  commentId: Overload:ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope
-  href: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.html#ParmaGIS_Core_UI_Settings_ServiceCollectionExtension_RegisterSettingsScope_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_UI_Settings_ISettingsScope_
-  name: RegisterSettingsScope
-  nameWithType: ServiceCollectionExtension.RegisterSettingsScope
-  fullName: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope
-- uid: ParmaGIS.Core.Serviceability.IServiceCollection
-  commentId: T:ParmaGIS.Core.Serviceability.IServiceCollection
-  parent: ParmaGIS.Core.Serviceability
-  href: ParmaGIS.Core.Serviceability.IServiceCollection.html
-  name: IServiceCollection
-  nameWithType: IServiceCollection
-  fullName: ParmaGIS.Core.Serviceability.IServiceCollection
-- uid: ParmaGIS.Core.UI.Settings.ISettingsScope
-  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsScope
-  parent: ParmaGIS.Core.UI.Settings
-  href: ParmaGIS.Core.UI.Settings.ISettingsScope.html
-  name: ISettingsScope
-  nameWithType: ISettingsScope
-  fullName: ParmaGIS.Core.UI.Settings.ISettingsScope
 - uid: ParmaGIS.Core.Serviceability
   commentId: N:ParmaGIS.Core.Serviceability
   href: ParmaGIS.html
@@ -395,3 +385,30 @@ references:
   - uid: ParmaGIS.Core.Serviceability
     name: Serviceability
     href: ParmaGIS.Core.Serviceability.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope*
+  commentId: Overload:ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope
+  href: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.html#ParmaGIS_Core_UI_Settings_ServiceCollectionExtension_RegisterSettingsScope_ParmaGIS_Core_Serviceability_IServiceCollection_ParmaGIS_Core_UI_Settings_ISettingsScope_
+  name: RegisterSettingsScope
+  nameWithType: ServiceCollectionExtension.RegisterSettingsScope
+  fullName: ParmaGIS.Core.UI.Settings.ServiceCollectionExtension.RegisterSettingsScope
+- uid: ParmaGIS.Core.UI.Settings.ISettingsScope
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsScope
+  parent: ParmaGIS.Core.UI.Settings
+  href: ParmaGIS.Core.UI.Settings.ISettingsScope.html
+  name: ISettingsScope
+  nameWithType: ISettingsScope
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsScope

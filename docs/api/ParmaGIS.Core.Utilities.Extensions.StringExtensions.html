@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class StringExtensions | site ">
       
-      
+      <meta name="description" content="Представляет методы расширения для .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Extensions_StringExtensions" data-uid="ParmaGIS.Core.Utilities.Extensions.StringExtensions" class="text-break">
-Class StringExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs/#L42"><i class="bi bi-code-slash"></i></a>
+Class StringExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class StringExtensions  <a class="header-action link-secondary" title="View sour
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет методы расширения для <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -154,30 +155,38 @@ Class StringExtensions  <a class="header-action link-secondary" title="View sour
 
   <a id="ParmaGIS_Core_Utilities_Extensions_StringExtensions_DummyEquals_" data-uid="ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals*"></a>
 
-  <h3 id="ParmaGIS_Core_Utilities_Extensions_StringExtensions_DummyEquals_System_String_System_String_" data-uid="ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String)">
-  DummyEquals(string, string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_Core_Utilities_Extensions_StringExtensions_DummyEquals_System_String_System_String_System_Boolean_" data-uid="ParmaGIS.Core.Utilities.Extensions.StringExtensions.DummyEquals(System.String,System.String,System.Boolean)">
+  DummyEquals(string, string?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Глупое примерное сравнение. Примерно сравнивает строки.
+Пытается найти совпадение одной строки в другое.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool DummyEquals(this string str1, string? str2)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool DummyEquals(this string str1, string? str2, bool ignoreCase = true)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>str1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Первая строка.</p>
+</dd>
     <dt><code>str2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Вторая строка.</p>
+</dd>
+    <dt><code>ignoreCase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Игнорировать регистр букв.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Возвращает <code>true</code>, если подстрока <code class="paramref">str1</code> присутствует в строке <code class="paramref">str2</code> или наоборот, иначе <code>false</code>.</p>
+</dd>
   </dl>
 
 
@@ -194,10 +203,11 @@ Class StringExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="ParmaGIS_Core_Utilities_Extensions_StringExtensions_ToStream_System_String_" data-uid="ParmaGIS.Core.Utilities.Extensions.StringExtensions.ToStream(System.String)">
   ToStream(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Превращает строку в поток.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -207,13 +217,15 @@ Class StringExtensions  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>str</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Строка.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
-    <dd></dd>
+    <dd><p>Поток.</p>
+</dd>
   </dl>
 
 
@@ -230,7 +242,7 @@ Class StringExtensions  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/DateTimeExtensions.cs/#L42" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Extensions/StringExtensions.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

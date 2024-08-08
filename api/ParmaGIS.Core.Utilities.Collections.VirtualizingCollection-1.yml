@@ -52,30 +52,25 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: VirtualizingCollection
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 25
+    startLine: 23
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
   summary: >-
-    Specialized list implementation that provides data virtualization. The collection is divided up into pages,
+    Специализированная реализация списка, которая обеспечивает виртуализацию данных.
 
-    and pages are dynamically fetched from the IItemsProvider when required. Stale pages are removed after a
+    Коллекция делится на страницы, и страницы динамически извлекаются из IIItemsProvider при необходимости.
 
-    configurable period of time.
+    Устаревшие страницы удаляются по истечении настраиваемого периода времени.
 
-    Intended for use with large collections on a network or disk resource that cannot be instantiated locally
-
-    due to memory consumption or fetch latency.
-  remarks: >-
-    The IList implmentation is not fully complete, but should be sufficient for use as read only collection 
-
-    data bound to a suitable ItemsControl.
+    Предназначено для использования с большими коллекциями в сети или на диске, которые не могут быть созданы локально из-за потребления памяти или задержки выборки.
+  remarks: Реализация списка не полностью завершена, но ее должно быть достаточно для использования в качестве коллекции данных, привязанной только для чтения, к подходящему элементу управления ItemsControl.
   example: []
   syntax:
     content: 'public class VirtualizingCollection<T> : IList<T>, ICollection<T>, IEnumerable<T>, IList, ICollection, IEnumerable, INotifyPropertyChanged, INotifyCollectionChanged'
     typeParameters:
     - id: T
-      description: ''
+      description: Тип элементов.
     content.vb: Public Class VirtualizingCollection(Of T) Implements IList(Of T), ICollection(Of T), IEnumerable(Of T), IList, ICollection, IEnumerable, INotifyPropertyChanged, INotifyCollectionChanged
   inheritance:
   - System.Object
@@ -102,12 +97,11 @@ items:
   - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.Core.UI.Reactive.ObservableExtensions.ObserveElementEvent``3(System.Func{{TElement},System.IObserver{{TResult}},System.IDisposable})
   - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{{T}},{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{{TProperty},System.Boolean},System.String)
   - ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Collections.VirtualizingCollection{{T}},{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
-  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
-  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T}})
-  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Func{{T},System.Threading.Tasks.Task{{TOut}}},System.Threading.CancellationToken)
-  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Func{{T},System.Threading.Tasks.Task{{T}[]}},System.Threading.CancellationToken)
-  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,{T}})
-  - System.Collections.Generic.IList{`0}.ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2({T},System.Func{{T},{TKey}})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Func{{T},System.Collections.Generic.IEnumerable{{T}}})
+  - System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,{T}})
+  - System.Collections.Generic.IList{`0}.ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2({T},System.Func{{T},{TKey}})
   nameWithType.vb: VirtualizingCollection(Of T)
   fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T)
   name.vb: VirtualizingCollection(Of T)
@@ -129,7 +123,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 34
+    startLine: 32
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -162,7 +156,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 35
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -195,24 +189,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 44
+    startLine: 42
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Initializes a new instance of the <xref href="ParmaGIS.Core.Utilities.Collections.VirtualizingCollection%601" data-throw-if-not-resolved="false"></xref> class.
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.VirtualizingCollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public VirtualizingCollection(IItemsProvider<T> itemsProvider, int pageSize = 100, int pageTimeout = 10000)
     parameters:
     - id: itemsProvider
       type: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{T}}
-      description: The items provider.
+      description: Провайдер элементов.
     - id: pageSize
       type: System.Int32
-      description: Size of the page.
+      description: Размер страниц загрузки.
     - id: pageTimeout
       type: System.Int32
-      description: The page timeout.
+      description: Время хранения страниц.
     content.vb: Public Sub New(itemsProvider As IItemsProvider(Of T), pageSize As Integer = 100, pageTimeout As Integer = 10000)
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.#ctor*
   nameWithType.vb: VirtualizingCollection(Of T).New(IItemsProvider(Of T), Integer, Integer)
@@ -236,10 +230,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Finalize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Уничтожает <xref href="ParmaGIS.Core.Utilities.Collections.VirtualizingCollection%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected ~VirtualizingCollection()
     content.vb: 'Protected '
@@ -265,7 +261,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ItemsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 72
+    startLine: 67
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -298,11 +294,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PageSize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 75
+    startLine: 70
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Возвращает или задает колчитво элементов на странице.
+  summary: Возвращает количество элементов на странице.
   example: []
   syntax:
     content: public int PageSize { get; }
@@ -331,18 +327,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PageTimeout
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 81
+    startLine: 75
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Gets the page timeout.
+  summary: Возвращает время хранения страниц.
   example: []
   syntax:
     content: public long PageTimeout { get; }
     parameters: []
     return:
       type: System.Int64
-      description: The page timeout.
     content.vb: Public ReadOnly Property PageTimeout As Long
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PageTimeout*
   nameWithType.vb: VirtualizingCollection(Of T).PageTimeout
@@ -365,15 +360,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnPropertyChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 83
+    startLine: 87
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Вызывает событие изменения свойства <xref href="ParmaGIS.Core.Utilities.Collections.VirtualizingCollection%601.PropertyChanged" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: protected void OnPropertyChanged(string? propertyName = null)
     parameters:
     - id: propertyName
       type: System.String
+      description: Название свойства. При задании <code>null</code> будет расчитано исходя из названия вызывающего члена.
     content.vb: Protected Sub OnPropertyChanged(propertyName As String = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged*
   nameWithType.vb: VirtualizingCollection(Of T).OnPropertyChanged(String)
@@ -397,18 +395,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 92
+    startLine: 97
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Raises the <xref href="CollectionChanged" data-throw-if-not-resolved="false"></xref> event.
+  summary: Вызывает событие изменения коллекции.
   example: []
   syntax:
     content: protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     parameters:
     - id: e
       type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
-      description: The <xref href="System.Collections.Specialized.NotifyCollectionChangedEventArgs" data-throw-if-not-resolved="false"></xref> instance containing the event data.
+      description: Параметры события.
     content.vb: Protected Overridable Sub OnCollectionChanged(e As NotifyCollectionChangedEventArgs)
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged*
   nameWithType.vb: VirtualizingCollection(Of T).OnCollectionChanged(NotifyCollectionChangedEventArgs)
@@ -431,11 +429,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnCollectionReset
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 99
+    startLine: 104
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Fires the collection reset event.
+  summary: Вызывает событие сброса коллекции.
   example: []
   syntax:
     content: protected void OnCollectionReset()
@@ -461,21 +459,20 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Count
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 118
+    startLine: 116
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
   summary: >-
-    Gets the number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
+    Возвращает количество элементов, содержащихся в <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
 
-    The first time this property is accessed, it will fetch the count from the IItemsProvider.
+    При первом обращении к этому свойству оно извлечет количество из IItemsProvider.
   example: []
   syntax:
     content: public virtual int Count { get; protected set; }
     parameters: []
     return:
       type: System.Int32
-      description: ''
     content.vb: Public Overridable Property Count As Integer
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Count*
   implements:
@@ -501,14 +498,14 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: this[]
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 144
+    startLine: 137
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
   summary: >-
-    Gets the item at the specified index. This property will fetch
+    Получает элемент по указанному индексу.
 
-    the corresponding page from the IItemsProvider if required.
+    Это свойство извлечет соответствующую страницу из IItemsProvider, если требуется.
   example: []
   syntax:
     content: public T this[int index] { get; set; }
@@ -517,7 +514,6 @@ items:
       type: System.Int32
     return:
       type: '{T}'
-      description: ''
     content.vb: Public Default Property this[](index As Integer) As T
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Item*
   implements:
@@ -525,395 +521,6 @@ items:
   nameWithType.vb: VirtualizingCollection(Of T).this[](Integer)
   fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).this[](Integer)
   name.vb: this[](Integer)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
-  id: GetEnumerator
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: GetEnumerator()
-  nameWithType: VirtualizingCollection<T>.GetEnumerator()
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.GetEnumerator()
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: GetEnumerator
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 195
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Returns an enumerator that iterates through the collection.
-  remarks: This method should be avoided on large collections due to poor performance.
-  example: []
-  syntax:
-    content: public IEnumerator<T> GetEnumerator()
-    return:
-      type: System.Collections.Generic.IEnumerator{{T}}
-      description: A <xref href="System.Collections.Generic.IEnumerator%601" data-throw-if-not-resolved="false"></xref> that can be used to iterate through the collection.
-    content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator*
-  implements:
-  - System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
-  nameWithType.vb: VirtualizingCollection(Of T).GetEnumerator()
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).GetEnumerator()
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
-  id: Add(`0)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: Add(T)
-  nameWithType: VirtualizingCollection<T>.Add(T)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Add(T)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Add
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 225
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public void Add(T item)
-    parameters:
-    - id: item
-      type: '{T}'
-      description: The object to add to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
-    content.vb: Public Sub Add(item As T)
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add*
-  exceptions:
-  - type: System.NotSupportedException
-    commentId: T:System.NotSupportedException
-    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
-  implements:
-  - System.Collections.Generic.ICollection{{T}}.Add({T})
-  nameWithType.vb: VirtualizingCollection(Of T).Add(T)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Add(T)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
-  id: Contains(`0)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: Contains(T)
-  nameWithType: VirtualizingCollection<T>.Contains(T)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Contains(T)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Contains
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 251
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public bool Contains(T item)
-    parameters:
-    - id: item
-      type: '{T}'
-      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
-    return:
-      type: System.Boolean
-      description: Always false.
-    content.vb: Public Function Contains(item As T) As Boolean
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains*
-  implements:
-  - System.Collections.Generic.ICollection{{T}}.Contains({T})
-  nameWithType.vb: VirtualizingCollection(Of T).Contains(T)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Contains(T)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
-  id: Clear
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: Clear()
-  nameWithType: VirtualizingCollection<T>.Clear()
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Clear()
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Clear
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 266
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public void Clear()
-    content.vb: Public Sub Clear()
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear*
-  exceptions:
-  - type: System.NotSupportedException
-    commentId: T:System.NotSupportedException
-    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
-  implements:
-  - System.Collections.Generic.ICollection{{T}}.Clear
-  - System.Collections.IList.Clear
-  nameWithType.vb: VirtualizingCollection(Of T).Clear()
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Clear()
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
-  id: IndexOf(`0)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: IndexOf(T)
-  nameWithType: VirtualizingCollection<T>.IndexOf(T)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IndexOf(T)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: IndexOf
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 287
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported
-  example: []
-  syntax:
-    content: public int IndexOf(T item)
-    parameters:
-    - id: item
-      type: '{T}'
-      description: The object to locate in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
-    return:
-      type: System.Int32
-      description: Always -1.
-    content.vb: Public Function IndexOf(item As T) As Integer
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf*
-  implements:
-  - System.Collections.Generic.IList{{T}}.IndexOf({T})
-  nameWithType.vb: VirtualizingCollection(Of T).IndexOf(T)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IndexOf(T)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
-  id: Insert(System.Int32,`0)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: Insert(int, T)
-  nameWithType: VirtualizingCollection<T>.Insert(int, T)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Insert(int, T)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Insert
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 307
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public void Insert(int index, T item)
-    parameters:
-    - id: index
-      type: System.Int32
-      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
-    - id: item
-      type: '{T}'
-      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
-    content.vb: Public Sub Insert(index As Integer, item As T)
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert*
-  exceptions:
-  - type: System.ArgumentOutOfRangeException
-    commentId: T:System.ArgumentOutOfRangeException
-    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
-  - type: System.NotSupportedException
-    commentId: T:System.NotSupportedException
-    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
-  implements:
-  - System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
-  nameWithType.vb: VirtualizingCollection(Of T).Insert(Integer, T)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Insert(Integer, T)
-  name.vb: Insert(Integer, T)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
-  id: RemoveAt(System.Int32)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: RemoveAt(int)
-  nameWithType: VirtualizingCollection<T>.RemoveAt(int)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.RemoveAt(int)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: RemoveAt
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 331
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public void RemoveAt(int index)
-    parameters:
-    - id: index
-      type: System.Int32
-      description: The zero-based index of the item to remove.
-    content.vb: Public Sub RemoveAt(index As Integer)
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt*
-  exceptions:
-  - type: System.ArgumentOutOfRangeException
-    commentId: T:System.ArgumentOutOfRangeException
-    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
-  - type: System.NotSupportedException
-    commentId: T:System.NotSupportedException
-    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
-  implements:
-  - System.Collections.Generic.IList{{T}}.RemoveAt(System.Int32)
-  - System.Collections.IList.RemoveAt(System.Int32)
-  nameWithType.vb: VirtualizingCollection(Of T).RemoveAt(Integer)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).RemoveAt(Integer)
-  name.vb: RemoveAt(Integer)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
-  id: Remove(`0)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: Remove(T)
-  nameWithType: VirtualizingCollection<T>.Remove(T)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Remove(T)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Remove
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 351
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public bool Remove(T item)
-    parameters:
-    - id: item
-      type: '{T}'
-      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
-    return:
-      type: System.Boolean
-      description: true if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, false. This method also returns false if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
-    content.vb: Public Function Remove(item As T) As Boolean
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove*
-  exceptions:
-  - type: System.NotSupportedException
-    commentId: T:System.NotSupportedException
-    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
-  implements:
-  - System.Collections.Generic.ICollection{{T}}.Remove({T})
-  nameWithType.vb: VirtualizingCollection(Of T).Remove(T)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Remove(T)
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
-  id: CopyTo(`0[],System.Int32)
-  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
-  langs:
-  - csharp
-  - vb
-  name: CopyTo(T[], int)
-  nameWithType: VirtualizingCollection<T>.CopyTo(T[], int)
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CopyTo(T[], int)
-  type: Method
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: CopyTo
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 380
-  assemblies:
-  - ParmaGIS.Core
-  namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Not supported.
-  example: []
-  syntax:
-    content: public void CopyTo(T[] array, int arrayIndex)
-    parameters:
-    - id: array
-      type: '{T}[]'
-      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
-    - id: arrayIndex
-      type: System.Int32
-      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
-    content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
-  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: <code class="paramref">array</code> is null.
-  - type: System.ArgumentOutOfRangeException
-    commentId: T:System.ArgumentOutOfRangeException
-    description: <code class="paramref">arrayIndex</code> is less than 0.
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: >-
-      <code class="paramref">array</code> is multidimensional.
-
-      -or-
-
-      <code class="paramref">arrayIndex</code> is equal to or greater than the length of <code class="paramref">array</code>.
-
-      -or-
-
-      The number of elements in the source <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.
-
-      -or-
-
-      Type <code class="paramref">T</code> cannot be cast automatically to the type of the destination <code class="paramref">array</code>.
-  implements:
-  - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
-  nameWithType.vb: VirtualizingCollection(Of T).CopyTo(T(), Integer)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CopyTo(T(), Integer)
-  name.vb: CopyTo(T(), Integer)
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
   commentId: P:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
   id: SyncRoot
@@ -932,11 +539,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SyncRoot
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 401
+    startLine: 183
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Gets an object that can be used to synchronize access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
+  summary: Получает объект, который можно использовать для синхронизации доступа к <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public object SyncRoot { get; }
@@ -968,11 +575,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsSynchronized
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 412
+    startLine: 194
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Gets a value indicating whether access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref> is synchronized (thread safe).
+  summary: Получает значение, указывающее, синхронизирован ли доступ к <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref> (потокобезопасный).
   example: []
   syntax:
     content: public bool IsSynchronized { get; }
@@ -1004,11 +611,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsReadOnly
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 423
+    startLine: 205
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Gets a value indicating whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
+  summary: Получает значение, указывающее, доступен ли <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> только для чтения.
   example: []
   syntax:
     content: public bool IsReadOnly { get; }
@@ -1041,11 +648,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsFixedSize
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 434
+    startLine: 216
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Gets a value indicating whether the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
+  summary: Получает значение, указывающее, имеет ли <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> фиксированный размер.
   example: []
   syntax:
     content: public bool IsFixedSize { get; }
@@ -1059,6 +666,339 @@ items:
   - System.Collections.IList.IsFixedSize
   nameWithType.vb: VirtualizingCollection(Of T).IsFixedSize
   fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsFixedSize
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator
+  id: GetEnumerator
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: VirtualizingCollection<T>.GetEnumerator()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetEnumerator
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 231
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает перечислитель, который выполняет итерацию по коллекции.
+  remarks: Этот метод следует избегать для больших коллекций из-за низкой производительности.
+  example: []
+  syntax:
+    content: public IEnumerator<T> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{T}}
+      description: <xref href="System.Collections.Generic.IEnumerator%601" data-throw-if-not-resolved="false"></xref>, который можно использовать для итерации по коллекции.
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
+  nameWithType.vb: VirtualizingCollection(Of T).GetEnumerator()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).GetEnumerator()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add(`0)
+  id: Add(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: VirtualizingCollection<T>.Add(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Add
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 247
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public void Add(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    content.vb: Public Sub Add(item As T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Add({T})
+  nameWithType.vb: VirtualizingCollection(Of T).Add(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Add(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains(`0)
+  id: Contains(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Contains(T)
+  nameWithType: VirtualizingCollection<T>.Contains(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Contains(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Contains
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 261
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public bool Contains(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+      description: Всегда <code>false</code>.
+    content.vb: Public Function Contains(item As T) As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Contains*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Contains({T})
+  nameWithType.vb: VirtualizingCollection(Of T).Contains(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Contains(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear
+  id: Clear
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: VirtualizingCollection<T>.Clear()
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Clear()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Clear
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 274
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Clear*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Clear
+  - System.Collections.IList.Clear
+  nameWithType.vb: VirtualizingCollection(Of T).Clear()
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Clear()
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf(`0)
+  id: IndexOf(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: IndexOf(T)
+  nameWithType: VirtualizingCollection<T>.IndexOf(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IndexOf(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: IndexOf
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 283
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public int IndexOf(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Int32
+      description: Всегда -1.
+    content.vb: Public Function IndexOf(item As T) As Integer
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IndexOf*
+  implements:
+  - System.Collections.Generic.IList{{T}}.IndexOf({T})
+  nameWithType.vb: VirtualizingCollection(Of T).IndexOf(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IndexOf(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert(System.Int32,`0)
+  id: Insert(System.Int32,`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Insert(int, T)
+  nameWithType: VirtualizingCollection<T>.Insert(int, T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Insert(int, T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Insert
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 296
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public void Insert(int index, T item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: '{T}'
+    content.vb: Public Sub Insert(index As Integer, item As T)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert*
+  implements:
+  - System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
+  nameWithType.vb: VirtualizingCollection(Of T).Insert(Integer, T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt(System.Int32)
+  id: RemoveAt(System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAt(int)
+  nameWithType: VirtualizingCollection<T>.RemoveAt(int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RemoveAt
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 309
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public void RemoveAt(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    content.vb: Public Sub RemoveAt(index As Integer)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RemoveAt*
+  implements:
+  - System.Collections.Generic.IList{{T}}.RemoveAt(System.Int32)
+  - System.Collections.IList.RemoveAt(System.Int32)
+  nameWithType.vb: VirtualizingCollection(Of T).RemoveAt(Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove(`0)
+  id: Remove(`0)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: VirtualizingCollection<T>.Remove(T)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Remove
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 322
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Не поддерживается.
+  example: []
+  syntax:
+    content: public bool Remove(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(item As T) As Boolean
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Remove*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.Remove({T})
+  nameWithType.vb: VirtualizingCollection(Of T).Remove(T)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).Remove(T)
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo(`0[],System.Int32)
+  id: CopyTo(`0[],System.Int32)
+  parent: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(T[], int)
+  nameWithType: VirtualizingCollection<T>.CopyTo(T[], int)
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.CopyTo(T[], int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CopyTo
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
+    startLine: 335
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Копирует элементы последовательности начиная с индекса <code class="paramref">arrayIndex</code>.
+  remarks: Этот метод следует избегать для больших коллекций из-за низкой производительности.
+  example: []
+  syntax:
+    content: public void CopyTo(T[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: '{T}[]'
+      description: целевой массив.
+    - id: arrayIndex
+      type: System.Int32
+      description: Индекс, с которого необходимо начать копировать.
+    content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
+  overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo*
+  implements:
+  - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
+  nameWithType.vb: VirtualizingCollection(Of T).CopyTo(T(), Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionRefresh
   commentId: M:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionRefresh
   id: CollectionRefresh
@@ -1077,10 +1017,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionRefresh
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 443
+    startLine: 348
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Обновляет коллекция полностью.
+  example: []
   syntax:
     content: public void CollectionRefresh()
     content.vb: Public Sub CollectionRefresh()
@@ -1105,11 +1047,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CleanUpPages
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 459
+    startLine: 362
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Cleans up any stale pages that have not been accessed in the period dictated by PageTimeout.
+  summary: Очищает все устаревшие страницы, к которым не было доступа в течение периода, заданного PageTimeout.
   example: []
   syntax:
     content: public void CleanUpPages()
@@ -1135,21 +1077,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PopulatePage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 479
+    startLine: 382
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Populates the page within the dictionary.
+  summary: Заполняет страницу в словаре.
   example: []
   syntax:
     content: protected virtual void PopulatePage(int pageIndex, IList<T> page)
     parameters:
     - id: pageIndex
       type: System.Int32
-      description: Index of the page.
+      description: Индекс страницы.
     - id: page
       type: System.Collections.Generic.IList{{T}}
-      description: The page.
+      description: Страница.
     content.vb: Protected Overridable Sub PopulatePage(pageIndex As Integer, page As IList(Of T))
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PopulatePage*
   nameWithType.vb: VirtualizingCollection(Of T).PopulatePage(Integer, IList(Of T))
@@ -1173,21 +1115,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RequestPage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 491
+    startLine: 394
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
   summary: >-
-    Makes a request for the specified page, creating the necessary slots in the dictionary,
+    Делает запрос на указанную страницу, создавая необходимые слоты в словаре,
 
-    and updating the page touch time.
+    и обновляя время касания страницы.
   example: []
   syntax:
     content: protected virtual void RequestPage(int pageIndex)
     parameters:
     - id: pageIndex
       type: System.Int32
-      description: Index of the page.
+      description: Индекс страницы.
     content.vb: Protected Overridable Sub RequestPage(pageIndex As Integer)
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.RequestPage*
   nameWithType.vb: VirtualizingCollection(Of T).RequestPage(Integer)
@@ -1211,11 +1153,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadCount
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 513
+    startLine: 412
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Loads the count of items.
+  summary: Загружает количество элементов.
   example: []
   syntax:
     content: protected virtual void LoadCount()
@@ -1241,18 +1183,18 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LoadPage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 522
+    startLine: 421
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Loads the page of items.
+  summary: Загружает страницу элементов.
   example: []
   syntax:
     content: protected virtual void LoadPage(int pageIndex)
     parameters:
     - id: pageIndex
       type: System.Int32
-      description: Index of the page.
+      description: Индекс страницы.
     content.vb: Protected Overridable Sub LoadPage(pageIndex As Integer)
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.LoadPage*
   nameWithType.vb: VirtualizingCollection(Of T).LoadPage(Integer)
@@ -1276,21 +1218,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchPage
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 536
+    startLine: 431
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Fetches the requested page from the IItemsProvider.
+  summary: Извлекает запрошенную страницу из IItemsProvider.
   example: []
   syntax:
     content: protected IList<T> FetchPage(int pageIndex)
     parameters:
     - id: pageIndex
       type: System.Int32
-      description: Index of the page.
+      description: Индекс страницы.
     return:
       type: System.Collections.Generic.IList{{T}}
-      description: ''
+      description: Элементы запрошенной страницы.
     content.vb: Protected Function FetchPage(pageIndex As Integer) As IList(Of T)
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchPage*
   nameWithType.vb: VirtualizingCollection(Of T).FetchPage(Integer)
@@ -1314,17 +1256,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchCount
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/VirtualizingCollection.cs
-    startLine: 545
+    startLine: 440
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Fetches the count of itmes from the IItemsProvider.
+  summary: Извлекает количество элементов из ItemsProvider.
   example: []
   syntax:
     content: protected int FetchCount()
     return:
       type: System.Int32
-      description: ''
+      description: Общее количество элементов.
     content.vb: Protected Function FetchCount() As Integer
   overload: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.FetchCount*
   nameWithType.vb: VirtualizingCollection(Of T).FetchCount()
@@ -1380,7 +1322,7 @@ references:
   fullName.vb: Object
   name.vb: Object
 - uid: System.Collections.Generic.IList{{T}}
-  commentId: T:System.Collections.Generic.IList{``0}
+  commentId: T:System.Collections.Generic.IList{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
@@ -2172,21 +2114,21 @@ references:
   - name: )
   - name: )
   - name: )
-- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
-  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Action{{T},System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  parent: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   name: ForEach<T>(IEnumerable<T>, Action<T, int>)
   nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
   name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: <
   - name: T
   - name: '>'
@@ -2215,9 +2157,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: (
   - name: Of
   - name: " "
@@ -2251,21 +2193,21 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   - name: )
-- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Action{{T}})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
-  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Action{{T}})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  parent: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   name: ForEach<T>(IEnumerable<T>, Action<T>)
   nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
   name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: <
   - name: T
   - name: '>'
@@ -2288,9 +2230,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{`0},System.Action{`0})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: (
   - name: Of
   - name: " "
@@ -2318,26 +2260,23 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Func{{T},System.Threading.Tasks.Task{{TOut}}},System.Threading.CancellationToken)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
-  name: SelectAsync<T, TOut>(IEnumerable<T>, Func<T, Task<TOut>>, CancellationToken)
-  nameWithType: EnumarableExtensions.SelectAsync<T, TOut>(IEnumerable<T>, Func<T, Task<TOut>>, CancellationToken)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync<T, TOut>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Threading.Tasks.Task<TOut>>, System.Threading.CancellationToken)
-  nameWithType.vb: EnumarableExtensions.SelectAsync(Of T, TOut)(IEnumerable(Of T), Func(Of T, Task(Of TOut)), CancellationToken)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync(Of T, TOut)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of TOut)), System.Threading.CancellationToken)
-  name.vb: SelectAsync(Of T, TOut)(IEnumerable(Of T), Func(Of T, Task(Of TOut)), CancellationToken)
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Func{{T},System.Collections.Generic.IEnumerable{{T}}})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}})
+  parent: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}})
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_SelectHierarhy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___0___
+  name: SelectHierarhy<T>(IEnumerable<T>, Func<T, IEnumerable<T>>)
+  nameWithType: EnumarableExtensions.SelectHierarhy<T>(IEnumerable<T>, Func<T, IEnumerable<T>>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy<T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Collections.Generic.IEnumerable<T>>)
+  nameWithType.vb: EnumarableExtensions.SelectHierarhy(Of T)(IEnumerable(Of T), Func(Of T, IEnumerable(Of T)))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Collections.Generic.IEnumerable(Of T)))
+  name.vb: SelectHierarhy(Of T)(IEnumerable(Of T), Func(Of T, IEnumerable(Of T)))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-    name: SelectAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Collections.Generic.IEnumerable{`0}})
+    name: SelectHierarhy
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_SelectHierarhy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___0___
   - name: <
   - name: T
-  - name: ','
-  - name: " "
-  - name: TOut
   - name: '>'
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
@@ -2357,137 +2296,21 @@ references:
   - name: T
   - name: ','
   - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TOut
+  - name: T
   - name: '>'
   - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-    name: SelectAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Collections.Generic.IEnumerable{`0}})
+    name: SelectHierarhy
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_SelectHierarhy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___0___
   - name: (
   - name: Of
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: TOut
-  - name: )
-  - name: (
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TOut
-  - name: )
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Func{{T},System.Threading.Tasks.Task{{T}[]}},System.Threading.CancellationToken)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
-  name: SelectManyAsync<T, T>(IEnumerable<T>, Func<T, Task<T[]>>, CancellationToken)
-  nameWithType: EnumarableExtensions.SelectManyAsync<T, T>(IEnumerable<T>, Func<T, Task<T[]>>, CancellationToken)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync<T, T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Threading.Tasks.Task<T[]>>, System.Threading.CancellationToken)
-  nameWithType.vb: EnumarableExtensions.SelectManyAsync(Of T, T)(IEnumerable(Of T), Func(Of T, Task(Of T())), CancellationToken)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync(Of T, T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of T())), System.Threading.CancellationToken)
-  name.vb: SelectManyAsync(Of T, T)(IEnumerable(Of T), Func(Of T, Task(Of T())), CancellationToken)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-    name: SelectManyAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
-  - name: <
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: T
-  - name: '['
-  - name: ']'
-  - name: '>'
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{`0},System.Func{`0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-    name: SelectManyAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: ','
   - name: " "
   - name: T
   - name: )
@@ -2513,40 +2336,32 @@ references:
   - name: T
   - name: ','
   - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - name: T
-  - name: (
   - name: )
   - name: )
   - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,{T}})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
-  parent: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  definition: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
+- uid: System.Collections.Generic.IEnumerable{`0}.ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Func{System.Exception,{T}})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
+  parent: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+  definition: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
   name: ToSafe<T>(IEnumerable<T>, Func<Exception, T>)
   nameWithType: EnumarableExtensions.ToSafe<T>(IEnumerable<T>, Func<Exception, T>)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe<T>(System.Collections.Generic.IEnumerable<T>, System.Func<System.Exception, T>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe<T>(System.Collections.Generic.IEnumerable<T>, System.Func<System.Exception, T>)
   nameWithType.vb: EnumarableExtensions.ToSafe(Of T)(IEnumerable(Of T), Func(Of Exception, T))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of System.Exception, T))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of System.Exception, T))
   name.vb: ToSafe(Of T)(IEnumerable(Of T), Func(Of Exception, T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{`0},System.Func{System.Exception,`0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{`0},System.Func{System.Exception,`0})
     name: ToSafe
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
   - name: <
   - name: T
   - name: '>'
@@ -2575,9 +2390,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{`0},System.Func{System.Exception,`0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{`0},System.Func{System.Exception,`0})
     name: ToSafe
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
   - name: (
   - name: Of
   - name: " "
@@ -2611,21 +2426,21 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: System.Collections.Generic.IList{`0}.ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2({T},System.Func{{T},{TKey}})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
-  parent: ParmaGIS.Core.Utilities.Collections.IListExtensions
-  definition: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
-  href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html#ParmaGIS_Core_Utilities_Collections_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
+- uid: System.Collections.Generic.IList{`0}.ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2({T},System.Func{{T},{TKey}})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
+  parent: ParmaGIS.Core.Utilities.Extensions.IListExtensions
+  definition: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
+  href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html#ParmaGIS_Core_Utilities_Extensions_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
   name: InsertOrder<T, TKey>(IList<T>, T, Func<T, TKey>)
   nameWithType: IListExtensions.InsertOrder<T, TKey>(IList<T>, T, Func<T, TKey>)
-  fullName: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder<T, TKey>(System.Collections.Generic.IList<T>, T, System.Func<T, TKey>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder<T, TKey>(System.Collections.Generic.IList<T>, T, System.Func<T, TKey>)
   nameWithType.vb: IListExtensions.InsertOrder(Of T, TKey)(IList(Of T), T, Func(Of T, TKey))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder(Of T, TKey)(System.Collections.Generic.IList(Of T), T, System.Func(Of T, TKey))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder(Of T, TKey)(System.Collections.Generic.IList(Of T), T, System.Func(Of T, TKey))
   name.vb: InsertOrder(Of T, TKey)(IList(Of T), T, Func(Of T, TKey))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{`0},`0,System.Func{`0,``1})
+  - uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{`0},`0,System.Func{`0,``1})
     name: InsertOrder
-    href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html#ParmaGIS_Core_Utilities_Collections_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
+    href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html#ParmaGIS_Core_Utilities_Extensions_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
   - name: <
   - name: T
   - name: ','
@@ -2657,9 +2472,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{`0},`0,System.Func{`0,``1})
+  - uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{`0},`0,System.Func{`0,``1})
     name: InsertOrder
-    href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html#ParmaGIS_Core_Utilities_Collections_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
+    href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html#ParmaGIS_Core_Utilities_Extensions_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
   - name: (
   - name: Of
   - name: " "
@@ -3277,20 +3092,20 @@ references:
   - name: )
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+- uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   name: ForEach<T>(IEnumerable<T>, Action<T, int>)
   nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T, int>)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T, int>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T, Integer))
   name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T, Integer))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: <
   - name: T
   - name: '>'
@@ -3319,9 +3134,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32__
   - name: (
   - name: Of
   - name: " "
@@ -3355,27 +3170,27 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  commentId: T:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-  parent: ParmaGIS.Core.Utilities.Collections
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html
+- uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+  commentId: T:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+  parent: ParmaGIS.Core.Utilities.Extensions
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html
   name: EnumarableExtensions
   nameWithType: EnumarableExtensions
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+- uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   name: ForEach<T>(IEnumerable<T>, Action<T>)
   nameWithType: EnumarableExtensions.ForEach<T>(IEnumerable<T>, Action<T>)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach<T>(System.Collections.Generic.IEnumerable<T>, System.Action<T>)
   nameWithType.vb: EnumarableExtensions.ForEach(Of T)(IEnumerable(Of T), Action(Of T))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Action(Of T))
   name.vb: ForEach(Of T)(IEnumerable(Of T), Action(Of T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: <
   - name: T
   - name: '>'
@@ -3398,9 +3213,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
     name: ForEach
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__
   - name: (
   - name: Of
   - name: " "
@@ -3428,25 +3243,22 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
+- uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
-  name: SelectAsync<TIn, TOut>(IEnumerable<TIn>, Func<TIn, Task<TOut>>, CancellationToken)
-  nameWithType: EnumarableExtensions.SelectAsync<TIn, TOut>(IEnumerable<TIn>, Func<TIn, Task<TOut>>, CancellationToken)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync<TIn, TOut>(System.Collections.Generic.IEnumerable<TIn>, System.Func<TIn, System.Threading.Tasks.Task<TOut>>, System.Threading.CancellationToken)
-  nameWithType.vb: EnumarableExtensions.SelectAsync(Of TIn, TOut)(IEnumerable(Of TIn), Func(Of TIn, Task(Of TOut)), CancellationToken)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync(Of TIn, TOut)(System.Collections.Generic.IEnumerable(Of TIn), System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), System.Threading.CancellationToken)
-  name.vb: SelectAsync(Of TIn, TOut)(IEnumerable(Of TIn), Func(Of TIn, Task(Of TOut)), CancellationToken)
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_SelectHierarhy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___0___
+  name: SelectHierarhy<T>(IEnumerable<T>, Func<T, IEnumerable<T>>)
+  nameWithType: EnumarableExtensions.SelectHierarhy<T>(IEnumerable<T>, Func<T, IEnumerable<T>>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy<T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Collections.Generic.IEnumerable<T>>)
+  nameWithType.vb: EnumarableExtensions.SelectHierarhy(Of T)(IEnumerable(Of T), Func(Of T, IEnumerable(Of T)))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Collections.Generic.IEnumerable(Of T)))
+  name.vb: SelectHierarhy(Of T)(IEnumerable(Of T), Func(Of T, IEnumerable(Of T)))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-    name: SelectAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}})
+    name: SelectHierarhy
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_SelectHierarhy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___0___
   - name: <
-  - name: TIn
-  - name: ','
-  - name: " "
-  - name: TOut
+  - name: T
   - name: '>'
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
@@ -3454,7 +3266,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TIn
+  - name: T
   - name: '>'
   - name: ','
   - name: " "
@@ -3463,35 +3275,26 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-  - name: TIn
+  - name: T
   - name: ','
   - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TOut
+  - name: T
   - name: '>'
   - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.CancellationToken)
-    name: SelectAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1___System_Threading_CancellationToken_
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.SelectHierarhy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}})
+    name: SelectHierarhy
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_SelectHierarhy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___0___
   - name: (
   - name: Of
   - name: " "
-  - name: TIn
-  - name: ','
-  - name: " "
-  - name: TOut
+  - name: T
   - name: )
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
@@ -3501,7 +3304,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TIn
+  - name: T
   - name: )
   - name: ','
   - name: " "
@@ -3512,148 +3315,34 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TIn
+  - name: T
   - name: ','
   - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
-  - name: TOut
+  - name: T
   - name: )
   - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
+- uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
-  name: SelectManyAsync<TIn, T>(IEnumerable<TIn>, Func<TIn, Task<T[]>>, CancellationToken)
-  nameWithType: EnumarableExtensions.SelectManyAsync<TIn, T>(IEnumerable<TIn>, Func<TIn, Task<T[]>>, CancellationToken)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync<TIn, T>(System.Collections.Generic.IEnumerable<TIn>, System.Func<TIn, System.Threading.Tasks.Task<T[]>>, System.Threading.CancellationToken)
-  nameWithType.vb: EnumarableExtensions.SelectManyAsync(Of TIn, T)(IEnumerable(Of TIn), Func(Of TIn, Task(Of T())), CancellationToken)
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync(Of TIn, T)(System.Collections.Generic.IEnumerable(Of TIn), System.Func(Of TIn, System.Threading.Tasks.Task(Of T())), System.Threading.CancellationToken)
-  name.vb: SelectManyAsync(Of TIn, T)(IEnumerable(Of TIn), Func(Of TIn, Task(Of T())), CancellationToken)
-  spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-    name: SelectManyAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
-  - name: <
-  - name: TIn
-  - name: ','
-  - name: " "
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - name: TIn
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - name: TIn
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: T
-  - name: '['
-  - name: ']'
-  - name: '>'
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-  spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.SelectManyAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1[]}},System.Threading.CancellationToken)
-    name: SelectManyAsync
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_SelectManyAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task___1_____System_Threading_CancellationToken_
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TIn
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TIn
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TIn
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: (
-  - name: )
-  - name: )
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
-  isExternal: true
-  href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
+  href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
   name: ToSafe<T>(IEnumerable<T>, Func<Exception, T>)
   nameWithType: EnumarableExtensions.ToSafe<T>(IEnumerable<T>, Func<Exception, T>)
-  fullName: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe<T>(System.Collections.Generic.IEnumerable<T>, System.Func<System.Exception, T>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe<T>(System.Collections.Generic.IEnumerable<T>, System.Func<System.Exception, T>)
   nameWithType.vb: EnumarableExtensions.ToSafe(Of T)(IEnumerable(Of T), Func(Of Exception, T))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of System.Exception, T))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of System.Exception, T))
   name.vb: ToSafe(Of T)(IEnumerable(Of T), Func(Of Exception, T))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
     name: ToSafe
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
   - name: <
   - name: T
   - name: '>'
@@ -3682,9 +3371,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
+  - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.ToSafe``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Exception,``0})
     name: ToSafe
-    href: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Collections_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
+    href: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions.html#ParmaGIS_Core_Utilities_Extensions_EnumarableExtensions_ToSafe__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Exception___0__
   - name: (
   - name: Of
   - name: " "
@@ -3718,20 +3407,20 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
-  commentId: M:ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
+- uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
+  commentId: M:ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
   isExternal: true
-  href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html#ParmaGIS_Core_Utilities_Collections_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
+  href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html#ParmaGIS_Core_Utilities_Extensions_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
   name: InsertOrder<T, TKey>(IList<T>, T, Func<T, TKey>)
   nameWithType: IListExtensions.InsertOrder<T, TKey>(IList<T>, T, Func<T, TKey>)
-  fullName: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder<T, TKey>(System.Collections.Generic.IList<T>, T, System.Func<T, TKey>)
+  fullName: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder<T, TKey>(System.Collections.Generic.IList<T>, T, System.Func<T, TKey>)
   nameWithType.vb: IListExtensions.InsertOrder(Of T, TKey)(IList(Of T), T, Func(Of T, TKey))
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder(Of T, TKey)(System.Collections.Generic.IList(Of T), T, System.Func(Of T, TKey))
+  fullName.vb: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder(Of T, TKey)(System.Collections.Generic.IList(Of T), T, System.Func(Of T, TKey))
   name.vb: InsertOrder(Of T, TKey)(IList(Of T), T, Func(Of T, TKey))
   spec.csharp:
-  - uid: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
+  - uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
     name: InsertOrder
-    href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html#ParmaGIS_Core_Utilities_Collections_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
+    href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html#ParmaGIS_Core_Utilities_Extensions_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
   - name: <
   - name: T
   - name: ','
@@ -3763,9 +3452,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.Core.Utilities.Collections.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
+  - uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions.InsertOrder``2(System.Collections.Generic.IList{``0},``0,System.Func{``0,``1})
     name: InsertOrder
-    href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html#ParmaGIS_Core_Utilities_Collections_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
+    href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html#ParmaGIS_Core_Utilities_Extensions_IListExtensions_InsertOrder__2_System_Collections_Generic_IList___0____0_System_Func___0___1__
   - name: (
   - name: Of
   - name: " "
@@ -3802,13 +3491,13 @@ references:
   - name: TKey
   - name: )
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.IListExtensions
-  commentId: T:ParmaGIS.Core.Utilities.Collections.IListExtensions
-  parent: ParmaGIS.Core.Utilities.Collections
-  href: ParmaGIS.Core.Utilities.Collections.IListExtensions.html
+- uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions
+  commentId: T:ParmaGIS.Core.Utilities.Extensions.IListExtensions
+  parent: ParmaGIS.Core.Utilities.Extensions
+  href: ParmaGIS.Core.Utilities.Extensions.IListExtensions.html
   name: IListExtensions
   nameWithType: IListExtensions
-  fullName: ParmaGIS.Core.Utilities.Collections.IListExtensions
+  fullName: ParmaGIS.Core.Utilities.Extensions.IListExtensions
 - uid: ParmaGIS.Core.UI.Reactive
   commentId: N:ParmaGIS.Core.UI.Reactive
   href: ParmaGIS.html
@@ -3901,6 +3590,44 @@ references:
   - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
     name: ReactiveRules
     href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
+- uid: ParmaGIS.Core.Utilities.Extensions
+  commentId: N:ParmaGIS.Core.Utilities.Extensions
+  href: ParmaGIS.html
+  name: ParmaGIS.Core.Utilities.Extensions
+  nameWithType: ParmaGIS.Core.Utilities.Extensions
+  fullName: ParmaGIS.Core.Utilities.Extensions
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Extensions
+    name: Extensions
+    href: ParmaGIS.Core.Utilities.Extensions.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Core
+    name: Core
+    href: ParmaGIS.Core.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities
+    name: Utilities
+    href: ParmaGIS.Core.Utilities.html
+  - name: .
+  - uid: ParmaGIS.Core.Utilities.Extensions
+    name: Extensions
+    href: ParmaGIS.Core.Utilities.Extensions.html
 - uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
   commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
   parent: System.ComponentModel.INotifyPropertyChanged
@@ -4076,6 +3803,14 @@ references:
   nameWithType.vb: Long
   fullName.vb: Long
   name.vb: Long
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PropertyChanged
+  commentId: E:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.PropertyChanged
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_PropertyChanged
+  name: PropertyChanged
+  nameWithType: VirtualizingCollection<T>.PropertyChanged
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.PropertyChanged
+  nameWithType.vb: VirtualizingCollection(Of T).PropertyChanged
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).PropertyChanged
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnPropertyChanged
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_OnPropertyChanged_System_String_
@@ -4095,17 +3830,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CollectionChanged
-  commentId: E:CollectionChanged
-  isExternal: true
-- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
-  commentId: T:System.Collections.Specialized.NotifyCollectionChangedEventArgs
-  parent: System.Collections.Specialized
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
-  name: NotifyCollectionChangedEventArgs
-  nameWithType: NotifyCollectionChangedEventArgs
-  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionChanged
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_OnCollectionChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_
@@ -4114,6 +3838,14 @@ references:
   fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.OnCollectionChanged
   nameWithType.vb: VirtualizingCollection(Of T).OnCollectionChanged
   fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).OnCollectionChanged
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+  commentId: T:System.Collections.Specialized.NotifyCollectionChangedEventArgs
+  parent: System.Collections.Specialized
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  name: NotifyCollectionChangedEventArgs
+  nameWithType: NotifyCollectionChangedEventArgs
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.OnCollectionReset
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_OnCollectionReset
@@ -4235,6 +3967,100 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_SyncRoot
+  name: SyncRoot
+  nameWithType: VirtualizingCollection<T>.SyncRoot
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.SyncRoot
+  nameWithType.vb: VirtualizingCollection(Of T).SyncRoot
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).SyncRoot
+- uid: System.Collections.ICollection.SyncRoot
+  commentId: P:System.Collections.ICollection.SyncRoot
+  parent: System.Collections.ICollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.syncroot
+  name: SyncRoot
+  nameWithType: ICollection.SyncRoot
+  fullName: System.Collections.ICollection.SyncRoot
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsSynchronized
+  name: IsSynchronized
+  nameWithType: VirtualizingCollection<T>.IsSynchronized
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsSynchronized
+  nameWithType.vb: VirtualizingCollection(Of T).IsSynchronized
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsSynchronized
+- uid: System.Collections.ICollection.IsSynchronized
+  commentId: P:System.Collections.ICollection.IsSynchronized
+  parent: System.Collections.ICollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.issynchronized
+  name: IsSynchronized
+  nameWithType: ICollection.IsSynchronized
+  fullName: System.Collections.ICollection.IsSynchronized
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsReadOnly
+  name: IsReadOnly
+  nameWithType: VirtualizingCollection<T>.IsReadOnly
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsReadOnly
+  nameWithType.vb: VirtualizingCollection(Of T).IsReadOnly
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsReadOnly
+- uid: System.Collections.Generic.ICollection{{T}}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{`0}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{{T}}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: System.Collections.IList.IsReadOnly
+  commentId: P:System.Collections.IList.IsReadOnly
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isreadonly
+  name: IsReadOnly
+  nameWithType: IList.IsReadOnly
+  fullName: System.Collections.IList.IsReadOnly
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize*
+  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize
+  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsFixedSize
+  name: IsFixedSize
+  nameWithType: VirtualizingCollection<T>.IsFixedSize
+  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsFixedSize
+  nameWithType.vb: VirtualizingCollection(Of T).IsFixedSize
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsFixedSize
+- uid: System.Collections.IList.IsFixedSize
+  commentId: P:System.Collections.IList.IsFixedSize
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isfixedsize
+  name: IsFixedSize
+  nameWithType: IList.IsFixedSize
+  fullName: System.Collections.IList.IsFixedSize
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
@@ -4347,13 +4173,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
   - name: )
-- uid: System.NotSupportedException
-  commentId: T:System.NotSupportedException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
-  name: NotSupportedException
-  nameWithType: NotSupportedException
-  fullName: System.NotSupportedException
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Add
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Add__0_
@@ -4447,17 +4266,6 @@ references:
   - name: (
   - name: T
   - name: )
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: System.Collections.Generic.ICollection`1.Contains(`0)
   commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
   isExternal: true
@@ -4619,13 +4427,6 @@ references:
   - name: (
   - name: T
   - name: )
-- uid: System.ArgumentOutOfRangeException
-  commentId: T:System.ArgumentOutOfRangeException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
-  name: ArgumentOutOfRangeException
-  nameWithType: ArgumentOutOfRangeException
-  fullName: System.ArgumentOutOfRangeException
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.Insert
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_Insert_System_Int32__0_
@@ -4876,28 +4677,6 @@ references:
   - name: (
   - name: T
   - name: )
-- uid: System.Array
-  commentId: T:System.Array
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.array
-  name: Array
-  nameWithType: Array
-  fullName: System.Array
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
-  name: ArgumentNullException
-  nameWithType: ArgumentNullException
-  fullName: System.ArgumentNullException
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
-  name: ArgumentException
-  nameWithType: ArgumentException
-  fullName: System.ArgumentException
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CopyTo
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_CopyTo__0___System_Int32_
@@ -5007,89 +4786,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot*
-  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.SyncRoot
-  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_SyncRoot
-  name: SyncRoot
-  nameWithType: VirtualizingCollection<T>.SyncRoot
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.SyncRoot
-  nameWithType.vb: VirtualizingCollection(Of T).SyncRoot
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).SyncRoot
-- uid: System.Collections.ICollection.SyncRoot
-  commentId: P:System.Collections.ICollection.SyncRoot
-  parent: System.Collections.ICollection
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.syncroot
-  name: SyncRoot
-  nameWithType: ICollection.SyncRoot
-  fullName: System.Collections.ICollection.SyncRoot
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized*
-  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsSynchronized
-  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsSynchronized
-  name: IsSynchronized
-  nameWithType: VirtualizingCollection<T>.IsSynchronized
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsSynchronized
-  nameWithType.vb: VirtualizingCollection(Of T).IsSynchronized
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsSynchronized
-- uid: System.Collections.ICollection.IsSynchronized
-  commentId: P:System.Collections.ICollection.IsSynchronized
-  parent: System.Collections.ICollection
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.issynchronized
-  name: IsSynchronized
-  nameWithType: ICollection.IsSynchronized
-  fullName: System.Collections.ICollection.IsSynchronized
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly*
-  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsReadOnly
-  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsReadOnly
-  name: IsReadOnly
-  nameWithType: VirtualizingCollection<T>.IsReadOnly
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsReadOnly
-  nameWithType.vb: VirtualizingCollection(Of T).IsReadOnly
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsReadOnly
-- uid: System.Collections.Generic.ICollection{{T}}.IsReadOnly
-  commentId: P:System.Collections.Generic.ICollection{`0}.IsReadOnly
-  parent: System.Collections.Generic.ICollection{{T}}
-  definition: System.Collections.Generic.ICollection`1.IsReadOnly
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
-  name: IsReadOnly
-  nameWithType: ICollection<T>.IsReadOnly
-  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
-  nameWithType.vb: ICollection(Of T).IsReadOnly
-  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
-- uid: System.Collections.IList.IsReadOnly
-  commentId: P:System.Collections.IList.IsReadOnly
-  parent: System.Collections.IList
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isreadonly
-  name: IsReadOnly
-  nameWithType: IList.IsReadOnly
-  fullName: System.Collections.IList.IsReadOnly
-- uid: System.Collections.Generic.ICollection`1.IsReadOnly
-  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
-  name: IsReadOnly
-  nameWithType: ICollection<T>.IsReadOnly
-  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
-  nameWithType.vb: ICollection(Of T).IsReadOnly
-  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
-- uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize*
-  commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.IsFixedSize
-  href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_IsFixedSize
-  name: IsFixedSize
-  nameWithType: VirtualizingCollection<T>.IsFixedSize
-  fullName: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection<T>.IsFixedSize
-  nameWithType.vb: VirtualizingCollection(Of T).IsFixedSize
-  fullName.vb: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection(Of T).IsFixedSize
-- uid: System.Collections.IList.IsFixedSize
-  commentId: P:System.Collections.IList.IsFixedSize
-  parent: System.Collections.IList
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isfixedsize
-  name: IsFixedSize
-  nameWithType: IList.IsFixedSize
-  fullName: System.Collections.IList.IsFixedSize
 - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionRefresh*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1.CollectionRefresh
   href: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection-1.html#ParmaGIS_Core_Utilities_Collections_VirtualizingCollection_1_CollectionRefresh

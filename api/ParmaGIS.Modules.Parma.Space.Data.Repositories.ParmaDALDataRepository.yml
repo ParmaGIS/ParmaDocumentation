@@ -119,6 +119,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Repositories
+  summary: Возвращает <code>true</code>, если использование объекта из нескольких потоков, используя <xref href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler" data-throw-if-not-resolved="false"></xref>, безопасно, иначе - <code>false</code>.
   example: []
   syntax:
     content: public bool ThreadSafety { get; }
@@ -151,6 +152,7 @@ items:
   assemblies:
   - ParmaGIS.Modules.Parma.Space
   namespace: ParmaGIS.Modules.Parma.Space.Data.Repositories
+  summary: Возвращает планировщик задач для синхронизации потоков.
   example: []
   syntax:
     content: public TaskScheduler TaskScheduler { get; }
@@ -1683,6 +1685,13 @@ references:
   - uid: ParmaGIS.Modules.Parma.Space
     name: Space
     href: ParmaGIS.Modules.Parma.Space.html
+- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
+  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
+  name: TaskScheduler
+  nameWithType: IThreadsVulnerable.TaskScheduler
+  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.ThreadSafety*
   commentId: Overload:ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.ThreadSafety
   href: ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.html#ParmaGIS_Modules_Parma_Space_Data_Repositories_ParmaDALDataRepository_ThreadSafety
@@ -1713,13 +1722,6 @@ references:
   name: TaskScheduler
   nameWithType: ParmaDALDataRepository.TaskScheduler
   fullName: ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.TaskScheduler
-- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
-  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
-  name: TaskScheduler
-  nameWithType: IThreadsVulnerable.TaskScheduler
-  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: System.Threading.Tasks.TaskScheduler
   commentId: T:System.Threading.Tasks.TaskScheduler
   parent: System.Threading.Tasks
@@ -1800,7 +1802,7 @@ references:
   nameWithType: ParmaDALDataRepository.GetData
   fullName: ParmaGIS.Modules.Parma.Space.Data.Repositories.ParmaDALDataRepository.GetData
 - uid: System.Linq.IQueryable{{T}}
-  commentId: T:System.Linq.IQueryable{``0}
+  commentId: T:System.Linq.IQueryable{`0}
   parent: System.Linq
   definition: System.Linq.IQueryable`1
   href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1

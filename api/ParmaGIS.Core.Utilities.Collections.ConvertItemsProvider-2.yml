@@ -28,15 +28,19 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ConvertItemsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 10
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Провайдер элементов с конвертером источника.
+  example: []
   syntax:
     content: 'public class ConvertItemsProvider<TSource, TResult> : IItemsProvider<TResult>, IItemsProvider, IThreadsVulnerable, INotifyCollectionChanged'
     typeParameters:
     - id: TSource
+      description: Тип элементов источника.
     - id: TResult
+      description: Тип конвертированных элементов.
     content.vb: Public Class ConvertItemsProvider(Of TSource, TResult) Implements IItemsProvider(Of TResult), IItemsProvider, IThreadsVulnerable, INotifyCollectionChanged
   inheritance:
   - System.Object
@@ -76,11 +80,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionChanged
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 15
+    startLine: 24
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
-  summary: Occurs when the collection changes.
+  summary: Происходит при изменении элементов в коллекции.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler? CollectionChanged
@@ -109,21 +113,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 17
+    startLine: 34
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider%602" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ConvertItemsProvider(IItemsProvider<TSource> sourceItemsProvider, Func<TSource, TResult> converter, TResult emptyItem, TaskScheduler? taskScheduler = null)
     parameters:
     - id: sourceItemsProvider
       type: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{TSource}}
+      description: Исходный проввайдер элементов. Источник.
     - id: converter
       type: System.Func{{TSource},{TResult}}
+      description: Функция преобразующая исходные элементы в необходимые.
     - id: emptyItem
       type: '{TResult}'
+      description: Пустой элемент. Используется, когда оригиальный элемент еще не загружен.
     - id: taskScheduler
       type: System.Threading.Tasks.TaskScheduler
+      description: Планировщик задач. Передается для обеспечения безопасного взаимодействия с провайдером данных. Если <code class="paramref">sourceItemsProvider</code> реализует <xref href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable" data-throw-if-not-resolved="false"></xref>, то планировщик задач по умолчанию берется от туда.
     content.vb: Public Sub New(sourceItemsProvider As IItemsProvider(Of TSource), converter As Func(Of TSource, TResult), emptyItem As TResult, taskScheduler As TaskScheduler = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.#ctor*
   nameWithType.vb: ConvertItemsProvider(Of TSource, TResult).New(IItemsProvider(Of TSource), Func(Of TSource, TResult), TResult, TaskScheduler)
@@ -147,19 +157,27 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 23
+    startLine: 48
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Инициализирует экземпляр класса <xref href="ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider%602" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ConvertItemsProvider(IItemsProvider<TSource> sourceItemsProvider, Func<TSource, TResult> converter, TaskScheduler? taskScheduler = null)
     parameters:
     - id: sourceItemsProvider
       type: ParmaGIS.Core.Utilities.Collections.IItemsProvider{{TSource}}
+      description: Исходный провайдер элементов. Источник.
     - id: converter
       type: System.Func{{TSource},{TResult}}
+      description: Функция преобразующая исходные элементы в необходимые.
     - id: taskScheduler
       type: System.Threading.Tasks.TaskScheduler
+      description: >-
+        Планировщик задач.
+            Передается для обеспечения безопасного взаимодействия с провайдером данных.
+            Если <code class="paramref">sourceItemsProvider</code> реализует <xref href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable" data-throw-if-not-resolved="false"></xref>, то планировщик задач по умолчанию берется от туда.
     content.vb: Public Sub New(sourceItemsProvider As IItemsProvider(Of TSource), converter As Func(Of TSource, TResult), taskScheduler As TaskScheduler = Nothing)
   overload: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.#ctor*
   nameWithType.vb: ConvertItemsProvider(Of TSource, TResult).New(IItemsProvider(Of TSource), Func(Of TSource, TResult), TaskScheduler)
@@ -183,10 +201,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyItem
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.
   example: []
   syntax:
     content: public TResult EmptyItem { get; }
@@ -217,10 +236,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SourceItemsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 66
+    startLine: 70
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает исходный провайдер элементов.
+  example: []
   syntax:
     content: public IItemsProvider<TSource> SourceItemsProvider { get; }
     parameters: []
@@ -248,10 +269,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafety
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 68
+    startLine: 73
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает <code>true</code>, если использование объекта из нескольких потоков, используя <xref href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler" data-throw-if-not-resolved="false"></xref>, безопасно, иначе - <code>false</code>.
   example: []
   syntax:
     content: public bool ThreadSafety { get; }
@@ -282,10 +304,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 70
+    startLine: 76
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
+  summary: Возвращает планировщик задач для синхронизации потоков.
   example: []
   syntax:
     content: public TaskScheduler TaskScheduler { get; }
@@ -316,7 +339,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchCount
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 75
+    startLine: 106
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -351,7 +374,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchRange
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Collections/ConvertItemsProvider.cs
-    startLine: 80
+    startLine: 112
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Collections
@@ -1091,6 +1114,37 @@ references:
   name: NotifyCollectionChangedEventHandler
   nameWithType: NotifyCollectionChangedEventHandler
   fullName: System.Collections.Specialized.NotifyCollectionChangedEventHandler
+- uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2
+  commentId: T:ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2
+  href: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html
+  name: ConvertItemsProvider<TSource, TResult>
+  nameWithType: ConvertItemsProvider<TSource, TResult>
+  fullName: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider<TSource, TResult>
+  nameWithType.vb: ConvertItemsProvider(Of TSource, TResult)
+  fullName.vb: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider(Of TSource, TResult)
+  name.vb: ConvertItemsProvider(Of TSource, TResult)
+  spec.csharp:
+  - uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2
+    name: ConvertItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html
+  - name: <
+  - name: TSource
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2
+    name: ConvertItemsProvider
+    href: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSource
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.#ctor*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.#ctor
   href: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html#ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2__ctor_ParmaGIS_Core_Utilities_Collections_IItemsProvider__0__System_Func__0__1___1_System_Threading_Tasks_TaskScheduler_
@@ -1285,6 +1339,13 @@ references:
   fullName: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider<TSource, TResult>.SourceItemsProvider
   nameWithType.vb: ConvertItemsProvider(Of TSource, TResult).SourceItemsProvider
   fullName.vb: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider(Of TSource, TResult).SourceItemsProvider
+- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
+  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
+  name: TaskScheduler
+  nameWithType: IThreadsVulnerable.TaskScheduler
+  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.ThreadSafety*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.ThreadSafety
   href: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html#ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_ThreadSafety
@@ -1319,13 +1380,6 @@ references:
   fullName: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider<TSource, TResult>.TaskScheduler
   nameWithType.vb: ConvertItemsProvider(Of TSource, TResult).TaskScheduler
   fullName.vb: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider(Of TSource, TResult).TaskScheduler
-- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
-  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
-  name: TaskScheduler
-  nameWithType: IThreadsVulnerable.TaskScheduler
-  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.FetchCount*
   commentId: Overload:ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2.FetchCount
   href: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider-2.html#ParmaGIS_Core_Utilities_Collections_ConvertItemsProvider_2_FetchCount

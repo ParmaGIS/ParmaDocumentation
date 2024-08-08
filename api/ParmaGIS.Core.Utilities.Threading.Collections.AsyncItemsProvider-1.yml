@@ -27,19 +27,22 @@ items:
   type: Class
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AsyncItemsProvider
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 48
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 16
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Представляет асинхронный провайдер элементов. На данный момент не рекомендуется использовать.
+  example: []
   syntax:
     content: 'public class AsyncItemsProvider<T> : IItemsProvider<T>, IItemsProvider, IThreadsVulnerable, INotifyCollectionChanged, IDisposable'
     typeParameters:
     - id: T
+      description: Тип элементов.
     content.vb: Public Class AsyncItemsProvider(Of T) Implements IItemsProvider(Of T), IItemsProvider, IThreadsVulnerable, INotifyCollectionChanged, IDisposable
   inheritance:
   - System.Object
@@ -75,12 +78,12 @@ items:
   type: Event
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CollectionChanged
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 60
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 28
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -108,12 +111,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 63
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 31
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -142,12 +145,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 66
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 34
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -176,12 +179,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 69
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 37
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -218,12 +221,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 84
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 52
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -254,15 +257,16 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: EmptyItem
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 106
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 74
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Возвращает пустой элемент. Он используется пока настоящий элемент еще не загружен.
   example: []
   syntax:
     content: public T EmptyItem { get; }
@@ -288,15 +292,16 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ThreadSafety
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 107
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 75
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Возвращает <code>true</code>, если использование объекта из нескольких потоков, используя <xref href="ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler" data-throw-if-not-resolved="false"></xref>, безопасно, иначе - <code>false</code>.
   example: []
   syntax:
     content: public bool ThreadSafety { get; }
@@ -322,15 +327,16 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TaskScheduler
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 108
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 76
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Возвращает планировщик задач для синхронизации потоков.
   example: []
   syntax:
     content: public TaskScheduler TaskScheduler { get; }
@@ -356,12 +362,12 @@ items:
   type: Property
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsBusy
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 113
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 81
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -387,19 +393,22 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetSourceList
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 171
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 143
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
+  summary: Возвращает исходный источник элементов.
+  example: []
   syntax:
     content: protected IList<T> GetSourceList()
     return:
       type: System.Collections.Generic.IList{{T}}
+      description: Источник элементов.
     content.vb: Protected Function GetSourceList() As IList(Of T)
   overload: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider`1.GetSourceList*
   nameWithType.vb: AsyncItemsProvider(Of T).GetSourceList()
@@ -417,12 +426,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchCount
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 178
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 151
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -452,12 +461,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FetchRange
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 183
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 157
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -495,12 +504,12 @@ items:
   type: Method
   source:
     remote:
-      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
+      path: common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncVirtualizingCollection.cs
-    startLine: 193
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/Collections/AsyncItemsProvider.cs
+    startLine: 168
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading.Collections
@@ -1724,6 +1733,13 @@ references:
   fullName: ParmaGIS.Core.Utilities.Collections.IItemsProvider<T>.EmptyItem
   nameWithType.vb: IItemsProvider(Of T).EmptyItem
   fullName.vb: ParmaGIS.Core.Utilities.Collections.IItemsProvider(Of T).EmptyItem
+- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
+  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
+  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
+  name: TaskScheduler
+  nameWithType: IThreadsVulnerable.TaskScheduler
+  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider`1.ThreadSafety*
   commentId: Overload:ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider`1.ThreadSafety
   href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider-1.html#ParmaGIS_Core_Utilities_Threading_Collections_AsyncItemsProvider_1_ThreadSafety
@@ -1758,13 +1774,6 @@ references:
   fullName: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider<T>.TaskScheduler
   nameWithType.vb: AsyncItemsProvider(Of T).TaskScheduler
   fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider(Of T).TaskScheduler
-- uid: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  commentId: P:ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
-  parent: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable
-  href: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.html#ParmaGIS_Core_Utilities_Threading_IThreadsVulnerable_TaskScheduler
-  name: TaskScheduler
-  nameWithType: IThreadsVulnerable.TaskScheduler
-  fullName: ParmaGIS.Core.Utilities.Threading.IThreadsVulnerable.TaskScheduler
 - uid: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider`1.IsBusy*
   commentId: Overload:ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider`1.IsBusy
   href: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider-1.html#ParmaGIS_Core_Utilities_Threading_Collections_AsyncItemsProvider_1_IsBusy
@@ -1782,7 +1791,7 @@ references:
   nameWithType.vb: AsyncItemsProvider(Of T).GetSourceList
   fullName.vb: ParmaGIS.Core.Utilities.Threading.Collections.AsyncItemsProvider(Of T).GetSourceList
 - uid: System.Collections.Generic.IList{{T}}
-  commentId: T:System.Collections.Generic.IList{``0}
+  commentId: T:System.Collections.Generic.IList{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1

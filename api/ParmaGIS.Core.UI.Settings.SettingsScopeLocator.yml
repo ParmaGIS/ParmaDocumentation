@@ -20,10 +20,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SettingsScopeLocator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/SettingsScopeLocator.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Представляет локатор областей настроек.
+  example: []
   syntax:
     content: public static class SettingsScopeLocator
     content.vb: Public Module SettingsScopeLocator
@@ -55,14 +57,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetRegisterdSettingsScopes
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/SettingsScopeLocator.cs
-    startLine: 9
+    startLine: 17
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Возвращает зарегистрированные области настроек.
+  example: []
   syntax:
     content: public static IEnumerable<ISettingsScope> GetRegisterdSettingsScopes()
     return:
       type: System.Collections.Generic.IEnumerable{ParmaGIS.Core.UI.Settings.ISettingsScope}
+      description: Перечисление областей настроек. <xref href="ParmaGIS.Core.UI.Settings.ISettingsScope" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Shared Function GetRegisterdSettingsScopes() As IEnumerable(Of ISettingsScope)
   overload: ParmaGIS.Core.UI.Settings.SettingsScopeLocator.GetRegisterdSettingsScopes*
 references:
@@ -341,6 +346,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ParmaGIS.Core.UI.Settings.ISettingsScope
+  commentId: T:ParmaGIS.Core.UI.Settings.ISettingsScope
+  parent: ParmaGIS.Core.UI.Settings
+  href: ParmaGIS.Core.UI.Settings.ISettingsScope.html
+  name: ISettingsScope
+  nameWithType: ISettingsScope
+  fullName: ParmaGIS.Core.UI.Settings.ISettingsScope
 - uid: ParmaGIS.Core.UI.Settings.SettingsScopeLocator.GetRegisterdSettingsScopes*
   commentId: Overload:ParmaGIS.Core.UI.Settings.SettingsScopeLocator.GetRegisterdSettingsScopes
   href: ParmaGIS.Core.UI.Settings.SettingsScopeLocator.html#ParmaGIS_Core_UI_Settings_SettingsScopeLocator_GetRegisterdSettingsScopes

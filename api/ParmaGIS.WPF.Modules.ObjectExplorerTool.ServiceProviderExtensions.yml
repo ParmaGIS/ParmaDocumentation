@@ -5,8 +5,10 @@ items:
   id: ServiceProviderExtensions
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool
   children:
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction``3(ParmaGIS.Core.Serviceability.IServiceProvider)
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0})
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard``3(ParmaGIS.Core.Serviceability.IServiceProvider)
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard``3(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{``0})
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXPathGenerator``2(ParmaGIS.Core.Serviceability.IServiceProvider)
@@ -119,6 +121,44 @@ items:
   nameWithType.vb: ServiceProviderExtensions.RegisterXCard(Of TValue, TCardView, TCardViewModel)(IServiceProvider, Predicate(Of TValue))
   fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard(Of TValue, TCardView, TCardViewModel)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of TValue))
   name.vb: RegisterXCard(Of TValue, TCardView, TCardViewModel)(IServiceProvider, Predicate(Of TValue))
+- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
+  commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
+  id: RegisterXCard``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
+  isExtensionMethod: true
+  parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RegisterXCard<TCardView, TCardViewModel>(IServiceProvider, Predicate<object>)
+  nameWithType: ServiceProviderExtensions.RegisterXCard<TCardView, TCardViewModel>(IServiceProvider, Predicate<object>)
+  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard<TCardView, TCardViewModel>(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate<object>)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RegisterXCard
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
+    startLine: 32
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool
+  namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
+  syntax:
+    content: 'public static void RegisterXCard<TCardView, TCardViewModel>(this IServiceProvider serviceProvider, Predicate<object> condition) where TCardView : class, ICardView where TCardViewModel : class, IExplorerCardAware'
+    parameters:
+    - id: serviceProvider
+      type: ParmaGIS.Core.Serviceability.IServiceProvider
+    - id: condition
+      type: System.Predicate{System.Object}
+    typeParameters:
+    - id: TCardView
+    - id: TCardViewModel
+    content.vb: Public Shared Sub RegisterXCard(Of TCardView As {Class, ICardView}, TCardViewModel As {Class, IExplorerCardAware})(serviceProvider As IServiceProvider, condition As Predicate(Of Object))
+  overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard*
+  nameWithType.vb: ServiceProviderExtensions.RegisterXCard(Of TCardView, TCardViewModel)(IServiceProvider, Predicate(Of Object))
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXCard(Of TCardView, TCardViewModel)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of Object))
+  name.vb: RegisterXCard(Of TCardView, TCardViewModel)(IServiceProvider, Predicate(Of Object))
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXPathGenerator``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXPathGenerator``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   id: RegisterXPathGenerator``2(ParmaGIS.Core.Serviceability.IServiceProvider)
@@ -138,7 +178,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterXPathGenerator
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
-    startLine: 32
+    startLine: 42
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -174,7 +214,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterXPathGenerator
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
-    startLine: 39
+    startLine: 49
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -212,7 +252,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterXAction
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
-    startLine: 46
+    startLine: 56
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -249,7 +289,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterXAction
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
-    startLine: 55
+    startLine: 65
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -269,6 +309,44 @@ items:
   nameWithType.vb: ServiceProviderExtensions.RegisterXAction(Of TValue, TXActionView, TXActionViewModel)(IServiceProvider, Predicate(Of TValue))
   fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction(Of TValue, TXActionView, TXActionViewModel)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of TValue))
   name.vb: RegisterXAction(Of TValue, TXActionView, TXActionViewModel)(IServiceProvider, Predicate(Of TValue))
+- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
+  commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
+  id: RegisterXAction``2(ParmaGIS.Core.Serviceability.IServiceProvider,System.Predicate{System.Object})
+  isExtensionMethod: true
+  parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RegisterXAction<TXActionView, TXActionViewModel>(IServiceProvider, Predicate<object>)
+  nameWithType: ServiceProviderExtensions.RegisterXAction<TXActionView, TXActionViewModel>(IServiceProvider, Predicate<object>)
+  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction<TXActionView, TXActionViewModel>(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate<object>)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: RegisterXAction
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
+    startLine: 74
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool
+  namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
+  syntax:
+    content: 'public static void RegisterXAction<TXActionView, TXActionViewModel>(this IServiceProvider serviceProvider, Predicate<object> condition) where TXActionViewModel : class, IExplorerActionAware'
+    parameters:
+    - id: serviceProvider
+      type: ParmaGIS.Core.Serviceability.IServiceProvider
+    - id: condition
+      type: System.Predicate{System.Object}
+    typeParameters:
+    - id: TXActionView
+    - id: TXActionViewModel
+    content.vb: Public Shared Sub RegisterXAction(Of TXActionView, TXActionViewModel As {Class, IExplorerActionAware})(serviceProvider As IServiceProvider, condition As Predicate(Of Object))
+  overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction*
+  nameWithType.vb: ServiceProviderExtensions.RegisterXAction(Of TXActionView, TXActionViewModel)(IServiceProvider, Predicate(Of Object))
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXAction(Of TXActionView, TXActionViewModel)(ParmaGIS.Core.Serviceability.IServiceProvider, System.Predicate(Of Object))
+  name.vb: RegisterXAction(Of TXActionView, TXActionViewModel)(IServiceProvider, Predicate(Of Object))
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXRootWidget``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXRootWidget``2(ParmaGIS.Core.Serviceability.IServiceProvider)
   id: RegisterXRootWidget``2(ParmaGIS.Core.Serviceability.IServiceProvider)
@@ -288,7 +366,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RegisterXRootWidget
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ServiceProviderExtensions.cs
-    startLine: 64
+    startLine: 83
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -680,6 +758,41 @@ references:
   - name: Of
   - name: " "
   - name: T
+  - name: )
+- uid: System.Predicate{System.Object}
+  commentId: T:System.Predicate{System.Object}
+  parent: System
+  definition: System.Predicate`1
+  href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  name: Predicate<object>
+  nameWithType: Predicate<object>
+  fullName: System.Predicate<object>
+  nameWithType.vb: Predicate(Of Object)
+  fullName.vb: System.Predicate(Of Object)
+  name.vb: Predicate(Of Object)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXPathGenerator*
   commentId: Overload:ParmaGIS.WPF.Modules.ObjectExplorerTool.ServiceProviderExtensions.RegisterXPathGenerator

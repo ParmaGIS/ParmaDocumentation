@@ -5,7 +5,8 @@ items:
   id: NameGenerator
   parent: ParmaGIS.Core.Utilities
   children:
-  - ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
+  - ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
+  - ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
   langs:
   - csharp
   - vb
@@ -20,7 +21,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: NameGenerator
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
@@ -39,16 +40,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
-  commentId: M:ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
-  id: Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
+- uid: ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.NameGenerator.Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
+  id: Generate(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
   parent: ParmaGIS.Core.Utilities.NameGenerator
   langs:
   - csharp
   - vb
-  name: Generate(string, IEnumerable<string>, string)
-  nameWithType: NameGenerator.Generate(string, IEnumerable<string>, string)
-  fullName: ParmaGIS.Core.Utilities.NameGenerator.Generate(string, System.Collections.Generic.IEnumerable<string>, string)
+  name: Generate(string, IEnumerable<string>, string, int)
+  nameWithType: NameGenerator.Generate(string, IEnumerable<string>, string, int)
+  fullName: ParmaGIS.Core.Utilities.NameGenerator.Generate(string, System.Collections.Generic.IEnumerable<string>, string, int)
   type: Method
   source:
     remote:
@@ -57,26 +58,82 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Generate
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities
+  summary: Генерирует новое имя.
+  example: []
   syntax:
-    content: public static string Generate(string prefixTemplate, IEnumerable<string> existNames, string separator = " ")
+    content: public static string Generate(string prefixTemplate, IEnumerable<string> existNames, string separator = " ", int startIndex = 1)
     parameters:
     - id: prefixTemplate
       type: System.String
+      description: Префикс, по которому ищется совпадения существующих имен.
     - id: existNames
       type: System.Collections.Generic.IEnumerable{System.String}
+      description: Перечисление существующих имен.
     - id: separator
       type: System.String
+      description: Сепаратор.
+    - id: startIndex
+      type: System.Int32
+      description: Начальный индекс.
     return:
       type: System.String
-    content.vb: Public Shared Function Generate(prefixTemplate As String, existNames As IEnumerable(Of String), separator As String = " ") As String
+      description: Новове имя <code class="paramref">prefixTemplate</code>+<code class="paramref">separator</code>+номер.
+    content.vb: Public Shared Function Generate(prefixTemplate As String, existNames As IEnumerable(Of String), separator As String = " ", startIndex As Integer = 1) As String
   overload: ParmaGIS.Core.Utilities.NameGenerator.Generate*
-  nameWithType.vb: NameGenerator.Generate(String, IEnumerable(Of String), String)
-  fullName.vb: ParmaGIS.Core.Utilities.NameGenerator.Generate(String, System.Collections.Generic.IEnumerable(Of String), String)
-  name.vb: Generate(String, IEnumerable(Of String), String)
+  nameWithType.vb: NameGenerator.Generate(String, IEnumerable(Of String), String, Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.NameGenerator.Generate(String, System.Collections.Generic.IEnumerable(Of String), String, Integer)
+  name.vb: Generate(String, IEnumerable(Of String), String, Integer)
+- uid: ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
+  commentId: M:ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
+  id: GenerateAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)
+  parent: ParmaGIS.Core.Utilities.NameGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateAsync(string, IEnumerable<string>, string, int)
+  nameWithType: NameGenerator.GenerateAsync(string, IEnumerable<string>, string, int)
+  fullName: ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync(string, System.Collections.Generic.IEnumerable<string>, string, int)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/NameGenerator.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GenerateAsync
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/NameGenerator.cs
+    startLine: 41
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities
+  summary: Генерирует новое имя.
+  example: []
+  syntax:
+    content: public static Task<string> GenerateAsync(string prefixTemplate, IEnumerable<string> existNames, string separator = " ", int startIndex = 1)
+    parameters:
+    - id: prefixTemplate
+      type: System.String
+      description: Префикс, по которому ищется совпадения существующих имен.
+    - id: existNames
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: Перечисление существующих имен.
+    - id: separator
+      type: System.String
+      description: Сепаратор.
+    - id: startIndex
+      type: System.Int32
+      description: Начальный индекс.
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: Новове имя <code class="paramref">prefixTemplate</code>+<code class="paramref">separator</code>+номер.
+    content.vb: Public Shared Function GenerateAsync(prefixTemplate As String, existNames As IEnumerable(Of String), separator As String = " ", startIndex As Integer = 1) As Task(Of String)
+  overload: ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync*
+  nameWithType.vb: NameGenerator.GenerateAsync(String, IEnumerable(Of String), String, Integer)
+  fullName.vb: ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync(String, System.Collections.Generic.IEnumerable(Of String), String, Integer)
+  name.vb: GenerateAsync(String, IEnumerable(Of String), String, Integer)
 references:
 - uid: ParmaGIS.Core.Utilities
   commentId: N:ParmaGIS.Core.Utilities
@@ -347,7 +404,7 @@ references:
   fullName: System
 - uid: ParmaGIS.Core.Utilities.NameGenerator.Generate*
   commentId: Overload:ParmaGIS.Core.Utilities.NameGenerator.Generate
-  href: ParmaGIS.Core.Utilities.NameGenerator.html#ParmaGIS_Core_Utilities_NameGenerator_Generate_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_
+  href: ParmaGIS.Core.Utilities.NameGenerator.html#ParmaGIS_Core_Utilities_NameGenerator_Generate_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_
   name: Generate
   nameWithType: NameGenerator.Generate
   fullName: ParmaGIS.Core.Utilities.NameGenerator.Generate
@@ -397,6 +454,17 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -462,3 +530,109 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync*
+  commentId: Overload:ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync
+  href: ParmaGIS.Core.Utilities.NameGenerator.html#ParmaGIS_Core_Utilities_NameGenerator_GenerateAsync_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_
+  name: GenerateAsync
+  nameWithType: NameGenerator.GenerateAsync
+  fullName: ParmaGIS.Core.Utilities.NameGenerator.GenerateAsync
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

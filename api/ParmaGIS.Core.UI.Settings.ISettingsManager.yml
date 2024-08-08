@@ -22,10 +22,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ISettingsManager
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsManager.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Представляет контракт взаимодействия с менеджером настроек.
+  example: []
   syntax:
     content: public interface ISettingsManager
     content.vb: Public Interface ISettingsManager
@@ -47,10 +49,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SettingsScopeCatalog
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsManager.cs
-    startLine: 4
+    startLine: 10
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Возвращает каталог областей настроек.
+  example: []
   syntax:
     content: ISettingsScopeCatalog SettingsScopeCatalog { get; }
     parameters: []
@@ -76,17 +80,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetSettingsProvider
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsManager.cs
-    startLine: 5
+    startLine: 17
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Возвращает провайдер настроек по названию области настроек.
+  example: []
   syntax:
     content: ISettingsProvider GetSettingsProvider(string name)
     parameters:
     - id: name
       type: System.String
+      description: Название области настроек.
     return:
       type: ParmaGIS.Core.UI.Settings.ISettingsProvider
+      description: Провайдер настроек.
     content.vb: Function GetSettingsProvider(name As String) As ISettingsProvider
   overload: ParmaGIS.Core.UI.Settings.ISettingsManager.GetSettingsProvider*
   nameWithType.vb: ISettingsManager.GetSettingsProvider(String)
@@ -110,10 +118,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChanges
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Settings/ISettingsManager.cs
-    startLine: 6
+    startLine: 22
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Settings
+  summary: Сохраняет и применяет изменения.
+  example: []
   syntax:
     content: void SaveChanges()
     content.vb: Sub SaveChanges()

@@ -5,7 +5,13 @@ items:
   id: StandDataSelectFilter
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
   children:
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String})
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String},ParmaGIS.Modules.Data.Storages.SpaceStorage)
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged(System.String)
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.PropertyChanged
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values
   langs:
   - csharp
   - vb
@@ -20,13 +26,13 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StandDataSelectFilter
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
-    startLine: 31
+    startLine: 42
   assemblies:
   - ParmaGIS.WPF.Modules.GroupEditTool
   namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
   syntax:
-    content: 'public class StandDataSelectFilter : SelectFilter<StandData>, IListFilter<string, StandData>, IFilter<StandData>, IFilter'
-    content.vb: Public Class StandDataSelectFilter Inherits SelectFilter(Of StandData) Implements IListFilter(Of String, StandData), IFilter(Of StandData), IFilter
+    content: 'public class StandDataSelectFilter : SelectFilter<StandData>, IListFilter<string, StandData>, IFilter<StandData>, IFilter, INotifyPropertyChanged'
+    content.vb: Public Class StandDataSelectFilter Inherits SelectFilter(Of StandData) Implements IListFilter(Of String, StandData), IFilter(Of StandData), IFilter, INotifyPropertyChanged
   inheritance:
   - System.Object
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
@@ -35,9 +41,9 @@ items:
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IListFilter{System.String,ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter
+  - System.ComponentModel.INotifyPropertyChanged
   inheritedMembers:
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.SelectedValues
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Values
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.KeySelector
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.ItemType
@@ -52,16 +58,50 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String})
-  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String})
-  id: '#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String})'
+  extensionMethods:
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{{TProperty},System.Boolean},System.String)
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.PropertyChanged
+  commentId: E:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.PropertyChanged
+  id: PropertyChanged
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
   langs:
   - csharp
   - vb
-  name: StandDataSelectFilter(string, string, Expression<Func<StandData, string>>, List<string>)
-  nameWithType: StandDataSelectFilter.StandDataSelectFilter(string, string, Expression<Func<StandData, string>>, List<string>)
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.StandDataSelectFilter(string, string, System.Linq.Expressions.Expression<System.Func<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, string>>, System.Collections.Generic.List<string>)
+  name: PropertyChanged
+  nameWithType: StandDataSelectFilter.PropertyChanged
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.PropertyChanged
+  type: Event
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: PropertyChanged
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+    startLine: 49
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  summary: Occurs when a property value changes.
+  example: []
+  syntax:
+    content: public event PropertyChangedEventHandler? PropertyChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String},ParmaGIS.Modules.Data.Storages.SpaceStorage)
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String},ParmaGIS.Modules.Data.Storages.SpaceStorage)
+  id: '#ctor(System.String,System.String,System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}},System.Collections.Generic.List{System.String},ParmaGIS.Modules.Data.Storages.SpaceStorage)'
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+  langs:
+  - csharp
+  - vb
+  name: StandDataSelectFilter(string, string, Expression<Func<StandData, string>>, List<string>, SpaceStorage)
+  nameWithType: StandDataSelectFilter.StandDataSelectFilter(string, string, Expression<Func<StandData, string>>, List<string>, SpaceStorage)
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.StandDataSelectFilter(string, string, System.Linq.Expressions.Expression<System.Func<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, string>>, System.Collections.Generic.List<string>, ParmaGIS.Modules.Data.Storages.SpaceStorage)
   type: Constructor
   source:
     remote:
@@ -70,12 +110,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
-    startLine: 33
+    startLine: 51
   assemblies:
   - ParmaGIS.WPF.Modules.GroupEditTool
   namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
   syntax:
-    content: public StandDataSelectFilter(string title, string description, Expression<Func<StandData, string>> keySelector, List<string> allPossibleValues)
+    content: public StandDataSelectFilter(string title, string description, Expression<Func<StandData, string>> keySelector, List<string> allPossibleValues, SpaceStorage spaceStorage)
     parameters:
     - id: title
       type: System.String
@@ -85,11 +125,161 @@ items:
       type: System.Linq.Expressions.Expression{System.Func{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.String}}
     - id: allPossibleValues
       type: System.Collections.Generic.List{System.String}
-    content.vb: Public Sub New(title As String, description As String, keySelector As Expression(Of Func(Of StandData, String)), allPossibleValues As List(Of String))
+    - id: spaceStorage
+      type: ParmaGIS.Modules.Data.Storages.SpaceStorage
+    content.vb: Public Sub New(title As String, description As String, keySelector As Expression(Of Func(Of StandData, String)), allPossibleValues As List(Of String), spaceStorage As SpaceStorage)
   overload: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor*
-  nameWithType.vb: StandDataSelectFilter.New(String, String, Expression(Of Func(Of StandData, String)), List(Of String))
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.New(String, String, System.Linq.Expressions.Expression(Of System.Func(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, String)), System.Collections.Generic.List(Of String))
-  name.vb: New(String, String, Expression(Of Func(Of StandData, String)), List(Of String))
+  nameWithType.vb: StandDataSelectFilter.New(String, String, Expression(Of Func(Of StandData, String)), List(Of String), SpaceStorage)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.New(String, String, System.Linq.Expressions.Expression(Of System.Func(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, String)), System.Collections.Generic.List(Of String), ParmaGIS.Modules.Data.Storages.SpaceStorage)
+  name.vb: New(String, String, Expression(Of Func(Of StandData, String)), List(Of String), SpaceStorage)
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData
+  id: SourceData
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+  langs:
+  - csharp
+  - vb
+  name: SourceData
+  nameWithType: StandDataSelectFilter.SourceData
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SourceData
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+    startLine: 64
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  syntax:
+    content: public ParmaSpaceSourceData<StandData> SourceData { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+    content.vb: Public ReadOnly Property SourceData As ParmaSpaceSourceData(Of StandData)
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData*
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space
+  id: Space
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+  langs:
+  - csharp
+  - vb
+  name: Space
+  nameWithType: StandDataSelectFilter.Space
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Space
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+    startLine: 65
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  syntax:
+    content: public ParmaSpace Space { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.Modules.Parma.Space.ParmaSpace
+    content.vb: Public ReadOnly Property Space As ParmaSpace
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space*
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues
+  id: LoadPossibleValues
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+  langs:
+  - csharp
+  - vb
+  name: LoadPossibleValues
+  nameWithType: StandDataSelectFilter.LoadPossibleValues
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: LoadPossibleValues
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+    startLine: 66
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  syntax:
+    content: public RelayCommand LoadPossibleValues { get; }
+    parameters: []
+    return:
+      type: ParmaGIS.WPF.UI.Utilities.RelayCommand
+    content.vb: Public ReadOnly Property LoadPossibleValues As RelayCommand
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues*
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values
+  id: Values
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+  langs:
+  - csharp
+  - vb
+  name: Values
+  nameWithType: StandDataSelectFilter.Values
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Values
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+    startLine: 68
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  syntax:
+    content: public List<string> Values { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property Values As List(Of String)
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values*
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged(System.String)
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged(System.String)
+  id: OnPropertyChanged(System.String)
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+  langs:
+  - csharp
+  - vb
+  name: OnPropertyChanged(string)
+  nameWithType: StandDataSelectFilter.OnPropertyChanged(string)
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged(string)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: OnPropertyChanged
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
+    startLine: 97
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  syntax:
+    content: protected virtual void OnPropertyChanged(string propertyName)
+    parameters:
+    - id: propertyName
+      type: System.String
+    content.vb: Protected Overridable Sub OnPropertyChanged(propertyName As String)
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged*
+  nameWithType.vb: StandDataSelectFilter.OnPropertyChanged(String)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
 references:
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
   commentId: N:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
@@ -283,6 +473,14 @@ references:
   name: IFilter
   nameWithType: IFilter
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.SelectedValues
   commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.SelectedValues
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
@@ -293,16 +491,6 @@ references:
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.SelectedValues
   nameWithType.vb: SelectFilter(Of StandData).SelectedValues
   fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).SelectedValues
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Values
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Values
-  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.Values
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SelectFilter_1_Values
-  name: Values
-  nameWithType: SelectFilter<StandData>.Values
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.Values
-  nameWithType.vb: SelectFilter(Of StandData).Values
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).Values
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.KeySelector
   commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.KeySelector
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
@@ -643,6 +831,284 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{{TProperty},System.Boolean},System.String)
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+  parent: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions
+  definition: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_
+  name: SetErrorRule<StandDataSelectFilter, TProperty>(StandDataSelectFilter, Expression<Func<StandDataSelectFilter, TProperty>>, RulesObserver, Func<TProperty, bool>, string)
+  nameWithType: RulesExtensions.SetErrorRule<StandDataSelectFilter, TProperty>(StandDataSelectFilter, Expression<Func<StandDataSelectFilter, TProperty>>, RulesObserver, Func<TProperty, bool>, string)
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule<ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty>(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, System.Linq.Expressions.Expression<System.Func<ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty>>, ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Func<TProperty, bool>, string)
+  nameWithType.vb: RulesExtensions.SetErrorRule(Of StandDataSelectFilter, TProperty)(StandDataSelectFilter, Expression(Of Func(Of StandDataSelectFilter, TProperty)), RulesObserver, Func(Of TProperty, Boolean), String)
+  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule(Of ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty)(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, System.Linq.Expressions.Expression(Of System.Func(Of ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty)), ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Func(Of TProperty, Boolean), String)
+  name.vb: SetErrorRule(Of StandDataSelectFilter, TProperty)(StandDataSelectFilter, Expression(Of Func(Of StandDataSelectFilter, TProperty)), RulesObserver, Func(Of TProperty, Boolean), String)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+    name: SetErrorRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+    name: SetErrorRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+  parent: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions
+  definition: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___
+  name: SetRule<StandDataSelectFilter, TProperty>(StandDataSelectFilter, Expression<Func<StandDataSelectFilter, TProperty>>, RulesObserver, Action<RuleContext<TProperty>>)
+  nameWithType: RulesExtensions.SetRule<StandDataSelectFilter, TProperty>(StandDataSelectFilter, Expression<Func<StandDataSelectFilter, TProperty>>, RulesObserver, Action<RulesObserver.RuleContext<TProperty>>)
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule<ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty>(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, System.Linq.Expressions.Expression<System.Func<ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty>>, ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action<ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext<TProperty>>)
+  nameWithType.vb: RulesExtensions.SetRule(Of StandDataSelectFilter, TProperty)(StandDataSelectFilter, Expression(Of Func(Of StandDataSelectFilter, TProperty)), RulesObserver, Action(Of RulesObserver.RuleContext(Of TProperty)))
+  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule(Of ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty)(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, System.Linq.Expressions.Expression(Of System.Func(Of ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter, TProperty)), ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action(Of ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext(Of TProperty)))
+  name.vb: SetRule(Of StandDataSelectFilter, TProperty)(StandDataSelectFilter, Expression(Of Func(Of StandDataSelectFilter, TProperty)), RulesObserver, Action(Of RuleContext(Of TProperty)))
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,System.Linq.Expressions.Expression{System.Func{ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
+    name: StandDataSelectFilter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -756,6 +1222,33 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.SelectedValues
   commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.SelectedValues
   href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SelectFilter_1_SelectedValues
@@ -764,14 +1257,6 @@ references:
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter<T>.SelectedValues
   nameWithType.vb: SelectFilter(Of T).SelectedValues
   fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter(Of T).SelectedValues
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.Values
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.Values
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SelectFilter_1_Values
-  name: Values
-  nameWithType: SelectFilter<T>.Values
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter<T>.Values
-  nameWithType.vb: SelectFilter(Of T).Values
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter(Of T).Values
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.KeySelector
   commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter`1.KeySelector
   href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SelectFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SelectFilter_1_KeySelector
@@ -879,9 +1364,338 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable
   - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_
+  name: SetErrorRule<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, RulesObserver, Func<TProperty, bool>, string)
+  nameWithType: RulesExtensions.SetErrorRule<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, RulesObserver, Func<TProperty, bool>, string)
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule<TSubject, TProperty>(TSubject, System.Linq.Expressions.Expression<System.Func<TSubject, TProperty>>, ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Func<TProperty, bool>, string)
+  nameWithType.vb: RulesExtensions.SetErrorRule(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), RulesObserver, Func(Of TProperty, Boolean), String)
+  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule(Of TSubject, TProperty)(TSubject, System.Linq.Expressions.Expression(Of System.Func(Of TSubject, TProperty)), ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Func(Of TProperty, Boolean), String)
+  name.vb: SetErrorRule(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), RulesObserver, Func(Of TProperty, Boolean), String)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+    name: SetErrorRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{``1,System.Boolean},System.String)
+    name: SetErrorRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetErrorRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Func___1_System_Boolean__System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions
+  commentId: T:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions
+  parent: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html
+  name: RulesExtensions
+  nameWithType: RulesExtensions
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions
+- uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___
+  name: SetRule<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, RulesObserver, Action<RuleContext<TProperty>>)
+  nameWithType: RulesExtensions.SetRule<TSubject, TProperty>(TSubject, Expression<Func<TSubject, TProperty>>, RulesObserver, Action<RulesObserver.RuleContext<TProperty>>)
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule<TSubject, TProperty>(TSubject, System.Linq.Expressions.Expression<System.Func<TSubject, TProperty>>, ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action<ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext<TProperty>>)
+  nameWithType.vb: RulesExtensions.SetRule(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), RulesObserver, Action(Of RulesObserver.RuleContext(Of TProperty)))
+  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule(Of TSubject, TProperty)(TSubject, System.Linq.Expressions.Expression(Of System.Func(Of TSubject, TProperty)), ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action(Of ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext(Of TProperty)))
+  name.vb: SetRule(Of TSubject, TProperty)(TSubject, Expression(Of Func(Of TSubject, TProperty)), RulesObserver, Action(Of RuleContext(Of TProperty)))
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``1}})
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSubject
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+  commentId: N:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+  href: ParmaGIS.html
+  name: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+  nameWithType: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules
+    name: Modules
+    href: ParmaGIS.WPF.Modules.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.Data
+    name: Data
+    href: ParmaGIS.WPF.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.Data.UI
+    name: UI
+    href: ParmaGIS.WPF.Modules.Data.UI.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+    name: ReactiveRules
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules
+    name: Modules
+    href: ParmaGIS.WPF.Modules.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.Data
+    name: Data
+    href: ParmaGIS.WPF.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.Data.UI
+    name: UI
+    href: ParmaGIS.WPF.Modules.Data.UI.html
+  - name: .
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
+    name: ReactiveRules
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.html
+- uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  parent: System.ComponentModel.INotifyPropertyChanged
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged.propertychanged
+  name: PropertyChanged
+  nameWithType: INotifyPropertyChanged.PropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventhandler
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor*
   commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.#ctor
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter__ctor_System_String_System_String_System_Linq_Expressions_Expression_System_Func_ParmaGIS_Modules_Parma_Space_Data_Objects_StandData_System_String___System_Collections_Generic_List_System_String__
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter__ctor_System_String_System_String_System_Linq_Expressions_Expression_System_Func_ParmaGIS_Modules_Parma_Space_Data_Objects_StandData_System_String___System_Collections_Generic_List_System_String__ParmaGIS_Modules_Data_Storages_SpaceStorage_
   name: StandDataSelectFilter
   nameWithType: StandDataSelectFilter.StandDataSelectFilter
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.StandDataSelectFilter
@@ -991,6 +1805,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: ParmaGIS.Modules.Data.Storages.SpaceStorage
+  commentId: T:ParmaGIS.Modules.Data.Storages.SpaceStorage
+  parent: ParmaGIS.Modules.Data.Storages
+  href: ParmaGIS.Modules.Data.Storages.SpaceStorage.html
+  name: SpaceStorage
+  nameWithType: SpaceStorage
+  fullName: ParmaGIS.Modules.Data.Storages.SpaceStorage
 - uid: System.Linq.Expressions.Expression`1
   commentId: T:System.Linq.Expressions.Expression`1
   isExternal: true
@@ -1121,3 +1942,215 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ParmaGIS.Modules.Data.Storages
+  commentId: N:ParmaGIS.Modules.Data.Storages
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Data.Storages
+  nameWithType: ParmaGIS.Modules.Data.Storages
+  fullName: ParmaGIS.Modules.Data.Storages
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Storages
+    name: Storages
+    href: ParmaGIS.Modules.Data.Storages.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data
+    name: Data
+    href: ParmaGIS.Modules.Data.html
+  - name: .
+  - uid: ParmaGIS.Modules.Data.Storages
+    name: Storages
+    href: ParmaGIS.Modules.Data.Storages.html
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter_SourceData
+  name: SourceData
+  nameWithType: StandDataSelectFilter.SourceData
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.SourceData
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData-1.html
+  name: ParmaSpaceSourceData<StandData>
+  nameWithType: ParmaSpaceSourceData<StandData>
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>
+  nameWithType.vb: ParmaSpaceSourceData(Of StandData)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData)
+  name.vb: ParmaSpaceSourceData(Of StandData)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+    name: ParmaSpaceSourceData
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData-1.html
+  - name: <
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
+    name: StandData
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+    name: ParmaSpaceSourceData
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
+    name: StandData
+  - name: )
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData-1.html
+  name: ParmaSpaceSourceData<T>
+  nameWithType: ParmaSpaceSourceData<T>
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData<T>
+  nameWithType.vb: ParmaSpaceSourceData(Of T)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData(Of T)
+  name.vb: ParmaSpaceSourceData(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+    name: ParmaSpaceSourceData
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
+    name: ParmaSpaceSourceData
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter_Space
+  name: Space
+  nameWithType: StandDataSelectFilter.Space
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Space
+- uid: ParmaGIS.Modules.Parma.Space.ParmaSpace
+  commentId: T:ParmaGIS.Modules.Parma.Space.ParmaSpace
+  parent: ParmaGIS.Modules.Parma.Space
+  href: ParmaGIS.Modules.Parma.Space.ParmaSpace.html
+  name: ParmaSpace
+  nameWithType: ParmaSpace
+  fullName: ParmaGIS.Modules.Parma.Space.ParmaSpace
+- uid: ParmaGIS.Modules.Parma.Space
+  commentId: N:ParmaGIS.Modules.Parma.Space
+  href: ParmaGIS.html
+  name: ParmaGIS.Modules.Parma.Space
+  nameWithType: ParmaGIS.Modules.Parma.Space
+  fullName: ParmaGIS.Modules.Parma.Space
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.Modules
+    name: Modules
+    href: ParmaGIS.Modules.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma
+    name: Parma
+    href: ParmaGIS.Modules.Parma.html
+  - name: .
+  - uid: ParmaGIS.Modules.Parma.Space
+    name: Space
+    href: ParmaGIS.Modules.Parma.Space.html
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter_LoadPossibleValues
+  name: LoadPossibleValues
+  nameWithType: StandDataSelectFilter.LoadPossibleValues
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.LoadPossibleValues
+- uid: ParmaGIS.WPF.UI.Utilities.RelayCommand
+  commentId: T:ParmaGIS.WPF.UI.Utilities.RelayCommand
+  parent: ParmaGIS.WPF.UI.Utilities
+  href: ParmaGIS.WPF.UI.Utilities.RelayCommand.html
+  name: RelayCommand
+  nameWithType: RelayCommand
+  fullName: ParmaGIS.WPF.UI.Utilities.RelayCommand
+- uid: ParmaGIS.WPF.UI.Utilities
+  commentId: N:ParmaGIS.WPF.UI.Utilities
+  href: ParmaGIS.html
+  name: ParmaGIS.WPF.UI.Utilities
+  nameWithType: ParmaGIS.WPF.UI.Utilities
+  fullName: ParmaGIS.WPF.UI.Utilities
+  spec.csharp:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI
+    name: UI
+    href: ParmaGIS.WPF.UI.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI.Utilities
+    name: Utilities
+    href: ParmaGIS.WPF.UI.Utilities.html
+  spec.vb:
+  - uid: ParmaGIS
+    name: ParmaGIS
+    href: ParmaGIS.html
+  - name: .
+  - uid: ParmaGIS.WPF
+    name: WPF
+    href: ParmaGIS.WPF.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI
+    name: UI
+    href: ParmaGIS.WPF.UI.html
+  - name: .
+  - uid: ParmaGIS.WPF.UI.Utilities
+    name: Utilities
+    href: ParmaGIS.WPF.UI.Utilities.html
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter_Values
+  name: Values
+  nameWithType: StandDataSelectFilter.Values
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.Values
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_StandDataSelectFilter_OnPropertyChanged_System_String_
+  name: OnPropertyChanged
+  nameWithType: StandDataSelectFilter.OnPropertyChanged
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter.OnPropertyChanged

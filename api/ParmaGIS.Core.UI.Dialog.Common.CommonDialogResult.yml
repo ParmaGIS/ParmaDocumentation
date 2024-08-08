@@ -6,9 +6,7 @@ items:
   parent: ParmaGIS.Core.UI.Dialog.Common
   children:
   - ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.#ctor(ParmaGIS.Core.UI.Dialog.ButtonResult,ParmaGIS.Core.UI.Dialog.IDialogParameters,System.Collections.Generic.IEnumerable{System.String})
-  - ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult
   - ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames
-  - ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters
   langs:
   - csharp
   - vb
@@ -23,18 +21,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CommonDialogResult
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
+  summary: Представляет результат общих диалогов.
+  example: []
   syntax:
-    content: 'public class CommonDialogResult : IDialogResult'
-    content.vb: Public Class CommonDialogResult Implements IDialogResult
+    content: 'public class CommonDialogResult : DialogResult, IDialogResult'
+    content.vb: Public Class CommonDialogResult Inherits DialogResult Implements IDialogResult
   inheritance:
   - System.Object
+  - ParmaGIS.Core.UI.Dialog.DialogResult
   implements:
   - ParmaGIS.Core.UI.Dialog.IDialogResult
   inheritedMembers:
+  - ParmaGIS.Core.UI.Dialog.DialogResult.ButtonResult
+  - ParmaGIS.Core.UI.Dialog.DialogResult.Parameters
+  - ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -49,9 +53,9 @@ items:
   langs:
   - csharp
   - vb
-  name: CommonDialogResult(ButtonResult, IDialogParameters, IEnumerable<string>)
-  nameWithType: CommonDialogResult.CommonDialogResult(ButtonResult, IDialogParameters, IEnumerable<string>)
-  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.CommonDialogResult(ParmaGIS.Core.UI.Dialog.ButtonResult, ParmaGIS.Core.UI.Dialog.IDialogParameters, System.Collections.Generic.IEnumerable<string>)
+  name: CommonDialogResult(ButtonResult, IDialogParameters?, IEnumerable<string>)
+  nameWithType: CommonDialogResult.CommonDialogResult(ButtonResult, IDialogParameters?, IEnumerable<string>)
+  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.CommonDialogResult(ParmaGIS.Core.UI.Dialog.ButtonResult, ParmaGIS.Core.UI.Dialog.IDialogParameters?, System.Collections.Generic.IEnumerable<string>)
   type: Constructor
   source:
     remote:
@@ -60,90 +64,29 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
+  summary: Инициаллизирует экземплря класса <xref href="ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
-    content: public CommonDialogResult(ButtonResult buttonResult, IDialogParameters parameters, IEnumerable<string> fileNames)
+    content: public CommonDialogResult(ButtonResult buttonResult, IDialogParameters? parameters, IEnumerable<string> fileNames)
     parameters:
     - id: buttonResult
       type: ParmaGIS.Core.UI.Dialog.ButtonResult
+      description: Результат нажатия кнопки.
     - id: parameters
       type: ParmaGIS.Core.UI.Dialog.IDialogParameters
+      description: Параметры, с которыми был вызыван диалог.
     - id: fileNames
       type: System.Collections.Generic.IEnumerable{System.String}
+      description: Названия файлов.
     content.vb: Public Sub New(buttonResult As ButtonResult, parameters As IDialogParameters, fileNames As IEnumerable(Of String))
   overload: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.#ctor*
   nameWithType.vb: CommonDialogResult.New(ButtonResult, IDialogParameters, IEnumerable(Of String))
   fullName.vb: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.New(ParmaGIS.Core.UI.Dialog.ButtonResult, ParmaGIS.Core.UI.Dialog.IDialogParameters, System.Collections.Generic.IEnumerable(Of String))
   name.vb: New(ButtonResult, IDialogParameters, IEnumerable(Of String))
-- uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult
-  commentId: P:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult
-  id: ButtonResult
-  parent: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult
-  langs:
-  - csharp
-  - vb
-  name: ButtonResult
-  nameWithType: CommonDialogResult.ButtonResult
-  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult
-  type: Property
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: ButtonResult
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-    startLine: 15
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Dialog.Common
-  summary: Результат нажатия кнопок.
-  example: []
-  syntax:
-    content: public ButtonResult ButtonResult { get; }
-    parameters: []
-    return:
-      type: ParmaGIS.Core.UI.Dialog.ButtonResult
-    content.vb: Public ReadOnly Property ButtonResult As ButtonResult
-  overload: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult*
-  implements:
-  - ParmaGIS.Core.UI.Dialog.IDialogResult.ButtonResult
-- uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters
-  commentId: P:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters
-  id: Parameters
-  parent: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult
-  langs:
-  - csharp
-  - vb
-  name: Parameters
-  nameWithType: CommonDialogResult.Parameters
-  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters
-  type: Property
-  source:
-    remote:
-      path: common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-      branch: origin/test
-      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: Parameters
-    path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-    startLine: 16
-  assemblies:
-  - ParmaGIS.Core.UI
-  namespace: ParmaGIS.Core.UI.Dialog.Common
-  summary: Результат нажатия кнопок.
-  example: []
-  syntax:
-    content: public IDialogParameters Parameters { get; }
-    parameters: []
-    return:
-      type: ParmaGIS.Core.UI.Dialog.IDialogParameters
-    content.vb: Public ReadOnly Property Parameters As IDialogParameters
-  overload: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters*
-  implements:
-  - ParmaGIS.Core.UI.Dialog.IDialogResult.Parameters
 - uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames
   commentId: P:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames
   id: FileNames
@@ -162,10 +105,12 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FileNames
     path: ../ParmaGIS master/common/src/ParmaGIS.Core.UI/Dialog/Common/CommonDialogResult.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - ParmaGIS.Core.UI
   namespace: ParmaGIS.Core.UI.Dialog.Common
+  summary: Возвращает названия файлов.
+  example: []
   syntax:
     content: public IEnumerable<string> FileNames { get; }
     parameters: []
@@ -231,6 +176,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult
+  commentId: T:ParmaGIS.Core.UI.Dialog.DialogResult
+  parent: ParmaGIS.Core.UI.Dialog
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html
+  name: DialogResult
+  nameWithType: DialogResult
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult
 - uid: ParmaGIS.Core.UI.Dialog.IDialogResult
   commentId: T:ParmaGIS.Core.UI.Dialog.IDialogResult
   parent: ParmaGIS.Core.UI.Dialog
@@ -238,6 +190,39 @@ references:
   name: IDialogResult
   nameWithType: IDialogResult
   fullName: ParmaGIS.Core.UI.Dialog.IDialogResult
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult.ButtonResult
+  commentId: P:ParmaGIS.Core.UI.Dialog.DialogResult.ButtonResult
+  parent: ParmaGIS.Core.UI.Dialog.DialogResult
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_ButtonResult
+  name: ButtonResult
+  nameWithType: DialogResult.ButtonResult
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult.ButtonResult
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult.Parameters
+  commentId: P:ParmaGIS.Core.UI.Dialog.DialogResult.Parameters
+  parent: ParmaGIS.Core.UI.Dialog.DialogResult
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_Parameters
+  name: Parameters
+  nameWithType: DialogResult.Parameters
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult.Parameters
+- uid: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+  commentId: M:ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+  parent: ParmaGIS.Core.UI.Dialog.DialogResult
+  href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_IsNotOk
+  name: IsNotOk()
+  nameWithType: DialogResult.IsNotOk()
+  fullName: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk()
+  spec.csharp:
+  - uid: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+    name: IsNotOk
+    href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_IsNotOk
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.Core.UI.Dialog.DialogResult.IsNotOk
+    name: IsNotOk
+    href: ParmaGIS.Core.UI.Dialog.DialogResult.html#ParmaGIS_Core_UI_Dialog_DialogResult_IsNotOk
+  - name: (
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -502,6 +487,13 @@ references:
   - uid: ParmaGIS.Core.UI.Dialog
     name: Dialog
     href: ParmaGIS.Core.UI.Dialog.html
+- uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult
+  commentId: T:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult
+  parent: ParmaGIS.Core.UI.Dialog.Common
+  href: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.html
+  name: CommonDialogResult
+  nameWithType: CommonDialogResult
+  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult
 - uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.#ctor*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.#ctor
   href: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.html#ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult__ctor_ParmaGIS_Core_UI_Dialog_ButtonResult_ParmaGIS_Core_UI_Dialog_IDialogParameters_System_Collections_Generic_IEnumerable_System_String__
@@ -625,32 +617,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult
-  href: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.html#ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_ButtonResult
-  name: ButtonResult
-  nameWithType: CommonDialogResult.ButtonResult
-  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.ButtonResult
-- uid: ParmaGIS.Core.UI.Dialog.IDialogResult.ButtonResult
-  commentId: P:ParmaGIS.Core.UI.Dialog.IDialogResult.ButtonResult
-  parent: ParmaGIS.Core.UI.Dialog.IDialogResult
-  href: ParmaGIS.Core.UI.Dialog.IDialogResult.html#ParmaGIS_Core_UI_Dialog_IDialogResult_ButtonResult
-  name: ButtonResult
-  nameWithType: IDialogResult.ButtonResult
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogResult.ButtonResult
-- uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters*
-  commentId: Overload:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters
-  href: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.html#ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_Parameters
-  name: Parameters
-  nameWithType: CommonDialogResult.Parameters
-  fullName: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.Parameters
-- uid: ParmaGIS.Core.UI.Dialog.IDialogResult.Parameters
-  commentId: P:ParmaGIS.Core.UI.Dialog.IDialogResult.Parameters
-  parent: ParmaGIS.Core.UI.Dialog.IDialogResult
-  href: ParmaGIS.Core.UI.Dialog.IDialogResult.html#ParmaGIS_Core_UI_Dialog_IDialogResult_Parameters
-  name: Parameters
-  nameWithType: IDialogResult.Parameters
-  fullName: ParmaGIS.Core.UI.Dialog.IDialogResult.Parameters
 - uid: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames*
   commentId: Overload:ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.FileNames
   href: ParmaGIS.Core.UI.Dialog.Common.CommonDialogResult.html#ParmaGIS_Core_UI_Dialog_Common_CommonDialogResult_FileNames

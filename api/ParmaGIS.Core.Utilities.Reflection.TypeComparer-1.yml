@@ -7,8 +7,8 @@ items:
   children:
   - ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.ComparableType
   - ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.Compare(System.Object)
-  - ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
-  - ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
+  - ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
+  - ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
   langs:
   - csharp
   - vb
@@ -23,14 +23,17 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TypeComparer
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Представляет реаллизацию типизированного сравнения типов.
+  example: []
   syntax:
     content: 'public class TypeComparer<T> : ITypeComparer'
     typeParameters:
     - id: T
+      description: Тип, с которым будет производиться сравнение.
     content.vb: Public Class TypeComparer(Of T) Implements ITypeComparer
   inheritance:
   - System.Object
@@ -65,10 +68,11 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ComparableType
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
-    startLine: 7
+    startLine: 12
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Возвращает тип, с которым будет произведено сравнение.
   example: []
   syntax:
     content: public Type ComparableType { get; }
@@ -99,18 +103,21 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Compare
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
-    startLine: 9
+    startLine: 15
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Сравнивает объект с типом.
   example: []
   syntax:
     content: public bool Compare(object param)
     parameters:
     - id: param
       type: System.Object
+      description: Объект, тип которого будет сравниваться с <xref href="ParmaGIS.Core.Utilities.Reflection.ITypeComparer.ComparableType" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: Возвращает <code>true</code> если типы совпадают, иначе <code>false</code>.
     content.vb: Public Function Compare(param As Object) As Boolean
   overload: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.Compare*
   implements:
@@ -118,71 +125,77 @@ items:
   nameWithType.vb: TypeComparer(Of T).Compare(Object)
   fullName.vb: ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T).Compare(Object)
   name.vb: Compare(Object)
-- uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
-  commentId: M:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
-  id: op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
+- uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
+  commentId: M:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
+  id: op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Func{System.Object,System.Boolean}
   parent: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
   langs:
   - csharp
   - vb
-  name: explicit operator Func<object, bool>(TypeComparer<T>)
-  nameWithType: TypeComparer<T>.explicit operator Func<object, bool>(TypeComparer<T>)
-  fullName: ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>.explicit operator System.Func<object, bool>(ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>)
+  name: implicit operator Func<object, bool>(TypeComparer<T>)
+  nameWithType: TypeComparer<T>.implicit operator Func<object, bool>(TypeComparer<T>)
+  fullName: ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>.implicit operator System.Func<object, bool>(ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>)
   type: Operator
   source:
     remote:
       path: common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: op_Explicit
+    id: op_Implicit
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
-    startLine: 14
+    startLine: 24
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Переопределение операции приведения <xref href="ParmaGIS.Core.Utilities.Reflection.TypeComparer%601" data-throw-if-not-resolved="false"></xref> к функции.
+  example: []
   syntax:
-    content: public static explicit operator Func<object, bool>(TypeComparer<T> comparer)
+    content: public static implicit operator Func<object, bool>(TypeComparer<T> comparer)
     parameters:
     - id: comparer
       type: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
+      description: ''
     return:
       type: System.Func{System.Object,System.Boolean}
-    content.vb: Public Shared Narrowing Operator CType(comparer As TypeComparer(Of T)) As Func(Of Object, Boolean)
-  overload: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit*
+    content.vb: Public Shared Widening Operator CType(comparer As TypeComparer(Of T)) As Func(Of Object, Boolean)
+  overload: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit*
   nameWithType.vb: TypeComparer(Of T).CType(TypeComparer(Of T))
   fullName.vb: ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T).CType(ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T))
   name.vb: CType(TypeComparer(Of T))
-- uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
-  commentId: M:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
-  id: op_Explicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
+- uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
+  commentId: M:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
+  id: op_Implicit(ParmaGIS.Core.Utilities.Reflection.TypeComparer{`0})~System.Predicate{System.Object}
   parent: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
   langs:
   - csharp
   - vb
-  name: explicit operator Predicate<object>(TypeComparer<T>)
-  nameWithType: TypeComparer<T>.explicit operator Predicate<object>(TypeComparer<T>)
-  fullName: ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>.explicit operator System.Predicate<object>(ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>)
+  name: implicit operator Predicate<object>(TypeComparer<T>)
+  nameWithType: TypeComparer<T>.implicit operator Predicate<object>(TypeComparer<T>)
+  fullName: ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>.implicit operator System.Predicate<object>(ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>)
   type: Operator
   source:
     remote:
       path: common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
-    id: op_Explicit
+    id: op_Implicit
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Reflection/TypeComparer.cs
-    startLine: 19
+    startLine: 33
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Reflection
+  summary: Переопределение операции приведения <xref href="ParmaGIS.Core.Utilities.Reflection.TypeComparer%601" data-throw-if-not-resolved="false"></xref> к предикату.
+  example: []
   syntax:
-    content: public static explicit operator Predicate<object>(TypeComparer<T> comparer)
+    content: public static implicit operator Predicate<object>(TypeComparer<T> comparer)
     parameters:
     - id: comparer
       type: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
+      description: ''
     return:
       type: System.Predicate{System.Object}
-    content.vb: Public Shared Narrowing Operator CType(comparer As TypeComparer(Of T)) As Predicate(Of Object)
-  overload: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit*
+    content.vb: Public Shared Widening Operator CType(comparer As TypeComparer(Of T)) As Predicate(Of Object)
+  overload: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit*
   nameWithType.vb: TypeComparer(Of T).CType(TypeComparer(Of T))
   fullName.vb: ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T).CType(ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T))
   name.vb: CType(TypeComparer(Of T))
@@ -542,18 +555,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit*
-  commentId: Overload:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Explicit
-  name: explicit operator
-  nameWithType: TypeComparer<T>.explicit operator
-  fullName: ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>.explicit operator
-  nameWithType.vb: TypeComparer(Of T).CType
-  fullName.vb: ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T).CType
-  name.vb: CType
-  spec.csharp:
-  - name: explicit
-  - name: " "
-  - name: operator
 - uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
   commentId: T:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
   parent: ParmaGIS.Core.Utilities.Reflection
@@ -580,6 +581,18 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit*
+  commentId: Overload:ParmaGIS.Core.Utilities.Reflection.TypeComparer`1.op_Implicit
+  name: implicit operator
+  nameWithType: TypeComparer<T>.implicit operator
+  fullName: ParmaGIS.Core.Utilities.Reflection.TypeComparer<T>.implicit operator
+  nameWithType.vb: TypeComparer(Of T).CType
+  fullName.vb: ParmaGIS.Core.Utilities.Reflection.TypeComparer(Of T).CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
 - uid: System.Func{System.Object,System.Boolean}
   commentId: T:System.Func{System.Object,System.Boolean}
   parent: System

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EntityBuilder&lt;T&gt; | site ">
       
-      
+      <meta name="description" content="Представляет строитель объектов с помощью менеджера сервисов .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Reflection_EntityBuilder_1" data-uid="ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1" class="text-break">
-Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет строитель объектов с помощью менеджера сервисов <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html">IServiceManager</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,7 +110,8 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип сущности, экземпляр которой необходимо построить.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -161,10 +163,11 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Utilities_Reflection_EntityBuilder_1__ctor_System_Func_ParmaGIS_Core_Serviceability_IServiceManager__0__" data-uid="ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.#ctor(System.Func{ParmaGIS.Core.Serviceability.IServiceManager,`0})">
   EntityBuilder(Func&lt;IServiceManager, T&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html">EntityBuilder&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -174,7 +177,9 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>factory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html">IServiceManager</a>, T&gt;</dt>
-    <dd></dd>
+    <dd><p>Фнкция создания экземпляра сущности типа <code class="typeparamref">T</code>.
+При указании <code>null</code> создание экземпляра сущности будет происходить с помощью <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html#ParmaGIS_Core_Serviceability_IServiceManager_Resolve_System_Type_">Resolve(Type)</a>.</p>
+</dd>
   </dl>
 
 
@@ -196,10 +201,11 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Utilities_Reflection_EntityBuilder_1_Build_ParmaGIS_Core_Serviceability_IServiceManager_" data-uid="ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.Build(ParmaGIS.Core.Serviceability.IServiceManager)">
   Build(IServiceManager)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Создает сущность типа <code class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -209,13 +215,15 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>serviceManager</code> <a class="xref" href="ParmaGIS.Core.Serviceability.IServiceManager.html">IServiceManager</a></dt>
-    <dd></dd>
+    <dd><p>Менеджер сервисов.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>Экземпляр сущности типа <code class="typeparamref">T</code>.</p>
+</dd>
   </dl>
 
 
@@ -232,10 +240,11 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ParmaGIS_Core_Utilities_Reflection_EntityBuilder_1_SetConcreteBuilder__1" data-uid="ParmaGIS.Core.Utilities.Reflection.EntityBuilder`1.SetConcreteBuilder``1">
   SetConcreteBuilder&lt;TConcrete&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Устанавливает строитель сущности наследника по отношению к <code class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -246,13 +255,15 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html">EntityBuilder</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>Тот же экземпляр <a class="xref" href="ParmaGIS.Core.Utilities.Reflection.EntityBuilder-1.html">EntityBuilder&lt;T&gt;</a>.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TConcrete</code></dt>
-    <dd></dd>
+    <dd><p>Тип наследуемый от <code class="typeparamref">T</code>.</p>
+</dd>
   </dl>
 
 
@@ -268,7 +279,7 @@ Class EntityBuilder&lt;T&gt;  <a class="header-action link-secondary" title="Vie
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Reflection/EntityBuilder.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AsyncLazy&lt;T&gt; | site ">
       
-      
+      <meta name="description" content="Представляет реализацию механизма ленивой асинхронной загрузки значения.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1" class="text-break">
-Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs/#L16"><i class="bi bi-code-slash"></i></a>
+Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>ParmaGIS.Core.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Представляет реализацию механизма ленивой асинхронной загрузки значения.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,7 +110,8 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Тип значения.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -187,10 +189,11 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1__ctor_System_Func_System_Threading_Tasks_Task__0____0_" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.#ctor(System.Func{System.Threading.Tasks.Task{`0}},`0)">
   AsyncLazy(Func&lt;Task&lt;T&gt;&gt;, T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html">AsyncLazy&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -200,9 +203,11 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>factory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>Функция создающая значение.</p>
+</dd>
     <dt><code>tempValue</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>Временное значение, возвращаемое, пока настоящее значение создается.</p>
+</dd>
   </dl>
 
 
@@ -224,10 +229,11 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_IsLoadedValue" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.IsLoadedValue">
   IsLoadedValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <code>true</code>, если значение создано.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -255,10 +261,11 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_IsLoadingValue" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.IsLoadingValue">
   IsLoadingValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает <code>true</code>, если значение создается.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -286,10 +293,11 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_Value" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Value">
   Value
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Возвращает значение.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -317,7 +325,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/IThreadsVulnerable.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

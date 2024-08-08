@@ -366,8 +366,6 @@ items:
         items:
         - uid: ParmaGIS.Core.Utilities.Collections.ConvertItemsProvider`2
           name: ConvertItemsProvider<TSource, TResult>
-        - uid: ParmaGIS.Core.Utilities.Collections.EnumarableExtensions
-          name: EnumarableExtensions
         - uid: ParmaGIS.Core.Utilities.Collections.Heap`1
           name: Heap<T>
         - uid: ParmaGIS.Core.Utilities.Collections.Heap`1.HeapType
@@ -376,8 +374,6 @@ items:
           name: IItemsProvider
         - uid: ParmaGIS.Core.Utilities.Collections.IItemsProvider`1
           name: IItemsProvider<T>
-        - uid: ParmaGIS.Core.Utilities.Collections.IListExtensions
-          name: IListExtensions
         - uid: ParmaGIS.Core.Utilities.Collections.ItemsSortDescription
           name: ItemsSortDescription
         - uid: ParmaGIS.Core.Utilities.Collections.ListItemsProvider
@@ -388,28 +384,33 @@ items:
           name: ObservableItemsProvider<T>
         - uid: ParmaGIS.Core.Utilities.Collections.QueryItemProvider`1
           name: QueryItemProvider<T>
-        - uid: ParmaGIS.Core.Utilities.Collections.QueryableExtensions
-          name: QueryableExtensions
         - uid: ParmaGIS.Core.Utilities.Collections.SafeEnumerable`1
           name: SafeEnumerable<T>
         - uid: ParmaGIS.Core.Utilities.Collections.SafeEnumerator`1
           name: SafeEnumerator<T>
         - uid: ParmaGIS.Core.Utilities.Collections.VirtualizingCollection`1
           name: VirtualizingCollection<T>
-      - uid: ParmaGIS.Core.Utilities.Expressions
-        name: Expressions
-        items:
-        - uid: ParmaGIS.Core.Utilities.Expressions.ExpressionHelpers
-          name: ExpressionHelpers
-        - uid: ParmaGIS.Core.Utilities.Expressions.ExpressionHelpers.AccesorCashe`1
-          name: ExpressionHelpers.AccesorCashe<TType>
       - uid: ParmaGIS.Core.Utilities.Extensions
         name: Extensions
         items:
         - uid: ParmaGIS.Core.Utilities.Extensions.DateTimeExtensions
           name: DateTimeExtensions
+        - uid: ParmaGIS.Core.Utilities.Extensions.EnumarableExtensions
+          name: EnumarableExtensions
+        - uid: ParmaGIS.Core.Utilities.Extensions.ExpressionHelpers
+          name: ExpressionHelpers
+        - uid: ParmaGIS.Core.Utilities.Extensions.ExpressionHelpers.AccesorCashe`1
+          name: ExpressionHelpers.AccesorCashe<TType>
+        - uid: ParmaGIS.Core.Utilities.Extensions.IListExtensions
+          name: IListExtensions
+        - uid: ParmaGIS.Core.Utilities.Extensions.IPipelinewareExtensions
+          name: IPipelinewareExtensions
+        - uid: ParmaGIS.Core.Utilities.Extensions.QueryableExtensions
+          name: QueryableExtensions
         - uid: ParmaGIS.Core.Utilities.Extensions.StringExtensions
           name: StringExtensions
+        - uid: ParmaGIS.Core.Utilities.Extensions.TypeExtensions
+          name: TypeExtensions
       - uid: ParmaGIS.Core.Utilities.Factory
         name: Factory
         items:
@@ -421,8 +422,6 @@ items:
           name: ConditionPiplineware<TIn, TOut>
         - uid: ParmaGIS.Core.Utilities.Factory.IConditionPipelineware`2
           name: IConditionPipelineware<TIn, TOut>
-        - uid: ParmaGIS.Core.Utilities.Factory.IPipelinewareExtensions
-          name: IPipelinewareExtensions
         - uid: ParmaGIS.Core.Utilities.Factory.IPipelineware`2
           name: IPipelineware<TIn, TOut>
         - uid: ParmaGIS.Core.Utilities.Factory.MagistralBase`2
@@ -444,8 +443,8 @@ items:
           name: ITypeComparer
         - uid: ParmaGIS.Core.Utilities.Reflection.TypeComparer`1
           name: TypeComparer<T>
-        - uid: ParmaGIS.Core.Utilities.Reflection.TypeExtensions
-          name: TypeExtensions
+        - uid: ParmaGIS.Core.Utilities.Reflection.TypeUtils
+          name: TypeUtils
       - uid: ParmaGIS.Core.Utilities.Threading
         name: Threading
         items:
@@ -1300,8 +1299,6 @@ items:
           - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
             name: ObjectExplorer
             items:
-            - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.ObjectExplorerExtensions
-              name: ObjectExplorerExtensions
             - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView
               name: SpaceRootWidgetView
           - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver
@@ -1330,6 +1327,8 @@ items:
                 name: SimpleSelectNodeTool
               - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.NodeTools.SimpleSelectNodeToolView
                 name: SimpleSelectNodeToolView
+            - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.OpenNodeInExplorerDoubleClickHandler
+              name: OpenNodeInExplorerDoubleClickHandler
             - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectObserver.RemoveSpaceAction
               name: RemoveSpaceAction
         - uid: ParmaGIS.WPF.Modules.Data.UI.Converters
@@ -1384,6 +1383,11 @@ items:
             name: ObjectEditorBase
           - uid: ParmaGIS.WPF.Modules.Data.UI.Editors.ReactivePropertyExtensions
             name: ReactivePropertyExtensions
+        - uid: ParmaGIS.WPF.Modules.Data.UI.Extensions
+          name: Extensions
+          items:
+          - uid: ParmaGIS.WPF.Modules.Data.UI.Extensions.ObjectExplorerExtensions
+            name: ObjectExplorerExtensions
         - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
           name: ReactiveRules
           items:
@@ -1662,6 +1666,11 @@ items:
       - uid: ParmaGIS.WPF.Modules.ObjectObserverTool
         name: ObjectObserverTool
         items:
+        - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.DoubleClickHandler
+          name: DoubleClickHandler
+          items:
+          - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.DoubleClickHandler.IDoubleClickHandler
+            name: IDoubleClickHandler
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Nodes
           name: Nodes
           items:
@@ -1696,6 +1705,8 @@ items:
           items:
           - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView
             name: ObjectObserverToolView
+        - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.DoubleClickHandlerRegistration
+          name: DoubleClickHandlerRegistration
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ObjectObserverModuleDependencyAttribute
           name: ObjectObserverModuleDependencyAttribute
         - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.ObjectObserverToolModule
@@ -1908,81 +1919,197 @@ items:
       - uid: ParmaGIS.WPF.Modules.ReportTool
         name: ReportTool
         items:
+        - uid: ParmaGIS.WPF.Modules.ReportTool.Controls
+          name: Controls
+          items:
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Controls.ResizeFrameControl
+            name: ResizeFrameControl
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Controls.ThumbVisibility
+            name: ThumbVisibility
         - uid: ParmaGIS.WPF.Modules.ReportTool.Converters
           name: Converters
           items:
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.BoolConverter
-            name: BoolConverter
           - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.EnumToTitleConverter
             name: EnumToTitleConverter
           - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.HeaderColumnConverter
             name: HeaderColumnConverter
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.LayoutGroupTypeConverter
+            name: LayoutGroupTypeConverter
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.LayoutItemPathConverter
+            name: LayoutItemPathConverter
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.ListLayoutPropertyToGridView
+            name: ListLayoutPropertyToGridView
           - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.TileSizeConverter
             name: TileSizeConverter
           - uid: ParmaGIS.WPF.Modules.ReportTool.Converters.VisibilityConverter
             name: VisibilityConverter
+        - uid: ParmaGIS.WPF.Modules.ReportTool.Report
+          name: Report
+          items:
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+            name: ReportProperties
+            items:
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.BoolColumn
+              name: BoolColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.BoolLayoutProperty
+              name: BoolLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+              name: Cell
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty
+              name: ChooseLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseVariant
+              name: ChooseVariant
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+              name: Column
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1
+              name: ColumnBase<T>
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ComplexColumn
+              name: ComplexColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.DateTimeColumn
+              name: DateTimeColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.DateTimeLayoutProperty
+              name: DateTimeLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.FloatColumn
+              name: FloatColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.FloatLayoutProperty
+              name: FloatLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.IntColumn
+              name: IntColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.IntLayoutProperty
+              name: IntLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ListLayoutProperty
+              name: ListLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn
+              name: MultiSelectColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem
+              name: MultiSelectItem
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectLayoutProperty
+              name: MultiSelectLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1
+              name: ReportLayoutTypedProperty<T>
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Row
+              name: Row
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectColumn
+              name: SelectColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem
+              name: SelectItem
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty
+              name: SelectLayoutProperty
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.StringColumn
+              name: StringColumn
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.StringLayoutProperty
+              name: StringLayoutProperty
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportValidators
+            name: ReportValidators
+            items:
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportValidators.FormatValidator
+              name: FormatValidator
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportValidators.IntMinMaxValidator
+              name: IntMinMaxValidator
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportBuilder
+            name: ReportBuilder
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportError
+            name: ReportError
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+            name: ReportLayout
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup
+            name: ReportLayoutGroup
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroupType
+            name: ReportLayoutGroupType
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+            name: ReportLayoutItem
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty
+            name: ReportLayoutProperty
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject
+            name: ReportProject
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportSettings
+            name: ReportSettings
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportValidator
+            name: ReportValidator
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.RoslynCompiler2
+            name: RoslynCompiler2
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ZipOutputWritter
+            name: ZipOutputWritter
         - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels
           name: ViewModels
           items:
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.BoolPropertyViewModel
-            name: BoolPropertyViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ChoicePropertyViewModel
-            name: ChoicePropertyViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.CollectionPropertyViewModel
-            name: CollectionPropertyViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ComboBoxItemViewModel
-            name: ComboBoxItemViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ContentItemViewModel
-            name: ContentItemViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.CreateReportProjectViewModel
-            name: CreateReportProjectViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.DateTimePropertyViewModel
-            name: DateTimePropertyViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.EnumPropertyViewModel
-            name: EnumPropertyViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.FloatPropertyViewModel
-            name: FloatPropertyViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.GroupItemViewModel
-            name: GroupItemViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.IItemViewModel
-            name: IItemViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorViewModel
-            name: InspectorViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.IntPropertyViewModel
-            name: IntPropertyViewModel
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties
+            name: InspectorProperties
+            items:
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.DefaultValuePropertyViewModel
+              name: DefaultValuePropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.HeaderPropertyViewModel
+              name: HeaderPropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.HeightPropertyViewModel
+              name: HeightPropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.HiddenPropertyViewModel
+              name: HiddenPropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.InspectorPropertyViewModelBase
+              name: InspectorPropertyViewModelBase
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.InspectorPropertyViewModelBase`1
+              name: InspectorPropertyViewModelBase<T>
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.LayoutGroupTypePropertyViewModel
+              name: LayoutGroupTypePropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.LayoutHeightPropertyViewModel
+              name: LayoutHeightPropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.LayoutWidthPropertyViewModel
+              name: LayoutWidthPropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.NamePropertyViewModel
+              name: NamePropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.PropertyTypePropertyViewModel
+              name: PropertyTypePropertyViewModel
+            - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorProperties.WidthPropertyViewModel
+              name: WidthPropertyViewModel
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.CreateReportProjectDialogResult
+            name: CreateReportProjectDialogResult
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.CreateReportProjectDialogViewModel
+            name: CreateReportProjectDialogViewModel
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InpsectorPropertyEntityRegistration
+            name: InpsectorPropertyEntityRegistration
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InpsectorPropertyPropertyRegistration
+            name: InpsectorPropertyPropertyRegistration
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.InspectorPropertyContext
+            name: InspectorPropertyContext
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.PropertiesInspectorViewModel
+            name: PropertiesInspectorViewModel
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportTemplateLibViewModel
+            name: ReportTemplateLibViewModel
           - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel
             name: ReportToolViewModel
-          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.StringPropertyViewModel
-            name: StringPropertyViewModel
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportTreeViewModel
+            name: ReportTreeViewModel
+          - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportViewModel
+            name: ReportViewModel
         - uid: ParmaGIS.WPF.Modules.ReportTool.Views
           name: Views
           items:
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.CreateReportProjectView
-            name: CreateReportProjectView
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.DragDropListBox
-            name: DragDropListBox
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.DragDropListBoxItem
-            name: DragDropListBoxItem
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.GroupPropertyInspector
-            name: GroupPropertyInspector
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.Inspector
-            name: Inspector
-          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.PropertyInspector
-            name: PropertyInspector
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties
+            name: ReportLayoutProperties
+            items:
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties.ChooseLayoutPropertyView
+              name: ChooseLayoutPropertyView
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties.ComplexCellWindow
+              name: ComplexCellWindow
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties.GetByIndex
+              name: GetByIndex
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties.ListLayoutPropertyView
+              name: ListLayoutPropertyView
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties.SelectLayoutPropertyView
+              name: SelectLayoutPropertyView
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportLayoutProperties.SelectManyCellViewConverter
+              name: SelectManyCellViewConverter
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.CreateReportProjectDialogView
+            name: CreateReportProjectDialogView
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView
+            name: PropertiesInspectorView
           - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportToolView
             name: ReportToolView
-        - uid: ParmaGIS.WPF.Modules.ReportTool.Layout
-          name: Layout
-        - uid: ParmaGIS.WPF.Modules.ReportTool.ProjectInfo
-          name: ProjectInfo
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportTreeView
+            name: ReportTreeView
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Views.ReportView
+            name: ReportView
         - uid: ParmaGIS.WPF.Modules.ReportTool.ReportToolModule
           name: ReportToolModule
-        - uid: ParmaGIS.WPF.Modules.ReportTool.ReportToolUtilities
-          name: ReportToolUtilities
-        - uid: ParmaGIS.WPF.Modules.ReportTool.ReportToolUtilities.PropertyViewModelTypes
-          name: ReportToolUtilities.PropertyViewModelTypes
-        - uid: ParmaGIS.WPF.Modules.ReportTool.RoslynCompiler
-          name: RoslynCompiler
       - uid: ParmaGIS.WPF.Modules.SQLEditorTool
         name: SQLEditorTool
         items:
@@ -2050,6 +2177,10 @@ items:
           name: DataGrid
         - uid: ParmaGIS.WPF.UI.Controls.DialogWindow
           name: DialogWindow
+        - uid: ParmaGIS.WPF.UI.Controls.DragDropListBox
+          name: DragDropListBox
+        - uid: ParmaGIS.WPF.UI.Controls.DragDropListBoxItem
+          name: DragDropListBoxItem
         - uid: ParmaGIS.WPF.UI.Controls.DynamicScrollBar
           name: DynamicScrollBar
         - uid: ParmaGIS.WPF.UI.Controls.DynamicScrollViewer
@@ -2109,6 +2240,8 @@ items:
           name: BoolToContentConverter
         - uid: ParmaGIS.WPF.UI.Converters.DictionaryToGridConverter
           name: DictionaryToGridConverter
+        - uid: ParmaGIS.WPF.UI.Converters.EnumerableToStringConverter
+          name: EnumerableToStringConverter
         - uid: ParmaGIS.WPF.UI.Converters.GetFirstOnCollection
           name: GetFirstOnCollection
         - uid: ParmaGIS.WPF.UI.Converters.GridColumnSpringConverter
