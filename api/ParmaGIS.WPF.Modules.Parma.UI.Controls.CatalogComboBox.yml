@@ -5,11 +5,15 @@ items:
   id: CatalogComboBox
   parent: ParmaGIS.WPF.Modules.Parma.UI.Controls
   children:
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNullProperty
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogType
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogTypeProperty
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OnApplyTemplate
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommand
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.OpenSettingsCommandProperty
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent
+  - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContentProperty
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   - ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyNameProperty
   langs:
@@ -34,9 +38,13 @@ items:
     content: >-
       [TemplatePart(Name = "PART_OpenSettingsButton", Type = typeof(Button))]
 
+      [TemplatePart(Name = "PART_SetNullButton", Type = typeof(Button))]
+
       public class CatalogComboBox : ComboBox, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IContainItemStorage, IAddChild
     content.vb: >-
       <TemplatePart(Name:="PART_OpenSettingsButton", Type:=GetType(Button))>
+
+      <TemplatePart(Name:="PART_SetNullButton", Type:=GetType(Button))>
 
       Public Class CatalogComboBox Inherits ComboBox Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IContainItemStorage, IAddChild
   inheritance:
@@ -783,6 +791,16 @@ items:
     - name: Type
       type: System.Type
       value: System.Windows.Controls.Button
+  - type: System.Windows.TemplatePartAttribute
+    ctor: System.Windows.TemplatePartAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: PART_SetNullButton
+    - name: Type
+      type: System.Type
+      value: System.Windows.Controls.Button
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogTypeProperty
   commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CatalogTypeProperty
   id: CatalogTypeProperty
@@ -801,7 +819,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CatalogTypeProperty
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 61
+    startLine: 63
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -828,7 +846,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SortPropertyNameProperty
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 62
+    startLine: 64
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -855,7 +873,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OpenSettingsCommandProperty
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 63
+    startLine: 65
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -864,6 +882,142 @@ items:
     return:
       type: System.Windows.DependencyProperty
     content.vb: Public Shared ReadOnly OpenSettingsCommandProperty As DependencyProperty
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNullProperty
+  commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNullProperty
+  id: CanSetNullProperty
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
+  langs:
+  - csharp
+  - vb
+  name: CanSetNullProperty
+  nameWithType: CatalogComboBox.CanSetNullProperty
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNullProperty
+  type: Field
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CanSetNullProperty
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+    startLine: 66
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
+  syntax:
+    content: public static readonly DependencyProperty CanSetNullProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly CanSetNullProperty As DependencyProperty
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContentProperty
+  commentId: F:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContentProperty
+  id: SetNullContentProperty
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
+  langs:
+  - csharp
+  - vb
+  name: SetNullContentProperty
+  nameWithType: CatalogComboBox.SetNullContentProperty
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContentProperty
+  type: Field
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SetNullContentProperty
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+    startLine: 67
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
+  syntax:
+    content: public static readonly DependencyProperty SetNullContentProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly SetNullContentProperty As DependencyProperty
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull
+  commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull
+  id: CanSetNull
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
+  langs:
+  - csharp
+  - vb
+  name: CanSetNull
+  nameWithType: CatalogComboBox.CanSetNull
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: CanSetNull
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+    startLine: 98
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
+  syntax:
+    content: >-
+      [Bindable(true)]
+
+      public bool CanSetNull { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Bindable(True)>
+
+      Public Property CanSetNull As Boolean
+  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull*
+  attributes:
+  - type: System.ComponentModel.BindableAttribute
+    ctor: System.ComponentModel.BindableAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: true
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent
+  commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent
+  id: SetNullContent
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox
+  langs:
+  - csharp
+  - vb
+  name: SetNullContent
+  nameWithType: CatalogComboBox.SetNullContent
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SetNullContent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
+    startLine: 108
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
+  syntax:
+    content: >-
+      [Bindable(true)]
+
+      public object SetNullContent { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: >-
+      <Bindable(True)>
+
+      Public Property SetNullContent As Object
+  overload: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent*
+  attributes:
+  - type: System.ComponentModel.BindableAttribute
+    ctor: System.ComponentModel.BindableAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: true
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   commentId: P:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   id: SortPropertyName
@@ -882,7 +1036,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SortPropertyName
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 98
+    startLine: 116
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -923,7 +1077,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OpenSettingsCommand
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 106
+    startLine: 124
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -952,7 +1106,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CatalogType
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 112
+    startLine: 130
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -993,7 +1147,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnApplyTemplate
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Controls/CatalogComboBox.cs
-    startLine: 122
+    startLine: 159
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Controls
@@ -12997,6 +13151,29 @@ references:
   name: DependencyProperty
   nameWithType: DependencyProperty
   fullName: System.Windows.DependencyProperty
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull*
+  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull
+  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_CanSetNull
+  name: CanSetNull
+  nameWithType: CatalogComboBox.CanSetNull
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.CanSetNull
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent*
+  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent
+  href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_SetNullContent
+  name: SetNullContent
+  nameWithType: CatalogComboBox.SetNullContent
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SetNullContent
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName*
   commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.SortPropertyName
   href: ParmaGIS.WPF.Modules.Parma.UI.Controls.CatalogComboBox.html#ParmaGIS_WPF_Modules_Parma_UI_Controls_CatalogComboBox_SortPropertyName
