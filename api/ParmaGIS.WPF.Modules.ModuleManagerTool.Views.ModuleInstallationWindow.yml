@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.ModuleManagerTool.Views
   children:
   - ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.#ctor(ParmaGIS.WPF.Modules.ModuleManagerTool.ViewModels.ModuleInstallationViewModel)
+  - ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ModuleManagerTool/Views/ModuleInstallationWindow.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ModuleManagerTool/obj/Release/net7.0-windows/Views/ModuleInstallationWindow.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ModuleInstallationWindow
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ModuleManagerTool/Views/ModuleInstallationWindow.xaml.cs
-    startLine: 20
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ModuleManagerTool/obj/Release/net7.0-windows/Views/ModuleInstallationWindow.g.cs
+    startLine: 48
   assemblies:
   - ParmaGIS.WPF.Modules.ModuleManagerTool
   namespace: ParmaGIS.WPF.Modules.ModuleManagerTool.Views
   summary: Логика взаимодействия для ModuleInstallationWindow.xaml
   example: []
   syntax:
-    content: 'public class ModuleInstallationWindow : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class ModuleInstallationWindow Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class ModuleInstallationWindow : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class ModuleInstallationWindow Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -46,6 +47,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Window.AllowsTransparencyProperty
   - System.Windows.Window.DpiChangedEvent
@@ -757,6 +759,36 @@ items:
   nameWithType.vb: ModuleInstallationWindow.New(ModuleInstallationViewModel)
   fullName.vb: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.New(ParmaGIS.WPF.Modules.ModuleManagerTool.ViewModels.ModuleInstallationViewModel)
   name.vb: New(ModuleInstallationViewModel)
+- uid: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: ModuleInstallationWindow.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ModuleManagerTool/obj/Release/net7.0-windows/Views/ModuleInstallationWindow.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ModuleManagerTool/obj/Release/net7.0-windows/Views/ModuleInstallationWindow.g.cs
+    startLine: 55
+  assemblies:
+  - ParmaGIS.WPF.Modules.ModuleManagerTool
+  namespace: ParmaGIS.WPF.Modules.ModuleManagerTool.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.ModuleManagerTool.Views
   commentId: N:ParmaGIS.WPF.Modules.ModuleManagerTool.Views
@@ -927,6 +959,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Window.AllowsTransparencyProperty
   commentId: F:System.Windows.Window.AllowsTransparencyProperty
   parent: System.Windows.Window
@@ -11768,3 +11808,31 @@ references:
   - uid: ParmaGIS.WPF.Modules.ModuleManagerTool.ViewModels
     name: ViewModels
     href: ParmaGIS.WPF.Modules.ModuleManagerTool.ViewModels.html
+- uid: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent
+  href: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.html#ParmaGIS_WPF_Modules_ModuleManagerTool_Views_ModuleInstallationWindow_InitializeComponent
+  name: InitializeComponent
+  nameWithType: ModuleInstallationWindow.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.ModuleManagerTool.Views.ModuleInstallationWindow.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

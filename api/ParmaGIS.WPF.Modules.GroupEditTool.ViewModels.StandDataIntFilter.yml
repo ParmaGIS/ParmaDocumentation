@@ -20,30 +20,31 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: StandDataIntFilter
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - ParmaGIS.WPF.Modules.GroupEditTool
   namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
   syntax:
-    content: 'public class StandDataIntFilter : NumberFilter<StandData>, INumberFilter<StandData>, IFilter<StandData>, IFilter'
-    content.vb: Public Class StandDataIntFilter Inherits NumberFilter(Of StandData) Implements INumberFilter(Of StandData), IFilter(Of StandData), IFilter
+    content: 'public class StandDataIntFilter : NumberFilter<StandData, int>, INumberFilter<StandData, int>, IFilter<StandData>, IFilter'
+    content.vb: Public Class StandDataIntFilter Inherits NumberFilter(Of StandData, Integer) Implements INumberFilter(Of StandData, Integer), IFilter(Of StandData), IFilter
   inheritance:
   - System.Object
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
   implements:
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter
   inheritedMembers:
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Value
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Condition
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.KeySelector
-  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Value
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Condition
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.KeySelector
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.ItemType
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Title
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Description
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Source
+  - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
   - ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -70,7 +71,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/ViewModels/Class1.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - ParmaGIS.WPF.Modules.GroupEditTool
   namespace: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
@@ -179,63 +180,87 @@ references:
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
     name: StandData
   - name: )
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
+  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html
-  name: NumberFilter<StandData>
-  nameWithType: NumberFilter<StandData>
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>
-  nameWithType.vb: NumberFilter(Of StandData)
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData)
-  name.vb: NumberFilter(Of StandData)
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html
+  name: NumberFilter<StandData, int>
+  nameWithType: NumberFilter<StandData, int>
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, int>
+  nameWithType.vb: NumberFilter(Of StandData, Integer)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, Integer)
+  name.vb: NumberFilter(Of StandData, Integer)
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
     name: NumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html
   - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
     name: StandData
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '>'
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
     name: NumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html
   - name: (
   - name: Of
   - name: " "
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
     name: StandData
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
+  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-1.html
-  name: INumberFilter<StandData>
-  nameWithType: INumberFilter<StandData>
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>
-  nameWithType.vb: INumberFilter(Of StandData)
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData)
-  name.vb: INumberFilter(Of StandData)
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-2.html
+  name: INumberFilter<StandData, int>
+  nameWithType: INumberFilter<StandData, int>
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, int>
+  nameWithType.vb: INumberFilter(Of StandData, Integer)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, Integer)
+  name.vb: INumberFilter(Of StandData, Integer)
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
     name: INumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-2.html
   - name: <
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
     name: StandData
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '>'
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
     name: INumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-2.html
   - name: (
   - name: Of
   - name: " "
   - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
     name: StandData
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
   commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
@@ -273,51 +298,51 @@ references:
   name: IFilter
   nameWithType: IFilter
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Value
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Value
-  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Value
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Value
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Value
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Value
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Value
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Value
   name: Value
-  nameWithType: NumberFilter<StandData>.Value
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.Value
-  nameWithType.vb: NumberFilter(Of StandData).Value
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).Value
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Condition
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Condition
-  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Condition
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Condition
+  nameWithType: NumberFilter<StandData, int>.Value
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, int>.Value
+  nameWithType.vb: NumberFilter(Of StandData, Integer).Value
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, Integer).Value
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Condition
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Condition
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Condition
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Condition
   name: Condition
-  nameWithType: NumberFilter<StandData>.Condition
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.Condition
-  nameWithType.vb: NumberFilter(Of StandData).Condition
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).Condition
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.KeySelector
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.KeySelector
-  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.KeySelector
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_KeySelector
+  nameWithType: NumberFilter<StandData, int>.Condition
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, int>.Condition
+  nameWithType.vb: NumberFilter(Of StandData, Integer).Condition
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, Integer).Condition
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.KeySelector
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.KeySelector
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.KeySelector
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_KeySelector
   name: KeySelector
-  nameWithType: NumberFilter<StandData>.KeySelector
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.KeySelector
-  nameWithType.vb: NumberFilter(Of StandData).KeySelector
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).KeySelector
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
-  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
-  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
-  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Filter(System.Linq.IQueryable{`0})
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Filter_System_Linq_IQueryable__0__
+  nameWithType: NumberFilter<StandData, int>.KeySelector
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, int>.KeySelector
+  nameWithType.vb: NumberFilter(Of StandData, Integer).KeySelector
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, Integer).KeySelector
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Filter(System.Linq.IQueryable{`0})
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Filter_System_Linq_IQueryable__0__
   name: Filter(IQueryable<StandData>)
-  nameWithType: NumberFilter<StandData>.Filter(IQueryable<StandData>)
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.Filter(System.Linq.IQueryable<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>)
-  nameWithType.vb: NumberFilter(Of StandData).Filter(IQueryable(Of StandData))
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).Filter(System.Linq.IQueryable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData))
+  nameWithType: NumberFilter<StandData, int>.Filter(IQueryable<StandData>)
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, int>.Filter(System.Linq.IQueryable<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>)
+  nameWithType.vb: NumberFilter(Of StandData, Integer).Filter(IQueryable(Of StandData))
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData, Integer).Filter(System.Linq.IQueryable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData))
   name.vb: Filter(IQueryable(Of StandData))
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
     name: Filter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Filter_System_Linq_IQueryable__0__
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Filter_System_Linq_IQueryable__0__
   - name: (
   - uid: System.Linq.IQueryable`1
     name: IQueryable
@@ -329,9 +354,9 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData,System.Int32}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
     name: Filter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Filter_System_Linq_IQueryable__0__
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Filter_System_Linq_IQueryable__0__
   - name: (
   - uid: System.Linq.IQueryable`1
     name: IQueryable
@@ -384,6 +409,47 @@ references:
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.Source
   nameWithType.vb: SourceFilter(Of StandData).Source
   fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).Source
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
+  definition: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable{`0})
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SourceFilter_1_Filter_System_Linq_IQueryable__0__
+  name: Filter(IQueryable<StandData>)
+  nameWithType: SourceFilter<StandData>.Filter(IQueryable<StandData>)
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>.Filter(System.Linq.IQueryable<ParmaGIS.Modules.Parma.Space.Data.Objects.StandData>)
+  nameWithType.vb: SourceFilter(Of StandData).Filter(IQueryable(Of StandData))
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData).Filter(System.Linq.IQueryable(Of ParmaGIS.Modules.Parma.Space.Data.Objects.StandData))
+  name.vb: Filter(IQueryable(Of StandData))
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+    name: Filter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SourceFilter_1_Filter_System_Linq_IQueryable__0__
+  - name: (
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
+    name: StandData
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData})
+    name: Filter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SourceFilter_1_Filter_System_Linq_IQueryable__0__
+  - name: (
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.Modules.Parma.Space.Data.Objects.StandData
+    name: StandData
+  - name: )
+  - name: )
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable)
   commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}.Filter(System.Linq.IQueryable)
   parent: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter{ParmaGIS.Modules.Parma.Space.Data.Objects.StandData}
@@ -665,55 +731,67 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
-  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html
-  name: NumberFilter<T>
-  nameWithType: NumberFilter<T>
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<T>
-  nameWithType.vb: NumberFilter(Of T)
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of T)
-  name.vb: NumberFilter(Of T)
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
+  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html
+  name: NumberFilter<TItem, TValue>
+  nameWithType: NumberFilter<TItem, TValue>
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<TItem, TValue>
+  nameWithType.vb: NumberFilter(Of TItem, TValue)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of TItem, TValue)
+  name.vb: NumberFilter(Of TItem, TValue)
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
     name: NumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html
   - name: <
-  - name: T
+  - name: TItem
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: '>'
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
     name: NumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html
   - name: (
   - name: Of
   - name: " "
-  - name: T
+  - name: TItem
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: )
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
-  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-1.html
-  name: INumberFilter<TItem>
-  nameWithType: INumberFilter<TItem>
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter<TItem>
-  nameWithType.vb: INumberFilter(Of TItem)
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter(Of TItem)
-  name.vb: INumberFilter(Of TItem)
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
+  commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-2.html
+  name: INumberFilter<TItem, TValue>
+  nameWithType: INumberFilter<TItem, TValue>
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter<TItem, TValue>
+  nameWithType.vb: INumberFilter(Of TItem, TValue)
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter(Of TItem, TValue)
+  name.vb: INumberFilter(Of TItem, TValue)
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
     name: INumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-2.html
   - name: <
   - name: TItem
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: '>'
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
     name: INumberFilter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-1.html
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter-2.html
   - name: (
   - name: Of
   - name: " "
   - name: TItem
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: )
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter`1
   commentId: T:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IFilter`1
@@ -740,57 +818,57 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Value
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Value
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Value
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Value
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Value
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Value
   name: Value
-  nameWithType: NumberFilter<T>.Value
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<T>.Value
-  nameWithType.vb: NumberFilter(Of T).Value
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of T).Value
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Condition
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Condition
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Condition
+  nameWithType: NumberFilter<TItem, TValue>.Value
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<TItem, TValue>.Value
+  nameWithType.vb: NumberFilter(Of TItem, TValue).Value
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of TItem, TValue).Value
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Condition
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Condition
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Condition
   name: Condition
-  nameWithType: NumberFilter<T>.Condition
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<T>.Condition
-  nameWithType.vb: NumberFilter(Of T).Condition
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of T).Condition
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.KeySelector
-  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.KeySelector
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_KeySelector
+  nameWithType: NumberFilter<TItem, TValue>.Condition
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<TItem, TValue>.Condition
+  nameWithType.vb: NumberFilter(Of TItem, TValue).Condition
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of TItem, TValue).Condition
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.KeySelector
+  commentId: P:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.KeySelector
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_KeySelector
   name: KeySelector
-  nameWithType: NumberFilter<T>.KeySelector
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<T>.KeySelector
-  nameWithType.vb: NumberFilter(Of T).KeySelector
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of T).KeySelector
-- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Filter(System.Linq.IQueryable{`0})
-  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Filter(System.Linq.IQueryable{`0})
+  nameWithType: NumberFilter<TItem, TValue>.KeySelector
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<TItem, TValue>.KeySelector
+  nameWithType.vb: NumberFilter(Of TItem, TValue).KeySelector
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of TItem, TValue).KeySelector
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Filter(System.Linq.IQueryable{`0})
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Filter(System.Linq.IQueryable{`0})
   isExternal: true
-  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Filter_System_Linq_IQueryable__0__
-  name: Filter(IQueryable<T>)
-  nameWithType: NumberFilter<T>.Filter(IQueryable<T>)
-  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<T>.Filter(System.Linq.IQueryable<T>)
-  nameWithType.vb: NumberFilter(Of T).Filter(IQueryable(Of T))
-  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of T).Filter(System.Linq.IQueryable(Of T))
-  name.vb: Filter(IQueryable(Of T))
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Filter_System_Linq_IQueryable__0__
+  name: Filter(IQueryable<TItem>)
+  nameWithType: NumberFilter<TItem, TValue>.Filter(IQueryable<TItem>)
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter<TItem, TValue>.Filter(System.Linq.IQueryable<TItem>)
+  nameWithType.vb: NumberFilter(Of TItem, TValue).Filter(IQueryable(Of TItem))
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter(Of TItem, TValue).Filter(System.Linq.IQueryable(Of TItem))
+  name.vb: Filter(IQueryable(Of TItem))
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Filter(System.Linq.IQueryable{`0})
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Filter(System.Linq.IQueryable{`0})
     name: Filter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Filter_System_Linq_IQueryable__0__
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Filter_System_Linq_IQueryable__0__
   - name: (
   - uid: System.Linq.IQueryable`1
     name: IQueryable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   - name: <
-  - name: T
+  - name: TItem
   - name: '>'
   - name: )
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1.Filter(System.Linq.IQueryable{`0})
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2.Filter(System.Linq.IQueryable{`0})
     name: Filter
-    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_1_Filter_System_Linq_IQueryable__0__
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter-2.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_NumberFilter_2_Filter_System_Linq_IQueryable__0__
   - name: (
   - uid: System.Linq.IQueryable`1
     name: IQueryable
@@ -799,7 +877,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: T
+  - name: TItem
   - name: )
   - name: )
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.ItemType
@@ -834,6 +912,44 @@ references:
   fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter<T>.Source
   nameWithType.vb: SourceFilter(Of T).Source
   fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter(Of T).Source
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable{`0})
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable{`0})
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SourceFilter_1_Filter_System_Linq_IQueryable__0__
+  name: Filter(IQueryable<T>)
+  nameWithType: SourceFilter<T>.Filter(IQueryable<T>)
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter<T>.Filter(System.Linq.IQueryable<T>)
+  nameWithType.vb: SourceFilter(Of T).Filter(IQueryable(Of T))
+  fullName.vb: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter(Of T).Filter(System.Linq.IQueryable(Of T))
+  name.vb: Filter(IQueryable(Of T))
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable{`0})
+    name: Filter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SourceFilter_1_Filter_System_Linq_IQueryable__0__
+  - name: (
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable{`0})
+    name: Filter
+    href: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter-1.html#ParmaGIS_WPF_Modules_GroupEditTool_ViewModels_SourceFilter_1_Filter_System_Linq_IQueryable__0__
+  - name: (
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable)
   commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.SourceFilter`1.Filter(System.Linq.IQueryable)
   isExternal: true

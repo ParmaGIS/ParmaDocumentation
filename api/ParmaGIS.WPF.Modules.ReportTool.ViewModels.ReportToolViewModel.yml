@@ -554,16 +554,16 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ExportReportCommand
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 114
+    startLine: 131
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
   syntax:
-    content: public RelayCommand ExportReportCommand { get; }
+    content: public RelayCommand<bool?> ExportReportCommand { get; }
     parameters: []
     return:
-      type: ParmaGIS.WPF.UI.Utilities.RelayCommand
-    content.vb: Public ReadOnly Property ExportReportCommand As RelayCommand
+      type: ParmaGIS.WPF.UI.Utilities.RelayCommand{System.Nullable{System.Boolean}}
+    content.vb: Public ReadOnly Property ExportReportCommand As RelayCommand(Of Boolean?)
   overload: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ExportReportCommand*
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveChangesCommand
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveChangesCommand
@@ -583,7 +583,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SaveChangesCommand
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 119
+    startLine: 167
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -612,7 +612,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: OnClose
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 129
+    startLine: 177
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -640,7 +640,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CanClose
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/ViewModels/ReportToolViewModel.cs
-    startLine: 134
+    startLine: 182
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.ViewModels
@@ -2135,6 +2135,66 @@ references:
   name: ExportReportCommand
   nameWithType: ReportToolViewModel.ExportReportCommand
   fullName: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.ExportReportCommand
+- uid: ParmaGIS.WPF.UI.Utilities.RelayCommand{System.Nullable{System.Boolean}}
+  commentId: T:ParmaGIS.WPF.UI.Utilities.RelayCommand{System.Nullable{System.Boolean}}
+  parent: ParmaGIS.WPF.UI.Utilities
+  definition: ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+  href: ParmaGIS.WPF.UI.Utilities.RelayCommand-1.html
+  name: RelayCommand<bool?>
+  nameWithType: RelayCommand<bool?>
+  fullName: ParmaGIS.WPF.UI.Utilities.RelayCommand<bool?>
+  nameWithType.vb: RelayCommand(Of Boolean?)
+  fullName.vb: ParmaGIS.WPF.UI.Utilities.RelayCommand(Of Boolean?)
+  name.vb: RelayCommand(Of Boolean?)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+    name: RelayCommand
+    href: ParmaGIS.WPF.UI.Utilities.RelayCommand-1.html
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+    name: RelayCommand
+    href: ParmaGIS.WPF.UI.Utilities.RelayCommand-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: )
+- uid: ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+  commentId: T:ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+  href: ParmaGIS.WPF.UI.Utilities.RelayCommand-1.html
+  name: RelayCommand<T>
+  nameWithType: RelayCommand<T>
+  fullName: ParmaGIS.WPF.UI.Utilities.RelayCommand<T>
+  nameWithType.vb: RelayCommand(Of T)
+  fullName.vb: ParmaGIS.WPF.UI.Utilities.RelayCommand(Of T)
+  name.vb: RelayCommand(Of T)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+    name: RelayCommand
+    href: ParmaGIS.WPF.UI.Utilities.RelayCommand-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ParmaGIS.WPF.UI.Utilities.RelayCommand`1
+    name: RelayCommand
+    href: ParmaGIS.WPF.UI.Utilities.RelayCommand-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveChangesCommand*
   commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.SaveChangesCommand
   href: ParmaGIS.WPF.Modules.ReportTool.ViewModels.ReportToolViewModel.html#ParmaGIS_WPF_Modules_ReportTool_ViewModels_ReportToolViewModel_SaveChangesCommand

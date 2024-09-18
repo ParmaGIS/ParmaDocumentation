@@ -5,6 +5,7 @@ items:
   id: ColumnBase`1
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   children:
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.CreateCell
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.DefaultValue
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.SetValue(System.Object)
@@ -23,7 +24,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ColumnBase
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 297
+    startLine: 399
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -52,6 +53,8 @@ items:
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Header
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Hidden
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetValue(ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
   - ParmaGIS.Core.Utilities.BindableBase.OnPropertyChanged(System.String)
@@ -86,7 +89,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ValueType
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 299
+    startLine: 401
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -119,7 +122,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DefaultValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 302
+    startLine: 404
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -150,7 +153,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 305
+    startLine: 407
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -186,7 +189,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CreateCell
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 310
+    startLine: 412
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -200,6 +203,38 @@ items:
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.CreateCell*
   nameWithType.vb: ColumnBase(Of T).CreateCell()
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of T).CreateCell()
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+  id: Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1
+  langs:
+  - csharp
+  - vb
+  name: Copy()
+  nameWithType: ColumnBase<T>.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<T>.Copy()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Copy
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+    startLine: 417
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override Column Copy()
+    return:
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+    content.vb: Public Overrides Function Copy() As Column
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Copy
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy*
+  nameWithType.vb: ColumnBase(Of T).Copy()
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of T).Copy()
 references:
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   commentId: N:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -330,6 +365,75 @@ references:
     name: GetValue
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetValue_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
   - name: (
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+    name: Cell
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell.html
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_SetReportValue_System_Object_
+  name: SetReportValue(object)
+  nameWithType: Column.SetReportValue(object)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(object)
+  nameWithType.vb: Column.SetReportValue(Object)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(Object)
+  name.vb: SetReportValue(Object)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+    name: SetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_SetReportValue_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+    name: SetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_SetReportValue_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  name: GetReportValue(Type, Cell)
+  nameWithType: Column.GetReportValue(Type, Cell)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type, ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+    name: GetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+    name: Cell
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+    name: GetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
     name: Cell
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell.html
@@ -1537,3 +1641,30 @@ references:
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<T>.CreateCell
   nameWithType.vb: ColumnBase(Of T).CreateCell
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of T).CreateCell
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_Copy
+  name: Copy()
+  nameWithType: Column.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Copy()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_Copy
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_Copy
+  - name: (
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  name: Copy
+  nameWithType: ColumnBase<T>.Copy
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<T>.Copy
+  nameWithType.vb: ColumnBase(Of T).Copy
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of T).Copy

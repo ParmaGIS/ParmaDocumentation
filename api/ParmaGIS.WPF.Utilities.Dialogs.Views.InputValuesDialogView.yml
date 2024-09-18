@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Utilities.Dialogs.Views
   children:
   - ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.#ctor
+  - ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Utilities/Dialogs/Views/InputValuesDialogView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Utilities/obj/Release/net7.0-windows/Dialogs/Views/InputValuesDialogView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: InputValuesDialogView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Utilities/Dialogs/Views/InputValuesDialogView.xaml.cs
-    startLine: 22
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Utilities/obj/Release/net7.0-windows/Dialogs/Views/InputValuesDialogView.g.cs
+    startLine: 47
   assemblies:
   - ParmaGIS.WPF.Utilities
   namespace: ParmaGIS.WPF.Utilities.Dialogs.Views
   summary: Логика взаимодействия для InputValuesDialogView.xaml
   example: []
   syntax:
-    content: 'public class InputValuesDialogView : DialogWindow, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class InputValuesDialogView Inherits DialogWindow Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class InputValuesDialogView : DialogWindow, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class InputValuesDialogView Inherits DialogWindow Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -47,6 +48,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Window.AllowsTransparencyProperty
   - System.Windows.Window.DpiChangedEvent
@@ -757,6 +759,36 @@ items:
   nameWithType.vb: InputValuesDialogView.New()
   fullName.vb: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: InputValuesDialogView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Utilities/obj/Release/net7.0-windows/Dialogs/Views/InputValuesDialogView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Utilities/obj/Release/net7.0-windows/Dialogs/Views/InputValuesDialogView.g.cs
+    startLine: 54
+  assemblies:
+  - ParmaGIS.WPF.Utilities
+  namespace: ParmaGIS.WPF.Utilities.Dialogs.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Utilities.Dialogs.Views
   commentId: N:ParmaGIS.WPF.Utilities.Dialogs.Views
@@ -934,6 +966,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Window.AllowsTransparencyProperty
   commentId: F:System.Windows.Window.AllowsTransparencyProperty
   parent: System.Windows.Window
@@ -11914,3 +11954,31 @@ references:
   nameWithType.vb: InputValuesDialogView.New
   fullName.vb: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.New
   name.vb: New
+- uid: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent
+  href: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.html#ParmaGIS_WPF_Utilities_Dialogs_Views_InputValuesDialogView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: InputValuesDialogView.InitializeComponent
+  fullName: ParmaGIS.WPF.Utilities.Dialogs.Views.InputValuesDialogView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

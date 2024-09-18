@@ -4,7 +4,8 @@ items:
   commentId: T:ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView
   id: ObjectObserverToolView
   parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Views
-  children: []
+  children:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -14,12 +15,12 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Views/ObjectObserverToolView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/obj/Release/net7.0-windows/Views/ObjectObserverToolView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObjectObserverToolView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/Views/ObjectObserverToolView.xaml.cs
-    startLine: 31
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/obj/Release/net7.0-windows/Views/ObjectObserverToolView.g.cs
+    startLine: 54
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectObserverTool
   namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Views
@@ -33,7 +34,7 @@ items:
 
       [ToolIcon("M3 3H21V5H3V3ZM3 19H21V21H3V19ZM3 11H21V13H3V11ZM9 15H21V17H9V15ZM9 7H21V9H9V7Z")]
 
-      public class ObjectObserverToolView : Tool, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+      public class ObjectObserverToolView : Tool, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
     content.vb: >-
       <ToolTitle("Обозреватель объектов")>
 
@@ -41,7 +42,7 @@ items:
 
       <ToolIcon("M3 3H21V5H3V3ZM3 19H21V21H3V19ZM3 11H21V13H3V11ZM9 15H21V17H9V15ZM9 7H21V9H9V7Z")>
 
-      Public Class ObjectObserverToolView Inherits Tool Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+      Public Class ObjectObserverToolView Inherits Tool Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -59,6 +60,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Controls.ContentControl.ContentProperty
   - System.Windows.Controls.ContentControl.ContentStringFormatProperty
@@ -698,6 +700,36 @@ items:
     arguments:
     - type: System.String
       value: M3 3H21V5H3V3ZM3 19H21V21H3V19ZM3 11H21V13H3V11ZM9 15H21V17H9V15ZM9 7H21V9H9V7Z
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: ObjectObserverToolView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/obj/Release/net7.0-windows/Views/ObjectObserverToolView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectObserverTool/obj/Release/net7.0-windows/Views/ObjectObserverToolView.g.cs
+    startLine: 77
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectObserverTool
+  namespace: ParmaGIS.WPF.Modules.ObjectObserverTool.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Views
   commentId: N:ParmaGIS.WPF.Modules.ObjectObserverTool.Views
@@ -867,6 +899,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Controls.ContentControl.ContentProperty
   commentId: F:System.Windows.Controls.ContentControl.ContentProperty
   parent: System.Windows.Controls.ContentControl
@@ -11092,3 +11132,31 @@ references:
   - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions
     name: ControlExtensions
     href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.html
+- uid: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.html#ParmaGIS_WPF_Modules_ObjectObserverTool_Views_ObjectObserverToolView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: ObjectObserverToolView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.ObjectObserverTool.Views.ObjectObserverToolView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

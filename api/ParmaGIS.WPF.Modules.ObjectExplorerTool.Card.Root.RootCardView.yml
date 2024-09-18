@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root
   children:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.#ctor
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/Root/RootCardView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/obj/Release/net7.0-windows/Card/Root/RootCardView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: RootCardView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/Card/Root/RootCardView.xaml.cs
-    startLine: 20
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/obj/Release/net7.0-windows/Card/Root/RootCardView.g.cs
+    startLine: 47
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root
   summary: Логика взаимодействия для RootCardView.xaml
   example: []
   syntax:
-    content: 'public class RootCardView : CardControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView'
-    content.vb: Public Class RootCardView Inherits CardControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView
+    content: 'public class RootCardView : CardControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView, IComponentConnector'
+    content.vb: Public Class RootCardView Inherits CardControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -47,6 +48,7 @@ items:
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   - System.Windows.Controls.ContentControl.ContentProperty
@@ -700,6 +702,36 @@ items:
   nameWithType.vb: RootCardView.New()
   fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: RootCardView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/obj/Release/net7.0-windows/Card/Root/RootCardView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/obj/Release/net7.0-windows/Card/Root/RootCardView.g.cs
+    startLine: 62
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool
+  namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root
   commentId: N:ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root
@@ -884,6 +916,14 @@ references:
   name: ICardView
   nameWithType: ICardView
   fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   commentId: P:ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl
@@ -11133,3 +11173,31 @@ references:
   nameWithType.vb: RootCardView.New
   fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.New
   name.vb: New
+- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.html#ParmaGIS_WPF_Modules_ObjectExplorerTool_Card_Root_RootCardView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: RootCardView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.Root.RootCardView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

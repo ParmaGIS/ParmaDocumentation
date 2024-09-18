@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1" class="text-break">
-Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ReportLayoutTypedProperty&lt;T&gt; : ReportLayoutProperty, INotifyPropertyChanged, IDisposable, INotifyDataErrorInfo</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ReportLayoutTypedProperty&lt;T&gt; : ReportValueLayoutProperty, INotifyPropertyChanged, IDisposable, INotifyDataErrorInfo</code></pre>
   </div>
 
 
@@ -119,6 +119,7 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
       <div><a class="xref" href="ParmaGIS.Core.Utilities.BindableBase.html">BindableBase</a></div>
       <div><a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html">ReportLayoutItem</a></div>
       <div><a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html">ReportLayoutProperty</a></div>
+      <div><a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportValueLayoutProperty.html">ReportValueLayoutProperty</a></div>
       <div><span class="xref">ReportLayoutTypedProperty&lt;T&gt;</span></div>
     </dd>
   </dl>
@@ -146,6 +147,15 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportValueLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportValueLayoutProperty_GetValue">ReportValueLayoutProperty.GetValue()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportValueLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportValueLayoutProperty_SetValue_System_Object_">ReportValueLayoutProperty.SetValue(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportValueLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportValueLayoutProperty_GetReportValue_System_Type_">ReportValueLayoutProperty.GetReportValue(Type)</a>
+    </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty__value">ReportLayoutProperty._value</a>
     </div>
@@ -189,7 +199,13 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_ToDefaultValue">ReportLayoutProperty.ToDefaultValue()</a>
     </div>
     <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_SetReportValue_System_Object_">ReportLayoutProperty.SetReportValue(object)</a>
+    </div>
+    <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_ToString">ReportLayoutProperty.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_Copy">ReportLayoutProperty.Copy()</a>
     </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_DisposableContainer">ReportLayoutItem.DisposableContainer</a>
@@ -208,6 +224,18 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
     </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Width">ReportLayoutItem.Width</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinWidth">ReportLayoutItem.MinWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxWidth">ReportLayoutItem.MaxWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinHeight">ReportLayoutItem.MinHeight</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxHeight">ReportLayoutItem.MaxHeight</a>
     </div>
     <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Height">ReportLayoutItem.Height</a>
@@ -279,7 +307,7 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
 
   <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1__ctor" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1.#ctor">
   ReportLayoutTypedProperty()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -303,21 +331,25 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
 
   <a id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1__ctor_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1.#ctor*"></a>
 
-  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1__ctor_System_Reflection_PropertyInfo_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1.#ctor(System.Reflection.PropertyInfo)">
-  ReportLayoutTypedProperty(PropertyInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1__ctor_System_Reflection_PropertyInfo_ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayout_ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1.#ctor(System.Reflection.PropertyInfo,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)">
+  ReportLayoutTypedProperty(PropertyInfo, ReportLayout?, ReportLayoutItem?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReportLayoutTypedProperty(PropertyInfo propertyInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">public ReportLayoutTypedProperty(PropertyInfo propertyInfo, ReportLayout? layout = null, ReportLayoutItem? parent = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>propertyInfo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></dt>
+    <dd></dd>
+    <dt><code>layout</code> <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout.html">ReportLayout</a></dt>
+    <dd></dd>
+    <dt><code>parent</code> <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html">ReportLayoutItem</a></dt>
     <dd></dd>
   </dl>
 
@@ -340,7 +372,7 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
 
   <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1_DefaultValue" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1.DefaultValue">
   DefaultValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -371,7 +403,7 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
 
   <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ReportLayoutTypedProperty_1_Value" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1.Value">
   Value
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -402,7 +434,7 @@ Class ReportLayoutTypedProperty&lt;T&gt;  <a class="header-action link-secondary
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ReportLayoutTypedProperty.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

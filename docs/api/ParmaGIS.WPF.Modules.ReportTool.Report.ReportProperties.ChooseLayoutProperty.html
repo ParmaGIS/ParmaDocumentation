@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -189,6 +189,18 @@ Class ChooseLayoutProperty  <a class="header-action link-secondary" title="View 
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Width">ReportLayoutItem.Width</a>
     </div>
     <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinWidth">ReportLayoutItem.MinWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxWidth">ReportLayoutItem.MaxWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinHeight">ReportLayoutItem.MinHeight</a>
+    </div>
+    <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxHeight">ReportLayoutItem.MaxHeight</a>
+    </div>
+    <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Height">ReportLayoutItem.Height</a>
     </div>
     <div>
@@ -279,8 +291,8 @@ Class ChooseLayoutProperty  <a class="header-action link-secondary" title="View 
 
   <a id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty__ctor_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.#ctor*"></a>
 
-  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty__ctor_System_Reflection_PropertyInfo_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.#ctor(System.Reflection.PropertyInfo)">
-  ChooseLayoutProperty(PropertyInfo)
+  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty__ctor_System_Reflection_PropertyInfo_ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayout_ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.#ctor(System.Reflection.PropertyInfo,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)">
+  ChooseLayoutProperty(PropertyInfo, ReportLayout?, ReportLayoutItem?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ChooseLayoutProperty.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -288,12 +300,16 @@ Class ChooseLayoutProperty  <a class="header-action link-secondary" title="View 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ChooseLayoutProperty(PropertyInfo propertyInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">public ChooseLayoutProperty(PropertyInfo propertyInfo, ReportLayout? layout = null, ReportLayoutItem? parent = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>propertyInfo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></dt>
+    <dd></dd>
+    <dt><code>layout</code> <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout.html">ReportLayout</a></dt>
+    <dd></dd>
+    <dt><code>parent</code> <a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html">ReportLayoutItem</a></dt>
     <dd></dd>
   </dl>
 
@@ -502,6 +518,37 @@ Class ChooseLayoutProperty  <a class="header-action link-secondary" title="View 
 </h2>
 
 
+  <a id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_Copy_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.Copy*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_Copy" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.Copy">
+  Copy()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ChooseLayoutProperty.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ReportLayoutItem Copy()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html">ReportLayoutItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_Dispose_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.Dispose*"></a>
 
   <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_Dispose" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.Dispose">
@@ -517,6 +564,73 @@ Class ChooseLayoutProperty  <a class="header-action link-secondary" title="View 
     <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_GetReportValue_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.GetReportValue*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_GetReportValue_System_Type_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.GetReportValue(System.Type)">
+  GetReportValue(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ChooseLayoutProperty.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object? GetReportValue(Type valueType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>valueType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_SetReportValue_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.SetReportValue*"></a>
+
+  <h3 id="ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ChooseLayoutProperty_SetReportValue_System_Object_" data-uid="ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ChooseLayoutProperty.SetReportValue(System.Object)">
+  SetReportValue(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ChooseLayoutProperty.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetReportValue(object? value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

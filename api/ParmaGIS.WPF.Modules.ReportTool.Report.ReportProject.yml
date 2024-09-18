@@ -6,14 +6,17 @@ items:
   parent: ParmaGIS.WPF.Modules.ReportTool.Report
   children:
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Dispose
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export(System.IO.Stream)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.GetMainType
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.GetProvidedTypes
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.GetReportAssembly
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import(System.IO.Stream)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Layout
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.MainTypeName
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Open(System.IO.Stream)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.ProjectName
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Save
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation(System.IO.Stream)
   langs:
   - csharp
   - vb
@@ -28,7 +31,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ReportProject
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 13
+    startLine: 52
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -65,7 +68,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ProjectName
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 40
+    startLine: 79
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -94,7 +97,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MainTypeName
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 46
+    startLine: 85
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -123,7 +126,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Layout
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 48
+    startLine: 87
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -152,7 +155,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Open
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 51
+    startLine: 90
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -183,7 +186,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetReportAssembly
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 78
+    startLine: 117
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -211,7 +214,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetMainType
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 83
+    startLine: 122
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -239,7 +242,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetProvidedTypes
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 88
+    startLine: 127
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -267,7 +270,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Save
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 93
+    startLine: 132
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -275,6 +278,93 @@ items:
     content: public void Save()
     content.vb: Public Sub Save()
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Save*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export(System.IO.Stream)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export(System.IO.Stream)
+  id: Export(System.IO.Stream)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject
+  langs:
+  - csharp
+  - vb
+  name: Export(Stream)
+  nameWithType: ReportProject.Export(Stream)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Export
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
+    startLine: 147
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report
+  syntax:
+    content: public void Export(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    content.vb: Public Sub Export(stream As Stream)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation(System.IO.Stream)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation(System.IO.Stream)
+  id: Validation(System.IO.Stream)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject
+  langs:
+  - csharp
+  - vb
+  name: Validation(Stream)
+  nameWithType: ReportProject.Validation(Stream)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Validation
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
+    startLine: 156
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report
+  syntax:
+    content: public void Validation(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    content.vb: Public Sub Validation(stream As Stream)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import(System.IO.Stream)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import(System.IO.Stream)
+  id: Import(System.IO.Stream)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject
+  langs:
+  - csharp
+  - vb
+  name: Import(Stream)
+  nameWithType: ReportProject.Import(Stream)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Import
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
+    startLine: 204
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report
+  syntax:
+    content: public void Import(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    content.vb: Public Sub Import(stream As Stream)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import*
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Dispose
   commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Dispose
   id: Dispose
@@ -293,7 +383,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProject.cs
-    startLine: 108
+    startLine: 214
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -848,6 +938,24 @@ references:
   name: Save
   nameWithType: ReportProject.Save
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Save
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProject_Export_System_IO_Stream_
+  name: Export
+  nameWithType: ReportProject.Export
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Export
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProject_Validation_System_IO_Stream_
+  name: Validation
+  nameWithType: ReportProject.Validation
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Validation
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProject_Import_System_IO_Stream_
+  name: Import
+  nameWithType: ReportProject.Import
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Import
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Dispose*
   commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.Dispose
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProject.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProject_Dispose

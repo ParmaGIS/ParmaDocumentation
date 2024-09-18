@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.ReportTool.Views
   children:
   - ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.#ctor
+  - ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Views/PropertiesInspectorView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/obj/Release/net7.0-windows/Views/PropertiesInspectorView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: PropertiesInspectorView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Views/PropertiesInspectorView.xaml.cs
-    startLine: 19
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/obj/Release/net7.0-windows/Views/PropertiesInspectorView.g.cs
+    startLine: 51
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Views
   summary: Логика взаимодействия для PropertiesInspectorView.xaml
   example: []
   syntax:
-    content: 'public class PropertiesInspectorView : UserControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class PropertiesInspectorView Inherits UserControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class PropertiesInspectorView : UserControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class PropertiesInspectorView Inherits UserControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -46,6 +47,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Controls.UserControl.OnCreateAutomationPeer
   - System.Windows.Controls.ContentControl.ContentProperty
@@ -698,6 +700,36 @@ items:
   nameWithType.vb: PropertiesInspectorView.New()
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: PropertiesInspectorView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/obj/Release/net7.0-windows/Views/PropertiesInspectorView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/obj/Release/net7.0-windows/Views/PropertiesInspectorView.g.cs
+    startLine: 58
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.ReportTool.Views
   commentId: N:ParmaGIS.WPF.Modules.ReportTool.Views
@@ -868,6 +900,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Controls.UserControl.OnCreateAutomationPeer
   commentId: M:System.Windows.Controls.UserControl.OnCreateAutomationPeer
   parent: System.Windows.Controls.UserControl
@@ -11064,3 +11104,31 @@ references:
   nameWithType.vb: PropertiesInspectorView.New
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.New
   name.vb: New
+- uid: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.html#ParmaGIS_WPF_Modules_ReportTool_Views_PropertiesInspectorView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: PropertiesInspectorView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Views.PropertiesInspectorView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

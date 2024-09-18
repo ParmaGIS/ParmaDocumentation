@@ -6,8 +6,10 @@ items:
   parent: ParmaGIS.Core.Utilities.Threading
   children:
   - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.#ctor(System.Func{System.Threading.Tasks.Task{`0}},`0)
+  - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync
   - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.IsLoadedValue
   - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.IsLoadingValue
+  - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe(System.IObserver{`0})
   - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Value
   langs:
   - csharp
@@ -23,23 +25,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: AsyncLazy
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
   summary: Представляет реализацию механизма ленивой асинхронной загрузки значения.
   example: []
   syntax:
-    content: 'public class AsyncLazy<T> : BindableBase, INotifyPropertyChanged'
+    content: 'public class AsyncLazy<T> : BindableBase, INotifyPropertyChanged, IObservable<T>'
     typeParameters:
     - id: T
       description: Тип значения.
-    content.vb: Public Class AsyncLazy(Of T) Inherits BindableBase Implements INotifyPropertyChanged
+    content.vb: Public Class AsyncLazy(Of T) Inherits BindableBase Implements INotifyPropertyChanged, IObservable(Of T)
   inheritance:
   - System.Object
   - ParmaGIS.Core.Utilities.BindableBase
   implements:
   - System.ComponentModel.INotifyPropertyChanged
+  - System.IObservable{{T}}
   inheritedMembers:
   - ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   - ParmaGIS.Core.Utilities.BindableBase.SetProperty``1({T}@,{T},System.Boolean,System.String)
@@ -54,6 +57,7 @@ items:
   extensionMethods:
   - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetErrorRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Threading.AsyncLazy{{T}},{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Func{{TProperty},System.Boolean},System.String)
   - ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``2(System.Linq.Expressions.Expression{System.Func{ParmaGIS.Core.Utilities.Threading.AsyncLazy{{T}},{TProperty}}},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{TProperty}}})
+  - System.IObservable{`0}.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{T}}},System.Boolean)
   nameWithType.vb: AsyncLazy(Of T)
   fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T)
   name.vb: AsyncLazy(Of T)
@@ -75,7 +79,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: .ctor
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
-    startLine: 21
+    startLine: 39
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
@@ -113,7 +117,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsLoadingValue
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
-    startLine: 31
+    startLine: 49
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
@@ -146,7 +150,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: IsLoadedValue
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
-    startLine: 36
+    startLine: 54
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
@@ -179,7 +183,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Value
     path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
-    startLine: 41
+    startLine: 59
   assemblies:
   - ParmaGIS.Core
   namespace: ParmaGIS.Core.Utilities.Threading
@@ -194,6 +198,76 @@ items:
   overload: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Value*
   nameWithType.vb: AsyncLazy(Of T).Value
   fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T).Value
+- uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync
+  commentId: M:ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync
+  id: GetValueAsync
+  parent: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1
+  langs:
+  - csharp
+  - vb
+  name: GetValueAsync()
+  nameWithType: AsyncLazy<T>.GetValueAsync()
+  fullName: ParmaGIS.Core.Utilities.Threading.AsyncLazy<T>.GetValueAsync()
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetValueAsync
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+    startLine: 69
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Threading
+  syntax:
+    content: public Task<T> GetValueAsync()
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Public Function GetValueAsync() As Task(Of T)
+  overload: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync*
+  nameWithType.vb: AsyncLazy(Of T).GetValueAsync()
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T).GetValueAsync()
+- uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe(System.IObserver{`0})
+  commentId: M:ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe(System.IObserver{`0})
+  id: Subscribe(System.IObserver{`0})
+  parent: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1
+  langs:
+  - csharp
+  - vb
+  name: Subscribe(IObserver<T>)
+  nameWithType: AsyncLazy<T>.Subscribe(IObserver<T>)
+  fullName: ParmaGIS.Core.Utilities.Threading.AsyncLazy<T>.Subscribe(System.IObserver<T>)
+  type: Method
+  source:
+    remote:
+      path: common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Subscribe
+    path: ../ParmaGIS master/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs
+    startLine: 74
+  assemblies:
+  - ParmaGIS.Core
+  namespace: ParmaGIS.Core.Utilities.Threading
+  summary: Notifies the provider that an observer is to receive notifications.
+  example: []
+  syntax:
+    content: public IDisposable Subscribe(IObserver<T> observer)
+    parameters:
+    - id: observer
+      type: System.IObserver{{T}}
+      description: The object that is to receive notifications.
+    return:
+      type: System.IDisposable
+      description: A reference to an interface that allows observers to stop receiving notifications before the provider has finished sending them.
+    content.vb: Public Function Subscribe(observer As IObserver(Of T)) As IDisposable
+  overload: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe*
+  implements:
+  - System.IObservable{{T}}.Subscribe(System.IObserver{{T}})
+  nameWithType.vb: AsyncLazy(Of T).Subscribe(IObserver(Of T))
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T).Subscribe(System.IObserver(Of T))
+  name.vb: Subscribe(IObserver(Of T))
 references:
 - uid: ParmaGIS.Core.Utilities.Threading
   commentId: N:ParmaGIS.Core.Utilities.Threading
@@ -259,6 +333,35 @@ references:
   name: INotifyPropertyChanged
   nameWithType: INotifyPropertyChanged
   fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.IObservable{{T}}
+  commentId: T:System.IObservable{`0}
+  parent: System
+  definition: System.IObservable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: System.IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: System.IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   commentId: E:ParmaGIS.Core.Utilities.BindableBase.PropertyChanged
   parent: ParmaGIS.Core.Utilities.BindableBase
@@ -907,6 +1010,107 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: System.IObservable{`0}.ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{{T}}},System.Boolean)
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{``0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``0}},System.Boolean)
+  parent: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions
+  definition: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{``0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``0}},System.Boolean)
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_
+  name: SetRule<T>(IObservable<T>, RulesObserver, Action<RuleContext<T>>, bool)
+  nameWithType: RulesExtensions.SetRule<T>(IObservable<T>, RulesObserver, Action<RulesObserver.RuleContext<T>>, bool)
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule<T>(System.IObservable<T>, ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action<ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext<T>>, bool)
+  nameWithType.vb: RulesExtensions.SetRule(Of T)(IObservable(Of T), RulesObserver, Action(Of RulesObserver.RuleContext(Of T)), Boolean)
+  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule(Of T)(System.IObservable(Of T), ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action(Of ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext(Of T)), Boolean)
+  name.vb: SetRule(Of T)(IObservable(Of T), RulesObserver, Action(Of RuleContext(Of T)), Boolean)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{`0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{`0}},System.Boolean)
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{`0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{`0}},System.Boolean)
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -971,6 +1175,34 @@ references:
     name: ComponentModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: System.IObservable`1
+  commentId: T:System.IObservable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: System.IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: System.IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ParmaGIS.Core.Utilities.BindableBase.SetProperty``1(``0@,``0,System.Boolean,System.String)
   commentId: M:ParmaGIS.Core.Utilities.BindableBase.SetProperty``1(``0@,``0,System.Boolean,System.String)
   isExternal: true
@@ -1294,6 +1526,106 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{``0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``0}},System.Boolean)
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{``0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``0}},System.Boolean)
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_
+  name: SetRule<TProperty>(IObservable<TProperty>, RulesObserver, Action<RuleContext<TProperty>>, bool)
+  nameWithType: RulesExtensions.SetRule<TProperty>(IObservable<TProperty>, RulesObserver, Action<RulesObserver.RuleContext<TProperty>>, bool)
+  fullName: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule<TProperty>(System.IObservable<TProperty>, ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action<ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext<TProperty>>, bool)
+  nameWithType.vb: RulesExtensions.SetRule(Of TProperty)(IObservable(Of TProperty), RulesObserver, Action(Of RulesObserver.RuleContext(Of TProperty)), Boolean)
+  fullName.vb: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule(Of TProperty)(System.IObservable(Of TProperty), ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver, System.Action(Of ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext(Of TProperty)), Boolean)
+  name.vb: SetRule(Of TProperty)(IObservable(Of TProperty), RulesObserver, Action(Of RuleContext(Of TProperty)), Boolean)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{``0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``0}},System.Boolean)
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.SetRule``1(System.IObservable{``0},ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver,System.Action{ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext{``0}},System.Boolean)
+    name: SetRule
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: System.IObservable`1
+    name: IObservable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver
+    name: RulesObserver
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.html
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext`1
+    name: RuleContext
+    href: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesObserver.RuleContext-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
   commentId: N:ParmaGIS.WPF.Modules.Data.UI.ReactiveRules
   href: ParmaGIS.html
@@ -1498,3 +1830,259 @@ references:
   fullName: ParmaGIS.Core.Utilities.Threading.AsyncLazy<T>.Value
   nameWithType.vb: AsyncLazy(Of T).Value
   fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T).Value
+- uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync*
+  commentId: Overload:ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync
+  href: ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html#ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_GetValueAsync
+  name: GetValueAsync
+  nameWithType: AsyncLazy<T>.GetValueAsync
+  fullName: ParmaGIS.Core.Utilities.Threading.AsyncLazy<T>.GetValueAsync
+  nameWithType.vb: AsyncLazy(Of T).GetValueAsync
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T).GetValueAsync
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{`0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe*
+  commentId: Overload:ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe
+  href: ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html#ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_Subscribe_System_IObserver__0__
+  name: Subscribe
+  nameWithType: AsyncLazy<T>.Subscribe
+  fullName: ParmaGIS.Core.Utilities.Threading.AsyncLazy<T>.Subscribe
+  nameWithType.vb: AsyncLazy(Of T).Subscribe
+  fullName.vb: ParmaGIS.Core.Utilities.Threading.AsyncLazy(Of T).Subscribe
+- uid: System.IObservable{{T}}.Subscribe(System.IObserver{{T}})
+  commentId: M:System.IObservable{`0}.Subscribe(System.IObserver{`0})
+  parent: System.IObservable{{T}}
+  definition: System.IObservable`1.Subscribe(System.IObserver{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.iobservable-1.subscribe
+  name: Subscribe(IObserver<T>)
+  nameWithType: IObservable<T>.Subscribe(IObserver<T>)
+  fullName: System.IObservable<T>.Subscribe(System.IObserver<T>)
+  nameWithType.vb: IObservable(Of T).Subscribe(IObserver(Of T))
+  fullName.vb: System.IObservable(Of T).Subscribe(System.IObserver(Of T))
+  name.vb: Subscribe(IObserver(Of T))
+  spec.csharp:
+  - uid: System.IObservable{`0}.Subscribe(System.IObserver{`0})
+    name: Subscribe
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1.subscribe
+  - name: (
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.IObservable{`0}.Subscribe(System.IObserver{`0})
+    name: Subscribe
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1.subscribe
+  - name: (
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.IObserver{{T}}
+  commentId: T:System.IObserver{`0}
+  parent: System
+  definition: System.IObserver`1
+  href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  name: IObserver<T>
+  nameWithType: IObserver<T>
+  fullName: System.IObserver<T>
+  nameWithType.vb: IObserver(Of T)
+  fullName.vb: System.IObserver(Of T)
+  name.vb: IObserver(Of T)
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.IObservable`1.Subscribe(System.IObserver{`0})
+  commentId: M:System.IObservable`1.Subscribe(System.IObserver{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iobservable-1.subscribe
+  name: Subscribe(IObserver<T>)
+  nameWithType: IObservable<T>.Subscribe(IObserver<T>)
+  fullName: System.IObservable<T>.Subscribe(System.IObserver<T>)
+  nameWithType.vb: IObservable(Of T).Subscribe(IObserver(Of T))
+  fullName.vb: System.IObservable(Of T).Subscribe(System.IObserver(Of T))
+  name.vb: Subscribe(IObserver(Of T))
+  spec.csharp:
+  - uid: System.IObservable`1.Subscribe(System.IObserver{`0})
+    name: Subscribe
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1.subscribe
+  - name: (
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.IObservable`1.Subscribe(System.IObserver{`0})
+    name: Subscribe
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobservable-1.subscribe
+  - name: (
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.IObserver`1
+  commentId: T:System.IObserver`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  name: IObserver<T>
+  nameWithType: IObserver<T>
+  fullName: System.IObserver<T>
+  nameWithType.vb: IObserver(Of T)
+  fullName.vb: System.IObserver(Of T)
+  name.vb: IObserver(Of T)
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IObserver`1
+    name: IObserver
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iobserver-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

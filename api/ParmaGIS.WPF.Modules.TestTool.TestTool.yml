@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.TestTool
   children:
   - ParmaGIS.WPF.Modules.TestTool.TestTool.#ctor
+  - ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.TestTool/TestTool.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.TestTool/obj/Release/net7.0-windows/TestTool.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: TestTool
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.TestTool/TestTool.xaml.cs
-    startLine: 8
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.TestTool/obj/Release/net7.0-windows/TestTool.g.cs
+    startLine: 46
   assemblies:
   - ParmaGIS.WPF.Modules.TestTool
   namespace: ParmaGIS.WPF.Modules.TestTool
   summary: Логика взаимодействия для TestTool.xaml
   example: []
   syntax:
-    content: 'public class TestTool : Tool, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class TestTool Inherits Tool Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class TestTool : Tool, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class TestTool Inherits Tool Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -46,6 +47,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Controls.ContentControl.ContentProperty
   - System.Windows.Controls.ContentControl.ContentStringFormatProperty
@@ -698,6 +700,36 @@ items:
   nameWithType.vb: TestTool.New()
   fullName.vb: ParmaGIS.WPF.Modules.TestTool.TestTool.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.TestTool.TestTool
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: TestTool.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.TestTool/obj/Release/net7.0-windows/TestTool.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.TestTool/obj/Release/net7.0-windows/TestTool.g.cs
+    startLine: 61
+  assemblies:
+  - ParmaGIS.WPF.Modules.TestTool
+  namespace: ParmaGIS.WPF.Modules.TestTool
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.TestTool
   commentId: N:ParmaGIS.WPF.Modules.TestTool
@@ -859,6 +891,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Controls.ContentControl.ContentProperty
   commentId: F:System.Windows.Controls.ContentControl.ContentProperty
   parent: System.Windows.Controls.ContentControl
@@ -11093,3 +11133,31 @@ references:
   nameWithType.vb: TestTool.New
   fullName.vb: ParmaGIS.WPF.Modules.TestTool.TestTool.New
   name.vb: New
+- uid: ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent
+  href: ParmaGIS.WPF.Modules.TestTool.TestTool.html#ParmaGIS_WPF_Modules_TestTool_TestTool_InitializeComponent
+  name: InitializeComponent
+  nameWithType: TestTool.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.TestTool.TestTool.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

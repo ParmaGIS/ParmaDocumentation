@@ -6,14 +6,17 @@ items:
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   children:
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor
-  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor(System.Reflection.PropertyInfo)
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor(System.Reflection.PropertyInfo,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.DefaultItem
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.DefaultValue
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.FillFromEnum(System.Type)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GenerateFromEnum(System.Type)
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue(System.Type)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Items
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SelectedItem
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SelectedValue
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue(System.Object)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.ToDefaultValue
   langs:
   - csharp
@@ -66,6 +69,10 @@ items:
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Name
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Header
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Width
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Height
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Hidden
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.IsExpanded
@@ -113,16 +120,16 @@ items:
   nameWithType.vb: SelectLayoutProperty.New()
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.New()
   name.vb: New()
-- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor(System.Reflection.PropertyInfo)
-  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor(System.Reflection.PropertyInfo)
-  id: '#ctor(System.Reflection.PropertyInfo)'
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor(System.Reflection.PropertyInfo,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor(System.Reflection.PropertyInfo,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  id: '#ctor(System.Reflection.PropertyInfo,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)'
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty
   langs:
   - csharp
   - vb
-  name: SelectLayoutProperty(PropertyInfo)
-  nameWithType: SelectLayoutProperty.SelectLayoutProperty(PropertyInfo)
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SelectLayoutProperty(System.Reflection.PropertyInfo)
+  name: SelectLayoutProperty(PropertyInfo, ReportLayout?, ReportLayoutItem?)
+  nameWithType: SelectLayoutProperty.SelectLayoutProperty(PropertyInfo, ReportLayout?, ReportLayoutItem?)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SelectLayoutProperty(System.Reflection.PropertyInfo, ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout?, ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem?)
   type: Constructor
   source:
     remote:
@@ -136,15 +143,19 @@ items:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   syntax:
-    content: public SelectLayoutProperty(PropertyInfo propertyInfo)
+    content: public SelectLayoutProperty(PropertyInfo propertyInfo, ReportLayout? layout = null, ReportLayoutItem? parent = null)
     parameters:
     - id: propertyInfo
       type: System.Reflection.PropertyInfo
-    content.vb: Public Sub New(propertyInfo As PropertyInfo)
+    - id: layout
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+    - id: parent
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+    content.vb: Public Sub New(propertyInfo As PropertyInfo, layout As ReportLayout = Nothing, parent As ReportLayoutItem = Nothing)
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.#ctor*
-  nameWithType.vb: SelectLayoutProperty.New(PropertyInfo)
-  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.New(System.Reflection.PropertyInfo)
-  name.vb: New(PropertyInfo)
+  nameWithType.vb: SelectLayoutProperty.New(PropertyInfo, ReportLayout, ReportLayoutItem)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.New(System.Reflection.PropertyInfo, ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout, ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  name.vb: New(PropertyInfo, ReportLayout, ReportLayoutItem)
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SelectedValue
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SelectedValue
   id: SelectedValue
@@ -192,7 +203,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DefaultValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -221,7 +232,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SelectedItem
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -250,7 +261,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DefaultItem
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -279,7 +290,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Items
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -308,7 +319,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FillFromEnum
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -339,7 +350,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GenerateFromEnum
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -370,7 +381,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToDefaultValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -380,6 +391,103 @@ items:
     content.vb: Public Overrides Sub ToDefaultValue()
   overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.ToDefaultValue
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.ToDefaultValue*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue(System.Type)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue(System.Type)
+  id: GetReportValue(System.Type)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty
+  langs:
+  - csharp
+  - vb
+  name: GetReportValue(Type)
+  nameWithType: SelectLayoutProperty.GetReportValue(Type)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue(System.Type)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetReportValue
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
+    startLine: 76
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override object? GetReportValue(Type valueType)
+    parameters:
+    - id: valueType
+      type: System.Type
+    return:
+      type: System.Object
+    content.vb: Public Overrides Function GetReportValue(valueType As Type) As Object
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.GetReportValue(System.Type)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue(System.Object)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue(System.Object)
+  id: SetReportValue(System.Object)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty
+  langs:
+  - csharp
+  - vb
+  name: SetReportValue(object?)
+  nameWithType: SelectLayoutProperty.SetReportValue(object?)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue(object?)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SetReportValue
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
+    startLine: 81
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override void SetReportValue(object? value)
+    parameters:
+    - id: value
+      type: System.Object
+    content.vb: Public Overrides Sub SetReportValue(value As Object)
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(System.Object)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue*
+  nameWithType.vb: SelectLayoutProperty.SetReportValue(Object)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue(Object)
+  name.vb: SetReportValue(Object)
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy
+  id: Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty
+  langs:
+  - csharp
+  - vb
+  name: Copy()
+  nameWithType: SelectLayoutProperty.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Copy
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/SelectLayoutProperty.cs
+    startLine: 86
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override ReportLayoutItem Copy()
+    return:
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+    content.vb: Public Overrides Function Copy() As ReportLayoutItem
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.Copy
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy*
 references:
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   commentId: N:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -739,6 +847,34 @@ references:
   name: Width
   nameWithType: ReportLayoutItem.Width
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Width
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinWidth
+  name: MinWidth
+  nameWithType: ReportLayoutItem.MinWidth
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxWidth
+  name: MaxWidth
+  nameWithType: ReportLayoutItem.MaxWidth
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinHeight
+  name: MinHeight
+  nameWithType: ReportLayoutItem.MinHeight
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxHeight
+  name: MaxHeight
+  nameWithType: ReportLayoutItem.MaxHeight
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Height
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Height
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
@@ -1903,6 +2039,13 @@ references:
   name: PropertyInfo
   nameWithType: PropertyInfo
   fullName: System.Reflection.PropertyInfo
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+  commentId: T:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout.html
+  name: ReportLayout
+  nameWithType: ReportLayout
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
 - uid: System.Reflection
   commentId: N:System.Reflection
   isExternal: true
@@ -2149,3 +2292,99 @@ references:
   name: ToDefaultValue
   nameWithType: SelectLayoutProperty.ToDefaultValue
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.ToDefaultValue
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.GetReportValue(System.Type)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.GetReportValue(System.Type)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_GetReportValue_System_Type_
+  name: GetReportValue(Type)
+  nameWithType: ReportLayoutProperty.GetReportValue(Type)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.GetReportValue(System.Type)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.GetReportValue(System.Type)
+    name: GetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_GetReportValue_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.GetReportValue(System.Type)
+    name: GetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_GetReportValue_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_SelectLayoutProperty_GetReportValue_System_Type_
+  name: GetReportValue
+  nameWithType: SelectLayoutProperty.GetReportValue
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.GetReportValue
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(System.Object)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(System.Object)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_SetReportValue_System_Object_
+  name: SetReportValue(object)
+  nameWithType: ReportLayoutProperty.SetReportValue(object)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(object)
+  nameWithType.vb: ReportLayoutProperty.SetReportValue(Object)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(Object)
+  name.vb: SetReportValue(Object)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(System.Object)
+    name: SetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_SetReportValue_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.SetReportValue(System.Object)
+    name: SetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_SetReportValue_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_SelectLayoutProperty_SetReportValue_System_Object_
+  name: SetReportValue
+  nameWithType: SelectLayoutProperty.SetReportValue
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.SetReportValue
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_Copy
+  name: Copy()
+  nameWithType: ReportLayoutProperty.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.Copy()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_Copy
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutProperty_Copy
+  - name: (
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_SelectLayoutProperty_Copy
+  name: Copy
+  nameWithType: SelectLayoutProperty.Copy
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectLayoutProperty.Copy

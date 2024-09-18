@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Installer
   children:
   - ParmaGIS.WPF.Installer.FinalPage.#ctor
+  - ParmaGIS.WPF.Installer.FinalPage.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/src/ParmaGIS.WPF.Installer/View/FinalPage.xaml.cs
+      path: platforms/wpf/src/ParmaGIS.WPF.Installer/obj/Release/net7.0-windows/View/FinalPage.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FinalPage
-    path: ../ParmaGIS master/platforms/wpf/src/ParmaGIS.WPF.Installer/View/FinalPage.xaml.cs
-    startLine: 20
+    path: ../ParmaGIS master/platforms/wpf/src/ParmaGIS.WPF.Installer/obj/Release/net7.0-windows/View/FinalPage.g.cs
+    startLine: 45
   assemblies:
   - ParmaGIS.WPF.Installer
   namespace: ParmaGIS.WPF.Installer
   summary: Логика взаимодействия для FinalPage.xaml
   example: []
   syntax:
-    content: 'public class FinalPage : Page, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class FinalPage Inherits Page Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class FinalPage : Page, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class FinalPage Inherits Page Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -44,6 +45,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Controls.Page.BackgroundProperty
   - System.Windows.Controls.Page.ContentProperty
@@ -664,6 +666,36 @@ items:
   nameWithType.vb: FinalPage.New()
   fullName.vb: ParmaGIS.WPF.Installer.FinalPage.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Installer.FinalPage.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Installer.FinalPage.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Installer.FinalPage
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: FinalPage.InitializeComponent()
+  fullName: ParmaGIS.WPF.Installer.FinalPage.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/src/ParmaGIS.WPF.Installer/obj/Release/net7.0-windows/View/FinalPage.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/src/ParmaGIS.WPF.Installer/obj/Release/net7.0-windows/View/FinalPage.g.cs
+    startLine: 52
+  assemblies:
+  - ParmaGIS.WPF.Installer
+  namespace: ParmaGIS.WPF.Installer
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Installer.FinalPage.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Installer
   commentId: N:ParmaGIS.WPF.Installer
@@ -802,6 +834,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Controls.Page.BackgroundProperty
   commentId: F:System.Windows.Controls.Page.BackgroundProperty
   parent: System.Windows.Controls.Page
@@ -10508,3 +10548,31 @@ references:
   nameWithType.vb: FinalPage.New
   fullName.vb: ParmaGIS.WPF.Installer.FinalPage.New
   name.vb: New
+- uid: ParmaGIS.WPF.Installer.FinalPage.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Installer.FinalPage.InitializeComponent
+  href: ParmaGIS.WPF.Installer.FinalPage.html#ParmaGIS_WPF_Installer_FinalPage_InitializeComponent
+  name: InitializeComponent
+  nameWithType: FinalPage.InitializeComponent
+  fullName: ParmaGIS.WPF.Installer.FinalPage.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

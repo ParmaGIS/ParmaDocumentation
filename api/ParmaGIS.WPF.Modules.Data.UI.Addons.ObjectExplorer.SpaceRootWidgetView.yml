@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
   children:
   - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.#ctor
+  - ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectExplorer/SpaceRootWidgetView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/SpaceRootWidgetView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SpaceRootWidgetView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/Addons/ObjectExplorer/SpaceRootWidgetView.xaml.cs
-    startLine: 22
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/SpaceRootWidgetView.g.cs
+    startLine: 45
   assemblies:
   - ParmaGIS.WPF.Modules.Data.UI
   namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
   summary: Логика взаимодействия для SpaceRootWidgetView.xaml
   example: []
   syntax:
-    content: 'public class SpaceRootWidgetView : UserControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class SpaceRootWidgetView Inherits UserControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class SpaceRootWidgetView : UserControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class SpaceRootWidgetView Inherits UserControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -46,6 +47,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Controls.UserControl.OnCreateAutomationPeer
   - System.Windows.Controls.ContentControl.ContentProperty
@@ -698,6 +700,36 @@ items:
   nameWithType.vb: SpaceRootWidgetView.New()
   fullName.vb: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: SpaceRootWidgetView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/SpaceRootWidgetView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Data.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/SpaceRootWidgetView.g.cs
+    startLine: 52
+  assemblies:
+  - ParmaGIS.WPF.Modules.Data.UI
+  namespace: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
   commentId: N:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer
@@ -884,6 +916,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Controls.UserControl.OnCreateAutomationPeer
   commentId: M:System.Windows.Controls.UserControl.OnCreateAutomationPeer
   parent: System.Windows.Controls.UserControl
@@ -11080,3 +11120,31 @@ references:
   nameWithType.vb: SpaceRootWidgetView.New
   fullName.vb: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.New
   name.vb: New
+- uid: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.html#ParmaGIS_WPF_Modules_Data_UI_Addons_ObjectExplorer_SpaceRootWidgetView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: SpaceRootWidgetView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.Data.UI.Addons.ObjectExplorer.SpaceRootWidgetView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

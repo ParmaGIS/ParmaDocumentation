@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool
   children:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager,ParmaGIS.WPF.Modules.ObjectExplorerTool.ExplorerParameters)
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager,System.Object,System.ValueTuple{System.Object,ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters}[])
   langs:
   - csharp
   - vb
@@ -20,7 +21,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ToolManagerExtensions
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ToolManagerExtensions.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -56,7 +57,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ShowObjectExplorer
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ToolManagerExtensions.cs
-    startLine: 7
+    startLine: 11
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool
   namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -69,6 +70,43 @@ items:
       type: ParmaGIS.WPF.Modules.ObjectExplorerTool.ExplorerParameters
     content.vb: Public Shared Sub ShowObjectExplorer(toolManager As IToolManager, parameters As ExplorerParameters)
   overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer*
+- uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager,System.Object,System.ValueTuple{System.Object,ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters}[])
+  commentId: M:ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager,System.Object,System.ValueTuple{System.Object,ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters}[])
+  id: ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager,System.Object,System.ValueTuple{System.Object,ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters}[])
+  isExtensionMethod: true
+  parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions
+  langs:
+  - csharp
+  - vb
+  name: ShowObjectExplorer(IToolManager, object, params (object, CardParameters?)[])
+  nameWithType: ToolManagerExtensions.ShowObjectExplorer(IToolManager, object, params (object, CardParameters?)[])
+  fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager, object, params (object, ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters?)[])
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ToolManagerExtensions.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ShowObjectExplorer
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectExplorerTool/ToolManagerExtensions.cs
+    startLine: 16
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectExplorerTool
+  namespace: ParmaGIS.WPF.Modules.ObjectExplorerTool
+  syntax:
+    content: public static void ShowObjectExplorer(this IToolManager toolManager, object value, params (object, CardParameters?)[] path)
+    parameters:
+    - id: toolManager
+      type: ParmaGIS.Core.UI.Toolability.IToolManager
+    - id: value
+      type: System.Object
+    - id: path
+      type: System.ValueTuple{System.Object,ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters}[]
+    content.vb: Public Shared Sub ShowObjectExplorer(toolManager As IToolManager, value As Object, ParamArray path As (Object, CardParameters)())
+  overload: ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer*
+  nameWithType.vb: ToolManagerExtensions.ShowObjectExplorer(IToolManager, Object, ParamArray (Object, CardParameters)())
+  fullName.vb: ParmaGIS.WPF.Modules.ObjectExplorerTool.ToolManagerExtensions.ShowObjectExplorer(ParmaGIS.Core.UI.Toolability.IToolManager, Object, ParamArray (Object, ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters)())
+  name.vb: ShowObjectExplorer(IToolManager, Object, ParamArray (Object, CardParameters)())
 references:
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool
   commentId: N:ParmaGIS.WPF.Modules.ObjectExplorerTool
@@ -403,3 +441,40 @@ references:
   - uid: ParmaGIS.Core.UI.Toolability
     name: Toolability
     href: ParmaGIS.Core.UI.Toolability.html
+- uid: System.ValueTuple{System.Object,ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters}[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: (object, CardParameters)[]
+  nameWithType: (object, CardParameters)[]
+  fullName: (object, ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters)[]
+  nameWithType.vb: (Object, CardParameters)()
+  fullName.vb: (Object, ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters)()
+  name.vb: (Object, CardParameters)()
+  spec.csharp:
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters
+    name: CardParameters
+    href: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters.html
+  - name: )
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters
+    name: CardParameters
+    href: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardParameters.html
+  - name: )
+  - name: (
+  - name: )

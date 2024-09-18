@@ -27,8 +27,8 @@ items:
   summary: Логика взаимодействия для Window.xaml
   example: []
   syntax:
-    content: 'public class MainWindow : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class MainWindow Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class MainWindow : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class MainWindow Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -39,6 +39,7 @@ items:
   - System.Windows.Controls.Control
   - System.Windows.Controls.ContentControl
   - System.Windows.Window
+  - ParmaGIS.WPF.Installer.View.Window
   implements:
   - System.Windows.Media.Animation.IAnimatable
   - System.ComponentModel.ISupportInitialize
@@ -46,7 +47,9 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
+  - ParmaGIS.WPF.Installer.View.Window.InitializeComponent
   - System.Windows.Window.AllowsTransparencyProperty
   - System.Windows.Window.DpiChangedEvent
   - System.Windows.Window.IconProperty
@@ -870,6 +873,13 @@ references:
   name: Window
   nameWithType: Window
   fullName: System.Windows.Window
+- uid: ParmaGIS.WPF.Installer.View.Window
+  commentId: T:ParmaGIS.WPF.Installer.View.Window
+  parent: ParmaGIS.WPF.Installer.View
+  href: ParmaGIS.WPF.Installer.View.Window.html
+  name: Window
+  nameWithType: Window
+  fullName: ParmaGIS.WPF.Installer.View.Window
 - uid: System.Windows.Media.Animation.IAnimatable
   commentId: T:System.Windows.Media.Animation.IAnimatable
   parent: System.Windows.Media.Animation
@@ -918,6 +928,33 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
+- uid: ParmaGIS.WPF.Installer.View.Window.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Installer.View.Window.InitializeComponent
+  parent: ParmaGIS.WPF.Installer.View.Window
+  href: ParmaGIS.WPF.Installer.View.Window.html#ParmaGIS_WPF_Installer_View_Window_InitializeComponent
+  name: InitializeComponent()
+  nameWithType: Window.InitializeComponent()
+  fullName: ParmaGIS.WPF.Installer.View.Window.InitializeComponent()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Installer.View.Window.InitializeComponent
+    name: InitializeComponent
+    href: ParmaGIS.WPF.Installer.View.Window.html#ParmaGIS_WPF_Installer_View_Window_InitializeComponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Installer.View.Window.InitializeComponent
+    name: InitializeComponent
+    href: ParmaGIS.WPF.Installer.View.Window.html#ParmaGIS_WPF_Installer_View_Window_InitializeComponent
+  - name: (
+  - name: )
 - uid: System.Windows.Window.AllowsTransparencyProperty
   commentId: F:System.Windows.Window.AllowsTransparencyProperty
   parent: System.Windows.Window

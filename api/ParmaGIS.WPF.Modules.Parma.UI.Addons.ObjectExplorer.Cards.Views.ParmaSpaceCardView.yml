@@ -4,7 +4,8 @@ items:
   commentId: T:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView
   id: ParmaSpaceCardView
   parent: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views
-  children: []
+  children:
+  - ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -14,20 +15,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Addons/ObjectExplorer/Cards/Views/ParmaSpaceCardView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/ParmaSpaceCardView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ParmaSpaceCardView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Addons/ObjectExplorer/Cards/Views/ParmaSpaceCardView.xaml.cs
-    startLine: 17
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/ParmaSpaceCardView.g.cs
+    startLine: 51
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views
   summary: Логика взаимодействия для ParmaSpaceCardView.xaml
   example: []
   syntax:
-    content: 'public class ParmaSpaceCardView : ParmaCardControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView'
-    content.vb: Public Class ParmaSpaceCardView Inherits ParmaCardControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView
+    content: 'public class ParmaSpaceCardView : ParmaCardControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView, IComponentConnector'
+    content.vb: Public Class ParmaSpaceCardView Inherits ParmaCardControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -47,6 +48,7 @@ items:
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   - System.Windows.Controls.ContentControl.ContentProperty
@@ -671,6 +673,36 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Windows.DependencyObject.ParmaGIS.WPF.UI.Utilities.ControlExtensions.ControlExtensions.GetVisualTreeChild``1(System.Boolean)
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: ParmaSpaceCardView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/ParmaSpaceCardView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/ParmaSpaceCardView.g.cs
+    startLine: 82
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views
   commentId: N:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views
@@ -886,6 +918,14 @@ references:
   name: ICardView
   nameWithType: ICardView
   fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   commentId: P:ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl
@@ -11180,3 +11220,31 @@ references:
   - uid: ParmaGIS.WPF.UI.Utilities.ControlExtensions
     name: ControlExtensions
     href: ParmaGIS.WPF.UI.Utilities.ControlExtensions.html
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.html#ParmaGIS_WPF_Modules_Parma_UI_Addons_ObjectExplorer_Cards_Views_ParmaSpaceCardView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: ParmaSpaceCardView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.ParmaSpaceCardView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

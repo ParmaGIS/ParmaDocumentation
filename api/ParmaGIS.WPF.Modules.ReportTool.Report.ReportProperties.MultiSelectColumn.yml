@@ -5,8 +5,12 @@ items:
   id: MultiSelectColumn
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   children:
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetValue(ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Items
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue(System.Object)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetValue(System.Object)
   langs:
   - csharp
@@ -22,24 +26,24 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MultiSelectColumn
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 400
+    startLine: 549
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   syntax:
-    content: 'public class MultiSelectColumn : ColumnBase<MultiSelectItem>, INotifyPropertyChanged'
-    content.vb: Public Class MultiSelectColumn Inherits ColumnBase(Of MultiSelectItem) Implements INotifyPropertyChanged
+    content: 'public class MultiSelectColumn : ColumnBase<SelectItem>, INotifyPropertyChanged'
+    content.vb: Public Class MultiSelectColumn Inherits ColumnBase(Of SelectItem) Implements INotifyPropertyChanged
   inheritance:
   - System.Object
   - ParmaGIS.Core.Utilities.BindableBase
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
-  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   implements:
   - System.ComponentModel.INotifyPropertyChanged
   inheritedMembers:
-  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.ValueType
-  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.DefaultValue
-  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.CreateCell
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.ValueType
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.DefaultValue
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.CreateCell
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.PropertyPath
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Header
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.Hidden
@@ -74,17 +78,46 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Items
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 402
+    startLine: 551
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   syntax:
-    content: public ObservableCollection<MultiSelectItem> Items { get; set; }
+    content: public ObservableCollection<SelectItem> Items { get; set; }
     parameters: []
     return:
-      type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
-    content.vb: Public Property Items As ObservableCollection(Of MultiSelectItem)
+      type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
+    content.vb: Public Property Items As ObservableCollection(Of SelectItem)
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Items*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView
+  id: ItemsView
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn
+  langs:
+  - csharp
+  - vb
+  name: ItemsView
+  nameWithType: MultiSelectColumn.ItemsView
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView
+  type: Property
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: ItemsView
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+    startLine: 553
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  syntax:
+    content: public ObservableCollection<SelectItem> ItemsView { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
+    content.vb: Public ReadOnly Property ItemsView As ObservableCollection(Of SelectItem)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView*
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetValue(System.Object)
   commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetValue(System.Object)
   id: SetValue(System.Object)
@@ -103,7 +136,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: SetValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 404
+    startLine: 557
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -116,7 +149,7 @@ items:
     return:
       type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
     content.vb: Public Overrides Function SetValue(value As Object) As Cell
-  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.SetValue(System.Object)
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.SetValue(System.Object)
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetValue*
   nameWithType.vb: MultiSelectColumn.SetValue(Object)
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetValue(Object)
@@ -139,7 +172,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: GetValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
-    startLine: 409
+    startLine: 569
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -154,6 +187,107 @@ items:
     content.vb: Public Overrides Function GetValue(cell As Cell) As Object
   overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetValue(ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetValue*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  id: GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn
+  langs:
+  - csharp
+  - vb
+  name: GetReportValue(Type, Cell)
+  nameWithType: MultiSelectColumn.GetReportValue(Type, Cell)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue(System.Type, ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: GetReportValue
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+    startLine: 575
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override object? GetReportValue(Type targetType, Cell cell)
+    parameters:
+    - id: targetType
+      type: System.Type
+    - id: cell
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+    return:
+      type: System.Object
+    content.vb: Public Overrides Function GetReportValue(targetType As Type, cell As Cell) As Object
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue(System.Object)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue(System.Object)
+  id: SetReportValue(System.Object)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn
+  langs:
+  - csharp
+  - vb
+  name: SetReportValue(object)
+  nameWithType: MultiSelectColumn.SetReportValue(object)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue(object)
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: SetReportValue
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+    startLine: 582
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override Cell SetReportValue(object value)
+    parameters:
+    - id: value
+      type: System.Object
+    return:
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+    content.vb: Public Overrides Function SetReportValue(value As Object) As Cell
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue*
+  nameWithType.vb: MultiSelectColumn.SetReportValue(Object)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue(Object)
+  name.vb: SetReportValue(Object)
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy
+  id: Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn
+  langs:
+  - csharp
+  - vb
+  name: Copy()
+  nameWithType: MultiSelectColumn.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Copy
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportProperties/ListLayoutProperty.cs
+    startLine: 590
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
+  example: []
+  syntax:
+    content: public override Column Copy()
+    return:
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+    content.vb: Public Overrides Function Copy() As Column
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.Copy
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy*
 references:
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   commentId: N:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
@@ -234,25 +368,25 @@ references:
   name: Column
   nameWithType: Column
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
-- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
-  commentId: T:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
+  commentId: T:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties
   definition: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html
-  name: ColumnBase<MultiSelectItem>
-  nameWithType: ColumnBase<MultiSelectItem>
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem>
-  nameWithType.vb: ColumnBase(Of MultiSelectItem)
-  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem)
-  name.vb: ColumnBase(Of MultiSelectItem)
+  name: ColumnBase<SelectItem>
+  nameWithType: ColumnBase<SelectItem>
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>
+  nameWithType.vb: ColumnBase(Of SelectItem)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem)
+  name.vb: ColumnBase(Of SelectItem)
   spec.csharp:
   - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1
     name: ColumnBase
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html
   - name: <
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem
-    name: MultiSelectItem
-    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem.html
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem
+    name: SelectItem
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem.html
   - name: '>'
   spec.vb:
   - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1
@@ -261,9 +395,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem
-    name: MultiSelectItem
-    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem.html
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem
+    name: SelectItem
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem.html
   - name: )
 - uid: System.ComponentModel.INotifyPropertyChanged
   commentId: T:System.ComponentModel.INotifyPropertyChanged
@@ -273,44 +407,44 @@ references:
   name: INotifyPropertyChanged
   nameWithType: INotifyPropertyChanged
   fullName: System.ComponentModel.INotifyPropertyChanged
-- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.ValueType
-  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.ValueType
-  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.ValueType
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.ValueType
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   definition: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.ValueType
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_ValueType
   name: ValueType
-  nameWithType: ColumnBase<MultiSelectItem>.ValueType
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem>.ValueType
-  nameWithType.vb: ColumnBase(Of MultiSelectItem).ValueType
-  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem).ValueType
-- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.DefaultValue
-  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.DefaultValue
-  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+  nameWithType: ColumnBase<SelectItem>.ValueType
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>.ValueType
+  nameWithType.vb: ColumnBase(Of SelectItem).ValueType
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem).ValueType
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.DefaultValue
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.DefaultValue
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   definition: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.DefaultValue
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_DefaultValue
   name: DefaultValue
-  nameWithType: ColumnBase<MultiSelectItem>.DefaultValue
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem>.DefaultValue
-  nameWithType.vb: ColumnBase(Of MultiSelectItem).DefaultValue
-  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem).DefaultValue
-- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.CreateCell
-  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.CreateCell
-  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+  nameWithType: ColumnBase<SelectItem>.DefaultValue
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>.DefaultValue
+  nameWithType.vb: ColumnBase(Of SelectItem).DefaultValue
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem).DefaultValue
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.CreateCell
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.CreateCell
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   definition: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.CreateCell
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_CreateCell
   name: CreateCell()
-  nameWithType: ColumnBase<MultiSelectItem>.CreateCell()
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem>.CreateCell()
-  nameWithType.vb: ColumnBase(Of MultiSelectItem).CreateCell()
-  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem).CreateCell()
+  nameWithType: ColumnBase<SelectItem>.CreateCell()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>.CreateCell()
+  nameWithType.vb: ColumnBase(Of SelectItem).CreateCell()
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem).CreateCell()
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.CreateCell
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.CreateCell
     name: CreateCell
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_CreateCell
   - name: (
   - name: )
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.CreateCell
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.CreateCell
     name: CreateCell
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_CreateCell
   - name: (
@@ -1444,26 +1578,26 @@ references:
   name: Items
   nameWithType: MultiSelectColumn.Items
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Items
-- uid: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
-  commentId: T:System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+- uid: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   parent: System.Collections.ObjectModel
   definition: System.Collections.ObjectModel.ObservableCollection`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
-  name: ObservableCollection<MultiSelectItem>
-  nameWithType: ObservableCollection<MultiSelectItem>
-  fullName: System.Collections.ObjectModel.ObservableCollection<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem>
-  nameWithType.vb: ObservableCollection(Of MultiSelectItem)
-  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem)
-  name.vb: ObservableCollection(Of MultiSelectItem)
+  name: ObservableCollection<SelectItem>
+  nameWithType: ObservableCollection<SelectItem>
+  fullName: System.Collections.ObjectModel.ObservableCollection<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>
+  nameWithType.vb: ObservableCollection(Of SelectItem)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem)
+  name.vb: ObservableCollection(Of SelectItem)
   spec.csharp:
   - uid: System.Collections.ObjectModel.ObservableCollection`1
     name: ObservableCollection
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
   - name: <
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem
-    name: MultiSelectItem
-    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem.html
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem
+    name: SelectItem
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.ObjectModel.ObservableCollection`1
@@ -1473,9 +1607,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem
-    name: MultiSelectItem
-    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem.html
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem
+    name: SelectItem
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem.html
   - name: )
 - uid: System.Collections.ObjectModel.ObservableCollection`1
   commentId: T:System.Collections.ObjectModel.ObservableCollection`1
@@ -1542,19 +1676,25 @@ references:
     name: ObjectModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
-- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.SetValue(System.Object)
-  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.SetValue(System.Object)
-  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_MultiSelectColumn_ItemsView
+  name: ItemsView
+  nameWithType: MultiSelectColumn.ItemsView
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.ItemsView
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.SetValue(System.Object)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.SetValue(System.Object)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
   definition: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.SetValue(System.Object)
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_SetValue_System_Object_
   name: SetValue(object)
-  nameWithType: ColumnBase<MultiSelectItem>.SetValue(object)
-  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem>.SetValue(object)
-  nameWithType.vb: ColumnBase(Of MultiSelectItem).SetValue(Object)
-  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem).SetValue(Object)
+  nameWithType: ColumnBase<SelectItem>.SetValue(object)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>.SetValue(object)
+  nameWithType.vb: ColumnBase(Of SelectItem).SetValue(Object)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem).SetValue(Object)
   name.vb: SetValue(Object)
   spec.csharp:
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.SetValue(System.Object)
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.SetValue(System.Object)
     name: SetValue
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_SetValue_System_Object_
   - name: (
@@ -1564,7 +1704,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
-  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectItem}.SetValue(System.Object)
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.SetValue(System.Object)
     name: SetValue
     href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_SetValue_System_Object_
   - name: (
@@ -1647,3 +1787,140 @@ references:
   name: GetValue
   nameWithType: MultiSelectColumn.GetValue
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetValue
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  name: GetReportValue(Type, Cell)
+  nameWithType: Column.GetReportValue(Type, Cell)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type, ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+    name: GetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+    name: Cell
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell.html
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.GetReportValue(System.Type,ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell)
+    name: GetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell
+    name: Cell
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Cell.html
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_MultiSelectColumn_GetReportValue_System_Type_ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Cell_
+  name: GetReportValue
+  nameWithType: MultiSelectColumn.GetReportValue
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.GetReportValue
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column
+  isExternal: true
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_SetReportValue_System_Object_
+  name: SetReportValue(object)
+  nameWithType: Column.SetReportValue(object)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(object)
+  nameWithType.vb: Column.SetReportValue(Object)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(Object)
+  name.vb: SetReportValue(Object)
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+    name: SetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_SetReportValue_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.SetReportValue(System.Object)
+    name: SetReportValue
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Column.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_Column_SetReportValue_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_MultiSelectColumn_SetReportValue_System_Object_
+  name: SetReportValue
+  nameWithType: MultiSelectColumn.SetReportValue
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.SetReportValue
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}
+  definition: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  name: Copy()
+  nameWithType: ColumnBase<SelectItem>.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem>.Copy()
+  nameWithType.vb: ColumnBase(Of SelectItem).Copy()
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem).Copy()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase{ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectItem}.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  - name: (
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_MultiSelectColumn_Copy
+  name: Copy
+  nameWithType: MultiSelectColumn.Copy
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.MultiSelectColumn.Copy
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  name: Copy()
+  nameWithType: ColumnBase<T>.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase<T>.Copy()
+  nameWithType.vb: ColumnBase(Of T).Copy()
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase(Of T).Copy()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase`1.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ColumnBase-1.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportProperties_ColumnBase_1_Copy
+  - name: (
+  - name: )

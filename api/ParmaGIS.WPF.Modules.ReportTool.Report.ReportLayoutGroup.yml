@@ -6,8 +6,10 @@ items:
   parent: ParmaGIS.WPF.Modules.ReportTool.Report
   children:
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.#ctor
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.#ctor(ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.CanChangeChildren
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Children
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.DisplayPropertyPath
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.DisplayValue
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Dispose
@@ -49,6 +51,10 @@ items:
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Name
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Header
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Width
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+  - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Height
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Hidden
   - ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.IsExpanded
@@ -96,6 +102,40 @@ items:
   nameWithType.vb: ReportLayoutGroup.New()
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.#ctor(ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.#ctor(ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  id: '#ctor(ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout,ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)'
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup
+  langs:
+  - csharp
+  - vb
+  name: ReportLayoutGroup(ReportLayout?, ReportLayoutItem?)
+  nameWithType: ReportLayoutGroup.ReportLayoutGroup(ReportLayout?, ReportLayoutItem?)
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.ReportLayoutGroup(ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout?, ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem?)
+  type: Constructor
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: .ctor
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
+    startLine: 26
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report
+  syntax:
+    content: public ReportLayoutGroup(ReportLayout? layout, ReportLayoutItem? parent = null)
+    parameters:
+    - id: layout
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+    - id: parent
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+    content.vb: Public Sub New(layout As ReportLayout, parent As ReportLayoutItem = Nothing)
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.#ctor*
+  nameWithType.vb: ReportLayoutGroup.New(ReportLayout, ReportLayoutItem)
+  fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.New(ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout, ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem)
+  name.vb: New(ReportLayout, ReportLayoutItem)
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.DisplayPropertyPath
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.DisplayPropertyPath
   id: DisplayPropertyPath
@@ -114,7 +154,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DisplayPropertyPath
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
-    startLine: 28
+    startLine: 32
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -143,7 +183,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: DisplayValue
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
-    startLine: 39
+    startLine: 43
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -174,7 +214,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: LayoutGroupType
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
-    startLine: 53
+    startLine: 57
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -203,7 +243,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: CanChangeChildren
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
-    startLine: 60
+    startLine: 64
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -232,7 +272,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Children
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
-    startLine: 63
+    startLine: 67
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -261,7 +301,7 @@ items:
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: Dispose
     path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
-    startLine: 120
+    startLine: 124
   assemblies:
   - ParmaGIS.WPF.Modules.ReportTool
   namespace: ParmaGIS.WPF.Modules.ReportTool.Report
@@ -272,6 +312,36 @@ items:
     content.vb: Public Overrides Sub Dispose()
   overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Dispose
   overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Dispose*
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy
+  id: Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup
+  langs:
+  - csharp
+  - vb
+  name: Copy()
+  nameWithType: ReportLayoutGroup.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: Copy
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ReportTool/Report/ReportLayoutGroup.cs
+    startLine: 133
+  assemblies:
+  - ParmaGIS.WPF.Modules.ReportTool
+  namespace: ParmaGIS.WPF.Modules.ReportTool.Report
+  example: []
+  syntax:
+    content: public override ReportLayoutItem Copy()
+    return:
+      type: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+    content.vb: Public Overrides Function Copy() As ReportLayoutItem
+  overridden: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Copy
+  overload: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy*
 references:
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report
   commentId: N:ParmaGIS.WPF.Modules.ReportTool.Report
@@ -402,6 +472,34 @@ references:
   name: Width
   nameWithType: ReportLayoutItem.Width
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Width
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinWidth
+  name: MinWidth
+  nameWithType: ReportLayoutItem.MinWidth
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinWidth
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxWidth
+  name: MaxWidth
+  nameWithType: ReportLayoutItem.MaxWidth
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxWidth
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MinHeight
+  name: MinHeight
+  nameWithType: ReportLayoutItem.MinHeight
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MinHeight
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
+  commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_MaxHeight
+  name: MaxHeight
+  nameWithType: ReportLayoutItem.MaxHeight
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.MaxHeight
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Height
   commentId: P:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Height
   parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
@@ -1512,6 +1610,13 @@ references:
   nameWithType.vb: ReportLayoutGroup.New
   fullName.vb: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.New
   name.vb: New
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+  commentId: T:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout.html
+  name: ReportLayout
+  nameWithType: ReportLayout
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayout
 - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.DisplayPropertyPath*
   commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.DisplayPropertyPath
   href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutGroup_DisplayPropertyPath
@@ -1701,3 +1806,28 @@ references:
   name: Dispose
   nameWithType: ReportLayoutGroup.Dispose
   fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Dispose
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Copy
+  commentId: M:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Copy
+  parent: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Copy
+  name: Copy()
+  nameWithType: ReportLayoutItem.Copy()
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Copy()
+  spec.csharp:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Copy
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.Copy
+    name: Copy
+    href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutItem.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutItem_Copy
+  - name: (
+  - name: )
+- uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy*
+  commentId: Overload:ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy
+  href: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.html#ParmaGIS_WPF_Modules_ReportTool_Report_ReportLayoutGroup_Copy
+  name: Copy
+  nameWithType: ReportLayoutGroup.Copy
+  fullName: ParmaGIS.WPF.Modules.ReportTool.Report.ReportLayoutGroup.Copy

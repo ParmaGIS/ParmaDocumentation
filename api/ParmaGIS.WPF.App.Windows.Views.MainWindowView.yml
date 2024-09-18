@@ -4,7 +4,8 @@ items:
   commentId: T:ParmaGIS.WPF.App.Windows.Views.MainWindowView
   id: MainWindowView
   parent: ParmaGIS.WPF.App.Windows.Views
-  children: []
+  children:
+  - ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -14,20 +15,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/src/ParmaGIS.WPF.App/Windows/Views/MainWindowView.xaml.cs
+      path: platforms/wpf/src/ParmaGIS.WPF.App/obj/Release/net7.0-windows/Windows/Views/MainWindowView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: MainWindowView
-    path: ../ParmaGIS master/platforms/wpf/src/ParmaGIS.WPF.App/Windows/Views/MainWindowView.xaml.cs
-    startLine: 25
+    path: ../ParmaGIS master/platforms/wpf/src/ParmaGIS.WPF.App/obj/Release/net7.0-windows/Windows/Views/MainWindowView.g.cs
+    startLine: 51
   assemblies:
   - ParmaGIS.WPF.App
   namespace: ParmaGIS.WPF.App.Windows.Views
   summary: Логика взаимодействия для MainWindowView.xaml
   example: []
   syntax:
-    content: 'public class MainWindowView : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class MainWindowView Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class MainWindowView : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class MainWindowView Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -45,6 +46,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Window.AllowsTransparencyProperty
   - System.Windows.Window.DpiChangedEvent
@@ -724,6 +726,36 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.App.Windows.Views.MainWindowView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: MainWindowView.InitializeComponent()
+  fullName: ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/src/ParmaGIS.WPF.App/obj/Release/net7.0-windows/Windows/Views/MainWindowView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/src/ParmaGIS.WPF.App/obj/Release/net7.0-windows/Windows/Views/MainWindowView.g.cs
+    startLine: 90
+  assemblies:
+  - ParmaGIS.WPF.App
+  namespace: ParmaGIS.WPF.App.Windows.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.App.Windows.Views
   commentId: N:ParmaGIS.WPF.App.Windows.Views
@@ -894,6 +926,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Window.AllowsTransparencyProperty
   commentId: F:System.Windows.Window.AllowsTransparencyProperty
   parent: System.Windows.Window
@@ -11673,3 +11713,31 @@ references:
     name: Markup
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.windows.markup
+- uid: ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent
+  href: ParmaGIS.WPF.App.Windows.Views.MainWindowView.html#ParmaGIS_WPF_App_Windows_Views_MainWindowView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: MainWindowView.InitializeComponent
+  fullName: ParmaGIS.WPF.App.Windows.Views.MainWindowView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

@@ -1223,6 +1223,8 @@ items:
         items:
         - uid: ParmaGIS.WPF.Installer.View.MainWindow
           name: MainWindow
+        - uid: ParmaGIS.WPF.Installer.View.Window
+          name: Window
       - uid: ParmaGIS.WPF.Installer.ViewModel
         name: ViewModel
         items:
@@ -1433,6 +1435,11 @@ items:
       - uid: ParmaGIS.WPF.Modules.GroupEditTool
         name: GroupEditTool
         items:
+        - uid: ParmaGIS.WPF.Modules.GroupEditTool.Localization
+          name: Localization
+          items:
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.Localization.LocalizationService
+            name: LocalizationService
         - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels
           name: ViewModels
           items:
@@ -1456,16 +1463,16 @@ items:
             name: IFilter<T>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IListFilter`2
             name: IListFilter<TValue, TItem>
-          - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`1
-            name: INumberFilter<TItem>
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.INumberFilter`2
+            name: INumberFilter<TItem, TValue>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IPropertyColumn
             name: IPropertyColumn
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.IStringFilter`1
             name: IStringFilter<TItem>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilterCondition
             name: NumberFilterCondition
-          - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`1
-            name: NumberFilter<T>
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.NumberFilter`2
+            name: NumberFilter<TItem, TValue>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.ParmaSpaceSourceData`1
             name: ParmaSpaceSourceData<T>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.PropertyColumn
@@ -1478,6 +1485,8 @@ items:
             name: SourceFilter<T>
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataBooleanFilter
             name: StandDataBooleanFilter
+          - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataDecimalFilter
+            name: StandDataDecimalFilter
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataIntFilter
             name: StandDataIntFilter
           - uid: ParmaGIS.WPF.Modules.GroupEditTool.ViewModels.StandDataSelectFilter
@@ -1880,6 +1889,8 @@ items:
             name: GetCalcValue
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.GetErrorsList
             name: GetErrorsList
+          - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.GetIntValue
+            name: GetIntValue
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.LoadDataTemplateSelector
             name: LoadDataTemplateSelector
           - uid: ParmaGIS.WPF.Modules.Parma.UI.Converters.SearchWoodLayerOnType
@@ -1987,6 +1998,8 @@ items:
               name: MultiSelectLayoutProperty
             - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportLayoutTypedProperty`1
               name: ReportLayoutTypedProperty<T>
+            - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.ReportValueLayoutProperty
+              name: ReportValueLayoutProperty
             - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.Row
               name: Row
             - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ReportProperties.SelectColumn
@@ -2028,6 +2041,10 @@ items:
             name: ReportValidator
           - uid: ParmaGIS.WPF.Modules.ReportTool.Report.RoslynCompiler2
             name: RoslynCompiler2
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ValidationException
+            name: ValidationException
+          - uid: ParmaGIS.WPF.Modules.ReportTool.Report.XmlSchemaError
+            name: XmlSchemaError
           - uid: ParmaGIS.WPF.Modules.ReportTool.Report.ZipOutputWritter
             name: ZipOutputWritter
         - uid: ParmaGIS.WPF.Modules.ReportTool.ViewModels

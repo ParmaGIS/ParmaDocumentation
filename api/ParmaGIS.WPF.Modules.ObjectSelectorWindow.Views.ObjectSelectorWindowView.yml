@@ -5,6 +5,7 @@ items:
   id: ObjectSelectorWindowView
   parent: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
   children:
+  - ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent
   - ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.OnClosing(System.ComponentModel.CancelEventArgs)
   langs:
   - csharp
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/Views/ObjectSelectorWindowView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/obj/Release/net7.0-windows/Views/ObjectSelectorWindowView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: ObjectSelectorWindowView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/Views/ObjectSelectorWindowView.xaml.cs
-    startLine: 14
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/obj/Release/net7.0-windows/Views/ObjectSelectorWindowView.g.cs
+    startLine: 47
   assemblies:
   - ParmaGIS.WPF.Modules.ObjectSelectorWindow
   namespace: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
   summary: Логика взаимодействия для ObjectSelectorWindowView.xaml
   example: []
   syntax:
-    content: 'public class ObjectSelectorWindowView : DialogWindow, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class ObjectSelectorWindowView Inherits DialogWindow Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class ObjectSelectorWindowView : DialogWindow, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class ObjectSelectorWindowView Inherits DialogWindow Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -47,6 +48,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Window.AllowsTransparencyProperty
   - System.Windows.Window.DpiChangedEvent
@@ -760,6 +762,36 @@ items:
     content.vb: Protected Overrides Sub OnClosing(e As CancelEventArgs)
   overridden: System.Windows.Window.OnClosing(System.ComponentModel.CancelEventArgs)
   overload: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.OnClosing*
+- uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: ObjectSelectorWindowView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/obj/Release/net7.0-windows/Views/ObjectSelectorWindowView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.ObjectSelectorWindow/obj/Release/net7.0-windows/Views/ObjectSelectorWindowView.g.cs
+    startLine: 70
+  assemblies:
+  - ParmaGIS.WPF.Modules.ObjectSelectorWindow
+  namespace: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
   commentId: N:ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views
@@ -937,6 +969,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Window.AllowsTransparencyProperty
   commentId: F:System.Windows.Window.AllowsTransparencyProperty
   parent: System.Windows.Window
@@ -11922,3 +11962,31 @@ references:
   name: OnClosing
   nameWithType: ObjectSelectorWindowView.OnClosing
   fullName: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.OnClosing
+- uid: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.html#ParmaGIS_WPF_Modules_ObjectSelectorWindow_Views_ObjectSelectorWindowView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: ObjectSelectorWindowView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.ObjectSelectorWindow.Views.ObjectSelectorWindowView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

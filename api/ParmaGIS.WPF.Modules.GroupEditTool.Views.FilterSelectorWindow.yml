@@ -9,6 +9,7 @@ items:
   - ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilterGroups
   - ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableFilters
   - ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups
+  - ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent
   langs:
   - csharp
   - vb
@@ -18,20 +19,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/obj/Release/net7.0-windows/Views/FilterSelectorWindow.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: FilterSelectorWindow
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/Views/FilterSelectorWindow.xaml.cs
-    startLine: 21
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/obj/Release/net7.0-windows/Views/FilterSelectorWindow.g.cs
+    startLine: 45
   assemblies:
   - ParmaGIS.WPF.Modules.GroupEditTool
   namespace: ParmaGIS.WPF.Modules.GroupEditTool.Views
   summary: Логика взаимодействия для FilterSelectorWindow.xaml
   example: []
   syntax:
-    content: 'public class FilterSelectorWindow : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild'
-    content.vb: Public Class FilterSelectorWindow Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild
+    content: 'public class FilterSelectorWindow : Window, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector'
+    content.vb: Public Class FilterSelectorWindow Inherits Window Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -49,6 +50,7 @@ items:
   - System.Windows.IInputElement
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - System.Windows.Window.AllowsTransparencyProperty
   - System.Windows.Window.DpiChangedEvent
@@ -846,6 +848,36 @@ items:
       type: System.Collections.ObjectModel.ObservableCollection{ParmaGIS.WPF.Modules.GroupEditTool.Views.GroupViewModel}
     content.vb: Public Property AvailableGroups As ObservableCollection(Of GroupViewModel)
   overload: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.AvailableGroups*
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: FilterSelectorWindow.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/obj/Release/net7.0-windows/Views/FilterSelectorWindow.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.GroupEditTool/obj/Release/net7.0-windows/Views/FilterSelectorWindow.g.cs
+    startLine: 52
+  assemblies:
+  - ParmaGIS.WPF.Modules.GroupEditTool
+  namespace: ParmaGIS.WPF.Modules.GroupEditTool.Views
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.GroupEditTool.Views
   commentId: N:ParmaGIS.WPF.Modules.GroupEditTool.Views
@@ -1016,6 +1048,14 @@ references:
   name: IAddChild
   nameWithType: IAddChild
   fullName: System.Windows.Markup.IAddChild
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: System.Windows.Window.AllowsTransparencyProperty
   commentId: F:System.Windows.Window.AllowsTransparencyProperty
   parent: System.Windows.Window
@@ -12205,3 +12245,31 @@ references:
     name: ObjectModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent
+  href: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.html#ParmaGIS_WPF_Modules_GroupEditTool_Views_FilterSelectorWindow_InitializeComponent
+  name: InitializeComponent
+  nameWithType: FilterSelectorWindow.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.GroupEditTool.Views.FilterSelectorWindow.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

@@ -6,6 +6,7 @@ items:
   parent: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings
   children:
   - ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.#ctor
+  - ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent
   langs:
   - csharp
   - vb
@@ -15,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Addons/ObjectExplorer/Cards/Views/CatalogSettings/BonitetClassSettingsCardView.xaml.cs
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/CatalogSettings/BonitetClassSettingsCardView.g.cs
       branch: origin/test
       repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
     id: BonitetClassSettingsCardView
-    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/Addons/ObjectExplorer/Cards/Views/CatalogSettings/BonitetClassSettingsCardView.xaml.cs
-    startLine: 21
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/CatalogSettings/BonitetClassSettingsCardView.g.cs
+    startLine: 50
   assemblies:
   - ParmaGIS.WPF.Modules.Parma.UI
   namespace: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings
   summary: Логика взаимодействия для BonitetClassSettingsCardView.xaml
   example: []
   syntax:
-    content: 'public class BonitetClassSettingsCardView : ParmaCardControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView'
-    content.vb: Public Class BonitetClassSettingsCardView Inherits ParmaCardControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView
+    content: 'public class BonitetClassSettingsCardView : ParmaCardControl, IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView, IComponentConnector'
+    content.vb: Public Class BonitetClassSettingsCardView Inherits ParmaCardControl Implements IAnimatable, ISupportInitialize, IFrameworkInputElement, IInputElement, IQueryAmbient, IAddChild, ICardView, IComponentConnector
   inheritance:
   - System.Object
   - System.Windows.Threading.DispatcherObject
@@ -48,6 +49,7 @@ items:
   - System.Windows.Markup.IQueryAmbient
   - System.Windows.Markup.IAddChild
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView
+  - System.Windows.Markup.IComponentConnector
   inheritedMembers:
   - ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   - System.Windows.Controls.ContentControl.ContentProperty
@@ -701,6 +703,36 @@ items:
   nameWithType.vb: BonitetClassSettingsCardView.New()
   fullName.vb: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.New()
   name.vb: New()
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent
+  commentId: M:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent
+  id: InitializeComponent
+  parent: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView
+  langs:
+  - csharp
+  - vb
+  name: InitializeComponent()
+  nameWithType: BonitetClassSettingsCardView.InitializeComponent()
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent()
+  type: Method
+  source:
+    remote:
+      path: platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/CatalogSettings/BonitetClassSettingsCardView.g.cs
+      branch: origin/test
+      repo: https://github.com/ParmaGIS/ParmaGIS.Net.git
+    id: InitializeComponent
+    path: ../ParmaGIS master/platforms/wpf/modules/ParmaGIS.WPF.Modules.Parma.UI/obj/Release/net7.0-windows/Addons/ObjectExplorer/Cards/Views/CatalogSettings/BonitetClassSettingsCardView.g.cs
+    startLine: 65
+  assemblies:
+  - ParmaGIS.WPF.Modules.Parma.UI
+  namespace: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings
+  summary: InitializeComponent
+  example: []
+  syntax:
+    content: public void InitializeComponent()
+    content.vb: Public Sub InitializeComponent()
+  overload: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent*
+  implements:
+  - System.Windows.Markup.IComponentConnector.InitializeComponent
 references:
 - uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings
   commentId: N:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings
@@ -924,6 +956,14 @@ references:
   name: ICardView
   nameWithType: ICardView
   fullName: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.ICardView
+- uid: System.Windows.Markup.IComponentConnector
+  commentId: T:System.Windows.Markup.IComponentConnector
+  parent: System.Windows.Markup
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector
+  name: IComponentConnector
+  nameWithType: IComponentConnector
+  fullName: System.Windows.Markup.IComponentConnector
 - uid: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   commentId: P:ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl.CardContext
   parent: ParmaGIS.WPF.Modules.ObjectExplorerTool.Card.CardControl
@@ -11227,3 +11267,31 @@ references:
   nameWithType.vb: BonitetClassSettingsCardView.New
   fullName.vb: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.New
   name.vb: New
+- uid: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent*
+  commentId: Overload:ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent
+  href: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.html#ParmaGIS_WPF_Modules_Parma_UI_Addons_ObjectExplorer_Cards_Views_CatalogSettings_BonitetClassSettingsCardView_InitializeComponent
+  name: InitializeComponent
+  nameWithType: BonitetClassSettingsCardView.InitializeComponent
+  fullName: ParmaGIS.WPF.Modules.Parma.UI.Addons.ObjectExplorer.Cards.Views.CatalogSettings.BonitetClassSettingsCardView.InitializeComponent
+- uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+  commentId: M:System.Windows.Markup.IComponentConnector.InitializeComponent
+  parent: System.Windows.Markup.IComponentConnector
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  name: InitializeComponent()
+  nameWithType: IComponentConnector.InitializeComponent()
+  fullName: System.Windows.Markup.IComponentConnector.InitializeComponent()
+  spec.csharp:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Windows.Markup.IComponentConnector.InitializeComponent
+    name: InitializeComponent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.markup.icomponentconnector.initializecomponent
+  - name: (
+  - name: )

@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -89,7 +89,7 @@
 
 
   <h1 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1" class="text-break">
-Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AsyncLazy&lt;T&gt; : BindableBase, INotifyPropertyChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public class AsyncLazy&lt;T&gt; : BindableBase, INotifyPropertyChanged, IObservable&lt;T&gt;</code></pre>
   </div>
 
 
@@ -127,6 +127,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;T&gt;</div>
     </dd>
   </dl>
 
@@ -175,6 +176,9 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
   <div>
       <a class="xref" href="ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__2___0_System_Linq_Expressions_Expression_System_Func___0___1___ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___1___">RulesExtensions.SetRule&lt;TSubject, TProperty&gt;(TSubject, Expression&lt;Func&lt;TSubject, TProperty&gt;&gt;, RulesObserver, Action&lt;RulesObserver.RuleContext&lt;TProperty&gt;&gt;)</a>
   </div>
+  <div>
+      <a class="xref" href="ParmaGIS.WPF.Modules.Data.UI.ReactiveRules.RulesExtensions.html#ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesExtensions_SetRule__1_System_IObservable___0__ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_System_Action_ParmaGIS_WPF_Modules_Data_UI_ReactiveRules_RulesObserver_RuleContext___0___System_Boolean_">RulesExtensions.SetRule&lt;TProperty&gt;(IObservable&lt;TProperty&gt;, RulesObserver, Action&lt;RulesObserver.RuleContext&lt;TProperty&gt;&gt;, bool)</a>
+  </div>
   </dd></dl>
 
 
@@ -189,7 +193,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1__ctor_System_Func_System_Threading_Tasks_Task__0____0_" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.#ctor(System.Func{System.Threading.Tasks.Task{`0}},`0)">
   AsyncLazy(Func&lt;Task&lt;T&gt;&gt;, T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="ParmaGIS.Core.Utilities.Threading.AsyncLazy-1.html">AsyncLazy&lt;T&gt;</a>.</p>
@@ -229,7 +233,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_IsLoadedValue" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.IsLoadedValue">
   IsLoadedValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Возвращает <code>true</code>, если значение создано.</p>
@@ -261,7 +265,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_IsLoadingValue" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.IsLoadingValue">
   IsLoadingValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Возвращает <code>true</code>, если значение создается.</p>
@@ -293,7 +297,7 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
   <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_Value" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Value">
   Value
-  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Возвращает значение.</p>
@@ -321,11 +325,85 @@ Class AsyncLazy&lt;T&gt;  <a class="header-action link-secondary" title="View so
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_GetValueAsync_" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync*"></a>
+
+  <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_GetValueAsync" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.GetValueAsync">
+  GetValueAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;T&gt; GetValueAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_Subscribe_" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe*"></a>
+
+  <h3 id="ParmaGIS_Core_Utilities_Threading_AsyncLazy_1_Subscribe_System_IObserver__0__" data-uid="ParmaGIS.Core.Utilities.Threading.AsyncLazy`1.Subscribe(System.IObserver{`0})">
+  Subscribe(IObserver&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Notifies the provider that an observer is to receive notifications.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;T&gt; observer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>observer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobserver-1">IObserver</a>&lt;T&gt;</dt>
+    <dd><p>The object that is to receive notifications.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></dt>
+    <dd><p>A reference to an interface that allows observers to stop receiving notifications before the provider has finished sending them.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ParmaGIS/ParmaGIS.Net/blob/origin/test/common/src/ParmaGIS.Core/Utilities/Threading/AsyncLazy.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 
